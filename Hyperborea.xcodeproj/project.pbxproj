@@ -24,6 +24,7 @@
 		DAAD34801DF23A6C00C5D3D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAD347F1DF23A6C00C5D3D1 /* LaunchScreen.storyboard */; };
 		DAAD34831DF23B2F00C5D3D1 /* VHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34821DF23B2F00C5D3D1 /* VHome.swift */; };
 		DAAD34891DF23C3A00C5D3D1 /* VView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34881DF23C3A00C5D3D1 /* VView.swift */; };
+		DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD348A1DF241A300C5D3D1 /* VParentBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DAAD347F1DF23A6C00C5D3D1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAAD34821DF23B2F00C5D3D1 /* VHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHome.swift; sourceTree = "<group>"; };
 		DAAD34881DF23C3A00C5D3D1 /* VView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VView.swift; sourceTree = "<group>"; };
+		DAAD348A1DF241A300C5D3D1 /* VParentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParentBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				DAAD345F1DF2332500C5D3D1 /* VAlert.swift */,
-				DAAD34621DF2332500C5D3D1 /* VParent.swift */,
 				DAAD34641DF2332500C5D3D1 /* VSpinner.swift */,
+				DAAD34621DF2332500C5D3D1 /* VParent.swift */,
+				DAAD348A1DF241A300C5D3D1 /* VParentBar.swift */,
 				DAAD34881DF23C3A00C5D3D1 /* VView.swift */,
 			);
 			path = Main;
@@ -260,6 +263,7 @@
 				DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */,
 				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
 				DAAD346C1DF2332500C5D3D1 /* ExtensionUIFont.swift in Sources */,
+				DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */,
 				DAAD347D1DF235BC00C5D3D1 /* CHome.swift in Sources */,
 				DAAD34831DF23B2F00C5D3D1 /* VHome.swift in Sources */,
 				DAAD34681DF2332500C5D3D1 /* ExtensionFileManager.swift in Sources */,

@@ -2,11 +2,6 @@ import UIKit
 
 class CController:UIViewController
 {
-    weak var layoutLeft:NSLayoutConstraint!
-    weak var layoutRight:NSLayoutConstraint!
-    weak var layoutTop:NSLayoutConstraint!
-    weak var layoutBottom:NSLayoutConstraint!
-    
     init()
     {
         super.init(nibName:nil, bundle:nil)
@@ -32,12 +27,6 @@ class CController:UIViewController
         edgesForExtendedLayout = UIRectEdge()
         extendedLayoutIncludesOpaqueBars = false
         automaticallyAdjustsScrollViewInsets = false
-    }
-    
-    override func viewDidAppear(_ animated:Bool)
-    {
-        super.viewDidAppear(animated)
-        parentController.viewParent.bar.label.text = title
     }
     
     override var preferredStatusBarStyle:UIStatusBarStyle
