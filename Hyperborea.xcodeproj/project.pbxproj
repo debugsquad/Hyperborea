@@ -29,6 +29,7 @@
 		DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34621DF2332500C5D3D1 /* VParent.swift */; };
 		DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34641DF2332500C5D3D1 /* VSpinner.swift */; };
 		DAAD347D1DF235BC00C5D3D1 /* CHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD347C1DF235BC00C5D3D1 /* CHome.swift */; };
+		DAAD34801DF23A6C00C5D3D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAD347F1DF23A6C00C5D3D1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		DAAD34621DF2332500C5D3D1 /* VParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParent.swift; sourceTree = "<group>"; };
 		DAAD34641DF2332500C5D3D1 /* VSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSpinner.swift; sourceTree = "<group>"; };
 		DAAD347C1DF235BC00C5D3D1 /* CHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHome.swift; sourceTree = "<group>"; };
+		DAAD347F1DF23A6C00C5D3D1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		DAAD34321DF22D7500C5D3D1 /* Hyperborea */ = {
 			isa = PBXGroup;
 			children = (
+				DAAD347E1DF23A6C00C5D3D1 /* Assets */,
 				DAAD34451DF2332500C5D3D1 /* Controller */,
 				DAAD344A1DF2332500C5D3D1 /* Extensions */,
 				DAAD34501DF2332500C5D3D1 /* Info.plist */,
@@ -186,6 +189,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		DAAD347E1DF23A6C00C5D3D1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD347F1DF23A6C00C5D3D1 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAD34801DF23A6C00C5D3D1 /* LaunchScreen.storyboard in Resources */,
 				DAAD346D1DF2332500C5D3D1 /* Info.plist in Resources */,
 				DAAD34741DF2332500C5D3D1 /* Localizable.strings in Resources */,
 			);
