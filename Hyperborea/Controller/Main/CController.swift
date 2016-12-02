@@ -18,16 +18,6 @@ class CController:UIViewController
         fatalError()
     }
     
-    open var name:NSString
-    {
-        get
-        {
-            let classType:AnyClass = object_getClass(self)
-            
-            return NSStringFromClass(classType) as NSString
-        }
-    }
-    
     var parentController:CParent
     {
         get
@@ -40,7 +30,6 @@ class CController:UIViewController
     {
         super.viewDidLoad()
         
-        FMain.sharedInstance.analytics?.screenView(controller:self)
         edgesForExtendedLayout = UIRectEdge()
         extendedLayoutIncludesOpaqueBars = false
         automaticallyAdjustsScrollViewInsets = false

@@ -3,7 +3,6 @@ import UIKit
 class CParent:UIViewController
 {
     weak var viewParent:VParent!
-    weak var controllerAuth:CAuth?
     private var controllers:[CController]
     private var statusBarStyle:UIStatusBarStyle
     
@@ -14,11 +13,6 @@ class CParent:UIViewController
         super.init(nibName:nil, bundle:nil)
     }
     
-    deinit
-    {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     required init?(coder:NSCoder)
     {
         fatalError()
@@ -27,12 +21,6 @@ class CParent:UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector:#selector(notifiedUserBanned(sender:)),
-            name:Notification.userBanned,
-            object:nil)
         
         let login:CLogin = CLogin()
         
@@ -57,20 +45,6 @@ class CParent:UIViewController
     override var prefersStatusBarHidden:Bool
     {
         return false
-    }
-    
-    //MARK: notified
-    
-    func notifiedUserBanned(sender notification:Notification)
-    {
-        DispatchQueue.main.async
-        {
-            let controllerBanned:CBanned = CBanned()
-            self.over(
-                controller:controllerBanned,
-                pop:true,
-                animate:false)
-        }
     }
     
     //MARK: private
@@ -347,19 +321,5 @@ class CParent:UIViewController
             underBar:underBar,
             pop:pop,
             delta:delta)
-    }
-    
-    func presentAuth()
-    {
-        if controllerAuth == nil
-        {
-            let controllerAuth:CAuth = CAuth()
-            self.controllerAuth = controllerAuth
-            
-            over(
-                controller:controllerAuth,
-                pop:false,
-                animate:false)
-        }
     }
 }
