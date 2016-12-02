@@ -6,8 +6,56 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */; };
+		DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34481DF2332500C5D3D1 /* CController.swift */; };
+		DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34491DF2332500C5D3D1 /* CParent.swift */; };
+		DAAD34681DF2332500C5D3D1 /* ExtensionFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD344B1DF2332500C5D3D1 /* ExtensionFileManager.swift */; };
+		DAAD34691DF2332500C5D3D1 /* ExtensionNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD344C1DF2332500C5D3D1 /* ExtensionNotification.swift */; };
+		DAAD346A1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD344D1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift */; };
+		DAAD346B1DF2332500C5D3D1 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD344E1DF2332500C5D3D1 /* ExtensionUIColor.swift */; };
+		DAAD346C1DF2332500C5D3D1 /* ExtensionUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD344F1DF2332500C5D3D1 /* ExtensionUIFont.swift */; };
+		DAAD346D1DF2332500C5D3D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAAD34501DF2332500C5D3D1 /* Info.plist */; };
+		DAAD346E1DF2332500C5D3D1 /* MMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34531DF2332500C5D3D1 /* MMain.swift */; };
+		DAAD346F1DF2332500C5D3D1 /* MMainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34541DF2332500C5D3D1 /* MMainItem.swift */; };
+		DAAD34701DF2332500C5D3D1 /* MMainItemHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34551DF2332500C5D3D1 /* MMainItemHome.swift */; };
+		DAAD34711DF2332500C5D3D1 /* MMainState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34561DF2332500C5D3D1 /* MMainState.swift */; };
+		DAAD34721DF2332500C5D3D1 /* MMainStateOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34571DF2332500C5D3D1 /* MMainStateOptions.swift */; };
+		DAAD34731DF2332500C5D3D1 /* MMainStatePushed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34581DF2332500C5D3D1 /* MMainStatePushed.swift */; };
+		DAAD34741DF2332500C5D3D1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAAD345A1DF2332500C5D3D1 /* Localizable.strings */; };
+		DAAD34751DF2332500C5D3D1 /* VAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD345F1DF2332500C5D3D1 /* VAlert.swift */; };
+		DAAD34761DF2332500C5D3D1 /* VBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34601DF2332500C5D3D1 /* VBar.swift */; };
+		DAAD34771DF2332500C5D3D1 /* VBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34611DF2332500C5D3D1 /* VBarCell.swift */; };
+		DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34621DF2332500C5D3D1 /* VParent.swift */; };
+		DAAD34791DF2332500C5D3D1 /* VShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34631DF2332500C5D3D1 /* VShadow.swift */; };
+		DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34641DF2332500C5D3D1 /* VSpinner.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DAAD34301DF22D7500C5D3D1 /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
+		DAAD34481DF2332500C5D3D1 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
+		DAAD34491DF2332500C5D3D1 /* CParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CParent.swift; sourceTree = "<group>"; };
+		DAAD344B1DF2332500C5D3D1 /* ExtensionFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionFileManager.swift; sourceTree = "<group>"; };
+		DAAD344C1DF2332500C5D3D1 /* ExtensionNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNotification.swift; sourceTree = "<group>"; };
+		DAAD344D1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUICollectionReusableView.swift; sourceTree = "<group>"; };
+		DAAD344E1DF2332500C5D3D1 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		DAAD344F1DF2332500C5D3D1 /* ExtensionUIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIFont.swift; sourceTree = "<group>"; };
+		DAAD34501DF2332500C5D3D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAAD34531DF2332500C5D3D1 /* MMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMain.swift; sourceTree = "<group>"; };
+		DAAD34541DF2332500C5D3D1 /* MMainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainItem.swift; sourceTree = "<group>"; };
+		DAAD34551DF2332500C5D3D1 /* MMainItemHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainItemHome.swift; sourceTree = "<group>"; };
+		DAAD34561DF2332500C5D3D1 /* MMainState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainState.swift; sourceTree = "<group>"; };
+		DAAD34571DF2332500C5D3D1 /* MMainStateOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainStateOptions.swift; sourceTree = "<group>"; };
+		DAAD34581DF2332500C5D3D1 /* MMainStatePushed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMainStatePushed.swift; sourceTree = "<group>"; };
+		DAAD345B1DF2332500C5D3D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DAAD345C1DF2332500C5D3D1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DAAD345F1DF2332500C5D3D1 /* VAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAlert.swift; sourceTree = "<group>"; };
+		DAAD34601DF2332500C5D3D1 /* VBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBar.swift; sourceTree = "<group>"; };
+		DAAD34611DF2332500C5D3D1 /* VBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBarCell.swift; sourceTree = "<group>"; };
+		DAAD34621DF2332500C5D3D1 /* VParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParent.swift; sourceTree = "<group>"; };
+		DAAD34631DF2332500C5D3D1 /* VShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VShadow.swift; sourceTree = "<group>"; };
+		DAAD34641DF2332500C5D3D1 /* VSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSpinner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,8 +88,94 @@
 		DAAD34321DF22D7500C5D3D1 /* Hyperborea */ = {
 			isa = PBXGroup;
 			children = (
+				DAAD34451DF2332500C5D3D1 /* Controller */,
+				DAAD344A1DF2332500C5D3D1 /* Extensions */,
+				DAAD34501DF2332500C5D3D1 /* Info.plist */,
+				DAAD34511DF2332500C5D3D1 /* Model */,
+				DAAD34591DF2332500C5D3D1 /* Resource */,
+				DAAD345D1DF2332500C5D3D1 /* View */,
 			);
 			path = Hyperborea;
+			sourceTree = "<group>";
+		};
+		DAAD34451DF2332500C5D3D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD34461DF2332500C5D3D1 /* Main */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DAAD34461DF2332500C5D3D1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */,
+				DAAD34481DF2332500C5D3D1 /* CController.swift */,
+				DAAD34491DF2332500C5D3D1 /* CParent.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DAAD344A1DF2332500C5D3D1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD344B1DF2332500C5D3D1 /* ExtensionFileManager.swift */,
+				DAAD344C1DF2332500C5D3D1 /* ExtensionNotification.swift */,
+				DAAD344D1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift */,
+				DAAD344E1DF2332500C5D3D1 /* ExtensionUIColor.swift */,
+				DAAD344F1DF2332500C5D3D1 /* ExtensionUIFont.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DAAD34511DF2332500C5D3D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD34521DF2332500C5D3D1 /* Main */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAAD34521DF2332500C5D3D1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD34531DF2332500C5D3D1 /* MMain.swift */,
+				DAAD34541DF2332500C5D3D1 /* MMainItem.swift */,
+				DAAD34551DF2332500C5D3D1 /* MMainItemHome.swift */,
+				DAAD34561DF2332500C5D3D1 /* MMainState.swift */,
+				DAAD34571DF2332500C5D3D1 /* MMainStateOptions.swift */,
+				DAAD34581DF2332500C5D3D1 /* MMainStatePushed.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DAAD34591DF2332500C5D3D1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD345A1DF2332500C5D3D1 /* Localizable.strings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DAAD345D1DF2332500C5D3D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD345E1DF2332500C5D3D1 /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAAD345E1DF2332500C5D3D1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD345F1DF2332500C5D3D1 /* VAlert.swift */,
+				DAAD34601DF2332500C5D3D1 /* VBar.swift */,
+				DAAD34611DF2332500C5D3D1 /* VBarCell.swift */,
+				DAAD34621DF2332500C5D3D1 /* VParent.swift */,
+				DAAD34631DF2332500C5D3D1 /* VShadow.swift */,
+				DAAD34641DF2332500C5D3D1 /* VSpinner.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,6 +222,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = DAAD34271DF22D7500C5D3D1;
 			productRefGroup = DAAD34311DF22D7500C5D3D1 /* Products */;
@@ -104,6 +239,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAD346D1DF2332500C5D3D1 /* Info.plist in Resources */,
+				DAAD34741DF2332500C5D3D1 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,10 +251,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAD34761DF2332500C5D3D1 /* VBar.swift in Sources */,
+				DAAD34721DF2332500C5D3D1 /* MMainStateOptions.swift in Sources */,
+				DAAD34751DF2332500C5D3D1 /* VAlert.swift in Sources */,
+				DAAD34731DF2332500C5D3D1 /* MMainStatePushed.swift in Sources */,
+				DAAD34791DF2332500C5D3D1 /* VShadow.swift in Sources */,
+				DAAD34691DF2332500C5D3D1 /* ExtensionNotification.swift in Sources */,
+				DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */,
+				DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */,
+				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
+				DAAD346E1DF2332500C5D3D1 /* MMain.swift in Sources */,
+				DAAD346C1DF2332500C5D3D1 /* ExtensionUIFont.swift in Sources */,
+				DAAD34701DF2332500C5D3D1 /* MMainItemHome.swift in Sources */,
+				DAAD34771DF2332500C5D3D1 /* VBarCell.swift in Sources */,
+				DAAD34681DF2332500C5D3D1 /* ExtensionFileManager.swift in Sources */,
+				DAAD346F1DF2332500C5D3D1 /* MMainItem.swift in Sources */,
+				DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */,
+				DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */,
+				DAAD346B1DF2332500C5D3D1 /* ExtensionUIColor.swift in Sources */,
+				DAAD34711DF2332500C5D3D1 /* MMainState.swift in Sources */,
+				DAAD346A1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DAAD345A1DF2332500C5D3D1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAAD345B1DF2332500C5D3D1 /* en */,
+				DAAD345C1DF2332500C5D3D1 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DAAD34401DF22D7500C5D3D1 /* Debug */ = {
@@ -258,6 +427,7 @@
 				DAAD34441DF22D7500C5D3D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
