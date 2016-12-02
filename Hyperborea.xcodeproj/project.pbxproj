@@ -30,6 +30,8 @@
 		DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34641DF2332500C5D3D1 /* VSpinner.swift */; };
 		DAAD347D1DF235BC00C5D3D1 /* CHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD347C1DF235BC00C5D3D1 /* CHome.swift */; };
 		DAAD34801DF23A6C00C5D3D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAD347F1DF23A6C00C5D3D1 /* LaunchScreen.storyboard */; };
+		DAAD34831DF23B2F00C5D3D1 /* VHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34821DF23B2F00C5D3D1 /* VHome.swift */; };
+		DAAD34891DF23C3A00C5D3D1 /* VView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34881DF23C3A00C5D3D1 /* VView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		DAAD34641DF2332500C5D3D1 /* VSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSpinner.swift; sourceTree = "<group>"; };
 		DAAD347C1DF235BC00C5D3D1 /* CHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHome.swift; sourceTree = "<group>"; };
 		DAAD347F1DF23A6C00C5D3D1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DAAD34821DF23B2F00C5D3D1 /* VHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHome.swift; sourceTree = "<group>"; };
+		DAAD34881DF23C3A00C5D3D1 /* VView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 		DAAD345D1DF2332500C5D3D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DAAD34811DF23B2500C5D3D1 /* Home */,
 				DAAD345E1DF2332500C5D3D1 /* Main */,
 			);
 			path = View;
@@ -177,6 +182,7 @@
 				DAAD34611DF2332500C5D3D1 /* VBarCell.swift */,
 				DAAD34621DF2332500C5D3D1 /* VParent.swift */,
 				DAAD34641DF2332500C5D3D1 /* VSpinner.swift */,
+				DAAD34881DF23C3A00C5D3D1 /* VView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -195,6 +201,14 @@
 				DAAD347F1DF23A6C00C5D3D1 /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		DAAD34811DF23B2500C5D3D1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD34821DF23B2F00C5D3D1 /* VHome.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +288,7 @@
 				DAAD34761DF2332500C5D3D1 /* VBar.swift in Sources */,
 				DAAD34721DF2332500C5D3D1 /* MMainStateOptions.swift in Sources */,
 				DAAD34751DF2332500C5D3D1 /* VAlert.swift in Sources */,
+				DAAD34891DF23C3A00C5D3D1 /* VView.swift in Sources */,
 				DAAD34731DF2332500C5D3D1 /* MMainStatePushed.swift in Sources */,
 				DAAD34691DF2332500C5D3D1 /* ExtensionNotification.swift in Sources */,
 				DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */,
@@ -283,6 +298,7 @@
 				DAAD346C1DF2332500C5D3D1 /* ExtensionUIFont.swift in Sources */,
 				DAAD34701DF2332500C5D3D1 /* MMainItemHome.swift in Sources */,
 				DAAD347D1DF235BC00C5D3D1 /* CHome.swift in Sources */,
+				DAAD34831DF23B2F00C5D3D1 /* VHome.swift in Sources */,
 				DAAD34771DF2332500C5D3D1 /* VBarCell.swift in Sources */,
 				DAAD34681DF2332500C5D3D1 /* ExtensionFileManager.swift in Sources */,
 				DAAD346F1DF2332500C5D3D1 /* MMainItem.swift in Sources */,
