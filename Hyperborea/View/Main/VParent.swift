@@ -195,14 +195,12 @@ class VParent:UIView
         controller.layoutRight.constant = 0
         currentController.layoutLeft.constant = -width_2
         currentController.layoutRight.constant = -width_2
-        currentController.addShadow()
         bar.push(name:controller.title)
         
         UIView.animate(withDuration:kAnimationDuration,
                        animations:
         {
             self.layoutIfNeeded()
-            currentController.shadow?.maxAlpha()
         })
         { (done:Bool) in
             

@@ -6,7 +6,6 @@ class CController:UIViewController
     weak var layoutRight:NSLayoutConstraint!
     weak var layoutTop:NSLayoutConstraint!
     weak var layoutBottom:NSLayoutConstraint!
-    weak var shadow:VShadow?
     
     init()
     {
@@ -49,33 +48,5 @@ class CController:UIViewController
     override var prefersStatusBarHidden:Bool
     {
         return false
-    }
-    
-    //MARK: public
-    
-    func addShadow()
-    {
-        let shadow:VShadow = VShadow()
-        self.shadow = shadow
-        
-        view.addSubview(shadow)
-        
-        let views:[String:UIView] = [
-            "shadow":shadow]
-        
-        let metrics:[String:CGFloat] = [:]
-        
-        view.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-0-[shadow]-0-|",
-            options:[],
-            metrics:metrics,
-            views:views))
-        view.addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-0-[shadow]-0-|",
-            options:[],
-            metrics:metrics,
-            views:views))
-        
-        view.layoutIfNeeded()
     }
 }

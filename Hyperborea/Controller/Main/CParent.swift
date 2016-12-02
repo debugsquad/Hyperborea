@@ -22,10 +22,10 @@ class CParent:UIViewController
     {
         super.viewDidLoad()
         
-        let login:CLogin = CLogin()
+        let home:CHome = CHome()
         
         over(
-            controller:login,
+            controller:home,
             pop:false,
             animate:false)
     }

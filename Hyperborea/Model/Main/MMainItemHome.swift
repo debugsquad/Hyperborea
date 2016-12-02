@@ -21,7 +21,7 @@ class MMainItemHome:MMainItem
     
     override func controller() -> CController
     {
-        let controller:CHome = CHome(askAuth:false)
+        let controller:CHome = CHome()
         
         return controller
     }

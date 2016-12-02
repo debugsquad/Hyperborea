@@ -27,8 +27,8 @@
 		DAAD34761DF2332500C5D3D1 /* VBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34601DF2332500C5D3D1 /* VBar.swift */; };
 		DAAD34771DF2332500C5D3D1 /* VBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34611DF2332500C5D3D1 /* VBarCell.swift */; };
 		DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34621DF2332500C5D3D1 /* VParent.swift */; };
-		DAAD34791DF2332500C5D3D1 /* VShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34631DF2332500C5D3D1 /* VShadow.swift */; };
 		DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34641DF2332500C5D3D1 /* VSpinner.swift */; };
+		DAAD347D1DF235BC00C5D3D1 /* CHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD347C1DF235BC00C5D3D1 /* CHome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +54,8 @@
 		DAAD34601DF2332500C5D3D1 /* VBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBar.swift; sourceTree = "<group>"; };
 		DAAD34611DF2332500C5D3D1 /* VBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBarCell.swift; sourceTree = "<group>"; };
 		DAAD34621DF2332500C5D3D1 /* VParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParent.swift; sourceTree = "<group>"; };
-		DAAD34631DF2332500C5D3D1 /* VShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VShadow.swift; sourceTree = "<group>"; };
 		DAAD34641DF2332500C5D3D1 /* VSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSpinner.swift; sourceTree = "<group>"; };
+		DAAD347C1DF235BC00C5D3D1 /* CHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +101,7 @@
 		DAAD34451DF2332500C5D3D1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DAAD347B1DF235AB00C5D3D1 /* Home */,
 				DAAD34461DF2332500C5D3D1 /* Main */,
 			);
 			path = Controller;
@@ -172,10 +173,17 @@
 				DAAD34601DF2332500C5D3D1 /* VBar.swift */,
 				DAAD34611DF2332500C5D3D1 /* VBarCell.swift */,
 				DAAD34621DF2332500C5D3D1 /* VParent.swift */,
-				DAAD34631DF2332500C5D3D1 /* VShadow.swift */,
 				DAAD34641DF2332500C5D3D1 /* VSpinner.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		DAAD347B1DF235AB00C5D3D1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DAAD347C1DF235BC00C5D3D1 /* CHome.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +263,6 @@
 				DAAD34721DF2332500C5D3D1 /* MMainStateOptions.swift in Sources */,
 				DAAD34751DF2332500C5D3D1 /* VAlert.swift in Sources */,
 				DAAD34731DF2332500C5D3D1 /* MMainStatePushed.swift in Sources */,
-				DAAD34791DF2332500C5D3D1 /* VShadow.swift in Sources */,
 				DAAD34691DF2332500C5D3D1 /* ExtensionNotification.swift in Sources */,
 				DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */,
 				DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */,
@@ -263,6 +270,7 @@
 				DAAD346E1DF2332500C5D3D1 /* MMain.swift in Sources */,
 				DAAD346C1DF2332500C5D3D1 /* ExtensionUIFont.swift in Sources */,
 				DAAD34701DF2332500C5D3D1 /* MMainItemHome.swift in Sources */,
+				DAAD347D1DF235BC00C5D3D1 /* CHome.swift in Sources */,
 				DAAD34771DF2332500C5D3D1 /* VBarCell.swift in Sources */,
 				DAAD34681DF2332500C5D3D1 /* ExtensionFileManager.swift in Sources */,
 				DAAD346F1DF2332500C5D3D1 /* MMainItem.swift in Sources */,
