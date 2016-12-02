@@ -229,11 +229,9 @@ class VParent:UIView
                        animations:
         {
             self.layoutIfNeeded()
-            previousController.shadow?.minAlpha()
         })
         { (done:Bool) in
             
-            previousController.shadow?.removeFromSuperview()
             completion()
         }
     }
