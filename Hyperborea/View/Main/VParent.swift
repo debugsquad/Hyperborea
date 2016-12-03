@@ -51,14 +51,12 @@ class VParent:UIView
             multiplier:1,
             constant:0)
         
-        let constraints:[NSLayoutConstraint] = [
+        addConstraints([
             layoutBarTop,
             layoutBarHeight,
             layoutBarLeft,
             layoutBarRight
-        ]
-        
-        addConstraints(constraints)
+            ])
     }
     
     //MARK: public

@@ -4,6 +4,8 @@ class VParentBar:UIView
 {
     private weak var controller:CParent!
     private weak var labelTitle:UILabel!
+    private let kTitleTop:CGFloat = 20
+    private let kTitleLeft:CGFloat = 20
     
     convenience init(controller:CParent)
     {
@@ -12,57 +14,16 @@ class VParentBar:UIView
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.clear
         
-        let border:UIView = UIView()
-        border.isUserInteractionEnabled = false
-        border.translatesAutoresizingMaskIntoConstraints = false
-        border.clipsToBounds = true
-        border.backgroundColor = UIColor.background
-        
         let labelTitle:UILabel = UILabel()
         labelTitle.isUserInteractionEnabled = false
-        labelTitle.font = UIFont.bold(size:20)
+        labelTitle.font = UIFont.bold(size:16)
         labelTitle.textColor = UIColor.black
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.textAlignment = NSTextAlignment.center
-        labelTitle.text = NSLocalizedString("Word search", comment:"")
+        labelTitle.text = NSLocalizedString("Dictionary", comment:"")
         self.labelTitle = labelTitle
-        
-        addSubview(border)
+
         addSubview(labelTitle)
-        
-        let layoutBorderLeft:NSLayoutConstraint = NSLayoutConstraint(
-            item:border,
-            attribute:NSLayoutAttribute.left,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.left,
-            multiplier:1,
-            constant:0)
-        let layoutBorderRight:NSLayoutConstraint = NSLayoutConstraint(
-            item:border,
-            attribute:NSLayoutAttribute.right,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.right,
-            multiplier:1,
-            constant:0)
-        let layoutBorderHeight:NSLayoutConstraint = NSLayoutConstraint(
-            item:border,
-            attribute:NSLayoutAttribute.height,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:nil,
-            attribute:NSLayoutAttribute.notAnAttribute,
-            multiplier:1,
-            constant:1)
-        let layoutBorderBottom:NSLayoutConstraint = NSLayoutConstraint(
-            item:border,
-            attribute:NSLayoutAttribute.bottom,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.bottom,
-            multiplier:1,
-            constant:0)
         
         let layoutLabelTitleLeft:NSLayoutConstraint = NSLayoutConstraint(
             item:labelTitle,
@@ -71,7 +32,7 @@ class VParentBar:UIView
             toItem:self,
             attribute:NSLayoutAttribute.left,
             multiplier:1,
-            constant:0)
+            constant:kTitleLeft)
         let layoutLabelTitleRight:NSLayoutConstraint = NSLayoutConstraint(
             item:labelTitle,
             attribute:NSLayoutAttribute.right,
@@ -87,7 +48,7 @@ class VParentBar:UIView
             toItem:self,
             attribute:NSLayoutAttribute.top,
             multiplier:1,
-            constant:20)
+            constant:kTitleTop)
         let layoutLabelTitleBottom:NSLayoutConstraint = NSLayoutConstraint(
             item:labelTitle,
             attribute:NSLayoutAttribute.bottom,
@@ -97,17 +58,11 @@ class VParentBar:UIView
             multiplier:1,
             constant:0)
         
-        let constraints:[NSLayoutConstraint] = [
-            layoutBorderLeft,
-            layoutBorderRight,
-            layoutBorderHeight,
-            layoutBorderBottom,
+        addConstraints([
             layoutLabelTitleTop,
             layoutLabelTitleLeft,
             layoutLabelTitleRight,
             layoutLabelTitleBottom
-        ]
-        
-        addConstraints(constraints)
+            ])
     }
 }

@@ -2,7 +2,8 @@ import UIKit
 
 class VHomeInputPlaceholder:UIView
 {
-    private let kLabelWidth:CGFloat = 150
+    private let kLabelWidth:CGFloat = 300
+    private let kLabelLeft:CGFloat = 20
     
     init()
     {
@@ -16,8 +17,9 @@ class VHomeInputPlaceholder:UIView
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.regular(size:30)
-        label.textColor = UIColor(white:0.8, alpha:1)
+        label.font = UIFont.regular(size:25)
+        label.textColor = UIColor(white:0.85, alpha:1)
+        label.text = "Search for word"
         
         addSubview(label)
         
@@ -44,13 +46,13 @@ class VHomeInputPlaceholder:UIView
             toItem:self,
             attribute:NSLayoutAttribute.left,
             multiplier:1,
-            constant:20)
+            constant:kLabelLeft)
         let layoutLabelWidth:NSLayoutConstraint = NSLayoutConstraint(
             item:label,
             attribute:NSLayoutAttribute.width,
             relatedBy:NSLayoutRelation.equal,
             toItem:nil,
-            attribute:NSLayoutAttribute.width,
+            attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
             constant:kLabelWidth)
         
@@ -58,8 +60,7 @@ class VHomeInputPlaceholder:UIView
             layoutLabelTop,
             layoutLabelBottom,
             layoutLabelLeft,
-            layoutLabelWidth
-            ])
+            layoutLabelWidth])
     }
     
     required init?(coder:NSCoder)

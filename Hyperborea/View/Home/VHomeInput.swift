@@ -5,7 +5,7 @@ class VHomeInput:UIView
     private weak var controller:CHome!
     private weak var viewText:VHomeInputText!
     private weak var viewPlaceholder:VHomeInputPlaceholder!
-    private let kPlaceholderHeight:CGFloat = 50
+    private let kPlaceholderHeight:CGFloat = 36
     
     convenience init(controller:CHome)
     {
@@ -75,7 +75,7 @@ class VHomeInput:UIView
             multiplier:1,
             constant:kPlaceholderHeight)
         let layoutViewPlaceholderLeft:NSLayoutConstraint = NSLayoutConstraint(
-            item:viewText,
+            item:viewPlaceholder,
             attribute:NSLayoutAttribute.left,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
@@ -83,7 +83,7 @@ class VHomeInput:UIView
             multiplier:1,
             constant:0)
         let layoutViewPlaceholderRight:NSLayoutConstraint = NSLayoutConstraint(
-            item:viewText,
+            item:viewPlaceholder,
             attribute:NSLayoutAttribute.right,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
