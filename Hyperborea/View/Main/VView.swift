@@ -61,9 +61,13 @@ class VView:UIView
             multiplier:1,
             constant:initialBottom)
         
-        superview?.addConstraint(layoutLeft)
-        superview?.addConstraint(layoutRight)
-        superview?.addConstraint(layoutTop)
-        superview?.addConstraint(layoutBottom)
+        let constraints:[NSLayoutConstraint] = [
+            layoutLeft,
+            layoutRight,
+            layoutTop,
+            layoutBottom
+        ]
+        
+        superview?.addConstraints(constraints)
     }
 }

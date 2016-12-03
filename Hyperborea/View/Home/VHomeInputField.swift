@@ -1,50 +1,39 @@
 import UIKit
 
-class VHomeInput:UIView
+class VHomeInputField:UIView
 {
     private weak var controller:CHome!
-    private weak var viewField:VHomeInputField!
-    private weak var layoutBottom:NSLayoutConstraint!
-    private weak var layoutHeight:NSLayoutConstraint!
-    private let kStandbyHeight:CGFloat = 60
-    private let kFieldLeft:CGFloat = 40
-    private let kFieldRight:CGFloat = 60
+    private let kMarginVertical:CGFloat = 10
     
     convenience init(controller:CHome)
     {
         self.init()
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
-        backgroundColor = UIColor.background
-        
-        let viewField:VHomeInputField = VHomeInputField(controller:controller)
-        self.viewField = viewField
-        
-        addSubview(viewField)
-        
-        viewField.initConstraints(left:kFieldLeft, right:kFieldRight)
+        backgroundColor = UIColor.white
+        self.controller = controller
     }
     
     //MARK: public
     
-    func initConstraints()
+    func initConstraints(left:CGFloat, right:CGFloat)
     {
-        layoutBottom = NSLayoutConstraint(
+        let layoutBottom:NSLayoutConstraint = NSLayoutConstraint(
             item:self,
             attribute:NSLayoutAttribute.bottom,
             relatedBy:NSLayoutRelation.equal,
             toItem:superview,
             attribute:NSLayoutAttribute.bottom,
             multiplier:1,
-            constant:0)
-        layoutHeight = NSLayoutConstraint(
+            constant:kMarginVertical)
+        let layoutTop:NSLayoutConstraint = NSLayoutConstraint(
             item:self,
-            attribute:NSLayoutAttribute.height,
+            attribute:NSLayoutAttribute.top,
             relatedBy:NSLayoutRelation.equal,
-            toItem:nil,
-            attribute:NSLayoutAttribute.notAnAttribute,
+            toItem:superview,
+            attribute:NSLayoutAttribute.top,
             multiplier:1,
-            constant:kStandbyHeight)
+            constant:kMarginVertical)
         let layoutLeft:NSLayoutConstraint = NSLayoutConstraint(
             item:self,
             attribute:NSLayoutAttribute.left,
@@ -52,7 +41,7 @@ class VHomeInput:UIView
             toItem:superview,
             attribute:NSLayoutAttribute.left,
             multiplier:1,
-            constant:0)
+            constant:right)
         let layoutRight:NSLayoutConstraint = NSLayoutConstraint(
             item:self,
             attribute:NSLayoutAttribute.right,
@@ -60,11 +49,11 @@ class VHomeInput:UIView
             toItem:superview,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
-            constant:0)
+            constant:right)
         
         let constraints:[NSLayoutConstraint] = [
             layoutBottom,
-            layoutHeight,
+            layoutTop,
             layoutLeft,
             layoutRight
         ]
