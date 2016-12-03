@@ -3,72 +3,59 @@ import UIKit
 class VHomeInput:UIView
 {
     private weak var controller:CHome!
-    private weak var viewField:VHomeInputField!
-    private weak var layoutBottom:NSLayoutConstraint!
-    private weak var layoutHeight:NSLayoutConstraint!
-    private let kStandbyHeight:CGFloat = 45
-    private let kFieldLeft:CGFloat = 45
-    private let kFieldRight:CGFloat = 100
+    private weak var viewText:VHomeInputText!
     
     convenience init(controller:CHome)
     {
         self.init()
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
-        backgroundColor = UIColor.background
+        backgroundColor = UIColor.clear
         
-        let viewField:VHomeInputField = VHomeInputField(controller:controller)
-        self.viewField = viewField
+        let barHeight:CGFloat = VParent.kBarHeight
+        let viewText:VHomeInputText = VHomeInputText(controller:controller)
+        self.viewText = viewText
         
-        addSubview(viewField)
+        addSubview(viewText)
         
-        viewField.initConstraints(left:kFieldLeft, right:kFieldRight)
-    }
-    
-    //MARK: public
-    
-    func initConstraints()
-    {
-        layoutBottom = NSLayoutConstraint(
-            item:self,
+        let layoutViewTextTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewText,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:barHeight)
+        let layoutViewTextBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewText,
             attribute:NSLayoutAttribute.bottom,
             relatedBy:NSLayoutRelation.equal,
-            toItem:superview,
+            toItem:self,
             attribute:NSLayoutAttribute.bottom,
             multiplier:1,
             constant:0)
-        layoutHeight = NSLayoutConstraint(
-            item:self,
-            attribute:NSLayoutAttribute.height,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:nil,
-            attribute:NSLayoutAttribute.notAnAttribute,
-            multiplier:1,
-            constant:kStandbyHeight)
-        let layoutLeft:NSLayoutConstraint = NSLayoutConstraint(
-            item:self,
+        let layoutViewTextLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewText,
             attribute:NSLayoutAttribute.left,
             relatedBy:NSLayoutRelation.equal,
-            toItem:superview,
+            toItem:self,
             attribute:NSLayoutAttribute.left,
             multiplier:1,
             constant:0)
-        let layoutRight:NSLayoutConstraint = NSLayoutConstraint(
-            item:self,
+        let layoutViewTextRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewText,
             attribute:NSLayoutAttribute.right,
             relatedBy:NSLayoutRelation.equal,
-            toItem:superview,
+            toItem:self,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
             constant:0)
-        
-        let constraints:[NSLayoutConstraint] = [
-            layoutBottom,
-            layoutHeight,
-            layoutLeft,
-            layoutRight
-        ]
-        
-        superview?.addConstraints(constraints)
+
+        addConstraints([
+            layoutViewTextTop,
+            layoutViewTextBottom,
+            layoutViewTextLeft,
+            layoutViewTextRight
+                ])
     }
 }

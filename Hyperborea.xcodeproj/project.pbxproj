@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA7227F71DF33FB6001370C6 /* VHomeInputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7227F61DF33FB6001370C6 /* VHomeInputText.swift */; };
 		DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */; };
 		DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34481DF2332500C5D3D1 /* CController.swift */; };
 		DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34491DF2332500C5D3D1 /* CParent.swift */; };
@@ -26,10 +27,10 @@
 		DAAD34891DF23C3A00C5D3D1 /* VView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34881DF23C3A00C5D3D1 /* VView.swift */; };
 		DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD348A1DF241A300C5D3D1 /* VParentBar.swift */; };
 		DAAD348D1DF253D500C5D3D1 /* VHomeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD348C1DF253D500C5D3D1 /* VHomeInput.swift */; };
-		DAAD348F1DF25A0D00C5D3D1 /* VHomeInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD348E1DF25A0D00C5D3D1 /* VHomeInputField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA7227F61DF33FB6001370C6 /* VHomeInputText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeInputText.swift; sourceTree = "<group>"; };
 		DAAD34301DF22D7500C5D3D1 /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DAAD34481DF2332500C5D3D1 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		DAAD34881DF23C3A00C5D3D1 /* VView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VView.swift; sourceTree = "<group>"; };
 		DAAD348A1DF241A300C5D3D1 /* VParentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParentBar.swift; sourceTree = "<group>"; };
 		DAAD348C1DF253D500C5D3D1 /* VHomeInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeInput.swift; sourceTree = "<group>"; };
-		DAAD348E1DF25A0D00C5D3D1 /* VHomeInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeInputField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +183,7 @@
 			children = (
 				DAAD34821DF23B2F00C5D3D1 /* VHome.swift */,
 				DAAD348C1DF253D500C5D3D1 /* VHomeInput.swift */,
-				DAAD348E1DF25A0D00C5D3D1 /* VHomeInputField.swift */,
+				DA7227F61DF33FB6001370C6 /* VHomeInputText.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -272,7 +272,7 @@
 				DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */,
 				DAAD347D1DF235BC00C5D3D1 /* CHome.swift in Sources */,
 				DAAD34831DF23B2F00C5D3D1 /* VHome.swift in Sources */,
-				DAAD348F1DF25A0D00C5D3D1 /* VHomeInputField.swift in Sources */,
+				DA7227F71DF33FB6001370C6 /* VHomeInputText.swift in Sources */,
 				DAAD348D1DF253D500C5D3D1 /* VHomeInput.swift in Sources */,
 				DAAD34681DF2332500C5D3D1 /* ExtensionFileManager.swift in Sources */,
 				DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */,
