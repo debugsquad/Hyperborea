@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA7227F71DF33FB6001370C6 /* VHomeInputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7227F61DF33FB6001370C6 /* VHomeInputText.swift */; };
+		DA7227F91DF34412001370C6 /* VHomeInputPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7227F81DF34412001370C6 /* VHomeInputPlaceholder.swift */; };
 		DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */; };
 		DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34481DF2332500C5D3D1 /* CController.swift */; };
 		DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34491DF2332500C5D3D1 /* CParent.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		DA7227F61DF33FB6001370C6 /* VHomeInputText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeInputText.swift; sourceTree = "<group>"; };
+		DA7227F81DF34412001370C6 /* VHomeInputPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeInputPlaceholder.swift; sourceTree = "<group>"; };
 		DAAD34301DF22D7500C5D3D1 /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DAAD34481DF2332500C5D3D1 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				DAAD34821DF23B2F00C5D3D1 /* VHome.swift */,
 				DAAD348C1DF253D500C5D3D1 /* VHomeInput.swift */,
 				DA7227F61DF33FB6001370C6 /* VHomeInputText.swift */,
+				DA7227F81DF34412001370C6 /* VHomeInputPlaceholder.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				DAAD34891DF23C3A00C5D3D1 /* VView.swift in Sources */,
 				DAAD34691DF2332500C5D3D1 /* ExtensionNotification.swift in Sources */,
 				DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */,
+				DA7227F91DF34412001370C6 /* VHomeInputPlaceholder.swift in Sources */,
 				DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */,
 				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
 				DAAD346C1DF2332500C5D3D1 /* ExtensionUIFont.swift in Sources */,

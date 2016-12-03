@@ -7,6 +7,7 @@ class VHomeInputText:UITextView
     convenience init(controller:CHome)
     {
         self.init()
+        font = UIFont.regular(size:30)
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
