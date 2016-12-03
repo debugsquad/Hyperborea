@@ -3,7 +3,8 @@ import UIKit
 class VHomeInputField:UIView
 {
     private weak var controller:CHome!
-    private let kMarginVertical:CGFloat = 10
+    private let kMarginVertical:CGFloat = 8
+    private let kCornerRadius:CGFloat = 6
     
     convenience init(controller:CHome)
     {
@@ -11,6 +12,9 @@ class VHomeInputField:UIView
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
         backgroundColor = UIColor.white
+        layer.cornerRadius = kCornerRadius
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor(white:0, alpha:0.1).cgColor
         self.controller = controller
     }
     
@@ -25,7 +29,7 @@ class VHomeInputField:UIView
             toItem:superview,
             attribute:NSLayoutAttribute.bottom,
             multiplier:1,
-            constant:kMarginVertical)
+            constant:-kMarginVertical)
         let layoutTop:NSLayoutConstraint = NSLayoutConstraint(
             item:self,
             attribute:NSLayoutAttribute.top,
@@ -41,7 +45,7 @@ class VHomeInputField:UIView
             toItem:superview,
             attribute:NSLayoutAttribute.left,
             multiplier:1,
-            constant:right)
+            constant:left)
         let layoutRight:NSLayoutConstraint = NSLayoutConstraint(
             item:self,
             attribute:NSLayoutAttribute.right,
@@ -49,7 +53,7 @@ class VHomeInputField:UIView
             toItem:superview,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
-            constant:right)
+            constant:-right)
         
         let constraints:[NSLayoutConstraint] = [
             layoutBottom,

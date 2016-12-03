@@ -6,9 +6,9 @@ class VHomeInput:UIView
     private weak var viewField:VHomeInputField!
     private weak var layoutBottom:NSLayoutConstraint!
     private weak var layoutHeight:NSLayoutConstraint!
-    private let kStandbyHeight:CGFloat = 60
-    private let kFieldLeft:CGFloat = 40
-    private let kFieldRight:CGFloat = 60
+    private let kStandbyHeight:CGFloat = 45
+    private let kFieldLeft:CGFloat = 45
+    private let kFieldRight:CGFloat = 100
     
     convenience init(controller:CHome)
     {
