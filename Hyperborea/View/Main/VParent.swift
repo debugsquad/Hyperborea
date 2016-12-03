@@ -61,7 +61,13 @@ class VParent:UIView
     
     func pushView(view:VView, completion:(() -> ()))
     {
-        view.layoutTop.constant = 0
-        view.layoutBottom.constant = 0
+        addSubview(view)
+        view.constraints(
+            initialLeft:0,
+            initialRight:0,
+            initialTop:0,
+            initialBottom:0)
+        
+        completion()
     }
 }

@@ -8,7 +8,7 @@ class CParent:UIViewController
     
     init()
     {
-        statusBarStyle = UIStatusBarStyle.lightContent
+        statusBarStyle = UIStatusBarStyle.default
         barHidden = false
         super.init(nibName:nil, bundle:nil)
     }
@@ -23,7 +23,7 @@ class CParent:UIViewController
         super.viewDidLoad()
         
         let home:CHome = CHome()
-
+        pushController(controller:home)
     }
     
     override func loadView()
@@ -50,10 +50,17 @@ class CParent:UIViewController
         addChildViewController(controller)
         controller.beginAppearanceTransition(true, animated:false)
         
-        viewParent.over(
-            controller:controller,
-            underBar:underBar,
-            animate:animate)
+        guard
+            
+            let vview:VView = controller.view as? VView
+        
+        else
+        {
+            return
+        }
+            
+        viewParent.pushView(
+            view:vview)
         {
             controller.endAppearanceTransition()
         }
