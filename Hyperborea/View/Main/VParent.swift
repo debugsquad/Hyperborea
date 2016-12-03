@@ -11,7 +11,7 @@ class VParent:UIView
     {
         self.init()
         clipsToBounds = true
-        backgroundColor = UIColor.main
+        backgroundColor = UIColor.white
         
         let viewBar:VParentBar = VParentBar(
             controller:controller)
@@ -61,7 +61,7 @@ class VParent:UIView
     
     func pushView(view:VView, completion:(() -> ()))
     {
-        addSubview(view)
+        insertSubview(view, belowSubview:viewBar)
         view.constraints(
             initialLeft:0,
             initialRight:0,

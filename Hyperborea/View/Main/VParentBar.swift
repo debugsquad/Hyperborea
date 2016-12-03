@@ -9,5 +9,6 @@ class VParentBar:UIView
         self.init()
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = UIColor.background
     }
 }
