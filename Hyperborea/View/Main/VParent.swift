@@ -26,7 +26,6 @@ class VParent:UIView
             attribute:NSLayoutAttribute.top,
             multiplier:1,
             constant:0)
-        
         let layoutBarHeight:NSLayoutConstraint = NSLayoutConstraint(
             item:viewBar,
             attribute:NSLayoutAttribute.height,
@@ -35,7 +34,6 @@ class VParent:UIView
             attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
             constant:VParent.kBarHeight)
-        
         let layoutBarLeft:NSLayoutConstraint = NSLayoutConstraint(
             item:viewBar,
             attribute:NSLayoutAttribute.left,
@@ -44,7 +42,6 @@ class VParent:UIView
             attribute:NSLayoutAttribute.left,
             multiplier:1,
             constant:0)
-        
         let layoutBarRight:NSLayoutConstraint = NSLayoutConstraint(
             item:viewBar,
             attribute:NSLayoutAttribute.right,
@@ -58,5 +55,13 @@ class VParent:UIView
         addConstraint(layoutBarHeight)
         addConstraint(layoutBarLeft)
         addConstraint(layoutBarRight)
+    }
+    
+    //MARK: public
+    
+    func pushView(view:VView, completion:(() -> ()))
+    {
+        view.layoutTop.constant = 0
+        view.layoutBottom.constant = 0
     }
 }

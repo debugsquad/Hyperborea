@@ -3,13 +3,13 @@ import UIKit
 class CParent:UIViewController
 {
     weak var viewParent:VParent!
-    private var controllers:[CController]
     private var statusBarStyle:UIStatusBarStyle
+    private var barHidden:Bool
     
     init()
     {
-        controllers = []
         statusBarStyle = UIStatusBarStyle.lightContent
+        barHidden = false
         super.init(nibName:nil, bundle:nil)
     }
     
@@ -28,7 +28,7 @@ class CParent:UIViewController
     
     override func loadView()
     {
-        let viewParent:VParent = VParent(parent:self)
+        let viewParent:VParent = VParent(controller:self)
         self.viewParent = viewParent
         view = viewParent
     }
@@ -40,9 +40,22 @@ class CParent:UIViewController
     
     override var prefersStatusBarHidden:Bool
     {
-        return false
+        return barHidden
     }
     
-    //MARK: private
+    //MARK: public
     
+    func pushController(controller:CController)
+    {
+        addChildViewController(controller)
+        controller.beginAppearanceTransition(true, animated:false)
+        
+        viewParent.over(
+            controller:controller,
+            underBar:underBar,
+            animate:animate)
+        {
+            controller.endAppearanceTransition()
+        }
+    }
 }

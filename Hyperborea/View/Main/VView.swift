@@ -19,4 +19,51 @@ class VView:UIView
     {
         fatalError()
     }
+    
+    //MARK: public
+    
+    func constraints(
+        initialLeft:CGFloat,
+        initialRight:CGFloat,
+        initialTop:CGFloat,
+        initialBottom:CGFloat)
+    {
+        layoutLeft = NSLayoutConstraint(
+            item:self,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:superview,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:initialLeft)
+        layoutRight = NSLayoutConstraint(
+            item:self,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:superview,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:initialRight)
+        layoutTop = NSLayoutConstraint(
+            item:self,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:superview,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:initialTop)
+        layoutBottom = NSLayoutConstraint(
+            item:self,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:superview,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:initialBottom)
+        
+        superview?.addConstraint(layoutLeft)
+        superview?.addConstraint(layoutRight)
+        superview?.addConstraint(layoutTop)
+        superview?.addConstraint(layoutBottom)
+    }
 }
