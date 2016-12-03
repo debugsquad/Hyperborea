@@ -35,8 +35,30 @@ class VHomeInput:UIView
             attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
             constant:kStandbyHeight)
+        let layoutLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:self,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:superview,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:self,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:superview,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
         
-        superview?.addConstraint(layoutBottom)
-        superview?.addConstraint(layoutHeight)
+        let constraints:[NSLayoutConstraint] = [
+            layoutBottom,
+            layoutHeight,
+            layoutLeft,
+            layoutRight
+        ]
+        
+        superview?.addConstraints(constraints)
     }
 }
