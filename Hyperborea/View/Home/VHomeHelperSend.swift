@@ -3,6 +3,7 @@ import UIKit
 class VHomeHelperSend:UIButton
 {
     private weak var controller:CHome!
+    private let kCornerRadius:CGFloat = 7
     
     convenience init(controller:CHome)
     {
@@ -10,6 +11,37 @@ class VHomeHelperSend:UIButton
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
+        setTitle(
+            NSLocalizedString("VHomeHelperSend_title", comment:""),
+            for:UIControlState.normal)
+        titleLabel!.font = UIFont.medium(size:13)
+        layer.cornerRadius = kCornerRadius
+        layer.borderWidth = 1
         self.controller = controller
+        
+        deactivate()
+    }
+    
+    //MARK: public
+    
+    func activate()
+    {
+        setTitleColor(
+            UIColor.black,
+            for:UIControlState.normal)
+        setTitleColor(
+            UIColor(white:0, alpha:0.2),
+            for:UIControlState.highlighted)
+        isUserInteractionEnabled = true
+        layer.borderColor = UIColor.black.cgColor
+    }
+    
+    func deactivate()
+    {
+        setTitleColor(
+            UIColor(white:0, alpha:0.2),
+            for:UIControlState.normal)
+        isUserInteractionEnabled = false
+        layer.borderColor = UIColor(white:0, alpha:0.2).cgColor
     }
 }
