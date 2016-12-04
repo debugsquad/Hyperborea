@@ -10,6 +10,7 @@ class VHome:VView
     private weak var layoutInputHeight:NSLayoutConstraint!
     private let kInputMaxHeight:CGFloat = 300
     private let kHelperHeight:CGFloat = 60
+    private let kAnimationDuration:TimeInterval = 0.3
     
     override init(controller:CController)
     {
@@ -100,10 +101,58 @@ class VHome:VView
             layoutViewHelperHeight,
             layoutViewHelperLeft,
             layoutViewHelperRight])
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(notifiedKeyboardChanged(sender:)),
+            name:NSNotification.Name.UIKeyboardWillChangeFrame,
+            object:nil)
     }
     
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    //MARK: notifications
+    
+    func notifiedKeyboardChanged(sender notification:Notification)
+    {
+        guard
+            
+            let userInfo:[AnyHashable:Any] = notification.userInfo,
+            let keyboardFrameValue:NSValue = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue
+            
+        else
+        {
+            return
+        }
+        
+        let keyRect:CGRect = keyboardFrameValue.cgRectValue
+        let yOrigin = keyRect.origin.y
+        let height:CGFloat = bounds.maxY
+        let keyboardHeight:CGFloat
+        
+        if yOrigin < height
+        {
+            keyboardHeight = height - yOrigin
+        }
+        else
+        {
+            keyboardHeight = 0
+        }
+        
+        layoutViewHelperBottom.constant = -keyboardHeight
+        
+        UIView.animate(withDuration:kAnimationDuration)
+        { [weak self] in
+            
+            self?.layoutIfNeeded()
+        }
     }
 }
