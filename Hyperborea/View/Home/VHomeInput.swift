@@ -6,6 +6,7 @@ class VHomeInput:UIView
     private weak var viewText:VHomeInputText!
     private weak var viewPlaceholder:VHomeInputPlaceholder!
     private weak var viewHelper:VHomeInputHelper!
+    private weak var layoutViewHelperBottom:NSLayoutConstraint!
     private let kPlaceholderHeight:CGFloat = 36
     private let kHelperHeight:CGFloat = 60
     
@@ -96,6 +97,39 @@ class VHomeInput:UIView
             attribute:NSLayoutAttribute.right,
             multiplier:1,
             constant:0)
+        
+        layoutViewHelperBottom = NSLayoutConstraint(
+            item:viewHelper,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutViewHelperHeight:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewHelper,
+            attribute:NSLayoutAttribute.height,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kHelperHeight)
+        let layoutViewHelperLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewHelper,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutViewHelperRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewHelper,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
 
         addConstraints([
             layoutViewTextTop,
@@ -105,6 +139,10 @@ class VHomeInput:UIView
             layoutViewPlaceholderTop,
             layoutViewPlaceholderHeight,
             layoutViewPlaceholderLeft,
-            layoutViewPlaceholderRight])
+            layoutViewPlaceholderRight,
+            layoutViewHelperBottom,
+            layoutViewHelperHeight,
+            layoutViewHelperLeft,
+            layoutViewHelperRight])
     }
 }
