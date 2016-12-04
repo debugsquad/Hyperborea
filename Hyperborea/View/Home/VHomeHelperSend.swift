@@ -1,6 +1,6 @@
 import UIKit
 
-class VHomeHelperSender:UIButton
+class VHomeHelperSend:UIButton
 {
     private weak var controller:CHome!
     
