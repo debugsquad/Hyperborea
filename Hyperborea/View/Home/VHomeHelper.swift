@@ -1,6 +1,6 @@
 import UIKit
 
-class VHomeInputHelper:UIView
+class VHomeHelper:UIView
 {
     private weak var controller:CHome!
     
