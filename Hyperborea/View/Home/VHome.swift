@@ -9,7 +9,7 @@ class VHome:VView
     private weak var layoutInputTop:NSLayoutConstraint!
     private weak var layoutInputHeight:NSLayoutConstraint!
     private let kInputMaxHeight:CGFloat = 300
-    private let kHelperHeight:CGFloat = 60
+    private let kHelperHeight:CGFloat = 50
     private let kAnimationDuration:TimeInterval = 0.3
     
     override init(controller:CController)

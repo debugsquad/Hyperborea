@@ -3,7 +3,7 @@ import UIKit
 class VHomeHelperSend:UIButton
 {
     private weak var controller:CHome!
-    private let kCornerRadius:CGFloat = 7
+    private let kCornerRadius:CGFloat = 12
     
     convenience init(controller:CHome)
     {
