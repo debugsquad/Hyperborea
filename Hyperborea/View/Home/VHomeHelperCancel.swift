@@ -12,6 +12,8 @@ class VHomeHelperCancel:UIButton
         setImage(
             #imageLiteral(resourceName: "assetHomeCancel"),
             for:UIControlState.normal)
+        imageView!.contentMode = UIViewContentMode.center
+        imageView!.clipsToBounds = true
         addTarget(
             self,
             action:#selector(actionCancel(sender:)),
