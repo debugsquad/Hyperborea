@@ -5,7 +5,9 @@ class VHomeInput:UIView
     private weak var controller:CHome!
     private weak var viewText:VHomeInputText!
     private weak var viewPlaceholder:VHomeInputPlaceholder!
+    private weak var viewHelper:VHomeInputHelper!
     private let kPlaceholderHeight:CGFloat = 36
+    private let kHelperHeight:CGFloat = 60
     
     convenience init(controller:CHome)
     {
@@ -19,11 +21,15 @@ class VHomeInput:UIView
         let viewText:VHomeInputText = VHomeInputText(controller:controller)
         self.viewText = viewText
         
+        let viewHelper:VHomeInputHelper = VHomeInputHelper(controller:controller)
+        self.viewHelper = viewHelper
+        
         let viewPlaceholder:VHomeInputPlaceholder = VHomeInputPlaceholder()
         self.viewPlaceholder = viewPlaceholder
         
         addSubview(viewPlaceholder)
         addSubview(viewText)
+        addSubview(viewHelper)
         
         let layoutViewTextTop:NSLayoutConstraint = NSLayoutConstraint(
             item:viewText,
