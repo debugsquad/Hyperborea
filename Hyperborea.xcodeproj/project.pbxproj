@@ -11,6 +11,7 @@
 		DA7227F91DF34412001370C6 /* VHomeInputPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7227F81DF34412001370C6 /* VHomeInputPlaceholder.swift */; };
 		DA7227FB1DF355EB001370C6 /* VHomeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7227FA1DF355EB001370C6 /* VHomeHelper.swift */; };
 		DA7227FF1DF4A6EA001370C6 /* VHomeHelperSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7227FE1DF4A6EA001370C6 /* VHomeHelperSend.swift */; };
+		DA7228031DF4B187001370C6 /* home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA7228021DF4B187001370C6 /* home.xcassets */; };
 		DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */; };
 		DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34481DF2332500C5D3D1 /* CController.swift */; };
 		DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34491DF2332500C5D3D1 /* CParent.swift */; };
@@ -36,6 +37,7 @@
 		DA7227F81DF34412001370C6 /* VHomeInputPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeInputPlaceholder.swift; sourceTree = "<group>"; };
 		DA7227FA1DF355EB001370C6 /* VHomeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelper.swift; sourceTree = "<group>"; };
 		DA7227FE1DF4A6EA001370C6 /* VHomeHelperSend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperSend.swift; sourceTree = "<group>"; };
+		DA7228021DF4B187001370C6 /* home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = home.xcassets; sourceTree = "<group>"; };
 		DAAD34301DF22D7500C5D3D1 /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DAAD34481DF2332500C5D3D1 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				DAAD347F1DF23A6C00C5D3D1 /* LaunchScreen.storyboard */,
+				DA7228021DF4B187001370C6 /* home.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAAD34801DF23A6C00C5D3D1 /* LaunchScreen.storyboard in Resources */,
+				DA7228031DF4B187001370C6 /* home.xcassets in Resources */,
 				DAAD34741DF2332500C5D3D1 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

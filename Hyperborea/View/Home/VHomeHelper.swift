@@ -4,8 +4,8 @@ class VHomeHelper:UIView
 {
     private weak var controller:CHome!
     private weak var viewSend:VHomeHelperSend!
-    private let kSendMarginVertical:CGFloat = 8
-    private let kSendRight:CGFloat = -8
+    private let kSendMarginVertical:CGFloat = 9
+    private let kSendRight:CGFloat = -9
     private let kSendWidth:CGFloat = 100
     
     convenience init(controller:CHome)
