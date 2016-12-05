@@ -3,46 +3,43 @@ import Foundation
 class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate
 {
     private weak var delegate:RMainDelegate?
-    let settings:RequestSettings
-    var urlSession:Foundation.URLSession?
-    var responseData:Data?
-    var response:Any?
-    var responseError:Error?
-    var invalidated:Bool = false
-    var statusCode:Int = 0
+    private let settings:RSettings
+    private var urlSession:URLSession?
+    private var responseData:Data?
+    private var response:Any?
+    private var responseError:Error?
+    private var invalidated:Bool
+    private var statusCode:Int?
     
-    class func request(settings:RequestSettings, delegate:RequestProtocol?) -> RequestManager
+    class func request(settings:RSettings, delegate:RMainDelegate?) -> RMain
     {
-        let requestManager:RequestManager = RequestManager(settings:settings, delegate:delegate)
+        let rMain:RMain = RMain(
+            settings:settings,
+            delegate:delegate)
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-            {
-                requestManager.makeRequest()
+        { [weak rMain] in
+            
+            rMain?.makeRequest()
         }
         
-        return requestManager
+        return rMain
     }
     
-    //MARK: Public
-    
-    func cancelRequest()
+    private init(settings:RSettings, delegate:RMainDelegate?)
     {
-        invalidated = true
-        urlSession?.invalidateAndCancel()
+        self.delegate = delegate
+        self.settings = settings
+        invalidated = false
     }
     
     //MARK: Private
-    
-    private init(settings:RequestSettings, delegate:RequestProtocol?)
-    {
-        self.settings = settings
-        self.delegate = delegate
-    }
     
     private func makeRequest()
     {
         let operation:OperationQueue = OperationQueue()
         let configuration:URLSessionConfiguration = URLSessionConfiguration.ephemeral
+        
         let request:URLRequest = settings.type.urlRequest(settings:settings) as URLRequest
         configuration.allowsCellularAccess = true
         configuration.timeoutIntervalForRequest = settings.timeout
@@ -61,6 +58,14 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     private func requestError(error:String)
     {
         delegate?.requestError(request:self, error:error)
+    }
+    
+    //MARK: Public
+    
+    func cancelRequest()
+    {
+        invalidated = true
+        urlSession?.invalidateAndCancel()
     }
     
     //MARK: session delegate
