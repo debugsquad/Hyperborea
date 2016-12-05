@@ -29,4 +29,11 @@ class VHomeInputText:UITextView, UITextViewDelegate
         delegate = self
         self.controller = controller
     }
+    
+    //MARK: textView delegate
+    
+    func textView(_ textView:UITextView, shouldChangeTextIn range:NSRange, replacementText text:String) -> Bool
+    {
+        
+    }
 }
