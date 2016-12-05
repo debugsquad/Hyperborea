@@ -5,6 +5,6 @@
 	<key>oxfordApi</key>
 	<string>https://od-api.oxforddictionaries.com:443/api/v1</string>
 	<key>oxfordApiEntries</key>
-	<string>/entries/%%@/%%@</string>
+	<string>/entries/</string>
 </dict>
 </plist>

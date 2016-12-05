@@ -2,7 +2,7 @@ import Foundation
 
 class RSettingsHomeSearch:RSettings
 {
-    override init()
+    init(text:String)
     {
         let headers:[String:String] = [:
         ]
@@ -14,5 +14,21 @@ class RSettingsHomeSearch:RSettings
             settingsId:RSettings.SettingsId.homeSearch,
             method:RSettings.Method.get,
             urlString:urlString)
+    }
+    
+    override init(
+        model:RModel.Type,
+        headers:[String:String]?,
+        settingsId:SettingsId,
+        method:Method,
+        urlString:String,
+        timeOut:TimeInterval)
+    {
+        fatalError()
+    }
+    
+    override init()
+    {
+        fatalError()
     }
 }
