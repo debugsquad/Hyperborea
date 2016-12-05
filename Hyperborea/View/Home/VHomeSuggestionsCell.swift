@@ -11,4 +11,10 @@ class VHomeSuggestionsCell:UICollectionViewCell
     {
         fatalError()
     }
+    
+    //MARK: public
+    
+    func config(model:RModelHomeSearchResult)
+    {
+    }
 }

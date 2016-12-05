@@ -4,6 +4,7 @@ class VHomeSuggestions:UIView, UICollectionViewDelegate, UICollectionViewDataSou
 {
     private weak var controller:CHome!
     private weak var collectionView:UICollectionView!
+    private(set) var model:RModelHomeSearch?
     
     convenience init(controller:CHome)
     {
@@ -122,5 +123,61 @@ class VHomeSuggestions:UIView, UICollectionViewDelegate, UICollectionViewDataSou
             layoutCollectionViewBottom,
             layoutCollectionViewLeft,
             layoutCollectionViewRight])
+    }
+    
+    //MARK: private
+    
+    private func modelAtIndex(index:IndexPath) -> RModelHomeSearchResult
+    {
+        let item:RModelHomeSearchResult = model!.results[index.item]
+        
+        return item
+    }
+    
+    //MARK: public
+    
+    func config(model:RModelHomeSearch)
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.model = model
+            self?.collectionView.reloadData()
+        }
+    }
+    
+    //MARK: collectionView delegate
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int
+    {
+        return 1
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    {
+        let count:Int
+        
+        if let model:RModelHomeSearch = self.model
+        {
+            count = model.results.count
+        }
+        else
+        {
+            count = 0
+        }
+        
+        return count
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
+    {
+        let item:RModelHomeSearchResult = modelAtIndex(index:indexPath)
+        let cell:VHomeSuggestionsCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier:
+            VHomeSuggestionsCell.reusableIdentifier,
+            for:indexPath) as! VHomeSuggestionsCell
+        cell.config(model:item)
+        
+        return cell
     }
 }
