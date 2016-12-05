@@ -1,9 +1,10 @@
-import Foundation
+import UIKit
 
 class RModelHomeSearch:RModel
 {
     let results:[RModelHomeSearchResult]
     private let kKeyResults:String = "results"
+    private let kFontSize:CGFloat = 13
     
     required init(json:Any)
     {
@@ -13,10 +14,16 @@ class RModelHomeSearch:RModel
         
         if let jsonResults:[Any] = jsonMap?[kKeyResults] as? [Any]
         {
+            let attributes:[String:Any] = [
+                NSFontAttributeName:UIFont.regular(
+                    size:kFontSize)
+            ]
+            
             for jsonResult:Any in jsonResults
             {
                 let result:RModelHomeSearchResult = RModelHomeSearchResult(
-                    json:jsonResult)
+                    json:jsonResult,
+                    attributes:attributes)
                 results.append(result)
             }
         }

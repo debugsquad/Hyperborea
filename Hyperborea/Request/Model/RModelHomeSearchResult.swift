@@ -1,8 +1,12 @@
-import Foundation
+import UIKit
 
 class RModelHomeSearchResult
 {
-    init(json:Any)
+    let attributedString:NSAttributedString
+    let cellWidth:CGFloat
+    let wordId:String
+    
+    init(json:Any, attributes:[String:Any])
     {
         
     }
