@@ -124,6 +124,10 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
             {
                 let response:Any?
                 
+                print(String(
+                    data:responseData,
+                    encoding:String.Encoding.utf8))
+                
                 do
                 {
                     response = try JSONSerialization.jsonObject(

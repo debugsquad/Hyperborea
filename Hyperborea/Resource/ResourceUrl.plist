@@ -4,6 +4,8 @@
 <dict>
 	<key>oxfordApi</key>
 	<string>https://od-api.oxforddictionaries.com:443/api/v1</string>
+	<key>search</key>
+	<string>search</string>
 	<key>entries</key>
 	<string>entries</string>
 </dict>

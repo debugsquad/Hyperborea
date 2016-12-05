@@ -4,30 +4,36 @@ class RSettingsHomeSearch:RSettings
 {
     private let kSourceLang:String = "en"
     private let kEmpty:String = ""
+    private let kAppIdKey:String = "app_id"
+    private let kAppKeyKey:String = "app_key"
+    private let kAppIdValue:String = "c4753937"
+    private let kAppKeyValue:String = "17a46e20204f62884100cc574e3ee824"
     
     init(text:String)
     {
-        let headers:[String:String] = [:
+        let headers:[String:String] = [
+            kAppIdKey:kAppIdValue,
+            kAppKeyKey:kAppKeyValue
         ]
         
         let baseUrl:String = RUrl.sharedInstance.urlFor(
             urlKey:RUrl.UrlKey.oxfordApi)
-        let entriesUrl:String = RUrl.sharedInstance.urlFor(
-            urlKey:RUrl.UrlKey.entries)
+        let searchUrl:String = RUrl.sharedInstance.urlFor(
+            urlKey:RUrl.UrlKey.search)
         let lowercaseText:String = text.lowercased()
-        let entry:String
+        let query:String
         
         if let escapedLowercaseText:String = lowercaseText.addingPercentEncoding(
             withAllowedCharacters:CharacterSet.urlHostAllowed)
         {
-            entry = escapedLowercaseText
+            query = escapedLowercaseText
         }
         else
         {
-            entry = kEmpty
+            query = kEmpty
         }
         
-        let urlString:String = "\(baseUrl)/\(entriesUrl)/\(kSourceLang)/\(entry)"
+        let urlString:String = "\(baseUrl)/\(searchUrl)/\(kSourceLang)?q=\(query)"
         
         super.init(
             model:RModelHomeSearch.self,

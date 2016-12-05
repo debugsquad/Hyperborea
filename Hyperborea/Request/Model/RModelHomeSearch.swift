@@ -6,6 +6,5 @@ class RModelHomeSearch:RModel
     {
         super.init(json:json)
         
-        print(json)
     }
 }

@@ -5,6 +5,7 @@ class RUrl
     enum UrlKey:String
     {
         case oxfordApi = "oxfordApi"
+        case search = "search"
         case entries = "entries"
     }
     
