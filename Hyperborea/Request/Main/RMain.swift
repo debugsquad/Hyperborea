@@ -132,7 +132,9 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
                 }
                 catch
                 {
-                    response = nil
+                    response = String(
+                        data:responseData,
+                        encoding:String.Encoding.utf8)
                 }
                 
                 if let json:Any = response
@@ -158,7 +160,6 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     func urlSession(_ session:URLSession, task:URLSessionTask, didCompleteWithError error:Error?)
     {
         responseError = error
-        responseData = nil
     }
     
     func urlSession(_ session:URLSession, dataTask:URLSessionDataTask, didReceive data:Data)

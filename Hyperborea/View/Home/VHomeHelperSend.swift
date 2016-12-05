@@ -49,6 +49,7 @@ class VHomeHelperSend:UIButton
     func actionSend(sender button:UIButton)
     {
         controller.search()
+        deactivate()
     }
     
     //MARK: private
