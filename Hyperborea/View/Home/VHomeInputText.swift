@@ -34,6 +34,20 @@ class VHomeInputText:UITextView, UITextViewDelegate
     
     func textView(_ textView:UITextView, shouldChangeTextIn range:NSRange, replacementText text:String) -> Bool
     {
+        let currentText:NSString = textView.text as NSString
+        let editedText:String = currentText.replacingCharacters(
+            in:range,
+            with:text)
         
+        if editedText.isEmpty
+        {
+            controller.textEmpty()
+        }
+        else
+        {
+            controller.textNotEmpty()
+        }
+        
+        return true
     }
 }

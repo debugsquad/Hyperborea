@@ -20,4 +20,14 @@ class CHome:CController
         viewHome.viewInput.viewText.text = kEmpty
         viewHome.viewInput.showPlaceholder()
     }
+    
+    func textEmpty()
+    {
+        
+    }
+    
+    func textNotEmpty()
+    {
+        
+    }
 }
