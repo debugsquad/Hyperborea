@@ -2,8 +2,8 @@ import UIKit
 
 class VHome:VView
 {
+    weak var viewInput:VHomeInput!
     private weak var controller:CHome!
-    private weak var viewInput:VHomeInput!
     private weak var viewHelper:VHomeHelper!
     private weak var layoutViewHelperBottom:NSLayoutConstraint!
     private weak var layoutInputTop:NSLayoutConstraint!

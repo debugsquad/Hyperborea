@@ -2,8 +2,8 @@ import UIKit
 
 class VHomeInput:UIView
 {
+    weak var viewText:VHomeInputText!
     private weak var controller:CHome!
-    private weak var viewText:VHomeInputText!
     private weak var viewPlaceholder:VHomeInputPlaceholder!
     private let kPlaceholderHeight:CGFloat = 36
     
@@ -100,5 +100,17 @@ class VHomeInput:UIView
             layoutViewPlaceholderHeight,
             layoutViewPlaceholderLeft,
             layoutViewPlaceholderRight])
+    }
+    
+    //MARK: public
+    
+    func showPlaceholder()
+    {
+        viewPlaceholder.isHidden = false
+    }
+    
+    func hidePlaceholder()
+    {
+        viewPlaceholder.isHidden = true
     }
 }
