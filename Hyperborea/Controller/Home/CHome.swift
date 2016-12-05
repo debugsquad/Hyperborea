@@ -27,7 +27,8 @@ class CHome:CController, RMainDelegate
             name:Notification.requestCancel,
             object:nil)
         
-        
+        let settings:RSettingsHomeSearch = RSettingsHomeSearch(text:text)
+        RMain.request(settings:settings, delegate:self)
     }
     
     func textEmpty()
