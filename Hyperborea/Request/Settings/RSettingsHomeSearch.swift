@@ -4,7 +4,15 @@ class RSettingsHomeSearch:RSettings
 {
     override init()
     {
+        let headers:[String:String] = [:
+        ]
+        let urlString:String = ""
+        
         super.init(
-            model: <#T##RModel.Type#>, headers: <#T##[String : String]?#>, settingsId: <#T##RSettings.SettingsId#>, method: <#T##RSettings.Method#>, urlString: <#T##String#>, timeOut: <#T##TimeInterval#>)
+            model:RModelHomeSearch.self,
+            headers:headers,
+            settingsId:RSettings.SettingsId.homeSearch,
+            method:RSettings.Method.get,
+            urlString:urlString)
     }
 }
