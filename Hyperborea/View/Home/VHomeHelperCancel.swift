@@ -9,9 +9,7 @@ class VHomeHelperCancel:UIButton
         self.init()
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
-        setImage(
-            #imageLiteral(resourceName: "assetHomeCancel"),
-            for:UIControlState.normal)
+        imageView!.tintColor = UIColor.background
         imageView!.contentMode = UIViewContentMode.center
         imageView!.clipsToBounds = true
         addTarget(
@@ -19,6 +17,8 @@ class VHomeHelperCancel:UIButton
             action:#selector(actionCancel(sender:)),
             for:UIControlEvents.touchUpInside)
         self.controller = controller
+        
+        deactivate()
     }
     
     //MARK: actions
@@ -32,22 +32,15 @@ class VHomeHelperCancel:UIButton
     
     func activate()
     {
-        setTitleColor(
-            UIColor.black,
+        setImage(
+            #imageLiteral(resourceName: "assetHomeCancel").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.normal)
-        setTitleColor(
-            UIColor(white:0, alpha:0.2),
-            for:UIControlState.highlighted)
-        isUserInteractionEnabled = true
-        layer.borderColor = UIColor.black.cgColor
     }
     
     func deactivate()
     {
-        setTitleColor(
-            UIColor(white:0, alpha:0.2),
+        setImage(
+            #imageLiteral(resourceName: "assetHomeCancel").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
             for:UIControlState.normal)
-        isUserInteractionEnabled = false
-        layer.borderColor = UIColor(white:0, alpha:0.2).cgColor
     }
 }
