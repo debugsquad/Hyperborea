@@ -21,12 +21,13 @@ class CHome:CController, RMainDelegate
         textEmpty()
     }
     
-    func search(text:String)
+    func search()
     {
         NotificationCenter.default.post(
             name:Notification.requestCancel,
             object:nil)
         
+        let text:String = viewHome.viewInput.viewText.text
         let settings:RSettingsHomeSearch = RSettingsHomeSearch(text:text)
         RMain.request(settings:settings, delegate:self)
     }

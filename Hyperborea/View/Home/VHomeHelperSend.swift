@@ -19,6 +19,10 @@ class VHomeHelperSend:UIButton
         titleLabel!.font = UIFont.medium(size:13)
         layer.cornerRadius = kCornerRadius
         layer.borderWidth = 1
+        addTarget(
+            self,
+            action:#selector(actionSend(sender:)),
+            for:UIControlEvents.touchUpInside)
         self.controller = controller
         
         deactivate()
@@ -38,6 +42,13 @@ class VHomeHelperSend:UIButton
         {
             hover()
         }
+    }
+    
+    //MARK: actions
+    
+    func actionSend(sender button:UIButton)
+    {
+        controller.search()
     }
     
     //MARK: private
