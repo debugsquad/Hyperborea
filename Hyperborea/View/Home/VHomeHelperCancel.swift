@@ -27,4 +27,27 @@ class VHomeHelperCancel:UIButton
     {
         controller.cancel()
     }
+    
+    //MARK: public
+    
+    func activate()
+    {
+        setTitleColor(
+            UIColor.black,
+            for:UIControlState.normal)
+        setTitleColor(
+            UIColor(white:0, alpha:0.2),
+            for:UIControlState.highlighted)
+        isUserInteractionEnabled = true
+        layer.borderColor = UIColor.black.cgColor
+    }
+    
+    func deactivate()
+    {
+        setTitleColor(
+            UIColor(white:0, alpha:0.2),
+            for:UIControlState.normal)
+        isUserInteractionEnabled = false
+        layer.borderColor = UIColor(white:0, alpha:0.2).cgColor
+    }
 }
