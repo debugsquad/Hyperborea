@@ -11,7 +11,7 @@ class VHomeHelperCancel:UIButton
         self.init()
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
-        imageView!.tintColor = UIColor.background
+        imageView!.tintColor = UIColor(white:0, alpha:0.2)
         imageView!.contentMode = UIViewContentMode.center
         imageView!.clipsToBounds = true
         addTarget(
