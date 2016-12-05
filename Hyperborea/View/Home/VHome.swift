@@ -4,6 +4,7 @@ class VHome:VView
 {
     weak var viewInput:VHomeInput!
     weak var viewHelper:VHomeHelper!
+    weak var viewSuggestions:VHomeSuggestions!
     private weak var controller:CHome!
     private weak var layoutViewHelperBottom:NSLayoutConstraint!
     private weak var layoutInputTop:NSLayoutConstraint!
@@ -24,8 +25,12 @@ class VHome:VView
         let viewHelper:VHomeHelper = VHomeHelper(controller:self.controller)
         self.viewHelper = viewHelper
         
+        let viewSuggestions:VHomeSuggestions = VHomeSuggestions(controller:self.controller)
+        self.viewSuggestions = viewSuggestions
+        
         addSubview(viewInput)
         addSubview(viewHelper)
+        addSubview(viewSuggestions)
         
         layoutInputTop = NSLayoutConstraint(
             item:viewInput,
@@ -93,6 +98,39 @@ class VHome:VView
             multiplier:1,
             constant:0)
         
+        let layoutViewSuggestionsHeight:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewSuggestions,
+            attribute:NSLayoutAttribute.height,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kSuggestionsHeight)
+        let layoutViewSuggestionsBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewSuggestions,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:viewHelper,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutViewSuggestionsLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewSuggestions,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutViewSuggestionsRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewSuggestions,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutInputTop,
             layoutInputHeight,
@@ -101,7 +139,11 @@ class VHome:VView
             layoutViewHelperBottom,
             layoutViewHelperHeight,
             layoutViewHelperLeft,
-            layoutViewHelperRight])
+            layoutViewHelperRight,
+            layoutViewSuggestionsHeight,
+            layoutViewSuggestionsBottom,
+            layoutViewSuggestionsLeft,
+            layoutViewSuggestionsRight])
         
         NotificationCenter.default.addObserver(
             self,
