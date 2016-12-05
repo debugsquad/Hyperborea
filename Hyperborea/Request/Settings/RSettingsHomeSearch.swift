@@ -2,19 +2,11 @@ import Foundation
 
 class RSettingsHomeSearch:RSettings
 {
-    private let kSourceLang:String = "en"
     private let kEmpty:String = ""
-    private let kAppIdKey:String = "app_id"
-    private let kAppKeyKey:String = "app_key"
-    private let kAppIdValue:String = "c4753937"
-    private let kAppKeyValue:String = "17a46e20204f62884100cc574e3ee824"
     
     init(text:String)
     {
-        let headers:[String:String] = [
-            kAppIdKey:kAppIdValue,
-            kAppKeyKey:kAppKeyValue
-        ]
+        let headers:[String:String] = 
         
         let baseUrl:String = RUrl.sharedInstance.urlFor(
             urlKey:RUrl.UrlKey.oxfordApi)
