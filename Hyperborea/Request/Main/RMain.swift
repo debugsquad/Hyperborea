@@ -13,6 +13,8 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     private let kNetworkServiceType:URLRequest.NetworkServiceType = URLRequest.NetworkServiceType.default
     private let kCachePolicy:URLRequest.CachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
     private let kResponseDisposition:URLSession.ResponseDisposition = URLSession.ResponseDisposition.allow
+    private let kReadingOptions:JSONSerialization.ReadingOptions = JSONSerialization.ReadingOptions.allowFragments
+    private let kStringEncoding:String.Encoding = String.Encoding.utf8
     private let kCellularAccess:Bool = true
     private let kDiscretionary:Bool = true
     
@@ -128,13 +130,13 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
                 {
                     response = try JSONSerialization.jsonObject(
                         with:responseData,
-                        options:JSONSerialization.ReadingOptions.allowFragments)
+                        options:kReadingOptions)
                 }
                 catch
                 {
                     response = String(
                         data:responseData,
-                        encoding:String.Encoding.utf8)
+                        encoding:kStringEncoding)
                 }
                 
                 if let json:Any = response
