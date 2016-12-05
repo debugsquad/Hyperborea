@@ -6,31 +6,29 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     private let settings:RSettings
     private var urlSession:URLSession?
     private var responseData:Data?
-    private var response:Any?
     private var responseError:Error?
-    private var invalidated:Bool
     private var statusCode:Int?
+    private let kNetworkServiceType:URLRequest.NetworkServiceType = URLRequest.NetworkServiceType.default
+    private let kCachePolicy:URLRequest.CachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
+    private let kCellularAccess:Bool = true
+    private let kDiscretionary:Bool = true
     
-    class func request(settings:RSettings, delegate:RMainDelegate?) -> RMain
+    class func request(settings:RSettings, delegate:RMainDelegate?)
     {
-        let rMain:RMain = RMain(
-            settings:settings,
-            delegate:delegate)
-        
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        { [weak rMain] in
-            
-            rMain?.makeRequest()
+        {
+            let rMain:RMain = RMain(
+                settings:settings,
+                delegate:delegate)
         }
-        
-        return rMain
     }
     
     private init(settings:RSettings, delegate:RMainDelegate?)
     {
         self.delegate = delegate
         self.settings = settings
-        invalidated = false
+        
+        makeRequest()
     }
     
     //MARK: Private
@@ -40,24 +38,43 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
         let operation:OperationQueue = OperationQueue()
         let configuration:URLSessionConfiguration = URLSessionConfiguration.ephemeral
         
-        let request:URLRequest = settings.type.urlRequest(settings:settings) as URLRequest
-        configuration.allowsCellularAccess = true
-        configuration.timeoutIntervalForRequest = settings.timeout
-        configuration.timeoutIntervalForResource = settings.timeout
-        configuration.isDiscretionary = true
-        configuration.networkServiceType = NSURLRequest.NetworkServiceType.default
-        configuration.requestCachePolicy = NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData
-        urlSession = Foundation.URLSession(configuration:configuration, delegate:self, delegateQueue:operation)
+        guard
+            
+            let request:URLRequest = settings.request()
         
-        let task:URLSessionTask = urlSession!.dataTask(with: request)
-        task.resume()
+        else
+        {
+            return
+        }
+        
+        configuration.allowsCellularAccess = kCellularAccess
+        configuration.timeoutIntervalForRequest = settings.timeOut
+        configuration.timeoutIntervalForResource = settings.timeOut
+        configuration.isDiscretionary = kDiscretionary
+        configuration.networkServiceType = kNetworkServiceType
+        configuration.requestCachePolicy = kCachePolicy
+        
+        urlSession = URLSession(
+            configuration:configuration,
+            delegate:self,
+            delegateQueue:operation)
+        
+        let task:URLSessionTask? = urlSession?.dataTask(with:request)
+        task?.resume()
         
         urlSession?.finishTasksAndInvalidate()
     }
     
     private func requestError(error:String)
     {
-        delegate?.requestError(request:self, error:error)
+        delegate?.requestFinished(
+            rMain:self,
+            error:error)
+    }
+    
+    private func requestSuccess()
+    {
+        
     }
     
     //MARK: Public

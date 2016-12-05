@@ -43,19 +43,19 @@ class RSettings
     
     //MARK: public
     
-    func request(settings:RSettings) -> URLRequest?
+    func request() -> URLRequest?
     {
         let urlRequest:NSMutableURLRequest
         
         #if DEBUG
             
-            print(settings.urlString)
+            print(urlString)
             
         #endif
         
         guard
             
-            let url:URL = URL(string:settings.urlString)
+            let url:URL = URL(string:urlString)
         
         else
         {
@@ -65,7 +65,7 @@ class RSettings
         urlRequest = NSMutableURLRequest(
             url:url,
             cachePolicy:kCachePolicy,
-            timeoutInterval:settings.timeOut)
+            timeoutInterval:timeOut)
         urlRequest.httpMethod = method.rawValue
         urlRequest.allowsCellularAccess = kCellularAccess
         
