@@ -9,8 +9,13 @@ class RModelHomeSearchResult
     private let kKeyWord:String = "word"
     private let kKeyWordId:String = "id"
     private let kEmpty:String = ""
+    private let kCellMargin:CGFloat = 10
     
-    init?(json:Any, attributes:[String:Any], size:CGSize, options:NSStringDrawingOptions)
+    init?(
+        json:Any,
+        attributes:[String:Any],
+        size:CGSize,
+        options:NSStringDrawingOptions)
     {
         let jsonMap:[String:Any]? = json as? [String:Any]
         
@@ -35,6 +40,6 @@ class RModelHomeSearchResult
             with:size,
             options:options,
             context:nil).size
-        cellWidth = ceil(cellSize.width)
+        cellWidth = ceil(cellSize.width) + kCellMargin
     }
 }

@@ -20,8 +20,26 @@ class CHome:CController, RMainDelegate
         NotificationCenter.default.post(
             name:Notification.requestCancel,
             object:nil)
-        
-        UIApplication.shared.keyWindow!.endEditing(true)
+    }
+    
+    private func textEmpty()
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.viewHome.viewInput.showPlaceholder()
+            self?.viewHome.viewHelper.textEmpty()
+        }
+    }
+    
+    private func textNotEmpty()
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.viewHome.viewInput.hidePlaceholder()
+            self?.viewHome.viewHelper.textNotEmpty()
+        }
     }
     
     //MARK: public
@@ -29,6 +47,7 @@ class CHome:CController, RMainDelegate
     func cancel()
     {
         cancelRequests()
+        UIApplication.shared.keyWindow!.endEditing(true)
         
         viewHome.viewInput.viewText.text = kEmpty
         textEmpty()
@@ -37,46 +56,52 @@ class CHome:CController, RMainDelegate
     func search()
     {
         cancelRequests()
-
-        let text:String = viewHome.viewInput.viewText.text
-        let settings:RSettingsHomeSearch = RSettingsHomeSearch(text:text)
-        RMain.request(settings:settings, delegate:self)
+        UIApplication.shared.keyWindow!.endEditing(true)
     }
     
-    func textEmpty()
+    func changedText(text:String)
     {
-        viewHome.viewInput.showPlaceholder()
-        viewHome.viewHelper.textEmpty()
-    }
-    
-    func textNotEmpty()
-    {
-        viewHome.viewInput.hidePlaceholder()
-        viewHome.viewHelper.textNotEmpty()
+        cancelRequests()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            if text.isEmpty
+            {
+                self?.textEmpty()
+            }
+            else
+            {
+                self?.textNotEmpty()
+                
+                let settings:RSettingsHomeSearch = RSettingsHomeSearch(text:text)
+                RMain.request(settings:settings, delegate:self)
+            }
+        }
     }
     
     //MARK: rMain delegate
     
     func requestFinished(model:RModel?, status:RMain.StatusCode?, error:String?)
     {
-        if status == kStatusOk
-        {
+        let statusOk:RMain.StatusCode = kStatusOk
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
             
-        }
-        else
-        {
-            let errorString:String
-            
-            if let receivedError:String = error
+            if status == statusOk
             {
-                errorString = receivedError
+                guard
+                    
+                    let modelSearch:RModelHomeSearch = model as? RModelHomeSearch
+                    
+                else
+                {
+                    return
+                }
+                
+                self?.viewHome.viewSuggestions.config(model:modelSearch)
             }
-            else
-            {
-                errorString = NSLocalizedString("CHome_errorUnknown", comment:"")
-            }
-            
-            VAlert.message(message:errorString)
         }
     }
 }

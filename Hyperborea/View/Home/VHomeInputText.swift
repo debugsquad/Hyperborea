@@ -38,15 +38,7 @@ class VHomeInputText:UITextView, UITextViewDelegate
         let editedText:String = currentText.replacingCharacters(
             in:range,
             with:text)
-        
-        if editedText.isEmpty
-        {
-            controller.textEmpty()
-        }
-        else
-        {
-            controller.textNotEmpty()
-        }
+        controller.changedText(text:editedText)
         
         return true
     }
