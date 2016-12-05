@@ -5,6 +5,8 @@ class RModelHomeSearch:RModel
     let results:[RModelHomeSearchResult]
     private let kKeyResults:String = "results"
     private let kFontSize:CGFloat = 13
+    private let kMaxWidth:CGFloat = 300
+    private let kMaxHeight:CGFloat = 20
     
     required init(json:Any)
     {
@@ -19,11 +21,27 @@ class RModelHomeSearch:RModel
                     size:kFontSize)
             ]
             
+            let size:CGSize = CGSize(width:kMaxWidth, height:kMaxHeight)
+            let options:NSStringDrawingOptions = NSStringDrawingOptions([
+                NSStringDrawingOptions.usesFontLeading,
+                NSStringDrawingOptions.usesLineFragmentOrigin
+                ])
+            
             for jsonResult:Any in jsonResults
             {
-                let result:RModelHomeSearchResult = RModelHomeSearchResult(
-                    json:jsonResult,
-                    attributes:attributes)
+                guard
+                    
+                    let result:RModelHomeSearchResult = RModelHomeSearchResult(
+                        json:jsonResult,
+                        attributes:attributes,
+                        size:size,
+                        options:options)
+                
+                else
+                {
+                    continue
+                }
+                
                 results.append(result)
             }
         }
