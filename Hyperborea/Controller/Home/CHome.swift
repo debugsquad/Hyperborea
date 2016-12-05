@@ -1,6 +1,6 @@
 import UIKit
 
-class CHome:CController
+class CHome:CController, RMainDelegate
 {
     private weak var viewHome:VHome!
     private let kEmpty:String = ""
@@ -21,6 +21,15 @@ class CHome:CController
         textEmpty()
     }
     
+    func search(text:String)
+    {
+        NotificationCenter.default.post(
+            name:Notification.requestCancel,
+            object:nil)
+        
+        
+    }
+    
     func textEmpty()
     {
         viewHome.viewInput.showPlaceholder()
@@ -31,5 +40,12 @@ class CHome:CController
     {
         viewHome.viewInput.hidePlaceholder()
         viewHome.viewHelper.textNotEmpty()
+    }
+    
+    //MARK: rMain delegate
+    
+    func requestFinished(model:RModel?, status:RMain.StatusCode?, error:String?)
+    {
+        
     }
 }
