@@ -6,8 +6,8 @@ class RSettingsHomeSearch:RSettings
     
     init(text:String)
     {
-        let headers:[String:String] = 
-        
+        let headers:[String:String] = RConfiguration.sharedInstance.oxfordCredentials
+        let sourceLanguage:String = RConfiguration.sharedInstance.kSourceLang
         let baseUrl:String = RUrl.sharedInstance.urlFor(
             urlKey:RUrl.UrlKey.oxfordApi)
         let searchUrl:String = RUrl.sharedInstance.urlFor(
@@ -25,7 +25,7 @@ class RSettingsHomeSearch:RSettings
             query = kEmpty
         }
         
-        let urlString:String = "\(baseUrl)/\(searchUrl)/\(kSourceLang)?q=\(query)"
+        let urlString:String = "\(baseUrl)/\(searchUrl)/\(sourceLanguage)?q=\(query)"
         
         super.init(
             model:RModelHomeSearch.self,

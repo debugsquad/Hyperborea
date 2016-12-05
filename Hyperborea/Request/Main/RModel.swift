@@ -2,8 +2,13 @@ import Foundation
 
 class RModel
 {
-    required init(json:Any)
+    init()
     {
         
+    }
+    
+    required init(json:Any)
+    {
+        fatalError()
     }
 }

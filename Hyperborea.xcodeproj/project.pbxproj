@@ -16,6 +16,7 @@
 		DA63C3D61DF5F2250026169C /* ResourceUrl.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA63C3D51DF5F2250026169C /* ResourceUrl.plist */; };
 		DA63C3D81DF5F4F70026169C /* RUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3D71DF5F4F70026169C /* RUrl.swift */; };
 		DA63C3DA1DF60C180026169C /* RConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3D91DF60C180026169C /* RConfiguration.swift */; };
+		DA63C3DC1DF60EF80026169C /* RModelHomeSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3DB1DF60EF80026169C /* RModelHomeSearchResult.swift */; };
 		DA7227F71DF33FB6001370C6 /* VHomeInputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7227F61DF33FB6001370C6 /* VHomeInputText.swift */; };
 		DA7227F91DF34412001370C6 /* VHomeInputPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7227F81DF34412001370C6 /* VHomeInputPlaceholder.swift */; };
 		DA7227FB1DF355EB001370C6 /* VHomeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7227FA1DF355EB001370C6 /* VHomeHelper.swift */; };
@@ -52,6 +53,7 @@
 		DA63C3D51DF5F2250026169C /* ResourceUrl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceUrl.plist; sourceTree = "<group>"; };
 		DA63C3D71DF5F4F70026169C /* RUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUrl.swift; sourceTree = "<group>"; };
 		DA63C3D91DF60C180026169C /* RConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RConfiguration.swift; sourceTree = "<group>"; };
+		DA63C3DB1DF60EF80026169C /* RModelHomeSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearchResult.swift; sourceTree = "<group>"; };
 		DA7227F61DF33FB6001370C6 /* VHomeInputText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeInputText.swift; sourceTree = "<group>"; };
 		DA7227F81DF34412001370C6 /* VHomeInputPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeInputPlaceholder.swift; sourceTree = "<group>"; };
 		DA7227FA1DF355EB001370C6 /* VHomeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelper.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				DA63C3D31DF5F0260026169C /* RModelHomeSearch.swift */,
+				DA63C3DB1DF60EF80026169C /* RModelHomeSearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				DA63C3DA1DF60C180026169C /* RConfiguration.swift in Sources */,
 				DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */,
 				DA7228051DF4B1BB001370C6 /* VHomeHelperCancel.swift in Sources */,
+				DA63C3DC1DF60EF80026169C /* RModelHomeSearchResult.swift in Sources */,
 				DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */,
 				DA63C3D21DF5EF7B0026169C /* RSettingsHomeSearch.swift in Sources */,
 				DA63C3D01DF5EBB50026169C /* RModel.swift in Sources */,
