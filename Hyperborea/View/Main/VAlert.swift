@@ -3,15 +3,15 @@ import UIKit
 class VAlert:UIView
 {
     static let kMarginHorizontal:CGFloat = 5
-    static let kHeight:CGFloat = 60
+    static let kHeight:CGFloat = 70
     private weak var layoutTop:NSLayoutConstraint!
     private weak var timer:Timer?
     private let kMarginTop:CGFloat = 20
     private let kAnimationDuration:TimeInterval = 0.2
     private let kTimeOut:TimeInterval = 4
-    private let kFontSize:CGFloat = 13
+    private let kFontSize:CGFloat = 15
     private let kLabelMargin:CGFloat = 5
-    private let kCornerRadius:CGFloat = 10
+    private let kCornerRadius:CGFloat = 19
     private let kBorderWidth:CGFloat = 0.5
     
     class func message(message:String)
@@ -65,9 +65,9 @@ class VAlert:UIView
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = kCornerRadius
         layer.borderWidth = kBorderWidth
-        layer.borderColor = UIColor(white:0, alpha:0.7).cgColor
+        layer.borderColor = UIColor(white:0, alpha:0.2).cgColor
         
-        let blurEffect:UIBlurEffect = UIBlurEffect(style:UIBlurEffectStyle.extraLight)
+        let blurEffect:UIBlurEffect = UIBlurEffect(style:UIBlurEffectStyle.light)
         let blur:UIVisualEffectView = UIVisualEffectView(effect:blurEffect)
         blur.isUserInteractionEnabled = false
         blur.translatesAutoresizingMaskIntoConstraints = false

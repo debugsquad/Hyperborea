@@ -4,6 +4,7 @@ class CHome:CController, RMainDelegate
 {
     private weak var viewHome:VHome!
     private let kEmpty:String = ""
+    private let kStatusOk:RMain.StatusCode = 200
     
     override func loadView()
     {
@@ -58,6 +59,24 @@ class CHome:CController, RMainDelegate
     
     func requestFinished(model:RModel?, status:RMain.StatusCode?, error:String?)
     {
-        
+        if status == kStatusOk
+        {
+            
+        }
+        else
+        {
+            let errorString:String
+            
+            if let receivedError:String = error
+            {
+                errorString = receivedError
+            }
+            else
+            {
+                errorString = NSLocalizedString("CHome_errorUnknown", comment:"")
+            }
+            
+            VAlert.message(message:errorString)
+        }
     }
 }
