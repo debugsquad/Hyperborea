@@ -4,6 +4,8 @@ class VHomeHelperSend:UIButton
 {
     private weak var controller:CHome!
     private let kCornerRadius:CGFloat = 16
+    private let kAlphaNotSelected:CGFloat = 1
+    private let kAlphaSelected:CGFloat = 0.2
     
     convenience init(controller:CHome)
     {
@@ -22,6 +24,36 @@ class VHomeHelperSend:UIButton
         deactivate()
     }
     
+    override var isSelected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var isHighlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    //MARK: private
+    
+    private func hover()
+    {
+        if isSelected || isHighlighted
+        {
+            alpha = kAlphaSelected
+        }
+        else
+        {
+            alpha = kAlphaNotSelected
+        }
+    }
+    
     //MARK: public
     
     func activate()
@@ -30,7 +62,7 @@ class VHomeHelperSend:UIButton
             UIColor.black,
             for:UIControlState.normal)
         setTitleColor(
-            UIColor(white:0, alpha:0.2),
+            UIColor(white:0, alpha:0.8),
             for:UIControlState.highlighted)
         isUserInteractionEnabled = true
         layer.borderColor = UIColor.black.cgColor

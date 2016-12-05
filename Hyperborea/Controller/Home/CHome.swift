@@ -18,16 +18,18 @@ class CHome:CController
     {
         UIApplication.shared.keyWindow!.endEditing(true)
         viewHome.viewInput.viewText.text = kEmpty
-        viewHome.viewInput.showPlaceholder()
+        textEmpty()
     }
     
     func textEmpty()
     {
-        
+        viewHome.viewInput.showPlaceholder()
+        viewHome.viewHelper.textEmpty()
     }
     
     func textNotEmpty()
     {
-        
+        viewHome.viewInput.hidePlaceholder()
+        viewHome.viewHelper.textNotEmpty()
     }
 }

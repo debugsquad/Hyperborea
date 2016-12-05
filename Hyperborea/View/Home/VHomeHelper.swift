@@ -147,4 +147,18 @@ class VHomeHelper:UIView
             layoutViewCancelLeft,
             layoutViewCancelWidth])
     }
+    
+    //MARK: public
+    
+    func textNotEmpty()
+    {
+        viewSend.activate()
+        viewCancel.activate()
+    }
+    
+    func textEmpty()
+    {
+        viewSend.deactivate()
+        viewCancel.deactivate()
+    }
 }

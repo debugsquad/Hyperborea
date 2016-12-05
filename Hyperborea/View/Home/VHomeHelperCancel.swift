@@ -3,6 +3,8 @@ import UIKit
 class VHomeHelperCancel:UIButton
 {
     private weak var controller:CHome!
+    private let kAlphaNotSelected:CGFloat = 1
+    private let kAlphaSelected:CGFloat = 0.2
     
     convenience init(controller:CHome)
     {
@@ -19,6 +21,36 @@ class VHomeHelperCancel:UIButton
         self.controller = controller
         
         deactivate()
+    }
+    
+    override var isSelected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var isHighlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    //MARK: private
+    
+    private func hover()
+    {
+        if isSelected || isHighlighted
+        {
+            alpha = kAlphaSelected
+        }
+        else
+        {
+            alpha = kAlphaNotSelected
+        }
     }
     
     //MARK: actions
