@@ -3,6 +3,7 @@ import Foundation
 protocol RMainDelegate:class
 {
     func requestFinished(
-        rMain:RMain?,
+        model:RModel?,
+        status:RMain.StatusCode?,
         error:String?)
 }

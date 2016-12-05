@@ -14,6 +14,7 @@ class RSettings
     }
     
     static let kTimeOut:TimeInterval = 20
+    let model:RModel.Type
     let headers:[String:String]?
     let settingsId:SettingsId
     let method:Method
@@ -23,12 +24,14 @@ class RSettings
     private let kCellularAccess:Bool = true
     
     init(
+        model:RModel.Type,
         headers:[String:String]?,
         settingsId:SettingsId,
         method:Method,
         urlString:String,
         timeOut:TimeInterval = kTimeOut)
     {
+        self.model = model
         self.headers = headers
         self.settingsId = settingsId
         self.method = method

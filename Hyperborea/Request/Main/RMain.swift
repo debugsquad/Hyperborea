@@ -2,14 +2,17 @@ import Foundation
 
 class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate
 {
+    typealias StatusCode = Int
+    
     private weak var delegate:RMainDelegate?
     private let settings:RSettings
     private var urlSession:URLSession?
     private var responseData:Data?
     private var responseError:Error?
-    private var statusCode:Int?
+    private var statusCode:StatusCode?
     private let kNetworkServiceType:URLRequest.NetworkServiceType = URLRequest.NetworkServiceType.default
     private let kCachePolicy:URLRequest.CachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
+    private let kResponseDisposition:URLSession.ResponseDisposition = URLSession.ResponseDisposition.allow
     private let kCellularAccess:Bool = true
     private let kDiscretionary:Bool = true
     
@@ -17,7 +20,7 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
-            let rMain:RMain = RMain(
+            let _:RMain = RMain(
                 settings:settings,
                 delegate:delegate)
         }
@@ -27,11 +30,30 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     {
         self.delegate = delegate
         self.settings = settings
+        super.init()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(notifiedRequestCancel(sender:)),
+            name:Notification.requestCancel,
+            object:nil)
         
         makeRequest()
     }
     
-    //MARK: Private
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    //MARK: notified
+    
+    func notifiedRequestCancel(sender notification:Notification)
+    {
+        urlSession?.invalidateAndCancel()
+    }
+    
+    //MARK: private
     
     private func makeRequest()
     {
@@ -68,57 +90,66 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     private func requestError(error:String)
     {
         delegate?.requestFinished(
-            rMain:self,
+            model:nil,
+            status:statusCode,
             error:error)
     }
     
-    private func requestSuccess()
+    private func requestSuccess(model:RModel?)
     {
-        
-    }
-    
-    //MARK: Public
-    
-    func cancelRequest()
-    {
-        invalidated = true
-        urlSession?.invalidateAndCancel()
+        delegate?.requestFinished(
+            model:model,
+            status:statusCode,
+            error:nil)
     }
     
     //MARK: session delegate
     
     func urlSession(_ session:URLSession, didBecomeInvalidWithError sessionError:Error?)
     {
-        if !invalidated
+        if responseError == nil
         {
-            if responseError == nil
-            {
-                responseError = sessionError
-            }
+            responseError = sessionError
+        }
+        
+        if responseError != nil
+        {
+            requestError(error:responseError!.localizedDescription)
+        }
+        else
+        {
+            let model:RModel?
             
-            if responseError != nil
+            if let responseData:Data = self.responseData
             {
-                requestError(error:responseError!.localizedDescription)
+                let response:Any?
+                
+                do
+                {
+                    response = try JSONSerialization.jsonObject(
+                        with:responseData,
+                        options:JSONSerialization.ReadingOptions.allowFragments)
+                }
+                catch
+                {
+                    response = nil
+                }
+                
+                if let json:Any = response
+                {
+                    model = settings.model.init(json:json)
+                }
+                else
+                {
+                    model = nil
+                }
             }
             else
             {
-                if responseData != nil
-                {
-                    do
-                    {
-                        response = try JSONSerialization.jsonObject(
-                            with:responseData!,
-                            options:JSONSerialization.ReadingOptions.allowFragments)
-                    }
-                    catch
-                    {
-                    }
-                    
-                    self.settings.parser.parse(rawJSON:response)
-                }
-                
-                delegate?.requestSuccess(request:self)
+                model = nil
             }
+            
+            requestSuccess(model:model)
         }
     }
     
@@ -127,6 +158,7 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     func urlSession(_ session:URLSession, task:URLSessionTask, didCompleteWithError error:Error?)
     {
         responseError = error
+        responseData = nil
     }
     
     func urlSession(_ session:URLSession, dataTask:URLSessionDataTask, didReceive data:Data)
@@ -141,8 +173,11 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     
     func urlSession(_ session:URLSession, dataTask:URLSessionDataTask, didReceive response:URLResponse, completionHandler:@escaping(URLSession.ResponseDisposition) -> ())
     {
-        let httpResponse:HTTPURLResponse = response as! HTTPURLResponse
-        statusCode = httpResponse.statusCode
-        completionHandler(Foundation.URLSession.ResponseDisposition.allow)
+        if let httpResponse:HTTPURLResponse = response as? HTTPURLResponse
+        {
+            statusCode = httpResponse.statusCode
+        }
+
+        completionHandler(kResponseDisposition)
     }
 }
