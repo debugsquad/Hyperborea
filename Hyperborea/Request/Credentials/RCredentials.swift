@@ -7,7 +7,12 @@ class RCredentials
     
     init()
     {
+        let item1:RCredentialsItem1 = RCredentialsItem1()
+        let item2:RCredentialsItem2 = RCredentialsItem2()
+        
         items = [
+            item1,
+            item2
         ]
         
         countItems = UInt32(items.count)
@@ -15,7 +20,7 @@ class RCredentials
     
     //MARK: public
     
-    func credentials() -> [String:String]
+    func current() -> [String:String]
     {
         let random:Int = Int(arc4random_uniform(countItems))
         let item:RCredentialsItem = items[random]

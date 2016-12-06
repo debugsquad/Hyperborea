@@ -6,7 +6,7 @@ class RSettingsHomeSearch:RSettings
     
     init(text:String)
     {
-        let headers:[String:String] = RConfiguration.sharedInstance.oxfordCredentials
+        let headers:[String:String] = RConfiguration.sharedInstance.credentials.current()
         let sourceLanguage:String = RConfiguration.sharedInstance.kSourceLang
         let baseUrl:String = RUrl.sharedInstance.urlFor(
             urlKey:RUrl.UrlKey.oxfordApi)

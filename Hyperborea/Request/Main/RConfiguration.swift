@@ -3,7 +3,7 @@ import Foundation
 class RConfiguration
 {
     static let sharedInstance:RConfiguration = RConfiguration()
-    let oxfordCredentials:[String:String]
+    let credentials:RCredentials
     let kSourceLang:String = "en"
     private let kAppIdKey:String = "app_id"
     private let kAppKeyKey:String = "app_key"
@@ -12,9 +12,6 @@ class RConfiguration
     
     private init()
     {
-        oxfordCredentials = [
-            kAppIdKey:kAppIdValue,
-            kAppKeyKey:kAppKeyValue
-        ]
+        credentials = RCredentials()
     }
 }
