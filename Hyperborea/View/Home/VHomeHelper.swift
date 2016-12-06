@@ -10,7 +10,7 @@ class VHomeHelper:UIView
     private let kSendRight:CGFloat = -9
     private let kSendWidth:CGFloat = 100
     private let kCancelWidth:CGFloat = 50
-    private let kClearWidth:CGFloat = 46
+    private let kClearWidth:CGFloat = 45
     
     convenience init(controller:CHome)
     {
