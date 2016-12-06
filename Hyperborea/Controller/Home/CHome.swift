@@ -30,6 +30,7 @@ class CHome:CController, RMainDelegate
             self?.viewHome.viewInput.showPlaceholder()
             self?.viewHome.viewHelper.textEmpty()
             self?.viewHome.viewSuggestions.config(model:nil)
+            self?.viewHome.viewWords.config(model:nil)
         }
     }
     
@@ -139,7 +140,7 @@ class CHome:CController, RMainDelegate
                 if status == statusOk
                 {
                     let modelEntries:RModelHomeEntries? = model as? RModelHomeEntries
-                    //self?.viewHome.viewWords.config(model:modelEntries)
+                    self?.viewHome.viewWords.config(model:modelEntries)
                 }
                 else
                 {
