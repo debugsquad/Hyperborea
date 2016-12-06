@@ -49,6 +49,8 @@
 		DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD348A1DF241A300C5D3D1 /* VParentBar.swift */; };
 		DAAD348D1DF253D500C5D3D1 /* VHomeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD348C1DF253D500C5D3D1 /* VHomeInput.swift */; };
 		DAB0FA421DF7489800E3B51D /* VHomeWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA411DF7489800E3B51D /* VHomeWords.swift */; };
+		DAB0FA441DF7518400E3B51D /* RModelHomeEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA431DF7518400E3B51D /* RModelHomeEntries.swift */; };
+		DAB0FA461DF7519200E3B51D /* RModelHomeEntriesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA451DF7519200E3B51D /* RModelHomeEntriesItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,8 @@
 		DAAD348A1DF241A300C5D3D1 /* VParentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParentBar.swift; sourceTree = "<group>"; };
 		DAAD348C1DF253D500C5D3D1 /* VHomeInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeInput.swift; sourceTree = "<group>"; };
 		DAB0FA411DF7489800E3B51D /* VHomeWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWords.swift; sourceTree = "<group>"; };
+		DAB0FA431DF7518400E3B51D /* RModelHomeEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntries.swift; sourceTree = "<group>"; };
+		DAB0FA451DF7519200E3B51D /* RModelHomeEntriesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 			children = (
 				DA63C3D31DF5F0260026169C /* RModelHomeSearch.swift */,
 				DA63C3DB1DF60EF80026169C /* RModelHomeSearchResult.swift */,
+				DAB0FA431DF7518400E3B51D /* RModelHomeEntries.swift */,
+				DAB0FA451DF7519200E3B51D /* RModelHomeEntriesItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 				DAAD347D1DF235BC00C5D3D1 /* CHome.swift in Sources */,
 				DA63C3E21DF656590026169C /* VHomeHelperClear.swift in Sources */,
 				DA63C3CB1DF5CF4F0026169C /* RSettings.swift in Sources */,
+				DAB0FA461DF7519200E3B51D /* RModelHomeEntriesItem.swift in Sources */,
 				DA63C3E01DF618780026169C /* VHomeSuggestionsCell.swift in Sources */,
 				DA63C3D41DF5F0260026169C /* RModelHomeSearch.swift in Sources */,
 				DA63C3DE1DF612ED0026169C /* VHomeSuggestions.swift in Sources */,
@@ -405,6 +412,7 @@
 				DA7228051DF4B1BB001370C6 /* VHomeHelperCancel.swift in Sources */,
 				DA63C3DC1DF60EF80026169C /* RModelHomeSearchResult.swift in Sources */,
 				DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */,
+				DAB0FA441DF7518400E3B51D /* RModelHomeEntries.swift in Sources */,
 				DA63C3D21DF5EF7B0026169C /* RSettingsHomeSearch.swift in Sources */,
 				DA63C3D01DF5EBB50026169C /* RModel.swift in Sources */,
 				DAAD346B1DF2332500C5D3D1 /* ExtensionUIColor.swift in Sources */,
