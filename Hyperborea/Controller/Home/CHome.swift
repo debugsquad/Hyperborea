@@ -29,6 +29,7 @@ class CHome:CController, RMainDelegate
             
             self?.viewHome.viewInput.showPlaceholder()
             self?.viewHome.viewHelper.textEmpty()
+            self?.viewHome.viewSuggestions.config(model:nil)
         }
     }
     
@@ -78,6 +79,11 @@ class CHome:CController, RMainDelegate
                 RMain.request(settings:settings, delegate:self)
             }
         }
+    }
+    
+    func selectSuggestion(item:RModelHomeSearchResult)
+    {
+        viewHome.viewInput.viewText.text = item.word
     }
     
     //MARK: rMain delegate

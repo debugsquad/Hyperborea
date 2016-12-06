@@ -4,7 +4,7 @@ class VHomeSuggestionsCell:UICollectionViewCell
 {
     private weak var label:UILabel!
     private weak var base:UIView!
-    private let kMarginVertical:CGFloat = 6
+    private let kMarginVertical:CGFloat = 11
     private let kAlphaNotSelected:CGFloat = 1
     private let kAlphaSelected:CGFloat = 0.2
     
@@ -17,8 +17,8 @@ class VHomeSuggestionsCell:UICollectionViewCell
         let base:UIView = UIView()
         base.backgroundColor = UIColor(
             red:0.2,
-            green:0.6,
-            blue:0.7,
+            green:0.65,
+            blue:0.85,
             alpha:1)
         base.isUserInteractionEnabled = false
         base.translatesAutoresizingMaskIntoConstraints = false

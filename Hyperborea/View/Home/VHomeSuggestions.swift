@@ -5,7 +5,8 @@ class VHomeSuggestions:UIView, UICollectionViewDelegate, UICollectionViewDataSou
     private weak var controller:CHome!
     private weak var collectionView:UICollectionView!
     private(set) var model:RModelHomeSearch?
-    private let kInterLine:CGFloat = 3
+    private let kDeselectTime:TimeInterval = 0.5
+    private let kInterLine:CGFloat = 7
     
     convenience init(controller:CHome)
     {
@@ -25,8 +26,8 @@ class VHomeSuggestions:UIView, UICollectionViewDelegate, UICollectionViewDataSou
         flow.headerReferenceSize = CGSize.zero
         flow.footerReferenceSize = CGSize.zero
         flow.scrollDirection = UICollectionViewScrollDirection.horizontal
-        flow.minimumLineSpacing = kInterLine
-        flow.minimumInteritemSpacing = 0
+        flow.minimumLineSpacing = 0
+        flow.minimumInteritemSpacing = kInterLine
         flow.sectionInset = UIEdgeInsets(
             top:0,
             left:kInterLine,
@@ -141,7 +142,7 @@ class VHomeSuggestions:UIView, UICollectionViewDelegate, UICollectionViewDataSou
     
     //MARK: public
     
-    func config(model:RModelHomeSearch)
+    func config(model:RModelHomeSearch?)
     {
         DispatchQueue.main.async
         { [weak self] in
@@ -193,5 +194,25 @@ class VHomeSuggestions:UIView, UICollectionViewDelegate, UICollectionViewDataSou
         cell.config(model:item)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
+    {
+        let item:RModelHomeSearchResult = modelAtIndex(index:indexPath)
+        collectionView.scrollToItem(
+            at:indexPath,
+            at:UICollectionViewScrollPosition.centeredHorizontally,
+            animated:true)
+        controller.selectSuggestion(item:item)
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kDeselectTime)
+        { [weak collectionView] in
+            
+            collectionView?.selectItem(
+                at:nil,
+                animated:true,
+                scrollPosition:UICollectionViewScrollPosition())
+        }
     }
 }

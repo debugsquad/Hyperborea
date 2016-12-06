@@ -5,7 +5,7 @@ class RModelHomeSearch:RModel
     let results:[RModelHomeSearchResult]
     private let kKeyResults:String = "results"
     private let kFontSize:CGFloat = 14
-    private let kMaxWidth:CGFloat = 300
+    private let kMaxWidth:CGFloat = 700
     private let kMaxHeight:CGFloat = 20
     
     required init(json:Any)

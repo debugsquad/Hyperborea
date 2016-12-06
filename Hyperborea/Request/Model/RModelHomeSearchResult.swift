@@ -9,7 +9,7 @@ class RModelHomeSearchResult
     private let kKeyWord:String = "word"
     private let kKeyWordId:String = "id"
     private let kEmpty:String = ""
-    private let kCellMargin:CGFloat = 32
+    private let kCellMargin:CGFloat = 35
     
     init?(
         json:Any,
