@@ -215,6 +215,7 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
                 withReuseIdentifier:
                 VHomeWordsHeader.reusableIdentifier,
                 for:indexPath) as! VHomeWordsHeader
+            header.config(controller:controller)
             
             reusableView = header
         }
