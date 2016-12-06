@@ -51,6 +51,48 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             withReuseIdentifier:
             VHomeWordsFooter.reusableIdentifier)
         self.collectionView = collectionView
+        
+        addSubview(collectionView)
+        
+        let layoutCollectionViewTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutCollectionViewBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutCollectionViewLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutCollectionViewRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
+        addConstraints([
+            layoutCollectionViewTop,
+            layoutCollectionViewBottom,
+            layoutCollectionViewLeft,
+            layoutCollectionViewRight
+            ])
     }
     
     override func layoutSubviews()

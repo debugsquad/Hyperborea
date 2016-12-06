@@ -2,6 +2,8 @@ import UIKit
 
 class VHomeWordsHeader:UICollectionReusableView
 {
+    private weak var controller:CHome?
+    
     override init(frame:CGRect)
     {
         super.init(frame:frame)
@@ -12,5 +14,12 @@ class VHomeWordsHeader:UICollectionReusableView
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    //MARK: public
+    
+    func config(controller:CHome)
+    {
+        self.controller = controller
     }
 }
