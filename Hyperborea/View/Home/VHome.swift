@@ -226,10 +226,12 @@ class VHome:VView
         if yOrigin < height
         {
             keyboardHeight = height - yOrigin
+            viewHelper.viewCancel.activate()
         }
         else
         {
             keyboardHeight = 0
+            viewHelper.viewCancel.deactivate()
         }
         
         layoutViewHelperBottom.constant = -keyboardHeight

@@ -2,10 +2,10 @@ import UIKit
 
 class VHomeHelper:UIView
 {
+    weak var viewCancel:VHomeHelperCancel!
     private weak var controller:CHome!
     private weak var viewSend:VHomeHelperSend!
     private weak var viewClear:VHomeHelperClear!
-    private weak var viewCancel:VHomeHelperCancel!
     private let kSendMarginVertical:CGFloat = 9
     private let kSendRight:CGFloat = -9
     private let kSendWidth:CGFloat = 100
@@ -197,13 +197,11 @@ class VHomeHelper:UIView
     {
         viewSend.activate()
         viewClear.activate()
-        viewCancel.activate()
     }
     
     func textEmpty()
     {
         viewSend.deactivate()
         viewClear.deactivate()
-        viewCancel.deactivate()
     }
 }
