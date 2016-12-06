@@ -5,6 +5,7 @@ class VHome:VView
     weak var viewInput:VHomeInput!
     weak var viewHelper:VHomeHelper!
     weak var viewSuggestions:VHomeSuggestions!
+    weak var viewWords:VHomeWords!
     private weak var controller:CHome!
     private weak var layoutViewHelperBottom:NSLayoutConstraint!
     private weak var layoutInputTop:NSLayoutConstraint!
@@ -28,6 +29,10 @@ class VHome:VView
         let viewSuggestions:VHomeSuggestions = VHomeSuggestions(controller:self.controller)
         self.viewSuggestions = viewSuggestions
         
+        let viewWords:VHomeWords = VHomeWords(controller:self.controller)
+        self.viewWords = viewWords
+        
+        addSubview(viewWords)
         addSubview(viewInput)
         addSubview(viewHelper)
         addSubview(viewSuggestions)

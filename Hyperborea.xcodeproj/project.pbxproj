@@ -48,6 +48,7 @@
 		DAAD34891DF23C3A00C5D3D1 /* VView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34881DF23C3A00C5D3D1 /* VView.swift */; };
 		DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD348A1DF241A300C5D3D1 /* VParentBar.swift */; };
 		DAAD348D1DF253D500C5D3D1 /* VHomeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD348C1DF253D500C5D3D1 /* VHomeInput.swift */; };
+		DAB0FA421DF7489800E3B51D /* VHomeWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA411DF7489800E3B51D /* VHomeWords.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		DAAD34881DF23C3A00C5D3D1 /* VView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VView.swift; sourceTree = "<group>"; };
 		DAAD348A1DF241A300C5D3D1 /* VParentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParentBar.swift; sourceTree = "<group>"; };
 		DAAD348C1DF253D500C5D3D1 /* VHomeInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeInput.swift; sourceTree = "<group>"; };
+		DAB0FA411DF7489800E3B51D /* VHomeWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWords.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 				DAAD348C1DF253D500C5D3D1 /* VHomeInput.swift */,
 				DA7227F61DF33FB6001370C6 /* VHomeInputText.swift */,
 				DA7227F81DF34412001370C6 /* VHomeInputPlaceholder.swift */,
+				DAB0FA411DF7489800E3B51D /* VHomeWords.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */,
 				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
 				DA63C3E91DF659F60026169C /* RCredentialsItem1.swift in Sources */,
+				DAB0FA421DF7489800E3B51D /* VHomeWords.swift in Sources */,
 				DAAD346C1DF2332500C5D3D1 /* ExtensionUIFont.swift in Sources */,
 				DA63C3E71DF659E20026169C /* RCredentialsItem.swift in Sources */,
 				DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */,

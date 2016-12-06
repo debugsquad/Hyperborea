@@ -76,7 +76,7 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
         configuration.isDiscretionary = kDiscretionary
         configuration.networkServiceType = kNetworkServiceType
         configuration.requestCachePolicy = kCachePolicy
-        
+
         let urlSession:URLSession = URLSession(
             configuration:configuration,
             delegate:self,
