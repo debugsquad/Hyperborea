@@ -5,6 +5,7 @@ class VHomeHelperClear:UIButton
     private weak var controller:CHome!
     private let kAlphaNotSelected:CGFloat = 1
     private let kAlphaSelected:CGFloat = 0.2
+    private let kInsetsRight:CGFloat = 25
     
     convenience init(controller:CHome)
     {
@@ -14,6 +15,11 @@ class VHomeHelperClear:UIButton
         imageView!.tintColor = UIColor(white:0, alpha:0.2)
         imageView!.contentMode = UIViewContentMode.center
         imageView!.clipsToBounds = true
+        imageEdgeInsets = UIEdgeInsets(
+            top:0,
+            left:0,
+            bottom:0,
+            right:kInsetsRight)
         addTarget(
             self,
             action:#selector(actionClear(sender:)),

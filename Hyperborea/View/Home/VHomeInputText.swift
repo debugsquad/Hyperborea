@@ -3,7 +3,7 @@ import UIKit
 class VHomeInputText:UITextView, UITextViewDelegate
 {
     private weak var controller:CHome!
-    private let kInsetsLeft:CGFloat = 15
+    private let kInsetsHorizontal:CGFloat = 15
     
     convenience init(controller:CHome)
     {
@@ -27,9 +27,9 @@ class VHomeInputText:UITextView, UITextViewDelegate
         contentInset = UIEdgeInsets.zero
         textContainerInset = UIEdgeInsets(
             top:0,
-            left:kInsetsLeft,
+            left:kInsetsHorizontal,
             bottom:0,
-            right:-kInsetsLeft)
+            right:kInsetsHorizontal)
         delegate = self
         self.controller = controller
     }
