@@ -136,6 +136,39 @@ class VHome:VView
             multiplier:1,
             constant:0)
         
+        let layoutViewWordsTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewWords,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutViewWordsBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewWords,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutViewWordsLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewWords,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutViewWordsRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewWords,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutInputTop,
             layoutInputHeight,
@@ -148,7 +181,11 @@ class VHome:VView
             layoutViewSuggestionsHeight,
             layoutViewSuggestionsBottom,
             layoutViewSuggestionsLeft,
-            layoutViewSuggestionsRight])
+            layoutViewSuggestionsRight,
+            layoutViewWordsTop,
+            layoutViewWordsBottom,
+            layoutViewWordsLeft,
+            layoutViewWordsRight])
         
         NotificationCenter.default.addObserver(
             self,
