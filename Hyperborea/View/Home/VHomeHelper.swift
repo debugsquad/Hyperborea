@@ -10,8 +10,7 @@ class VHomeHelper:UIView
     private let kSendRight:CGFloat = -9
     private let kSendWidth:CGFloat = 100
     private let kCancelWidth:CGFloat = 50
-    private let kClearLeft:CGFloat = 10
-    private let kClearWidth:CGFloat = 50
+    private let kClearWidth:CGFloat = 46
     
     convenience init(controller:CHome)
     {
@@ -130,7 +129,7 @@ class VHomeHelper:UIView
             toItem:viewCancel,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
-            constant:kClearLeft)
+            constant:0)
         let layoutViewClearWidth:NSLayoutConstraint = NSLayoutConstraint(
             item:viewClear,
             attribute:NSLayoutAttribute.width,
