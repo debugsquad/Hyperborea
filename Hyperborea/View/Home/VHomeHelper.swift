@@ -4,11 +4,14 @@ class VHomeHelper:UIView
 {
     private weak var controller:CHome!
     private weak var viewSend:VHomeHelperSend!
+    private weak var viewClear:VHomeHelperClear!
     private weak var viewCancel:VHomeHelperCancel!
     private let kSendMarginVertical:CGFloat = 9
     private let kSendRight:CGFloat = -9
     private let kSendWidth:CGFloat = 100
     private let kCancelWidth:CGFloat = 50
+    private let kClearLeft:CGFloat = 10
+    private let kClearWidth:CGFloat = 50
     
     convenience init(controller:CHome)
     {
@@ -27,11 +30,15 @@ class VHomeHelper:UIView
         let viewSend:VHomeHelperSend = VHomeHelperSend(controller:controller)
         self.viewSend = viewSend
         
+        let viewClear:VHomeHelperClear = VHomeHelperClear(controller:controller)
+        self.viewClear = viewClear
+        
         let viewCancel:VHomeHelperCancel = VHomeHelperCancel(controller:controller)
         self.viewCancel = viewCancel
         
         addSubview(visualEffect)
         addSubview(viewSend)
+        addSubview(viewClear)
         addSubview(viewCancel)
         
         let layoutVisualEffectTop:NSLayoutConstraint = NSLayoutConstraint(
@@ -100,6 +107,39 @@ class VHomeHelper:UIView
             multiplier:1,
             constant:kSendWidth)
         
+        let layoutViewClearTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewClear,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutViewClearBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewClear,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutViewClearLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewClear,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:kClearLeft)
+        let layoutViewClearWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewClear,
+            attribute:NSLayoutAttribute.width,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kClearWidth)
+        
         let layoutViewCancelTop:NSLayoutConstraint = NSLayoutConstraint(
             item:viewCancel,
             attribute:NSLayoutAttribute.top,
@@ -142,6 +182,10 @@ class VHomeHelper:UIView
             layoutViewSendBottom,
             layoutViewSendRight,
             layoutViewSendWidth,
+            layoutViewClearTop,
+            layoutViewClearBottom,
+            layoutViewClearLeft,
+            layoutViewClearWidth,
             layoutViewCancelTop,
             layoutViewCancelBottom,
             layoutViewCancelLeft,

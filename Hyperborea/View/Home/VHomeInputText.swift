@@ -15,6 +15,10 @@ class VHomeInputText:UITextView, UITextViewDelegate
         backgroundColor = UIColor.clear
         textColor = UIColor.black
         tintColor = UIColor.black
+        bounces = false
+        isScrollEnabled = false
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
         returnKeyType = UIReturnKeyType.default
         keyboardAppearance = UIKeyboardAppearance.light
         autocorrectionType = UITextAutocorrectionType.no
