@@ -50,6 +50,13 @@ class CHome:CController, RMainDelegate
     
     //MARK: public
     
+    func clear()
+    {
+        cancelRequests()
+        viewHome.viewInput.viewText.text = kEmpty
+        textEmpty()
+    }
+    
     func cancel()
     {
         cancelRequests()

@@ -57,7 +57,7 @@ class VHomeHelperClear:UIButton
     
     func actionClear(sender button:UIButton)
     {
-        controller.cancel()
+        controller.clear()
     }
     
     //MARK: public
