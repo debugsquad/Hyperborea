@@ -8,7 +8,6 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     private let settings:RSettings
     private var urlSession:URLSession?
     private var responseData:Data?
-    private var responseError:Error?
     private var statusCode:StatusCode?
     private let kNetworkServiceType:URLRequest.NetworkServiceType = URLRequest.NetworkServiceType.default
     private let kCachePolicy:URLRequest.CachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
@@ -105,18 +104,13 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
             error:nil)
     }
     
-    //MARK: session delegate
+    //MARK: task delegate
     
-    func urlSession(_ session:URLSession, didBecomeInvalidWithError sessionError:Error?)
+    func urlSession(_ session:URLSession, task:URLSessionTask, didCompleteWithError error:Error?)
     {
-        if responseError == nil
+        if let responseError:Error = error
         {
-            responseError = sessionError
-        }
-        
-        if responseError != nil
-        {
-            requestError(error:responseError!.localizedDescription)
+            requestError(error:responseError.localizedDescription)
         }
         else
         {
@@ -155,13 +149,6 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
             
             requestSuccess(model:model)
         }
-    }
-    
-    //MARK: task delegate
-    
-    func urlSession(_ session:URLSession, task:URLSessionTask, didCompleteWithError error:Error?)
-    {
-        responseError = error
     }
     
     func urlSession(_ session:URLSession, dataTask:URLSessionDataTask, didReceive data:Data)

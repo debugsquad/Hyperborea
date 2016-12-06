@@ -5,7 +5,7 @@ class VHomeHelperClear:UIButton
     private weak var controller:CHome!
     private let kAlphaNotSelected:CGFloat = 1
     private let kAlphaSelected:CGFloat = 0.2
-    private let kInsetsRight:CGFloat = 25
+    private let kInsetsRight:CGFloat = 20
     
     convenience init(controller:CHome)
     {

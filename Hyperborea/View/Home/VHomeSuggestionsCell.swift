@@ -4,7 +4,7 @@ class VHomeSuggestionsCell:UICollectionViewCell
 {
     private weak var label:UILabel!
     private weak var base:UIView!
-    private let kMarginVertical:CGFloat = 11
+    private let kMarginVertical:CGFloat = 10
     private let kAlphaNotSelected:CGFloat = 1
     private let kAlphaSelected:CGFloat = 0.2
     

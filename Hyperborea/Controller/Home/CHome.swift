@@ -45,7 +45,8 @@ class CHome:CController, RMainDelegate
     
     private func searchWordId(wordId:String)
     {
-    
+        cancelRequests()
+        UIApplication.shared.keyWindow!.endEditing(true)
     }
     
     //MARK: public
@@ -68,9 +69,6 @@ class CHome:CController, RMainDelegate
     
     func search()
     {
-        cancelRequests()
-        UIApplication.shared.keyWindow!.endEditing(true)
-        
         let wordId:String = viewHome.viewInput.viewText.text
         searchWordId(wordId:wordId)
     }
