@@ -43,6 +43,11 @@ class CHome:CController, RMainDelegate
         }
     }
     
+    private func searchWordId(wordId:String)
+    {
+    
+    }
+    
     //MARK: public
     
     func cancel()
@@ -58,6 +63,9 @@ class CHome:CController, RMainDelegate
     {
         cancelRequests()
         UIApplication.shared.keyWindow!.endEditing(true)
+        
+        let wordId:String = viewHome.viewInput.viewText.text
+        searchWordId(wordId:wordId)
     }
     
     func changedText(text:String)
@@ -84,6 +92,7 @@ class CHome:CController, RMainDelegate
     func selectSuggestion(item:RModelHomeSearchResult)
     {
         viewHome.viewInput.viewText.text = item.word
+        searchWordId(wordId:item.wordId)
     }
     
     //MARK: rMain delegate
