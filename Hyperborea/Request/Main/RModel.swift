@@ -4,7 +4,6 @@ class RModel
 {
     init()
     {
-        
     }
     
     required init(json:Any)

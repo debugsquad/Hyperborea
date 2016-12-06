@@ -1,12 +1,19 @@
 import Foundation
 
-class RModelHomeEntries
+class RModelHomeEntries:RModel
 {
     let items:[RModelHomeEntriesItem]
     
-    init()
+    required init(json:Any)
     {
         items = [
         ]
+        
+        super.init()
+    }
+    
+    override init()
+    {
+        fatalError()
     }
 }

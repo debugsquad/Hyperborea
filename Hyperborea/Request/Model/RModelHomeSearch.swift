@@ -50,4 +50,9 @@ class RModelHomeSearch:RModel
         
         super.init()
     }
+    
+    override init()
+    {
+        fatalError()
+    }
 }

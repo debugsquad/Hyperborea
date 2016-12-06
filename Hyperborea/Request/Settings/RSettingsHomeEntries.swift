@@ -28,7 +28,7 @@ class RSettingsHomeEntries:RSettings
         let urlString:String = "\(baseUrl)/\(entriesUrl)/\(sourceLanguage)/\(escapedWordId)"
         
         super.init(
-            model:RModelHomeSearch.self,
+            model:RModelHomeEntries.self,
             headers:headers,
             settingsId:RSettings.SettingsId.homeEntries,
             method:RSettings.Method.get,
