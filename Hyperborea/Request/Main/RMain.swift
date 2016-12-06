@@ -5,8 +5,8 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     typealias StatusCode = Int
     
     private weak var delegate:RMainDelegate?
+    private weak var urlSession:URLSession?
     private let settings:RSettings
-    private var urlSession:URLSession?
     private var responseData:Data?
     private var statusCode:StatusCode?
     private let kNetworkServiceType:URLRequest.NetworkServiceType = URLRequest.NetworkServiceType.default
