@@ -5,6 +5,7 @@ class VHomeSuggestions:UIView, UICollectionViewDelegate, UICollectionViewDataSou
     private weak var controller:CHome!
     private weak var collectionView:UICollectionView!
     private(set) var model:RModelHomeSearch?
+    private let kInterLine:CGFloat = 3
     
     convenience init(controller:CHome)
     {
@@ -24,9 +25,13 @@ class VHomeSuggestions:UIView, UICollectionViewDelegate, UICollectionViewDataSou
         flow.headerReferenceSize = CGSize.zero
         flow.footerReferenceSize = CGSize.zero
         flow.scrollDirection = UICollectionViewScrollDirection.horizontal
-        flow.minimumLineSpacing = 0
+        flow.minimumLineSpacing = kInterLine
         flow.minimumInteritemSpacing = 0
-        flow.sectionInset = UIEdgeInsets.zero
+        flow.sectionInset = UIEdgeInsets(
+            top:0,
+            left:kInterLine,
+            bottom:0,
+            right:kInterLine)
         
         let collectionView:UICollectionView = UICollectionView(
             frame:CGRect.zero,
