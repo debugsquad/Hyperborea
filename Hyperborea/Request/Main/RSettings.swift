@@ -5,6 +5,7 @@ class RSettings
     enum SettingsId
     {
         case homeSearch
+        case homeEntries
         case unknown
     }
     
