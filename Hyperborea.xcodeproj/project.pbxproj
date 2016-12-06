@@ -51,6 +51,9 @@
 		DAB0FA421DF7489800E3B51D /* VHomeWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA411DF7489800E3B51D /* VHomeWords.swift */; };
 		DAB0FA441DF7518400E3B51D /* RModelHomeEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA431DF7518400E3B51D /* RModelHomeEntries.swift */; };
 		DAB0FA461DF7519200E3B51D /* RModelHomeEntriesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA451DF7519200E3B51D /* RModelHomeEntriesItem.swift */; };
+		DAB0FA481DF7553100E3B51D /* VHomeWordsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA471DF7553100E3B51D /* VHomeWordsHeader.swift */; };
+		DAB0FA4A1DF7553A00E3B51D /* VHomeWordsFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA491DF7553A00E3B51D /* VHomeWordsFooter.swift */; };
+		DAB0FA4C1DF7554500E3B51D /* VHomeWordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA4B1DF7554500E3B51D /* VHomeWordsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +104,9 @@
 		DAB0FA411DF7489800E3B51D /* VHomeWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWords.swift; sourceTree = "<group>"; };
 		DAB0FA431DF7518400E3B51D /* RModelHomeEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntries.swift; sourceTree = "<group>"; };
 		DAB0FA451DF7519200E3B51D /* RModelHomeEntriesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItem.swift; sourceTree = "<group>"; };
+		DAB0FA471DF7553100E3B51D /* VHomeWordsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsHeader.swift; sourceTree = "<group>"; };
+		DAB0FA491DF7553A00E3B51D /* VHomeWordsFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsFooter.swift; sourceTree = "<group>"; };
+		DAB0FA4B1DF7554500E3B51D /* VHomeWordsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +304,9 @@
 				DA7227F61DF33FB6001370C6 /* VHomeInputText.swift */,
 				DA7227F81DF34412001370C6 /* VHomeInputPlaceholder.swift */,
 				DAB0FA411DF7489800E3B51D /* VHomeWords.swift */,
+				DAB0FA471DF7553100E3B51D /* VHomeWordsHeader.swift */,
+				DAB0FA491DF7553A00E3B51D /* VHomeWordsFooter.swift */,
+				DAB0FA4B1DF7554500E3B51D /* VHomeWordsCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -377,7 +386,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB0FA4A1DF7553A00E3B51D /* VHomeWordsFooter.swift in Sources */,
 				DAAD34751DF2332500C5D3D1 /* VAlert.swift in Sources */,
+				DAB0FA4C1DF7554500E3B51D /* VHomeWordsCell.swift in Sources */,
 				DA63C3C71DF5CDE10026169C /* RMain.swift in Sources */,
 				DA63C3D81DF5F4F70026169C /* RUrl.swift in Sources */,
 				DAAD34891DF23C3A00C5D3D1 /* VView.swift in Sources */,
@@ -417,6 +428,7 @@
 				DA63C3D01DF5EBB50026169C /* RModel.swift in Sources */,
 				DAAD346B1DF2332500C5D3D1 /* ExtensionUIColor.swift in Sources */,
 				DAAD346A1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift in Sources */,
+				DAB0FA481DF7553100E3B51D /* VHomeWordsHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
