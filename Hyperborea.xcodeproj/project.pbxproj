@@ -55,6 +55,7 @@
 		DAB0FA4A1DF7553A00E3B51D /* VHomeWordsFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA491DF7553A00E3B51D /* VHomeWordsFooter.swift */; };
 		DAB0FA4C1DF7554500E3B51D /* VHomeWordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA4B1DF7554500E3B51D /* VHomeWordsCell.swift */; };
 		DAB0FA4E1DF7613300E3B51D /* RSettingsHomeEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA4D1DF7613300E3B51D /* RSettingsHomeEntries.swift */; };
+		DAB0FA501DF7773F00E3B51D /* loader.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB0FA4F1DF7773F00E3B51D /* loader.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,7 @@
 		DAB0FA491DF7553A00E3B51D /* VHomeWordsFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsFooter.swift; sourceTree = "<group>"; };
 		DAB0FA4B1DF7554500E3B51D /* VHomeWordsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsCell.swift; sourceTree = "<group>"; };
 		DAB0FA4D1DF7613300E3B51D /* RSettingsHomeEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSettingsHomeEntries.swift; sourceTree = "<group>"; };
+		DAB0FA4F1DF7773F00E3B51D /* loader.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = loader.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 			children = (
 				DAAD347F1DF23A6C00C5D3D1 /* LaunchScreen.storyboard */,
 				DA7228021DF4B187001370C6 /* home.xcassets */,
+				DAB0FA4F1DF7773F00E3B51D /* loader.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				DAAD34801DF23A6C00C5D3D1 /* LaunchScreen.storyboard in Resources */,
 				DA7228031DF4B187001370C6 /* home.xcassets in Resources */,
 				DA63C3D61DF5F2250026169C /* ResourceUrl.plist in Resources */,
+				DAB0FA501DF7773F00E3B51D /* loader.xcassets in Resources */,
 				DAAD34741DF2332500C5D3D1 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

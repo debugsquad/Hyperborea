@@ -52,7 +52,7 @@ class VHomeWordsFooter:UICollectionReusableView
             toItem:self,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
-            constant:kMarginHorizontal)
+            constant:-kMarginHorizontal)
         
         addConstraints([
                 layoutLabelTop,
