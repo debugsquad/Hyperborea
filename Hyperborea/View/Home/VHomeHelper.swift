@@ -127,8 +127,8 @@ class VHomeHelper:UIView
             item:viewClear,
             attribute:NSLayoutAttribute.left,
             relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.left,
+            toItem:viewCancel,
+            attribute:NSLayoutAttribute.right,
             multiplier:1,
             constant:kClearLeft)
         let layoutViewClearWidth:NSLayoutConstraint = NSLayoutConstraint(
@@ -197,12 +197,14 @@ class VHomeHelper:UIView
     func textNotEmpty()
     {
         viewSend.activate()
+        viewClear.activate()
         viewCancel.activate()
     }
     
     func textEmpty()
     {
         viewSend.deactivate()
+        viewClear.deactivate()
         viewCancel.deactivate()
     }
 }
