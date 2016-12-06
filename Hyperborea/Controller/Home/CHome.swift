@@ -107,25 +107,48 @@ class CHome:CController, RMainDelegate
     
     //MARK: rMain delegate
     
-    func requestFinished(model:RModel?, status:RMain.StatusCode?, error:String?)
+    func requestFinished(
+        settingsId:RSettings.SettingsId,
+        model:RModel?,
+        status:RMain.StatusCode?,
+        error:String?)
     {
         let statusOk:RMain.StatusCode = kStatusOk
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
-            if status == statusOk
+            if settingsId == RSettings.SettingsId.homeSearch
             {
-                guard
-                    
-                    let modelSearch:RModelHomeSearch = model as? RModelHomeSearch
-                    
+                if status == statusOk
+                {
+                    let modelSearch:RModelHomeSearch? = model as? RModelHomeSearch
+                    self?.viewHome.viewSuggestions.config(model:modelSearch)
+                }
+            }
+            else if settingsId == RSettings.SettingsId.homeEntries
+            {
+                if status == statusOk
+                {
+                    let modelEntries:RModelHomeEntries? = model as? RModelHomeEntries
+                    self?.viewHome.viewWords.config(model:modelEntries)
+                }
                 else
                 {
-                    return
+                    let errorString:String
+                    
+                    if let errorReceived:String = error
+                    {
+                        errorString = errorReceived
+                    }
+                    else
+                    {
+                        errorString = NSLocalizedString(
+                            "CHome_errorUnknown", comment:"")
+                    }
+                    
+                    VAlert.message(message:errorString)
                 }
-                
-                self?.viewHome.viewSuggestions.config(model:modelSearch)
             }
         }
     }

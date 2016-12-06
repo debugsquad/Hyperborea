@@ -101,6 +101,18 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         super.layoutSubviews()
     }
     
+    //MARK: public
+    
+    func config(model:RModelHomeEntries?)
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.model = model
+            self?.collectionView.reloadData()
+        }
+    }
+    
     //MARK: collectionView delegate
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, insetForSectionAt section:Int) -> UIEdgeInsets

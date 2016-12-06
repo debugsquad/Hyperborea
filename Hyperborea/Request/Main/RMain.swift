@@ -92,6 +92,7 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     private func requestError(error:String)
     {
         delegate?.requestFinished(
+            settingsId:settings.settingsId,
             model:nil,
             status:statusCode,
             error:error)
@@ -100,6 +101,7 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     private func requestSuccess(model:RModel?)
     {
         delegate?.requestFinished(
+            settingsId:settings.settingsId,
             model:model,
             status:statusCode,
             error:nil)
