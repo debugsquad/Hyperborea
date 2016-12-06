@@ -47,6 +47,13 @@ class CHome:CController, RMainDelegate
     {
         cancelRequests()
         UIApplication.shared.keyWindow!.endEditing(true)
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            let settings:RSettingsHomeEntries = RSettingsHomeEntries(wordId:wordId)
+            RMain.request(settings:settings, delegate:self)
+        }
     }
     
     //MARK: public
