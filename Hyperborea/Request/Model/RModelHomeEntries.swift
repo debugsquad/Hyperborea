@@ -6,6 +6,8 @@ class RModelHomeEntries:RModel
     
     required init(json:Any)
     {
+        print(json)
+        
         items = [
         ]
         
