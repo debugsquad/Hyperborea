@@ -5,7 +5,7 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     typealias StatusCode = Int
     
     private weak var delegate:RMainDelegate?
-    private weak var urlSession:URLSession?
+    private weak var task:URLSessionTask?
     private let settings:RSettings
     private var responseData:Data?
     private var statusCode:StatusCode?
@@ -51,7 +51,7 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
     
     func notifiedRequestCancel(sender notification:Notification)
     {
-        urlSession?.invalidateAndCancel()
+        task?.cancel()
     }
     
     //MARK: private
@@ -77,15 +77,16 @@ class RMain:NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionData
         configuration.networkServiceType = kNetworkServiceType
         configuration.requestCachePolicy = kCachePolicy
         
-        urlSession = URLSession(
+        let urlSession:URLSession = URLSession(
             configuration:configuration,
             delegate:self,
             delegateQueue:operation)
         
-        let task:URLSessionTask? = urlSession?.dataTask(with:request)
+        let task:URLSessionTask? = urlSession.dataTask(with:request)
+        self.task = task
         task?.resume()
         
-        urlSession?.finishTasksAndInvalidate()
+        urlSession.finishTasksAndInvalidate()
     }
     
     private func requestError(error:String)

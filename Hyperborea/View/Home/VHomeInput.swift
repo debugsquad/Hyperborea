@@ -12,7 +12,7 @@ class VHomeInput:UIView
         self.init()
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
-        backgroundColor = UIColor.background
+        backgroundColor = UIColor.clear
         
         let barHeight:CGFloat = VParent.kBarHeight
         
