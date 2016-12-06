@@ -4,6 +4,7 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
 {
     private weak var controller:CHome!
     private weak var collectionView:UICollectionView!
+    private weak var spinner:VSpinner!
     private var model:RModelHomeEntries?
     private let kInsetTop:CGFloat = 100
     private let kInsetBottom:CGFloat = 100
@@ -52,7 +53,12 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             VHomeWordsFooter.reusableIdentifier)
         self.collectionView = collectionView
         
+        let spinner:VSpinner = VSpinner()
+        spinner.stopAnimating()
+        self.spinner = spinner
+        
         addSubview(collectionView)
+        addSubview(spinner)
         
         let layoutCollectionViewTop:NSLayoutConstraint = NSLayoutConstraint(
             item:collectionView,
@@ -87,11 +93,48 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             multiplier:1,
             constant:0)
         
+        let layoutSpinnerTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutCollectionViewTop,
             layoutCollectionViewBottom,
             layoutCollectionViewLeft,
-            layoutCollectionViewRight
+            layoutCollectionViewRight,
+            layoutSpinnerTop,
+            layoutSpinnerBottom,
+            layoutSpinnerLeft,
+            layoutSpinnerRight
             ])
     }
     
@@ -103,6 +146,13 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     
     //MARK: public
     
+    func showLoading()
+    {
+        model = nil
+        collectionView.reloadData()
+        spinner.startAnimating()
+    }
+    
     func config(model:RModelHomeEntries?)
     {
         DispatchQueue.main.async
@@ -110,6 +160,7 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             
             self?.model = model
             self?.collectionView.reloadData()
+            self?.spinner.stopAnimating()
         }
     }
     

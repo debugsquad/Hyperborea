@@ -2,7 +2,7 @@ import UIKit
 
 class VSpinner:UIImageView
 {
-    private let kAnimationDuration:TimeInterval = 1
+    private let kAnimationDuration:TimeInterval = 2
     
     init()
     {

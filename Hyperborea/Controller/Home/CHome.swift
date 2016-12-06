@@ -47,6 +47,7 @@ class CHome:CController, RMainDelegate
     {
         cancelRequests()
         UIApplication.shared.keyWindow!.endEditing(true)
+        viewHome.viewWords.showLoading()
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
@@ -138,7 +139,7 @@ class CHome:CController, RMainDelegate
                 if status == statusOk
                 {
                     let modelEntries:RModelHomeEntries? = model as? RModelHomeEntries
-                    self?.viewHome.viewWords.config(model:modelEntries)
+                    //self?.viewHome.viewWords.config(model:modelEntries)
                 }
                 else
                 {
