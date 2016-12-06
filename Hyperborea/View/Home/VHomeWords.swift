@@ -7,6 +7,8 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     private var model:RModelHomeEntries?
     private let kInsetTop:CGFloat = 100
     private let kInsetBottom:CGFloat = 100
+    private let kInterLine:CGFloat = 1
+    private let kCellHeight:CGFloat = 80
     
     convenience init(controller:CHome)
     {
@@ -15,6 +17,46 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
+        
+        let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flow.minimumLineSpacing = kInterLine
+        flow.minimumInteritemSpacing = 0
+        flow.scrollDirection = UICollectionViewScrollDirection.vertical
+        
+        let collectionView:UICollectionView = UICollectionView(
+            frame:CGRect.zero,
+            collectionViewLayout:flow)
+        collectionView.clipsToBounds = true
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.alwaysBounceVertical = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(
+            VHomeWordsCell.self,
+            forCellWithReuseIdentifier:
+            VHomeWordsCell.reusableIdentifier)
+        collectionView.register(
+            VHomeWordsHeader.self,
+            forSupplementaryViewOfKind:
+            UICollectionElementKindSectionHeader,
+            withReuseIdentifier:
+            VHomeWordsHeader.reusableIdentifier)
+        collectionView.register(
+            VHomeWordsFooter.self,
+            forSupplementaryViewOfKind:
+            UICollectionElementKindSectionFooter,
+            withReuseIdentifier:
+            VHomeWordsFooter.reusableIdentifier)
+        self.collectionView = collectionView
+    }
+    
+    override func layoutSubviews()
+    {
+        collectionView.collectionViewLayout.invalidateLayout()
+        super.layoutSubviews()
     }
     
     //MARK: collectionView delegate
@@ -32,7 +74,11 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         
         let insets:UIEdgeInsets
         
-        if model.items.count > 0
+        if model.items.isEmpty
+        {
+            insets = UIEdgeInsets.zero
+        }
+        else
         {
             insets = UIEdgeInsets(
                 top:kInsetTop,
@@ -40,12 +86,61 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
                 bottom:kInsetBottom,
                 right:0)
         }
-        else
-        {
-            insets = UIEdgeInsets.zero
-        }
         
         return insets
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let width:CGFloat = collectionView.bounds.maxX
+        let size:CGSize = CGSize(
+            width:width,
+            height:kCellHeight)
+        
+        return size
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section:Int) -> CGSize
+    {
+        let height:CGFloat = collectionView.bounds.maxY
+        let size:CGSize
+        
+        if model == nil
+        {
+            size = CGSize(width:0, height:height)
+        }
+        else
+        {
+            size = CGSize.zero
+        }
+        
+        return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize
+    {
+        let height:CGFloat = collectionView.bounds.maxY
+        let size:CGSize
+        
+        guard
+            
+            let model:RModelHomeEntries = self.model
+            
+        else
+        {
+            return CGSize.zero
+        }
+        
+        if model.items.isEmpty
+        {
+            size = CGSize(width:0, height:height)
+        }
+        else
+        {
+            size = CGSize.zero
+        }
+        
+        return size
     }
     
     func numberOfSections(in collectionView:UICollectionView) -> Int
@@ -67,8 +162,41 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         return count
     }
     
+    func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
+    {
+        let reusableView:UICollectionReusableView
+        
+        if kind == UICollectionElementKindSectionHeader
+        {
+            let header:VHomeWordsHeader = collectionView.dequeueReusableSupplementaryView(
+                ofKind:kind,
+                withReuseIdentifier:
+                VHomeWordsHeader.reusableIdentifier,
+                for:indexPath) as! VHomeWordsHeader
+            
+            reusableView = header
+        }
+        else
+        {
+            let footer:VHomeWordsFooter = collectionView.dequeueReusableSupplementaryView(
+                ofKind:kind,
+                withReuseIdentifier:
+                VHomeWordsFooter.reusableIdentifier,
+                for:indexPath) as! VHomeWordsFooter
+            
+            reusableView = footer
+        }
+        
+        return reusableView
+    }
+    
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
+        let cell:VHomeWordsCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier:
+            VHomeWordsCell.reusableIdentifier,
+            for:indexPath) as! VHomeWordsCell
         
+        return cell
     }
 }
