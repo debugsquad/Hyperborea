@@ -51,6 +51,11 @@ class CHome:CController, RMainDelegate
     
     //MARK: public
     
+    func startEdition()
+    {
+        viewHome.viewInput.viewText.becomeFirstResponder()
+    }
+    
     func clear()
     {
         cancelRequests()

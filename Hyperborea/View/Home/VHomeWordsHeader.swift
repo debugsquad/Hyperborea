@@ -14,6 +14,10 @@ class VHomeWordsHeader:UICollectionReusableView
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = UIColor.clear
+        button.addTarget(
+            self,
+            action:#selector(actionButton(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         addSubview(button)
         
@@ -60,6 +64,13 @@ class VHomeWordsHeader:UICollectionReusableView
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    //MARK: actions
+    
+    func actionButton(sender button:UIButton)
+    {
+        controller?.startEdition()
     }
     
     //MARK: public
