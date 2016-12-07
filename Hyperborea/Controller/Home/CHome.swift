@@ -157,6 +157,7 @@ class CHome:CController, RMainDelegate
                     }
                     
                     VAlert.message(message:errorString)
+                    self?.viewHome.viewWords.config(model:nil)
                 }
             }
         }
