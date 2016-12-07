@@ -23,8 +23,9 @@ class RModelHomeEntriesSenses
         guard
         
             let jsonMap:[String:Any] = json as? [String:Any],
-            let jsonEntries:[String:Any] = jsonMap[kKeyEntries] as? [String:Any],
-            let jsonSenses:[Any] = jsonEntries[kKeySenses] as? [Any],
+            let jsonEntries:[Any] = jsonMap[kKeyEntries] as? [Any],
+            let jsonEntriesFirst:[String:Any] = jsonEntries.first as? [String:Any],
+            let jsonSenses:[Any] = jsonEntriesFirst[kKeySenses] as? [Any],
             let jsonSensesFirst:[String:Any] = jsonSenses.first as? [String:Any]
         
         else
