@@ -9,7 +9,7 @@ extension UIFont
     
     class func italic(size:CGFloat) -> UIFont
     {
-        return UIFont(name:"HelveticaNeue-ThinItalic", size:size)!
+        return UIFont(name:"Avenir-LightOblique", size:size)!
     }
     
     class func medium(size:CGFloat) -> UIFont
