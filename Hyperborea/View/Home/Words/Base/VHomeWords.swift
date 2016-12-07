@@ -172,6 +172,12 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     
     //MARK: collectionView delegate
     
+    func scrollViewDidScroll(_ scrollView:UIScrollView)
+    {
+        let offsetY:CGFloat = scrollView.contentOffset.y
+        controller.viewHome.scrollDidScroll(offsetY:offsetY)
+    }
+    
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, insetForSectionAt section:Int) -> UIEdgeInsets
     {
         guard

@@ -2,7 +2,7 @@ import UIKit
 
 class CHome:CController, RMainDelegate
 {
-    private weak var viewHome:VHome!
+    weak var viewHome:VHome!
     private let kEmpty:String = ""
     private let kStatusOk:RMain.StatusCode = 200
     

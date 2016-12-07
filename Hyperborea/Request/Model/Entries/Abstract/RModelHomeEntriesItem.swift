@@ -14,7 +14,7 @@ class RModelHomeEntriesItem
     private let options:NSStringDrawingOptions
     private let kMarginHorizontal:CGFloat = 20
     private let kAddHeight:CGFloat = 120
-    private let kMaxHeight:CGFloat = 3000
+    private let kMaxHeight:CGFloat = 90000
     
     init(
         attributedString:NSAttributedString,
@@ -38,7 +38,8 @@ class RModelHomeEntriesItem
     
     func cellHeight(cellWidth:CGFloat) -> CGFloat
     {
-        let maxSize:CGSize = CGSize(width:cellWidth, height:kMaxHeight)
+        let usableWidth:CGFloat = cellWidth - kMarginHorizontal
+        let maxSize:CGSize = CGSize(width:usableWidth, height:kMaxHeight)
         let textSize:CGSize = attributedString.boundingRect(
             with:maxSize,
             options:options,

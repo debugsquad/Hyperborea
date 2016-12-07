@@ -10,10 +10,11 @@ class VHome:VView
     private weak var layoutViewHelperBottom:NSLayoutConstraint!
     private weak var layoutInputTop:NSLayoutConstraint!
     private weak var layoutInputHeight:NSLayoutConstraint!
+    private let kAnimationDuration:TimeInterval = 3
     private let kInputMaxHeight:CGFloat = 150
     private let kHelperHeight:CGFloat = 50
     private let kSuggestionsHeight:CGFloat = 46
-    private let kAnimationDuration:TimeInterval = 3
+    private let kScrollMaxMove:CGFloat = -200
     
     override init(controller:CController)
     {
@@ -240,6 +241,18 @@ class VHome:VView
         { [weak self] in
             
             self?.layoutIfNeeded()
+        }
+    }
+    
+    //MARK: public
+    
+    func scrollDidScroll(offsetY:CGFloat)
+    {
+        print("offsety \(offsetY)")
+        
+        if offsetY < kScrollMaxMove
+        {
+            layoutInputTop.constant = offsetY
         }
     }
 }
