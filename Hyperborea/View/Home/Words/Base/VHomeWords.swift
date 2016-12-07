@@ -9,7 +9,7 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     private let kInsetTop:CGFloat = 150
     private let kInsetBottom:CGFloat = 100
     private let kInterLine:CGFloat = 1
-    private let kCellHeight:CGFloat = 80
+    private let kCellHeight:CGFloat = 300
     
     convenience init(controller:CHome)
     {
@@ -310,6 +310,7 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             withReuseIdentifier:
             item.reusableIdentifier,
             for:indexPath) as! VHomeWordsCell
+        cell.config(model:item)
         
         return cell
     }

@@ -6,13 +6,28 @@ class RModelHomeEntriesItemVerb:RModelHomeEntriesItem
     
     required init(json:Any)
     {
+        let attributes:[String:Any] = [
+            NSFontAttributeName:UIFont.medium(
+                size:RModelHomeEntriesItem.kTitleFontSize),
+            NSForegroundColorAttributeName:UIColor(
+                white:RModelHomeEntriesItem.kTitleWhite,
+                alpha:1)
+        ]
+        let title:String = NSLocalizedString("RModelHomeEntriesItemVerb_title", comment:"")
+        let senses:RModelHomeEntriesSenses = RModelHomeEntriesSenses(json:json)
+        let titleString:NSAttributedString = NSAttributedString(
+            string:title,
+            attributes:attributes)
+        let sensesString:NSAttributedString = senses.attributedString()
+        
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        mutableString.append(titleString)
+        mutableString.append(sensesString)
+        
         let reusableIdentifier:String = VHomeWordsCellFull.reusableIdentifier
-        let attributedString:NSAttributedString = NSAttributedString(
-            string:"",
-            attributes:nil)
         
         super.init(
-            attributedString:attributedString,
+            attributedString:mutableString,
             reusableIdentifier:reusableIdentifier,
             selectable:kSelectable)
     }
