@@ -5,6 +5,7 @@ class RModelHomeEntriesSenses
     private let subsenses:[RModelHomeEntriesSensesSub]?
     private let title:String?
     private let examples:[String]?
+    private let kKeyEntries:String = "entries"
     private let kKeySenses:String = "senses"
     private let kKeyDefinitions:String = "definitions"
     private let kKeyExamples:String = "examples"
@@ -22,7 +23,8 @@ class RModelHomeEntriesSenses
         guard
         
             let jsonMap:[String:Any] = json as? [String:Any],
-            let jsonSenses:[Any] = jsonMap[kKeySenses] as? [Any],
+            let jsonEntries:[String:Any] = jsonMap[kKeyEntries] as? [String:Any],
+            let jsonSenses:[Any] = jsonEntries[kKeySenses] as? [Any],
             let jsonSensesFirst:[String:Any] = jsonSenses.first as? [String:Any]
         
         else
