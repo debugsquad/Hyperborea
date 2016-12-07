@@ -59,6 +59,7 @@
 		DAB0FA621DF78AAC00E3B51D /* RModelHomeEntriesItemVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5B1DF78AAC00E3B51D /* RModelHomeEntriesItemVerb.swift */; };
 		DAB0FA631DF78AAC00E3B51D /* RModelHomeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5D1DF78AAC00E3B51D /* RModelHomeSearch.swift */; };
 		DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5E1DF78AAC00E3B51D /* RModelHomeSearchResult.swift */; };
+		DAB0FA681DF78B2000E3B51D /* RModelHomeEntriesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA671DF78B2000E3B51D /* RModelHomeEntriesFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		DAB0FA5B1DF78AAC00E3B51D /* RModelHomeEntriesItemVerb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemVerb.swift; sourceTree = "<group>"; };
 		DAB0FA5D1DF78AAC00E3B51D /* RModelHomeSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearch.swift; sourceTree = "<group>"; };
 		DAB0FA5E1DF78AAC00E3B51D /* RModelHomeSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearchResult.swift; sourceTree = "<group>"; };
+		DAB0FA671DF78B2000E3B51D /* RModelHomeEntriesFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				DAB0FA581DF78AAC00E3B51D /* RModelHomeEntries.swift */,
+				DAB0FA671DF78B2000E3B51D /* RModelHomeEntriesFactory.swift */,
 				DAB0FA591DF78AAC00E3B51D /* RModelHomeEntriesItem.swift */,
 				DAB0FA5A1DF78AAC00E3B51D /* RModelHomeEntriesItemNoun.swift */,
 				DAB0FA5B1DF78AAC00E3B51D /* RModelHomeEntriesItemVerb.swift */,
@@ -465,6 +468,7 @@
 				DAAD346B1DF2332500C5D3D1 /* ExtensionUIColor.swift in Sources */,
 				DAAD346A1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift in Sources */,
 				DAB0FA481DF7553100E3B51D /* VHomeWordsHeader.swift in Sources */,
+				DAB0FA681DF78B2000E3B51D /* RModelHomeEntriesFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
