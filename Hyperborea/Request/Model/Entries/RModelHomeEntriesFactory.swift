@@ -9,6 +9,7 @@ class RModelHomeEntriesFactory
     private let kResourceName:String = "ResourceLexicalCategory"
     private let kResourceExtension:String = "plist"
     private let kEmpty:String = ""
+    private let kFullNameFormat:String = "%@.%@"
     
     private init()
     {
@@ -41,8 +42,21 @@ class RModelHomeEntriesFactory
     {
         guard
             
-            let className:String = lexicalMap?[category],
-            let classType:AnyObject.Type = NSClassFromString(className)
+            let className:String = lexicalMap?[category]
+        
+        else
+        {
+            return nil
+        }
+        
+        let classFullName:String = String(
+            format:kFullNameFormat,
+            bundleName,
+            className)
+        
+        guard
+            
+            let classType:AnyObject.Type = NSClassFromString(classFullName)
         
         else
         {
