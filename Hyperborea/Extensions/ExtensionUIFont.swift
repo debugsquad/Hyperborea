@@ -7,6 +7,11 @@ extension UIFont
         return UIFont(name:"PingFangHK-Light", size:size)!
     }
     
+    class func italic(size:CGFloat) -> UIFont
+    {
+        return UIFont(name:"HelveticaNeue-ThinItalic", size:size)!
+    }
+    
     class func medium(size:CGFloat) -> UIFont
     {
         return UIFont(name:"PingFangHK-Regular", size:size)!

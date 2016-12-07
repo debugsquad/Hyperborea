@@ -12,11 +12,7 @@ class RModelHomeEntriesSenses
     private let kKeyExampleText:String = "text"
     private let kKeySubsenses:String = "subsenses"
     private let kSensesSeparator:String = "\n"
-    private let kExampleSeparator:String = "\n○ "
-    private let kTitleFontSize:CGFloat = 16
-    private let kExampleFontSize:CGFloat = 14
-    private let kTitleWhite:CGFloat = 0.5
-    private let kExampleWhite:CGFloat = 0.6
+    private let kExampleSeparator:String = "\n• "
     
     init(json:Any)
     {
@@ -99,9 +95,11 @@ class RModelHomeEntriesSenses
         if let title:String = self.title
         {
             let attributes:[String:Any] = [
-                NSFontAttributeName:UIFont.regular(size:kTitleFontSize),
+                NSFontAttributeName:UIFont.regular(
+                    size:RModelHomeEntriesItem.kDefinitionFontSize),
                 NSForegroundColorAttributeName:UIColor(
-                    white:kTitleWhite, alpha:1)
+                    white:RModelHomeEntriesItem.kDefinitionWhite,
+                    alpha:1)
             ]
             
             let titleSeparator:String = "\(kSensesSeparator)\(title)"
@@ -115,9 +113,11 @@ class RModelHomeEntriesSenses
         if let examples:[String] = self.examples
         {
             let attributes:[String:Any] = [
-                NSFontAttributeName:UIFont.regular(size:kExampleFontSize),
+                NSFontAttributeName:UIFont.italic(
+                    size:RModelHomeEntriesItem.kExampleFontSize),
                 NSForegroundColorAttributeName:UIColor(
-                    white:kExampleWhite, alpha:1)
+                    white:RModelHomeEntriesItem.kExampleWhite,
+                    alpha:1)
             ]
             
             for example:String in examples

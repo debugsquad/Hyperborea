@@ -51,7 +51,7 @@ class VHomeWordsCellFull:VHomeWordsCell
             toItem:self,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
-            constant:kLabelEntityMarginHorizontal)
+            constant:-kLabelEntityMarginHorizontal)
         
         addConstraints([
             layoutLabelEntityTop,
