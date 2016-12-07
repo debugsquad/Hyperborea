@@ -56,6 +56,9 @@
 		DAB0FA4C1DF7554500E3B51D /* VHomeWordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA4B1DF7554500E3B51D /* VHomeWordsCell.swift */; };
 		DAB0FA4E1DF7613300E3B51D /* RSettingsHomeEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA4D1DF7613300E3B51D /* RSettingsHomeEntries.swift */; };
 		DAB0FA501DF7773F00E3B51D /* loader.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB0FA4F1DF7773F00E3B51D /* loader.xcassets */; };
+		DAB0FA521DF784E600E3B51D /* RModelHomeEntriesItemVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA511DF784E600E3B51D /* RModelHomeEntriesItemVerb.swift */; };
+		DAB0FA541DF784F600E3B51D /* RModelHomeEntriesItemNoun.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA531DF784F600E3B51D /* RModelHomeEntriesItemNoun.swift */; };
+		DAB0FA561DF787F800E3B51D /* ResourceLexicalCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB0FA551DF787F800E3B51D /* ResourceLexicalCategory.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +114,9 @@
 		DAB0FA4B1DF7554500E3B51D /* VHomeWordsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsCell.swift; sourceTree = "<group>"; };
 		DAB0FA4D1DF7613300E3B51D /* RSettingsHomeEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSettingsHomeEntries.swift; sourceTree = "<group>"; };
 		DAB0FA4F1DF7773F00E3B51D /* loader.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = loader.xcassets; sourceTree = "<group>"; };
+		DAB0FA511DF784E600E3B51D /* RModelHomeEntriesItemVerb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemVerb.swift; sourceTree = "<group>"; };
+		DAB0FA531DF784F600E3B51D /* RModelHomeEntriesItemNoun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemNoun.swift; sourceTree = "<group>"; };
+		DAB0FA551DF787F800E3B51D /* ResourceLexicalCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceLexicalCategory.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,8 @@
 				DA63C3DB1DF60EF80026169C /* RModelHomeSearchResult.swift */,
 				DAB0FA431DF7518400E3B51D /* RModelHomeEntries.swift */,
 				DAB0FA451DF7519200E3B51D /* RModelHomeEntriesItem.swift */,
+				DAB0FA511DF784E600E3B51D /* RModelHomeEntriesItemVerb.swift */,
+				DAB0FA531DF784F600E3B51D /* RModelHomeEntriesItemNoun.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 			children = (
 				DAAD345A1DF2332500C5D3D1 /* Localizable.strings */,
 				DA63C3D51DF5F2250026169C /* ResourceUrl.plist */,
+				DAB0FA551DF787F800E3B51D /* ResourceLexicalCategory.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -383,6 +392,7 @@
 				DA63C3D61DF5F2250026169C /* ResourceUrl.plist in Resources */,
 				DAB0FA501DF7773F00E3B51D /* loader.xcassets in Resources */,
 				DAAD34741DF2332500C5D3D1 /* Localizable.strings in Resources */,
+				DAB0FA561DF787F800E3B51D /* ResourceLexicalCategory.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +418,7 @@
 				DA63C3E91DF659F60026169C /* RCredentialsItem1.swift in Sources */,
 				DAB0FA421DF7489800E3B51D /* VHomeWords.swift in Sources */,
 				DAAD346C1DF2332500C5D3D1 /* ExtensionUIFont.swift in Sources */,
+				DAB0FA541DF784F600E3B51D /* RModelHomeEntriesItemNoun.swift in Sources */,
 				DAB0FA4E1DF7613300E3B51D /* RSettingsHomeEntries.swift in Sources */,
 				DA63C3E71DF659E20026169C /* RCredentialsItem.swift in Sources */,
 				DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */,
@@ -421,6 +432,7 @@
 				DA63C3DE1DF612ED0026169C /* VHomeSuggestions.swift in Sources */,
 				DA7227FB1DF355EB001370C6 /* VHomeHelper.swift in Sources */,
 				DAAD34831DF23B2F00C5D3D1 /* VHome.swift in Sources */,
+				DAB0FA521DF784E600E3B51D /* RModelHomeEntriesItemVerb.swift in Sources */,
 				DA63C3EB1DF65A000026169C /* RCredentialsItem2.swift in Sources */,
 				DA7227F71DF33FB6001370C6 /* VHomeInputText.swift in Sources */,
 				DAAD348D1DF253D500C5D3D1 /* VHomeInput.swift in Sources */,

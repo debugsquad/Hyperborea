@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Adjective</key>
+	<string>RModelHomeEntriesItemAdjective</string>
+	<key>Adverb</key>
+	<string>RModelHomeEntriesItemAdverb</string>
+    <key>Combining Form</key>
+    <string>RModelHomeEntriesItemCombiningForm</string>
+    <key>Conjunction</key>
+    <string>RModelHomeEntriesItemConjunction</string>
+    <key>Contraction</key>
+    <string>RModelHomeEntriesItemContraction</string>
+    <key>Determiner</key>
+    <string>RModelHomeEntriesItemDeterminer</string>
+    <key>Idiomatic</key>
+    <string>RModelHomeEntriesItemIdiomatic</string>
+    <key>Interjection</key>
+    <string>RModelHomeEntriesItemInterjection</string>
+    <key>Noun</key>
+    <string>RModelHomeEntriesItemNoun</string>
+    <key>Numeral</key>
+    <string>RModelHomeEntriesItemNumeral</string>
+    <key>Other</key>
+    <string>RModelHomeEntriesItemOther</string>
+    <key>Particle</key>
+    <string>RModelHomeEntriesItemParticle</string>
+    <key>Predeterminer</key>
+    <string>RModelHomeEntriesItemPredeterminer</string>
+    <key>Prefix</key>
+    <string>RModelHomeEntriesItemPrefix</string>
+    <key>Preopositon</key>
+    <string>RModelHomeEntriesItemProposition</string>
+    <key>Pronoun</key>
+    <string>RModelHomeEntriesItemPronoun</string>
+    <key>Residual</key>
+    <string>RModelHomeEntriesItemResidual</string>
+    <key>Suffix</key>
+    <string>RModelHomeEntriesItemSuffix</string>
+    <key>Verb</key>
+    <string>RModelHomeEntriesItemVerb</string>
+</dict>
+</plist>
