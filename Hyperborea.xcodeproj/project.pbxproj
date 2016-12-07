@@ -21,6 +21,7 @@
 		DA2BBA0C1DF873D700C450C8 /* VHomeWordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9FD1DF873D700C450C8 /* VHomeWordsCell.swift */; };
 		DA2BBA0D1DF873D700C450C8 /* VHomeWordsFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9FE1DF873D700C450C8 /* VHomeWordsFooter.swift */; };
 		DA2BBA0E1DF873D700C450C8 /* VHomeWordsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9FF1DF873D700C450C8 /* VHomeWordsHeader.swift */; };
+		DA2BBA121DF8743A00C450C8 /* VHomeWordsCellFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BBA111DF8743A00C450C8 /* VHomeWordsCellFull.swift */; };
 		DA63C3C71DF5CDE10026169C /* RMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3C61DF5CDE10026169C /* RMain.swift */; };
 		DA63C3C91DF5CE010026169C /* RMainDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3C81DF5CE010026169C /* RMainDelegate.swift */; };
 		DA63C3CB1DF5CF4F0026169C /* RSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3CA1DF5CF4F0026169C /* RSettings.swift */; };
@@ -77,6 +78,7 @@
 		DA2BB9FD1DF873D700C450C8 /* VHomeWordsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsCell.swift; sourceTree = "<group>"; };
 		DA2BB9FE1DF873D700C450C8 /* VHomeWordsFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsFooter.swift; sourceTree = "<group>"; };
 		DA2BB9FF1DF873D700C450C8 /* VHomeWordsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsHeader.swift; sourceTree = "<group>"; };
+		DA2BBA111DF8743A00C450C8 /* VHomeWordsCellFull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsCellFull.swift; sourceTree = "<group>"; };
 		DA63C3C61DF5CDE10026169C /* RMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMain.swift; sourceTree = "<group>"; };
 		DA63C3C81DF5CE010026169C /* RMainDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMainDelegate.swift; sourceTree = "<group>"; };
 		DA63C3CA1DF5CF4F0026169C /* RSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSettings.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		DA2BBA001DF873D700C450C8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DA2BBA111DF8743A00C450C8 /* VHomeWordsCellFull.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				DA63C3C71DF5CDE10026169C /* RMain.swift in Sources */,
 				DA2BBA061DF873D700C450C8 /* VHomeInput.swift in Sources */,
 				DA2BBA021DF873D700C450C8 /* VHomeHelper.swift in Sources */,
+				DA2BBA121DF8743A00C450C8 /* VHomeWordsCellFull.swift in Sources */,
 				DA63C3D81DF5F4F70026169C /* RUrl.swift in Sources */,
 				DAAD34891DF23C3A00C5D3D1 /* VView.swift in Sources */,
 				DAB0FA621DF78AAC00E3B51D /* RModelHomeEntriesItemVerb.swift in Sources */,

@@ -6,11 +6,14 @@ class RModelHomeEntriesItemNoun:RModelHomeEntriesItem
     
     required init(json:Any)
     {
-        let reusableIdentifier:String = 
+        let reusableIdentifier:String = VHomeWordsCellFull.reusableIdentifier
+        let attributedString:NSAttributedString = NSAttributedString(
+            string:"",
+            attributes:nil)
         
         super.init(
-            attributedString: <#T##NSAttributedString#>,
-            reusableIdentifier: <#T##String#>,
+            attributedString:attributedString,
+            reusableIdentifier:reusableIdentifier,
             selectable:kSelectable)
     }
     
