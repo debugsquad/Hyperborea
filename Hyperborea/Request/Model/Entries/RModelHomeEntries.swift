@@ -31,14 +31,17 @@ class RModelHomeEntries:RModel
             guard
             
                 let jsonEntryMap:[String:Any] = jsonEntry as? [String:Any],
-                let entryCategory:String = jsonEntryMap[kKeyLexicalCategory] as? String
+                let entryCategory:String = jsonEntryMap[kKeyLexicalCategory] as? String,
+                let entryType:RModelHomeEntriesItem.Type = RModelHomeEntriesFactory.sharedInstance.itemWidthLexical(
+                    category:entryCategory)
             
             else
             {
                 continue
             }
             
-            
+            let entry:RModelHomeEntriesItem = entryType.init(json:jsonEntry)
+            items.append(entry)
         }
         
         self.items = items

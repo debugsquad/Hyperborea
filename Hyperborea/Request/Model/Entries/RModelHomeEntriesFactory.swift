@@ -40,11 +40,11 @@ class RModelHomeEntriesFactory
     
     //MARK: public
     
-    func itemWidthLexical(categoryName:String) -> RModelHomeEntriesItem.Type?
+    func itemWidthLexical(category:String) -> RModelHomeEntriesItem.Type?
     {
         guard
             
-            let className:String = lexicalMap?[categoryName],
+            let className:String = lexicalMap?[category],
             let classType:AnyObject.Type = NSClassFromString(className)
         
         else
