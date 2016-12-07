@@ -8,6 +8,8 @@ class RModelHomeEntriesSenses
     private let kKeySenses:String = "senses"
     private let kKeyDefinitions:String = "definitions"
     private let kKeyExamples:String = "examples"
+    private let kKeyExampleText:String = "text"
+    private let kKeySubsenses:String = "subsenses"
     
     init(json:Any)
     {
@@ -33,6 +35,49 @@ class RModelHomeEntriesSenses
         else
         {
             self.title = nil
+        }
+        
+        if let sensesExamples:[Any] = jsonSensesFirst[kKeyExamples] as? [Any]
+        {
+            var examples:[String] = []
+            
+            for sensesExample:Any in sensesExamples
+            {
+                guard
+                
+                    let sensesExampleMap:[String:Any] = sensesExample as? [String:Any],
+                    let exampleText:String = sensesExampleMap[kKeyExampleText] as? String
+                
+                else
+                {
+                    continue
+                }
+                
+                examples.append(exampleText)
+            }
+            
+            self.examples = examples
+        }
+        else
+        {
+            self.examples = nil
+        }
+        
+        if let jsonSubsenses:[Any] = jsonSensesFirst[kKeySubsenses] as? [Any]
+        {
+            var subsenses:[RModelHomeEntriesSensesSub] = []
+            
+            for jsonSubsense:Any in jsonSubsenses
+            {
+                let subsense:RModelHomeEntriesSensesSub = RModelHomeEntriesSensesSub(json:jsonSubsense)
+                subsenses.append(subsense)
+            }
+            
+            self.subsenses = subsenses
+        }
+        else
+        {
+            self.subsenses = nil
         }
     }
     
