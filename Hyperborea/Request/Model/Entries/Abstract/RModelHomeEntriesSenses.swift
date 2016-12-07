@@ -10,6 +10,12 @@ class RModelHomeEntriesSenses
     private let kKeyExamples:String = "examples"
     private let kKeyExampleText:String = "text"
     private let kKeySubsenses:String = "subsenses"
+    private let kSensesSeparator:String = "\n"
+    private let kExampleSeparator:String = "\n○ "
+    private let kTitleFontSize:CGFloat = 16
+    private let kExampleFontSize:CGFloat = 14
+    private let kTitleWhite:CGFloat = 0.5
+    private let kExampleWhite:CGFloat = 0.6
     
     init(json:Any)
     {
@@ -85,6 +91,53 @@ class RModelHomeEntriesSenses
     
     func attributedString() -> NSAttributedString
     {
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
+        if let title:String = self.title
+        {
+            let attributes:[String:Any] = [
+                NSFontAttributeName:UIFont.regular(size:kTitleFontSize),
+                NSForegroundColorAttributeName:UIColor(
+                    white:kTitleWhite, alpha:1)
+            ]
+            
+            let titleSeparator:String = "\(kSensesSeparator)\(title)"
+            let titleString:NSAttributedString = NSAttributedString(
+                string:titleSeparator,
+                attributes:attributes)
+            
+            mutableString.append(titleString)
+        }
+        
+        if let examples:[String] = self.examples
+        {
+            let attributes:[String:Any] = [
+                NSFontAttributeName:UIFont.regular(size:kExampleFontSize),
+                NSForegroundColorAttributeName:UIColor(
+                    white:kExampleWhite, alpha:1)
+            ]
+            
+            for example:String in examples
+            {
+                let exampleSeparator:String = "\(kExampleSeparator)\(example)"
+                let exampleString:NSAttributedString = NSAttributedString(
+                    string:exampleSeparator,
+                    attributes:attributes)
+                
+                mutableString.append(exampleString)
+            }
+        }
+        
+        if let subsenses:[RModelHomeEntriesSensesSub] = subsenses
+        {
+            for subsense:RModelHomeEntriesSensesSub in subsenses
+            {
+                let senseString:NSAttributedString = subsense.attributedString()
+                
+                mutableString.append(senseString)
+            }
+        }
+        
+        return mutableString
     }
 }
