@@ -7,7 +7,7 @@ class RModelHomeEntriesItemNoun:RModelHomeEntriesItem
     required init(json:Any)
     {
         let title:String = NSLocalizedString("RModelHomeEntriesItemNoun_title", comment:"")
-        let 
+        let
         
         let reusableIdentifier:String = VHomeWordsCellFull.reusableIdentifier
         let attributedString:NSAttributedString = NSAttributedString(
