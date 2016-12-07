@@ -174,7 +174,7 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func scrollViewDidScroll(_ scrollView:UIScrollView)
     {
-        let offsetY:CGFloat = scrollView.contentOffset.y
+        let offsetY:CGFloat = -scrollView.contentOffset.y
         controller.viewHome.scrollDidScroll(offsetY:offsetY)
     }
     

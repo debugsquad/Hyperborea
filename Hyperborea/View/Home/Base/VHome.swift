@@ -12,9 +12,10 @@ class VHome:VView
     private weak var layoutInputHeight:NSLayoutConstraint!
     private let kAnimationDuration:TimeInterval = 3
     private let kInputMaxHeight:CGFloat = 150
+    private let kInputMinHeight:CGFloat = 30
     private let kHelperHeight:CGFloat = 50
     private let kSuggestionsHeight:CGFloat = 46
-    private let kScrollMaxMove:CGFloat = -200
+    private let kScrollMaxMove:CGFloat = -46
     
     override init(controller:CController)
     {
@@ -248,11 +249,29 @@ class VHome:VView
     
     func scrollDidScroll(offsetY:CGFloat)
     {
-        print("offsety \(offsetY)")
+        controller.parentController.viewParent.scrollDidScroll(
+            offsetY:offsetY)
         
-        if offsetY < kScrollMaxMove
+        if offsetY > kScrollMaxMove
         {
             layoutInputTop.constant = offsetY
+            layoutInputHeight.constant = kInputMaxHeight
+        }
+        else
+        {
+            layoutInputTop.constant = kScrollMaxMove
+            
+            let deltaHeight:CGFloat = abs(offsetY) - abs(kScrollMaxMove)
+            let newInputHeight:CGFloat = kInputMaxHeight - deltaHeight
+            
+            if newInputHeight > kInputMinHeight
+            {
+                layoutInputHeight.constant = newInputHeight
+            }
+            else
+            {
+                layoutInputHeight.constant = kInputMaxHeight
+            }
         }
     }
 }

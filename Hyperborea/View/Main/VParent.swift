@@ -72,4 +72,16 @@ class VParent:UIView
         
         completion()
     }
+    
+    func scrollDidScroll(offsetY:CGFloat)
+    {
+        if offsetY > 0
+        {
+            layoutBarTop.constant = 0
+        }
+        else
+        {
+            layoutBarTop.constant = offsetY
+        }
+    }
 }
