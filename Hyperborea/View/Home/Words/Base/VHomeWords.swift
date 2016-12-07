@@ -36,9 +36,9 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(
-            VHomeWordsCell.self,
+            VHomeWordsCellFull.self,
             forCellWithReuseIdentifier:
-            VHomeWordsCell.reusableIdentifier)
+            VHomeWordsCellFull.reusableIdentifier)
         collectionView.register(
             VHomeWordsHeader.self,
             forSupplementaryViewOfKind:
