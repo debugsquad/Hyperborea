@@ -1,10 +1,11 @@
-import Foundation
+import UIKit
 
 class RModelHomeEntriesItem
 {
     let attributedString:NSAttributedString
     let reusableIdentifier:String
     let selectable:Bool
+    let kTitleFontSize:CGFloat = 16
     
     init(
         attributedString:NSAttributedString,

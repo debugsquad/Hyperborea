@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class RModelHomeEntriesItemNoun:RModelHomeEntriesItem
 {
@@ -6,6 +6,9 @@ class RModelHomeEntriesItemNoun:RModelHomeEntriesItem
     
     required init(json:Any)
     {
+        let title:String = NSLocalizedString("RModelHomeEntriesItemNoun_title", comment:"")
+        let 
+        
         let reusableIdentifier:String = VHomeWordsCellFull.reusableIdentifier
         let attributedString:NSAttributedString = NSAttributedString(
             string:"",
