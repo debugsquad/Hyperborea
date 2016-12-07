@@ -2,10 +2,11 @@ import UIKit
 
 class RModelHomeEntriesItem
 {
+    static let kTitleFontSize:CGFloat = 16
+    static let kTitleWhite:CGFloat = 0.2
     let attributedString:NSAttributedString
     let reusableIdentifier:String
     let selectable:Bool
-    let kTitleFontSize:CGFloat = 16
     
     init(
         attributedString:NSAttributedString,

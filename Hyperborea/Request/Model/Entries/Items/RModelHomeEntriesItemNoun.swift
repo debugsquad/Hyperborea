@@ -7,9 +7,10 @@ class RModelHomeEntriesItemNoun:RModelHomeEntriesItem
     required init(json:Any)
     {
         let attributes:[String:Any] = [
-            NSFontAttributeName:UIFont.medium(size:kTitleFontSize),
+            NSFontAttributeName:UIFont.medium(
+                size:RModelHomeEntriesItem.kTitleFontSize),
             NSForegroundColorAttributeName:UIColor(
-                white:kTitleWhite,
+                white:RModelHomeEntriesItem.kTitleWhite,
                 alpha:1)
         ]
         let title:String = NSLocalizedString("RModelHomeEntriesItemNoun_title", comment:"")
