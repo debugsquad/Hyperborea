@@ -4,6 +4,8 @@ class RModelHomeEntriesFactory
 {
     static let sharedInstance:RModelHomeEntriesFactory = RModelHomeEntriesFactory()
     private let lexicalMap:[String:String]?
+    private let bundleName:String
+    private let kBundleIdentifier:String = "CFBundleExecutable"
     private let kResourceName:String = "ResourceLexicalCategory"
     private let kResourceExtension:String = "plist"
     private let kEmpty:String = ""
@@ -14,28 +16,23 @@ class RModelHomeEntriesFactory
             
             let resourceUrl:URL = Bundle.main.url(
                 forResource:kResourceName,
-                withExtension:kResourceExtension)
-            
-        else
-        {
-            lexicalMap = nil
-            
-            return
-        }
-        
-        guard
-            
+                withExtension:kResourceExtension),
             let lexicalDictionary:NSDictionary = NSDictionary(
-                contentsOf:resourceUrl)
+                contentsOf:resourceUrl),
+            let lexicalMap:[String:String] = lexicalDictionary as? [String:String],
+            let bundleName:String = Bundle.main.infoDictionary?[
+                kBundleIdentifier] as? String
             
         else
         {
-            lexicalMap = nil
+            self.lexicalMap = nil
+            self.bundleName = kEmpty
             
             return
         }
         
-        lexicalMap = lexicalDictionary as? [String:String]
+        self.lexicalMap = lexicalMap
+        self.bundleName = bundleName
     }
     
     //MARK: public
