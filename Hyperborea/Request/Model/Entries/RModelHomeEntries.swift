@@ -31,14 +31,14 @@ class RModelHomeEntries:RModel
             guard
             
                 let jsonEntryMap:[String:Any] = jsonEntry as? [String:Any],
-                let jsonEntryCategory:String = jsonEntryMap[kKeyLexicalCategory] as? String
+                let entryCategory:String = jsonEntryMap[kKeyLexicalCategory] as? String
             
             else
             {
                 continue
             }
             
-            print("category: \(jsonEntryCategory)")
+            
         }
         
         self.items = items
