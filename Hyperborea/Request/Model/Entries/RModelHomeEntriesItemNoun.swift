@@ -1,9 +1,24 @@
-//
-//  RModelHomeEntriesItemNoun.swift
-//  Hyperborea
-//
-//  Created by zero on 12/6/16.
-//  Copyright © 2016 iturbide. All rights reserved.
-//
-
 import Foundation
+
+class RModelHomeEntriesItemNoun:RModelHomeEntriesItem
+{
+    private let kSelectable:Bool = false
+    
+    required init(json:Any)
+    {
+        let reusableIdentifier:String = 
+        
+        super.init(
+            attributedString: <#T##NSAttributedString#>,
+            reusableIdentifier: <#T##String#>,
+            selectable:kSelectable)
+    }
+    
+    override init(
+        attributedString:NSAttributedString,
+        reusableIdentifier:String,
+        selectable:Bool)
+    {
+        fatalError()
+    }
+}
