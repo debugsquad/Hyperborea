@@ -12,11 +12,9 @@
 		DA63C3CB1DF5CF4F0026169C /* RSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3CA1DF5CF4F0026169C /* RSettings.swift */; };
 		DA63C3D01DF5EBB50026169C /* RModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3CF1DF5EBB50026169C /* RModel.swift */; };
 		DA63C3D21DF5EF7B0026169C /* RSettingsHomeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3D11DF5EF7B0026169C /* RSettingsHomeSearch.swift */; };
-		DA63C3D41DF5F0260026169C /* RModelHomeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3D31DF5F0260026169C /* RModelHomeSearch.swift */; };
 		DA63C3D61DF5F2250026169C /* ResourceUrl.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA63C3D51DF5F2250026169C /* ResourceUrl.plist */; };
 		DA63C3D81DF5F4F70026169C /* RUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3D71DF5F4F70026169C /* RUrl.swift */; };
 		DA63C3DA1DF60C180026169C /* RConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3D91DF60C180026169C /* RConfiguration.swift */; };
-		DA63C3DC1DF60EF80026169C /* RModelHomeSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3DB1DF60EF80026169C /* RModelHomeSearchResult.swift */; };
 		DA63C3DE1DF612ED0026169C /* VHomeSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3DD1DF612ED0026169C /* VHomeSuggestions.swift */; };
 		DA63C3E01DF618780026169C /* VHomeSuggestionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3DF1DF618780026169C /* VHomeSuggestionsCell.swift */; };
 		DA63C3E21DF656590026169C /* VHomeHelperClear.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3E11DF656590026169C /* VHomeHelperClear.swift */; };
@@ -49,16 +47,18 @@
 		DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD348A1DF241A300C5D3D1 /* VParentBar.swift */; };
 		DAAD348D1DF253D500C5D3D1 /* VHomeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD348C1DF253D500C5D3D1 /* VHomeInput.swift */; };
 		DAB0FA421DF7489800E3B51D /* VHomeWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA411DF7489800E3B51D /* VHomeWords.swift */; };
-		DAB0FA441DF7518400E3B51D /* RModelHomeEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA431DF7518400E3B51D /* RModelHomeEntries.swift */; };
-		DAB0FA461DF7519200E3B51D /* RModelHomeEntriesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA451DF7519200E3B51D /* RModelHomeEntriesItem.swift */; };
 		DAB0FA481DF7553100E3B51D /* VHomeWordsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA471DF7553100E3B51D /* VHomeWordsHeader.swift */; };
 		DAB0FA4A1DF7553A00E3B51D /* VHomeWordsFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA491DF7553A00E3B51D /* VHomeWordsFooter.swift */; };
 		DAB0FA4C1DF7554500E3B51D /* VHomeWordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA4B1DF7554500E3B51D /* VHomeWordsCell.swift */; };
 		DAB0FA4E1DF7613300E3B51D /* RSettingsHomeEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA4D1DF7613300E3B51D /* RSettingsHomeEntries.swift */; };
 		DAB0FA501DF7773F00E3B51D /* loader.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB0FA4F1DF7773F00E3B51D /* loader.xcassets */; };
-		DAB0FA521DF784E600E3B51D /* RModelHomeEntriesItemVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA511DF784E600E3B51D /* RModelHomeEntriesItemVerb.swift */; };
-		DAB0FA541DF784F600E3B51D /* RModelHomeEntriesItemNoun.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA531DF784F600E3B51D /* RModelHomeEntriesItemNoun.swift */; };
 		DAB0FA561DF787F800E3B51D /* ResourceLexicalCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB0FA551DF787F800E3B51D /* ResourceLexicalCategory.plist */; };
+		DAB0FA5F1DF78AAC00E3B51D /* RModelHomeEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA581DF78AAC00E3B51D /* RModelHomeEntries.swift */; };
+		DAB0FA601DF78AAC00E3B51D /* RModelHomeEntriesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA591DF78AAC00E3B51D /* RModelHomeEntriesItem.swift */; };
+		DAB0FA611DF78AAC00E3B51D /* RModelHomeEntriesItemNoun.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5A1DF78AAC00E3B51D /* RModelHomeEntriesItemNoun.swift */; };
+		DAB0FA621DF78AAC00E3B51D /* RModelHomeEntriesItemVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5B1DF78AAC00E3B51D /* RModelHomeEntriesItemVerb.swift */; };
+		DAB0FA631DF78AAC00E3B51D /* RModelHomeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5D1DF78AAC00E3B51D /* RModelHomeSearch.swift */; };
+		DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5E1DF78AAC00E3B51D /* RModelHomeSearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,11 +67,9 @@
 		DA63C3CA1DF5CF4F0026169C /* RSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSettings.swift; sourceTree = "<group>"; };
 		DA63C3CF1DF5EBB50026169C /* RModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModel.swift; sourceTree = "<group>"; };
 		DA63C3D11DF5EF7B0026169C /* RSettingsHomeSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSettingsHomeSearch.swift; sourceTree = "<group>"; };
-		DA63C3D31DF5F0260026169C /* RModelHomeSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearch.swift; sourceTree = "<group>"; };
 		DA63C3D51DF5F2250026169C /* ResourceUrl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceUrl.plist; sourceTree = "<group>"; };
 		DA63C3D71DF5F4F70026169C /* RUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RUrl.swift; sourceTree = "<group>"; };
 		DA63C3D91DF60C180026169C /* RConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RConfiguration.swift; sourceTree = "<group>"; };
-		DA63C3DB1DF60EF80026169C /* RModelHomeSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearchResult.swift; sourceTree = "<group>"; };
 		DA63C3DD1DF612ED0026169C /* VHomeSuggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeSuggestions.swift; sourceTree = "<group>"; };
 		DA63C3DF1DF618780026169C /* VHomeSuggestionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeSuggestionsCell.swift; sourceTree = "<group>"; };
 		DA63C3E11DF656590026169C /* VHomeHelperClear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperClear.swift; sourceTree = "<group>"; };
@@ -107,16 +105,18 @@
 		DAAD348A1DF241A300C5D3D1 /* VParentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParentBar.swift; sourceTree = "<group>"; };
 		DAAD348C1DF253D500C5D3D1 /* VHomeInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeInput.swift; sourceTree = "<group>"; };
 		DAB0FA411DF7489800E3B51D /* VHomeWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWords.swift; sourceTree = "<group>"; };
-		DAB0FA431DF7518400E3B51D /* RModelHomeEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntries.swift; sourceTree = "<group>"; };
-		DAB0FA451DF7519200E3B51D /* RModelHomeEntriesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItem.swift; sourceTree = "<group>"; };
 		DAB0FA471DF7553100E3B51D /* VHomeWordsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsHeader.swift; sourceTree = "<group>"; };
 		DAB0FA491DF7553A00E3B51D /* VHomeWordsFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsFooter.swift; sourceTree = "<group>"; };
 		DAB0FA4B1DF7554500E3B51D /* VHomeWordsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsCell.swift; sourceTree = "<group>"; };
 		DAB0FA4D1DF7613300E3B51D /* RSettingsHomeEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSettingsHomeEntries.swift; sourceTree = "<group>"; };
 		DAB0FA4F1DF7773F00E3B51D /* loader.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = loader.xcassets; sourceTree = "<group>"; };
-		DAB0FA511DF784E600E3B51D /* RModelHomeEntriesItemVerb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemVerb.swift; sourceTree = "<group>"; };
-		DAB0FA531DF784F600E3B51D /* RModelHomeEntriesItemNoun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemNoun.swift; sourceTree = "<group>"; };
 		DAB0FA551DF787F800E3B51D /* ResourceLexicalCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceLexicalCategory.plist; sourceTree = "<group>"; };
+		DAB0FA581DF78AAC00E3B51D /* RModelHomeEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntries.swift; sourceTree = "<group>"; };
+		DAB0FA591DF78AAC00E3B51D /* RModelHomeEntriesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItem.swift; sourceTree = "<group>"; };
+		DAB0FA5A1DF78AAC00E3B51D /* RModelHomeEntriesItemNoun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemNoun.swift; sourceTree = "<group>"; };
+		DAB0FA5B1DF78AAC00E3B51D /* RModelHomeEntriesItemVerb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemVerb.swift; sourceTree = "<group>"; };
+		DAB0FA5D1DF78AAC00E3B51D /* RModelHomeSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearch.swift; sourceTree = "<group>"; };
+		DAB0FA5E1DF78AAC00E3B51D /* RModelHomeSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,12 +157,8 @@
 		DA63C3C41DF5CDD50026169C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DA63C3D31DF5F0260026169C /* RModelHomeSearch.swift */,
-				DA63C3DB1DF60EF80026169C /* RModelHomeSearchResult.swift */,
-				DAB0FA431DF7518400E3B51D /* RModelHomeEntries.swift */,
-				DAB0FA451DF7519200E3B51D /* RModelHomeEntriesItem.swift */,
-				DAB0FA511DF784E600E3B51D /* RModelHomeEntriesItemVerb.swift */,
-				DAB0FA531DF784F600E3B51D /* RModelHomeEntriesItemNoun.swift */,
+				DAB0FA571DF78AAC00E3B51D /* Entries */,
+				DAB0FA5C1DF78AAC00E3B51D /* Search */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,6 +322,26 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		DAB0FA571DF78AAC00E3B51D /* Entries */ = {
+			isa = PBXGroup;
+			children = (
+				DAB0FA581DF78AAC00E3B51D /* RModelHomeEntries.swift */,
+				DAB0FA591DF78AAC00E3B51D /* RModelHomeEntriesItem.swift */,
+				DAB0FA5A1DF78AAC00E3B51D /* RModelHomeEntriesItemNoun.swift */,
+				DAB0FA5B1DF78AAC00E3B51D /* RModelHomeEntriesItemVerb.swift */,
+			);
+			path = Entries;
+			sourceTree = "<group>";
+		};
+		DAB0FA5C1DF78AAC00E3B51D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DAB0FA5D1DF78AAC00E3B51D /* RModelHomeSearch.swift */,
+				DAB0FA5E1DF78AAC00E3B51D /* RModelHomeSearchResult.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -409,43 +425,43 @@
 				DA63C3C71DF5CDE10026169C /* RMain.swift in Sources */,
 				DA63C3D81DF5F4F70026169C /* RUrl.swift in Sources */,
 				DAAD34891DF23C3A00C5D3D1 /* VView.swift in Sources */,
+				DAB0FA621DF78AAC00E3B51D /* RModelHomeEntriesItemVerb.swift in Sources */,
 				DA63C3C91DF5CE010026169C /* RMainDelegate.swift in Sources */,
 				DAAD34691DF2332500C5D3D1 /* ExtensionNotification.swift in Sources */,
 				DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */,
+				DAB0FA601DF78AAC00E3B51D /* RModelHomeEntriesItem.swift in Sources */,
+				DAB0FA611DF78AAC00E3B51D /* RModelHomeEntriesItemNoun.swift in Sources */,
 				DA7227F91DF34412001370C6 /* VHomeInputPlaceholder.swift in Sources */,
 				DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */,
 				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
 				DA63C3E91DF659F60026169C /* RCredentialsItem1.swift in Sources */,
 				DAB0FA421DF7489800E3B51D /* VHomeWords.swift in Sources */,
 				DAAD346C1DF2332500C5D3D1 /* ExtensionUIFont.swift in Sources */,
-				DAB0FA541DF784F600E3B51D /* RModelHomeEntriesItemNoun.swift in Sources */,
 				DAB0FA4E1DF7613300E3B51D /* RSettingsHomeEntries.swift in Sources */,
 				DA63C3E71DF659E20026169C /* RCredentialsItem.swift in Sources */,
 				DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */,
 				DA7227FF1DF4A6EA001370C6 /* VHomeHelperSend.swift in Sources */,
 				DAAD347D1DF235BC00C5D3D1 /* CHome.swift in Sources */,
+				DAB0FA631DF78AAC00E3B51D /* RModelHomeSearch.swift in Sources */,
 				DA63C3E21DF656590026169C /* VHomeHelperClear.swift in Sources */,
 				DA63C3CB1DF5CF4F0026169C /* RSettings.swift in Sources */,
-				DAB0FA461DF7519200E3B51D /* RModelHomeEntriesItem.swift in Sources */,
 				DA63C3E01DF618780026169C /* VHomeSuggestionsCell.swift in Sources */,
-				DA63C3D41DF5F0260026169C /* RModelHomeSearch.swift in Sources */,
 				DA63C3DE1DF612ED0026169C /* VHomeSuggestions.swift in Sources */,
 				DA7227FB1DF355EB001370C6 /* VHomeHelper.swift in Sources */,
 				DAAD34831DF23B2F00C5D3D1 /* VHome.swift in Sources */,
-				DAB0FA521DF784E600E3B51D /* RModelHomeEntriesItemVerb.swift in Sources */,
 				DA63C3EB1DF65A000026169C /* RCredentialsItem2.swift in Sources */,
 				DA7227F71DF33FB6001370C6 /* VHomeInputText.swift in Sources */,
 				DAAD348D1DF253D500C5D3D1 /* VHomeInput.swift in Sources */,
 				DA63C3E51DF659D90026169C /* RCredentials.swift in Sources */,
 				DAAD34681DF2332500C5D3D1 /* ExtensionFileManager.swift in Sources */,
+				DAB0FA5F1DF78AAC00E3B51D /* RModelHomeEntries.swift in Sources */,
 				DA63C3DA1DF60C180026169C /* RConfiguration.swift in Sources */,
 				DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */,
 				DA7228051DF4B1BB001370C6 /* VHomeHelperCancel.swift in Sources */,
-				DA63C3DC1DF60EF80026169C /* RModelHomeSearchResult.swift in Sources */,
 				DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */,
-				DAB0FA441DF7518400E3B51D /* RModelHomeEntries.swift in Sources */,
 				DA63C3D21DF5EF7B0026169C /* RSettingsHomeSearch.swift in Sources */,
 				DA63C3D01DF5EBB50026169C /* RModel.swift in Sources */,
+				DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */,
 				DAAD346B1DF2332500C5D3D1 /* ExtensionUIColor.swift in Sources */,
 				DAAD346A1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift in Sources */,
 				DAB0FA481DF7553100E3B51D /* VHomeWordsHeader.swift in Sources */,
