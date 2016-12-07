@@ -28,6 +28,7 @@ class VHomeInput:UIView
         let viewPlaceholder:VHomeInputPlaceholder = VHomeInputPlaceholder()
         self.viewPlaceholder = viewPlaceholder
         
+        addSubview(visualEffect)
         addSubview(viewPlaceholder)
         addSubview(viewText)
         

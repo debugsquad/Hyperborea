@@ -1,9 +1,27 @@
-//
-//  RModelHomeEntriesItemVerb.swift
-//  Hyperborea
-//
-//  Created by zero on 12/6/16.
-//  Copyright © 2016 iturbide. All rights reserved.
-//
-
 import Foundation
+
+class RModelHomeEntriesItemVerb:RModelHomeEntriesItem
+{
+    private let kSelectable:Bool = false
+    
+    required init(json:Any)
+    {
+        let reusableIdentifier:String = VHomeWordsCellFull.reusableIdentifier
+        let attributedString:NSAttributedString = NSAttributedString(
+            string:"",
+            attributes:nil)
+        
+        super.init(
+            attributedString:attributedString,
+            reusableIdentifier:reusableIdentifier,
+            selectable:kSelectable)
+    }
+    
+    override init(
+        attributedString:NSAttributedString,
+        reusableIdentifier:String,
+        selectable:Bool)
+    {
+        fatalError()
+    }
+}
