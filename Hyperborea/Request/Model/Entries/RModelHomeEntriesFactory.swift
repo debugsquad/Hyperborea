@@ -37,4 +37,23 @@ class RModelHomeEntriesFactory
         
         lexicalMap = lexicalDictionary as? [String:String]
     }
+    
+    //MARK: public
+    
+    func itemWidthLexical(categoryName:String) -> RModelHomeEntriesItem.Type?
+    {
+        guard
+            
+            let className:String = lexicalMap?[categoryName],
+            let classType:AnyObject.Type = NSClassFromString(className)
+        
+        else
+        {
+            return nil
+        }
+        
+        let itemType:RModelHomeEntriesItem.Type? = classType as? RModelHomeEntriesItem.Type
+        
+        return itemType
+    }
 }
