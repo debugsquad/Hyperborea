@@ -9,7 +9,6 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     private let kInsetTop:CGFloat = 150
     private let kInsetBottom:CGFloat = 100
     private let kInterLine:CGFloat = 1
-    private let kCellHeight:CGFloat = 300
     
     convenience init(controller:CHome)
     {
@@ -204,10 +203,12 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
+        let item:RModelHomeEntriesItem = modelAtIndex(index:indexPath)
         let width:CGFloat = collectionView.bounds.maxX
+        let height:CGFloat = item.cellHeight(cellWidth:width)
         let size:CGSize = CGSize(
             width:width,
-            height:kCellHeight)
+            height:height)
         
         return size
     }

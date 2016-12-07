@@ -11,6 +11,10 @@ class RModelHomeEntriesItem
     let attributedString:NSAttributedString
     let reusableIdentifier:String
     let selectable:Bool
+    private let options:NSStringDrawingOptions
+    private let kMarginHorizontal:CGFloat = 20
+    private let kAddHeight:CGFloat = 120
+    private let kMaxHeight:CGFloat = 3000
     
     init(
         attributedString:NSAttributedString,
@@ -20,10 +24,28 @@ class RModelHomeEntriesItem
         self.attributedString = attributedString
         self.reusableIdentifier = reusableIdentifier
         self.selectable = selectable
+        self.options = NSStringDrawingOptions([
+            NSStringDrawingOptions.usesLineFragmentOrigin,
+            NSStringDrawingOptions.usesFontLeading])
     }
     
     required init(json:Any)
     {
         fatalError()
+    }
+    
+    //MARK: public
+    
+    func cellHeight(cellWidth:CGFloat) -> CGFloat
+    {
+        let maxSize:CGSize = CGSize(width:cellWidth, height:kMaxHeight)
+        let textSize:CGSize = attributedString.boundingRect(
+            with:maxSize,
+            options:options,
+            context:nil).size
+        let height:CGFloat = ceil(textSize.height)
+        let totalHeight:CGFloat = height + kAddHeight
+        
+        return totalHeight
     }
 }

@@ -15,14 +15,17 @@ class RModelHomeEntriesItemVerb:RModelHomeEntriesItem
         ]
         let title:String = NSLocalizedString("RModelHomeEntriesItemVerb_title", comment:"")
         let senses:RModelHomeEntriesSenses = RModelHomeEntriesSenses(json:json)
+        let etymologies:RModelHomeEntriesEtymologies = RModelHomeEntriesEtymologies(json:json)
         let titleString:NSAttributedString = NSAttributedString(
             string:title,
             attributes:attributes)
         let sensesString:NSAttributedString = senses.attributedString()
+        let etymologiesString:NSAttributedString = etymologies.attributedString()
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(titleString)
         mutableString.append(sensesString)
+        mutableString.append(etymologiesString)
         
         let reusableIdentifier:String = VHomeWordsCellFull.reusableIdentifier
         
