@@ -144,6 +144,13 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         super.layoutSubviews()
     }
     
+    private func modelAtIndex(index:IndexPath) -> RModelHomeEntriesItem
+    {
+        let item:RModelHomeEntriesItem = model!.items[index.item]
+        
+        return item
+    }
+    
     //MARK: public
     
     func showLoading()
@@ -298,9 +305,10 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
+        let item:RModelHomeEntriesItem = modelAtIndex(index:indexPath)
         let cell:VHomeWordsCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
-            VHomeWordsCell.reusableIdentifier,
+            item.reusableIdentifier,
             for:indexPath) as! VHomeWordsCell
         
         return cell
