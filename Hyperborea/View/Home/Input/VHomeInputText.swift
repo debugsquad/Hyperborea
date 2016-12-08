@@ -47,6 +47,14 @@ class VHomeInputText:UITextView, UITextViewDelegate
     
     //MARK: textView delegate
     
+    func textViewDidBeginEditing(_ textView:UITextView)
+    {
+        if textView.bounds.maxY < kMaxHeight
+        {
+            controller.viewHome.scrollDidScroll(offsetY:0)
+        }
+    }
+    
     func textView(_ textView:UITextView, shouldChangeTextIn range:NSRange, replacementText text:String) -> Bool
     {
         let currentText:NSString = textView.text as NSString

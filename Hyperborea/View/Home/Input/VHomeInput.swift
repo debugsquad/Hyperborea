@@ -31,9 +31,9 @@ class VHomeInput:UIView
         border.isUserInteractionEnabled = false
         border.translatesAutoresizingMaskIntoConstraints = false
         border.backgroundColor = UIColor(
-            red:0.87,
-            green:0.88,
-            blue:0.89,
+            red:0.91,
+            green:0.92,
+            blue:0.93,
             alpha:1)
         border.clipsToBounds = true
         self.border = border
