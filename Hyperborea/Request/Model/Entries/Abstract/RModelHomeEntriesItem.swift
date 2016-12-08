@@ -6,12 +6,12 @@ class RModelHomeEntriesItem
     static let kDefinitionFontSize:CGFloat = 15
     static let kExampleFontSize:CGFloat = 14
     static let kComplementFontSize:CGFloat = 14
-    static let kSeparatorFontSize:CGFloat = 12
+    static let kSeparatorFontSize:CGFloat = 11
     static let kTitleWhite:CGFloat = 0
     static let kDefinitionWhite:CGFloat = 0.1
     static let kExampleWhite:CGFloat = 0.4
     static let kComplementWhite:CGFloat = 0.6
-    static let kSeparatorWhite:CGFloat = 0.7
+    static let kSeparatorWhite:CGFloat = 0.8
     let attributedString:NSAttributedString
     let reusableIdentifier:String
     let selectable:Bool

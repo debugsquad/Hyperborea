@@ -120,13 +120,25 @@ class RModelHomeEntriesSenses
                     alpha:1)
             ]
             
+            let attributesSeparator:[String:Any] = [
+                NSFontAttributeName:UIFont.regular(
+                    size:RModelHomeEntriesItem.kSeparatorFontSize),
+                NSForegroundColorAttributeName:UIColor(
+                    white:RModelHomeEntriesItem.kSeparatorWhite,
+                    alpha:1)
+            ]
+            
             for example:String in examples
             {
-                let exampleSeparator:String = "\(kExampleSeparator)\(example)"
+                let separatorString:NSAttributedString = NSAttributedString(
+                    string:kExampleSeparator,
+                    attributes:attributesSeparator)
+                
                 let exampleString:NSAttributedString = NSAttributedString(
-                    string:exampleSeparator,
+                    string:example,
                     attributes:attributes)
                 
+                mutableString.append(separatorString)
                 mutableString.append(exampleString)
             }
         }
