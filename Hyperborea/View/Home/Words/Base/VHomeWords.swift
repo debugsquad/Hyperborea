@@ -40,6 +40,10 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             forCellWithReuseIdentifier:
             VHomeWordsCellFull.reusableIdentifier)
         collectionView.register(
+            VHomeWordsCellOrigin.self,
+            forCellWithReuseIdentifier:
+            VHomeWordsCellOrigin.reusableIdentifier)
+        collectionView.register(
             VHomeWordsHeader.self,
             forSupplementaryViewOfKind:
             UICollectionElementKindSectionHeader,
