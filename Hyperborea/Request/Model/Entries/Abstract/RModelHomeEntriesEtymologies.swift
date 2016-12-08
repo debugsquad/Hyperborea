@@ -37,45 +37,39 @@ class RModelHomeEntriesEtymologies
     {
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
-        if let titles:[String] = self.titles
+        let attributesSection:[String:Any] = [
+            NSFontAttributeName:UIFont.medium(
+                size:RModelHomeEntriesItem.kDefinitionFontSize),
+            NSForegroundColorAttributeName:UIColor(
+                white:RModelHomeEntriesItem.kDefinitionWhite,
+                alpha:1)
+        ]
+        
+        let sectionTitle:String = NSLocalizedString(
+            "RModelHomeEntriesEtymologies_title",
+            comment:"")
+        let sectionTitleString:NSAttributedString = NSAttributedString(
+            string:sectionTitle,
+            attributes:attributesSection)
+        
+        mutableString.append(sectionTitleString)
+        
+        for title:String in titles
         {
-            if !titles.isEmpty
-            {
-                let attributesSection:[String:Any] = [
-                    NSFontAttributeName:UIFont.medium(
-                        size:RModelHomeEntriesItem.kDefinitionFontSize),
-                    NSForegroundColorAttributeName:UIColor(
-                        white:RModelHomeEntriesItem.kDefinitionWhite,
-                        alpha:1)
-                ]
-                
-                let sectionTitle:String = NSLocalizedString(
-                    "RModelHomeEntriesEtymologies_title",
-                    comment:"")
-                let sectionTitleString:NSAttributedString = NSAttributedString(
-                    string:sectionTitle,
-                    attributes:attributesSection)
-                
-                mutableString.append(sectionTitleString)
-                
-                for title:String in titles
-                {
-                    let attributes:[String:Any] = [
-                        NSFontAttributeName:UIFont.regular(
-                            size:RModelHomeEntriesItem.kDefinitionFontSize),
-                        NSForegroundColorAttributeName:UIColor(
-                            white:RModelHomeEntriesItem.kDefinitionWhite,
-                            alpha:1)
-                    ]
-                    
-                    let titleSeparator:String = "\(kEtymologieSeparator)\(title)"
-                    let titleString:NSAttributedString = NSAttributedString(
-                        string:titleSeparator,
-                        attributes:attributes)
-                    
-                    mutableString.append(titleString)
-                }
-            }
+            let attributes:[String:Any] = [
+                NSFontAttributeName:UIFont.regular(
+                    size:RModelHomeEntriesItem.kDefinitionFontSize),
+                NSForegroundColorAttributeName:UIColor(
+                    white:RModelHomeEntriesItem.kDefinitionWhite,
+                    alpha:1)
+            ]
+            
+            let titleSeparator:String = "\(kEtymologieSeparator)\(title)"
+            let titleString:NSAttributedString = NSAttributedString(
+                string:titleSeparator,
+                attributes:attributes)
+            
+            mutableString.append(titleString)
         }
         
         return mutableString

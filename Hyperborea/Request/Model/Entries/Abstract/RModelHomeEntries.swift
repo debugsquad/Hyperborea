@@ -44,6 +44,16 @@ class RModelHomeEntries:RModel
             items.append(entry)
         }
         
+        let etymologies:RModelHomeEntriesEtymologies = RModelHomeEntriesEtymologies(
+            json:jsonLexicalEntries)
+        
+        if !etymologies.titles.isEmpty
+        {
+            let origin:RModelHomeEntriesItemOrigin = RModelHomeEntriesItemOrigin(
+                etymologies:etymologies)
+            items.append(origin)
+        }
+        
         self.items = items
         
         super.init()
