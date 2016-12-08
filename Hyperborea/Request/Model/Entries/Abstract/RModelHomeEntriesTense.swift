@@ -9,6 +9,7 @@ class RModelHomeEntriesTense
     private let kKeyText:String = "text"
     private let kTypeTense:String = "Tense"
     private let kTypeNotFinite:String = "Non Finiteness"
+    private let kGroupSeparator:String = "  "
     private let kTenseSeparator:String = ", "
     
     init(json:Any)
@@ -61,39 +62,35 @@ class RModelHomeEntriesTense
     {
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
-        let attributesSection:[String:Any] = [
-            NSFontAttributeName:UIFont.regular(
-                size:RModelHomeEntriesItem.kTitleFontSize),
-            NSForegroundColorAttributeName:UIColor(
-                white:RModelHomeEntriesItem.kTitleWhite,
-                alpha:1)
-        ]
-        
-        let sectionTitle:String = NSLocalizedString(
-            "RModelHomeEntriesEtymologies_title",
-            comment:"")
-        let sectionTitleString:NSAttributedString = NSAttributedString(
-            string:sectionTitle,
-            attributes:attributesSection)
-        
-        mutableString.append(sectionTitleString)
-        
-        for title:String in titles
+        if !tenses.isEmpty
         {
-            let attributes:[String:Any] = [
-                NSFontAttributeName:UIFont.regular(
-                    size:RModelHomeEntriesItem.kDefinitionFontSize),
-                NSForegroundColorAttributeName:UIColor(
-                    white:RModelHomeEntriesItem.kExampleWhite,
-                    alpha:1)
-            ]
-            
-            let titleSeparator:String = "\(kEtymologieSeparator)\(title)"
-            let titleString:NSAttributedString = NSAttributedString(
-                string:titleSeparator,
-                attributes:attributes)
-            
-            mutableString.append(titleString)
+            for tense:String in tenses
+            {
+                let attributes:[String:Any] = [
+                    NSFontAttributeName:UIFont.regular(
+                        size:RModelHomeEntriesItem.kComplementFontSize),
+                    NSForegroundColorAttributeName:UIColor(
+                        white:RModelHomeEntriesItem.kComplementWhite,
+                        alpha:1)
+                ]
+                
+                let compositeString:String
+                
+                if mutableString.string.isEmpty
+                {
+                    compositeString = "\(kGroupSeparator)\(tense)"
+                }
+                else
+                {
+                    compositeString = "\(kTenseSeparator)\(tense)"
+                }
+                
+                let tenseString:NSAttributedString = NSAttributedString(
+                    string:compositeString,
+                    attributes:attributes)
+                
+                mutableString.append(tenseString)
+            }
         }
         
         return mutableString
