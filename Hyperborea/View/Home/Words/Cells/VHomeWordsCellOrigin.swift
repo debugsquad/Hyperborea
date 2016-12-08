@@ -1,6 +1,6 @@
 import UIKit
 
-class VHomeWordsCellFull:VHomeWordsCell
+class VHomeWordsCellOrigin:VHomeWordsCell
 {
     private weak var labelEntity:UILabel!
     private let kLabelEntityTop:CGFloat = 10
@@ -10,6 +10,7 @@ class VHomeWordsCellFull:VHomeWordsCell
     override init(frame:CGRect)
     {
         super.init(frame:frame)
+        backgroundColor = UIColor(white:0, alpha:0.1)
         
         let labelEntity:UILabel = UILabel()
         labelEntity.isUserInteractionEnabled = false
