@@ -60,7 +60,7 @@ class RModelHomeEntriesEtymologies
                 NSFontAttributeName:UIFont.regular(
                     size:RModelHomeEntriesItem.kDefinitionFontSize),
                 NSForegroundColorAttributeName:UIColor(
-                    white:RModelHomeEntriesItem.kDefinitionWhite,
+                    white:RModelHomeEntriesItem.kExampleWhite,
                     alpha:1)
             ]
             

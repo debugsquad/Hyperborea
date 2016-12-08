@@ -10,12 +10,13 @@ class VHomeWordsCellFull:VHomeWordsCell
     override init(frame:CGRect)
     {
         super.init(frame:frame)
+        isUserInteractionEnabled = false
         
         let labelEntity:UILabel = UILabel()
         labelEntity.translatesAutoresizingMaskIntoConstraints = false
         labelEntity.numberOfLines = 0
         labelEntity.backgroundColor = UIColor.clear
-        labelEntity.isUserInteractionEnabled = true
+        labelEntity.isUserInteractionEnabled = false
         self.labelEntity = labelEntity
         
         addSubview(labelEntity)
