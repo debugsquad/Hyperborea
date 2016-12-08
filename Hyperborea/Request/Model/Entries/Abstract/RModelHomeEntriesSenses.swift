@@ -2,7 +2,7 @@ import UIKit
 
 class RModelHomeEntriesSenses
 {
-    private let subsenses:[RModelHomeEntriesSensesSub]?
+    private let subsenses:[RModelHomeEntriesSensesSub]
     private let title:String?
     private let examples:[String]?
     private let kKeyEntries:String = "entries"
@@ -16,13 +16,12 @@ class RModelHomeEntriesSenses
     
     init(json:Any)
     {
+        var
+        
         guard
         
             let jsonMap:[String:Any] = json as? [String:Any],
-            let jsonEntries:[Any] = jsonMap[kKeyEntries] as? [Any],
-            let jsonEntriesFirst:[String:Any] = jsonEntries.first as? [String:Any],
-            let jsonSenses:[Any] = jsonEntriesFirst[kKeySenses] as? [Any],
-            let jsonSensesFirst:[String:Any] = jsonSenses.first as? [String:Any]
+            let jsonEntries:[Any] = jsonMap[kKeyEntries] as? [Any]
         
         else
         {
@@ -32,6 +31,12 @@ class RModelHomeEntriesSenses
             
             return
         }
+        
+        for jsonEntry:
+        
+        let jsonEntriesFirst:[String:Any] = jsonEntries.first as? [String:Any],
+        let jsonSenses:[Any] = jsonEntriesFirst[kKeySenses] as? [Any],
+        let jsonSensesFirst:[String:Any] = jsonSenses.first as? [String:Any]
         
         if let sensesDefinitions:[String] = jsonSensesFirst[kKeyDefinitions] as? [String]
         {
