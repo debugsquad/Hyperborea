@@ -11,8 +11,7 @@ class VHome:VView
     private weak var layoutInputTop:NSLayoutConstraint!
     private weak var layoutInputHeight:NSLayoutConstraint!
     private let kAnimationDuration:TimeInterval = 3
-    private let kInputMaxHeight:CGFloat = 150
-    private let kInputMinHeight:CGFloat = 30
+    private let kInputMinHeight:CGFloat = 86
     private let kHelperHeight:CGFloat = 50
     private let kSuggestionsHeight:CGFloat = 46
     private let kScrollMaxMove:CGFloat = -46
@@ -54,7 +53,7 @@ class VHome:VView
             toItem:nil,
             attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
-            constant:kInputMaxHeight)
+            constant:viewInput.kMaxHeight)
         let layoutInputLeft:NSLayoutConstraint = NSLayoutConstraint(
             item:viewInput,
             attribute:NSLayoutAttribute.left,
@@ -255,14 +254,14 @@ class VHome:VView
         if offsetY > kScrollMaxMove
         {
             layoutInputTop.constant = offsetY
-            layoutInputHeight.constant = kInputMaxHeight
+            layoutInputHeight.constant = viewInput.kMaxHeight
         }
         else
         {
             layoutInputTop.constant = kScrollMaxMove
             
             let deltaHeight:CGFloat = abs(offsetY) - abs(kScrollMaxMove)
-            let newInputHeight:CGFloat = kInputMaxHeight - deltaHeight
+            let newInputHeight:CGFloat = viewInput.kMaxHeight - deltaHeight
             
             if newInputHeight > kInputMinHeight
             {
@@ -270,7 +269,7 @@ class VHome:VView
             }
             else
             {
-                layoutInputHeight.constant = kInputMaxHeight
+                layoutInputHeight.constant = kInputMinHeight
             }
         }
     }

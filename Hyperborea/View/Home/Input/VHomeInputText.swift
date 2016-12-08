@@ -3,13 +3,14 @@ import UIKit
 class VHomeInputText:UITextView, UITextViewDelegate
 {
     private weak var controller:CHome!
+    let kMaxHeight:CGFloat = 86
     private let kInsetsHorizontal:CGFloat = 15
+    private let kMaxFontSize:CGFloat = 25
     
     convenience init(controller:CHome)
     {
         self.init()
         
-        font = UIFont.regular(size:25)
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.clear
@@ -33,6 +34,16 @@ class VHomeInputText:UITextView, UITextViewDelegate
         delegate = self
         self.controller = controller
     }
+    /*
+    override func layoutSubviews()
+    {
+        let height:CGFloat = bounds.maxY
+        let percent:CGFloat = height / kMaxHeight
+        let fontSize:CGFloat = percent * kMaxFontSize
+        font = UIFont.regular(size:fontSize)
+        
+        super.layoutSubviews()
+    }*/
     
     //MARK: textView delegate
     
