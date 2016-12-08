@@ -6,7 +6,7 @@ class RModelHomeEntriesItemOrigin:RModelHomeEntriesItem
     
     init(etymologies:RModelHomeEntriesEtymologies)
     {
-        let reusableIdentifier:String = VHomeWordsCellFull.reusableIdentifier
+        let reusableIdentifier:String = VHomeWordsCellOrigin.reusableIdentifier
         let etymologiesString:NSAttributedString = etymologies.attributedString()
         
         super.init(

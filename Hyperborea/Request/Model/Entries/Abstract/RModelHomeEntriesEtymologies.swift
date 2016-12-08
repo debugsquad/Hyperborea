@@ -38,10 +38,10 @@ class RModelHomeEntriesEtymologies
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
         let attributesSection:[String:Any] = [
-            NSFontAttributeName:UIFont.medium(
-                size:RModelHomeEntriesItem.kDefinitionFontSize),
+            NSFontAttributeName:UIFont.regular(
+                size:RModelHomeEntriesItem.kTitleFontSize),
             NSForegroundColorAttributeName:UIColor(
-                white:RModelHomeEntriesItem.kDefinitionWhite,
+                white:RModelHomeEntriesItem.kTitleWhite,
                 alpha:1)
         ]
         

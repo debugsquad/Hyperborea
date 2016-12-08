@@ -12,7 +12,6 @@ class VHomeWordsCellFull:VHomeWordsCell
         super.init(frame:frame)
         
         let labelEntity:UILabel = UILabel()
-        labelEntity.isUserInteractionEnabled = false
         labelEntity.translatesAutoresizingMaskIntoConstraints = false
         labelEntity.numberOfLines = 0
         labelEntity.backgroundColor = UIColor.clear

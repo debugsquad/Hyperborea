@@ -10,15 +10,20 @@ class VHomeWordsCellOrigin:VHomeWordsCell
     override init(frame:CGRect)
     {
         super.init(frame:frame)
-        backgroundColor = UIColor(white:0, alpha:0.1)
         
         let labelEntity:UILabel = UILabel()
-        labelEntity.isUserInteractionEnabled = false
         labelEntity.translatesAutoresizingMaskIntoConstraints = false
         labelEntity.numberOfLines = 0
         labelEntity.backgroundColor = UIColor.clear
         self.labelEntity = labelEntity
         
+        let border:UIView = UIView()
+        border.isUserInteractionEnabled = false
+        border.translatesAutoresizingMaskIntoConstraints = false
+        border.clipsToBounds = true
+        border.backgroundColor = UIColor.genericBorder
+        
+        addSubview(border)
         addSubview(labelEntity)
         
         let layoutLabelEntityTop:NSLayoutConstraint = NSLayoutConstraint(
@@ -54,11 +59,48 @@ class VHomeWordsCellOrigin:VHomeWordsCell
             multiplier:1,
             constant:-kLabelEntityMarginHorizontal)
         
+        let layoutBorderHeight:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.height,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:1)
+        let layoutBorderBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutBorderLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutBorderRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutLabelEntityTop,
             layoutLabelEntityBottom,
             layoutLabelEntityLeft,
-            layoutLabelEntityRight
+            layoutLabelEntityRight,
+            layoutBorderHeight,
+            layoutBorderBottom,
+            layoutBorderLeft,
+            layoutBorderRight
             ])
     }
     
