@@ -44,7 +44,7 @@ class RModelHomeEntriesEtymologies
                 ]
                 
                 let sectionTitle:String = NSLocalizedString(
-                    "RModelHomeEntriesEtymologies_sectionTitle",
+                    "RModelHomeEntriesEtymologies_title",
                     comment:"")
                 let sectionTitleString:NSAttributedString = NSAttributedString(
                     string:sectionTitle,
