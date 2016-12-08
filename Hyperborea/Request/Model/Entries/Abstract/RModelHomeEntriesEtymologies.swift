@@ -45,6 +45,14 @@ class RModelHomeEntriesEtymologies
                 alpha:1)
         ]
         
+        let attributes:[String:Any] = [
+            NSFontAttributeName:UIFont.regular(
+                size:RModelHomeEntriesItem.kDefinitionFontSize),
+            NSForegroundColorAttributeName:UIColor(
+                white:RModelHomeEntriesItem.kExampleWhite,
+                alpha:1)
+        ]
+        
         let sectionTitle:String = NSLocalizedString(
             "RModelHomeEntriesEtymologies_title",
             comment:"")
@@ -56,14 +64,6 @@ class RModelHomeEntriesEtymologies
         
         for title:String in titles
         {
-            let attributes:[String:Any] = [
-                NSFontAttributeName:UIFont.regular(
-                    size:RModelHomeEntriesItem.kDefinitionFontSize),
-                NSForegroundColorAttributeName:UIColor(
-                    white:RModelHomeEntriesItem.kExampleWhite,
-                    alpha:1)
-            ]
-            
             let titleSeparator:String = "\(kEtymologieSeparator)\(title)"
             let titleString:NSAttributedString = NSAttributedString(
                 string:titleSeparator,

@@ -64,16 +64,24 @@ class RModelHomeEntriesTense
         
         if !tenses.isEmpty
         {
+            let attributes:[String:Any] = [
+                NSFontAttributeName:UIFont.regular(
+                    size:RModelHomeEntriesItem.kComplementFontSize),
+                NSForegroundColorAttributeName:UIColor(
+                    white:RModelHomeEntriesItem.kComplementWhite,
+                    alpha:1)
+            ]
+            
+            let attributesSeparator:[String:Any] = [
+                NSFontAttributeName:UIFont.regular(
+                    size:RModelHomeEntriesItem.kSeparatorFontSize),
+                NSForegroundColorAttributeName:UIColor(
+                    white:RModelHomeEntriesItem.kSeparatorWhite,
+                    alpha:1)
+            ]
+            
             for tense:String in tenses
             {
-                let attributes:[String:Any] = [
-                    NSFontAttributeName:UIFont.regular(
-                        size:RModelHomeEntriesItem.kComplementFontSize),
-                    NSForegroundColorAttributeName:UIColor(
-                        white:RModelHomeEntriesItem.kComplementWhite,
-                        alpha:1)
-                ]
-                
                 let compositeString:String
                 let tenseLowerCase:String = tense.lowercased()
                 
@@ -83,7 +91,12 @@ class RModelHomeEntriesTense
                 }
                 else
                 {
-                    compositeString = "\(kTenseSeparator)\(tenseLowerCase)"
+                    let separatorString:NSAttributedString = NSAttributedString(
+                        string:kTenseSeparator,
+                        attributes:attributesSeparator)
+                    mutableString.append(separatorString)
+                    
+                    compositeString = tenseLowerCase
                 }
                 
                 let tenseString:NSAttributedString = NSAttributedString(
