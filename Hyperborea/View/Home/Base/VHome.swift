@@ -11,7 +11,7 @@ class VHome:VView
     private weak var layoutInputTop:NSLayoutConstraint!
     private weak var layoutInputHeight:NSLayoutConstraint!
     private let kAnimationDuration:TimeInterval = 3
-    private let kInputMinHeight:CGFloat = 86
+    private let kInputMinHeight:CGFloat = 106
     private let kHelperHeight:CGFloat = 50
     private let kSuggestionsHeight:CGFloat = 46
     private let kScrollMaxMove:CGFloat = -46

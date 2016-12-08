@@ -3,7 +3,7 @@ import UIKit
 class VHomeInputPlaceholder:UIView
 {
     private let kLabelWidth:CGFloat = 300
-    private let kLabelLeft:CGFloat = 20
+    private let kLabelLeft:CGFloat = 10
     
     init()
     {

@@ -4,8 +4,8 @@ class VHomeInputText:UITextView, UITextViewDelegate
 {
     private weak var controller:CHome!
     let kMaxHeight:CGFloat = 86
-    private let kInsetsHorizontal:CGFloat = 15
-    private let kMaxFontSize:CGFloat = 25
+    private let kInsetsHorizontal:CGFloat = 5
+    private let kMaxFontSize:CGFloat = 28
     
     convenience init(controller:CHome)
     {
