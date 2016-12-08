@@ -10,7 +10,7 @@ class RModelHomeEntriesTense
     private let kTypeTense:String = "Tense"
     private let kTypeNotFinite:String = "Non Finiteness"
     private let kGroupSeparator:String = "  "
-    private let kTenseSeparator:String = ", "
+    private let kTenseSeparator:String = " | "
     
     init(json:Any)
     {
@@ -75,14 +75,15 @@ class RModelHomeEntriesTense
                 ]
                 
                 let compositeString:String
+                let tenseLowerCase:String = tense.lowercased()
                 
                 if mutableString.string.isEmpty
                 {
-                    compositeString = "\(kGroupSeparator)\(tense)"
+                    compositeString = "\(kGroupSeparator)\(tenseLowerCase)"
                 }
                 else
                 {
-                    compositeString = "\(kTenseSeparator)\(tense)"
+                    compositeString = "\(kTenseSeparator)\(tenseLowerCase)"
                 }
                 
                 let tenseString:NSAttributedString = NSAttributedString(
