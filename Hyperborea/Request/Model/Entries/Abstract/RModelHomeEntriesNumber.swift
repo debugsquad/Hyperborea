@@ -2,19 +2,18 @@ import UIKit
 
 class RModelHomeEntriesNumber
 {
-    private let tenses:[String]
+    private let numbers:[String]
     private let kKeyEntries:String = "entries"
     private let kKeyGrammaticalFeatures:String = "grammaticalFeatures"
     private let kKeyType:String = "type"
     private let kKeyText:String = "text"
-    private let kTypeTense:String = "Tense"
-    private let kTypeNotFinite:String = "Non Finiteness"
+    private let kTypeNumber:String = "Number"
     private let kGroupSeparator:String = "  "
-    private let kTenseSeparator:String = " | "
+    private let kNumberSeparator:String = " | "
     
     init(json:Any)
     {
-        var tenses:[String] = []
+        var numbers:[String] = []
         
         guard
             
@@ -23,9 +22,9 @@ class RModelHomeEntriesNumber
             let jsonEntriesFirst:[String:Any] = jsonEntries.first as? [String:Any],
             let jsonFeatures:[Any] = jsonEntriesFirst[kKeyGrammaticalFeatures] as? [Any]
             
-            else
+        else
         {
-            self.tenses = tenses
+            self.numbers = numbers
             
             return
         }
@@ -38,22 +37,18 @@ class RModelHomeEntriesNumber
                 let featureMapType:String  = featureMap[kKeyType] as? String,
                 let featureMapText:String = featureMap[kKeyText] as? String
                 
-                else
+            else
             {
                 continue
             }
             
-            if featureMapType == kTypeTense
+            if featureMapType == kTypeNumber
             {
-                tenses.insert(featureMapText, at:0)
-            }
-            else if featureMapType == kTypeNotFinite
-            {
-                tenses.append(featureMapText)
+                numbers.append(featureMapText)
             }
         }
         
-        self.tenses = tenses
+        self.numbers = numbers
     }
     
     //MARK: public
@@ -62,7 +57,7 @@ class RModelHomeEntriesNumber
     {
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
-        if !tenses.isEmpty
+        if !numbers.isEmpty
         {
             let attributes:[String:Any] = [
                 NSFontAttributeName:UIFont.regular(
@@ -80,30 +75,30 @@ class RModelHomeEntriesNumber
                     alpha:1)
             ]
             
-            for tense:String in tenses
+            for number:String in numbers
             {
                 let compositeString:String
-                let tenseLowerCase:String = tense.lowercased()
+                let numberLowerCase:String = number.lowercased()
                 
                 if mutableString.string.isEmpty
                 {
-                    compositeString = "\(kGroupSeparator)\(tenseLowerCase)"
+                    compositeString = "\(kGroupSeparator)\(numberLowerCase)"
                 }
                 else
                 {
                     let separatorString:NSAttributedString = NSAttributedString(
-                        string:kTenseSeparator,
+                        string:kNumberSeparator,
                         attributes:attributesSeparator)
                     mutableString.append(separatorString)
                     
-                    compositeString = tenseLowerCase
+                    compositeString = numberLowerCase
                 }
                 
-                let tenseString:NSAttributedString = NSAttributedString(
+                let numberString:NSAttributedString = NSAttributedString(
                     string:compositeString,
                     attributes:attributes)
                 
-                mutableString.append(tenseString)
+                mutableString.append(numberString)
             }
         }
         
