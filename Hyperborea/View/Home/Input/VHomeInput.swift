@@ -5,6 +5,7 @@ class VHomeInput:UIView
     weak var viewText:VHomeInputText!
     private weak var controller:CHome!
     private weak var viewPlaceholder:VHomeInputPlaceholder!
+    private weak var border:UIView!
     private weak var layoutViewTextHeight:NSLayoutConstraint!
     private weak var layoutViewTextBottom:NSLayoutConstraint!
     let kMaxHeight:CGFloat = 150
@@ -29,8 +30,13 @@ class VHomeInput:UIView
         let border:UIView = UIView()
         border.isUserInteractionEnabled = false
         border.translatesAutoresizingMaskIntoConstraints = false
-        border.backgroundColor = UIColor(red:0.94, green:0.95, blue:0.96, alpha:1)
+        border.backgroundColor = UIColor(
+            red:0.91,
+            green:0.92,
+            blue:0.93,
+            alpha:1)
         border.clipsToBounds = true
+        self.border = border
         
         let viewText:VHomeInputText = VHomeInputText(controller:controller)
         self.viewText = viewText
@@ -204,6 +210,8 @@ class VHomeInput:UIView
         
         if deltaHeight > 0
         {
+            border.alpha = 1
+            
             if deltaHeight < kMaxTextBottom
             {
                 layoutViewTextBottom.constant = deltaHeight
@@ -216,6 +224,7 @@ class VHomeInput:UIView
         else
         {
             layoutViewTextBottom.constant = 0
+            border.alpha = 0
         }
         
         super.layoutSubviews()
