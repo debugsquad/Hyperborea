@@ -34,7 +34,7 @@ class VHomeInputText:UITextView, UITextViewDelegate
         delegate = self
         self.controller = controller
     }
-    /*
+    
     override func layoutSubviews()
     {
         let height:CGFloat = bounds.maxY
@@ -43,7 +43,7 @@ class VHomeInputText:UITextView, UITextViewDelegate
         font = UIFont.regular(size:fontSize)
         
         super.layoutSubviews()
-    }*/
+    }
     
     //MARK: textView delegate
     

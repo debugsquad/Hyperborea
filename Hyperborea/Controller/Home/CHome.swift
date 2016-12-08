@@ -3,6 +3,8 @@ import UIKit
 class CHome:CController, RMainDelegate
 {
     weak var viewHome:VHome!
+    private let kSpace:String = " "
+    private let kUnderScore:String = "_"
     private let kEmpty:String = ""
     private let kStatusOk:RMain.StatusCode = 200
     
@@ -44,6 +46,27 @@ class CHome:CController, RMainDelegate
         }
     }
     
+    private func wordIdProcess(rawWord:String) -> String
+    {
+        let unspacedWord:String = rawWord.replacingOccurrences(
+            of:kSpace,
+            with:kUnderScore)
+        let lowercaseWordId:String = unspacedWord.lowercased()
+        let escapedWordId:String
+        
+        if let escapedLowercaseText:String = lowercaseWordId.addingPercentEncoding(
+            withAllowedCharacters:CharacterSet.urlQueryAllowed)
+        {
+            escapedWordId = escapedLowercaseText
+        }
+        else
+        {
+            escapedWordId = kEmpty
+        }
+        
+        return escapedWordId
+    }
+    
     private func searchWordId(wordId:String)
     {
         cancelRequests()
@@ -83,7 +106,8 @@ class CHome:CController, RMainDelegate
     
     func search()
     {
-        let wordId:String = viewHome.viewInput.viewText.text
+        let rawWord:String = viewHome.viewInput.viewText.text
+        let wordId:String = wordIdProcess(rawWord:rawWord)
         searchWordId(wordId:wordId)
     }
     

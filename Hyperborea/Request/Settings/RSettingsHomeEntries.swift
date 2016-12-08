@@ -2,8 +2,6 @@ import Foundation
 
 class RSettingsHomeEntries:RSettings
 {
-    private let kEmpty:String = ""
-    
     init(wordId:String)
     {
         let headers:[String:String] = RConfiguration.sharedInstance.credentials.current()
@@ -12,20 +10,7 @@ class RSettingsHomeEntries:RSettings
             urlKey:RUrl.UrlKey.oxfordApi)
         let entriesUrl:String = RUrl.sharedInstance.urlFor(
             urlKey:RUrl.UrlKey.entries)
-        let lowercaseWordId:String = wordId.lowercased()
-        let escapedWordId:String
-        
-        if let escapedLowercaseText:String = lowercaseWordId.addingPercentEncoding(
-            withAllowedCharacters:CharacterSet.urlHostAllowed)
-        {
-            escapedWordId = escapedLowercaseText
-        }
-        else
-        {
-            escapedWordId = kEmpty
-        }
-        
-        let urlString:String = "\(baseUrl)/\(entriesUrl)/\(sourceLanguage)/\(escapedWordId)"
+        let urlString:String = "\(baseUrl)/\(entriesUrl)/\(sourceLanguage)/\(wordId)"
         
         super.init(
             model:RModelHomeEntries.self,

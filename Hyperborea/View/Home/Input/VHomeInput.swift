@@ -6,8 +6,10 @@ class VHomeInput:UIView
     private weak var controller:CHome!
     private weak var viewPlaceholder:VHomeInputPlaceholder!
     private weak var layoutViewTextHeight:NSLayoutConstraint!
+    private weak var layoutViewTextBottom:NSLayoutConstraint!
     let kMaxHeight:CGFloat = 150
     private let kPlaceholderHeight:CGFloat = 36
+    private let kMaxTextBottom:CGFloat = 25
     
     convenience init(controller:CHome)
     {
@@ -24,6 +26,12 @@ class VHomeInput:UIView
         visualEffect.clipsToBounds = true
         visualEffect.isUserInteractionEnabled = false
         
+        let border:UIView = UIView()
+        border.isUserInteractionEnabled = false
+        border.translatesAutoresizingMaskIntoConstraints = false
+        border.backgroundColor = UIColor(red:0.94, green:0.95, blue:0.96, alpha:1)
+        border.clipsToBounds = true
+        
         let viewText:VHomeInputText = VHomeInputText(controller:controller)
         self.viewText = viewText
         
@@ -31,6 +39,7 @@ class VHomeInput:UIView
         self.viewPlaceholder = viewPlaceholder
         
         addSubview(visualEffect)
+        addSubview(border)
         addSubview(viewPlaceholder)
         addSubview(viewText)
         
@@ -67,6 +76,39 @@ class VHomeInput:UIView
             multiplier:1,
             constant:0)
         
+        let layoutBorderHeight:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.height,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:1)
+        let layoutBorderBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutBorderLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutBorderRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         layoutViewTextHeight = NSLayoutConstraint(
             item:viewText,
             attribute:NSLayoutAttribute.height,
@@ -75,7 +117,7 @@ class VHomeInput:UIView
             attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
             constant:viewText.kMaxHeight)
-        let layoutViewTextBottom:NSLayoutConstraint = NSLayoutConstraint(
+        layoutViewTextBottom = NSLayoutConstraint(
             item:viewText,
             attribute:NSLayoutAttribute.bottom,
             relatedBy:NSLayoutRelation.equal,
@@ -138,6 +180,10 @@ class VHomeInput:UIView
             layoutVisualEffectBottom,
             layoutVisualEffectLeft,
             layoutVisualEffectRight,
+            layoutBorderHeight,
+            layoutBorderBottom,
+            layoutBorderLeft,
+            layoutBorderRight,
             layoutViewTextHeight,
             layoutViewTextBottom,
             layoutViewTextLeft,
@@ -151,9 +197,26 @@ class VHomeInput:UIView
     override func layoutSubviews()
     {
         let height:CGFloat = bounds.height
+        let deltaHeight:CGFloat = kMaxHeight - height
         let percent:CGFloat = height / kMaxHeight
         let textHeight:CGFloat = viewText.kMaxHeight * percent
         layoutViewTextHeight.constant = textHeight
+        
+        if deltaHeight > 0
+        {
+            if deltaHeight < kMaxTextBottom
+            {
+                layoutViewTextBottom.constant = deltaHeight
+            }
+            else
+            {
+                layoutViewTextBottom.constant = kMaxTextBottom
+            }
+        }
+        else
+        {
+            layoutViewTextBottom.constant = 0
+        }
         
         super.layoutSubviews()
     }
