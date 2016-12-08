@@ -7,7 +7,7 @@ class RModelHomeEntriesItem
     static let kExampleFontSize:CGFloat = 14
     static let kTitleWhite:CGFloat = 0
     static let kDefinitionWhite:CGFloat = 0.1
-    static let kExampleWhite:CGFloat = 0.2
+    static let kExampleWhite:CGFloat = 0.4
     let attributedString:NSAttributedString
     let reusableIdentifier:String
     let selectable:Bool

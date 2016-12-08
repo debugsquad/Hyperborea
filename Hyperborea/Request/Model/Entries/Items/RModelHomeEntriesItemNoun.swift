@@ -24,7 +24,7 @@ class RModelHomeEntriesItemNoun:RModelHomeEntriesItem
         mutableString.append(titleString)
         mutableString.append(sensesString)
         
-        let reusableIdentifier:String = VHomeWordsCellFull.reusableIdentifier
+        let reusableIdentifier:String = VHomeWordsCellEntry.reusableIdentifier
         
         super.init(
             attributedString:mutableString,

@@ -36,9 +36,9 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         collectionView.dataSource = self
         collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.onDrag
         collectionView.register(
-            VHomeWordsCellFull.self,
+            VHomeWordsCellEntry.self,
             forCellWithReuseIdentifier:
-            VHomeWordsCellFull.reusableIdentifier)
+            VHomeWordsCellEntry.reusableIdentifier)
         collectionView.register(
             VHomeWordsCellOrigin.self,
             forCellWithReuseIdentifier:

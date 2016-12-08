@@ -1,6 +1,6 @@
 import UIKit
 
-class VHomeWordsCellFull:VHomeWordsCell
+class VHomeWordsCellEntry:VHomeWordsCell
 {
     private weak var labelEntity:UILabel!
     private let kLabelEntityTop:CGFloat = 10
