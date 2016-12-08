@@ -150,6 +150,12 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         return item
     }
     
+    private func restartScroll()
+    {
+        let rect:CGRect = CGRect(x:0, y:0, width:1, height:1)
+        collectionView.scrollRectToVisible(rect, animated:false)
+    }
+    
     //MARK: public
     
     func showLoading()
@@ -157,6 +163,7 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         model = nil
         collectionView.reloadData()
         spinner.startAnimating()
+        restartScroll()
     }
     
     func config(model:RModelHomeEntries?)

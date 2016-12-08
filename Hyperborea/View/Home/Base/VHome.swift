@@ -11,7 +11,6 @@ class VHome:VView
     private weak var layoutInputTop:NSLayoutConstraint!
     private weak var layoutInputHeight:NSLayoutConstraint!
     private let kAnimationDuration:TimeInterval = 3
-    private let kAnimationScrollDuration:TimeInterval = 0.3
     private let kInputMinHeight:CGFloat = 106
     private let kHelperHeight:CGFloat = 50
     private let kSuggestionsHeight:CGFloat = 46
@@ -273,11 +272,12 @@ class VHome:VView
                 layoutInputHeight.constant = kInputMinHeight
             }
         }
-        
-        UIView.animate(withDuration:kAnimationScrollDuration)
-        { [weak self] in
-            
-            self?.layoutIfNeeded()
-        }
+    }
+    
+    func restartScroll()
+    {
+        layoutInputTop.constant = 0
+        layoutInputHeight.constant = viewInput.kMaxHeight
+        controller.parentController.viewParent.restartScroll()
     }
 }

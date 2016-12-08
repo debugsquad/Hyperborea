@@ -51,7 +51,7 @@ class VHomeInputText:UITextView, UITextViewDelegate
     {
         if textView.bounds.maxY < kMaxHeight
         {
-            controller.viewHome.scrollDidScroll(offsetY:0)
+            controller.viewHome.restartScroll()
         }
     }
     

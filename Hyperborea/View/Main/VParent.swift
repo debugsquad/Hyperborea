@@ -6,6 +6,7 @@ class VParent:UIView
     
     private weak var viewBar:VParentBar!
     private weak var layoutBarTop:NSLayoutConstraint!
+    private let kAnimationScrollDuration:TimeInterval = 0.3
     
     convenience init(controller:CParent)
     {
@@ -82,6 +83,16 @@ class VParent:UIView
         else
         {
             layoutBarTop.constant = offsetY
+        }
+    }
+    
+    func restartScroll()
+    {
+        layoutBarTop.constant = 0
+        
+        UIView.animate(withDuration:kAnimationScrollDuration)
+        {
+            self.layoutIfNeeded()
         }
     }
 }
