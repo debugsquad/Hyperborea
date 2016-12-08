@@ -33,6 +33,8 @@ class CHome:CController, RMainDelegate
             self?.viewHome.viewHelper.textEmpty()
             self?.viewHome.viewSuggestions.config(model:nil)
             self?.viewHome.viewWords.config(model:nil)
+            self?.viewHome.restartScroll()
+            self?.viewHome.viewWords.restartScroll()
         }
     }
     
@@ -72,6 +74,7 @@ class CHome:CController, RMainDelegate
         cancelRequests()
         UIApplication.shared.keyWindow!.endEditing(true)
         viewHome.viewWords.showLoading()
+        viewHome.viewWords.restartScroll()
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
