@@ -2,12 +2,12 @@ import UIKit
 
 class RModelHomeEntriesItem
 {
-    static let kTitleFontSize:CGFloat = 20
-    static let kDefinitionFontSize:CGFloat = 17
-    static let kExampleFontSize:CGFloat = 17
+    static let kTitleFontSize:CGFloat = 18
+    static let kDefinitionFontSize:CGFloat = 15
+    static let kExampleFontSize:CGFloat = 14
     static let kTitleWhite:CGFloat = 0
-    static let kDefinitionWhite:CGFloat = 0.3
-    static let kExampleWhite:CGFloat = 0.4
+    static let kDefinitionWhite:CGFloat = 0.2
+    static let kExampleWhite:CGFloat = 0.3
     let attributedString:NSAttributedString
     let reusableIdentifier:String
     let selectable:Bool
