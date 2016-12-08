@@ -67,12 +67,12 @@ class VHomeWordsCellOrigin:VHomeWordsCell
             attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
             constant:1)
-        let layoutBorderBottom:NSLayoutConstraint = NSLayoutConstraint(
+        let layoutBorderTop:NSLayoutConstraint = NSLayoutConstraint(
             item:border,
-            attribute:NSLayoutAttribute.bottom,
+            attribute:NSLayoutAttribute.top,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
-            attribute:NSLayoutAttribute.bottom,
+            attribute:NSLayoutAttribute.top,
             multiplier:1,
             constant:0)
         let layoutBorderLeft:NSLayoutConstraint = NSLayoutConstraint(
@@ -98,7 +98,7 @@ class VHomeWordsCellOrigin:VHomeWordsCell
             layoutLabelEntityLeft,
             layoutLabelEntityRight,
             layoutBorderHeight,
-            layoutBorderBottom,
+            layoutBorderTop,
             layoutBorderLeft,
             layoutBorderRight
             ])

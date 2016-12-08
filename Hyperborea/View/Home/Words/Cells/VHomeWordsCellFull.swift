@@ -15,6 +15,7 @@ class VHomeWordsCellFull:VHomeWordsCell
         labelEntity.translatesAutoresizingMaskIntoConstraints = false
         labelEntity.numberOfLines = 0
         labelEntity.backgroundColor = UIColor.clear
+        labelEntity.isUserInteractionEnabled = true
         self.labelEntity = labelEntity
         
         addSubview(labelEntity)
