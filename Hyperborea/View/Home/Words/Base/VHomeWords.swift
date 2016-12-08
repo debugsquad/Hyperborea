@@ -34,6 +34,7 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.onDrag
         collectionView.register(
             VHomeWordsCellFull.self,
             forCellWithReuseIdentifier:

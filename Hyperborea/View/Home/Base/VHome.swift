@@ -6,6 +6,7 @@ class VHome:VView
     weak var viewHelper:VHomeHelper!
     weak var viewSuggestions:VHomeSuggestions!
     weak var viewWords:VHomeWords!
+    var scrollable:Bool
     private weak var controller:CHome!
     private weak var layoutViewHelperBottom:NSLayoutConstraint!
     private weak var layoutInputTop:NSLayoutConstraint!
@@ -18,6 +19,8 @@ class VHome:VView
     
     override init(controller:CController)
     {
+        scrollable = true
+        
         super.init(controller:controller)
         self.controller = controller as? CHome
         
@@ -248,28 +251,31 @@ class VHome:VView
     
     func scrollDidScroll(offsetY:CGFloat)
     {
-        controller.parentController.viewParent.scrollDidScroll(
-            offsetY:offsetY)
-        
-        if offsetY > kScrollMaxMove
+        if scrollable
         {
-            layoutInputTop.constant = offsetY
-            layoutInputHeight.constant = viewInput.kMaxHeight
-        }
-        else
-        {
-            layoutInputTop.constant = kScrollMaxMove
+            controller.parentController.viewParent.scrollDidScroll(
+                offsetY:offsetY)
             
-            let deltaHeight:CGFloat = abs(offsetY) - abs(kScrollMaxMove)
-            let newInputHeight:CGFloat = viewInput.kMaxHeight - deltaHeight
-            
-            if newInputHeight > kInputMinHeight
+            if offsetY > kScrollMaxMove
             {
-                layoutInputHeight.constant = newInputHeight
+                layoutInputTop.constant = offsetY
+                layoutInputHeight.constant = viewInput.kMaxHeight
             }
             else
             {
-                layoutInputHeight.constant = kInputMinHeight
+                layoutInputTop.constant = kScrollMaxMove
+                
+                let deltaHeight:CGFloat = abs(offsetY) - abs(kScrollMaxMove)
+                let newInputHeight:CGFloat = viewInput.kMaxHeight - deltaHeight
+                
+                if newInputHeight > kInputMinHeight
+                {
+                    layoutInputHeight.constant = newInputHeight
+                }
+                else
+                {
+                    layoutInputHeight.constant = kInputMinHeight
+                }
             }
         }
     }

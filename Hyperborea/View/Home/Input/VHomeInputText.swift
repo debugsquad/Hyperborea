@@ -49,10 +49,17 @@ class VHomeInputText:UITextView, UITextViewDelegate
     
     func textViewDidBeginEditing(_ textView:UITextView)
     {
+        controller.viewHome.scrollable = false
+        
         if textView.bounds.maxY < kMaxHeight
         {
             controller.viewHome.restartScroll()
         }
+    }
+    
+    func textViewDidEndEditing(_ textView:UITextView)
+    {
+        controller.viewHome.scrollable = true
     }
     
     func textView(_ textView:UITextView, shouldChangeTextIn range:NSRange, replacementText text:String) -> Bool
