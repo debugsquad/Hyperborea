@@ -5,12 +5,12 @@ class VHomeLanguage:VView
     private weak var controller:CHomeLanguage!
     private weak var layoutOrbHorizontalLeft:NSLayoutConstraint!
     private weak var layoutOrbVerticalTop:NSLayoutConstraint!
-    private let kAnimationDuration:TimeInterval = 0.4
-    private let kAlpha:CGFloat = 0.4
+    private let kAnimationDuration:TimeInterval = 0.3
+    private let kAlpha:CGFloat = 0.5
     private let kStartingLeft:CGFloat = -57
     private let kStartingTop:CGFloat = 12
-    private let kFinalLeft:CGFloat = -140
-    private let kFinalTop:CGFloat = 95
+    private let kFinalLeft:CGFloat = -120
+    private let kFinalTop:CGFloat = 75
     
     override init(controller:CController)
     {
@@ -170,6 +170,18 @@ class VHomeLanguage:VView
     {
         layoutOrbVerticalTop.constant = kFinalTop
         layoutOrbHorizontalLeft.constant = kFinalLeft
+        
+        UIView.animate(withDuration:kAnimationDuration)
+        { [weak self] in
+            
+            self?.layoutIfNeeded()
+        }
+    }
+    
+    func viewWillDisappear()
+    {
+        layoutOrbVerticalTop.constant = kStartingTop
+        layoutOrbHorizontalLeft.constant = kStartingLeft
         
         UIView.animate(withDuration:kAnimationDuration)
         { [weak self] in
