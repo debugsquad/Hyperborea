@@ -22,6 +22,7 @@ class VParentBar:UIView
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.clear
+        self.controller = controller
         
         let imageView:UIImageView = UIImageView()
         imageView.isUserInteractionEnabled = false
