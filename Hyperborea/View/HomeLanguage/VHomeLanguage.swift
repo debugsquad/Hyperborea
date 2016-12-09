@@ -7,6 +7,7 @@ class VHomeLanguage:VView
     override init(controller:CController)
     {
         super.init(controller:controller)
+        backgroundColor = UIColor(white:0, alpha:0.5)
         self.controller = controller as? CHomeLanguage
     }
     

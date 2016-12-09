@@ -23,7 +23,7 @@ class CParent:UIViewController
         super.viewDidLoad()
         
         let home:CHome = CHome()
-        pushController(controller:home)
+        mainController(controller:home)
     }
     
     override func loadView()
@@ -45,24 +45,45 @@ class CParent:UIViewController
     
     //MARK: public
     
-    func pushController(controller:CController)
+    func mainController(controller:CController)
     {
         addChildViewController(controller)
         controller.beginAppearanceTransition(true, animated:false)
         
         guard
             
-            let vview:VView = controller.view as? VView
+            let vView:VView = controller.view as? VView
         
         else
         {
             return
         }
             
-        viewParent.pushView(
-            view:vview)
+        viewParent.mainView(view:vView)
+        controller.endAppearanceTransition()
+    }
+    
+    func animateOver(controller:CController)
+    {
+        guard
+            
+            let currentController:CController = childViewControllers.last as? CController,
+            let vView:VView = controller.view as? VView
+            
+        else
+        {
+            return
+        }
+        
+        addChildViewController(controller)
+        controller.beginAppearanceTransition(true, animated:true)
+        currentController.beginAppearanceTransition(false, animated:true)
+        
+        viewParent.animateOver(
+            view:vView)
         {
             controller.endAppearanceTransition()
+            currentController.endAppearanceTransition()
         }
     }
 }

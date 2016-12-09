@@ -6,7 +6,7 @@ class VParent:UIView
     
     private weak var viewBar:VParentBar!
     private weak var layoutBarTop:NSLayoutConstraint!
-    private let kAnimationScrollDuration:TimeInterval = 0.3
+    private let kAnimationDuration:TimeInterval = 0.3
     
     convenience init(controller:CParent)
     {
@@ -62,7 +62,7 @@ class VParent:UIView
     
     //MARK: public
     
-    func pushView(view:VView, completion:(() -> ()))
+    func mainView(view:VView)
     {
         insertSubview(view, belowSubview:viewBar)
         view.constraints(
@@ -70,8 +70,29 @@ class VParent:UIView
             initialRight:0,
             initialTop:0,
             initialBottom:0)
+    }
+    
+    func animateOver(view:VView, completion:@escaping(() -> ()))
+    {
+        view.alpha = 0
+        addSubview(view)
+        view.constraints(
+            initialLeft:0,
+            initialRight:0,
+            initialTop:0,
+            initialBottom:0)
         
-        completion()
+        UIView.animate(
+            withDuration:kAnimationDuration,
+            animations:
+        { [weak view] in
+            
+            view?.alpha = 1
+        })
+        { (done:Bool) in
+        
+            completion()
+        }
     }
     
     func scrollDidScroll(offsetY:CGFloat)
@@ -90,7 +111,7 @@ class VParent:UIView
     {
         layoutBarTop.constant = 0
         
-        UIView.animate(withDuration:kAnimationScrollDuration)
+        UIView.animate(withDuration:kAnimationDuration)
         {
             self.layoutIfNeeded()
         }
