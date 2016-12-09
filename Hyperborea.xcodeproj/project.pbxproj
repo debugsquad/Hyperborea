@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA1783F61DFB55CC00895012 /* CHomeLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1783F51DFB55CC00895012 /* CHomeLanguage.swift */; };
 		DA2BBA011DF873D700C450C8 /* VHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9ED1DF873D700C450C8 /* VHome.swift */; };
 		DA2BBA021DF873D700C450C8 /* VHomeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9EF1DF873D700C450C8 /* VHomeHelper.swift */; };
 		DA2BBA031DF873D700C450C8 /* VHomeHelperCancel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9F01DF873D700C450C8 /* VHomeHelperCancel.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA1783F51DFB55CC00895012 /* CHomeLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHomeLanguage.swift; sourceTree = "<group>"; };
 		DA2BB9ED1DF873D700C450C8 /* VHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHome.swift; sourceTree = "<group>"; };
 		DA2BB9EF1DF873D700C450C8 /* VHomeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelper.swift; sourceTree = "<group>"; };
 		DA2BB9F01DF873D700C450C8 /* VHomeHelperCancel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperCancel.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				DAAD347C1DF235BC00C5D3D1 /* CHome.swift */,
+				DA1783F51DFB55CC00895012 /* CHomeLanguage.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */,
 				DA63C3D21DF5EF7B0026169C /* RSettingsHomeSearch.swift in Sources */,
 				DA5097791DFB2FC60088821E /* MSession.swift in Sources */,
+				DA1783F61DFB55CC00895012 /* CHomeLanguage.swift in Sources */,
 				DA63C3D01DF5EBB50026169C /* RModel.swift in Sources */,
 				DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */,
 				DAAD346B1DF2332500C5D3D1 /* ExtensionUIColor.swift in Sources */,
