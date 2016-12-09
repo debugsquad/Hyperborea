@@ -69,7 +69,7 @@ class CHome:CController, RMainDelegate
         return escapedWordId
     }
     
-    private func searchWordId(wordId:String)
+    private func searchWordId(wordId:String, region:String?)
     {
         cancelRequests()
         UIApplication.shared.keyWindow!.endEditing(true)
@@ -79,7 +79,9 @@ class CHome:CController, RMainDelegate
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
-            let settings:RSettingsHomeEntries = RSettingsHomeEntries(wordId:wordId)
+            let settings:RSettingsHomeEntries = RSettingsHomeEntries(
+                wordId:wordId,
+                region:region)
             RMain.request(settings:settings, delegate:self)
         }
     }
@@ -111,7 +113,7 @@ class CHome:CController, RMainDelegate
     {
         let rawWord:String = viewHome.viewInput.viewText.text
         let wordId:String = wordIdProcess(rawWord:rawWord)
-        searchWordId(wordId:wordId)
+        searchWordId(wordId:wordId, region:nil)
     }
     
     func changedText(text:String)
@@ -137,8 +139,12 @@ class CHome:CController, RMainDelegate
     
     func selectSuggestion(item:RModelHomeSearchResult)
     {
+        let region:String = item.region
+        
         viewHome.viewInput.viewText.text = item.word
-        searchWordId(wordId:item.wordId)
+        searchWordId(
+            wordId:item.wordId,
+            region:region)
     }
     
     //MARK: rMain delegate
