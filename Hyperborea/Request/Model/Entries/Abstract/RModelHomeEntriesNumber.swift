@@ -52,7 +52,22 @@ class RModelHomeEntriesNumber
                 
                 if featureMapType == kTypeNumber
                 {
-                    numbers.append(featureMapText)
+                    var append:Bool = true
+                    
+                    for number:String in numbers
+                    {
+                        if number == featureMapText
+                        {
+                            append = false
+                            
+                            break
+                        }
+                    }
+                    
+                    if append
+                    {
+                        numbers.append(featureMapText)
+                    }
                 }
             }
         }

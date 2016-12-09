@@ -20,7 +20,7 @@ class VHomeSuggestions:UIView, UICollectionViewDelegate, UICollectionViewDataSou
         flow.headerReferenceSize = CGSize.zero
         flow.footerReferenceSize = CGSize.zero
         flow.scrollDirection = UICollectionViewScrollDirection.horizontal
-        flow.minimumLineSpacing = 0
+        flow.minimumLineSpacing = kInterLine
         flow.minimumInteritemSpacing = kInterLine
         flow.sectionInset = UIEdgeInsets(
             top:0,

@@ -20,7 +20,7 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         
         let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flow.minimumLineSpacing = kInterLine
-        flow.minimumInteritemSpacing = 0
+        flow.minimumInteritemSpacing = kInterLine
         flow.scrollDirection = UICollectionViewScrollDirection.vertical
         
         let collectionView:UICollectionView = UICollectionView(

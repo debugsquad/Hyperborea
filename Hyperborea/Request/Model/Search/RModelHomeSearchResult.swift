@@ -18,11 +18,13 @@ class RModelHomeSearchResult
     private let kReplaceI:String = "í"
     private let kReplaceO:String = "ó"
     private let kReplaceU:String = "ú"
+    private let kReplaceExcalamation:String = "¡"
     private let kNormalA:String = "a"
     private let kNormalE:String = "e"
     private let kNormalI:String = "i"
     private let kNormalO:String = "o"
     private let kNormalU:String = "u"
+    private let kNormalExclamation:String = "%C2%A1"
     private let kEmpty:String = ""
     private let kCellMargin:CGFloat = 35
     
@@ -37,8 +39,9 @@ class RModelHomeSearchResult
         guard
         
             let wordId:String = jsonMap?[kKeyWordId] as? String,
-            let word:String = jsonMap?[kKeyWord] as? String,
-            let matchType:String = jsonMap?[kKeyMathType] as? String
+            let matchType:String = jsonMap?[kKeyMathType] as? String,
+            let encodedWord:String = jsonMap?[kKeyWord] as? String,
+            let word:String = encodedWord.removingPercentEncoding
         
         else
         {
@@ -86,5 +89,8 @@ class RModelHomeSearchResult
         wordId = wordId.replacingOccurrences(
             of:kReplaceU,
             with:kNormalU)
+        wordId = wordId.replacingOccurrences(
+            of:kReplaceExcalamation,
+            with:kNormalExclamation)
     }
 }
