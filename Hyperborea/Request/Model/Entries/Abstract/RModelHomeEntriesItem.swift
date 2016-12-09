@@ -17,7 +17,7 @@ class RModelHomeEntriesItem
     let selectable:Bool
     private let options:NSStringDrawingOptions
     private let kMarginHorizontal:CGFloat = 20
-    private let kAddHeight:CGFloat = 20
+    private let kAddHeight:CGFloat = 4
     private let kMaxHeight:CGFloat = 90000
     
     init(

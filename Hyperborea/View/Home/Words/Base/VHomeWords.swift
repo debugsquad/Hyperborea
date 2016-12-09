@@ -6,9 +6,9 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     private weak var collectionView:UICollectionView!
     private weak var spinner:VSpinner!
     private var model:RModelHomeEntries?
-    private let kInsetTop:CGFloat = 104
+    private let kInsetTop:CGFloat = 110
     private let kInsetBottom:CGFloat = 110
-    private let kInterLine:CGFloat = 10
+    private let kInterLine:CGFloat = 25
     
     convenience init(controller:CHome)
     {

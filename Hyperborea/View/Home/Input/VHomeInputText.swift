@@ -3,9 +3,9 @@ import UIKit
 class VHomeInputText:UITextView, UITextViewDelegate
 {
     private weak var controller:CHome!
-    let kMaxHeight:CGFloat = 40
+    let kMaxHeight:CGFloat = 46
     private let kInsetsHorizontal:CGFloat = 5
-    private let kMaxFontSize:CGFloat = 28
+    private let kMaxFontSize:CGFloat = 25
     
     convenience init(controller:CHome)
     {
@@ -13,7 +13,7 @@ class VHomeInputText:UITextView, UITextViewDelegate
         
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor(white:0.85, alpha:1)
         textColor = UIColor.black
         tintColor = UIColor.black
         bounces = false

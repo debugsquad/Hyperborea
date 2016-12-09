@@ -7,7 +7,7 @@ class VHomeInput:UIView
     private weak var viewPlaceholder:VHomeInputPlaceholder!
     private weak var border:UIView!
     private weak var layoutViewTextHeight:NSLayoutConstraint!
-    let kMaxHeight:CGFloat = 104
+    let kMaxHeight:CGFloat = 110
     private let kPlaceholderHeight:CGFloat = 36
     
     convenience init(controller:CHome)
@@ -109,7 +109,7 @@ class VHomeInput:UIView
             multiplier:1,
             constant:0)
         
-        let layoutViewTextHeight:NSLayoutConstraint = NSLayoutConstraint(
+        layoutViewTextHeight = NSLayoutConstraint(
             item:viewText,
             attribute:NSLayoutAttribute.height,
             relatedBy:NSLayoutRelation.equal,
@@ -117,7 +117,7 @@ class VHomeInput:UIView
             attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
             constant:viewText.kMaxHeight)
-        layoutViewTextBottom = NSLayoutConstraint(
+        let layoutViewTextBottom:NSLayoutConstraint = NSLayoutConstraint(
             item:viewText,
             attribute:NSLayoutAttribute.bottom,
             relatedBy:NSLayoutRelation.equal,
