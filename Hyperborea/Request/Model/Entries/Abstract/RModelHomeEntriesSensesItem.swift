@@ -2,11 +2,12 @@ import Foundation
 
 class RModelHomeEntriesSensesItem
 {
-    var title:String
-    var examples:[String]
+    var title:[String]
+    var example:[String]
     
     init()
     {
-        examples = []
+        title = []
+        example = []
     }
 }

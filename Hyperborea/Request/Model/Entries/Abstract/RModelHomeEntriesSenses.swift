@@ -2,9 +2,7 @@ import UIKit
 
 class RModelHomeEntriesSenses
 {
-    private let subsenses:[RModelHomeEntriesSensesSub]
-    private let title:String?
-    private let examples:[String]?
+    private var items:[RModelHomeEntriesSensesItem]
     private let kKeyEntries:String = "entries"
     private let kKeySenses:String = "senses"
     private let kKeyDefinitions:String = "definitions"
@@ -16,7 +14,7 @@ class RModelHomeEntriesSenses
     
     init(json:Any)
     {
-        var
+        items = []
         
         guard
         
@@ -25,70 +23,86 @@ class RModelHomeEntriesSenses
         
         else
         {
-            subsenses = nil
-            title = nil
-            examples = nil
-            
             return
         }
         
-        for jsonEntry:
-        
-        let jsonEntriesFirst:[String:Any] = jsonEntries.first as? [String:Any],
-        let jsonSenses:[Any] = jsonEntriesFirst[kKeySenses] as? [Any],
-        let jsonSensesFirst:[String:Any] = jsonSenses.first as? [String:Any]
-        
-        if let sensesDefinitions:[String] = jsonSensesFirst[kKeyDefinitions] as? [String]
+        for jsonEntry:Any in jsonEntries
         {
-            self.title = sensesDefinitions.first
-        }
-        else
-        {
-            self.title = nil
-        }
-        
-        if let sensesExamples:[Any] = jsonSensesFirst[kKeyExamples] as? [Any]
-        {
-            var examples:[String] = []
+            guard
             
-            for sensesExample:Any in sensesExamples
+                let jsonEntryMap:[String:Any] = jsonEntry as? [String:Any],
+                let jsonSenses:[Any] = jsonEntryMap[kKeySenses] as? [Any]
+            
+            else
+            {
+                continue
+            }
+            
+            for jsonSense:Any in jsonSenses
             {
                 guard
                 
-                    let sensesExampleMap:[String:Any] = sensesExample as? [String:Any],
-                    let exampleText:String = sensesExampleMap[kKeyExampleText] as? String
+                    let jsonSenseMap:[String:Any] = jsonSense as? [String:Any]
                 
                 else
                 {
                     continue
                 }
                 
-                examples.append(exampleText)
+                let item:RModelHomeEntriesSensesItem = itemWithJson(json:jsonSenseMap)
+                items.append(item)
+                
+                if let jsonSubsenses:[Any] = jsonSenseMap[kKeySubsenses] as? [Any]
+                {
+                    for jsonSubsense:Any in jsonSubsenses
+                    {
+                        guard
+                            
+                            let jsonSubsenseMap:[String:Any] = jsonSubsense as? [String:Any]
+                        
+                        else
+                        {
+                            continue
+                        }
+                        
+                        let item:RModelHomeEntriesSensesItem = itemWithJson(json:jsonSubsenseMap)
+                        items.append(item)
+                    }
+                }
             }
-            
-            self.examples = examples
         }
-        else
+    }
+    
+    //MARK: private
+    
+    private func itemWithJson(json:[String:Any]) -> RModelHomeEntriesSensesItem
+    {
+        let item:RModelHomeEntriesSensesItem = RModelHomeEntriesSensesItem()
+        
+        if let sensesDefinitions:[String] = json[kKeyDefinitions] as? [String]
         {
-            self.examples = nil
+            item.title.append(contentsOf:sensesDefinitions)
         }
         
-        if let jsonSubsenses:[Any] = jsonSensesFirst[kKeySubsenses] as? [Any]
+        if let sensesExamples:[Any] = json[kKeyExamples] as? [Any]
         {
-            var subsenses:[RModelHomeEntriesSensesSub] = []
-            
-            for jsonSubsense:Any in jsonSubsenses
+            for sensesExample:Any in sensesExamples
             {
-                let subsense:RModelHomeEntriesSensesSub = RModelHomeEntriesSensesSub(json:jsonSubsense)
-                subsenses.append(subsense)
+                guard
+                    
+                    let sensesExampleMap:[String:Any] = sensesExample as? [String:Any],
+                    let exampleText:String = sensesExampleMap[kKeyExampleText] as? String
+                    
+                else
+                {
+                    continue
+                }
+                
+                item.example.append(exampleText)
             }
-            
-            self.subsenses = subsenses
         }
-        else
-        {
-            self.subsenses = nil
-        }
+        
+        return item
     }
     
     //MARK: public
