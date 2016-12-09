@@ -14,7 +14,7 @@ class VParentBar:UIView
     private let kTitleLeft:CGFloat = 4
     private let kTitleWidth:CGFloat = 105
     private let kButtonsWidth:CGFloat = 35
-    private let kButtonsRight:CGFloat = 5
+    private let kButtonsRight:CGFloat = -5
     
     convenience init(controller:CParent)
     {
@@ -188,7 +188,7 @@ class VParentBar:UIView
             attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
             constant:kButtonsWidth)
-        let layoutButtonThesuarusTop:NSLayoutConstraint = NSLayoutConstraint(
+        let layoutButtonThesaurusTop:NSLayoutConstraint = NSLayoutConstraint(
             item:buttonThesaurus,
             attribute:NSLayoutAttribute.top,
             relatedBy:NSLayoutRelation.equal,
