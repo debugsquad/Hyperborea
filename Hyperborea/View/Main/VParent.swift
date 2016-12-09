@@ -95,6 +95,22 @@ class VParent:UIView
         }
     }
     
+    func dismissAnimateOver(view:VView, completion:@escaping(() -> ()))
+    {
+        UIView.animate(
+            withDuration:kAnimationDuration,
+            animations:
+            { [weak view] in
+                
+                view?.alpha = 0
+            })
+        { [weak view] (done:Bool) in
+            
+            view?.removeFromSuperview()
+            completion()
+        }
+    }
+    
     func scrollDidScroll(offsetY:CGFloat)
     {
         if offsetY > 0

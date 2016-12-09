@@ -15,6 +15,6 @@ class CHomeLanguage:CController
     
     func dismiss()
     {
-        
+        parentController.dismissAnimateOver()
     }
 }

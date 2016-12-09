@@ -86,4 +86,38 @@ class CParent:UIViewController
             currentController.endAppearanceTransition()
         }
     }
+    
+    func dismissAnimateOver()
+    {
+        guard
+            
+            let currentController:CController = childViewControllers.last as? CController,
+            let vView:VView = currentController.view as? VView
+            
+        else
+        {
+            return
+        }
+        
+        currentController.removeFromParentViewController()
+        
+        guard
+            
+            let previousController:CController = childViewControllers.last as? CController
+        
+        else
+        {
+            return
+        }
+        
+        currentController.beginAppearanceTransition(false, animated:true)
+        previousController.beginAppearanceTransition(true, animated:true)
+        
+        viewParent.dismissAnimateOver(
+            view:vView)
+        {
+            currentController.endAppearanceTransition()
+            previousController.endAppearanceTransition()
+        }
+    }
 }
