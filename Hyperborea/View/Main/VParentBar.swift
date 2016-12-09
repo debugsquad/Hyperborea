@@ -13,7 +13,7 @@ class VParentBar:UIView
     private let kImageWidth:CGFloat = 22
     private let kTitleLeft:CGFloat = 4
     private let kTitleWidth:CGFloat = 105
-    private let kButtonsWidth:CGFloat = 35
+    private let kButtonsWidth:CGFloat = 45
     private let kButtonsRight:CGFloat = -5
     
     convenience init(controller:CParent)
@@ -38,6 +38,7 @@ class VParentBar:UIView
             for:UIControlState.normal)
         buttonThesaurus.imageView!.clipsToBounds = true
         buttonThesaurus.imageView!.contentMode = UIViewContentMode.center
+        buttonThesaurus.alpha = 0.2
         self.buttonThesaurus = buttonThesaurus
         
         let buttonTranslate:UIButton = UIButton()
@@ -47,12 +48,14 @@ class VParentBar:UIView
             for:UIControlState.normal)
         buttonTranslate.imageView!.clipsToBounds = true
         buttonTranslate.imageView!.contentMode = UIViewContentMode.center
+        buttonTranslate.alpha = 0.2
         self.buttonTranslate = buttonTranslate
         
+        let languageImage:UIImage = MSession.sharedInstance.language.image
         let buttonLanguage:UIButton = UIButton()
         buttonLanguage.translatesAutoresizingMaskIntoConstraints = false
         buttonLanguage.setImage(
-            #imageLiteral(resourceName: "assetHomeSearch"),
+            languageImage,
             for:UIControlState.normal)
         buttonLanguage.imageView!.clipsToBounds = true
         buttonLanguage.imageView!.contentMode = UIViewContentMode.center
@@ -60,7 +63,7 @@ class VParentBar:UIView
         
         let labelTitle:UILabel = UILabel()
         labelTitle.isUserInteractionEnabled = false
-        labelTitle.font = UIFont.bold(size:15)
+        labelTitle.font = UIFont.bold(size:14)
         labelTitle.textColor = UIColor.black
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
