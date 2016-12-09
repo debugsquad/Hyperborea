@@ -8,7 +8,7 @@ class VHomeInput:UIView
     private weak var border:UIView!
     private weak var layoutViewTextHeight:NSLayoutConstraint!
     private weak var layoutViewTextBottom:NSLayoutConstraint!
-    let kMaxHeight:CGFloat = 150
+    let kMaxHeight:CGFloat = 100
     private let kPlaceholderHeight:CGFloat = 36
     private let kMaxTextBottom:CGFloat = 25
     
