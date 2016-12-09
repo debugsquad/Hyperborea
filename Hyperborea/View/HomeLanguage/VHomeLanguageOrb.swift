@@ -43,6 +43,10 @@ class VHomeLanguageOrb:UIView
             
             addSubview(button)
         }
+        else
+        {
+            isUserInteractionEnabled = false
+        }
         
         let layoutBackgroundTop:NSLayoutConstraint = NSLayoutConstraint(
             item:background,
