@@ -3,7 +3,7 @@ import UIKit
 class VHomeInputText:UITextView, UITextViewDelegate
 {
     private weak var controller:CHome!
-    let kMaxHeight:CGFloat = 86
+    let kMaxHeight:CGFloat = 40
     private let kInsetsHorizontal:CGFloat = 5
     private let kMaxFontSize:CGFloat = 28
     
