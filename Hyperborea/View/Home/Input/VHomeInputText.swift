@@ -13,7 +13,7 @@ class VHomeInputText:UITextView, UITextViewDelegate
         
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor(white:0.85, alpha:1)
+        backgroundColor = UIColor.clear
         textColor = UIColor.black
         tintColor = UIColor.black
         bounces = false
