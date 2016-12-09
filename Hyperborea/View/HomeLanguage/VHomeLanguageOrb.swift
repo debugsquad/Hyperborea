@@ -7,6 +7,7 @@ class VHomeLanguageOrb:UIView
     private let kTotalSize:CGFloat = 60
     private let kBackgroundSize:CGFloat = 40
     private let kBackgroundAlpha:CGFloat = 0.5
+    private let kLabelHeight:CGFloat = 30
     
     init(controller:CHomeLanguage, model:MSessionLanguage?)
     {
@@ -31,6 +32,15 @@ class VHomeLanguageOrb:UIView
         
         if let modelReceived:MSessionLanguage = model
         {
+            let label:UILabel = UILabel()
+            label.isUserInteractionEnabled = false
+            label.backgroundColor = UIColor.clear
+            label.isUserInteractionEnabled = false
+            label.font = UIFont.bold(size:12)
+            label.textAlignment = NSTextAlignment.center
+            label.textColor = UIColor.white
+            label.text = modelReceived.name
+            
             let button:UIButton = UIButton()
             button.clipsToBounds = true
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +51,7 @@ class VHomeLanguageOrb:UIView
             button.imageView!.contentMode = UIViewContentMode.center
             button.imageView!.clipsToBounds = true
             
+            addSubview(label)
             background.addSubview(button)
             
             let layoutButtonTop:NSLayoutConstraint = NSLayoutConstraint(
@@ -76,11 +87,48 @@ class VHomeLanguageOrb:UIView
                 multiplier:1,
                 constant:0)
             
+            let layoutLabelHeight:NSLayoutConstraint = NSLayoutConstraint(
+                item:label,
+                attribute:NSLayoutAttribute.height,
+                relatedBy:NSLayoutRelation.equal,
+                toItem:nil,
+                attribute:NSLayoutAttribute.notAnAttribute,
+                multiplier:1,
+                constant:kLabelHeight)
+            let layoutLabelLeft:NSLayoutConstraint = NSLayoutConstraint(
+                item:label,
+                attribute:NSLayoutAttribute.left,
+                relatedBy:NSLayoutRelation.equal,
+                toItem:self,
+                attribute:NSLayoutAttribute.left,
+                multiplier:1,
+                constant:0)
+            let layoutLabelRight:NSLayoutConstraint = NSLayoutConstraint(
+                item:label,
+                attribute:NSLayoutAttribute.right,
+                relatedBy:NSLayoutRelation.equal,
+                toItem:self,
+                attribute:NSLayoutAttribute.right,
+                multiplier:1,
+                constant:0)
+            let layoutLabelBottom:NSLayoutConstraint = NSLayoutConstraint(
+                item:label,
+                attribute:NSLayoutAttribute.bottom,
+                relatedBy:NSLayoutRelation.equal,
+                toItem:self,
+                attribute:NSLayoutAttribute.bottom,
+                multiplier:1,
+                constant:0)
+            
             background.addConstraints([
                 layoutButtonTop,
                 layoutButtonBottom,
                 layoutButtonLeft,
-                layoutButtonRight])
+                layoutButtonRight,
+                layoutLabelHeight,
+                layoutLabelLeft,
+                layoutLabelRight,
+                layoutLabelBottom])
         }
         else
         {
