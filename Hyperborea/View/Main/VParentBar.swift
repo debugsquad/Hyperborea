@@ -5,11 +5,16 @@ class VParentBar:UIView
     private weak var controller:CParent!
     private weak var labelTitle:UILabel!
     private weak var imageView:UIImageView!
+    private weak var buttonThesaurus:UIButton!
+    private weak var buttonTranslate:UIButton!
+    private weak var buttonLanguage:UIButton!
     private let kContentTop:CGFloat = 20
     private let kImageLeft:CGFloat = 8
     private let kImageWidth:CGFloat = 22
     private let kTitleLeft:CGFloat = 4
-    private let kTitleWidth:CGFloat = 200
+    private let kTitleWidth:CGFloat = 105
+    private let kButtonsWidth:CGFloat = 35
+    private let kButtonsRight:CGFloat = 5
     
     convenience init(controller:CParent)
     {
@@ -26,9 +31,36 @@ class VParentBar:UIView
         imageView.image = #imageLiteral(resourceName: "assetHomeSearch")
         self.imageView = imageView
         
+        let buttonThesaurus:UIButton = UIButton()
+        buttonThesaurus.translatesAutoresizingMaskIntoConstraints = false
+        buttonThesaurus.setImage(
+            #imageLiteral(resourceName: "assetHomeSearch"),
+            for:UIControlState.normal)
+        buttonThesaurus.imageView!.clipsToBounds = true
+        buttonThesaurus.imageView!.contentMode = UIViewContentMode.center
+        self.buttonThesaurus = buttonThesaurus
+        
+        let buttonTranslate:UIButton = UIButton()
+        buttonTranslate.translatesAutoresizingMaskIntoConstraints = false
+        buttonTranslate.setImage(
+            #imageLiteral(resourceName: "assetHomeSearch"),
+            for:UIControlState.normal)
+        buttonTranslate.imageView!.clipsToBounds = true
+        buttonTranslate.imageView!.contentMode = UIViewContentMode.center
+        self.buttonTranslate = buttonTranslate
+        
+        let buttonLanguage:UIButton = UIButton()
+        buttonLanguage.translatesAutoresizingMaskIntoConstraints = false
+        buttonLanguage.setImage(
+            #imageLiteral(resourceName: "assetHomeSearch"),
+            for:UIControlState.normal)
+        buttonLanguage.imageView!.clipsToBounds = true
+        buttonLanguage.imageView!.contentMode = UIViewContentMode.center
+        self.buttonLanguage = buttonLanguage
+        
         let labelTitle:UILabel = UILabel()
         labelTitle.isUserInteractionEnabled = false
-        labelTitle.font = UIFont.bold(size:16)
+        labelTitle.font = UIFont.bold(size:15)
         labelTitle.textColor = UIColor.black
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
@@ -37,6 +69,9 @@ class VParentBar:UIView
 
         addSubview(labelTitle)
         addSubview(imageView)
+        addSubview(buttonThesaurus)
+        addSubview(buttonTranslate)
+        addSubview(buttonLanguage)
         
         let layoutImageViewLeft:NSLayoutConstraint = NSLayoutConstraint(
             item:imageView,
@@ -64,6 +99,105 @@ class VParentBar:UIView
             constant:kContentTop)
         let layoutImageViewBottom:NSLayoutConstraint = NSLayoutConstraint(
             item:imageView,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        
+        let layoutButtonLanguageRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonLanguage,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:kButtonsRight)
+        let layoutButtonLanguageWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonLanguage,
+            attribute:NSLayoutAttribute.width,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kButtonsWidth)
+        let layoutButtonLanguageTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonLanguage,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:kContentTop)
+        let layoutButtonLanguageBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonLanguage,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        
+        let layoutButtonTranslateRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonTranslate,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:buttonLanguage,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutButtonTranslateWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonTranslate,
+            attribute:NSLayoutAttribute.width,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kButtonsWidth)
+        let layoutButtonTranslateTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonTranslate,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:kContentTop)
+        let layoutButtonTranslateBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonTranslate,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        
+        let layoutButtonThesaurusRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonThesaurus,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:buttonTranslate,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutButtonThesaurusWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonThesaurus,
+            attribute:NSLayoutAttribute.width,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kButtonsWidth)
+        let layoutButtonThesuarusTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonThesaurus,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:kContentTop)
+        let layoutButtonThesaurusBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonThesaurus,
             attribute:NSLayoutAttribute.bottom,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
@@ -109,6 +243,18 @@ class VParentBar:UIView
             layoutImageViewWidth,
             layoutImageViewTop,
             layoutImageViewBottom,
+            layoutButtonLanguageTop,
+            layoutButtonLanguageBottom,
+            layoutButtonLanguageRight,
+            layoutButtonLanguageWidth,
+            layoutButtonTranslateTop,
+            layoutButtonTranslateBottom,
+            layoutButtonTranslateRight,
+            layoutButtonTranslateWidth,
+            layoutButtonThesaurusTop,
+            layoutButtonThesaurusBottom,
+            layoutButtonThesaurusRight,
+            layoutButtonThesaurusWidth,
             layoutLabelTitleTop,
             layoutLabelTitleLeft,
             layoutLabelTitleWidth,
