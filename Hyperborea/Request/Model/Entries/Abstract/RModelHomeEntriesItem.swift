@@ -9,7 +9,7 @@ class RModelHomeEntriesItem
     static let kSeparatorFontSize:CGFloat = 10
     static let kTitleWhite:CGFloat = 0
     static let kDefinitionWhite:CGFloat = 0.1
-    static let kExampleWhite:CGFloat = 0.4
+    static let kExampleWhite:CGFloat = 0.45
     static let kComplementWhite:CGFloat = 0.6
     static let kSeparatorWhite:CGFloat = 0.8
     let attributedString:NSAttributedString

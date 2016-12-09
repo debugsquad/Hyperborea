@@ -2,7 +2,7 @@ import UIKit
 
 class RModelHomeEntriesTense
 {
-    private let tenses:[String]
+    private var tenses:[String]
     private let kKeyEntries:String = "entries"
     private let kKeyGrammaticalFeatures:String = "grammaticalFeatures"
     private let kKeyType:String = "type"
@@ -14,46 +14,53 @@ class RModelHomeEntriesTense
     
     init(json:Any)
     {
-        var tenses:[String] = []
+        tenses = []
         
         guard
             
             let jsonMap:[String:Any] = json as? [String:Any],
-            let jsonEntries:[Any] = jsonMap[kKeyEntries] as? [Any],
-            let jsonEntriesFirst:[String:Any] = jsonEntries.first as? [String:Any],
-            let jsonFeatures:[Any] = jsonEntriesFirst[kKeyGrammaticalFeatures] as? [Any]
+            let jsonEntries:[Any] = jsonMap[kKeyEntries] as? [Any]
             
         else
         {
-            self.tenses = tenses
-            
             return
         }
         
-        for jsonFeature:Any in jsonFeatures
+        for jsonEntry:Any in jsonEntries
         {
             guard
-            
-                let featureMap:[String:Any] = jsonFeature as? [String:Any],
-                let featureMapType:String  = featureMap[kKeyType] as? String,
-                let featureMapText:String = featureMap[kKeyText] as? String
-            
+                
+                let jsonEntryMap:[String:Any] = jsonEntry as? [String:Any],
+                let jsonFeatures:[Any] = jsonEntryMap[kKeyGrammaticalFeatures] as? [Any]
+                
             else
             {
                 continue
             }
             
-            if featureMapType == kTypeTense
+            for jsonFeature:Any in jsonFeatures
             {
-                tenses.insert(featureMapText, at:0)
-            }
-            else if featureMapType == kTypeNotFinite
-            {
-                tenses.append(featureMapText)
+                guard
+                    
+                    let featureMap:[String:Any] = jsonFeature as? [String:Any],
+                    let featureMapType:String  = featureMap[kKeyType] as? String,
+                    let featureMapText:String = featureMap[kKeyText] as? String
+                    
+                else
+                {
+                    continue
+                }
+                
+                if featureMapType == kTypeTense
+                {
+                    tenses.insert(featureMapText, at:0)
+                }
+                else if featureMapType == kTypeNotFinite
+                {
+                    tenses.append(featureMapText)
+                }
             }
         }
-        
-        self.tenses = tenses
     }
     
     //MARK: public
