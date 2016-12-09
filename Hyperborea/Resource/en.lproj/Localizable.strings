@@ -1,5 +1,7 @@
 "CHome_errorUnknown"="Unable to find word, try again later";
 
+"VParentBar_titleDictionary"="Dictionary";
+"VHomeInputPlaceholder_label"="Word search";
 "VHomeHelperSend_title"="Search";
 "VHomeWordsFooter_label"="Nothing found for current search, try again";
 

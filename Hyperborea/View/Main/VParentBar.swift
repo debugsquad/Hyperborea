@@ -6,8 +6,8 @@ class VParentBar:UIView
     private weak var labelTitle:UILabel!
     private weak var imageView:UIImageView!
     private let kContentTop:CGFloat = 20
-    private let kImageLeft:CGFloat = 10
-    private let kImageWidth:CGFloat = 20
+    private let kImageLeft:CGFloat = 8
+    private let kImageWidth:CGFloat = 22
     private let kTitleLeft:CGFloat = 4
     private let kTitleWidth:CGFloat = 200
     
@@ -32,7 +32,7 @@ class VParentBar:UIView
         labelTitle.textColor = UIColor.black
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.text = NSLocalizedString("Dictionary", comment:"")
+        labelTitle.text = NSLocalizedString("VParentBar_titleDictionary", comment:"")
         self.labelTitle = labelTitle
 
         addSubview(labelTitle)

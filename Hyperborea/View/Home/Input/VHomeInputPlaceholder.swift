@@ -19,7 +19,7 @@ class VHomeInputPlaceholder:UIView
         label.backgroundColor = UIColor.clear
         label.font = UIFont.regular(size:25)
         label.textColor = UIColor(white:0.85, alpha:1)
-        label.text = "Search for word"
+        label.text = NSLocalizedString("VHomeInputPlaceholder_label", comment:"")
         
         addSubview(label)
         
