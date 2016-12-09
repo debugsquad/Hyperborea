@@ -111,43 +111,43 @@ class RModelHomeEntriesSenses
     {
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
-        if let title:String = self.title
-        {
-            let attributes:[String:Any] = [
-                NSFontAttributeName:UIFont.regular(
-                    size:RModelHomeEntriesItem.kDefinitionFontSize),
-                NSForegroundColorAttributeName:UIColor(
-                    white:RModelHomeEntriesItem.kDefinitionWhite,
-                    alpha:1)
-            ]
-            
-            let titleSeparator:String = "\(kSensesSeparator)\(title)"
-            let titleString:NSAttributedString = NSAttributedString(
-                string:titleSeparator,
-                attributes:attributes)
-            
-            mutableString.append(titleString)
-        }
+        let attributesTitle:[String:Any] = [
+            NSFontAttributeName:UIFont.regular(
+                size:RModelHomeEntriesItem.kDefinitionFontSize),
+            NSForegroundColorAttributeName:UIColor(
+                white:RModelHomeEntriesItem.kDefinitionWhite,
+                alpha:1)
+        ]
         
-        if let examples:[String] = self.examples
+        let attributesExample:[String:Any] = [
+            NSFontAttributeName:UIFont.italic(
+                size:RModelHomeEntriesItem.kExampleFontSize),
+            NSForegroundColorAttributeName:UIColor(
+                white:RModelHomeEntriesItem.kExampleWhite,
+                alpha:1)
+        ]
+        
+        let attributesSeparator:[String:Any] = [
+            NSFontAttributeName:UIFont.regular(
+                size:RModelHomeEntriesItem.kSeparatorFontSize),
+            NSForegroundColorAttributeName:UIColor(
+                white:RModelHomeEntriesItem.kSeparatorWhite,
+                alpha:1)
+        ]
+        
+        for item:RModelHomeEntriesSensesItem in items
         {
-            let attributes:[String:Any] = [
-                NSFontAttributeName:UIFont.italic(
-                    size:RModelHomeEntriesItem.kExampleFontSize),
-                NSForegroundColorAttributeName:UIColor(
-                    white:RModelHomeEntriesItem.kExampleWhite,
-                    alpha:1)
-            ]
+            for title:String in item.title
+            {
+                let titleSeparator:String = "\(kSensesSeparator)\(title)"
+                let titleString:NSAttributedString = NSAttributedString(
+                    string:titleSeparator,
+                    attributes:attributesTitle)
+                
+                mutableString.append(titleString)
+            }
             
-            let attributesSeparator:[String:Any] = [
-                NSFontAttributeName:UIFont.regular(
-                    size:RModelHomeEntriesItem.kSeparatorFontSize),
-                NSForegroundColorAttributeName:UIColor(
-                    white:RModelHomeEntriesItem.kSeparatorWhite,
-                    alpha:1)
-            ]
-            
-            for example:String in examples
+            for example:String in item.example
             {
                 let separatorString:NSAttributedString = NSAttributedString(
                     string:kExampleSeparator,
@@ -155,20 +155,10 @@ class RModelHomeEntriesSenses
                 
                 let exampleString:NSAttributedString = NSAttributedString(
                     string:example,
-                    attributes:attributes)
+                    attributes:attributesExample)
                 
                 mutableString.append(separatorString)
                 mutableString.append(exampleString)
-            }
-        }
-        
-        if let subsenses:[RModelHomeEntriesSensesSub] = subsenses
-        {
-            for subsense:RModelHomeEntriesSensesSub in subsenses
-            {
-                let senseString:NSAttributedString = subsense.attributedString()
-                
-                mutableString.append(senseString)
             }
         }
         
