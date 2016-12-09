@@ -8,7 +8,7 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
     private var model:RModelHomeEntries?
     private let kInsetTop:CGFloat = 110
     private let kInsetBottom:CGFloat = 110
-    private let kInterLine:CGFloat = 25
+    private let kInterLine:CGFloat = 40
     
     convenience init(controller:CHome)
     {

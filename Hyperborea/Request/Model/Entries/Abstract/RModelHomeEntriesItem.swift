@@ -2,14 +2,14 @@ import UIKit
 
 class RModelHomeEntriesItem
 {
-    static let kTitleFontSize:CGFloat = 18
-    static let kDefinitionFontSize:CGFloat = 15
-    static let kExampleFontSize:CGFloat = 14
-    static let kComplementFontSize:CGFloat = 14
+    static let kTitleFontSize:CGFloat = 16
+    static let kDefinitionFontSize:CGFloat = 14
+    static let kExampleFontSize:CGFloat = 13
+    static let kComplementFontSize:CGFloat = 13
     static let kSeparatorFontSize:CGFloat = 10
     static let kTitleWhite:CGFloat = 0
-    static let kDefinitionWhite:CGFloat = 0.1
-    static let kExampleWhite:CGFloat = 0.45
+    static let kDefinitionWhite:CGFloat = 0.2
+    static let kExampleWhite:CGFloat = 0.5
     static let kComplementWhite:CGFloat = 0.6
     static let kSeparatorWhite:CGFloat = 0.8
     let attributedString:NSAttributedString
