@@ -2,33 +2,42 @@ import UIKit
 
 class RModelHomeEntriesEtymologies
 {
-    let titles:[String]
+    private(set) var titles:[String]
     private let kKeyEntries:String = "entries"
     private let kKeyEtymologies:String = "etymologies"
     private let kEtymologieSeparator:String = "\n"
     
     init(json:[Any])
     {
-        var titles:[String] = []
+        titles = []
         
         for jsonItem:Any in json
         {
             guard
                 
                 let jsonMap:[String:Any] = jsonItem as? [String:Any],
-                let jsonEntries:[Any] = jsonMap[kKeyEntries] as? [Any],
-                let jsonEntriesFirst:[String:Any] = jsonEntries.first as? [String:Any],
-                let jsonTitles:[String] = jsonEntriesFirst[kKeyEtymologies] as? [String]
+                let jsonEntries:[Any] = jsonMap[kKeyEntries] as? [Any]
                 
             else
             {
                 continue
             }
             
-            titles.append(contentsOf:jsonTitles)
+            for jsonEntry:Any in jsonEntries
+            {
+                guard
+                
+                    let jsonEntryMap:[String:Any] = jsonEntry as? [String:Any],
+                    let jsonTitles:[String] = jsonEntryMap[kKeyEtymologies] as? [String]
+                
+                else
+                {
+                    continue
+                }
+                
+                titles.append(contentsOf:jsonTitles)
+            }
         }
-        
-        self.titles = titles
     }
     
     //MARK: public
