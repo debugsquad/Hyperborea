@@ -44,7 +44,7 @@ class VHomeLanguageOrb:UIView
             background.addSubview(button)
             
             let layoutButtonTop:NSLayoutConstraint = NSLayoutConstraint(
-                item:background,
+                item:button,
                 attribute:NSLayoutAttribute.top,
                 relatedBy:NSLayoutRelation.equal,
                 toItem:background,
@@ -52,7 +52,7 @@ class VHomeLanguageOrb:UIView
                 multiplier:1,
                 constant:0)
             let layoutButtonLeft:NSLayoutConstraint = NSLayoutConstraint(
-                item:background,
+                item:button,
                 attribute:NSLayoutAttribute.left,
                 relatedBy:NSLayoutRelation.equal,
                 toItem:background,
@@ -60,8 +60,8 @@ class VHomeLanguageOrb:UIView
                 multiplier:1,
                 constant:0)
             let layoutButtonRight:NSLayoutConstraint = NSLayoutConstraint(
-                item:background,
-                attribute:NSLayoutAttribute.width,
+                item:button,
+                attribute:NSLayoutAttribute.right,
                 relatedBy:NSLayoutRelation.equal,
                 toItem:background,
                 attribute:NSLayoutAttribute.right,
@@ -69,7 +69,7 @@ class VHomeLanguageOrb:UIView
                 constant:0)
             let layoutButtonBottom:NSLayoutConstraint = NSLayoutConstraint(
                 item:button,
-                attribute:NSLayoutAttribute.height,
+                attribute:NSLayoutAttribute.bottom,
                 relatedBy:NSLayoutRelation.equal,
                 toItem:background,
                 attribute:NSLayoutAttribute.bottom,
