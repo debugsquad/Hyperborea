@@ -4,10 +4,11 @@ class VHomeLanguageOrb:UIView
 {
     private weak var controller:CHomeLanguage!
     private let model:MSessionLanguage?
+    private let kAnimationDuration:TimeInterval = 1
     private let kTotalSize:CGFloat = 60
     private let kBackgroundSize:CGFloat = 40
     private let kBackgroundAlpha:CGFloat = 0.5
-    private let kLabelHeight:CGFloat = 30
+    private let kLabelHeight:CGFloat = 15
     
     init(controller:CHomeLanguage, model:MSessionLanguage?)
     {
@@ -36,10 +37,11 @@ class VHomeLanguageOrb:UIView
             label.translatesAutoresizingMaskIntoConstraints = false
             label.isUserInteractionEnabled = false
             label.backgroundColor = UIColor.clear
-            label.font = UIFont.bold(size:12)
+            label.font = UIFont.bold(size:11)
             label.textAlignment = NSTextAlignment.center
             label.textColor = UIColor.white
             label.text = modelReceived.name
+            label.alpha = 0
             
             let button:UIButton = UIButton()
             button.clipsToBounds = true
@@ -131,6 +133,13 @@ class VHomeLanguageOrb:UIView
                 layoutLabelLeft,
                 layoutLabelRight,
                 layoutLabelBottom])
+            
+            UIView.animate(
+                withDuration:kAnimationDuration)
+            { [weak label] in
+                
+                label?.alpha = 1
+            }
         }
         else
         {
