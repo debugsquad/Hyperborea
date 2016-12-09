@@ -41,7 +41,46 @@ class VHomeLanguageOrb:UIView
             button.imageView!.contentMode = UIViewContentMode.center
             button.imageView!.clipsToBounds = true
             
-            addSubview(button)
+            background.addSubview(button)
+            
+            let layoutButtonTop:NSLayoutConstraint = NSLayoutConstraint(
+                item:background,
+                attribute:NSLayoutAttribute.top,
+                relatedBy:NSLayoutRelation.equal,
+                toItem:background,
+                attribute:NSLayoutAttribute.top,
+                multiplier:1,
+                constant:0)
+            let layoutButtonLeft:NSLayoutConstraint = NSLayoutConstraint(
+                item:background,
+                attribute:NSLayoutAttribute.left,
+                relatedBy:NSLayoutRelation.equal,
+                toItem:background,
+                attribute:NSLayoutAttribute.left,
+                multiplier:1,
+                constant:0)
+            let layoutButtonRight:NSLayoutConstraint = NSLayoutConstraint(
+                item:background,
+                attribute:NSLayoutAttribute.width,
+                relatedBy:NSLayoutRelation.equal,
+                toItem:background,
+                attribute:NSLayoutAttribute.right,
+                multiplier:1,
+                constant:0)
+            let layoutButtonBottom:NSLayoutConstraint = NSLayoutConstraint(
+                item:button,
+                attribute:NSLayoutAttribute.height,
+                relatedBy:NSLayoutRelation.equal,
+                toItem:background,
+                attribute:NSLayoutAttribute.bottom,
+                multiplier:1,
+                constant:0)
+            
+            background.addConstraints([
+                layoutButtonTop,
+                layoutButtonBottom,
+                layoutButtonLeft,
+                layoutButtonRight])
         }
         else
         {
