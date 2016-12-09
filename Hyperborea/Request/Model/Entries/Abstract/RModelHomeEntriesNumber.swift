@@ -2,7 +2,7 @@ import UIKit
 
 class RModelHomeEntriesNumber
 {
-    private let numbers:[String]
+    private var numbers:[String]
     private let kKeyEntries:String = "entries"
     private let kKeyGrammaticalFeatures:String = "grammaticalFeatures"
     private let kKeyType:String = "type"
@@ -13,42 +13,49 @@ class RModelHomeEntriesNumber
     
     init(json:Any)
     {
-        var numbers:[String] = []
+        numbers = []
         
         guard
             
             let jsonMap:[String:Any] = json as? [String:Any],
-            let jsonEntries:[Any] = jsonMap[kKeyEntries] as? [Any],
-            let jsonEntriesFirst:[String:Any] = jsonEntries.first as? [String:Any],
-            let jsonFeatures:[Any] = jsonEntriesFirst[kKeyGrammaticalFeatures] as? [Any]
+            let jsonEntries:[Any] = jsonMap[kKeyEntries] as? [Any]
             
         else
         {
-            self.numbers = numbers
-            
             return
         }
         
-        for jsonFeature:Any in jsonFeatures
+        for jsonEntry:Any in jsonEntries
         {
             guard
-                
-                let featureMap:[String:Any] = jsonFeature as? [String:Any],
-                let featureMapType:String  = featureMap[kKeyType] as? String,
-                let featureMapText:String = featureMap[kKeyText] as? String
-                
+            
+                let jsonEntryMap:[String:Any] = jsonEntry as? [String:Any],
+                let jsonFeatures:[Any] = jsonEntryMap[kKeyGrammaticalFeatures] as? [Any]
+            
             else
             {
                 continue
             }
             
-            if featureMapType == kTypeNumber
+            for jsonFeature:Any in jsonFeatures
             {
-                numbers.append(featureMapText)
+                guard
+                    
+                    let featureMap:[String:Any] = jsonFeature as? [String:Any],
+                    let featureMapType:String  = featureMap[kKeyType] as? String,
+                    let featureMapText:String = featureMap[kKeyText] as? String
+                    
+                else
+                {
+                    continue
+                }
+                
+                if featureMapType == kTypeNumber
+                {
+                    numbers.append(featureMapText)
+                }
             }
         }
-        
-        self.numbers = numbers
     }
     
     //MARK: public
