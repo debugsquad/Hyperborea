@@ -137,6 +137,15 @@ class RModelHomeEntriesSenses
         
         for item:RModelHomeEntriesSensesItem in items
         {
+            if !mutableString.string.isEmpty
+            {
+                let separatorString:NSAttributedString = NSAttributedString(
+                    string:kSensesSeparator,
+                    attributes:attributesTitle)
+                
+                mutableString.append(separatorString)
+            }
+            
             for title:String in item.title
             {
                 let titleSeparator:String = "\(kSensesSeparator)\(title)"
