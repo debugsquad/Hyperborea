@@ -10,4 +10,11 @@ class CHomeLanguage:CController
         self.viewLanguage = viewLanguage
         view = viewLanguage
     }
+    
+    //MARK: public
+    
+    func dismiss()
+    {
+        
+    }
 }

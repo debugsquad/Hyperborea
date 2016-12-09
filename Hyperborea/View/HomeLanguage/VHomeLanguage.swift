@@ -13,6 +13,10 @@ class VHomeLanguage:VView
         let buttonDismiss:UIButton = UIButton()
         buttonDismiss.translatesAutoresizingMaskIntoConstraints = false
         buttonDismiss.backgroundColor = UIColor.clear
+        buttonDismiss.addTarget(
+            self,
+            action:#selector(self.actionDismiss(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         addSubview(buttonDismiss)
         
@@ -59,5 +63,12 @@ class VHomeLanguage:VView
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    //MARK: actions
+    
+    func actionDismiss(sender button:UIButton)
+    {
+        controller.dismiss()
     }
 }
