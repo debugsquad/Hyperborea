@@ -8,6 +8,8 @@ class VHomeLanguage:VView
     private weak var layoutOrbVerticalLeft:NSLayoutConstraint!
     private weak var layoutOrbVerticalTop:NSLayoutConstraint!
     private let kAlpha:CGFloat = 0.7
+    private let kStartingLeft:CGFloat = -100
+    private let kStartingTop:CGFloat = 20
     
     override init(controller:CController)
     {
@@ -85,11 +87,68 @@ class VHomeLanguage:VView
             multiplier:1,
             constant:0)
         
+        layoutOrbHorizontalLeft = NSLayoutConstraint(
+            item:orbHorizontal,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:kStartingLeft)
+        layoutOrbHorizontalTop = NSLayoutConstraint(
+            item:orbHorizontal,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:kStartingTop)
+        
+        layoutOrbVerticalLeft = NSLayoutConstraint(
+            item:orbVertical,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:kStartingLeft)
+        layoutOrbVerticalTop = NSLayoutConstraint(
+            item:orbVertical,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:kStartingTop)
+        
+        let layoutOrbCenterLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:orbCenter,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:kStartingLeft)
+        let layoutOrbCenterTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:orbCenter,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:kStartingTop)
+        
         addConstraints([
             layoutButtonDismissTop,
             layoutButtonDismissBottom,
             layoutButtonDismissLeft,
-            layoutButtonDismissRight])
+            layoutButtonDismissRight,
+            layoutOrbHorizontalLeft,
+            layoutOrbHorizontalTop,
+            layoutOrbVerticalLeft,
+            layoutOrbVerticalTop,
+            layoutOrbCenterLeft,
+            layoutOrbCenterTop])
     }
     
     required init?(coder:NSCoder)
