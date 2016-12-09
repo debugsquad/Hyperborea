@@ -6,6 +6,7 @@ class VHomeLanguageOrb:UIView
     private let model:MSessionLanguage?
     private let kTotalSize:CGFloat = 60
     private let kBackgroundSize:CGFloat = 40
+    private let kBackgroundAlpha:CGFloat = 0.5
     
     init(controller:CHomeLanguage, model:MSessionLanguage?)
     {
@@ -23,7 +24,7 @@ class VHomeLanguageOrb:UIView
         background.clipsToBounds = true
         background.translatesAutoresizingMaskIntoConstraints = false
         background.isUserInteractionEnabled = false
-        background.backgroundColor = UIColor.black
+        background.backgroundColor = UIColor(white:0, alpha:kBackgroundAlpha)
         background.layer.cornerRadius = kBackgroundSize / 2.0
         
         addSubview(background)

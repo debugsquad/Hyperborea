@@ -5,11 +5,11 @@ class VHomeLanguage:VView
     private weak var controller:CHomeLanguage!
     private weak var layoutOrbHorizontalLeft:NSLayoutConstraint!
     private weak var layoutOrbVerticalTop:NSLayoutConstraint!
-    private let kAnimationDuration:TimeInterval = 5
+    private let kAnimationDuration:TimeInterval = 1.5
     private let kAlpha:CGFloat = 0.7
-    private let kStartingLeft:CGFloat = -100
-    private let kStartingTop:CGFloat = 20
-    private let kFinalLeft:CGFloat = -200
+    private let kStartingLeft:CGFloat = -60
+    private let kStartingTop:CGFloat = 0
+    private let kFinalLeft:CGFloat = -260
     private let kFinalTop:CGFloat = 200
     
     override init(controller:CController)
