@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA1783F61DFB55CC00895012 /* CHomeLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1783F51DFB55CC00895012 /* CHomeLanguage.swift */; };
+		DA1783F91DFB567D00895012 /* VHomeLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1783F81DFB567D00895012 /* VHomeLanguage.swift */; };
 		DA2BBA011DF873D700C450C8 /* VHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9ED1DF873D700C450C8 /* VHome.swift */; };
 		DA2BBA021DF873D700C450C8 /* VHomeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9EF1DF873D700C450C8 /* VHomeHelper.swift */; };
 		DA2BBA031DF873D700C450C8 /* VHomeHelperCancel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9F01DF873D700C450C8 /* VHomeHelperCancel.swift */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		DA1783F51DFB55CC00895012 /* CHomeLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHomeLanguage.swift; sourceTree = "<group>"; };
+		DA1783F81DFB567D00895012 /* VHomeLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeLanguage.swift; sourceTree = "<group>"; };
 		DA2BB9ED1DF873D700C450C8 /* VHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHome.swift; sourceTree = "<group>"; };
 		DA2BB9EF1DF873D700C450C8 /* VHomeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelper.swift; sourceTree = "<group>"; };
 		DA2BB9F01DF873D700C450C8 /* VHomeHelperCancel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperCancel.swift; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA1783F71DFB567100895012 /* HomeLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				DA1783F81DFB567D00895012 /* VHomeLanguage.swift */,
+			);
+			path = HomeLanguage;
+			sourceTree = "<group>";
+		};
 		DA2BB9EC1DF873D700C450C8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +399,7 @@
 		DAAD345D1DF2332500C5D3D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA1783F71DFB567100895012 /* HomeLanguage */,
 				DAAD34811DF23B2500C5D3D1 /* Home */,
 				DAAD345E1DF2332500C5D3D1 /* Main */,
 			);
@@ -587,6 +598,7 @@
 				DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */,
 				DA63C3D21DF5EF7B0026169C /* RSettingsHomeSearch.swift in Sources */,
 				DA5097791DFB2FC60088821E /* MSession.swift in Sources */,
+				DA1783F91DFB567D00895012 /* VHomeLanguage.swift in Sources */,
 				DA1783F61DFB55CC00895012 /* CHomeLanguage.swift in Sources */,
 				DA63C3D01DF5EBB50026169C /* RModel.swift in Sources */,
 				DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */,
