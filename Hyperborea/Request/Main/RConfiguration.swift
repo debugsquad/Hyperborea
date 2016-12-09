@@ -4,7 +4,6 @@ class RConfiguration
 {
     static let sharedInstance:RConfiguration = RConfiguration()
     let credentials:RCredentials
-    let kSourceLang:String = "es"
     private let kAppIdKey:String = "app_id"
     private let kAppKeyKey:String = "app_key"
     private let kAppIdValue:String = "c4753937"
