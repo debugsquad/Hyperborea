@@ -139,7 +139,7 @@ class CHome:CController, RMainDelegate
     
     func selectSuggestion(item:RModelHomeSearchResult)
     {
-        let region:String = item.region
+        let region:String? = item.region
         
         viewHome.viewInput.viewText.text = item.word
         searchWordId(
