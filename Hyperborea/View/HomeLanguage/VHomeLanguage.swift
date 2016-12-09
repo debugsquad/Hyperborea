@@ -3,6 +3,10 @@ import UIKit
 class VHomeLanguage:VView
 {
     private weak var controller:CHomeLanguage!
+    private weak var layoutOrbHorizontalLeft:NSLayoutConstraint!
+    private weak var layoutOrbHorizontalTop:NSLayoutConstraint!
+    private weak var layoutOrbVerticalLeft:NSLayoutConstraint!
+    private weak var layoutOrbVerticalTop:NSLayoutConstraint!
     private let kAlpha:CGFloat = 0.7
     
     override init(controller:CController)
@@ -10,6 +14,9 @@ class VHomeLanguage:VView
         super.init(controller:controller)
         backgroundColor = UIColor(white:0, alpha:kAlpha)
         self.controller = controller as? CHomeLanguage
+        
+        let modelHorizontal:MSessionLanguageEnglish = MSessionLanguageEnglish()
+        let modelVertical:MSessionLanguageSpanish = MSessionLanguageSpanish()
         
         let buttonDismiss:UIButton = UIButton()
         buttonDismiss.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +26,31 @@ class VHomeLanguage:VView
             action:#selector(self.actionDismiss(sender:)),
             for:UIControlEvents.touchUpInside)
         
+        let orbHorizontal:VHomeLanguageOrb = VHomeLanguageOrb(
+            controller:self.controller,
+            model:modelHorizontal)
+        
+        let orbVertical:VHomeLanguageOrb = VHomeLanguageOrb(
+            controller:self.controller,
+            model:modelVertical)
+        
+        let orbCenter:VHomeLanguageOrb = VHomeLanguageOrb(
+            controller:self.controller,
+            model:nil)
+        
         addSubview(buttonDismiss)
+        addSubview(orbCenter)
+        
+        if MSession.sharedInstance.language.languangeId == modelHorizontal.languangeId
+        {
+            addSubview(orbVertical)
+            addSubview(orbHorizontal)
+        }
+        else
+        {
+            addSubview(orbHorizontal)
+            addSubview(orbVertical)
+        }
         
         let layoutButtonDismissTop:NSLayoutConstraint = NSLayoutConstraint(
             item:buttonDismiss,
