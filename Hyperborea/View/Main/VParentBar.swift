@@ -7,7 +7,8 @@ class VParentBar:UIView
     private weak var imageView:UIImageView!
     private let kContentTop:CGFloat = 20
     private let kImageLeft:CGFloat = 10
-    private let kImageWidth:CGFloat = 40
+    private let kImageWidth:CGFloat = 20
+    private let kTitleLeft:CGFloat = 4
     private let kTitleWidth:CGFloat = 200
     
     convenience init(controller:CParent)
@@ -77,7 +78,7 @@ class VParentBar:UIView
             toItem:imageView,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
-            constant:0)
+            constant:kTitleLeft)
         let layoutLabelTitleWidth:NSLayoutConstraint = NSLayoutConstraint(
             item:labelTitle,
             attribute:NSLayoutAttribute.width,
