@@ -6,8 +6,10 @@ class RModelHomeSearchResult
     let cellWidth:CGFloat
     let word:String
     let wordId:String
+    let region:String
     private let kKeyWord:String = "word"
     private let kKeyWordId:String = "id"
+    private let kKeyRegion:String = "region"
     private let kEmpty:String = ""
     private let kCellMargin:CGFloat = 35
     
@@ -22,7 +24,8 @@ class RModelHomeSearchResult
         guard
         
             let wordId:String = jsonMap?[kKeyWordId] as? String,
-            let word:String = jsonMap?[kKeyWord] as? String
+            let word:String = jsonMap?[kKeyWord] as? String,
+            let region:String = jsonMap?[kKeyRegion] as? String
         
         else
         {
@@ -31,6 +34,7 @@ class RModelHomeSearchResult
         
         self.wordId = wordId
         self.word = word
+        self.region = region
         
         attributedString = NSAttributedString(
             string:word,
