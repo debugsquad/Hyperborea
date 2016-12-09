@@ -6,10 +6,12 @@ class MSessionLanguageSpanish:MSessionLanguage
     
     override init()
     {
-        
+        super.init(
+            languangeId:kLanguageId,
+            image:#imageLiteral(resourceName: "assetHomeLanguageEnglish"))
     }
     
-    init(languangeId:String, image:UIImage)
+    override init(languangeId:String, image:UIImage)
     {
         fatalError()
     }

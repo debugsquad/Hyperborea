@@ -2,12 +2,16 @@ import UIKit
 
 class MSessionLanguageEnglish:MSessionLanguage
 {
+    private let kLanguageId:String = "en"
+    
     override init()
     {
-        
+        super.init(
+            languangeId:kLanguageId,
+            image:#imageLiteral(resourceName: "assetHomeLanguageEnglish"))
     }
     
-    init(languangeId:String, image:UIImage)
+    override init(languangeId:String, image:UIImage)
     {
         fatalError()
     }
