@@ -33,9 +33,9 @@ class VHomeLanguageOrb:UIView
         if let modelReceived:MSessionLanguage = model
         {
             let label:UILabel = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
             label.isUserInteractionEnabled = false
             label.backgroundColor = UIColor.clear
-            label.isUserInteractionEnabled = false
             label.font = UIFont.bold(size:12)
             label.textAlignment = NSTextAlignment.center
             label.textColor = UIColor.white
@@ -124,7 +124,9 @@ class VHomeLanguageOrb:UIView
                 layoutButtonTop,
                 layoutButtonBottom,
                 layoutButtonLeft,
-                layoutButtonRight,
+                layoutButtonRight])
+            
+            addConstraints([
                 layoutLabelHeight,
                 layoutLabelLeft,
                 layoutLabelRight,
