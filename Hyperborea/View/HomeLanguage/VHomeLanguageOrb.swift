@@ -5,10 +5,10 @@ class VHomeLanguageOrb:UIView
     private weak var controller:CHomeLanguage!
     private let model:MSessionLanguage?
     private let kAnimationDuration:TimeInterval = 1.5
-    private let kTotalSize:CGFloat = 60
-    private let kBackgroundSize:CGFloat = 40
-    private let kBackgroundAlpha:CGFloat = 0.5
-    private let kLabelHeight:CGFloat = 15
+    private let kTotalSize:CGFloat = 70
+    private let kBackgroundSize:CGFloat = 36
+    private let kBackgroundAlpha:CGFloat = 0.7
+    private let kLabelHeight:CGFloat = 16
     
     init(controller:CHomeLanguage, model:MSessionLanguage?)
     {
