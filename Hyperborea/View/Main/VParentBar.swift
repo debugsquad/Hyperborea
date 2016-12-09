@@ -59,6 +59,10 @@ class VParentBar:UIView
             for:UIControlState.normal)
         buttonLanguage.imageView!.clipsToBounds = true
         buttonLanguage.imageView!.contentMode = UIViewContentMode.center
+        buttonLanguage.addTarget(
+            self,
+            action:#selector(self.actionLanguage(sender:)),
+            for:UIControlEvents.touchUpInside)
         self.buttonLanguage = buttonLanguage
         
         let labelTitle:UILabel = UILabel()
@@ -263,5 +267,13 @@ class VParentBar:UIView
             layoutLabelTitleWidth,
             layoutLabelTitleBottom
             ])
+    }
+    
+    //MARK: actions
+    
+    func actionLanguage(sender button:UIButton)
+    {
+        let controllerLanguage:CHomeLanguage = CHomeLanguage()
+        controller.animateOver(controller:controllerLanguage)
     }
 }
