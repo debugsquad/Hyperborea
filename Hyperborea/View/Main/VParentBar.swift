@@ -274,6 +274,8 @@ class VParentBar:UIView
     
     func actionLanguage(sender button:UIButton)
     {
+        UIApplication.shared.keyWindow!.endEditing(true)
+        
         let controllerLanguage:CHomeLanguage = CHomeLanguage()
         controller.animateOver(controller:controllerLanguage)
     }
