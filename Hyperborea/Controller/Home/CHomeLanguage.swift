@@ -11,6 +11,13 @@ class CHomeLanguage:CController
         viewLanguage.viewDidAppear()
     }
     
+    override func viewWillDisappear(_ animated:Bool)
+    {
+        super.viewWillDisappear(animated)
+        
+        viewLanguage.viewWillDisappear()
+    }
+    
     override func loadView()
     {
         let viewLanguage:VHomeLanguage = VHomeLanguage(controller:self)
