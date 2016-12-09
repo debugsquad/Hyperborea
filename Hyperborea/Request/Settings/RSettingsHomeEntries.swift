@@ -2,7 +2,9 @@ import Foundation
 
 class RSettingsHomeEntries:RSettings
 {
-    init(wordId:String)
+    private let kRegionQuery:String = "regions="
+    
+    init(wordId:String, region:String?)
     {
         let headers:[String:String] = RConfiguration.sharedInstance.credentials.current()
         let sourceLanguage:String = RConfiguration.sharedInstance.kSourceLang
@@ -10,7 +12,12 @@ class RSettingsHomeEntries:RSettings
             urlKey:RUrl.UrlKey.oxfordApi)
         let entriesUrl:String = RUrl.sharedInstance.urlFor(
             urlKey:RUrl.UrlKey.entries)
-        let urlString:String = "\(baseUrl)/\(entriesUrl)/\(sourceLanguage)/\(wordId)"
+        var urlString:String = "\(baseUrl)/\(entriesUrl)/\(sourceLanguage)/\(wordId)"
+        
+        if let regionReceived:String = region
+        {
+            urlString += "/\(kRegionQuery)\(regionReceived)"
+        }
         
         super.init(
             model:RModelHomeEntries.self,
