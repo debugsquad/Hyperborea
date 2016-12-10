@@ -174,6 +174,54 @@ class CHome:CController, RMainDelegate
             region:region)
     }
     
+    func share(model:RModelHomeEntriesItem)
+    {
+        let imageRect:CGRect = CGRect(x:0, y:0, width:500, height:500)
+        
+        UIGraphicsBeginImageContext(imageRect.size)
+        
+        guard
+            
+            let context:CGContext = UIGraphicsGetCurrentContext()
+        
+        else
+        {
+            return
+        }
+        
+        context.setFillColor(UIColor.white.cgColor)
+        context.fill(imageRect)
+        model.attributedString.draw(
+            with:imageRect,
+            options:model.options,
+            context:nil)
+        
+        guard
+        
+            let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        else
+        {
+            UIGraphicsEndImageContext()
+            return
+        }
+        
+        UIGraphicsEndImageContext()
+        
+        let activity:UIActivityViewController = UIActivityViewController(
+            activityItems:[image],
+            applicationActivities:nil)
+        
+        if activity.popoverPresentationController != nil
+        {
+            activity.popoverPresentationController!.sourceView = viewHome
+            activity.popoverPresentationController!.sourceRect = CGRect.zero
+            activity.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.up
+        }
+        
+        present(activity, animated:true)
+    }
+    
     //MARK: rMain delegate
     
     func requestFinished(

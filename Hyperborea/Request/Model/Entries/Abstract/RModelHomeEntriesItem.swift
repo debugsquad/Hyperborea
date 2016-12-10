@@ -15,7 +15,7 @@ class RModelHomeEntriesItem
     let attributedString:NSAttributedString
     let reusableIdentifier:String
     let selectable:Bool
-    private let options:NSStringDrawingOptions
+    let options:NSStringDrawingOptions
     private let kMarginHorizontal:CGFloat = 20
     private let kAddHeight:CGFloat = 4
     private let kMaxHeight:CGFloat = 90000
