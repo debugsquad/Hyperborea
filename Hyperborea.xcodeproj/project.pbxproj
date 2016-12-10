@@ -258,9 +258,9 @@
 		DA2BBA171DF8979800C450C8 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				DA61436B1DF9FD8F0029A596 /* RModelHomeEntriesItemOrigin.swift */,
 				DA2BBA181DF8979800C450C8 /* RModelHomeEntriesItemNoun.swift */,
 				DA2BBA191DF8979800C450C8 /* RModelHomeEntriesItemVerb.swift */,
-				DA61436B1DF9FD8F0029A596 /* RModelHomeEntriesItemOrigin.swift */,
 				DA19D5E91DFC77D1005A3477 /* RModelHomeEntriesItemAdjective.swift */,
 			);
 			path = Items;
