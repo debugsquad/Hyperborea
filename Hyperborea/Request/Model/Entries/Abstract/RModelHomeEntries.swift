@@ -2,7 +2,7 @@ import Foundation
 
 class RModelHomeEntries:RModel
 {
-    let word:String
+    private(set) var word:String
     private(set) var items:[RModelHomeEntriesItem]
     private let kKeyResults:String = "results"
     private let kKeyWord:String = "word"
@@ -13,6 +13,7 @@ class RModelHomeEntries:RModel
     required init(json:Any)
     {
         items = []
+        word = kEmpty
         
         guard
             
@@ -21,19 +22,9 @@ class RModelHomeEntries:RModel
         
         else
         {
-            word = kEmpty
             super.init()
             
             return
-        }
-        
-        if let word:String = jsonResults[kKeyWord] as? String
-        {
-            self.word = word
-        }
-        else
-        {
-            self.word = kEmpty
         }
         
         for jsonResult:Any in jsonResults
@@ -46,6 +37,11 @@ class RModelHomeEntries:RModel
             else
             {
                 continue
+            }
+            
+            if let word:String = jsonResultMap[kKeyWord] as? String
+            {
+                self.word = word
             }
             
             for jsonEntry:Any in jsonLexicalEntries
