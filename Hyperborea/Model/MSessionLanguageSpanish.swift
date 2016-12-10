@@ -10,7 +10,7 @@ class MSessionLanguageSpanish:MSessionLanguage
         
         super.init(
             languangeId:kLanguageId,
-            image:#imageLiteral(resourceName: "assetHomeLanguageEnglish"),
+            image:#imageLiteral(resourceName: "assetHomeLanguageSpanish"),
             name:name)
     }
     

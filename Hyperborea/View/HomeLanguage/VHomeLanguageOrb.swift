@@ -8,7 +8,7 @@ class VHomeLanguageOrb:UIView
     private let kTotalSize:CGFloat = 70
     private let kBackgroundSize:CGFloat = 36
     private let kBackgroundAlpha:CGFloat = 0.7
-    private let kLabelHeight:CGFloat = 16
+    private let kLabelHeight:CGFloat = 18
     
     init(controller:CHomeLanguage, model:MSessionLanguage?)
     {
@@ -25,7 +25,6 @@ class VHomeLanguageOrb:UIView
         let background:UIView = UIView()
         background.clipsToBounds = true
         background.translatesAutoresizingMaskIntoConstraints = false
-        background.isUserInteractionEnabled = false
         background.backgroundColor = UIColor(white:0, alpha:kBackgroundAlpha)
         background.layer.cornerRadius = kBackgroundSize / 2.0
         
@@ -37,7 +36,7 @@ class VHomeLanguageOrb:UIView
             label.translatesAutoresizingMaskIntoConstraints = false
             label.isUserInteractionEnabled = false
             label.backgroundColor = UIColor.clear
-            label.font = UIFont.bold(size:11)
+            label.font = UIFont.bold(size:12)
             label.textAlignment = NSTextAlignment.center
             label.textColor = UIColor.white
             label.text = modelReceived.name
@@ -147,6 +146,7 @@ class VHomeLanguageOrb:UIView
         }
         else
         {
+            background.isUserInteractionEnabled = false
             isUserInteractionEnabled = false
         }
         

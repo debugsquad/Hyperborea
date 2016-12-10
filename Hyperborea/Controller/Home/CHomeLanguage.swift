@@ -34,6 +34,7 @@ class CHomeLanguage:CController
     
     func selectLanguage(model:MSessionLanguage)
     {
-        
+        MSession.sharedInstance.changeLanguage(language:model)
+        dismiss()
     }
 }

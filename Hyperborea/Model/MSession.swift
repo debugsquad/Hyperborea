@@ -9,4 +9,11 @@ class MSession
     {
         language = MSessionLanguageEnglish()
     }
+    
+    //MARK: public
+    
+    func changeLanguage(language:MSessionLanguage)
+    {
+        self.language = language
+    }
 }
