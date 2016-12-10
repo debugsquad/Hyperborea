@@ -111,8 +111,10 @@ class VHomeWordsCellOrigin:VHomeWordsCell
         fatalError()
     }
     
-    override func config(model:RModelHomeEntriesItem)
+    override func config(controller:CHome, model:RModelHomeEntriesItem)
     {
+        super.init
+        
         labelOrigin.attributedText = model.attributedString
     }
 }

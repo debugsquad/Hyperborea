@@ -126,7 +126,7 @@ class VHomeWordsCellEntry:VHomeWordsCell
         fatalError()
     }
     
-    override func config(model:RModelHomeEntriesItem)
+    override func config(controller:CHome, model:RModelHomeEntriesItem)
     {
         labelEntity.attributedText = model.attributedString
     }
