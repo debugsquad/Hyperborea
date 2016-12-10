@@ -14,10 +14,13 @@ class MSession
     
     func changeLanguage(language:MSessionLanguage)
     {
-        self.language = language
-        
-        NotificationCenter.default.post(
-            name:Notification.languageChanged,
-            object:nil)
+        if language.languangeId != self.language.languangeId
+        {
+            self.language = language
+            
+            NotificationCenter.default.post(
+                name:Notification.languageChanged,
+                object:nil)
+        }
     }
 }

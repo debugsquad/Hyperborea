@@ -296,6 +296,7 @@ class VParentBar:UIView
     func actionLanguage(sender button:UIButton)
     {
         UIApplication.shared.keyWindow!.endEditing(true)
+        controller.viewParent.restartScroll()
         
         let controllerLanguage:CHomeLanguage = CHomeLanguage()
         controller.animateOver(controller:controllerLanguage)
