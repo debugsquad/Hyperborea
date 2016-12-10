@@ -52,12 +52,9 @@ class VParentBar:UIView
         buttonTranslate.alpha = 0.2
         self.buttonTranslate = buttonTranslate
         
-        let languageImage:UIImage = MSession.sharedInstance.language.image
+        
         let buttonLanguage:UIButton = UIButton()
         buttonLanguage.translatesAutoresizingMaskIntoConstraints = false
-        buttonLanguage.setImage(
-            languageImage,
-            for:UIControlState.normal)
         buttonLanguage.imageView!.clipsToBounds = true
         buttonLanguage.imageView!.contentMode = UIViewContentMode.center
         buttonLanguage.addTarget(
@@ -268,6 +265,30 @@ class VParentBar:UIView
             layoutLabelTitleWidth,
             layoutLabelTitleBottom
             ])
+        
+        loadLanguage()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(notifiedLanguageChanged(sender:)),
+            name:Notification.languageChanged,
+            object:nil)
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    //MARK: notified
+    
+    func notifiedLanguageChanged(sender notification:Notification)
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.loadLanguage()
+        }
     }
     
     //MARK: actions
@@ -278,5 +299,15 @@ class VParentBar:UIView
         
         let controllerLanguage:CHomeLanguage = CHomeLanguage()
         controller.animateOver(controller:controllerLanguage)
+    }
+    
+    //MARK: private
+    
+    func loadLanguage()
+    {
+        let languageImage:UIImage = MSession.sharedInstance.language.image
+        buttonLanguage.setImage(
+            languageImage,
+            for:UIControlState.normal)
     }
 }
