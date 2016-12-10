@@ -332,4 +332,18 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
         
         return cell
     }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
+    {
+        let item:RModelHomeEntriesItem = modelAtIndex(index:indexPath)
+        
+        return item.selectable
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldHighlightItemAt indexPath:IndexPath) -> Bool
+    {
+        let item:RModelHomeEntriesItem = modelAtIndex(index:indexPath)
+        
+        return item.selectable
+    }
 }
