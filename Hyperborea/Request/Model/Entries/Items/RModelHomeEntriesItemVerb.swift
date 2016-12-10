@@ -13,6 +13,7 @@ class RModelHomeEntriesItemVerb:RModelHomeEntriesItem
                 white:RModelHomeEntriesItem.kTitleWhite,
                 alpha:1)
         ]
+        
         let title:String = NSLocalizedString("RModelHomeEntriesItemVerb_title", comment:"")
         let senses:RModelHomeEntriesSenses = RModelHomeEntriesSenses(json:json)
         let tense:RModelHomeEntriesTense = RModelHomeEntriesTense(json:json)

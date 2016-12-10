@@ -15,7 +15,7 @@ class RModelHomeEntriesItem
     let attributedString:NSAttributedString
     let reusableIdentifier:String
     let selectable:Bool
-    let options:NSStringDrawingOptions
+    private let options:NSStringDrawingOptions
     private let kMarginHorizontal:CGFloat = 20
     private let kAddHeight:CGFloat = 4
     private let kMaxHeight:CGFloat = 90000
@@ -52,5 +52,15 @@ class RModelHomeEntriesItem
         let totalHeight:CGFloat = height + kAddHeight
         
         return totalHeight
+    }
+    
+    func exportableComplete() -> NSAttributedString
+    {
+        return attributedString
+    }
+    
+    func exportableCompact() -> NSAttributedString
+    {
+        return attributedString
     }
 }
