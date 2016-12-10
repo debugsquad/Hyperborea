@@ -2,10 +2,13 @@ import Foundation
 
 class RModelHomeEntries:RModel
 {
+    let word:String
     private(set) var items:[RModelHomeEntriesItem]
     private let kKeyResults:String = "results"
+    private let kKeyWord:String = "word"
     private let kKeyLexicalEntries:String = "lexicalEntries"
     private let kKeyLexicalCategory:String = "lexicalCategory"
+    private let kEmpty:String = ""
     
     required init(json:Any)
     {
@@ -18,9 +21,19 @@ class RModelHomeEntries:RModel
         
         else
         {
+            word = kEmpty
             super.init()
             
             return
+        }
+        
+        if let word:String = jsonResults[kKeyWord] as? String
+        {
+            self.word = word
+        }
+        else
+        {
+            self.word = kEmpty
         }
         
         for jsonResult:Any in jsonResults
