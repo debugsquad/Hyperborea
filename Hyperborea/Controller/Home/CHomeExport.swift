@@ -1,9 +1,18 @@
-//
-//  CHomeExport.swift
-//  Hyperborea
-//
-//  Created by zero on 12/10/16.
-//  Copyright © 2016 iturbide. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class CHomeExport:CController
+{
+    let model:RModelHomeEntriesItem
+    
+    init(model:RModelHomeEntriesItem)
+    {
+        self.model = model
+        
+        super.init()
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        fatalError()
+    }
+}
