@@ -32,6 +32,10 @@ class VHomeWordsCellEntry:VHomeWordsCell
             left:0,
             bottom:kButtonShareBottom,
             right:kButtonShareRight)
+        buttonShare.addTarget(
+            self,
+            action:#selector(self.actionShare(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         let labelEntity:UILabel = UILabel()
         labelEntity.translatesAutoresizingMaskIntoConstraints = false
@@ -131,5 +135,21 @@ class VHomeWordsCellEntry:VHomeWordsCell
         super.config(controller:controller, model:model)
         
         labelEntity.attributedText = model.attributedString
+    }
+    
+    //MARK: actions
+    
+    func actionShare(sender button:UIButton)
+    {
+        guard
+        
+            let model:RModelHomeEntriesItem = self.model
+        
+        else
+        {
+            return
+        }
+        
+        controller?.share(model:model)
     }
 }
