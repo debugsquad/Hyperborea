@@ -6,9 +6,9 @@
 "VHomeWordsFooter_label"="Nothing found for current search, try again";
 
 "RModelHomeEntriesEtymologies_title"="Origin";
-"RModelHomeEntriesItemNoun_title"="Noun";
-"RModelHomeEntriesItemVerb_title"="Verb";
-"RModelHomeEntriesItemAdjective_title"="Adjective";
+"RModelHomeEntriesItemNoun_title"="    Noun";
+"RModelHomeEntriesItemVerb_title"="    Verb";
+"RModelHomeEntriesItemAdjective_title"="    Adjective";
 
 "MSessionLanguageEnglish_name"="English";
 "MSessionLanguageSpanish_name"="Spanish";

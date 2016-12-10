@@ -6,10 +6,10 @@ class VHomeWordsCellEntry:VHomeWordsCell
     private let kLabelEntityTop:CGFloat = 2
     private let kLabelEntityBottom:CGFloat = -2
     private let kLabelEntityMarginHorizontal:CGFloat = 10
-    private let kButtonShareWidth:CGFloat = 75
-    private let kButtonShareHeight:CGFloat = 50
-    private let kButtonShareRight:CGFloat = 42
-    private let kButtonShareBottom:CGFloat = 25
+    private let kButtonShareWidth:CGFloat = 90
+    private let kButtonShareHeight:CGFloat = 60
+    private let kButtonShareRight:CGFloat = 56
+    private let kButtonShareBottom:CGFloat = 35
     
     override init(frame:CGRect)
     {
