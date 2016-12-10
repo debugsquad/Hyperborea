@@ -8,11 +8,38 @@ class CHome:CController, RMainDelegate
     private let kEmpty:String = ""
     private let kStatusOk:RMain.StatusCode = 200
     
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(notifiedLanguageChanged(sender:)),
+            name:Notification.languageChanged,
+            object:nil)
+    }
+    
     override func loadView()
     {
         let viewHome:VHome = VHome(controller:self)
         self.viewHome = viewHome
         view = viewHome
+    }
+    
+    //MARK: notified
+    
+    func notifiedLanguageChanged(sender notification:Notification)
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.cancel()
+        }
     }
     
     //MARK: private

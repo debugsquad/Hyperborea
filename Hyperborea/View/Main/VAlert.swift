@@ -11,7 +11,7 @@ class VAlert:UIView
     private let kTimeOut:TimeInterval = 4
     private let kFontSize:CGFloat = 15
     private let kLabelMargin:CGFloat = 5
-    private let kCornerRadius:CGFloat = 19
+    private let kCornerRadius:CGFloat = 12
     private let kBorderWidth:CGFloat = 0.5
     
     class func message(message:String)
