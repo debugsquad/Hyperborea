@@ -52,6 +52,10 @@ class VHomeLanguageOrb:UIView
                 for:UIControlState.normal)
             button.imageView!.contentMode = UIViewContentMode.center
             button.imageView!.clipsToBounds = true
+            button.addTarget(
+                self,
+                action:#selector(self.actionOrb(sender:)),
+                for:UIControlEvents.touchUpInside)
             
             addSubview(label)
             background.addSubview(button)
@@ -201,5 +205,21 @@ class VHomeLanguageOrb:UIView
             
             return size
         }
+    }
+    
+    //MARK: actions
+    
+    func actionOrb(sender button:UIButton)
+    {
+        guard
+        
+            let model:MSessionLanguage = self.model
+        
+        else
+        {
+            return
+        }
+        
+        controller.selectLanguage(model:model)
     }
 }
