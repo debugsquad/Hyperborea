@@ -113,7 +113,7 @@ class VHomeWordsCellOrigin:VHomeWordsCell
     
     override func config(controller:CHome, model:RModelHomeEntriesItem)
     {
-        super.init
+        super.config(controller:controller, model:model)
         
         labelOrigin.attributedText = model.attributedString
     }

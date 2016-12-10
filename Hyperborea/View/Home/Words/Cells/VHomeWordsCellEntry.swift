@@ -128,6 +128,8 @@ class VHomeWordsCellEntry:VHomeWordsCell
     
     override func config(controller:CHome, model:RModelHomeEntriesItem)
     {
+        super.config(controller:controller, model:model)
+        
         labelEntity.attributedText = model.attributedString
     }
 }

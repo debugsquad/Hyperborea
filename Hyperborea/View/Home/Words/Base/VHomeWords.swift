@@ -328,7 +328,7 @@ class VHomeWords:UIView, UICollectionViewDelegate, UICollectionViewDataSource, U
             withReuseIdentifier:
             item.reusableIdentifier,
             for:indexPath) as! VHomeWordsCell
-        cell.config(model:item)
+        cell.config(controller:controller, model:item)
         
         return cell
     }
