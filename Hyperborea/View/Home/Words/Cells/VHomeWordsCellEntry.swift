@@ -6,11 +6,31 @@ class VHomeWordsCellEntry:VHomeWordsCell
     private let kLabelEntityTop:CGFloat = 2
     private let kLabelEntityBottom:CGFloat = -2
     private let kLabelEntityMarginHorizontal:CGFloat = 10
+    private let kButtonShareWidth:CGFloat = 40
+    private let kButtonShareHeight:CGFloat = 34
+    private let kButtonShareRight:CGFloat = 20
     
     override init(frame:CGRect)
     {
         super.init(frame:frame)
-        isUserInteractionEnabled = false
+        
+        let buttonShare:UIButton = UIButton()
+        buttonShare.translatesAutoresizingMaskIntoConstraints = false
+        buttonShare.backgroundColor = UIColor.clear
+        buttonShare.setImage(
+            #imageLiteral(resourceName: "assetHomeShare").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            for:UIControlState.normal)
+        buttonShare.setImage(
+            #imageLiteral(resourceName: "assetHomeShare").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            for:UIControlState.highlighted)
+        buttonShare.imageView!.contentMode = UIViewContentMode.center
+        buttonShare.imageView!.clipsToBounds = true
+        buttonShare.imageView!.tintColor = UIColor.genericBlue
+        buttonShare.imageEdgeInsets = UIEdgeInsets(
+            top:0,
+            left:0,
+            bottom:0,
+            right:kButtonShareRight)
         
         let labelEntity:UILabel = UILabel()
         labelEntity.translatesAutoresizingMaskIntoConstraints = false
@@ -20,6 +40,7 @@ class VHomeWordsCellEntry:VHomeWordsCell
         self.labelEntity = labelEntity
         
         addSubview(labelEntity)
+        addSubview(buttonShare)
         
         let layoutLabelEntityTop:NSLayoutConstraint = NSLayoutConstraint(
             item:labelEntity,
@@ -54,11 +75,48 @@ class VHomeWordsCellEntry:VHomeWordsCell
             multiplier:1,
             constant:-kLabelEntityMarginHorizontal)
         
+        let layoutButtonShareTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonShare,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutButtonShareLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonShare,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutButtonShareWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonShare,
+            attribute:NSLayoutAttribute.width,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kButtonShareWidth)
+        let layoutButtonShareHeight:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonShare,
+            attribute:NSLayoutAttribute.height,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kButtonShareHeight)
+        
         addConstraints([
             layoutLabelEntityTop,
             layoutLabelEntityBottom,
             layoutLabelEntityLeft,
-            layoutLabelEntityRight
+            layoutLabelEntityRight,
+            layoutButtonShareTop,
+            layoutButtonShareLeft,
+            layoutButtonShareWidth,
+            layoutButtonShareHeight
             ])
     }
     
