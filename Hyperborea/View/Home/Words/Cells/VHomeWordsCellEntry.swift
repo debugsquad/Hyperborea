@@ -6,9 +6,10 @@ class VHomeWordsCellEntry:VHomeWordsCell
     private let kLabelEntityTop:CGFloat = 2
     private let kLabelEntityBottom:CGFloat = -2
     private let kLabelEntityMarginHorizontal:CGFloat = 10
-    private let kButtonShareWidth:CGFloat = 40
-    private let kButtonShareHeight:CGFloat = 34
-    private let kButtonShareRight:CGFloat = 20
+    private let kButtonShareWidth:CGFloat = 62
+    private let kButtonShareHeight:CGFloat = 45
+    private let kButtonShareRight:CGFloat = 30
+    private let kButtonShareBottom:CGFloat = 20
     
     override init(frame:CGRect)
     {
@@ -29,7 +30,7 @@ class VHomeWordsCellEntry:VHomeWordsCell
         buttonShare.imageEdgeInsets = UIEdgeInsets(
             top:0,
             left:0,
-            bottom:0,
+            bottom:kButtonShareBottom,
             right:kButtonShareRight)
         
         let labelEntity:UILabel = UILabel()
