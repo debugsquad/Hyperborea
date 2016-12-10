@@ -1,6 +1,6 @@
 import UIKit
 
-class CHomeExport:CController
+class CHomeShare:CController
 {
     let model:RModelHomeEntriesItem
     
