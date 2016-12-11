@@ -40,7 +40,7 @@ class VHomeInputText:UITextView, UITextViewDelegate
         let height:CGFloat = bounds.maxY
         let percent:CGFloat = height / kMaxHeight
         let fontSize:CGFloat = percent * kMaxFontSize
-        font = UIFont.regular(size:fontSize)
+        font = UIFont.medium(size:fontSize)
         
         super.layoutSubviews()
     }

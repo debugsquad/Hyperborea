@@ -32,7 +32,7 @@ class VHomeWordsCellEntry:VHomeWordsCell
             left:0,
             bottom:kButtonShareBottom,
             right:kButtonShareRight)
-        buttonShare.isHidden = false
+        buttonShare.isHidden = true
         buttonShare.addTarget(
             self,
             action:#selector(self.actionShare(sender:)),

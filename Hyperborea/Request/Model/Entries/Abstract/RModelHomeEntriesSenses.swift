@@ -120,7 +120,7 @@ class RModelHomeEntriesSenses
         ]
         
         let attributesExample:[String:Any] = [
-            NSFontAttributeName:UIFont.italic(
+            NSFontAttributeName:UIFont.regular(
                 size:RModelHomeEntriesItem.kExampleFontSize),
             NSForegroundColorAttributeName:UIColor(
                 white:RModelHomeEntriesItem.kExampleWhite,
