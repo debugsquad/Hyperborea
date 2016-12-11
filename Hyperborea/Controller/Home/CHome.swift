@@ -190,11 +190,11 @@ class CHome:CController, RMainDelegate
         }
         
         context.setFillColor(UIColor.white.cgColor)
-        context.fill(imageRect)
+        context.fill(imageRect)/*
         model.attributedString.draw(
             with:imageRect,
             options:model.options,
-            context:nil)
+            context:nil)*/
         
         guard
         
