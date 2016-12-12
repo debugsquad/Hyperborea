@@ -79,6 +79,7 @@
 		DAB0FA631DF78AAC00E3B51D /* RModelHomeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5D1DF78AAC00E3B51D /* RModelHomeSearch.swift */; };
 		DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5E1DF78AAC00E3B51D /* RModelHomeSearchResult.swift */; };
 		DAD7B4A41DFF31ED0043EEF0 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7B4A31DFF31ED0043EEF0 /* DManager.swift */; };
+		DAD7B4A61DFF32740043EEF0 /* ExtensionNSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7B4A51DFF32740043EEF0 /* ExtensionNSManagedObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +158,7 @@
 		DAB0FA5D1DF78AAC00E3B51D /* RModelHomeSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearch.swift; sourceTree = "<group>"; };
 		DAB0FA5E1DF78AAC00E3B51D /* RModelHomeSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearchResult.swift; sourceTree = "<group>"; };
 		DAD7B4A31DFF31ED0043EEF0 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
+		DAD7B4A51DFF32740043EEF0 /* ExtensionNSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNSManagedObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +389,7 @@
 		DAAD344A1DF2332500C5D3D1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DAD7B4A51DFF32740043EEF0 /* ExtensionNSManagedObject.swift */,
 				DAAD344B1DF2332500C5D3D1 /* ExtensionFileManager.swift */,
 				DAAD344C1DF2332500C5D3D1 /* ExtensionNotification.swift */,
 				DAAD344D1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift */,
@@ -591,6 +594,7 @@
 				DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */,
 				DA2BBA041DF873D700C450C8 /* VHomeHelperClear.swift in Sources */,
 				DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */,
+				DAD7B4A61DFF32740043EEF0 /* ExtensionNSManagedObject.swift in Sources */,
 				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
 				DA2BBA081DF873D700C450C8 /* VHomeInputText.swift in Sources */,
 				DA63C3E91DF659F60026169C /* RCredentialsItem1.swift in Sources */,
