@@ -5,6 +5,7 @@ class MSession
     static let sharedInstance:MSession = MSession()
     let flux:MSessionFlux
     private(set) var language:MSessionLanguage?
+    private var settings:DObjectSettings?
     
     private init()
     {
@@ -13,18 +14,33 @@ class MSession
     
     //MARK: private
     
-    private func asyncLoadSession()
+    private func asyncLoadSettings()
     {
         
+    }
+    
+    private func createSettings()
+    {
+        
+    }
+    
+    private func settingsLoaded()
+    {
+        NotificationCenter.default.post(
+            name:Notification.sessionLoaded,
+            object:nil)
     }
     
     //MARK: public
     
     func loadSession()
     {
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        if settings == nil
         {
-            self.asyncLoadSession()
+            DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+            {
+                self.asyncLoadSettings()
+            }
         }
     }
     

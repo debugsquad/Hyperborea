@@ -7,7 +7,7 @@ class RSettingsHomeEntries:RSettings
     init(wordId:String, region:String?)
     {
         let headers:[String:String] = RConfiguration.sharedInstance.credentials.current()
-        let sourceLanguage:String = MSession.sharedInstance.language.code
+        let sourceLanguage:String? = MSession.sharedInstance.language?.code
         let baseUrl:String = RUrl.sharedInstance.urlFor(
             urlKey:RUrl.UrlKey.oxfordApi)
         let entriesUrl:String = RUrl.sharedInstance.urlFor(

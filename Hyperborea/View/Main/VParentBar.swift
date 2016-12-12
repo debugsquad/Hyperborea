@@ -307,7 +307,7 @@ class VParentBar:UIView
     
     func loadLanguage()
     {
-        let languageImage:UIImage = MSession.sharedInstance.language.image
+        let languageImage:UIImage? = MSession.sharedInstance.language?.image
         buttonLanguage.setImage(
             languageImage,
             for:UIControlState.normal)
