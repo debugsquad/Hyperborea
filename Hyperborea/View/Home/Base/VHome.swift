@@ -8,6 +8,7 @@ class VHome:VView
     weak var viewWords:VHomeWords!
     var scrollable:Bool
     private weak var controller:CHome!
+    private weak var spinner:VSpinner?
     private weak var layoutViewHelperBottom:NSLayoutConstraint!
     private weak var layoutInputTop:NSLayoutConstraint!
     private weak var layoutInputHeight:NSLayoutConstraint!
@@ -24,6 +25,9 @@ class VHome:VView
         super.init(controller:controller)
         self.controller = controller as? CHome
         
+        let spinner:VSpinner = VSpinner()
+        self.spinner = spinner
+        
         let viewInput:VHomeInput = VHomeInput(controller:self.controller)
         self.viewInput = viewInput
         
@@ -36,10 +40,44 @@ class VHome:VView
         let viewWords:VHomeWords = VHomeWords(controller:self.controller)
         self.viewWords = viewWords
         
+        addSubview(spinner)
         addSubview(viewWords)
         addSubview(viewInput)
         addSubview(viewHelper)
         addSubview(viewSuggestions)
+        
+        let layoutSpinnerTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
         
         layoutInputTop = NSLayoutConstraint(
             item:viewInput,
@@ -174,6 +212,10 @@ class VHome:VView
             constant:0)
         
         addConstraints([
+            layoutSpinnerTop,
+            layoutSpinnerBottom,
+            layoutSpinnerLeft,
+            layoutSpinnerRight,
             layoutInputTop,
             layoutInputHeight,
             layoutInputRight,
