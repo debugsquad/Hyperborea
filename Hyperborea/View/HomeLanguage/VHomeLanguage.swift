@@ -44,7 +44,7 @@ class VHomeLanguage:VView
         addSubview(buttonDismiss)
         addSubview(orbCenter)
         
-        if MSession.sharedInstance.language.languangeId == modelHorizontal.languangeId
+        if MSession.sharedInstance.language.languageId == modelHorizontal.languageId
         {
             addSubview(orbVertical)
             addSubview(orbHorizontal)

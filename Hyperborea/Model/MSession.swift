@@ -14,7 +14,7 @@ class MSession
     
     func changeLanguage(language:MSessionLanguage)
     {
-        if language.languangeId != self.language.languangeId
+        if language.languageId != self.language.languageId
         {
             self.language = language
             
