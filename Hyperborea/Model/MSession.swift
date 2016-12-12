@@ -16,16 +16,41 @@ class MSession
     
     private func asyncLoadSettings()
     {
-        
+        DManager.sharedInstance.fetchManagedObjects(
+            modelType:DObjectSettings.self)
+        { (settingsList:[DObjectSettings]?) in
+            
+            guard
+            
+                let settings:DObjectSettings = settingsList?.first
+            
+            else
+            {
+                self.createSettings()
+                
+                return
+            }
+            
+            self.settings = settings
+            self.settingsLoaded()
+        }
     }
     
     private func createSettings()
     {
-        
+        DManager.sharedInstance.createManagedObject(
+            modelType:DObjectSettings.self)
+        { (newSettings:DObjectSettings) in
+            
+            self.settings = newSettings
+            self.settingsLoaded()
+        }
     }
     
     private func settingsLoaded()
     {
+        
+        
         NotificationCenter.default.post(
             name:Notification.sessionLoaded,
             object:nil)

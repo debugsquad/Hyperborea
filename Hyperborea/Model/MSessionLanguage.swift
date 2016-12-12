@@ -8,6 +8,28 @@ class MSessionLanguage
         case spanish
     }
     
+    class func factory(languageId:LanguageId) -> MSessionLanguage
+    {
+        let language:MSessionLanguage
+        
+        switch languageId
+        {
+            case LanguageId.english:
+                
+                language = MSessionLanguageEnglish()
+            
+                break
+            
+            case LanguageId.spanish:
+            
+                language = MSessionLanguageSpanish()
+                
+                break
+        }
+        
+        return language
+    }
+    
     let languageId:LanguageId
     let code:String
     let image:UIImage
