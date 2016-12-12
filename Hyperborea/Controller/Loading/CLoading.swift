@@ -29,7 +29,15 @@ class CLoading:CController
         DispatchQueue.main.async
         { [weak self] in
             
-            
+            self?.sessionLoaded()
         }
+    }
+    
+    //MARK: private
+    
+    private func sessionLoaded()
+    {
+        let home:CHome = CHome()
+        parentController.replaceController(controller:home)
     }
 }

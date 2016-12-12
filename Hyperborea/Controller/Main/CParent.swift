@@ -78,10 +78,13 @@ class CParent:UIViewController
         
         currentController.removeFromParentViewController()
         addChildViewController(controller)
+        
         controller.beginAppearanceTransition(true, animated:false)
         currentController.beginAppearanceTransition(false, animated:false)
+        
         currentView.removeFromSuperview()
         viewParent.mainView(view:vView)
+        
         controller.endAppearanceTransition()
         currentController.endAppearanceTransition()
     }
