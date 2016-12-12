@@ -86,6 +86,7 @@
 		DAFCEFE11DFF4824006366E3 /* MSessionFluxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE01DFF4824006366E3 /* MSessionFluxItem.swift */; };
 		DAFCEFE31DFF4891006366E3 /* MSessionFluxItemFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE21DFF4891006366E3 /* MSessionFluxItemFull.swift */; };
 		DAFCEFE51DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE41DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift */; };
+		DAFCEFE71DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE61DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -171,6 +172,7 @@
 		DAFCEFE01DFF4824006366E3 /* MSessionFluxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItem.swift; sourceTree = "<group>"; };
 		DAFCEFE21DFF4891006366E3 /* MSessionFluxItemFull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemFull.swift; sourceTree = "<group>"; };
 		DAFCEFE41DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemTwoLeft.swift; sourceTree = "<group>"; };
+		DAFCEFE61DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemOneLeft.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +425,7 @@
 				DAFCEFE01DFF4824006366E3 /* MSessionFluxItem.swift */,
 				DAFCEFE21DFF4891006366E3 /* MSessionFluxItemFull.swift */,
 				DAFCEFE41DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift */,
+				DAFCEFE61DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -668,6 +671,7 @@
 				DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */,
 				DAAD346B1DF2332500C5D3D1 /* ExtensionUIColor.swift in Sources */,
 				DA2BBA1E1DF8979800C450C8 /* RModelHomeEntriesItemVerb.swift in Sources */,
+				DAFCEFE71DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift in Sources */,
 				DAAD346A1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
