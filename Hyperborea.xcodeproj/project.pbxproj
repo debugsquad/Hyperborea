@@ -88,6 +88,7 @@
 		DAFCEFE51DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE41DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift */; };
 		DAFCEFE71DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE61DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift */; };
 		DAFCEFE91DFF5005006366E3 /* MSessionFluxItemEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE81DFF5005006366E3 /* MSessionFluxItemEmpty.swift */; };
+		DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEB1DFF581E006366E3 /* CLoading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +176,7 @@
 		DAFCEFE41DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemTwoLeft.swift; sourceTree = "<group>"; };
 		DAFCEFE61DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemOneLeft.swift; sourceTree = "<group>"; };
 		DAFCEFE81DFF5005006366E3 /* MSessionFluxItemEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemEmpty.swift; sourceTree = "<group>"; };
+		DAFCEFEB1DFF581E006366E3 /* CLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLoading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +389,7 @@
 		DAAD34451DF2332500C5D3D1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DAFCEFEA1DFF5814006366E3 /* Loading */,
 				DAAD347B1DF235AB00C5D3D1 /* Home */,
 				DAAD34461DF2332500C5D3D1 /* Main */,
 			);
@@ -525,6 +528,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		DAFCEFEA1DFF5814006366E3 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				DAFCEFEB1DFF581E006366E3 /* CLoading.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -612,6 +623,7 @@
 				DA2BBA0C1DF873D700C450C8 /* VHomeWordsCell.swift in Sources */,
 				DA61436E1DFA07190029A596 /* RModelHomeEntriesTense.swift in Sources */,
 				DA63C3C91DF5CE010026169C /* RMainDelegate.swift in Sources */,
+				DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */,
 				DA2BBA071DF873D700C450C8 /* VHomeInputPlaceholder.swift in Sources */,
 				DA50977F1DFB303C0088821E /* MSessionLanguageSpanish.swift in Sources */,
 				DAAD34691DF2332500C5D3D1 /* ExtensionNotification.swift in Sources */,

@@ -2,16 +2,16 @@ import UIKit
 
 class VHome:VView
 {
-    weak var viewInput:VHomeInput?
-    weak var viewHelper:VHomeHelper?
-    weak var viewSuggestions:VHomeSuggestions?
-    weak var viewWords:VHomeWords?
+    weak var viewInput:VHomeInput!
+    weak var viewHelper:VHomeHelper!
+    weak var viewSuggestions:VHomeSuggestions!
+    weak var viewWords:VHomeWords!
     var scrollable:Bool
     private weak var controller:CHome!
     private weak var spinner:VSpinner?
-    private weak var layoutViewHelperBottom:NSLayoutConstraint?
-    private weak var layoutInputTop:NSLayoutConstraint?
-    private weak var layoutInputHeight:NSLayoutConstraint?
+    private weak var layoutViewHelperBottom:NSLayoutConstraint!
+    private weak var layoutInputTop:NSLayoutConstraint!
+    private weak var layoutInputHeight:NSLayoutConstraint!
     private let kAnimationDuration:TimeInterval = 3
     private let kInputMinHeight:CGFloat = 81
     private let kHelperHeight:CGFloat = 50
@@ -28,7 +28,27 @@ class VHome:VView
         let spinner:VSpinner = VSpinner()
         self.spinner = spinner
         
+        let viewInput:VHomeInput = VHomeInput(controller:self.controller)
+        viewInput.isHidden = true
+        self.viewInput = viewInput
+        
+        let viewHelper:VHomeHelper = VHomeHelper(controller:self.controller)
+        viewHelper.isHidden = true
+        self.viewHelper = viewHelper
+        
+        let viewSuggestions:VHomeSuggestions = VHomeSuggestions(controller:self.controller)
+        viewSuggestions.isHidden = true
+        self.viewSuggestions = viewSuggestions
+        
+        let viewWords:VHomeWords = VHomeWords(controller:self.controller)
+        viewWords.isHidden = true
+        self.viewWords = viewWords
+        
         addSubview(spinner)
+        addSubview(viewWords)
+        addSubview(viewInput)
+        addSubview(viewHelper)
+        addSubview(viewSuggestions)
         
         let layoutSpinnerTop:NSLayoutConstraint = NSLayoutConstraint(
             item:spinner,
@@ -62,91 +82,6 @@ class VHome:VView
             attribute:NSLayoutAttribute.right,
             multiplier:1,
             constant:0)
-        
-        addConstraints([
-            layoutSpinnerTop,
-            layoutSpinnerBottom,
-            layoutSpinnerLeft,
-            layoutSpinnerRight])
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector:#selector(notifiedKeyboardChanged(sender:)),
-            name:NSNotification.Name.UIKeyboardWillChangeFrame,
-            object:nil)
-    }
-    
-    required init?(coder:NSCoder)
-    {
-        fatalError()
-    }
-    
-    deinit
-    {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    //MARK: notifications
-    
-    func notifiedKeyboardChanged(sender notification:Notification)
-    {
-        guard
-            
-            let userInfo:[AnyHashable:Any] = notification.userInfo,
-            let keyboardFrameValue:NSValue = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue
-            
-        else
-        {
-            return
-        }
-        
-        let keyRect:CGRect = keyboardFrameValue.cgRectValue
-        let yOrigin = keyRect.origin.y
-        let height:CGFloat = bounds.maxY
-        let keyboardHeight:CGFloat
-        
-        if yOrigin < height
-        {
-            keyboardHeight = height - yOrigin
-            viewHelper.viewCancel.activate()
-        }
-        else
-        {
-            keyboardHeight = 0
-            viewHelper.viewCancel.deactivate()
-        }
-        
-        layoutViewHelperBottom.constant = -keyboardHeight
-        
-        UIView.animate(withDuration:kAnimationDuration)
-        { [weak self] in
-            
-            self?.layoutIfNeeded()
-        }
-    }
-    
-    //MARK: public
-    
-    func sessionLoaded()
-    {
-        spinner?.removeFromSuperview()
-        
-        let viewInput:VHomeInput = VHomeInput(controller:self.controller)
-        self.viewInput = viewInput
-        
-        let viewHelper:VHomeHelper = VHomeHelper(controller:self.controller)
-        self.viewHelper = viewHelper
-        
-        let viewSuggestions:VHomeSuggestions = VHomeSuggestions(controller:self.controller)
-        self.viewSuggestions = viewSuggestions
-        
-        let viewWords:VHomeWords = VHomeWords(controller:self.controller)
-        self.viewWords = viewWords
-        
-        addSubview(viewWords)
-        addSubview(viewInput)
-        addSubview(viewHelper)
-        addSubview(viewSuggestions)
         
         layoutInputTop = NSLayoutConstraint(
             item:viewInput,
@@ -281,6 +216,10 @@ class VHome:VView
             constant:0)
         
         addConstraints([
+            layoutSpinnerTop,
+            layoutSpinnerBottom,
+            layoutSpinnerLeft,
+            layoutSpinnerRight,
             layoutInputTop,
             layoutInputHeight,
             layoutInputRight,
@@ -297,6 +236,72 @@ class VHome:VView
             layoutViewWordsBottom,
             layoutViewWordsLeft,
             layoutViewWordsRight])
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(notifiedKeyboardChanged(sender:)),
+            name:NSNotification.Name.UIKeyboardWillChangeFrame,
+            object:nil)
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        fatalError()
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    //MARK: notifications
+    
+    func notifiedKeyboardChanged(sender notification:Notification)
+    {
+        guard
+            
+            let userInfo:[AnyHashable:Any] = notification.userInfo,
+            let keyboardFrameValue:NSValue = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue
+            
+        else
+        {
+            return
+        }
+        
+        let keyRect:CGRect = keyboardFrameValue.cgRectValue
+        let yOrigin = keyRect.origin.y
+        let height:CGFloat = bounds.maxY
+        let keyboardHeight:CGFloat
+        
+        if yOrigin < height
+        {
+            keyboardHeight = height - yOrigin
+            viewHelper.viewCancel.activate()
+        }
+        else
+        {
+            keyboardHeight = 0
+            viewHelper.viewCancel.deactivate()
+        }
+        
+        layoutViewHelperBottom.constant = -keyboardHeight
+        
+        UIView.animate(withDuration:kAnimationDuration)
+        { [weak self] in
+            
+            self?.layoutIfNeeded()
+        }
+    }
+    
+    //MARK: public
+    
+    func sessionLoaded()
+    {
+        spinner?.removeFromSuperview()
+        viewInput.isHidden = false
+        viewHelper.isHidden = false
+        viewSuggestions.isHidden = false
+        viewWords.isHidden = false
     }
     
     func scrollDidScroll(offsetY:CGFloat)
