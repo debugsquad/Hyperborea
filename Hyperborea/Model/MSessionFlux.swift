@@ -11,9 +11,4 @@ class MSessionFlux
     }
     
     var current:MSessionFluxItem?
-    
-    init()
-    {
-        
-    }
 }
