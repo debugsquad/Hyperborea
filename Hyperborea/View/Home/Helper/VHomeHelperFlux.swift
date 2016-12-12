@@ -19,7 +19,7 @@ class VHomeHelperFlux:UIButton
         image.clipsToBounds = true
         image.contentMode = UIViewContentMode.center
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = #imageLiteral(resourceName: "assetHomeFluxFull")
+        image.image = MSession.sharedInstance.flux?.image
         self.image = image
         
         addSubview(image)

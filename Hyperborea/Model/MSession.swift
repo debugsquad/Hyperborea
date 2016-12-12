@@ -3,13 +3,12 @@ import Foundation
 class MSession
 {
     static let sharedInstance:MSession = MSession()
-    let flux:MSessionFlux
+    private(set) var flux:MSessionFlux?
     private(set) var language:MSessionLanguage?
     private var settings:DObjectSettings?
     
     private init()
     {
-        flux = MSessionFlux()
     }
     
     //MARK: private
@@ -54,14 +53,16 @@ class MSession
             let languageIdInt:Int16 = settings?.language,
             let fluxStatusInt:Int16 = settings?.fluxStatus,
             let languageId:MSessionLanguage.LanguageId = MSessionLanguage.LanguageId(
-                rawValue:languageIdInt)
+                rawValue:languageIdInt),
+            let fluxStatus:MSessionFlux.Status = MSessionFlux.Status(
+                rawValue:fluxStatusInt)
         
         else
         {
             return
         }
         
-        
+        flux = MSessionFlux.factory(status:fluxStatus)
         language = MSessionLanguage.factory(languageId:languageId)
         
         NotificationCenter.default.post(
