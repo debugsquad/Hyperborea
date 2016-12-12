@@ -4,8 +4,9 @@ class VParent:UIView
 {
     static let kBarHeight:CGFloat = 64
     
-    private weak var viewBar:VParentBar!
-    private weak var layoutBarTop:NSLayoutConstraint!
+    private weak var controller:CParent!
+    private weak var viewBar:VParentBar?
+    private weak var layoutBarTop:NSLayoutConstraint?
     private let kAnimationDuration:TimeInterval = 0.3
     
     convenience init(controller:CParent)
@@ -13,7 +14,13 @@ class VParent:UIView
         self.init()
         clipsToBounds = true
         backgroundColor = UIColor.white
-        
+        self.controller = controller
+    }
+    
+    //MARK: private
+    
+    private func loadBar()
+    {
         let viewBar:VParentBar = VParentBar(
             controller:controller)
         self.viewBar = viewBar
@@ -53,18 +60,25 @@ class VParent:UIView
             constant:0)
         
         addConstraints([
-            layoutBarTop,
+            layoutBarTop!,
             layoutBarHeight,
             layoutBarLeft,
-            layoutBarRight
-            ])
+            layoutBarRight])
     }
     
     //MARK: public
     
     func mainView(view:VView)
     {
-        insertSubview(view, belowSubview:viewBar)
+        if viewBar == nil
+        {
+            addSubview(view)
+        }
+        else
+        {
+            insertSubview(view, belowSubview:viewBar!)
+        }
+        
         view.constraints(
             initialLeft:0,
             initialRight:0,
@@ -115,17 +129,17 @@ class VParent:UIView
     {
         if offsetY > 0
         {
-            layoutBarTop.constant = 0
+            layoutBarTop?.constant = 0
         }
         else
         {
-            layoutBarTop.constant = offsetY
+            layoutBarTop?.constant = offsetY
         }
     }
     
     func restartScroll()
     {
-        layoutBarTop.constant = 0
+        layoutBarTop?.constant = 0
         
         UIView.animate(withDuration:kAnimationDuration)
         {
