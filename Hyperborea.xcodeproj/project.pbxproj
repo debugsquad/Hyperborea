@@ -89,6 +89,8 @@
 		DAFCEFE71DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE61DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift */; };
 		DAFCEFE91DFF5005006366E3 /* MSessionFluxItemEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE81DFF5005006366E3 /* MSessionFluxItemEmpty.swift */; };
 		DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEB1DFF581E006366E3 /* CLoading.swift */; };
+		DAFCEFEF1DFF5856006366E3 /* VLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEE1DFF5856006366E3 /* VLoading.swift */; };
+		DAFCEFF11DFF5BBE006366E3 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAFCEFF01DFF5BBE006366E3 /* generic.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,6 +179,8 @@
 		DAFCEFE61DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemOneLeft.swift; sourceTree = "<group>"; };
 		DAFCEFE81DFF5005006366E3 /* MSessionFluxItemEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemEmpty.swift; sourceTree = "<group>"; };
 		DAFCEFEB1DFF581E006366E3 /* CLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLoading.swift; sourceTree = "<group>"; };
+		DAFCEFEE1DFF5856006366E3 /* VLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLoading.swift; sourceTree = "<group>"; };
+		DAFCEFF01DFF5BBE006366E3 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +453,7 @@
 		DAAD345D1DF2332500C5D3D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DAFCEFED1DFF584F006366E3 /* Loading */,
 				DA19D5ED1DFC912E005A3477 /* HomeShare */,
 				DA1783F71DFB567100895012 /* HomeLanguage */,
 				DAAD34811DF23B2500C5D3D1 /* Home */,
@@ -485,6 +490,7 @@
 				DAAD347F1DF23A6C00C5D3D1 /* LaunchScreen.storyboard */,
 				DA7228021DF4B187001370C6 /* home.xcassets */,
 				DAB0FA4F1DF7773F00E3B51D /* loader.xcassets */,
+				DAFCEFF01DFF5BBE006366E3 /* generic.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -532,6 +538,14 @@
 			isa = PBXGroup;
 			children = (
 				DAFCEFEB1DFF581E006366E3 /* CLoading.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		DAFCEFED1DFF584F006366E3 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				DAFCEFEE1DFF5856006366E3 /* VLoading.swift */,
 			);
 			path = Loading;
 			sourceTree = "<group>";
@@ -602,6 +616,7 @@
 				DA63C3D61DF5F2250026169C /* ResourceUrl.plist in Resources */,
 				DAB0FA501DF7773F00E3B51D /* loader.xcassets in Resources */,
 				DAAD34741DF2332500C5D3D1 /* Localizable.strings in Resources */,
+				DAFCEFF11DFF5BBE006366E3 /* generic.xcassets in Resources */,
 				DAB0FA561DF787F800E3B51D /* ResourceLexicalCategory.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +663,7 @@
 				DAFCEFE31DFF4891006366E3 /* MSessionFluxItemFull.swift in Sources */,
 				DA2BBA0D1DF873D700C450C8 /* VHomeWordsFooter.swift in Sources */,
 				DAFCEFE11DFF4824006366E3 /* MSessionFluxItem.swift in Sources */,
+				DAFCEFEF1DFF5856006366E3 /* VLoading.swift in Sources */,
 				DA6143721DFA27A40029A596 /* RModelHomeEntriesSensesItem.swift in Sources */,
 				DA670DC71DF8C59000FD29DD /* RModelHomeEntriesEtymologies.swift in Sources */,
 				DAFCEFDD1DFF3EB7006366E3 /* VHomeHelperFlux.swift in Sources */,
