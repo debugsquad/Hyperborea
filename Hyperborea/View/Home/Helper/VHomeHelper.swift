@@ -210,7 +210,7 @@ class VHomeHelper:UIView
             toItem:nil,
             attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
-            constant:0)
+            constant:kFluxWidth)
         
         addConstraints([
             layoutVisualEffectTop,
@@ -233,6 +233,16 @@ class VHomeHelper:UIView
             layoutViewFluxBottom,
             layoutViewFluxLeft,
             layoutViewFluxWidth])
+    }
+    
+    override func layoutSubviews()
+    {
+        let width:CGFloat = bounds.maxX
+        let remainFlux:CGFloat = width - kFluxWidth
+        let marginFlux:CGFloat = remainFlux / 2.0
+        layoutViewFluxLeft.constant = marginFlux
+        
+        super.layoutSubviews()
     }
     
     //MARK: public
