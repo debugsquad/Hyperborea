@@ -2,6 +2,14 @@ import UIKit
 
 class MSessionFluxItem
 {
+    enum Status:Int16
+    {
+        case full
+        case twoLeft
+        case oneLeft
+        case empty
+    }
+    
     class func factory(status:MSessionFlux.Status) -> MSessionFluxItem
     {
         let item:MSessionFluxItem

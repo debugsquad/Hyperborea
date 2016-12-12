@@ -82,7 +82,6 @@
 		DAD7B4A61DFF32740043EEF0 /* ExtensionNSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7B4A51DFF32740043EEF0 /* ExtensionNSManagedObject.swift */; };
 		DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */; };
 		DAFCEFDD1DFF3EB7006366E3 /* VHomeHelperFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */; };
-		DAFCEFDF1DFF47F5006366E3 /* MSessionFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFDE1DFF47F5006366E3 /* MSessionFlux.swift */; };
 		DAFCEFE11DFF4824006366E3 /* MSessionFluxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE01DFF4824006366E3 /* MSessionFluxItem.swift */; };
 		DAFCEFE31DFF4891006366E3 /* MSessionFluxItemFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE21DFF4891006366E3 /* MSessionFluxItemFull.swift */; };
 		DAFCEFE51DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE41DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift */; };
@@ -172,7 +171,6 @@
 		DAD7B4A51DFF32740043EEF0 /* ExtensionNSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNSManagedObject.swift; sourceTree = "<group>"; };
 		DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHyperborea.xcdatamodel; sourceTree = "<group>"; };
 		DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperFlux.swift; sourceTree = "<group>"; };
-		DAFCEFDE1DFF47F5006366E3 /* MSessionFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFlux.swift; sourceTree = "<group>"; };
 		DAFCEFE01DFF4824006366E3 /* MSessionFluxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItem.swift; sourceTree = "<group>"; };
 		DAFCEFE21DFF4891006366E3 /* MSessionFluxItemFull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemFull.swift; sourceTree = "<group>"; };
 		DAFCEFE41DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemTwoLeft.swift; sourceTree = "<group>"; };
@@ -430,7 +428,6 @@
 				DA50977A1DFB2FF00088821E /* MSessionLanguage.swift */,
 				DA50977C1DFB30150088821E /* MSessionLanguageEnglish.swift */,
 				DA50977E1DFB303C0088821E /* MSessionLanguageSpanish.swift */,
-				DAFCEFDE1DFF47F5006366E3 /* MSessionFlux.swift */,
 				DAFCEFE01DFF4824006366E3 /* MSessionFluxItem.swift */,
 				DAFCEFE21DFF4891006366E3 /* MSessionFluxItemFull.swift */,
 				DAFCEFE41DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift */,
@@ -644,7 +641,6 @@
 				DAAD34691DF2332500C5D3D1 /* ExtensionNotification.swift in Sources */,
 				DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */,
 				DA2BBA041DF873D700C450C8 /* VHomeHelperClear.swift in Sources */,
-				DAFCEFDF1DFF47F5006366E3 /* MSessionFlux.swift in Sources */,
 				DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */,
 				DAD7B4A61DFF32740043EEF0 /* ExtensionNSManagedObject.swift in Sources */,
 				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
