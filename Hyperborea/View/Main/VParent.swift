@@ -15,6 +15,24 @@ class VParent:UIView
         clipsToBounds = true
         backgroundColor = UIColor.white
         self.controller = controller
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(self.notifiedSessionLoaded(sender:)),
+            name:Notification.sessionLoaded,
+            object:nil)
+    }
+    
+    //MARK: notifications
+    
+    func notifiedSessionLoaded(sender notification:Notification)
+    {
+        NotificationCenter.default.removeObserver(self)
+        
+        DispatchQueue.main.async
+        {
+            self.loadBar()
+        }
     }
     
     //MARK: private
