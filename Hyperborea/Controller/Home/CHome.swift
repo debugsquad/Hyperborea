@@ -22,6 +22,14 @@ class CHome:CController, RMainDelegate
             selector:#selector(notifiedLanguageChanged(sender:)),
             name:Notification.languageChanged,
             object:nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(self.notifiedSessionLoaded(sender:)),
+            name:Notification.sessionLoaded,
+            object:nil)
+        
+        MSession.sharedInstance.loadSession()
     }
     
     override func loadView()
@@ -32,6 +40,20 @@ class CHome:CController, RMainDelegate
     }
     
     //MARK: notified
+    
+    func notifiedSessionLoaded(sender notification:Notification)
+    {
+        NotificationCenter.default.removeObserver(
+            self,
+            name:Notification.sessionLoaded,
+            object:nil)
+        
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.viewHome.sessionLoaded()
+        }
+    }
     
     func notifiedLanguageChanged(sender notification:Notification)
     {
