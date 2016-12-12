@@ -16,7 +16,11 @@ class MSessionLanguageEnglish:MSessionLanguage
             name:name)
     }
     
-    override init(languageId:MSessionLanguage.LanguageId, code:String, image:UIImage, name:String)
+    override init(
+        languageId:MSessionLanguage.LanguageId,
+        code:String,
+        image:UIImage,
+        name:String)
     {
         fatalError()
     }
