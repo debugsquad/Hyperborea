@@ -2,7 +2,7 @@ import UIKit
 
 extension UIColor
 {    
-    open class var genericBlue:UIColor
+    open class var genericBlue:UIColor // #33A6D9
     {
         get
         {
