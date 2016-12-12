@@ -63,6 +63,29 @@ class CParent:UIViewController
         controller.endAppearanceTransition()
     }
     
+    func replaceController(controller:CController)
+    {
+        guard
+            
+            let vView:VView = controller.view as? VView,
+            let currentController:CController = childViewControllers.last as? CController,
+            let currentView:VView = currentController.view as? VView
+            
+        else
+        {
+            return
+        }
+        
+        currentController.removeFromParentViewController()
+        addChildViewController(controller)
+        controller.beginAppearanceTransition(true, animated:false)
+        currentController.beginAppearanceTransition(false, animated:false)
+        currentView.removeFromSuperview()
+        viewParent.mainView(view:vView)
+        controller.endAppearanceTransition()
+        currentController.endAppearanceTransition()
+    }
+    
     func animateOver(controller:CController)
     {
         guard

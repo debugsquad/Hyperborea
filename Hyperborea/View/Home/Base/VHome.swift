@@ -25,19 +25,15 @@ class VHome:VView
         self.controller = controller as? CHome
         
         let viewInput:VHomeInput = VHomeInput(controller:self.controller)
-        viewInput.isHidden = true
         self.viewInput = viewInput
         
         let viewHelper:VHomeHelper = VHomeHelper(controller:self.controller)
-        viewHelper.isHidden = true
         self.viewHelper = viewHelper
         
         let viewSuggestions:VHomeSuggestions = VHomeSuggestions(controller:self.controller)
-        viewSuggestions.isHidden = true
         self.viewSuggestions = viewSuggestions
         
         let viewWords:VHomeWords = VHomeWords(controller:self.controller)
-        viewWords.isHidden = true
         self.viewWords = viewWords
         
         addSubview(viewWords)
@@ -178,10 +174,6 @@ class VHome:VView
             constant:0)
         
         addConstraints([
-            layoutSpinnerTop,
-            layoutSpinnerBottom,
-            layoutSpinnerLeft,
-            layoutSpinnerRight,
             layoutInputTop,
             layoutInputHeight,
             layoutInputRight,
@@ -256,15 +248,6 @@ class VHome:VView
     }
     
     //MARK: public
-    
-    func sessionLoaded()
-    {
-        spinner?.removeFromSuperview()
-        viewInput.isHidden = false
-        viewHelper.isHidden = false
-        viewSuggestions.isHidden = false
-        viewWords.isHidden = false
-    }
     
     func scrollDidScroll(offsetY:CGFloat)
     {
