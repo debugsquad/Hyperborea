@@ -80,6 +80,7 @@
 		DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5E1DF78AAC00E3B51D /* RModelHomeSearchResult.swift */; };
 		DAD7B4A41DFF31ED0043EEF0 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7B4A31DFF31ED0043EEF0 /* DManager.swift */; };
 		DAD7B4A61DFF32740043EEF0 /* ExtensionNSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7B4A51DFF32740043EEF0 /* ExtensionNSManagedObject.swift */; };
+		DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -159,6 +160,7 @@
 		DAB0FA5E1DF78AAC00E3B51D /* RModelHomeSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearchResult.swift; sourceTree = "<group>"; };
 		DAD7B4A31DFF31ED0043EEF0 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
 		DAD7B4A51DFF32740043EEF0 /* ExtensionNSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNSManagedObject.swift; sourceTree = "<group>"; };
+		DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHyperborea.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -497,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD7B4A31DFF31ED0043EEF0 /* DManager.swift */,
+				DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				DA2BBA1B1DF8979800C450C8 /* RModelHomeEntriesFactory.swift in Sources */,
 				DAD7B4A41DFF31ED0043EEF0 /* DManager.swift in Sources */,
 				DA63C3E51DF659D90026169C /* RCredentials.swift in Sources */,
+				DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */,
 				DAAD34681DF2332500C5D3D1 /* ExtensionFileManager.swift in Sources */,
 				DA63C3DA1DF60C180026169C /* RConfiguration.swift in Sources */,
 				DA2BBA031DF873D700C450C8 /* VHomeHelperCancel.swift in Sources */,
@@ -806,6 +810,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */,
+			);
+			currentVersion = DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */;
+			path = DHyperborea.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DAAD34281DF22D7500C5D3D1 /* Project object */;
 }
