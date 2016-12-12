@@ -87,6 +87,7 @@
 		DAFCEFE31DFF4891006366E3 /* MSessionFluxItemFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE21DFF4891006366E3 /* MSessionFluxItemFull.swift */; };
 		DAFCEFE51DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE41DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift */; };
 		DAFCEFE71DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE61DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift */; };
+		DAFCEFE91DFF5005006366E3 /* MSessionFluxItemEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE81DFF5005006366E3 /* MSessionFluxItemEmpty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +174,7 @@
 		DAFCEFE21DFF4891006366E3 /* MSessionFluxItemFull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemFull.swift; sourceTree = "<group>"; };
 		DAFCEFE41DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemTwoLeft.swift; sourceTree = "<group>"; };
 		DAFCEFE61DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemOneLeft.swift; sourceTree = "<group>"; };
+		DAFCEFE81DFF5005006366E3 /* MSessionFluxItemEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxItemEmpty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +428,7 @@
 				DAFCEFE21DFF4891006366E3 /* MSessionFluxItemFull.swift */,
 				DAFCEFE41DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift */,
 				DAFCEFE61DFF4FD1006366E3 /* MSessionFluxItemOneLeft.swift */,
+				DAFCEFE81DFF5005006366E3 /* MSessionFluxItemEmpty.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				DA2BBA031DF873D700C450C8 /* VHomeHelperCancel.swift in Sources */,
 				DAFCEFE51DFF4BFC006366E3 /* MSessionFluxItemTwoLeft.swift in Sources */,
 				DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */,
+				DAFCEFE91DFF5005006366E3 /* MSessionFluxItemEmpty.swift in Sources */,
 				DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */,
 				DA63C3D21DF5EF7B0026169C /* RSettingsHomeSearch.swift in Sources */,
 				DA5097791DFB2FC60088821E /* MSession.swift in Sources */,
