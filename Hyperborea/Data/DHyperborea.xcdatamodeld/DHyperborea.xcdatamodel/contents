@@ -5,12 +5,13 @@
         <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="DObjectSettings" representedClassName="DObjectSettings" syncable="YES" codeGenerationType="class">
+        <attribute name="flux" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="hyperboreaPlus" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="language" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastSearch" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DObjectSettings" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="DObjectSettings" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="DObjectSearch" positionX="-54" positionY="-9" width="128" height="75"/>
     </elements>
 </model>
