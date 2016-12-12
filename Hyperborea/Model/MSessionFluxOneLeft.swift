@@ -1,14 +1,14 @@
 import UIKit
 
-class MSessionFluxItemTwoLeft:MSessionFluxItem
+class MSessionFluxOneLeft:MSessionFlux
 {
-    private let kStatus:MSessionFlux.Status = MSessionFlux.Status.twoLeft
+    private let kStatus:MSessionFlux.Status = MSessionFlux.Status.oneLeft
     
     override init()
     {
         super.init(
             status:kStatus,
-            image:#imageLiteral(resourceName: "assetHomeFluxTwoLeft"))
+            image:#imageLiteral(resourceName: "assetHomeFluxOneLeft"))
     }
     
     override init(status:MSessionFlux.Status, image:UIImage)

@@ -1,6 +1,6 @@
 import UIKit
 
-class MSessionFluxItemFull:MSessionFluxItem
+class MSessionFluxFull:MSessionFlux
 {
     private let kStatus:MSessionFlux.Status = MSessionFlux.Status.full
     

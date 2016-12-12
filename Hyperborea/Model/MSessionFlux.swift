@@ -1,6 +1,6 @@
 import UIKit
 
-class MSessionFluxItem
+class MSessionFlux
 {
     enum Status:Int16
     {
@@ -10,33 +10,33 @@ class MSessionFluxItem
         case empty
     }
     
-    class func factory(status:MSessionFlux.Status) -> MSessionFluxItem
+    class func factory(status:MSessionFlux.Status) -> MSessionFlux
     {
-        let item:MSessionFluxItem
+        let item:MSessionFlux
         
         switch status
         {
             case MSessionFlux.Status.full:
             
-                item = MSessionFluxItemFull()
+                item = MSessionFluxFull()
                 
                 break
             
             case MSessionFlux.Status.twoLeft:
                 
-                item = MSessionFluxItemTwoLeft()
+                item = MSessionFluxTwoLeft()
                 
                 break
             
             case MSessionFlux.Status.oneLeft:
             
-                item = MSessionFluxItemOneLeft()
+                item = MSessionFluxOneLeft()
                 
                 break
             
             case MSessionFlux.Status.empty:
             
-                item = MSessionFluxItemEmpty()
+                item = MSessionFluxEmpty()
                 
                 break
         }
