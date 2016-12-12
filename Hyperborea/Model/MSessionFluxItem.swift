@@ -16,14 +16,20 @@ class MSessionFluxItem
             
             case MSessionFlux.Status.twoLeft:
                 
+                item = MSessionFluxItemTwoLeft()
+                
                 break
             
             case MSessionFlux.Status.oneLeft:
             
+                item = MSessionFluxItemOneLeft()
+                
                 break
             
             case MSessionFlux.Status.empty:
             
+                item = MSessionFluxItemEmpty()
+                
                 break
         }
         
