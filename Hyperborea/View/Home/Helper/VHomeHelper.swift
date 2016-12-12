@@ -6,11 +6,14 @@ class VHomeHelper:UIView
     private weak var controller:CHome!
     private weak var viewSend:VHomeHelperSend!
     private weak var viewClear:VHomeHelperClear!
+    private weak var viewFlux:VHomeHelperFlux!
+    private weak var layoutViewFluxLeft:NSLayoutConstraint!
     private let kSendMarginVertical:CGFloat = 9
     private let kSendRight:CGFloat = -9
     private let kSendWidth:CGFloat = 100
     private let kCancelWidth:CGFloat = 50
     private let kClearWidth:CGFloat = 50
+    private let kFluxWidth:CGFloat = 90
     
     convenience init(controller:CHome)
     {
@@ -35,10 +38,14 @@ class VHomeHelper:UIView
         let viewCancel:VHomeHelperCancel = VHomeHelperCancel(controller:controller)
         self.viewCancel = viewCancel
         
+        let viewFlux:VHomeHelperFlux = VHomeHelperFlux(controller:controller)
+        self.viewFlux = viewFlux
+        
         addSubview(visualEffect)
         addSubview(viewSend)
         addSubview(viewClear)
         addSubview(viewCancel)
+        addSubview(viewFlux)
         
         let layoutVisualEffectTop:NSLayoutConstraint = NSLayoutConstraint(
             item:visualEffect,
@@ -172,6 +179,39 @@ class VHomeHelper:UIView
             multiplier:1,
             constant:kCancelWidth)
         
+        let layoutViewFluxTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewFlux,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutViewFluxBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewFlux,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        layoutViewFluxLeft = NSLayoutConstraint(
+            item:viewFlux,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutViewFluxWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewFlux,
+            attribute:NSLayoutAttribute.width,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutVisualEffectTop,
             layoutVisualEffectBottom,
@@ -188,7 +228,11 @@ class VHomeHelper:UIView
             layoutViewCancelTop,
             layoutViewCancelBottom,
             layoutViewCancelLeft,
-            layoutViewCancelWidth])
+            layoutViewCancelWidth,
+            layoutViewFluxTop,
+            layoutViewFluxBottom,
+            layoutViewFluxLeft,
+            layoutViewFluxWidth])
     }
     
     //MARK: public
