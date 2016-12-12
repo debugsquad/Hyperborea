@@ -3,7 +3,7 @@ import UIKit
 class VHomeWordsCellEntry:VHomeWordsCell
 {
     private weak var labelEntity:UILabel!
-    private let kLabelEntityTop:CGFloat = 2
+    private let kLabelEntityTop:CGFloat = 8
     private let kLabelEntityBottom:CGFloat = -2
     private let kLabelEntityMarginHorizontal:CGFloat = 10
     private let kButtonShareWidth:CGFloat = 90

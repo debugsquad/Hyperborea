@@ -17,7 +17,7 @@ class VHomeWordsFooter:UICollectionReusableView
         label.numberOfLines = 0
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont.regular(size:16)
-        label.textColor = UIColor(white:0.7, alpha:1)
+        label.textColor = UIColor(white:0.5, alpha:1)
         label.text = NSLocalizedString("VHomeWordsFooter_label", comment:"")
         addSubview(label)
         

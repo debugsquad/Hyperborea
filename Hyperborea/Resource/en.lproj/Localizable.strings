@@ -3,7 +3,7 @@
 "VParentBar_titleDictionary"="Dictionary";
 "VHomeInputPlaceholder_label"="Word search";
 "VHomeHelperSend_title"="Search";
-"VHomeWordsFooter_label"="Nothing found for current search, try again";
+"VHomeWordsFooter_label"="Nothing found for current word or definition";
 
 "RModelHomeEntriesEtymologies_title"="Origin";
 "RModelHomeEntriesItemNoun_title"="Noun";
