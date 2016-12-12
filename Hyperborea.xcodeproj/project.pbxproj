@@ -78,6 +78,7 @@
 		DAB0FA561DF787F800E3B51D /* ResourceLexicalCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB0FA551DF787F800E3B51D /* ResourceLexicalCategory.plist */; };
 		DAB0FA631DF78AAC00E3B51D /* RModelHomeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5D1DF78AAC00E3B51D /* RModelHomeSearch.swift */; };
 		DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0FA5E1DF78AAC00E3B51D /* RModelHomeSearchResult.swift */; };
+		DAD7B4A41DFF31ED0043EEF0 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7B4A31DFF31ED0043EEF0 /* DManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +156,7 @@
 		DAB0FA551DF787F800E3B51D /* ResourceLexicalCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceLexicalCategory.plist; sourceTree = "<group>"; };
 		DAB0FA5D1DF78AAC00E3B51D /* RModelHomeSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearch.swift; sourceTree = "<group>"; };
 		DAB0FA5E1DF78AAC00E3B51D /* RModelHomeSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeSearchResult.swift; sourceTree = "<group>"; };
+		DAD7B4A31DFF31ED0043EEF0 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 		DAAD34321DF22D7500C5D3D1 /* Hyperborea */ = {
 			isa = PBXGroup;
 			children = (
+				DAD7B4A21DFF31ED0043EEF0 /* Data */,
 				DA63C3C21DF5CDD50026169C /* Request */,
 				DAAD347E1DF23A6C00C5D3D1 /* Assets */,
 				DAAD34451DF2332500C5D3D1 /* Controller */,
@@ -487,6 +490,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		DAD7B4A21DFF31ED0043EEF0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DAD7B4A31DFF31ED0043EEF0 /* DManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -610,6 +621,7 @@
 				DA63C3EB1DF65A000026169C /* RCredentialsItem2.swift in Sources */,
 				DA61436C1DF9FD8F0029A596 /* RModelHomeEntriesItemOrigin.swift in Sources */,
 				DA2BBA1B1DF8979800C450C8 /* RModelHomeEntriesFactory.swift in Sources */,
+				DAD7B4A41DFF31ED0043EEF0 /* DManager.swift in Sources */,
 				DA63C3E51DF659D90026169C /* RCredentials.swift in Sources */,
 				DAAD34681DF2332500C5D3D1 /* ExtensionFileManager.swift in Sources */,
 				DA63C3DA1DF60C180026169C /* RConfiguration.swift in Sources */,
