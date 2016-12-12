@@ -2,7 +2,15 @@ import Foundation
 
 class MSessionFlux
 {
-    var current
+    enum Status:Int16
+    {
+        case full
+        case twoLeft
+        case oneLeft
+        case empty
+    }
+    
+    var current:MSessionFluxItem?
     
     init()
     {
