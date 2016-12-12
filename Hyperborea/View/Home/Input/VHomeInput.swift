@@ -8,7 +8,7 @@ class VHomeInput:UIView
     private weak var border:UIView!
     private weak var layoutViewTextHeight:NSLayoutConstraint!
     let kMaxHeight:CGFloat = 110
-    private let kPlaceholderHeight:CGFloat = 36
+    private let kPlaceholderHeight:CGFloat = 43
     
     convenience init(controller:CHome)
     {

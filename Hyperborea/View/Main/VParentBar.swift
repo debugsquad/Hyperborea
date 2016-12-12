@@ -65,7 +65,7 @@ class VParentBar:UIView
         
         let labelTitle:UILabel = UILabel()
         labelTitle.isUserInteractionEnabled = false
-        labelTitle.font = UIFont.bold(size:14)
+        labelTitle.font = UIFont.bold(size:13)
         labelTitle.textColor = UIColor.black
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
