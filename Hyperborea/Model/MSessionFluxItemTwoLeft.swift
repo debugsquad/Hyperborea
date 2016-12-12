@@ -1,9 +1,18 @@
-//
-//  MSessionFluxItemTwoLeft.swift
-//  Hyperborea
-//
-//  Created by zero on 12/12/16.
-//  Copyright © 2016 iturbide. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class MSessionFluxItemTwoLeft:MSessionFluxItem
+{
+    private let kStatus:MSessionFlux.Status = MSessionFlux.Status.twoLeft
+    
+    override init()
+    {
+        super.init(
+            status:kStatus,
+            image:#imageLiteral(resourceName: "assetHomeFluxTwoLeft"))
+    }
+    
+    override init(status:MSessionFlux.Status, image:UIImage)
+    {
+        fatalError()
+    }
+}
