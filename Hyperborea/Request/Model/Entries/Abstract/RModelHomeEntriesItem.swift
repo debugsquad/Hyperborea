@@ -53,14 +53,4 @@ class RModelHomeEntriesItem
         
         return totalHeight
     }
-    
-    func exportableComplete() -> NSAttributedString
-    {
-        return attributedString
-    }
-    
-    func exportableCompact() -> NSAttributedString
-    {
-        return attributedString
-    }
 }
