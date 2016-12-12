@@ -4,6 +4,8 @@ class VHomeHelperFlux:UIButton
 {
     private weak var controller:CHome!
     private weak var image:UIImageView!
+    private let kAlphaSelected:CGFloat = 0.3
+    private let kAlphaNotSelected:CGFloat = 1
     
     convenience init(controller:CHome)
     {
@@ -60,5 +62,35 @@ class VHomeHelperFlux:UIButton
             layoutImageBottom,
             layoutImageLeft,
             layoutImageRight])
+    }
+    
+    override var isSelected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var isHighlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    //MARK: private
+    
+    private func hover()
+    {
+        if isSelected || isHighlighted
+        {
+            alpha = kAlphaSelected
+        }
+        else
+        {
+            alpha = kAlphaNotSelected
+        }
     }
 }
