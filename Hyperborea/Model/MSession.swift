@@ -49,7 +49,20 @@ class MSession
     
     private func settingsLoaded()
     {
+        guard
+            
+            let languageIdInt:Int16 = settings?.language,
+            let fluxStatusInt:Int16 = settings?.fluxStatus,
+            let languageId:MSessionLanguage.LanguageId = MSessionLanguage.LanguageId(
+                rawValue:languageIdInt)
         
+        else
+        {
+            return
+        }
+        
+        
+        language = MSessionLanguage.factory(languageId:languageId)
         
         NotificationCenter.default.post(
             name:Notification.sessionLoaded,

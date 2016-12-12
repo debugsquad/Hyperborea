@@ -11,4 +11,9 @@ class MSessionFlux
     }
     
     var current:MSessionFluxItem?
+    
+    init(status:Status)
+    {
+        current = MSessionFluxItem.factory(status:status)
+    }
 }
