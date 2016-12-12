@@ -40,6 +40,7 @@ class VParentBar:UIView
         buttonThesaurus.imageView!.clipsToBounds = true
         buttonThesaurus.imageView!.contentMode = UIViewContentMode.center
         buttonThesaurus.alpha = 0.2
+        buttonThesaurus.isHidden = true
         self.buttonThesaurus = buttonThesaurus
         
         let buttonTranslate:UIButton = UIButton()
@@ -50,8 +51,8 @@ class VParentBar:UIView
         buttonTranslate.imageView!.clipsToBounds = true
         buttonTranslate.imageView!.contentMode = UIViewContentMode.center
         buttonTranslate.alpha = 0.2
+        buttonTranslate.isHidden = true
         self.buttonTranslate = buttonTranslate
-        
         
         let buttonLanguage:UIButton = UIButton()
         buttonLanguage.translatesAutoresizingMaskIntoConstraints = false
