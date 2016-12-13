@@ -147,6 +147,24 @@ class MSession
     
     func addSearch(query:String, wordId:String, region:String?)
     {
-        nextStatusFroob()
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        {
+            let timestamp:TimeInterval = Date().timeIntervalSince1970
+            
+            self.settings?.lastSearch = timestamp
+            
+            DManager.sharedInstance.createManagedObject(
+                modelType:DObjectSearch.self)
+            { (objectSearch:DObjectSearch) in
+             
+                objectSearch.timestamp = timestamp
+                objectSearch.query = query
+                objectSearch.wordId = wordId
+                objectSearch.region = region
+                
+                DManager.sharedInstance.save()
+                self.nextStatusFroob()
+            }
+        }
     }
 }
