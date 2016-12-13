@@ -4,6 +4,11 @@ class CLoading:CController
 {
     private weak var viewLoading:VLoading!
     
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad()
     {
         NotificationCenter.default.addObserver(

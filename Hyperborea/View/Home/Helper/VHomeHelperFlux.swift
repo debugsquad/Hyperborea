@@ -62,6 +62,17 @@ class VHomeHelperFlux:UIButton
             layoutImageBottom,
             layoutImageLeft,
             layoutImageRight])
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(self.notifiedFluxUpdate(sender:)),
+            name:Notification.fluxUpdate,
+            object:nil)
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override var isSelected:Bool
@@ -80,7 +91,23 @@ class VHomeHelperFlux:UIButton
         }
     }
     
+    //MARK: notifications
+    
+    func notifiedFluxUpdate(sender notification:Notification)
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+
+            self?.fluxUpdate()
+        }
+    }
+    
     //MARK: private
+    
+    private func fluxUpdate()
+    {
+        image.image = MSession.sharedInstance.flux?.image
+    }
     
     private func hover()
     {
