@@ -7,7 +7,7 @@ class MSession
     private(set) var language:MSessionLanguage?
     private var settings:DObjectSettings?
     private weak var timer:Timer?
-    private let kFroobCoolTime:TimeInterval = 30// 1800
+    private let kFroobCoolTime:TimeInterval = 1800
     
     private init()
     {

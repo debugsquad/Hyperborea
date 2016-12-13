@@ -3,16 +3,17 @@ import UIKit
 class VHomeFroob:VView
 {
     private weak var controller:CHomeFroob!
-    private weak var layoutBaseLeft:NSLayoutConstraint!
-    private weak var layoutBaseTop:NSLayoutConstraint!
+    private weak var layoutBaseViewLeft:NSLayoutConstraint!
+    private weak var layoutBaseViewTop:NSLayoutConstraint!
     private let kBaseWidth:CGFloat = 300
-    private let kBaseHeight:CGFloat = 280
+    private let kBaseHeight:CGFloat = 200
     private let kButtonHeight:CGFloat = 42
     private let kCornerRadius:CGFloat = 12
     
     override init(controller:CController)
     {
         super.init(controller:controller)
+        backgroundColor = UIColor.clear
         self.controller = controller as? CHomeFroob
         
         let blurEffect:UIBlurEffect = UIBlurEffect(style:UIBlurEffectStyle.light)
@@ -35,7 +36,7 @@ class VHomeFroob:VView
         baseView.clipsToBounds = true
         baseView.backgroundColor = UIColor.white
         baseView.layer.borderWidth = 1
-        baseView.layer.borderColor = UIColor(white:0, alpha:0.5).cgColor
+        baseView.layer.borderColor = UIColor(white:0, alpha:0.1).cgColor
         baseView.layer.cornerRadius = kCornerRadius
         
         addSubview(visualEffect)
@@ -76,7 +77,7 @@ class VHomeFroob:VView
             constant:0)
         
         let layoutBaseButtonTop:NSLayoutConstraint = NSLayoutConstraint(
-            item:visualEffect,
+            item:baseButton,
             attribute:NSLayoutAttribute.top,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
@@ -84,7 +85,7 @@ class VHomeFroob:VView
             multiplier:1,
             constant:0)
         let layoutBaseButtonBottom:NSLayoutConstraint = NSLayoutConstraint(
-            item:visualEffect,
+            item:baseButton,
             attribute:NSLayoutAttribute.bottom,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
@@ -92,7 +93,7 @@ class VHomeFroob:VView
             multiplier:1,
             constant:0)
         let layoutBaseButtonLeft:NSLayoutConstraint = NSLayoutConstraint(
-            item:visualEffect,
+            item:baseButton,
             attribute:NSLayoutAttribute.left,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
@@ -100,13 +101,46 @@ class VHomeFroob:VView
             multiplier:1,
             constant:0)
         let layoutBaseButtonRight:NSLayoutConstraint = NSLayoutConstraint(
-            item:visualEffect,
+            item:baseButton,
             attribute:NSLayoutAttribute.right,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
             constant:0)
+        
+        layoutBaseViewTop = NSLayoutConstraint(
+            item:baseView,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        layoutBaseViewLeft = NSLayoutConstraint(
+            item:baseView,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutBaseViewWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:baseView,
+            attribute:NSLayoutAttribute.width,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kBaseWidth)
+        let layoutBaseViewHeight:NSLayoutConstraint = NSLayoutConstraint(
+            item:baseView,
+            attribute:NSLayoutAttribute.height,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kBaseHeight)
         
         addConstraints([
             layoutVisualEffectTop,
@@ -116,7 +150,11 @@ class VHomeFroob:VView
             layoutBaseButtonTop,
             layoutBaseButtonBottom,
             layoutBaseButtonLeft,
-            layoutBaseButtonRight])
+            layoutBaseButtonRight,
+            layoutBaseViewTop,
+            layoutBaseViewLeft,
+            layoutBaseViewWidth,
+            layoutBaseViewHeight])
     }
     
     required init?(coder:NSCoder)
