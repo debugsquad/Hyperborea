@@ -56,6 +56,7 @@ class MSessionFlux
         searchAvailable:Bool)
     {
         self.status = status
+        self.nextStatus = nextStatus
         self.image = image
         self.searchAvailable = searchAvailable
     }
