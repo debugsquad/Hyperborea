@@ -6,7 +6,8 @@ class MSession
     private(set) var flux:MSessionFlux?
     private(set) var language:MSessionLanguage?
     private var settings:DObjectSettings?
-    private let kFroobCoolTime:TimeInterval = 1800
+    private weak var timer:Timer?
+    private let kFroobCoolTime:TimeInterval = 30// 1800
     
     private init()
     {

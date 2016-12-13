@@ -57,6 +57,7 @@
 		DA63C3EB1DF65A000026169C /* RCredentialsItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3EA1DF65A000026169C /* RCredentialsItem2.swift */; };
 		DA670DC71DF8C59000FD29DD /* RModelHomeEntriesEtymologies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA670DC61DF8C59000FD29DD /* RModelHomeEntriesEtymologies.swift */; };
 		DA7228031DF4B187001370C6 /* home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA7228021DF4B187001370C6 /* home.xcassets */; };
+		DA9FA47F1E004E22003E0719 /* CHomeFroob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA47E1E004E22003E0719 /* CHomeFroob.swift */; };
 		DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */; };
 		DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34481DF2332500C5D3D1 /* CController.swift */; };
 		DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34491DF2332500C5D3D1 /* CParent.swift */; };
@@ -144,6 +145,7 @@
 		DA63C3EA1DF65A000026169C /* RCredentialsItem2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCredentialsItem2.swift; sourceTree = "<group>"; };
 		DA670DC61DF8C59000FD29DD /* RModelHomeEntriesEtymologies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesEtymologies.swift; sourceTree = "<group>"; };
 		DA7228021DF4B187001370C6 /* home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = home.xcassets; sourceTree = "<group>"; };
+		DA9FA47E1E004E22003E0719 /* CHomeFroob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHomeFroob.swift; sourceTree = "<group>"; };
 		DAAD34301DF22D7500C5D3D1 /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DAAD34481DF2332500C5D3D1 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 				DAAD347C1DF235BC00C5D3D1 /* CHome.swift */,
 				DA1783F51DFB55CC00895012 /* CHomeLanguage.swift */,
 				DA19D5EB1DFC8D25005A3477 /* CHomeShare.swift */,
+				DA9FA47E1E004E22003E0719 /* CHomeFroob.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				DA63C3CB1DF5CF4F0026169C /* RSettings.swift in Sources */,
 				DA2BBA1C1DF8979800C450C8 /* RModelHomeEntriesItem.swift in Sources */,
 				DA2BBA051DF873D700C450C8 /* VHomeHelperSend.swift in Sources */,
+				DA9FA47F1E004E22003E0719 /* CHomeFroob.swift in Sources */,
 				DA2BBA1D1DF8979800C450C8 /* RModelHomeEntriesItemNoun.swift in Sources */,
 				DA50977D1DFB30150088821E /* MSessionLanguageEnglish.swift in Sources */,
 				DA63C3EB1DF65A000026169C /* RCredentialsItem2.swift in Sources */,
