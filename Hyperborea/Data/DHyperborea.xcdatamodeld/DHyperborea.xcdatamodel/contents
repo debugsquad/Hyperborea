@@ -3,7 +3,7 @@
     <entity name="DObjectSearch" representedClassName="DObjectSearch" syncable="YES" codeGenerationType="class">
         <attribute name="query" attributeType="String" syncable="YES"/>
         <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="timestamp" attributeType="Date" defaultDateTimeInterval="-978285600" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="wordId" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="DObjectSettings" representedClassName="DObjectSettings" syncable="YES" codeGenerationType="class">
