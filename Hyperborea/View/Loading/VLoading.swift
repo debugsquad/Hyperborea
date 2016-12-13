@@ -9,8 +9,6 @@ class VLoading:VView
     {
         super.init(controller:controller)
         isUserInteractionEnabled = false
-        clipsToBounds = true
-        backgroundColor = UIColor.white
         self.controller = controller as? CLoading
         
         let logo:UIImageView = UIImageView()
