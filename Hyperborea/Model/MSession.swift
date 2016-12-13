@@ -17,13 +17,6 @@ class MSession
     private func asyncLoadSettings()
     {
         DManager.sharedInstance.fetchManagedObjects(
-            modelType: DObjectSearch.self)
-        { (searchs) in
-            
-            print(searchs)
-        }
-        
-        DManager.sharedInstance.fetchManagedObjects(
             modelType:DObjectSettings.self,
             limit:1)
         { (settingsList:[DObjectSettings]?) in
@@ -38,9 +31,6 @@ class MSession
                 
                 return
             }
-            
-            print("settings")
-            print(settings)
             
             self.settings = settings
             self.settingsLoaded()
