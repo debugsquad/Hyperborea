@@ -5,10 +5,10 @@ class VHomeFroob:VView
     private weak var controller:CHomeFroob!
     private weak var layoutBaseViewLeft:NSLayoutConstraint!
     private weak var layoutBaseViewTop:NSLayoutConstraint!
-    private let kBaseWidth:CGFloat = 310
+    private let kBaseWidth:CGFloat = 300
     private let kBaseHeight:CGFloat = 200
     private let kButtonHeight:CGFloat = 42
-    private let kCornerRadius:CGFloat = 18
+    private let kCornerRadius:CGFloat = 20
     
     override init(controller:CController)
     {
@@ -36,7 +36,7 @@ class VHomeFroob:VView
         baseView.clipsToBounds = true
         baseView.backgroundColor = UIColor.white
         baseView.layer.borderWidth = 0.5
-        baseView.layer.borderColor = UIColor(white:0, alpha:0.8).cgColor
+        baseView.layer.borderColor = UIColor.black.cgColor
         baseView.layer.cornerRadius = kCornerRadius
         
         let clock:VHomeFroobClock = VHomeFroobClock(controller:self.controller)

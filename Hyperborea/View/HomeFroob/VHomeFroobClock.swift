@@ -6,7 +6,7 @@ class VHomeFroobClock:UIView
     private weak var label:UILabel!
     private weak var timer:Timer?
     private let kTimeFormat:String = "%@:%@"
-    private let kFontSize:CGFloat = 40
+    private let kFontSize:CGFloat = 60
     private let kTimerInterval:TimeInterval = 0.5
     private let kMinutesPerSecond:TimeInterval = 60
     
@@ -23,7 +23,7 @@ class VHomeFroobClock:UIView
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.bold(size:kFontSize)
+        label.font = UIFont.regular(size:kFontSize)
         label.textAlignment = NSTextAlignment.center
         self.label = label
         
@@ -80,15 +80,16 @@ class VHomeFroobClock:UIView
     {
         guard
         
-            let timeout:TimeInterval = MSession.sharedInstance.settings?.lastSearch
+            let lastSearch:TimeInterval = MSession.sharedInstance.settings?.lastSearch
         
         else
         {
             return
         }
         
+        let timeout:TimeInterval = lastSearch + MSession.sharedInstance.kFroobCoolTime
         let currentTime:TimeInterval = Date().timeIntervalSince1970
-        let remainTime:TimeInterval = currentTime - timeout
+        let remainTime:TimeInterval = timeout - currentTime
         
         if remainTime < 0
         {
@@ -96,7 +97,7 @@ class VHomeFroobClock:UIView
         }
         else
         {
-            let minutes:TimeInterval = floor(remainTime / kMinutesPerSecond)
+            let minutes:Int = Int(remainTime / kMinutesPerSecond)
             let seconds:Int = Int(remainTime) % Int(kMinutesPerSecond)
             let stringMinutes:String
             let stringSeconds:String
@@ -104,20 +105,20 @@ class VHomeFroobClock:UIView
             
             if minutes > 9
             {
-                stringMinutes = "0\(minutes)"
+                stringMinutes = "\(minutes)"
             }
             else
             {
-                stringMinutes = "\(minutes)"
+                stringMinutes = "0\(minutes)"
             }
             
             if seconds > 9
             {
-                stringSeconds = "0\(seconds)"
+                stringSeconds = "\(seconds)"
             }
             else
             {
-                stringSeconds = "\(seconds)"
+                stringSeconds = "0\(seconds)"
             }
             
             stringTime = String(
