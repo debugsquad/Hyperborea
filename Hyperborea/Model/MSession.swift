@@ -6,6 +6,7 @@ class MSession
     private(set) var flux:MSessionFlux?
     private(set) var language:MSessionLanguage?
     private var settings:DObjectSettings?
+    private let kFroobCoolTime:TimeInterval = 1800
     
     private init()
     {
@@ -73,6 +74,11 @@ class MSession
         DManager.sharedInstance.save()
     }
     
+    private func restartFroobTime()
+    {
+        flux = MSessionFlux.factory(status:MSessionFlux.Status.full)
+    }
+    
     //MARK: public
     
     func loadSession()
@@ -98,6 +104,31 @@ class MSession
                 object:nil)
             
             DManager.sharedInstance.save()
+        }
+    }
+    
+    func froobValidate() -> Bool
+    {
+        guard
+        
+            let lastSearch:TimeInterval = settings?.lastSearch
+        
+        else
+        {
+            return false
+        }
+        
+        let currentTime:TimeInterval = NSDate().timeIntervalSince1970
+        
+        if currentTime > lastSearch + kFroobCoolTime
+        {
+            restartFroobTime()
+            
+            return true
+        }
+        else
+        {
+            return false
         }
     }
 }

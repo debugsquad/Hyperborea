@@ -138,7 +138,14 @@ class CHome:CController, RMainDelegate
         }
         else
         {
-            
+            if MSession.sharedInstance.froobValidate()
+            {
+                performSearchWordId(wordId:wordId, region:region)
+            }
+            else
+            {
+                froobEnded()
+            }
         }
     }
     
