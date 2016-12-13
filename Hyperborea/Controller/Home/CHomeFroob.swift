@@ -26,7 +26,7 @@ class CHomeFroob:CController
         
         parentController.dismissAnimateOver
         {
-            
+            parentController.push(controller:store)
         }
     }
 }

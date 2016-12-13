@@ -3,6 +3,7 @@ import UIKit
 class VHomeFroob:VView
 {
     private weak var controller:CHomeFroob!
+    private weak var clock:VHomeFroobClock?
     private weak var layoutBaseViewLeft:NSLayoutConstraint!
     private weak var layoutBaseViewTop:NSLayoutConstraint!
     private let kBaseWidth:CGFloat = 299
@@ -63,6 +64,7 @@ class VHomeFroob:VView
         labelDescr.text = NSLocalizedString("VHomeFroob_descr", comment:"")
         
         let clock:VHomeFroobClock = VHomeFroobClock(controller:self.controller)
+        self.clock = clock
         
         let buttons:VHomeFroobButtons = VHomeFroobButtons(controller:self.controller)
         
@@ -384,6 +386,11 @@ class VHomeFroob:VView
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    deinit
+    {
+        clock?.timer?.invalidate()
     }
     
     override func layoutSubviews()

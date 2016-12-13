@@ -2,9 +2,9 @@ import UIKit
 
 class VHomeFroobClock:UIView
 {
+    weak var timer:Timer?
     private weak var controller:CHomeFroob!
     private weak var label:UILabel!
-    private weak var timer:Timer?
     private let kTimeFormat:String = "00:%@:%@"
     private let kFontSize:CGFloat = 24
     private let kTimerInterval:TimeInterval = 0.5
@@ -95,6 +95,7 @@ class VHomeFroobClock:UIView
         if remainTime < 0
         {
             timer.invalidate()
+            controller.close()
         }
         else
         {

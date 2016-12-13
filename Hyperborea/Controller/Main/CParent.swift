@@ -118,7 +118,8 @@ class CParent:UIViewController
         guard
             
             let currentController:CController = childViewControllers.last as? CController,
-            let vView:VView = controller.view as? VView
+            let vView:VView = controller.view as? VView,
+            let currentView:VView = currentController.view as? VView
             
         else
         {
@@ -129,8 +130,9 @@ class CParent:UIViewController
         controller.beginAppearanceTransition(true, animated:true)
         currentController.beginAppearanceTransition(false, animated:true)
         
-        viewParent.animateOver(
-            view:vView)
+        viewParent.push(
+            currentView:currentView,
+            newView:vView)
         {
             controller.endAppearanceTransition()
             currentController.endAppearanceTransition()
