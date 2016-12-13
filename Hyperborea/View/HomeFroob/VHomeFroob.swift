@@ -7,7 +7,7 @@ class VHomeFroob:VView
     private weak var layoutBaseViewTop:NSLayoutConstraint!
     private let kBaseWidth:CGFloat = 299
     private let kBaseHeight:CGFloat = 180
-    private let kButtonHeight:CGFloat = 42
+    private let kButtonHeight:CGFloat = 54
     private let kCornerRadius:CGFloat = 20
     private let kClockHeight:CGFloat = 35
     private let kClockTop:CGFloat = 35

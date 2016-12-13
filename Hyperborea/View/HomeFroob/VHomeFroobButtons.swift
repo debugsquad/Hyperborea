@@ -25,9 +25,9 @@ class VHomeFroobButtons:UIView
             UIColor.genericBlue,
             for:UIControlState.normal)
         buttonStore.setTitleColor(
-            UIColor(white:0, alpha:0.2),
+            UIColor(white:0, alpha:0.1),
             for:UIControlState.highlighted)
-        buttonStore.titleLabel!.font = UIFont.medium(size:14)
+        buttonStore.titleLabel!.font = UIFont.medium(size:15)
         
         let buttonCancel:UIButton = UIButton()
         buttonCancel.translatesAutoresizingMaskIntoConstraints = false
@@ -37,12 +37,12 @@ class VHomeFroobButtons:UIView
             NSLocalizedString("VHomeFroobButtons_buttonCancel", comment:""),
             for:UIControlState.normal)
         buttonCancel.setTitleColor(
-            UIColor(white:0.5, alpha:1),
+            UIColor(white:0.6, alpha:1),
             for:UIControlState.normal)
         buttonCancel.setTitleColor(
-            UIColor(white:0, alpha:0.2),
+            UIColor(white:0, alpha:0.1),
             for:UIControlState.highlighted)
-        buttonCancel.titleLabel!.font = UIFont.medium(size:14)
+        buttonCancel.titleLabel!.font = UIFont.medium(size:15)
         
         addSubview(buttonStore)
         addSubview(buttonCancel)
