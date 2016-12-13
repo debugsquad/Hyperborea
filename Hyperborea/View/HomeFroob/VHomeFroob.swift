@@ -5,10 +5,10 @@ class VHomeFroob:VView
     private weak var controller:CHomeFroob!
     private weak var layoutBaseViewLeft:NSLayoutConstraint!
     private weak var layoutBaseViewTop:NSLayoutConstraint!
-    private let kBaseWidth:CGFloat = 300
+    private let kBaseWidth:CGFloat = 310
     private let kBaseHeight:CGFloat = 200
     private let kButtonHeight:CGFloat = 42
-    private let kCornerRadius:CGFloat = 12
+    private let kCornerRadius:CGFloat = 18
     
     override init(controller:CController)
     {
@@ -35,8 +35,8 @@ class VHomeFroob:VView
         baseView.translatesAutoresizingMaskIntoConstraints = false
         baseView.clipsToBounds = true
         baseView.backgroundColor = UIColor.white
-        baseView.layer.borderWidth = 1
-        baseView.layer.borderColor = UIColor(white:0, alpha:0.2).cgColor
+        baseView.layer.borderWidth = 0.5
+        baseView.layer.borderColor = UIColor(white:0, alpha:0.8).cgColor
         baseView.layer.cornerRadius = kCornerRadius
         
         addSubview(visualEffect)
@@ -119,10 +119,10 @@ class VHomeFroob:VView
             constant:0)
         layoutBaseViewLeft = NSLayoutConstraint(
             item:baseView,
-            attribute:NSLayoutAttribute.top,
+            attribute:NSLayoutAttribute.left,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
-            attribute:NSLayoutAttribute.top,
+            attribute:NSLayoutAttribute.left,
             multiplier:1,
             constant:0)
         let layoutBaseViewWidth:NSLayoutConstraint = NSLayoutConstraint(
