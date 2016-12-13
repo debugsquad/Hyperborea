@@ -10,4 +10,11 @@ class CHomeFroob:CController
         self.viewFroob = viewFroob
         view = viewFroob
     }
+    
+    //MARK: public
+    
+    func close()
+    {
+        parentController.dismissAnimateOver()
+    }
 }

@@ -25,6 +25,10 @@ class VHomeFroob:VView
         baseButton.clipsToBounds = true
         baseButton.backgroundColor = UIColor.clear
         baseButton.translatesAutoresizingMaskIntoConstraints = false
+        baseButton.addTarget(
+            self,
+            action:#selector(self.actionClose(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         let baseView:UIView = UIView()
         baseView.translatesAutoresizingMaskIntoConstraints = false
@@ -120,5 +124,10 @@ class VHomeFroob:VView
         fatalError()
     }
     
+    //MARK: actions
     
+    func actionClose(sender button:UIButton)
+    {
+        controller.close()
+    }
 }
