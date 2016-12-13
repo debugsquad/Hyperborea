@@ -98,6 +98,8 @@ class CHome:CController, RMainDelegate
     
     private func performSearchWordId(wordId:String, region:String?)
     {
+        MSession.sharedInstance.nextStatusFroob()
+        
         viewHome.viewWords.showLoading()
         viewHome.viewWords.restartScroll()
         

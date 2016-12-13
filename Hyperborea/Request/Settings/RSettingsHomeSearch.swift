@@ -7,13 +7,14 @@ class RSettingsHomeSearch:RSettings
     init(text:String)
     {
         let headers:[String:String] = RConfiguration.sharedInstance.credentials.current()
-        let sourceLanguage:String? = MSession.sharedInstance.language?.code
+        
         let baseUrl:String = RUrl.sharedInstance.urlFor(
             urlKey:RUrl.UrlKey.oxfordApi)
         let searchUrl:String = RUrl.sharedInstance.urlFor(
             urlKey:RUrl.UrlKey.search)
         let lowercaseText:String = text.lowercased()
         let query:String
+        var urlString:String = kEmpty
         
         if let escapedLowercaseText:String = lowercaseText.addingPercentEncoding(
             withAllowedCharacters:CharacterSet.urlHostAllowed)
@@ -25,7 +26,10 @@ class RSettingsHomeSearch:RSettings
             query = kEmpty
         }
         
-        let urlString:String = "\(baseUrl)/\(searchUrl)/\(sourceLanguage)?q=\(query)"
+        if let sourceLanguage:String = MSession.sharedInstance.language?.code
+        {
+            urlString = "\(baseUrl)/\(searchUrl)/\(sourceLanguage)?q=\(query)"
+        }
         
         super.init(
             model:RModelHomeSearch.self,

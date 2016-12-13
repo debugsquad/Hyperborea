@@ -74,19 +74,6 @@ class MSession
         DManager.sharedInstance.save()
     }
     
-    private func restartFroobTime()
-    {
-        flux = MSessionFlux.factory(status:MSessionFlux.Status.full)
-        notifyFluxUpdate()
-    }
-    
-    private func notifyFluxUpdate()
-    {
-        NotificationCenter.default.post(
-            name:Notification.fluxUpdate,
-            object:nil)
-    }
-    
     //MARK: public
     
     func loadSession()
@@ -130,7 +117,7 @@ class MSession
         
         if currentTime > lastSearch + kFroobCoolTime
         {
-            restartFroobTime()
+            nextStatusFroob()
             
             return true
         }
@@ -138,5 +125,23 @@ class MSession
         {
             return false
         }
+    }
+    
+    func nextStatusFroob()
+    {
+        guard
+            
+            let nextStatus:MSessionFlux.Status = flux?.nextStatus
+        
+        else
+        {
+            return
+        }
+        
+        flux = MSessionFlux.factory(status:nextStatus)
+        
+        NotificationCenter.default.post(
+            name:Notification.fluxUpdate,
+            object:nil)
     }
 }
