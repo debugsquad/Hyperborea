@@ -98,7 +98,12 @@ class CHome:CController, RMainDelegate
     
     private func performSearchWordId(wordId:String, region:String?)
     {
-        MSession.sharedInstance.nextStatusFroob()
+        let query:String = viewHome.viewInput.viewText.text
+        
+        MSession.sharedInstance.addSearch(
+            query:query,
+            wordId:wordId,
+            region:region)
         
         viewHome.viewWords.showLoading()
         viewHome.viewWords.restartScroll()
