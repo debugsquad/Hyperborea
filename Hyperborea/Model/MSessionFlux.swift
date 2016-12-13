@@ -46,11 +46,16 @@ class MSessionFlux
     
     let status:MSessionFlux.Status
     let image:UIImage
+    let searchAvailable:Bool
     
-    init(status:MSessionFlux.Status, image:UIImage)
+    init(
+        status:MSessionFlux.Status,
+        image:UIImage,
+        searchAvailable:Bool)
     {
         self.status = status
         self.image = image
+        self.searchAvailable = searchAvailable
     }
     
     init()
