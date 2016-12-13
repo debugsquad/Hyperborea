@@ -6,11 +6,11 @@ class VHomeFroob:VView
     private weak var layoutBaseViewLeft:NSLayoutConstraint!
     private weak var layoutBaseViewTop:NSLayoutConstraint!
     private let kBaseWidth:CGFloat = 300
-    private let kBaseHeight:CGFloat = 200
+    private let kBaseHeight:CGFloat = 180
     private let kButtonHeight:CGFloat = 42
     private let kCornerRadius:CGFloat = 20
     private let kClockHeight:CGFloat = 35
-    private let kClockTop:CGFloat = 50
+    private let kClockTop:CGFloat = 35
     private let kLabelTitleHeight:CGFloat = 25
     private let kLabelDescrHeight:CGFloat = 20
     private let kImageTop:CGFloat = -40
