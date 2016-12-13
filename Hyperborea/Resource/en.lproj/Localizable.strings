@@ -6,6 +6,8 @@
 "VHomeWordsFooter_label"="Nothing found for current word or definition";
 "VHomeFroob_title"="Out of searches";
 "VHomeFroob_descr"="Get Plus to avoid restrictions";
+"VHomeFroobButtons_buttonStore"="Go Plus";
+"VHomeFroobButtons_buttonCancel"="No thanks";
 
 "RModelHomeEntriesEtymologies_title"="Origin";
 "RModelHomeEntriesItemNoun_title"="Noun";

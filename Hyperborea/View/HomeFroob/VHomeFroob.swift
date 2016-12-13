@@ -5,7 +5,7 @@ class VHomeFroob:VView
     private weak var controller:CHomeFroob!
     private weak var layoutBaseViewLeft:NSLayoutConstraint!
     private weak var layoutBaseViewTop:NSLayoutConstraint!
-    private let kBaseWidth:CGFloat = 300
+    private let kBaseWidth:CGFloat = 299
     private let kBaseHeight:CGFloat = 180
     private let kButtonHeight:CGFloat = 42
     private let kCornerRadius:CGFloat = 20

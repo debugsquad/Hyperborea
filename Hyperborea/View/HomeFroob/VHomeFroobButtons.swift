@@ -3,6 +3,8 @@ import UIKit
 class VHomeFroobButtons:UIView
 {
     private weak var controller:CHomeFroob!
+    private let kButtonMargin:CGFloat = 1
+    private let kButtonWidth:CGFloat = 148
     
     convenience init(controller:CHomeFroob)
     {
@@ -26,6 +28,99 @@ class VHomeFroobButtons:UIView
             UIColor(white:0, alpha:0.2),
             for:UIControlState.highlighted)
         buttonStore.titleLabel!.font = UIFont.medium(size:14)
+        
+        let buttonCancel:UIButton = UIButton()
+        buttonCancel.translatesAutoresizingMaskIntoConstraints = false
+        buttonCancel.clipsToBounds = true
+        buttonCancel.backgroundColor = UIColor.white
+        buttonCancel.setTitle(
+            NSLocalizedString("VHomeFroobButtons_buttonCancel", comment:""),
+            for:UIControlState.normal)
+        buttonCancel.setTitleColor(
+            UIColor(white:0.5, alpha:1),
+            for:UIControlState.normal)
+        buttonCancel.setTitleColor(
+            UIColor(white:0, alpha:0.2),
+            for:UIControlState.highlighted)
+        buttonCancel.titleLabel!.font = UIFont.medium(size:14)
+        
         addSubview(buttonStore)
+        addSubview(buttonCancel)
+        
+        let layoutButtonCancelTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonCancel,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutButtonCancelBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonCancel,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutButtonCancelLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonCancel,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:kButtonMargin)
+        let layoutButtonCancelWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonCancel,
+            attribute:NSLayoutAttribute.width,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kButtonWidth)
+        
+        let layoutButtonStoreTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonStore,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutButtonStoreBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonStore,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutButtonStoreRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonStore,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:-kButtonMargin)
+        let layoutButtonStoreWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonStore,
+            attribute:NSLayoutAttribute.width,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kButtonWidth)
+        
+        addConstraints([
+            layoutButtonCancelTop,
+            layoutButtonCancelBottom,
+            layoutButtonCancelLeft,
+            layoutButtonCancelWidth,
+            layoutButtonStoreTop,
+            layoutButtonStoreBottom,
+            layoutButtonStoreRight,
+            layoutButtonStoreWidth])
     }
 }
