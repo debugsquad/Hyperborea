@@ -59,6 +59,7 @@
 		DA7228031DF4B187001370C6 /* home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA7228021DF4B187001370C6 /* home.xcassets */; };
 		DA9FA47F1E004E22003E0719 /* CHomeFroob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA47E1E004E22003E0719 /* CHomeFroob.swift */; };
 		DA9FA4821E004EB8003E0719 /* VHomeFroob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4811E004EB8003E0719 /* VHomeFroob.swift */; };
+		DA9FA4841E005CAC003E0719 /* VHomeFroobClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */; };
 		DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */; };
 		DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34481DF2332500C5D3D1 /* CController.swift */; };
 		DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34491DF2332500C5D3D1 /* CParent.swift */; };
@@ -148,6 +149,7 @@
 		DA7228021DF4B187001370C6 /* home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = home.xcassets; sourceTree = "<group>"; };
 		DA9FA47E1E004E22003E0719 /* CHomeFroob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHomeFroob.swift; sourceTree = "<group>"; };
 		DA9FA4811E004EB8003E0719 /* VHomeFroob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroob.swift; sourceTree = "<group>"; };
+		DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroobClock.swift; sourceTree = "<group>"; };
 		DAAD34301DF22D7500C5D3D1 /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DAAD34481DF2332500C5D3D1 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				DA9FA4811E004EB8003E0719 /* VHomeFroob.swift */,
+				DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */,
 			);
 			path = HomeFroob;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */,
 				DA2BBA041DF873D700C450C8 /* VHomeHelperClear.swift in Sources */,
 				DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */,
+				DA9FA4841E005CAC003E0719 /* VHomeFroobClock.swift in Sources */,
 				DAD7B4A61DFF32740043EEF0 /* ExtensionNSManagedObject.swift in Sources */,
 				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
 				DA2BBA081DF873D700C450C8 /* VHomeInputText.swift in Sources */,
