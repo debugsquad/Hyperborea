@@ -54,7 +54,7 @@ class VHomeFroobButtons:UIView
             toItem:self,
             attribute:NSLayoutAttribute.top,
             multiplier:1,
-            constant:0)
+            constant:kButtonMargin)
         let layoutButtonCancelBottom:NSLayoutConstraint = NSLayoutConstraint(
             item:buttonCancel,
             attribute:NSLayoutAttribute.bottom,
@@ -87,7 +87,7 @@ class VHomeFroobButtons:UIView
             toItem:self,
             attribute:NSLayoutAttribute.top,
             multiplier:1,
-            constant:0)
+            constant:kButtonMargin)
         let layoutButtonStoreBottom:NSLayoutConstraint = NSLayoutConstraint(
             item:buttonStore,
             attribute:NSLayoutAttribute.bottom,
