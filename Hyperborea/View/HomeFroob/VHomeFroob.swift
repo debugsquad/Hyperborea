@@ -39,6 +39,9 @@ class VHomeFroob:VView
         baseView.layer.borderColor = UIColor(white:0, alpha:0.8).cgColor
         baseView.layer.cornerRadius = kCornerRadius
         
+        let clock:VHomeFroobClock = VHomeFroobClock(controller:self.controller)
+        
+        baseView.addSubview(clock)
         addSubview(visualEffect)
         addSubview(baseButton)
         addSubview(baseView)
@@ -142,6 +145,39 @@ class VHomeFroob:VView
             multiplier:1,
             constant:kBaseHeight)
         
+        let layoutClockTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:clock,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:baseView,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutClockBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:clock,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:baseView,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutClockLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:clock,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:baseView,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutClockRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:clock,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:baseView,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutVisualEffectTop,
             layoutVisualEffectBottom,
@@ -154,7 +190,11 @@ class VHomeFroob:VView
             layoutBaseViewTop,
             layoutBaseViewLeft,
             layoutBaseViewWidth,
-            layoutBaseViewHeight])
+            layoutBaseViewHeight,
+            layoutClockTop,
+            layoutClockBottom,
+            layoutClockLeft,
+            layoutClockRight])
     }
     
     required init?(coder:NSCoder)

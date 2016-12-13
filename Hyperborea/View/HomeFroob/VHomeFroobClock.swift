@@ -3,7 +3,9 @@ import UIKit
 class VHomeFroobClock:UIView
 {
     private weak var controller:CHomeFroob!
+    private weak var timer:Timer?
     private let kFontSize:CGFloat = 40
+    private let kTimerInterval:TimeInterval = 0.5
     
     convenience init(controller:CHomeFroob)
     {
@@ -61,5 +63,19 @@ class VHomeFroobClock:UIView
             layoutLabelBottom,
             layoutLabelLeft,
             layoutLabelRight])
+        
+        timer = Timer.scheduledTimer(
+            timeInterval:kTimerInterval,
+            target:self,
+            selector:#selector(tick(sender:)),
+            userInfo:nil,
+            repeats:true)
+    }
+    
+    func tick(sender timer:Timer)
+    {
+        guard
+        
+            let timeout:TimeInterval = MSession.sharedInstance.sett
     }
 }

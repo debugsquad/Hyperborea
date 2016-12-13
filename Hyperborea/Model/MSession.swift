@@ -5,7 +5,7 @@ class MSession
     static let sharedInstance:MSession = MSession()
     private(set) var flux:MSessionFlux?
     private(set) var language:MSessionLanguage?
-    private var settings:DObjectSettings?
+    private(set) var settings:DObjectSettings?
     private weak var timer:Timer?
     private let kFroobCoolTime:TimeInterval = 1800
     
