@@ -132,23 +132,19 @@ class VParent:UIView
         let fullLeft:CGFloat = currentView.bounds.maxX
         let halfLeft:CGFloat = fullLeft / -2.0
         
-        if let viewBar:VParentBar = self.viewBar
-        {
-            insertSubview(newView, belowSubview:viewBar)
-        }
-        else
-        {
-            addSubview(newView)
-        }
-        
+        addSubview(newView)
         newView.constraints(
             initialLeft:fullLeft,
             initialRight:fullLeft,
             initialTop:0,
             initialBottom:0)
         
+        layoutIfNeeded()
+        
         currentView.layoutRight.constant = halfLeft
         currentView.layoutLeft.constant = halfLeft
+        newView.layoutRight.constant = 0
+        newView.layoutLeft.constant = 0
         
         UIView.animate(
             withDuration:kAnimationDuration,
