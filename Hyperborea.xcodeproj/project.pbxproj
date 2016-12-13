@@ -62,6 +62,7 @@
 		DA9FA4841E005CAC003E0719 /* VHomeFroobClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */; };
 		DA9FA4861E00A400003E0719 /* VHomeFroobButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4851E00A400003E0719 /* VHomeFroobButtons.swift */; };
 		DA9FA4891E00B4A8003E0719 /* CStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4881E00B4A8003E0719 /* CStore.swift */; };
+		DA9FA48C1E00BCB7003E0719 /* VStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA48B1E00BCB7003E0719 /* VStore.swift */; };
 		DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */; };
 		DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34481DF2332500C5D3D1 /* CController.swift */; };
 		DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34491DF2332500C5D3D1 /* CParent.swift */; };
@@ -154,6 +155,7 @@
 		DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroobClock.swift; sourceTree = "<group>"; };
 		DA9FA4851E00A400003E0719 /* VHomeFroobButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroobButtons.swift; sourceTree = "<group>"; };
 		DA9FA4881E00B4A8003E0719 /* CStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CStore.swift; sourceTree = "<group>"; };
+		DA9FA48B1E00BCB7003E0719 /* VStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStore.swift; sourceTree = "<group>"; };
 		DAAD34301DF22D7500C5D3D1 /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DAAD34481DF2332500C5D3D1 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -386,6 +388,14 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		DA9FA48A1E00BCB0003E0719 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				DA9FA48B1E00BCB7003E0719 /* VStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		DAAD34271DF22D7500C5D3D1 = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +491,7 @@
 		DAAD345D1DF2332500C5D3D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA9FA48A1E00BCB0003E0719 /* Store */,
 				DA9FA4801E004EB0003E0719 /* HomeFroob */,
 				DAFCEFED1DFF584F006366E3 /* Loading */,
 				DA19D5ED1DFC912E005A3477 /* HomeShare */,
@@ -681,6 +692,7 @@
 				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
 				DA2BBA081DF873D700C450C8 /* VHomeInputText.swift in Sources */,
 				DA63C3E91DF659F60026169C /* RCredentialsItem1.swift in Sources */,
+				DA9FA48C1E00BCB7003E0719 /* VStore.swift in Sources */,
 				DAAD346C1DF2332500C5D3D1 /* ExtensionUIFont.swift in Sources */,
 				DAB0FA4E1DF7613300E3B51D /* RSettingsHomeEntries.swift in Sources */,
 				DA61436A1DF9FC440029A596 /* VHomeWordsCellOrigin.swift in Sources */,
