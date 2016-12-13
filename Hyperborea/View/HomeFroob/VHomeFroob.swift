@@ -9,7 +9,7 @@ class VHomeFroob:VView
     private let kBaseHeight:CGFloat = 200
     private let kButtonHeight:CGFloat = 42
     private let kCornerRadius:CGFloat = 20
-    private let kClockHeight:CGFloat = 50
+    private let kClockHeight:CGFloat = 40
     
     override init(controller:CController)
     {
@@ -39,6 +39,15 @@ class VHomeFroob:VView
         baseView.layer.borderWidth = 0.5
         baseView.layer.borderColor = UIColor.black.cgColor
         baseView.layer.cornerRadius = kCornerRadius
+        
+        let labelTitle:UILabel = UILabel()
+        labelTitle.isUserInteractionEnabled = false
+        labelTitle.font = UIFont.medium(size:16)
+        labelTitle.textColor = UIColor.black
+        labelTitle.textAlignment = NSTextAlignment.center
+        labelTitle.backgroundColor = UIColor.clear
+        labelTitle.translatesAutoresizingMaskIntoConstraints = false
+        labelTitle.text = NSLocalizedString("VHomeFroob_title", comment:"")
         
         let clock:VHomeFroobClock = VHomeFroobClock(controller:self.controller)
         

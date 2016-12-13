@@ -5,8 +5,8 @@ class VHomeFroobClock:UIView
     private weak var controller:CHomeFroob!
     private weak var label:UILabel!
     private weak var timer:Timer?
-    private let kTimeFormat:String = "%@:%@"
-    private let kFontSize:CGFloat = 35
+    private let kTimeFormat:String = "00:%@:%@"
+    private let kFontSize:CGFloat = 30
     private let kTimerInterval:TimeInterval = 0.5
     private let kMinutesPerSecond:TimeInterval = 60
     
@@ -25,6 +25,7 @@ class VHomeFroobClock:UIView
         label.backgroundColor = UIColor.clear
         label.font = UIFont.regular(size:kFontSize)
         label.textAlignment = NSTextAlignment.center
+        label.textColor = UIColor(white:0, alpha:0.2)
         self.label = label
         
         addSubview(label)
