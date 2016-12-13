@@ -113,7 +113,31 @@ class CParent:UIViewController
         }
     }
     
-    func dismissAnimateOver()
+    func push(controller:CController)
+    {
+        guard
+            
+            let currentController:CController = childViewControllers.last as? CController,
+            let vView:VView = controller.view as? VView
+            
+        else
+        {
+            return
+        }
+        
+        addChildViewController(controller)
+        controller.beginAppearanceTransition(true, animated:true)
+        currentController.beginAppearanceTransition(false, animated:true)
+        
+        viewParent.animateOver(
+            view:vView)
+        {
+            controller.endAppearanceTransition()
+            currentController.endAppearanceTransition()
+        }
+    }
+    
+    func dismissAnimateOver(completion:(() -> ())?)
     {
         guard
             
@@ -144,6 +168,8 @@ class CParent:UIViewController
         {
             currentController.endAppearanceTransition()
             previousController.endAppearanceTransition()
+            
+            completion?()
         }
     }
 }

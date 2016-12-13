@@ -15,11 +15,18 @@ class CHomeFroob:CController
     
     func close()
     {
-        parentController.dismissAnimateOver()
+        parentController.dismissAnimateOver(completion:nil)
     }
     
     func openStore()
     {
+        let store:CStore = CStore()
         
+        let parentController:CParent = self.parentController
+        
+        parentController.dismissAnimateOver
+        {
+            
+        }
     }
 }

@@ -88,13 +88,13 @@ class VParent:UIView
     
     func mainView(view:VView)
     {
-        if viewBar == nil
+        if let viewBar:VParentBar = self.viewBar
         {
-            addSubview(view)
+            insertSubview(view, belowSubview:viewBar)
         }
         else
         {
-            insertSubview(view, belowSubview:viewBar!)
+            addSubview(view)
         }
         
         view.constraints(
@@ -123,6 +123,41 @@ class VParent:UIView
         })
         { (done:Bool) in
         
+            completion()
+        }
+    }
+    
+    func push(currentView:VView, newView:VView, completion:@escaping(() -> ()))
+    {
+        let fullLeft:CGFloat = currentView.bounds.maxX
+        let halfLeft:CGFloat = fullLeft / -2.0
+        
+        if let viewBar:VParentBar = self.viewBar
+        {
+            insertSubview(newView, belowSubview:viewBar)
+        }
+        else
+        {
+            addSubview(newView)
+        }
+        
+        newView.constraints(
+            initialLeft:fullLeft,
+            initialRight:fullLeft,
+            initialTop:0,
+            initialBottom:0)
+        
+        currentView.layoutRight.constant = halfLeft
+        currentView.layoutLeft.constant = halfLeft
+        
+        UIView.animate(
+            withDuration:kAnimationDuration,
+            animations:
+            {
+                self.layoutIfNeeded()
+            })
+        { (done:Bool) in
+            
             completion()
         }
     }

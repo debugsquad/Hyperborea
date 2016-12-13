@@ -29,7 +29,7 @@ class CHomeLanguage:CController
     
     func dismiss()
     {
-        parentController.dismissAnimateOver()
+        parentController.dismissAnimateOver(completion:nil)
     }
     
     func selectLanguage(model:MSessionLanguage)
