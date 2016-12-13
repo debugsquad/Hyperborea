@@ -16,7 +16,8 @@ class MSession
     private func asyncLoadSettings()
     {
         DManager.sharedInstance.fetchManagedObjects(
-            modelType:DObjectSettings.self)
+            modelType:DObjectSettings.self,
+            limit:1)
         { (settingsList:[DObjectSettings]?) in
             
             guard
@@ -42,6 +43,8 @@ class MSession
         { (newSettings:DObjectSettings) in
             
             self.settings = newSettings
+            
+            DManager.sharedInstance.save()
             self.settingsLoaded()
         }
     }
@@ -88,10 +91,13 @@ class MSession
         if language.languageId != self.language?.languageId
         {
             self.language = language
+            settings?.language = language.languageId.rawValue
             
             NotificationCenter.default.post(
                 name:Notification.languageChanged,
                 object:nil)
+            
+            DManager.sharedInstance.save()
         }
     }
 }

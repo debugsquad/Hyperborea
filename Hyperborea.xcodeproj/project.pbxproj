@@ -590,7 +590,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				es,
 			);
 			mainGroup = DAAD34271DF22D7500C5D3D1;
