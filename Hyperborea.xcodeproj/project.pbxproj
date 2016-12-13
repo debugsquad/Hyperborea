@@ -90,6 +90,7 @@
 		DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEB1DFF581E006366E3 /* CLoading.swift */; };
 		DAFCEFEF1DFF5856006366E3 /* VLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEE1DFF5856006366E3 /* VLoading.swift */; };
 		DAFCEFF11DFF5BBE006366E3 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAFCEFF01DFF5BBE006366E3 /* generic.xcassets */; };
+		DAFCEFF31DFF7E25006366E3 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAFCEFF21DFF7E25006366E3 /* brand.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -179,6 +180,7 @@
 		DAFCEFEB1DFF581E006366E3 /* CLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLoading.swift; sourceTree = "<group>"; };
 		DAFCEFEE1DFF5856006366E3 /* VLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLoading.swift; sourceTree = "<group>"; };
 		DAFCEFF01DFF5BBE006366E3 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
+		DAFCEFF21DFF7E25006366E3 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +490,7 @@
 				DA7228021DF4B187001370C6 /* home.xcassets */,
 				DAB0FA4F1DF7773F00E3B51D /* loader.xcassets */,
 				DAFCEFF01DFF5BBE006366E3 /* generic.xcassets */,
+				DAFCEFF21DFF7E25006366E3 /* brand.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAAD34801DF23A6C00C5D3D1 /* LaunchScreen.storyboard in Resources */,
+				DAFCEFF31DFF7E25006366E3 /* brand.xcassets in Resources */,
 				DA7228031DF4B187001370C6 /* home.xcassets in Resources */,
 				DA63C3D61DF5F2250026169C /* ResourceUrl.plist in Resources */,
 				DAB0FA501DF7773F00E3B51D /* loader.xcassets in Resources */,
