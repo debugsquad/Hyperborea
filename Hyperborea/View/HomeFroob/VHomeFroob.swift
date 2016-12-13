@@ -36,7 +36,7 @@ class VHomeFroob:VView
         baseView.clipsToBounds = true
         baseView.backgroundColor = UIColor.white
         baseView.layer.borderWidth = 1
-        baseView.layer.borderColor = UIColor(white:0, alpha:0.1).cgColor
+        baseView.layer.borderColor = UIColor(white:0, alpha:0.2).cgColor
         baseView.layer.cornerRadius = kCornerRadius
         
         addSubview(visualEffect)
@@ -160,6 +160,20 @@ class VHomeFroob:VView
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    override func layoutSubviews()
+    {
+        let width:CGFloat = bounds.maxX
+        let height:CGFloat = bounds.maxY
+        let remainLeft:CGFloat = width - kBaseWidth
+        let remainTop:CGFloat = height - kBaseHeight
+        let marginLeft:CGFloat = remainLeft / 2.0
+        let marginTop:CGFloat = remainTop / 2.0
+        layoutBaseViewLeft.constant = marginLeft
+        layoutBaseViewTop.constant = marginTop
+        
+        super.layoutSubviews()
     }
     
     //MARK: actions
