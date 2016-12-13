@@ -9,7 +9,9 @@ class VHomeFroob:VView
     private let kBaseHeight:CGFloat = 200
     private let kButtonHeight:CGFloat = 42
     private let kCornerRadius:CGFloat = 20
-    private let kClockHeight:CGFloat = 40
+    private let kClockHeight:CGFloat = 35
+    private let kLabelTitleHeight:CGFloat = 30
+    private let kLabelDescrHeight:CGFloat = 40
     
     override init(controller:CController)
     {
@@ -17,7 +19,7 @@ class VHomeFroob:VView
         backgroundColor = UIColor.clear
         self.controller = controller as? CHomeFroob
         
-        let blurEffect:UIBlurEffect = UIBlurEffect(style:UIBlurEffectStyle.light)
+        let blurEffect:UIBlurEffect = UIBlurEffect(style:UIBlurEffectStyle.dark)
         let visualEffect:UIVisualEffectView = UIVisualEffectView(effect:blurEffect)
         visualEffect.isUserInteractionEnabled = false
         visualEffect.translatesAutoresizingMaskIntoConstraints = false
@@ -36,22 +38,32 @@ class VHomeFroob:VView
         baseView.translatesAutoresizingMaskIntoConstraints = false
         baseView.clipsToBounds = true
         baseView.backgroundColor = UIColor.white
-        baseView.layer.borderWidth = 0.5
-        baseView.layer.borderColor = UIColor.black.cgColor
         baseView.layer.cornerRadius = kCornerRadius
         
         let labelTitle:UILabel = UILabel()
         labelTitle.isUserInteractionEnabled = false
-        labelTitle.font = UIFont.medium(size:16)
+        labelTitle.font = UIFont.bold(size:20)
         labelTitle.textColor = UIColor.black
         labelTitle.textAlignment = NSTextAlignment.center
         labelTitle.backgroundColor = UIColor.clear
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.text = NSLocalizedString("VHomeFroob_title", comment:"")
         
+        let labelDescr:UILabel = UILabel()
+        labelDescr.isUserInteractionEnabled = false
+        labelDescr.font = UIFont.regular(size:15)
+        labelDescr.textColor = UIColor.black
+        labelDescr.textAlignment = NSTextAlignment.center
+        labelDescr.backgroundColor = UIColor.clear
+        labelDescr.numberOfLines = 0
+        labelDescr.translatesAutoresizingMaskIntoConstraints = false
+        labelDescr.text = NSLocalizedString("VHomeFroob_descr", comment:"")
+        
         let clock:VHomeFroobClock = VHomeFroobClock(controller:self.controller)
         
         baseView.addSubview(clock)
+        baseView.addSubview(labelTitle)
+        baseView.addSubview(labelDescr)
         addSubview(visualEffect)
         addSubview(baseButton)
         addSubview(baseView)
@@ -159,8 +171,8 @@ class VHomeFroob:VView
             item:clock,
             attribute:NSLayoutAttribute.top,
             relatedBy:NSLayoutRelation.equal,
-            toItem:baseView,
-            attribute:NSLayoutAttribute.top,
+            toItem:labelTitle,
+            attribute:NSLayoutAttribute.bottom,
             multiplier:1,
             constant:0)
         let layoutClockHeight:NSLayoutConstraint = NSLayoutConstraint(
@@ -188,6 +200,72 @@ class VHomeFroob:VView
             multiplier:1,
             constant:0)
         
+        let layoutLabelTitleTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:labelTitle,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:baseView,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutLabelTitleHeight:NSLayoutConstraint = NSLayoutConstraint(
+            item:labelTitle,
+            attribute:NSLayoutAttribute.height,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kLabelTitleHeight)
+        let layoutLabelTitleLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:labelTitle,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:baseView,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutLabelTitleRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:labelTitle,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:baseView,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
+        let layoutLabelDescrTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:labelDescr,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:clock,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutLabelDescrHeight:NSLayoutConstraint = NSLayoutConstraint(
+            item:labelDescr,
+            attribute:NSLayoutAttribute.height,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kLabelDescrHeight)
+        let layoutLabelDescrLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:labelDescr,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:baseView,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutLabelDescrRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:labelDescr,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:baseView,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutVisualEffectTop,
             layoutVisualEffectBottom,
@@ -204,7 +282,15 @@ class VHomeFroob:VView
             layoutClockTop,
             layoutClockHeight,
             layoutClockLeft,
-            layoutClockRight])
+            layoutClockRight,
+            layoutLabelTitleTop,
+            layoutLabelTitleHeight,
+            layoutLabelTitleLeft,
+            layoutLabelTitleRight,
+            layoutLabelDescrTop,
+            layoutLabelDescrHeight,
+            layoutLabelDescrLeft,
+            layoutLabelDescrRight])
     }
     
     required init?(coder:NSCoder)
