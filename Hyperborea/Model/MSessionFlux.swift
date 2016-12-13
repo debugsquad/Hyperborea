@@ -45,11 +45,13 @@ class MSessionFlux
     }
     
     let status:MSessionFlux.Status
+    let nextStatus:MSessionFlux.Status
     let image:UIImage
     let searchAvailable:Bool
     
     init(
         status:MSessionFlux.Status,
+        nextStatus:MSessionFlux.Status,
         image:UIImage,
         searchAvailable:Bool)
     {

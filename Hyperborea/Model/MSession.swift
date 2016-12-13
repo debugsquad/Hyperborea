@@ -77,6 +77,14 @@ class MSession
     private func restartFroobTime()
     {
         flux = MSessionFlux.factory(status:MSessionFlux.Status.full)
+        notifyFluxUpdate()
+    }
+    
+    private func notifyFluxUpdate()
+    {
+        NotificationCenter.default.post(
+            name:Notification.fluxUpdate,
+            object:nil)
     }
     
     //MARK: public
