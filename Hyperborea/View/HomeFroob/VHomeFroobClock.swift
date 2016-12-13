@@ -6,7 +6,7 @@ class VHomeFroobClock:UIView
     private weak var label:UILabel!
     private weak var timer:Timer?
     private let kTimeFormat:String = "%@:%@"
-    private let kFontSize:CGFloat = 60
+    private let kFontSize:CGFloat = 35
     private let kTimerInterval:TimeInterval = 0.5
     private let kMinutesPerSecond:TimeInterval = 60
     

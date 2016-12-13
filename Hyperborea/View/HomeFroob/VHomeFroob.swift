@@ -9,6 +9,7 @@ class VHomeFroob:VView
     private let kBaseHeight:CGFloat = 200
     private let kButtonHeight:CGFloat = 42
     private let kCornerRadius:CGFloat = 20
+    private let kClockHeight:CGFloat = 50
     
     override init(controller:CController)
     {
@@ -153,14 +154,14 @@ class VHomeFroob:VView
             attribute:NSLayoutAttribute.top,
             multiplier:1,
             constant:0)
-        let layoutClockBottom:NSLayoutConstraint = NSLayoutConstraint(
+        let layoutClockHeight:NSLayoutConstraint = NSLayoutConstraint(
             item:clock,
-            attribute:NSLayoutAttribute.bottom,
+            attribute:NSLayoutAttribute.height,
             relatedBy:NSLayoutRelation.equal,
-            toItem:baseView,
-            attribute:NSLayoutAttribute.bottom,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
-            constant:0)
+            constant:kClockHeight)
         let layoutClockLeft:NSLayoutConstraint = NSLayoutConstraint(
             item:clock,
             attribute:NSLayoutAttribute.left,
@@ -192,7 +193,7 @@ class VHomeFroob:VView
             layoutBaseViewWidth,
             layoutBaseViewHeight,
             layoutClockTop,
-            layoutClockBottom,
+            layoutClockHeight,
             layoutClockLeft,
             layoutClockRight])
     }
