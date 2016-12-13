@@ -3,9 +3,12 @@ import UIKit
 class VHomeFroobClock:UIView
 {
     private weak var controller:CHomeFroob!
+    private weak var label:UILabel!
     private weak var timer:Timer?
+    private let kTimeFormat:String = "%@:%@"
     private let kFontSize:CGFloat = 40
     private let kTimerInterval:TimeInterval = 0.5
+    private let kMinutesPerSecond:TimeInterval = 60
     
     convenience init(controller:CHomeFroob)
     {
@@ -22,6 +25,7 @@ class VHomeFroobClock:UIView
         label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(size:kFontSize)
         label.textAlignment = NSTextAlignment.center
+        self.label = label
         
         addSubview(label)
         
@@ -76,6 +80,52 @@ class VHomeFroobClock:UIView
     {
         guard
         
-            let timeout:TimeInterval = MSession.sharedInstance.sett
+            let timeout:TimeInterval = MSession.sharedInstance.settings?.lastSearch
+        
+        else
+        {
+            return
+        }
+        
+        let currentTime:TimeInterval = Date().timeIntervalSince1970
+        let remainTime:TimeInterval = currentTime - timeout
+        
+        if remainTime < 0
+        {
+            timer.invalidate()
+        }
+        else
+        {
+            let minutes:TimeInterval = floor(remainTime / kMinutesPerSecond)
+            let seconds:Int = Int(remainTime) % Int(kMinutesPerSecond)
+            let stringMinutes:String
+            let stringSeconds:String
+            let stringTime:String
+            
+            if minutes > 9
+            {
+                stringMinutes = "0\(minutes)"
+            }
+            else
+            {
+                stringMinutes = "\(minutes)"
+            }
+            
+            if seconds > 9
+            {
+                stringSeconds = "0\(seconds)"
+            }
+            else
+            {
+                stringSeconds = "\(seconds)"
+            }
+            
+            stringTime = String(
+                format:kTimeFormat,
+                stringMinutes,
+                stringSeconds)
+            
+            label.text = stringTime
+        }
     }
 }
