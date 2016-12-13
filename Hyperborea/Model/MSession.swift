@@ -74,6 +74,24 @@ class MSession
         DManager.sharedInstance.save()
     }
     
+    private func nextStatusFroob()
+    {
+        guard
+            
+            let nextStatus:MSessionFlux.Status = flux?.nextStatus
+            
+        else
+        {
+            return
+        }
+        
+        flux = MSessionFlux.factory(status:nextStatus)
+        
+        NotificationCenter.default.post(
+            name:Notification.fluxUpdate,
+            object:nil)
+    }
+    
     //MARK: public
     
     func loadSession()
@@ -127,21 +145,5 @@ class MSession
         }
     }
     
-    func nextStatusFroob()
-    {
-        guard
-            
-            let nextStatus:MSessionFlux.Status = flux?.nextStatus
-        
-        else
-        {
-            return
-        }
-        
-        flux = MSessionFlux.factory(status:nextStatus)
-        
-        NotificationCenter.default.post(
-            name:Notification.fluxUpdate,
-            object:nil)
-    }
+    
 }
