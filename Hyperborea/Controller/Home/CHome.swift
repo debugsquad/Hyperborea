@@ -96,10 +96,8 @@ class CHome:CController, RMainDelegate
         return escapedWordId
     }
     
-    private func searchWordId(wordId:String, region:String?)
+    private func performSearchWordId(wordId:String, region:String?)
     {
-        cancelRequests()
-        UIApplication.shared.keyWindow!.endEditing(true)
         viewHome.viewWords.showLoading()
         viewHome.viewWords.restartScroll()
         
@@ -110,6 +108,37 @@ class CHome:CController, RMainDelegate
                 wordId:wordId,
                 region:region)
             RMain.request(settings:settings, delegate:self)
+        }
+    }
+    
+    private func froobEnded()
+    {
+        
+    }
+    
+    private func searchWordId(wordId:String, region:String?)
+    {
+        cancelRequests()
+        UIApplication.shared.keyWindow!.endEditing(true)
+        
+        guard
+        
+            let searchAvailable:Bool = MSession.sharedInstance.flux?.searchAvailable
+        
+        else
+        {
+            froobEnded()
+            
+            return
+        }
+        
+        if searchAvailable
+        {
+            performSearchWordId(wordId:wordId, region:region)
+        }
+        else
+        {
+            
         }
     }
     
