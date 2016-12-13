@@ -28,6 +28,10 @@ class VHomeFroobButtons:UIView
             UIColor(white:0, alpha:0.1),
             for:UIControlState.highlighted)
         buttonStore.titleLabel!.font = UIFont.medium(size:15)
+        buttonStore.addTarget(
+            self,
+            action:#selector(actionStore(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         let buttonCancel:UIButton = UIButton()
         buttonCancel.translatesAutoresizingMaskIntoConstraints = false
@@ -43,6 +47,10 @@ class VHomeFroobButtons:UIView
             UIColor(white:0, alpha:0.1),
             for:UIControlState.highlighted)
         buttonCancel.titleLabel!.font = UIFont.medium(size:15)
+        buttonCancel.addTarget(
+            self,
+            action:#selector(self.actionCancel(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         addSubview(buttonStore)
         addSubview(buttonCancel)
@@ -122,5 +130,17 @@ class VHomeFroobButtons:UIView
             layoutButtonStoreBottom,
             layoutButtonStoreRight,
             layoutButtonStoreWidth])
+    }
+    
+    //MARK: actions
+    
+    func actionStore(sender button:UIButton)
+    {
+        controller.openStore()
+    }
+    
+    func actionCancel(sender button:UIButton)
+    {
+        controller.close()
     }
 }

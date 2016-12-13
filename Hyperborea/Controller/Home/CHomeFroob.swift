@@ -17,4 +17,9 @@ class CHomeFroob:CController
     {
         parentController.dismissAnimateOver()
     }
+    
+    func openStore()
+    {
+        
+    }
 }

@@ -61,6 +61,7 @@
 		DA9FA4821E004EB8003E0719 /* VHomeFroob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4811E004EB8003E0719 /* VHomeFroob.swift */; };
 		DA9FA4841E005CAC003E0719 /* VHomeFroobClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */; };
 		DA9FA4861E00A400003E0719 /* VHomeFroobButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4851E00A400003E0719 /* VHomeFroobButtons.swift */; };
+		DA9FA4891E00B4A8003E0719 /* CStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4881E00B4A8003E0719 /* CStore.swift */; };
 		DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */; };
 		DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34481DF2332500C5D3D1 /* CController.swift */; };
 		DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD34491DF2332500C5D3D1 /* CParent.swift */; };
@@ -152,6 +153,7 @@
 		DA9FA4811E004EB8003E0719 /* VHomeFroob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroob.swift; sourceTree = "<group>"; };
 		DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroobClock.swift; sourceTree = "<group>"; };
 		DA9FA4851E00A400003E0719 /* VHomeFroobButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroobButtons.swift; sourceTree = "<group>"; };
+		DA9FA4881E00B4A8003E0719 /* CStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CStore.swift; sourceTree = "<group>"; };
 		DAAD34301DF22D7500C5D3D1 /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DAAD34481DF2332500C5D3D1 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -376,6 +378,14 @@
 			path = HomeFroob;
 			sourceTree = "<group>";
 		};
+		DA9FA4871E00B46D003E0719 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				DA9FA4881E00B4A8003E0719 /* CStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		DAAD34271DF22D7500C5D3D1 = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +421,7 @@
 		DAAD34451DF2332500C5D3D1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DA9FA4871E00B46D003E0719 /* Store */,
 				DAFCEFEA1DFF5814006366E3 /* Loading */,
 				DAAD347B1DF235AB00C5D3D1 /* Home */,
 				DAAD34461DF2332500C5D3D1 /* Main */,
@@ -700,6 +711,7 @@
 				DA2BBA1D1DF8979800C450C8 /* RModelHomeEntriesItemNoun.swift in Sources */,
 				DA50977D1DFB30150088821E /* MSessionLanguageEnglish.swift in Sources */,
 				DA63C3EB1DF65A000026169C /* RCredentialsItem2.swift in Sources */,
+				DA9FA4891E00B4A8003E0719 /* CStore.swift in Sources */,
 				DA61436C1DF9FD8F0029A596 /* RModelHomeEntriesItemOrigin.swift in Sources */,
 				DA2BBA1B1DF8979800C450C8 /* RModelHomeEntriesFactory.swift in Sources */,
 				DAD7B4A41DFF31ED0043EEF0 /* DManager.swift in Sources */,
