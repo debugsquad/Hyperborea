@@ -120,7 +120,8 @@ class CHome:CController, RMainDelegate
     
     private func froobEnded()
     {
-        
+        let controllerFroob:CHomeFroob = CHomeFroob()
+        parentController.animateOver(controller:controllerFroob)
     }
     
     private func searchWordId(wordId:String, region:String?)
