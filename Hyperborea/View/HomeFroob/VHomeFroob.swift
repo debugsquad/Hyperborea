@@ -10,8 +10,11 @@ class VHomeFroob:VView
     private let kButtonHeight:CGFloat = 42
     private let kCornerRadius:CGFloat = 20
     private let kClockHeight:CGFloat = 35
-    private let kLabelTitleHeight:CGFloat = 30
-    private let kLabelDescrHeight:CGFloat = 40
+    private let kClockTop:CGFloat = 50
+    private let kLabelTitleHeight:CGFloat = 25
+    private let kLabelDescrHeight:CGFloat = 20
+    private let kImageTop:CGFloat = -40
+    private let kImageHeight:CGFloat = 80
     
     override init(controller:CController)
     {
@@ -61,12 +64,20 @@ class VHomeFroob:VView
         
         let clock:VHomeFroobClock = VHomeFroobClock(controller:self.controller)
         
+        let imageView:UIImageView = UIImageView()
+        imageView.isUserInteractionEnabled = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.contentMode = UIViewContentMode.center
+        imageView.image = #imageLiteral(resourceName: "assetGenericPlus")
+        
         baseView.addSubview(clock)
         baseView.addSubview(labelTitle)
         baseView.addSubview(labelDescr)
         addSubview(visualEffect)
         addSubview(baseButton)
         addSubview(baseView)
+        addSubview(imageView)
         
         let layoutVisualEffectTop:NSLayoutConstraint = NSLayoutConstraint(
             item:visualEffect,
@@ -171,10 +182,10 @@ class VHomeFroob:VView
             item:clock,
             attribute:NSLayoutAttribute.top,
             relatedBy:NSLayoutRelation.equal,
-            toItem:labelTitle,
-            attribute:NSLayoutAttribute.bottom,
+            toItem:baseView,
+            attribute:NSLayoutAttribute.top,
             multiplier:1,
-            constant:0)
+            constant:kClockTop)
         let layoutClockHeight:NSLayoutConstraint = NSLayoutConstraint(
             item:clock,
             attribute:NSLayoutAttribute.height,
@@ -204,8 +215,8 @@ class VHomeFroob:VView
             item:labelTitle,
             attribute:NSLayoutAttribute.top,
             relatedBy:NSLayoutRelation.equal,
-            toItem:baseView,
-            attribute:NSLayoutAttribute.top,
+            toItem:clock,
+            attribute:NSLayoutAttribute.bottom,
             multiplier:1,
             constant:0)
         let layoutLabelTitleHeight:NSLayoutConstraint = NSLayoutConstraint(
@@ -237,7 +248,7 @@ class VHomeFroob:VView
             item:labelDescr,
             attribute:NSLayoutAttribute.top,
             relatedBy:NSLayoutRelation.equal,
-            toItem:clock,
+            toItem:labelTitle,
             attribute:NSLayoutAttribute.bottom,
             multiplier:1,
             constant:0)
@@ -266,6 +277,39 @@ class VHomeFroob:VView
             multiplier:1,
             constant:0)
         
+        let layoutImageViewTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:baseView,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:kImageTop)
+        let layoutImageViewHeight:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.height,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kImageHeight)
+        let layoutImageViewLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutImageViewRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutVisualEffectTop,
             layoutVisualEffectBottom,
@@ -290,7 +334,11 @@ class VHomeFroob:VView
             layoutLabelDescrTop,
             layoutLabelDescrHeight,
             layoutLabelDescrLeft,
-            layoutLabelDescrRight])
+            layoutLabelDescrRight,
+            layoutImageViewTop,
+            layoutImageViewHeight,
+            layoutImageViewLeft,
+            layoutImageViewRight])
     }
     
     required init?(coder:NSCoder)
