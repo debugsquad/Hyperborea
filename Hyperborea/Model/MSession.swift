@@ -145,5 +145,8 @@ class MSession
         }
     }
     
-    
+    func addSearch(query:String, wordId:String, region:String?)
+    {
+        nextStatusFroob()
+    }
 }
