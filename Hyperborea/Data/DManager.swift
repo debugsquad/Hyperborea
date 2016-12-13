@@ -56,8 +56,13 @@ class DManager
                     {
                         try self.managedObjectContext.save()
                     }
-                    catch
+                    catch let error
                     {
+                        #if DEBUG
+                            
+                            print("coredata: \(error)")
+                            
+                        #endif
                     }
                 }
             }

@@ -43,8 +43,6 @@ class MSession
         { (newSettings:DObjectSettings) in
             
             self.settings = newSettings
-            
-            DManager.sharedInstance.save()
             self.settingsLoaded()
         }
     }
@@ -71,6 +69,8 @@ class MSession
         NotificationCenter.default.post(
             name:Notification.sessionLoaded,
             object:nil)
+        
+        DManager.sharedInstance.save()
     }
     
     //MARK: public
