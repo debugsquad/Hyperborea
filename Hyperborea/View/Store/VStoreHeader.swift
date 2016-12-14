@@ -9,7 +9,7 @@ class VStoreHeader:UICollectionReusableView
     private weak var imageView:UIImageView!
     private weak var layoutLabelHeight:NSLayoutConstraint!
     private let kLabelTop:CGFloat = 22
-    private let kLabelMarginHorizontal:CGFloat = 20
+    private let kLabelRight:CGFloat = -20
     private let kImageViewSize:CGFloat = 100
     
     override init(frame:CGRect)
@@ -24,7 +24,7 @@ class VStoreHeader:UICollectionReusableView
             NSForegroundColorAttributeName:UIColor.black
         ]
         
-        labelMargins = kLabelMarginHorizontal + kImageViewSize
+        labelMargins = kLabelRight + kImageViewSize
         
         super.init(frame:frame)
         clipsToBounds = true
@@ -47,30 +47,6 @@ class VStoreHeader:UICollectionReusableView
         addSubview(label)
         addSubview(imageView)
         
-        let views:[String:UIView] = [
-            "label":label,
-            "imageView":imageView]
-        
-        let metrics:[String:CGFloat] = [
-            "labelMarginHorizontal":kLabelMarginHorizontal,
-            "imageViewSize":kImageViewSize]
-        
-        addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"H:|-0-[imageView(imageViewSize)]-0-[label]-(labelMarginHorizontal)-|",
-            options:[],
-            metrics:metrics,
-            views:views))
-        addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-22-[label]",
-            options:[],
-            metrics:metrics,
-            views:views))
-        addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat:"V:|-0-[imageView(imageViewSize)]",
-            options:[],
-            metrics:metrics,
-            views:views))
-        
         let layoutLabelTop:NSLayoutConstraint = NSLayoutConstraint(
             item:label,
             attribute:NSLayoutAttribute.top,
@@ -91,10 +67,10 @@ class VStoreHeader:UICollectionReusableView
             item:label,
             attribute:NSLayoutAttribute.left,
             relatedBy:NSLayoutRelation.equal,
-            toItem:self,
+            toItem:imageView,
             attribute:NSLayoutAttribute.left,
             multiplier:1,
-            constant:kLabelTop)
+            constant:0)
         let layoutLabelRight:NSLayoutConstraint = NSLayoutConstraint(
             item:label,
             attribute:NSLayoutAttribute.right,
@@ -102,13 +78,50 @@ class VStoreHeader:UICollectionReusableView
             toItem:self,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
-            constant:kLabelTop)
+            constant:kLabelRight)
+        
+        let layoutImageTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutImageLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutImageWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.width,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kImageViewSize)
+        let layoutImageHeight:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.height,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:0)
         
         addConstraints([
             layoutLabelTop,
             layoutLabelHeight,
             layoutLabelLeft,
-            layoutLabelRight])
+            layoutLabelRight,
+            layoutImageTop,
+            layoutImageLeft,
+            layoutImageWidth,
+            layoutImageHeight])
     }
     
     required init?(coder:NSCoder)
