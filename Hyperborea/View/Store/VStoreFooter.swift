@@ -14,10 +14,10 @@ class VStoreFooter:UICollectionReusableView
         let button:UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(
-            UIColor(white:0.4, alpha:1),
+            UIColor(white:0.3, alpha:1),
             for:UIControlState.normal)
         button.setTitleColor(
-            UIColor(white:0.9, alpha:1),
+            UIColor(white:0, alpha:0.2),
             for:UIControlState.highlighted)
         button.setTitle(
             NSLocalizedString("VStoreFooter_buttonRestore", comment:""),

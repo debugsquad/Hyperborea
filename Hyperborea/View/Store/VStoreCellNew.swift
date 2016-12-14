@@ -5,7 +5,7 @@ class VStoreCellNew:VStoreCell
     private weak var labelPrice:UILabel!
     private let kButtonPurchaseWidth:CGFloat = 100
     private let kLabelPriceWidth:CGFloat = 200
-    private let kLabelButtonSeparation:CGFloat = 10
+    private let kLabelButtonSeparation:CGFloat = -10
     
     override init(frame:CGRect)
     {
@@ -62,7 +62,7 @@ class VStoreCellNew:VStoreCell
             attribute:NSLayoutAttribute.right,
             relatedBy:NSLayoutRelation.equal,
             toItem:buttonPurchase,
-            attribute:NSLayoutAttribute.right,
+            attribute:NSLayoutAttribute.left,
             multiplier:1,
             constant:kLabelButtonSeparation)
         let layoutLabelWidth:NSLayoutConstraint = NSLayoutConstraint(
@@ -97,7 +97,7 @@ class VStoreCellNew:VStoreCell
             toItem:self,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
-            constant:kLabelButtonSeparation)
+            constant:0)
         let layoutButtonWidth:NSLayoutConstraint = NSLayoutConstraint(
             item:buttonPurchase,
             attribute:NSLayoutAttribute.width,
