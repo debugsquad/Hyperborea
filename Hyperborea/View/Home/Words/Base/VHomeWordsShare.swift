@@ -22,6 +22,10 @@ class VHomeWordsShare:UIButton
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
+        addTarget(
+            self,
+            action:#selector(self.actionShare(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         let spinner:VSpinner = VSpinner()
         self.spinner = spinner
