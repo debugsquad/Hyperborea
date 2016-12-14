@@ -219,22 +219,22 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     func refreshStore()
     {
         DispatchQueue.main.async
-            { [weak self] in
+        { [weak self] in
+            
+            self?.viewSpinner?.removeFromSuperview()
+            self?.collectionView.reloadData()
+            self?.collectionView.isHidden = false
+            
+            guard
                 
-                self?.viewSpinner?.removeFromSuperview()
-                self?.collectionView.reloadData()
-                self?.collectionView.isHidden = false
+                let errorMessage:String = self?.controller.model.error
                 
-                guard
-                    
-                    let errorMessage:String = self?.controller.model.error
-                    
-                    else
-                {
-                    return
-                }
-                
-                VAlert.message(message:errorMessage)
+            else
+            {
+                return
+            }
+            
+            VAlert.message(message:errorMessage)
         }
     }
     
@@ -279,17 +279,18 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     {
         let indexPath:IndexPath = IndexPath(item:0, section:section)
         let item:MStoreItem = modelAtIndex(index:indexPath)
+        let count:Int
         
-        guard
-            
-            let _:MStoreItemStatus = item.status
-            
-            else
+        if item.status == nil
         {
-            return 0
+            count = 0
+        }
+        else
+        {
+            count = 1
         }
         
-        return 1
+        return count
     }
     
     func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
