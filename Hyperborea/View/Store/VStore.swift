@@ -47,6 +47,12 @@ class VStore:VView
             attribute:NSLayoutAttribute.right,
             multiplier:1,
             constant:0)
+        
+        addConstraints([
+            layoutBarTop,
+            layoutBarHeight,
+            layoutBarLeft,
+            layoutBarRight])
     }
     
     required init?(coder:NSCoder)

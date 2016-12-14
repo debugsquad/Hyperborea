@@ -10,4 +10,11 @@ class CStore:CController
         self.viewStore = viewStore
         view = viewStore
     }
+    
+    //MARK: public
+    
+    func back()
+    {
+        
+    }
 }
