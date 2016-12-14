@@ -15,6 +15,6 @@ class CStore:CController
     
     func back()
     {
-        
+        parentController.dismissPush(completion:nil)
     }
 }

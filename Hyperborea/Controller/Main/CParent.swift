@@ -174,4 +174,42 @@ class CParent:UIViewController
             completion?()
         }
     }
+    
+    func dismissPush(completion:(() -> ())?)
+    {
+        guard
+            
+            let currentController:CController = childViewControllers.last as? CController,
+            let vView:VView = currentController.view as? VView
+            
+        else
+        {
+            return
+        }
+        
+        currentController.removeFromParentViewController()
+        
+        guard
+            
+            let previousController:CController = childViewControllers.last as? CController,
+            let previousView:VView = previousController.view as? VView
+            
+        else
+        {
+            return
+        }
+        
+        currentController.beginAppearanceTransition(false, animated:true)
+        previousController.beginAppearanceTransition(true, animated:true)
+        
+        viewParent.dismissPush(
+            currentView:vView,
+            previousView:previousView)
+        {
+            currentController.endAppearanceTransition()
+            previousController.endAppearanceTransition()
+            
+            completion?()
+        }
+    }
 }

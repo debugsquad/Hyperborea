@@ -174,6 +174,27 @@ class VParent:UIView
         }
     }
     
+    func dismissPush(currentView:VView, previousView:VView, completion:@escaping(() -> ()))
+    {
+        let fullLeft:CGFloat = currentView.bounds.maxX
+        currentView.layoutLeft.constant = fullLeft
+        currentView.layoutRight.constant = fullLeft
+        previousView.layoutLeft.constant = 0
+        previousView.layoutRight.constant = 0
+        
+        UIView.animate(
+            withDuration:kAnimationDuration,
+            animations:
+            {
+                self.layoutIfNeeded()
+            })
+        { [weak currentView] (done:Bool) in
+            
+            currentView?.removeFromSuperview()
+            completion()
+        }
+    }
+    
     func scrollDidScroll(offsetY:CGFloat)
     {
         if offsetY > 0

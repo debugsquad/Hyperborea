@@ -26,6 +26,11 @@ class VStoreBar:UIView
         button.imageView!.tintColor = UIColor(white:0, alpha:0.2)
         button.imageView!.contentMode = UIViewContentMode.center
         button.imageView!.clipsToBounds = true
+        button.imageEdgeInsets = UIEdgeInsets(
+            top:0,
+            left:0,
+            bottom:0,
+            right:20)
         button.addTarget(
             self,
             action:#selector(self.actionBack(sender:)),
@@ -67,7 +72,7 @@ class VStoreBar:UIView
             constant:kButtonWidth)
         
         addConstraints([
-            layoutButtonTop.
+            layoutButtonTop,
             layoutButtonBottom,
             layoutButtonLeft,
             layoutButtonWidth])
