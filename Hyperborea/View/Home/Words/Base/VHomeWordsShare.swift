@@ -12,7 +12,7 @@ class VHomeWordsShare:UIButton
     private let kLabelTop:CGFloat = 4
     private let kImageLeft:CGFloat = 7
     private let kImageRight:CGFloat = 2
-    private let kSpinnerWidth:CGFloat = 30
+    private let kSpinnerWidth:CGFloat = 70
     private let kExportMaxWidth:CGFloat = 600
     private let kExportMaxHeight:CGFloat = 12000
     private let kExportMargin:CGFloat = 30
@@ -321,6 +321,7 @@ class VHomeWordsShare:UIButton
         isUserInteractionEnabled = false
         spinner.startAnimating()
         image.isHidden = true
+        label.isHidden = true
     }
     
     private func activate()
@@ -331,6 +332,7 @@ class VHomeWordsShare:UIButton
             self?.isUserInteractionEnabled = true
             self?.spinner.stopAnimating()
             self?.image.isHidden = false
+            self?.label.isHidden = false
         }
     }
     
