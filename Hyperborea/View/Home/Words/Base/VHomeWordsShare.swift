@@ -4,7 +4,7 @@ class VHomeWordsShare:UIButton
 {
     private weak var controller:CHome?
     private weak var model:RModelHomeEntriesItem?
-    private weak var spinner:VSpinner!
+    private weak var spinner:UIActivityIndicatorView!
     private weak var image:UIImageView!
     private weak var label:UILabel!
     private let kImageWidth:CGFloat = 20
@@ -29,7 +29,11 @@ class VHomeWordsShare:UIButton
             action:#selector(self.actionShare(sender:)),
             for:UIControlEvents.touchUpInside)
         
-        let spinner:VSpinner = VSpinner()
+        let spinner:UIActivityIndicatorView = UIActivityIndicatorView(
+            activityIndicatorStyle:UIActivityIndicatorViewStyle.gray)
+        spinner.isUserInteractionEnabled = false
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.stopAnimating()
         self.spinner = spinner
         
         let image:UIImageView = UIImageView()

@@ -3,7 +3,7 @@ import UIKit
 class RModelHomeEntriesItemOrigin:RModelHomeEntriesItem
 {
     private let kSelectable:Bool = false
-    private let kExtraHeight:CGFloat = 16
+    private let kExtraHeight:CGFloat = -48
     
     init(etymologies:RModelHomeEntriesEtymologies)
     {

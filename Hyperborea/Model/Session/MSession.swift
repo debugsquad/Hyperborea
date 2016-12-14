@@ -7,10 +7,20 @@ class MSession
     private(set) var language:MSessionLanguage?
     private(set) var settings:DObjectSettings?
     private weak var timer:Timer?
-    let kFroobCoolTime:TimeInterval = 18//1800
+    let kFroobCoolTime:TimeInterval = 36//1800
     
     private init()
     {
+    }
+    
+    @objc func timeOut(sender timer:Timer)
+    {
+        timer.invalidate()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        {
+            let _:Bool = self.froobValidate()
+        }
     }
     
     //MARK: private
@@ -72,6 +82,12 @@ class MSession
         }
         
         flux = MSessionFlux.factory(status:fluxStatus)
+        
+        if !flux!.searchAvailable
+        {
+            let _:Bool = froobValidate()
+        }
+        
         language = MSessionLanguage.factory(languageId:languageId)
         
         NotificationCenter.default.post(
@@ -84,6 +100,7 @@ class MSession
     private func nextStatusFroob()
     {
         guard
+            
             let plus:Bool = settings?.hyperboreaPlus,
             var nextStatus:MSessionFlux.Status = flux?.nextStatus
             
@@ -104,6 +121,17 @@ class MSession
         NotificationCenter.default.post(
             name:Notification.fluxUpdate,
             object:nil)
+    }
+    
+    private func startTimer(waitingTime:TimeInterval)
+    {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(
+            timeInterval:waitingTime,
+            target:self,
+            selector:#selector(self.timeOut(sender:)),
+            userInfo:self,
+            repeats:false)
     }
     
     //MARK: public
@@ -136,6 +164,8 @@ class MSession
     
     func froobValidate() -> Bool
     {
+        timer?.invalidate()
+        
         guard
         
             let lastSearch:TimeInterval = settings?.lastSearch
@@ -145,18 +175,28 @@ class MSession
             return false
         }
         
+        let valid:Bool
         let currentTime:TimeInterval = NSDate().timeIntervalSince1970
+        let expirationTime:TimeInterval = lastSearch + kFroobCoolTime
+        let deltaTime:TimeInterval = currentTime - expirationTime
         
-        if currentTime > lastSearch + kFroobCoolTime
+        if deltaTime > 0
         {
             nextStatusFroob()
             
-            return true
+            valid = true
         }
         else
         {
-            return false
+            DispatchQueue.main.async
+            {
+                self.startTimer(waitingTime:deltaTime)
+            }
+            
+            valid = false
         }
+        
+        return valid
     }
     
     func addSearch(query:String, wordId:String, region:String?)
