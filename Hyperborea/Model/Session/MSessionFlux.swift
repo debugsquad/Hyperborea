@@ -8,6 +8,7 @@ class MSessionFlux
         case twoLeft
         case oneLeft
         case empty
+        case plus
     }
     
     class func factory(status:MSessionFlux.Status) -> MSessionFlux
@@ -37,6 +38,12 @@ class MSessionFlux
             case MSessionFlux.Status.empty:
             
                 item = MSessionFluxEmpty()
+                
+                break
+            
+            case MSessionFlux.Status.plus:
+                
+                item = MSessionFluxPlus()
                 
                 break
         }

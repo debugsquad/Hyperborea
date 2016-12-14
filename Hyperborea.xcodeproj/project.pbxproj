@@ -108,6 +108,7 @@
 		DAEBD0271E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD01D1E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift */; };
 		DAEBD0281E01AF50000C8A04 /* MStoreItemPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD01F1E01AF50000C8A04 /* MStoreItemPlus.swift */; };
 		DAEBD02A1E01D122000C8A04 /* VHomeWordsShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0291E01D122000C8A04 /* VHomeWordsShare.swift */; };
+		DAEBD02C1E01E950000C8A04 /* MSessionFluxPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD02B1E01E950000C8A04 /* MSessionFluxPlus.swift */; };
 		DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */; };
 		DAFCEFDD1DFF3EB7006366E3 /* VHomeHelperFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */; };
 		DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEB1DFF581E006366E3 /* CLoading.swift */; };
@@ -221,6 +222,7 @@
 		DAEBD01D1E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemStatusPurchasing.swift; sourceTree = "<group>"; };
 		DAEBD01F1E01AF50000C8A04 /* MStoreItemPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemPlus.swift; sourceTree = "<group>"; };
 		DAEBD0291E01D122000C8A04 /* VHomeWordsShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsShare.swift; sourceTree = "<group>"; };
+		DAEBD02B1E01E950000C8A04 /* MSessionFluxPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxPlus.swift; sourceTree = "<group>"; };
 		DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHyperborea.xcdatamodel; sourceTree = "<group>"; };
 		DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperFlux.swift; sourceTree = "<group>"; };
 		DAFCEFEB1DFF581E006366E3 /* CLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLoading.swift; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 				DAEBD0051E01AF0D000C8A04 /* MSessionFluxFull.swift */,
 				DAEBD0061E01AF0D000C8A04 /* MSessionFluxOneLeft.swift */,
 				DAEBD0071E01AF0D000C8A04 /* MSessionFluxTwoLeft.swift */,
+				DAEBD02B1E01E950000C8A04 /* MSessionFluxPlus.swift */,
 				DAEBD0081E01AF0D000C8A04 /* MSessionLanguage.swift */,
 				DAEBD0091E01AF0D000C8A04 /* MSessionLanguageEnglish.swift */,
 				DAEBD00A1E01AF0D000C8A04 /* MSessionLanguageSpanish.swift */,
@@ -770,6 +773,7 @@
 				DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */,
 				DA9FA4841E005CAC003E0719 /* VHomeFroobClock.swift in Sources */,
 				DAD7B4A61DFF32740043EEF0 /* ExtensionNSManagedObject.swift in Sources */,
+				DAEBD02C1E01E950000C8A04 /* MSessionFluxPlus.swift in Sources */,
 				DAEBD0141E01AF0D000C8A04 /* MSessionLanguageSpanish.swift in Sources */,
 				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
 				DAEBCFFE1E01A5F7000C8A04 /* VStoreCellPurchased.swift in Sources */,
