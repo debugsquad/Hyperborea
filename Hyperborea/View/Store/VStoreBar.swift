@@ -4,6 +4,7 @@ class VStoreBar:UIView
 {
     private weak var controller:CStore!
     private let kButtonWidth:CGFloat = 65
+    private let kContentTop:CGFloat = 20
     
     convenience init(controller:CStore)
     {
@@ -60,7 +61,7 @@ class VStoreBar:UIView
             toItem:self,
             attribute:NSLayoutAttribute.top,
             multiplier:1,
-            constant:0)
+            constant:kContentTop)
         let layoutButtonBottom:NSLayoutConstraint = NSLayoutConstraint(
             item:button,
             attribute:NSLayoutAttribute.bottom,
@@ -93,7 +94,7 @@ class VStoreBar:UIView
             toItem:self,
             attribute:NSLayoutAttribute.top,
             multiplier:1,
-            constant:0)
+            constant:kContentTop)
         let layoutImageBottom:NSLayoutConstraint = NSLayoutConstraint(
             item:imageView,
             attribute:NSLayoutAttribute.bottom,

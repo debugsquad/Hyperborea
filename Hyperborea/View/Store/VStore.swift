@@ -9,8 +9,7 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     private let kFooterHeight:CGFloat = 70
     private let kInterLine:CGFloat = 1
     private let kCollectionBottom:CGFloat = 10
-    private let kBarTop:CGFloat = 20
-    private let kBarHeight:CGFloat = 64
+    private let kBarHeight:CGFloat = 84
     
     override init(controller:CController)
     {
@@ -86,7 +85,7 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
             toItem:self,
             attribute:NSLayoutAttribute.top,
             multiplier:1,
-            constant:kBarTop)
+            constant:0)
         let layoutBarHeight:NSLayoutConstraint = NSLayoutConstraint(
             item:viewBar,
             attribute:NSLayoutAttribute.height,
