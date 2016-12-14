@@ -100,6 +100,15 @@
 		DAEBD0121E01AF0D000C8A04 /* MSessionLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0081E01AF0D000C8A04 /* MSessionLanguage.swift */; };
 		DAEBD0131E01AF0D000C8A04 /* MSessionLanguageEnglish.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0091E01AF0D000C8A04 /* MSessionLanguageEnglish.swift */; };
 		DAEBD0141E01AF0D000C8A04 /* MSessionLanguageSpanish.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD00A1E01AF0D000C8A04 /* MSessionLanguageSpanish.swift */; };
+		DAEBD0201E01AF50000C8A04 /* MStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0161E01AF50000C8A04 /* MStore.swift */; };
+		DAEBD0211E01AF50000C8A04 /* MStoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0171E01AF50000C8A04 /* MStoreItem.swift */; };
+		DAEBD0221E01AF50000C8A04 /* MStoreItemStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0181E01AF50000C8A04 /* MStoreItemStatus.swift */; };
+		DAEBD0231E01AF50000C8A04 /* MStoreItemStatusDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0191E01AF50000C8A04 /* MStoreItemStatusDeferred.swift */; };
+		DAEBD0241E01AF50000C8A04 /* MStoreItemStatusNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD01A1E01AF50000C8A04 /* MStoreItemStatusNew.swift */; };
+		DAEBD0251E01AF50000C8A04 /* MStoreItemStatusNotAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD01B1E01AF50000C8A04 /* MStoreItemStatusNotAvailable.swift */; };
+		DAEBD0261E01AF50000C8A04 /* MStoreItemStatusPurchased.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD01C1E01AF50000C8A04 /* MStoreItemStatusPurchased.swift */; };
+		DAEBD0271E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD01D1E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift */; };
+		DAEBD0281E01AF50000C8A04 /* MStoreItemPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD01F1E01AF50000C8A04 /* MStoreItemPlus.swift */; };
 		DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */; };
 		DAFCEFDD1DFF3EB7006366E3 /* VHomeHelperFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */; };
 		DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEB1DFF581E006366E3 /* CLoading.swift */; };
@@ -205,6 +214,15 @@
 		DAEBD0081E01AF0D000C8A04 /* MSessionLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionLanguage.swift; sourceTree = "<group>"; };
 		DAEBD0091E01AF0D000C8A04 /* MSessionLanguageEnglish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionLanguageEnglish.swift; sourceTree = "<group>"; };
 		DAEBD00A1E01AF0D000C8A04 /* MSessionLanguageSpanish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionLanguageSpanish.swift; sourceTree = "<group>"; };
+		DAEBD0161E01AF50000C8A04 /* MStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStore.swift; sourceTree = "<group>"; };
+		DAEBD0171E01AF50000C8A04 /* MStoreItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItem.swift; sourceTree = "<group>"; };
+		DAEBD0181E01AF50000C8A04 /* MStoreItemStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemStatus.swift; sourceTree = "<group>"; };
+		DAEBD0191E01AF50000C8A04 /* MStoreItemStatusDeferred.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemStatusDeferred.swift; sourceTree = "<group>"; };
+		DAEBD01A1E01AF50000C8A04 /* MStoreItemStatusNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemStatusNew.swift; sourceTree = "<group>"; };
+		DAEBD01B1E01AF50000C8A04 /* MStoreItemStatusNotAvailable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemStatusNotAvailable.swift; sourceTree = "<group>"; };
+		DAEBD01C1E01AF50000C8A04 /* MStoreItemStatusPurchased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemStatusPurchased.swift; sourceTree = "<group>"; };
+		DAEBD01D1E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemStatusPurchasing.swift; sourceTree = "<group>"; };
+		DAEBD01F1E01AF50000C8A04 /* MStoreItemPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemPlus.swift; sourceTree = "<group>"; };
 		DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHyperborea.xcdatamodel; sourceTree = "<group>"; };
 		DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperFlux.swift; sourceTree = "<group>"; };
 		DAFCEFEB1DFF581E006366E3 /* CLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLoading.swift; sourceTree = "<group>"; };
@@ -615,8 +633,33 @@
 		DAEBD00B1E01AF0D000C8A04 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				DAEBD0151E01AF50000C8A04 /* Base */,
+				DAEBD01E1E01AF50000C8A04 /* Purchases */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		DAEBD0151E01AF50000C8A04 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DAEBD0161E01AF50000C8A04 /* MStore.swift */,
+				DAEBD0171E01AF50000C8A04 /* MStoreItem.swift */,
+				DAEBD0181E01AF50000C8A04 /* MStoreItemStatus.swift */,
+				DAEBD0191E01AF50000C8A04 /* MStoreItemStatusDeferred.swift */,
+				DAEBD01A1E01AF50000C8A04 /* MStoreItemStatusNew.swift */,
+				DAEBD01B1E01AF50000C8A04 /* MStoreItemStatusNotAvailable.swift */,
+				DAEBD01C1E01AF50000C8A04 /* MStoreItemStatusPurchased.swift */,
+				DAEBD01D1E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DAEBD01E1E01AF50000C8A04 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				DAEBD01F1E01AF50000C8A04 /* MStoreItemPlus.swift */,
+			);
+			path = Purchases;
 			sourceTree = "<group>";
 		};
 		DAFCEFEA1DFF5814006366E3 /* Loading */ = {
@@ -724,6 +767,7 @@
 				DAAD34891DF23C3A00C5D3D1 /* VView.swift in Sources */,
 				DAEBD0111E01AF0D000C8A04 /* MSessionFluxTwoLeft.swift in Sources */,
 				DA2BBA0C1DF873D700C450C8 /* VHomeWordsCell.swift in Sources */,
+				DAEBD0241E01AF50000C8A04 /* MStoreItemStatusNew.swift in Sources */,
 				DA61436E1DFA07190029A596 /* RModelHomeEntriesTense.swift in Sources */,
 				DA63C3C91DF5CE010026169C /* RMainDelegate.swift in Sources */,
 				DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */,
@@ -773,14 +817,19 @@
 				DA2BBA1C1DF8979800C450C8 /* RModelHomeEntriesItem.swift in Sources */,
 				DA2BBA051DF873D700C450C8 /* VHomeHelperSend.swift in Sources */,
 				DA9FA47F1E004E22003E0719 /* CHomeFroob.swift in Sources */,
+				DAEBD0221E01AF50000C8A04 /* MStoreItemStatus.swift in Sources */,
 				DA2BBA1D1DF8979800C450C8 /* RModelHomeEntriesItemNoun.swift in Sources */,
 				DA63C3EB1DF65A000026169C /* RCredentialsItem2.swift in Sources */,
 				DA9FA4891E00B4A8003E0719 /* CStore.swift in Sources */,
+				DAEBD0211E01AF50000C8A04 /* MStoreItem.swift in Sources */,
 				DA61436C1DF9FD8F0029A596 /* RModelHomeEntriesItemOrigin.swift in Sources */,
 				DA2BBA1B1DF8979800C450C8 /* RModelHomeEntriesFactory.swift in Sources */,
+				DAEBD0261E01AF50000C8A04 /* MStoreItemStatusPurchased.swift in Sources */,
 				DAD7B4A41DFF31ED0043EEF0 /* DManager.swift in Sources */,
 				DA63C3E51DF659D90026169C /* RCredentials.swift in Sources */,
+				DAEBD0251E01AF50000C8A04 /* MStoreItemStatusNotAvailable.swift in Sources */,
 				DA9FA4861E00A400003E0719 /* VHomeFroobButtons.swift in Sources */,
+				DAEBD0231E01AF50000C8A04 /* MStoreItemStatusDeferred.swift in Sources */,
 				DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */,
 				DAAD34681DF2332500C5D3D1 /* ExtensionFileManager.swift in Sources */,
 				DA63C3DA1DF60C180026169C /* RConfiguration.swift in Sources */,
@@ -798,10 +847,13 @@
 				DA1783F61DFB55CC00895012 /* CHomeLanguage.swift in Sources */,
 				DA9FA4821E004EB8003E0719 /* VHomeFroob.swift in Sources */,
 				DAEBD00E1E01AF0D000C8A04 /* MSessionFluxEmpty.swift in Sources */,
+				DAEBD0271E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift in Sources */,
+				DAEBD0281E01AF50000C8A04 /* MStoreItemPlus.swift in Sources */,
 				DA19D5EC1DFC8D25005A3477 /* CHomeShare.swift in Sources */,
 				DA63C3D01DF5EBB50026169C /* RModel.swift in Sources */,
 				DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */,
 				DAAD346B1DF2332500C5D3D1 /* ExtensionUIColor.swift in Sources */,
+				DAEBD0201E01AF50000C8A04 /* MStore.swift in Sources */,
 				DA2BBA1E1DF8979800C450C8 /* RModelHomeEntriesItemVerb.swift in Sources */,
 				DAAD346A1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift in Sources */,
 			);
