@@ -5,8 +5,7 @@ class VParentBar:UIView
     private weak var controller:CParent!
     private weak var labelTitle:UILabel!
     private weak var imageView:UIImageView!
-    private weak var buttonThesaurus:UIButton!
-    private weak var buttonTranslate:UIButton!
+    private weak var buttonStore:UIButton!
     private weak var buttonLanguage:UIButton!
     private let kContentTop:CGFloat = 20
     private let kImageLeft:CGFloat = 8
@@ -32,27 +31,22 @@ class VParentBar:UIView
         imageView.image = #imageLiteral(resourceName: "assetHomeSearch")
         self.imageView = imageView
         
-        let buttonThesaurus:UIButton = UIButton()
-        buttonThesaurus.translatesAutoresizingMaskIntoConstraints = false
-        buttonThesaurus.setImage(
-            #imageLiteral(resourceName: "assetHomeSearch"),
+        let buttonStore:UIButton = UIButton()
+        buttonStore.translatesAutoresizingMaskIntoConstraints = false
+        buttonStore.setImage(
+            #imageLiteral(resourceName: "assetHomeSearch").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.normal)
-        buttonThesaurus.imageView!.clipsToBounds = true
-        buttonThesaurus.imageView!.contentMode = UIViewContentMode.center
-        buttonThesaurus.alpha = 0.2
-        buttonThesaurus.isHidden = true
-        self.buttonThesaurus = buttonThesaurus
-        
-        let buttonTranslate:UIButton = UIButton()
-        buttonTranslate.translatesAutoresizingMaskIntoConstraints = false
-        buttonTranslate.setImage(
-            #imageLiteral(resourceName: "assetHomeSearch"),
-            for:UIControlState.normal)
-        buttonTranslate.imageView!.clipsToBounds = true
-        buttonTranslate.imageView!.contentMode = UIViewContentMode.center
-        buttonTranslate.alpha = 0.2
-        buttonTranslate.isHidden = true
-        self.buttonTranslate = buttonTranslate
+        buttonStore.setImage(
+            #imageLiteral(resourceName: "assetHomeSearch").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            for:UIControlState.highlighted)
+        buttonStore.imageView!.clipsToBounds = true
+        buttonStore.imageView!.contentMode = UIViewContentMode.center
+        buttonStore.imageView!.tintColor = UIColor(white:0, alpha:0.2)
+        buttonStore.addTarget(
+            self,
+            action:#selector(self.actionStore(sender:)),
+            for:UIControlEvents.touchUpInside)
+        self.buttonStore = buttonStore
         
         let buttonLanguage:UIButton = UIButton()
         buttonLanguage.translatesAutoresizingMaskIntoConstraints = false
@@ -75,8 +69,7 @@ class VParentBar:UIView
 
         addSubview(labelTitle)
         addSubview(imageView)
-        addSubview(buttonThesaurus)
-        addSubview(buttonTranslate)
+        addSubview(buttonStore)
         addSubview(buttonLanguage)
         
         let layoutImageViewLeft:NSLayoutConstraint = NSLayoutConstraint(
@@ -145,65 +138,32 @@ class VParentBar:UIView
             multiplier:1,
             constant:0)
         
-        let layoutButtonTranslateRight:NSLayoutConstraint = NSLayoutConstraint(
-            item:buttonTranslate,
+        let layoutButtonStoreRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonStore,
             attribute:NSLayoutAttribute.right,
             relatedBy:NSLayoutRelation.equal,
             toItem:buttonLanguage,
             attribute:NSLayoutAttribute.left,
             multiplier:1,
             constant:0)
-        let layoutButtonTranslateWidth:NSLayoutConstraint = NSLayoutConstraint(
-            item:buttonTranslate,
+        let layoutButtonStoreWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonStore,
             attribute:NSLayoutAttribute.width,
             relatedBy:NSLayoutRelation.equal,
             toItem:nil,
             attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
             constant:kButtonsWidth)
-        let layoutButtonTranslateTop:NSLayoutConstraint = NSLayoutConstraint(
-            item:buttonTranslate,
+        let layoutButtonStoreTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonStore,
             attribute:NSLayoutAttribute.top,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
             attribute:NSLayoutAttribute.top,
             multiplier:1,
             constant:kContentTop)
-        let layoutButtonTranslateBottom:NSLayoutConstraint = NSLayoutConstraint(
-            item:buttonTranslate,
-            attribute:NSLayoutAttribute.bottom,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.bottom,
-            multiplier:1,
-            constant:0)
-        
-        let layoutButtonThesaurusRight:NSLayoutConstraint = NSLayoutConstraint(
-            item:buttonThesaurus,
-            attribute:NSLayoutAttribute.right,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:buttonTranslate,
-            attribute:NSLayoutAttribute.left,
-            multiplier:1,
-            constant:0)
-        let layoutButtonThesaurusWidth:NSLayoutConstraint = NSLayoutConstraint(
-            item:buttonThesaurus,
-            attribute:NSLayoutAttribute.width,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:nil,
-            attribute:NSLayoutAttribute.notAnAttribute,
-            multiplier:1,
-            constant:kButtonsWidth)
-        let layoutButtonThesaurusTop:NSLayoutConstraint = NSLayoutConstraint(
-            item:buttonThesaurus,
-            attribute:NSLayoutAttribute.top,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.top,
-            multiplier:1,
-            constant:kContentTop)
-        let layoutButtonThesaurusBottom:NSLayoutConstraint = NSLayoutConstraint(
-            item:buttonThesaurus,
+        let layoutButtonStoreBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:buttonStore,
             attribute:NSLayoutAttribute.bottom,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
@@ -253,14 +213,10 @@ class VParentBar:UIView
             layoutButtonLanguageBottom,
             layoutButtonLanguageRight,
             layoutButtonLanguageWidth,
-            layoutButtonTranslateTop,
-            layoutButtonTranslateBottom,
-            layoutButtonTranslateRight,
-            layoutButtonTranslateWidth,
-            layoutButtonThesaurusTop,
-            layoutButtonThesaurusBottom,
-            layoutButtonThesaurusRight,
-            layoutButtonThesaurusWidth,
+            layoutButtonStoreTop,
+            layoutButtonStoreBottom,
+            layoutButtonStoreRight,
+            layoutButtonStoreWidth,
             layoutLabelTitleTop,
             layoutLabelTitleLeft,
             layoutLabelTitleWidth,
@@ -301,6 +257,12 @@ class VParentBar:UIView
         
         let controllerLanguage:CHomeLanguage = CHomeLanguage()
         controller.animateOver(controller:controllerLanguage)
+    }
+    
+    func actionStore(sender button:UIButton)
+    {
+        let store:CStore = CStore()
+        controller.push(controller:store)
     }
     
     //MARK: private
