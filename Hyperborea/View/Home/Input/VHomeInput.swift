@@ -210,11 +210,11 @@ class VHomeInput:UIView
         {
             if viewPlaceholder.isHidden
             {
-                border.alpha = 0
+                border.alpha = 1
             }
             else
             {
-                border.alpha = 1
+                border.alpha = 0
             }
         }
         
