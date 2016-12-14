@@ -53,16 +53,22 @@ class MSession
     {
         guard
             
+            let plus:Bool = settings?.hyperboreaPlus,
             let languageIdInt:Int16 = settings?.language,
             let fluxStatusInt:Int16 = settings?.fluxStatus,
             let languageId:MSessionLanguage.LanguageId = MSessionLanguage.LanguageId(
                 rawValue:languageIdInt),
-            let fluxStatus:MSessionFlux.Status = MSessionFlux.Status(
+            var fluxStatus:MSessionFlux.Status = MSessionFlux.Status(
                 rawValue:fluxStatusInt)
         
         else
         {
             return
+        }
+        
+        if plus
+        {
+            fluxStatus = MSessionFlux.Status.plus
         }
         
         flux = MSessionFlux.factory(status:fluxStatus)
@@ -78,12 +84,17 @@ class MSession
     private func nextStatusFroob()
     {
         guard
-            
-            let nextStatus:MSessionFlux.Status = flux?.nextStatus
+            let plus:Bool = settings?.hyperboreaPlus,
+            var nextStatus:MSessionFlux.Status = flux?.nextStatus
             
         else
         {
             return
+        }
+        
+        if plus
+        {
+            nextStatus = MSessionFlux.Status.plus
         }
         
         flux = MSessionFlux.factory(status:nextStatus)
