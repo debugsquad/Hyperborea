@@ -145,6 +145,39 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
             multiplier:1,
             constant:0)
         
+        let layoutCollectionTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:viewBar,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutCollectionBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutCollectionLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutCollectionRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:collectionView,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutBarTop,
             layoutBarHeight,
@@ -153,7 +186,11 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
             layoutSpinnerTop,
             layoutSpinnerBottom,
             layoutSpinnerLeft,
-            layoutSpinnerRight])
+            layoutSpinnerRight,
+            layoutCollectionTop,
+            layoutCollectionBottom,
+            layoutCollectionLeft,
+            layoutCollectionRight])
     }
     
     required init?(coder:NSCoder)
