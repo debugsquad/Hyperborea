@@ -239,11 +239,17 @@ class VHomeWordsShare:UIButton
             return
         }
         
+        let titleCount:Int = title.characters.count
+        let firstLetter:String = String(title[title.startIndex]).uppercased()
+        let remainRange:Range = Range(uncheckedBounds:(
+            lower:title.index(title.startIndex, offsetBy:1),
+            upper:title.index(title.startIndex, offsetBy:titleCount - 1)))
+        let remain:String = title[remainRange].lowercased()
         let attributes:[String:Any] = [
-            NSFontAttributeName:UIFont.bold(size:24),
+            NSFontAttributeName:UIFont.bold(size:30),
             NSForegroundColorAttributeName:UIColor.black]
         
-        let titleComposite:String = "\(title)\n"
+        let titleComposite:String = "\(firstLetter)\(remain)\n"
         let titleString:NSAttributedString = NSAttributedString(
             string:titleComposite,
             attributes:attributes)
@@ -253,8 +259,9 @@ class VHomeWordsShare:UIButton
         completeString.append(model.attributedString)
         
         let exportMargin2:CGFloat = kExportMargin + kExportMargin
+        let stringWidth:CGFloat = kExportMaxWidth - exportMargin2
         let maxSize:CGSize = CGSize(
-            width:kExportMaxWidth - exportMargin2,
+            width:stringWidth,
             height:kExportMaxHeight)
         let stringHeight:CGFloat = ceil(completeString.boundingRect(
             with:maxSize,
@@ -266,6 +273,11 @@ class VHomeWordsShare:UIButton
             y:0,
             width:kExportMaxWidth,
             height:completeHeight)
+        let textRect:CGRect = CGRect(
+            x:kExportMargin,
+            y:kExportMargin,
+            width:stringWidth,
+            height:stringHeight)
         
         UIGraphicsBeginImageContext(imageRect.size)
         
@@ -281,7 +293,7 @@ class VHomeWordsShare:UIButton
         context.setFillColor(UIColor.white.cgColor)
         context.fill(imageRect)
          completeString.draw(
-         with:imageRect,
+         with:textRect,
          options:model.options,
          context:nil)
         
