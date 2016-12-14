@@ -8,6 +8,7 @@
 "VHomeFroob_descr"="Get Plus to avoid restrictions";
 "VHomeFroobButtons_buttonStore"="Go Plus";
 "VHomeFroobButtons_buttonCancel"="No thanks";
+"VStoreFooter_buttonRestore"="Restore purchase";
 
 "RModelHomeEntriesEtymologies_title"="Origin";
 "RModelHomeEntriesItemNoun_title"="Noun";
