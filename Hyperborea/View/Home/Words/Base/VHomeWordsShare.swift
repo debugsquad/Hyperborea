@@ -2,19 +2,18 @@ import UIKit
 
 class VHomeWordsShare:UIButton
 {
-    private weak var controller:CHome!
+    private weak var controller:CHome?
     private weak var image:UIImageView!
     private weak var label:UILabel!
     private let kImageWidth:CGFloat = 40
     private let kLabelWidth:CGFloat = 100
     
-    convenience init(controller:CHome)
+    init()
     {
-        self.init()
+        super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
-        self.controller = controller
         
         let image:UIImageView = UIImageView()
         image.isUserInteractionEnabled = false
@@ -111,5 +110,10 @@ class VHomeWordsShare:UIButton
             layoutLabelBottom,
             layoutLabelLeft,
             layoutLabelWidth])
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        fatalError()
     }
 }

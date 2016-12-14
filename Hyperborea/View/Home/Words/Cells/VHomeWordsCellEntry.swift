@@ -4,7 +4,6 @@ class VHomeWordsCellEntry:VHomeWordsCell
 {
     private weak var labelEntity:UILabel!
     private let kLabelEntityTop:CGFloat = 8
-    private let kLabelEntityBottom:CGFloat = -2
     private let kLabelEntityMarginHorizontal:CGFloat = 10
     private let kButtonShareWidth:CGFloat = 150
     private let kButtonShareHeight:CGFloat = 60
@@ -13,7 +12,7 @@ class VHomeWordsCellEntry:VHomeWordsCell
     {
         super.init(frame:frame)
         
-        let buttonShare:UIButton = UIButton()
+        let buttonShare:VHomeWordsShare = VHomeWordsShare()
         
         let labelEntity:UILabel = UILabel()
         labelEntity.translatesAutoresizingMaskIntoConstraints = false
@@ -37,10 +36,10 @@ class VHomeWordsCellEntry:VHomeWordsCell
             item:labelEntity,
             attribute:NSLayoutAttribute.bottom,
             relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.bottom,
+            toItem:buttonShare,
+            attribute:NSLayoutAttribute.top,
             multiplier:1,
-            constant:kLabelEntityBottom)
+            constant:0)
         let layoutLabelEntityLeft:NSLayoutConstraint = NSLayoutConstraint(
             item:labelEntity,
             attribute:NSLayoutAttribute.left,
@@ -58,12 +57,12 @@ class VHomeWordsCellEntry:VHomeWordsCell
             multiplier:1,
             constant:-kLabelEntityMarginHorizontal)
         
-        let layoutButtonShareTop:NSLayoutConstraint = NSLayoutConstraint(
+        let layoutButtonShareBottom:NSLayoutConstraint = NSLayoutConstraint(
             item:buttonShare,
-            attribute:NSLayoutAttribute.top,
+            attribute:NSLayoutAttribute.bottom,
             relatedBy:NSLayoutRelation.equal,
             toItem:self,
-            attribute:NSLayoutAttribute.top,
+            attribute:NSLayoutAttribute.bottom,
             multiplier:1,
             constant:0)
         let layoutButtonShareLeft:NSLayoutConstraint = NSLayoutConstraint(
@@ -96,7 +95,7 @@ class VHomeWordsCellEntry:VHomeWordsCell
             layoutLabelEntityBottom,
             layoutLabelEntityLeft,
             layoutLabelEntityRight,
-            layoutButtonShareTop,
+            layoutButtonSharebottom,
             layoutButtonShareLeft,
             layoutButtonShareWidth,
             layoutButtonShareHeight
