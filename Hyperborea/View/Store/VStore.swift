@@ -75,6 +75,8 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
             VStoreFooter.reusableIdentifier)
         self.collectionView = collectionView
         
+        addSubview(collectionView)
+        addSubview(viewSpinner)
         addSubview(viewBar)
         
         let layoutBarTop:NSLayoutConstraint = NSLayoutConstraint(
@@ -110,15 +112,58 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
             multiplier:1,
             constant:0)
         
+        let layoutSpinnerTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewSpinner,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:viewBar,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewSpinner,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewSpinner,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:viewSpinner,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutBarTop,
             layoutBarHeight,
             layoutBarLeft,
-            layoutBarRight])
+            layoutBarRight,
+            layoutSpinnerTop,
+            layoutSpinnerBottom,
+            layoutSpinnerLeft,
+            layoutSpinnerRight])
     }
     
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    override func layoutSubviews()
+    {
+        collectionView.collectionViewLayout.invalidateLayout()
+        super.layoutSubviews()
     }
 }
