@@ -3,6 +3,7 @@ import UIKit
 class VHomeWordsCellEntry:VHomeWordsCell
 {
     private weak var labelEntity:UILabel!
+    private weak var buttonShare:VHomeWordsShare!
     private let kLabelEntityTop:CGFloat = 8
     private let kLabelEntityMarginHorizontal:CGFloat = 10
     private let kButtonShareWidth:CGFloat = 150
@@ -13,6 +14,7 @@ class VHomeWordsCellEntry:VHomeWordsCell
         super.init(frame:frame)
         
         let buttonShare:VHomeWordsShare = VHomeWordsShare()
+        self.buttonShare = buttonShare
         
         let labelEntity:UILabel = UILabel()
         labelEntity.translatesAutoresizingMaskIntoConstraints = false
@@ -110,23 +112,7 @@ class VHomeWordsCellEntry:VHomeWordsCell
     override func config(controller:CHome, model:RModelHomeEntriesItem)
     {
         super.config(controller:controller, model:model)
-        
+        buttonShare.config(controller:controller, model:model)
         labelEntity.attributedText = model.attributedString
-    }
-    
-    //MARK: actions
-    
-    func actionShare(sender button:UIButton)
-    {
-        guard
-        
-            let model:RModelHomeEntriesItem = self.model
-        
-        else
-        {
-            return
-        }
-        
-        controller?.share(model:model)
     }
 }

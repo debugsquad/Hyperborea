@@ -3,6 +3,8 @@ import UIKit
 class VHomeWordsShare:UIButton
 {
     private weak var controller:CHome?
+    private weak var model:RModelHomeEntriesItem?
+    private weak var spinner:VSpinner!
     private weak var image:UIImageView!
     private weak var label:UILabel!
     private let kImageWidth:CGFloat = 20
@@ -10,6 +12,8 @@ class VHomeWordsShare:UIButton
     private let kLabelTop:CGFloat = 4
     private let kImageLeft:CGFloat = 7
     private let kImageRight:CGFloat = 2
+    private let kExportMaxWidth:CGFloat = 600
+    private let kExportMargin:CGFloat = 30
     
     init()
     {
@@ -17,6 +21,9 @@ class VHomeWordsShare:UIButton
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
+        
+        let spinner:VSpinner = VSpinner()
+        self.spinner = spinner
         
         let image:UIImageView = UIImageView()
         image.isUserInteractionEnabled = false
@@ -37,6 +44,7 @@ class VHomeWordsShare:UIButton
         
         addSubview(image)
         addSubview(label)
+        addSubview(spinner)
         
         let layoutImageTop:NSLayoutConstraint = NSLayoutConstraint(
             item:image,
@@ -138,6 +146,28 @@ class VHomeWordsShare:UIButton
         }
     }
     
+    //MARK: actions
+    
+    func actionShare(sender button:UIButton)
+    {
+        guard
+            
+            let model:RModelHomeEntriesItem = self.model
+            
+        else
+        {
+            return
+        }
+        
+        deactivate()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.share(model:model)
+        }
+    }
+    
     //MARK: private
     
     private func hover()
@@ -152,5 +182,76 @@ class VHomeWordsShare:UIButton
             image.tintColor = UIColor.genericBlue
             label.textColor = UIColor.genericBlue
         }
+    }
+    
+    private func share(model:RModelHomeEntriesItem)
+    {
+        let imageRect:CGRect = CGRect(x:0, y:0, width:500, height:500)
+        
+        UIGraphicsBeginImageContext(imageRect.size)
+        
+        guard
+            
+            let context:CGContext = UIGraphicsGetCurrentContext()
+            
+            else
+        {
+            return
+        }
+        
+        context.setFillColor(UIColor.white.cgColor)
+        context.fill(imageRect)/*
+         model.attributedString.draw(
+         with:imageRect,
+         options:model.options,
+         context:nil)*/
+        
+        guard
+            
+            let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+            
+            else
+        {
+            UIGraphicsEndImageContext()
+            return
+        }
+        
+        UIGraphicsEndImageContext()
+        
+        let activity:UIActivityViewController = UIActivityViewController(
+            activityItems:[image],
+            applicationActivities:nil)
+        
+        if activity.popoverPresentationController != nil
+        {
+            activity.popoverPresentationController!.sourceView = viewHome
+            activity.popoverPresentationController!.sourceRect = CGRect.zero
+            activity.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.up
+        }
+        
+        present(activity, animated:true)
+    }
+    
+    private func deactivate()
+    {
+        isUserInteractionEnabled = false
+        spinner.startAnimating()
+        image.isHidden = true
+    }
+    
+    private func activate()
+    {
+        isUserInteractionEnabled = true
+        spinner.stopAnimating()
+        image.isHidden = false
+    }
+    
+    //MARK: public
+    
+    func config(controller:CHome, model:RModelHomeEntriesItem)
+    {
+        self.controller = controller
+        self.model = model
+        activate()
     }
 }
