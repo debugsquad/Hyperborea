@@ -40,7 +40,7 @@ class VStoreBar:UIView
         imageView.isUserInteractionEnabled = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIViewContentMode.center
         imageView.image = #imageLiteral(resourceName: "assetGenericStore")
         
         let border:UIView = UIView()

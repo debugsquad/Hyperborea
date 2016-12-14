@@ -4,7 +4,7 @@ class VStore:VView
 {
     private weak var controller:CStore!
     private let kBarTop:CGFloat = 20
-    private let kBarHeight:CGFloat = 44
+    private let kBarHeight:CGFloat = 64
     
     override init(controller:CController)
     {
