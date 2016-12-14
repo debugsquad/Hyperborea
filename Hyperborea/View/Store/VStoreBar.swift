@@ -36,7 +36,15 @@ class VStoreBar:UIView
             action:#selector(self.actionBack(sender:)),
             for:UIControlEvents.touchUpInside)
         
+        let imageView:UIImageView = UIImageView()
+        imageView.isUserInteractionEnabled = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.contentMode = UIViewContentMode.center
+        imageView.image = #imageLiteral(resourceName: "assetGenericStore")
+        
         addSubview(button)
+        addSubview(imageView)
         
         let layoutButtonTop:NSLayoutConstraint = NSLayoutConstraint(
             item:button,
@@ -71,11 +79,48 @@ class VStoreBar:UIView
             multiplier:1,
             constant:kButtonWidth)
         
+        let layoutImageTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutImageBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutImageLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutImageRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:imageView,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutButtonTop,
             layoutButtonBottom,
             layoutButtonLeft,
-            layoutButtonWidth])
+            layoutButtonWidth,
+            layoutImageTop,
+            layoutImageBottom,
+            layoutImageLeft,
+            layoutImageRight])
     }
     
     //MARK: actions
