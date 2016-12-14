@@ -13,6 +13,7 @@ class VHomeWordsShare:UIButton
     private let kImageLeft:CGFloat = 7
     private let kImageRight:CGFloat = 2
     private let kSpinnerWidth:CGFloat = 70
+    private let kTitleFontSize:CGFloat = 40
     private let kExportMaxWidth:CGFloat = 600
     private let kExportMaxHeight:CGFloat = 12000
     private let kExportMargin:CGFloat = 30
@@ -243,10 +244,10 @@ class VHomeWordsShare:UIButton
         let firstLetter:String = String(title[title.startIndex]).uppercased()
         let remainRange:Range = Range(uncheckedBounds:(
             lower:title.index(title.startIndex, offsetBy:1),
-            upper:title.index(title.startIndex, offsetBy:titleCount - 1)))
+            upper:title.index(title.startIndex, offsetBy:titleCount)))
         let remain:String = title[remainRange].lowercased()
         let attributes:[String:Any] = [
-            NSFontAttributeName:UIFont.bold(size:30),
+            NSFontAttributeName:UIFont.bold(size:kTitleFontSize),
             NSForegroundColorAttributeName:UIColor.black]
         
         let titleComposite:String = "\(firstLetter)\(remain)\n"
