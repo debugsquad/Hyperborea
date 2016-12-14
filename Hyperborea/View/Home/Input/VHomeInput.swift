@@ -226,6 +226,7 @@ class VHomeInput:UIView
     func showPlaceholder()
     {
         viewPlaceholder.isHidden = false
+        border.alpha = 0
     }
     
     func hidePlaceholder()

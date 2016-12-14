@@ -7,7 +7,7 @@ class RModelHomeEntriesItemAdjective:RModelHomeEntriesItem
     required init(json:Any)
     {
         let attributes:[String:Any] = [
-            NSFontAttributeName:UIFont.bold(
+            NSFontAttributeName:UIFont.medium(
                 size:RModelHomeEntriesItem.kTitleFontSize),
             NSForegroundColorAttributeName:UIColor(
                 white:RModelHomeEntriesItem.kTitleWhite,

@@ -112,7 +112,7 @@ class RModelHomeEntriesSenses
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
         let attributesTitle:[String:Any] = [
-            NSFontAttributeName:UIFont.medium(
+            NSFontAttributeName:UIFont.regular(
                 size:RModelHomeEntriesItem.kDefinitionFontSize),
             NSForegroundColorAttributeName:UIColor(
                 white:RModelHomeEntriesItem.kDefinitionWhite,

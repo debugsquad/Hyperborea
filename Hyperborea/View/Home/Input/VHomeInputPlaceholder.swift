@@ -17,7 +17,7 @@ class VHomeInputPlaceholder:UIView
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.medium(size:32)
+        label.font = UIFont.regular(size:32)
         label.textColor = UIColor(white:0.85, alpha:1)
         label.text = NSLocalizedString("VHomeInputPlaceholder_label", comment:"")
         
