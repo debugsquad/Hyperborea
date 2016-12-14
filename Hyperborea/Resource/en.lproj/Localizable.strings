@@ -22,6 +22,7 @@
 "RModelHomeEntriesItemVerb_title"="Verb";
 "RModelHomeEntriesItemAdjective_title"="Adjective";
 "RModelHomeEntriesItemAdverb_title"="Adverb";
+"RModelHomeEntriesItemCombiningForm_title"="Combining form";
 
 "MSessionLanguageEnglish_name"="English";
 "MSessionLanguageSpanish_name"="Spanish";
