@@ -40,11 +40,18 @@ class VStoreBar:UIView
         imageView.isUserInteractionEnabled = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
-        imageView.contentMode = UIViewContentMode.center
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
         imageView.image = #imageLiteral(resourceName: "assetGenericStore")
+        
+        let border:UIView = UIView()
+        border.isUserInteractionEnabled = false
+        border.translatesAutoresizingMaskIntoConstraints = false
+        border.backgroundColor = UIColor.genericBorder
+        border.clipsToBounds = true
         
         addSubview(button)
         addSubview(imageView)
+        addSubview(border)
         
         let layoutButtonTop:NSLayoutConstraint = NSLayoutConstraint(
             item:button,
@@ -112,6 +119,39 @@ class VStoreBar:UIView
             multiplier:1,
             constant:0)
         
+        let layoutBorderHeight:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.height,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:1)
+        let layoutBorderBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutBorderLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutBorderRight:NSLayoutConstraint = NSLayoutConstraint(
+            item:border,
+            attribute:NSLayoutAttribute.right,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.right,
+            multiplier:1,
+            constant:0)
+        
         addConstraints([
             layoutButtonTop,
             layoutButtonBottom,
@@ -120,7 +160,11 @@ class VStoreBar:UIView
             layoutImageTop,
             layoutImageBottom,
             layoutImageLeft,
-            layoutImageRight])
+            layoutImageRight,
+            layoutBorderHeight,
+            layoutBorderBottom,
+            layoutBorderLeft,
+            layoutBorderRight])
     }
     
     //MARK: actions
