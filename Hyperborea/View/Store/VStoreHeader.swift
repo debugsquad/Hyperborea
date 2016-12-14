@@ -8,7 +8,8 @@ class VStoreHeader:UICollectionReusableView
     private weak var label:UILabel!
     private weak var imageView:UIImageView!
     private weak var layoutLabelHeight:NSLayoutConstraint!
-    private let kLabelTop:CGFloat = 22
+    private let kLabelTop:CGFloat = 16
+    private let kLabelLeft:CGFloat = 10
     private let kLabelRight:CGFloat = -10
     private let kImageViewSize:CGFloat = 72
     
@@ -70,7 +71,7 @@ class VStoreHeader:UICollectionReusableView
             toItem:imageView,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
-            constant:0)
+            constant:kLabelLeft)
         let layoutLabelRight:NSLayoutConstraint = NSLayoutConstraint(
             item:label,
             attribute:NSLayoutAttribute.right,
