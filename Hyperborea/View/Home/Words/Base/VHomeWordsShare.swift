@@ -25,7 +25,6 @@ class VHomeWordsShare:UIButton
         image.contentMode = UIViewContentMode.center
         image.image = #imageLiteral(resourceName: "assetHomeShare").withRenderingMode(
             UIImageRenderingMode.alwaysTemplate)
-        image.tintColor = UIColor.genericBlue
         self.image = image
         
         let label:UILabel = UILabel()
@@ -33,7 +32,6 @@ class VHomeWordsShare:UIButton
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(size:14)
-        label.textColor = UIColor.genericBlue
         label.text = NSLocalizedString("VHomeWordsShare", comment:"")
         self.label = label
         
@@ -115,10 +113,44 @@ class VHomeWordsShare:UIButton
             layoutLabelBottom,
             layoutLabelLeft,
             layoutLabelWidth])
+        
+        hover()
     }
     
     required init?(coder:NSCoder)
     {
         fatalError()
+    }
+    
+    override var isSelected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var isHighlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    //MARK: private
+    
+    private func hover()
+    {
+        if isSelected || isHighlighted
+        {
+            image.tintColor = UIColor.black
+            label.textColor = UIColor.black
+        }
+        else
+        {
+            image.tintColor = UIColor.genericBlue
+            label.textColor = UIColor.genericBlue
+        }
     }
 }
