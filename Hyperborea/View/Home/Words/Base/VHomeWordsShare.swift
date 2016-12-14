@@ -5,8 +5,11 @@ class VHomeWordsShare:UIButton
     private weak var controller:CHome?
     private weak var image:UIImageView!
     private weak var label:UILabel!
-    private let kImageWidth:CGFloat = 40
+    private let kImageWidth:CGFloat = 20
     private let kLabelWidth:CGFloat = 100
+    private let kLabelTop:CGFloat = 4
+    private let kImageLeft:CGFloat = 7
+    private let kImageRight:CGFloat = 2
     
     init()
     {
@@ -20,15 +23,17 @@ class VHomeWordsShare:UIButton
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
         image.contentMode = UIViewContentMode.center
-        image.image = #imageLiteral(resourceName: "assetHomeShare")
+        image.image = #imageLiteral(resourceName: "assetHomeShare").withRenderingMode(
+            UIImageRenderingMode.alwaysTemplate)
+        image.tintColor = UIColor.genericBlue
         self.image = image
         
         let label:UILabel = UILabel()
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.medium(size:13)
-        label.textColor = UIColor.black
+        label.font = UIFont.bold(size:14)
+        label.textColor = UIColor.genericBlue
         label.text = NSLocalizedString("VHomeWordsShare", comment:"")
         self.label = label
         
@@ -58,7 +63,7 @@ class VHomeWordsShare:UIButton
             toItem:self,
             attribute:NSLayoutAttribute.left,
             multiplier:1,
-            constant:0)
+            constant:kImageLeft)
         let layoutImageWidth:NSLayoutConstraint = NSLayoutConstraint(
             item:image,
             attribute:NSLayoutAttribute.width,
@@ -75,7 +80,7 @@ class VHomeWordsShare:UIButton
             toItem:self,
             attribute:NSLayoutAttribute.top,
             multiplier:1,
-            constant:0)
+            constant:kLabelTop)
         let layoutLabelBottom:NSLayoutConstraint = NSLayoutConstraint(
             item:label,
             attribute:NSLayoutAttribute.bottom,
@@ -91,7 +96,7 @@ class VHomeWordsShare:UIButton
             toItem:image,
             attribute:NSLayoutAttribute.right,
             multiplier:1,
-            constant:0)
+            constant:kImageRight)
         let layoutLabelWidth:NSLayoutConstraint = NSLayoutConstraint(
             item:label,
             attribute:NSLayoutAttribute.width,

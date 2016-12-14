@@ -95,7 +95,7 @@ class VHomeWordsCellEntry:VHomeWordsCell
             layoutLabelEntityBottom,
             layoutLabelEntityLeft,
             layoutLabelEntityRight,
-            layoutButtonSharebottom,
+            layoutButtonShareBottom,
             layoutButtonShareLeft,
             layoutButtonShareWidth,
             layoutButtonShareHeight
