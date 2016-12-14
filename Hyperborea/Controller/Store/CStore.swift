@@ -1,6 +1,7 @@
 import UIKit
+import StoreKit
 
-class CStore:CController
+class CStore:CController, SKProductsRequestDelegate, SKPaymentTransactionObserver, SKRequestDelegate
 {
     private weak var viewStore:VStore!
     
