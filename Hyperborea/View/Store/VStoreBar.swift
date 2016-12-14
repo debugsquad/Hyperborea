@@ -30,7 +30,7 @@ class VStoreBar:UIView
             top:0,
             left:0,
             bottom:0,
-            right:20)
+            right:30)
         button.addTarget(
             self,
             action:#selector(self.actionBack(sender:)),
