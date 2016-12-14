@@ -9,8 +9,8 @@ class VStoreHeader:UICollectionReusableView
     private weak var imageView:UIImageView!
     private weak var layoutLabelHeight:NSLayoutConstraint!
     private let kLabelTop:CGFloat = 22
-    private let kLabelRight:CGFloat = -20
-    private let kImageViewSize:CGFloat = 100
+    private let kLabelRight:CGFloat = -10
+    private let kImageViewSize:CGFloat = 72
     
     override init(frame:CGRect)
     {
@@ -68,7 +68,7 @@ class VStoreHeader:UICollectionReusableView
             attribute:NSLayoutAttribute.left,
             relatedBy:NSLayoutRelation.equal,
             toItem:imageView,
-            attribute:NSLayoutAttribute.left,
+            attribute:NSLayoutAttribute.right,
             multiplier:1,
             constant:0)
         let layoutLabelRight:NSLayoutConstraint = NSLayoutConstraint(
@@ -111,7 +111,7 @@ class VStoreHeader:UICollectionReusableView
             toItem:nil,
             attribute:NSLayoutAttribute.notAnAttribute,
             multiplier:1,
-            constant:0)
+            constant:kImageViewSize)
         
         addConstraints([
             layoutLabelTop,

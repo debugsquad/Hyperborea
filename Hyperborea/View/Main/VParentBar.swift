@@ -272,6 +272,8 @@ class VParentBar:UIView
     
     func actionStore(sender button:UIButton)
     {
+        UIApplication.shared.keyWindow!.endEditing(true)
+        
         let store:CStore = CStore()
         controller.push(controller:store)
     }
