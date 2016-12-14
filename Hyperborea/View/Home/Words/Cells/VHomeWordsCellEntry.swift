@@ -6,37 +6,14 @@ class VHomeWordsCellEntry:VHomeWordsCell
     private let kLabelEntityTop:CGFloat = 8
     private let kLabelEntityBottom:CGFloat = -2
     private let kLabelEntityMarginHorizontal:CGFloat = 10
-    private let kButtonShareWidth:CGFloat = 90
+    private let kButtonShareWidth:CGFloat = 150
     private let kButtonShareHeight:CGFloat = 60
-    private let kButtonShareRight:CGFloat = 56
-    private let kButtonShareBottom:CGFloat = 35
     
     override init(frame:CGRect)
     {
         super.init(frame:frame)
         
         let buttonShare:UIButton = UIButton()
-        buttonShare.translatesAutoresizingMaskIntoConstraints = false
-        buttonShare.backgroundColor = UIColor.clear
-        buttonShare.setImage(
-            #imageLiteral(resourceName: "assetHomeShare").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
-            for:UIControlState.normal)
-        buttonShare.setImage(
-            #imageLiteral(resourceName: "assetHomeShare").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
-            for:UIControlState.highlighted)
-        buttonShare.imageView!.contentMode = UIViewContentMode.center
-        buttonShare.imageView!.clipsToBounds = true
-        buttonShare.imageView!.tintColor = UIColor.genericBlue
-        buttonShare.imageEdgeInsets = UIEdgeInsets(
-            top:0,
-            left:0,
-            bottom:kButtonShareBottom,
-            right:kButtonShareRight)
-        buttonShare.isHidden = true
-        buttonShare.addTarget(
-            self,
-            action:#selector(self.actionShare(sender:)),
-            for:UIControlEvents.touchUpInside)
         
         let labelEntity:UILabel = UILabel()
         labelEntity.translatesAutoresizingMaskIntoConstraints = false
