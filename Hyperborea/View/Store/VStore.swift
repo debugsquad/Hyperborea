@@ -203,4 +203,146 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         collectionView.collectionViewLayout.invalidateLayout()
         super.layoutSubviews()
     }
+    
+    //MARK: private
+    
+    private func modelAtIndex(index:IndexPath) -> MStoreItem
+    {
+        let itemId:MStore.PurchaseId = controller.model.references[index.section]
+        let item:MStoreItem = controller.model.mapItems[itemId]!
+        
+        return item
+    }
+    
+    //MARK: public
+    
+    func refreshStore()
+    {
+        DispatchQueue.main.async
+            { [weak self] in
+                
+                self?.viewSpinner?.removeFromSuperview()
+                self?.collectionView.reloadData()
+                self?.collectionView.isHidden = false
+                
+                guard
+                    
+                    let errorMessage:String = self?.controller.model.error
+                    
+                    else
+                {
+                    return
+                }
+                
+                VAlert.message(message:errorMessage)
+        }
+    }
+    
+    //MARK: collection delegate
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForFooterInSection section:Int) -> CGSize
+    {
+        let indexPath:IndexPath = IndexPath(item:0, section:section)
+        let item:MStoreItem = modelAtIndex(index:indexPath)
+        let size:CGSize
+        
+        if item.status?.restorable == true
+        {
+            size = CGSize(width:0, height:kFooterHeight)
+        }
+        else
+        {
+            size = CGSize.zero
+        }
+        
+        return size
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let item:MStoreItem = modelAtIndex(index:indexPath)
+        let cellHeight:CGFloat = item.status!.cellHeight
+        let width:CGFloat = collectionView.bounds.maxX
+        let size:CGSize = CGSize(width:width, height:cellHeight)
+        
+        return size
+    }
+    
+    func numberOfSections(in collectionView:UICollectionView) -> Int
+    {
+        let count:Int = controller.model.references.count
+        
+        return count
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    {
+        let indexPath:IndexPath = IndexPath(item:0, section:section)
+        let item:MStoreItem = modelAtIndex(index:indexPath)
+        
+        guard
+            
+            let _:MStoreItemStatus = item.status
+            
+            else
+        {
+            return 0
+        }
+        
+        return 1
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
+    {
+        let reusable:UICollectionReusableView
+        
+        if kind == UICollectionElementKindSectionHeader
+        {
+            let item:MStoreItem = modelAtIndex(index:indexPath)
+            let header:VStoreHeader = collectionView.dequeueReusableSupplementaryView(
+                ofKind:kind,
+                withReuseIdentifier:
+                VStoreHeader.reusableIdentifier,
+                for:indexPath) as! VStoreHeader
+            header.config(model:item)
+            reusable = header
+        }
+        else
+        {
+            let footer:VStoreFooter = collectionView.dequeueReusableSupplementaryView(
+                ofKind:kind,
+                withReuseIdentifier:
+                VStoreFooter.reusableIdentifier,
+                for:indexPath) as! VStoreFooter
+            footer.config(controller:controller)
+            
+            reusable = footer
+        }
+        
+        return reusable
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
+    {
+        let item:MStoreItem = modelAtIndex(index:indexPath)
+        let reusableIdentifier:String = item.status!.reusableIdentifier
+        
+        let cell:VStoreCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier:
+            reusableIdentifier,
+            for:indexPath) as! VStoreCell
+        cell.config(controller:controller, model:item)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldHighlightItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
+    }
 }
