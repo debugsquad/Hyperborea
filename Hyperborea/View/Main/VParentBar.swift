@@ -12,6 +12,7 @@ class VParentBar:UIView
     private let kImageWidth:CGFloat = 22
     private let kTitleLeft:CGFloat = 4
     private let kTitleWidth:CGFloat = 105
+    private let kTitleTop:CGFloat = 2
     private let kButtonsWidth:CGFloat = 45
     private let kButtonsInset:CGFloat = 10
     private let kButtonsRight:CGFloat = -5
@@ -205,7 +206,7 @@ class VParentBar:UIView
             toItem:self,
             attribute:NSLayoutAttribute.top,
             multiplier:1,
-            constant:kContentTop)
+            constant:kContentTop + kTitleTop)
         let layoutLabelTitleBottom:NSLayoutConstraint = NSLayoutConstraint(
             item:labelTitle,
             attribute:NSLayoutAttribute.bottom,
