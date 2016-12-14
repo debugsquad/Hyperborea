@@ -11,7 +11,11 @@ class MStoreItem
     private(set) var price:String?
     private(set) var status:MStoreItemStatus?
     
-    init(purchaseId:MStore.PurchaseId, title:String, descr:String, image:UIImage)
+    init(
+        purchaseId:MStore.PurchaseId,
+        title:String,
+        descr:String,
+        image:UIImage)
     {
         self.purchaseId = purchaseId
         self.title = title

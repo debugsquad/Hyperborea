@@ -2,13 +2,13 @@ import UIKit
 
 class MStoreItemPlus:MStoreItem
 {
-    private let kStorePurchaseId:MStore.PurchaseId = "iturbide.nubecero.nubeceroplus"
+    private let kStorePurchaseId:MStore.PurchaseId = "iturbide.Hyperborea.abc"
     
     override init()
     {
         let title:String = NSLocalizedString("MStoreItemPlus_title", comment:"")
         let descr:String = NSLocalizedString("MStoreItemPlus_descr", comment:"")
-        let image:UIImage = #imageLiteral(resourceName: "assetPurchasePlus")
+        let image:UIImage = #imageLiteral(resourceName: "assetGenericPlus")
         super.init(
             purchaseId:kStorePurchaseId,
             title:title,
@@ -16,14 +16,18 @@ class MStoreItemPlus:MStoreItem
             image:image)
     }
     
-    override init(purchaseId:MStore.PurchaseId, title:String, descr:String, image:UIImage)
+    override init(
+        purchaseId:MStore.PurchaseId,
+        title:String,
+        descr:String,
+        image:UIImage)
     {
         fatalError()
     }
     
     override func purchaseAction()
     {
-        MSession.sharedInstance.settings.current?.nubeceroPlus = true
+        MSession.sharedInstance.settings?.hyperboreaPlus = true
         DManager.sharedInstance.save()
     }
     
@@ -33,7 +37,7 @@ class MStoreItemPlus:MStoreItem
         
         guard
             
-            let plus:Bool = MSession.sharedInstance.settings.current?.nubeceroPlus
+            let plus:Bool = MSession.sharedInstance.settings?.hyperboreaPlus
             
         else
         {
