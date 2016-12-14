@@ -208,7 +208,14 @@ class VHomeInput:UIView
         }
         else
         {
-            border.alpha = 0
+            if viewPlaceholder.isHidden
+            {
+                border.alpha = 0
+            }
+            else
+            {
+                border.alpha = 1
+            }
         }
         
         super.layoutSubviews()
