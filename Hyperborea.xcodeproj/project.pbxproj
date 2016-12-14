@@ -34,10 +34,6 @@
 		DA2BBA1D1DF8979800C450C8 /* RModelHomeEntriesItemNoun.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BBA181DF8979800C450C8 /* RModelHomeEntriesItemNoun.swift */; };
 		DA2BBA1E1DF8979800C450C8 /* RModelHomeEntriesItemVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BBA191DF8979800C450C8 /* RModelHomeEntriesItemVerb.swift */; };
 		DA2BBA201DF897C800C450C8 /* RModelHomeEntriesSenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BBA1F1DF897C800C450C8 /* RModelHomeEntriesSenses.swift */; };
-		DA5097791DFB2FC60088821E /* MSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5097781DFB2FC60088821E /* MSession.swift */; };
-		DA50977B1DFB2FF00088821E /* MSessionLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50977A1DFB2FF00088821E /* MSessionLanguage.swift */; };
-		DA50977D1DFB30150088821E /* MSessionLanguageEnglish.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50977C1DFB30150088821E /* MSessionLanguageEnglish.swift */; };
-		DA50977F1DFB303C0088821E /* MSessionLanguageSpanish.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50977E1DFB303C0088821E /* MSessionLanguageSpanish.swift */; };
 		DA61436A1DF9FC440029A596 /* VHomeWordsCellOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6143691DF9FC440029A596 /* VHomeWordsCellOrigin.swift */; };
 		DA61436C1DF9FD8F0029A596 /* RModelHomeEntriesItemOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61436B1DF9FD8F0029A596 /* RModelHomeEntriesItemOrigin.swift */; };
 		DA61436E1DFA07190029A596 /* RModelHomeEntriesTense.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61436D1DFA07190029A596 /* RModelHomeEntriesTense.swift */; };
@@ -95,13 +91,17 @@
 		DAEBCFFC1E01A5EC000C8A04 /* VStoreCellPurchasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBCFFB1E01A5EC000C8A04 /* VStoreCellPurchasing.swift */; };
 		DAEBCFFE1E01A5F7000C8A04 /* VStoreCellPurchased.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBCFFD1E01A5F7000C8A04 /* VStoreCellPurchased.swift */; };
 		DAEBD0001E01A608000C8A04 /* VStoreCellNotAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBCFFF1E01A608000C8A04 /* VStoreCellNotAvailable.swift */; };
+		DAEBD00C1E01AF0D000C8A04 /* MSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0021E01AF0D000C8A04 /* MSession.swift */; };
+		DAEBD00D1E01AF0D000C8A04 /* MSessionFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0031E01AF0D000C8A04 /* MSessionFlux.swift */; };
+		DAEBD00E1E01AF0D000C8A04 /* MSessionFluxEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0041E01AF0D000C8A04 /* MSessionFluxEmpty.swift */; };
+		DAEBD00F1E01AF0D000C8A04 /* MSessionFluxFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0051E01AF0D000C8A04 /* MSessionFluxFull.swift */; };
+		DAEBD0101E01AF0D000C8A04 /* MSessionFluxOneLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0061E01AF0D000C8A04 /* MSessionFluxOneLeft.swift */; };
+		DAEBD0111E01AF0D000C8A04 /* MSessionFluxTwoLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0071E01AF0D000C8A04 /* MSessionFluxTwoLeft.swift */; };
+		DAEBD0121E01AF0D000C8A04 /* MSessionLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0081E01AF0D000C8A04 /* MSessionLanguage.swift */; };
+		DAEBD0131E01AF0D000C8A04 /* MSessionLanguageEnglish.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0091E01AF0D000C8A04 /* MSessionLanguageEnglish.swift */; };
+		DAEBD0141E01AF0D000C8A04 /* MSessionLanguageSpanish.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD00A1E01AF0D000C8A04 /* MSessionLanguageSpanish.swift */; };
 		DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */; };
 		DAFCEFDD1DFF3EB7006366E3 /* VHomeHelperFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */; };
-		DAFCEFE11DFF4824006366E3 /* MSessionFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE01DFF4824006366E3 /* MSessionFlux.swift */; };
-		DAFCEFE31DFF4891006366E3 /* MSessionFluxFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE21DFF4891006366E3 /* MSessionFluxFull.swift */; };
-		DAFCEFE51DFF4BFC006366E3 /* MSessionFluxTwoLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE41DFF4BFC006366E3 /* MSessionFluxTwoLeft.swift */; };
-		DAFCEFE71DFF4FD1006366E3 /* MSessionFluxOneLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE61DFF4FD1006366E3 /* MSessionFluxOneLeft.swift */; };
-		DAFCEFE91DFF5005006366E3 /* MSessionFluxEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE81DFF5005006366E3 /* MSessionFluxEmpty.swift */; };
 		DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEB1DFF581E006366E3 /* CLoading.swift */; };
 		DAFCEFEF1DFF5856006366E3 /* VLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEE1DFF5856006366E3 /* VLoading.swift */; };
 		DAFCEFF11DFF5BBE006366E3 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAFCEFF01DFF5BBE006366E3 /* generic.xcassets */; };
@@ -136,10 +136,6 @@
 		DA2BBA181DF8979800C450C8 /* RModelHomeEntriesItemNoun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemNoun.swift; sourceTree = "<group>"; };
 		DA2BBA191DF8979800C450C8 /* RModelHomeEntriesItemVerb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemVerb.swift; sourceTree = "<group>"; };
 		DA2BBA1F1DF897C800C450C8 /* RModelHomeEntriesSenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesSenses.swift; sourceTree = "<group>"; };
-		DA5097781DFB2FC60088821E /* MSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSession.swift; sourceTree = "<group>"; };
-		DA50977A1DFB2FF00088821E /* MSessionLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionLanguage.swift; sourceTree = "<group>"; };
-		DA50977C1DFB30150088821E /* MSessionLanguageEnglish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionLanguageEnglish.swift; sourceTree = "<group>"; };
-		DA50977E1DFB303C0088821E /* MSessionLanguageSpanish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionLanguageSpanish.swift; sourceTree = "<group>"; };
 		DA6143691DF9FC440029A596 /* VHomeWordsCellOrigin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsCellOrigin.swift; sourceTree = "<group>"; };
 		DA61436B1DF9FD8F0029A596 /* RModelHomeEntriesItemOrigin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemOrigin.swift; sourceTree = "<group>"; };
 		DA61436D1DFA07190029A596 /* RModelHomeEntriesTense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesTense.swift; sourceTree = "<group>"; };
@@ -200,13 +196,17 @@
 		DAEBCFFB1E01A5EC000C8A04 /* VStoreCellPurchasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreCellPurchasing.swift; sourceTree = "<group>"; };
 		DAEBCFFD1E01A5F7000C8A04 /* VStoreCellPurchased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreCellPurchased.swift; sourceTree = "<group>"; };
 		DAEBCFFF1E01A608000C8A04 /* VStoreCellNotAvailable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreCellNotAvailable.swift; sourceTree = "<group>"; };
+		DAEBD0021E01AF0D000C8A04 /* MSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSession.swift; sourceTree = "<group>"; };
+		DAEBD0031E01AF0D000C8A04 /* MSessionFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFlux.swift; sourceTree = "<group>"; };
+		DAEBD0041E01AF0D000C8A04 /* MSessionFluxEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxEmpty.swift; sourceTree = "<group>"; };
+		DAEBD0051E01AF0D000C8A04 /* MSessionFluxFull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxFull.swift; sourceTree = "<group>"; };
+		DAEBD0061E01AF0D000C8A04 /* MSessionFluxOneLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxOneLeft.swift; sourceTree = "<group>"; };
+		DAEBD0071E01AF0D000C8A04 /* MSessionFluxTwoLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxTwoLeft.swift; sourceTree = "<group>"; };
+		DAEBD0081E01AF0D000C8A04 /* MSessionLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionLanguage.swift; sourceTree = "<group>"; };
+		DAEBD0091E01AF0D000C8A04 /* MSessionLanguageEnglish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionLanguageEnglish.swift; sourceTree = "<group>"; };
+		DAEBD00A1E01AF0D000C8A04 /* MSessionLanguageSpanish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionLanguageSpanish.swift; sourceTree = "<group>"; };
 		DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHyperborea.xcdatamodel; sourceTree = "<group>"; };
 		DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperFlux.swift; sourceTree = "<group>"; };
-		DAFCEFE01DFF4824006366E3 /* MSessionFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFlux.swift; sourceTree = "<group>"; };
-		DAFCEFE21DFF4891006366E3 /* MSessionFluxFull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxFull.swift; sourceTree = "<group>"; };
-		DAFCEFE41DFF4BFC006366E3 /* MSessionFluxTwoLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxTwoLeft.swift; sourceTree = "<group>"; };
-		DAFCEFE61DFF4FD1006366E3 /* MSessionFluxOneLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxOneLeft.swift; sourceTree = "<group>"; };
-		DAFCEFE81DFF5005006366E3 /* MSessionFluxEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFluxEmpty.swift; sourceTree = "<group>"; };
 		DAFCEFEB1DFF581E006366E3 /* CLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLoading.swift; sourceTree = "<group>"; };
 		DAFCEFEE1DFF5856006366E3 /* VLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLoading.swift; sourceTree = "<group>"; };
 		DAFCEFF01DFF5BBE006366E3 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -492,15 +492,8 @@
 		DAAD34511DF2332500C5D3D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DA5097781DFB2FC60088821E /* MSession.swift */,
-				DA50977A1DFB2FF00088821E /* MSessionLanguage.swift */,
-				DA50977C1DFB30150088821E /* MSessionLanguageEnglish.swift */,
-				DA50977E1DFB303C0088821E /* MSessionLanguageSpanish.swift */,
-				DAFCEFE01DFF4824006366E3 /* MSessionFlux.swift */,
-				DAFCEFE21DFF4891006366E3 /* MSessionFluxFull.swift */,
-				DAFCEFE41DFF4BFC006366E3 /* MSessionFluxTwoLeft.swift */,
-				DAFCEFE61DFF4FD1006366E3 /* MSessionFluxOneLeft.swift */,
-				DAFCEFE81DFF5005006366E3 /* MSessionFluxEmpty.swift */,
+				DAEBD0011E01AF0D000C8A04 /* Session */,
+				DAEBD00B1E01AF0D000C8A04 /* Store */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -603,6 +596,29 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		DAEBD0011E01AF0D000C8A04 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				DAEBD0021E01AF0D000C8A04 /* MSession.swift */,
+				DAEBD0031E01AF0D000C8A04 /* MSessionFlux.swift */,
+				DAEBD0041E01AF0D000C8A04 /* MSessionFluxEmpty.swift */,
+				DAEBD0051E01AF0D000C8A04 /* MSessionFluxFull.swift */,
+				DAEBD0061E01AF0D000C8A04 /* MSessionFluxOneLeft.swift */,
+				DAEBD0071E01AF0D000C8A04 /* MSessionFluxTwoLeft.swift */,
+				DAEBD0081E01AF0D000C8A04 /* MSessionLanguage.swift */,
+				DAEBD0091E01AF0D000C8A04 /* MSessionLanguageEnglish.swift */,
+				DAEBD00A1E01AF0D000C8A04 /* MSessionLanguageSpanish.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		DAEBD00B1E01AF0D000C8A04 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		DAFCEFEA1DFF5814006366E3 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,29 +714,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAAD34751DF2332500C5D3D1 /* VAlert.swift in Sources */,
+				DAEBD00D1E01AF0D000C8A04 /* MSessionFlux.swift in Sources */,
 				DA63C3C71DF5CDE10026169C /* RMain.swift in Sources */,
 				DA2BBA061DF873D700C450C8 /* VHomeInput.swift in Sources */,
 				DA2BBA021DF873D700C450C8 /* VHomeHelper.swift in Sources */,
 				DA2BBA121DF8743A00C450C8 /* VHomeWordsCellEntry.swift in Sources */,
+				DAEBD00F1E01AF0D000C8A04 /* MSessionFluxFull.swift in Sources */,
 				DA63C3D81DF5F4F70026169C /* RUrl.swift in Sources */,
 				DAAD34891DF23C3A00C5D3D1 /* VView.swift in Sources */,
+				DAEBD0111E01AF0D000C8A04 /* MSessionFluxTwoLeft.swift in Sources */,
 				DA2BBA0C1DF873D700C450C8 /* VHomeWordsCell.swift in Sources */,
 				DA61436E1DFA07190029A596 /* RModelHomeEntriesTense.swift in Sources */,
 				DA63C3C91DF5CE010026169C /* RMainDelegate.swift in Sources */,
 				DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */,
 				DA2BBA071DF873D700C450C8 /* VHomeInputPlaceholder.swift in Sources */,
-				DA50977F1DFB303C0088821E /* MSessionLanguageSpanish.swift in Sources */,
+				DAEBD0101E01AF0D000C8A04 /* MSessionFluxOneLeft.swift in Sources */,
 				DAAD34691DF2332500C5D3D1 /* ExtensionNotification.swift in Sources */,
+				DAEBD0121E01AF0D000C8A04 /* MSessionLanguage.swift in Sources */,
 				DAAD347A1DF2332500C5D3D1 /* VSpinner.swift in Sources */,
 				DA2BBA041DF873D700C450C8 /* VHomeHelperClear.swift in Sources */,
+				DAEBD00C1E01AF0D000C8A04 /* MSession.swift in Sources */,
 				DAAD34651DF2332500C5D3D1 /* CAppDelegate.swift in Sources */,
 				DA9FA4841E005CAC003E0719 /* VHomeFroobClock.swift in Sources */,
 				DAD7B4A61DFF32740043EEF0 /* ExtensionNSManagedObject.swift in Sources */,
+				DAEBD0141E01AF0D000C8A04 /* MSessionLanguageSpanish.swift in Sources */,
 				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
 				DAEBCFFE1E01A5F7000C8A04 /* VStoreCellPurchased.swift in Sources */,
 				DA2BBA081DF873D700C450C8 /* VHomeInputText.swift in Sources */,
 				DA63C3E91DF659F60026169C /* RCredentialsItem1.swift in Sources */,
 				DA9FA48C1E00BCB7003E0719 /* VStore.swift in Sources */,
+				DAEBD0131E01AF0D000C8A04 /* MSessionLanguageEnglish.swift in Sources */,
 				DAAD346C1DF2332500C5D3D1 /* ExtensionUIFont.swift in Sources */,
 				DAB0FA4E1DF7613300E3B51D /* RSettingsHomeEntries.swift in Sources */,
 				DAEBCFF21E01A55B000C8A04 /* VStoreHeader.swift in Sources */,
@@ -734,9 +757,7 @@
 				DA2BBA011DF873D700C450C8 /* VHome.swift in Sources */,
 				DA2BBA0E1DF873D700C450C8 /* VHomeWordsHeader.swift in Sources */,
 				DAAD347D1DF235BC00C5D3D1 /* CHome.swift in Sources */,
-				DAFCEFE31DFF4891006366E3 /* MSessionFluxFull.swift in Sources */,
 				DA2BBA0D1DF873D700C450C8 /* VHomeWordsFooter.swift in Sources */,
-				DAFCEFE11DFF4824006366E3 /* MSessionFlux.swift in Sources */,
 				DA9FA48E1E00C128003E0719 /* VStoreBar.swift in Sources */,
 				DAFCEFEF1DFF5856006366E3 /* VLoading.swift in Sources */,
 				DA6143721DFA27A40029A596 /* RModelHomeEntriesSensesItem.swift in Sources */,
@@ -745,7 +766,6 @@
 				DA2BBA0B1DF873D700C450C8 /* VHomeWords.swift in Sources */,
 				DAEBCFF61E01A5B3000C8A04 /* VStoreCell.swift in Sources */,
 				DA2BBA201DF897C800C450C8 /* RModelHomeEntriesSenses.swift in Sources */,
-				DA50977B1DFB2FF00088821E /* MSessionLanguage.swift in Sources */,
 				DAB0FA631DF78AAC00E3B51D /* RModelHomeSearch.swift in Sources */,
 				DA2BBA091DF873D700C450C8 /* VHomeSuggestions.swift in Sources */,
 				DA6143701DFA22960029A596 /* RModelHomeEntriesNumber.swift in Sources */,
@@ -754,7 +774,6 @@
 				DA2BBA051DF873D700C450C8 /* VHomeHelperSend.swift in Sources */,
 				DA9FA47F1E004E22003E0719 /* CHomeFroob.swift in Sources */,
 				DA2BBA1D1DF8979800C450C8 /* RModelHomeEntriesItemNoun.swift in Sources */,
-				DA50977D1DFB30150088821E /* MSessionLanguageEnglish.swift in Sources */,
 				DA63C3EB1DF65A000026169C /* RCredentialsItem2.swift in Sources */,
 				DA9FA4891E00B4A8003E0719 /* CStore.swift in Sources */,
 				DA61436C1DF9FD8F0029A596 /* RModelHomeEntriesItemOrigin.swift in Sources */,
@@ -767,12 +786,9 @@
 				DA63C3DA1DF60C180026169C /* RConfiguration.swift in Sources */,
 				DAEBCFFA1E01A5E2000C8A04 /* VStoreCellNew.swift in Sources */,
 				DA2BBA031DF873D700C450C8 /* VHomeHelperCancel.swift in Sources */,
-				DAFCEFE51DFF4BFC006366E3 /* MSessionFluxTwoLeft.swift in Sources */,
 				DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */,
-				DAFCEFE91DFF5005006366E3 /* MSessionFluxEmpty.swift in Sources */,
 				DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */,
 				DA63C3D21DF5EF7B0026169C /* RSettingsHomeSearch.swift in Sources */,
-				DA5097791DFB2FC60088821E /* MSession.swift in Sources */,
 				DA19D5EF1DFC914E005A3477 /* VHomeShare.swift in Sources */,
 				DA1783F91DFB567D00895012 /* VHomeLanguage.swift in Sources */,
 				DA0A8E651DFB5ED2009FD4C4 /* VHomeLanguageOrb.swift in Sources */,
@@ -781,12 +797,12 @@
 				DAEBD0001E01A608000C8A04 /* VStoreCellNotAvailable.swift in Sources */,
 				DA1783F61DFB55CC00895012 /* CHomeLanguage.swift in Sources */,
 				DA9FA4821E004EB8003E0719 /* VHomeFroob.swift in Sources */,
+				DAEBD00E1E01AF0D000C8A04 /* MSessionFluxEmpty.swift in Sources */,
 				DA19D5EC1DFC8D25005A3477 /* CHomeShare.swift in Sources */,
 				DA63C3D01DF5EBB50026169C /* RModel.swift in Sources */,
 				DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */,
 				DAAD346B1DF2332500C5D3D1 /* ExtensionUIColor.swift in Sources */,
 				DA2BBA1E1DF8979800C450C8 /* RModelHomeEntriesItemVerb.swift in Sources */,
-				DAFCEFE71DFF4FD1006366E3 /* MSessionFluxOneLeft.swift in Sources */,
 				DAAD346A1DF2332500C5D3D1 /* ExtensionUICollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
