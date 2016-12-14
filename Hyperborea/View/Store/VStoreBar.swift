@@ -3,7 +3,7 @@ import UIKit
 class VStoreBar:UIView
 {
     private weak var controller:CStore!
-    private let kButtonWidth:CGFloat = 60
+    private let kButtonWidth:CGFloat = 65
     
     convenience init(controller:CStore)
     {
@@ -30,7 +30,7 @@ class VStoreBar:UIView
             top:0,
             left:0,
             bottom:0,
-            right:30)
+            right:32)
         button.addTarget(
             self,
             action:#selector(self.actionBack(sender:)),
