@@ -9,6 +9,12 @@
 "VHomeFroobButtons_buttonStore"="Go Plus";
 "VHomeFroobButtons_buttonCancel"="No thanks";
 "VStoreFooter_buttonRestore"="Restore purchase";
+"VStoreFooter_buttonRestore"="Restore purchase";
+"VStoreCellNew_buttonPurchase"="Purchase";
+"VStoreCellDeferred_label"="Purchase deferred";
+"VStoreCellPurchasing_label"="Purchasing";
+"VStoreCellPurchased_label"="Purchased";
+"VStoreCellNotAvailable_label"="Not available";
 
 "RModelHomeEntriesEtymologies_title"="Origin";
 "RModelHomeEntriesItemNoun_title"="Noun";
