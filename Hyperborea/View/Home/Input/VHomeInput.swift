@@ -208,7 +208,7 @@ class VHomeInput:UIView
         }
         else
         {
-            if viewPlaceholder.isHidden
+            if viewPlaceholder.isHidden && viewText.isFirstResponder
             {
                 border.alpha = 1
             }
