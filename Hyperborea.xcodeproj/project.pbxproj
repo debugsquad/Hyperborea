@@ -12,7 +12,6 @@
 		DA1783F91DFB567D00895012 /* VHomeLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1783F81DFB567D00895012 /* VHomeLanguage.swift */; };
 		DA19D5EA1DFC77D1005A3477 /* RModelHomeEntriesItemAdjective.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19D5E91DFC77D1005A3477 /* RModelHomeEntriesItemAdjective.swift */; };
 		DA19D5EC1DFC8D25005A3477 /* CHomeShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19D5EB1DFC8D25005A3477 /* CHomeShare.swift */; };
-		DA19D5EF1DFC914E005A3477 /* VHomeShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19D5EE1DFC914E005A3477 /* VHomeShare.swift */; };
 		DA2BBA011DF873D700C450C8 /* VHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9ED1DF873D700C450C8 /* VHome.swift */; };
 		DA2BBA021DF873D700C450C8 /* VHomeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9EF1DF873D700C450C8 /* VHomeHelper.swift */; };
 		DA2BBA031DF873D700C450C8 /* VHomeHelperCancel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2BB9F01DF873D700C450C8 /* VHomeHelperCancel.swift */; };
@@ -109,6 +108,7 @@
 		DAEBD0261E01AF50000C8A04 /* MStoreItemStatusPurchased.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD01C1E01AF50000C8A04 /* MStoreItemStatusPurchased.swift */; };
 		DAEBD0271E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD01D1E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift */; };
 		DAEBD0281E01AF50000C8A04 /* MStoreItemPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD01F1E01AF50000C8A04 /* MStoreItemPlus.swift */; };
+		DAEBD02A1E01D122000C8A04 /* VHomeWordsShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0291E01D122000C8A04 /* VHomeWordsShare.swift */; };
 		DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */; };
 		DAFCEFDD1DFF3EB7006366E3 /* VHomeHelperFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */; };
 		DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEB1DFF581E006366E3 /* CLoading.swift */; };
@@ -123,7 +123,6 @@
 		DA1783F81DFB567D00895012 /* VHomeLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeLanguage.swift; sourceTree = "<group>"; };
 		DA19D5E91DFC77D1005A3477 /* RModelHomeEntriesItemAdjective.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemAdjective.swift; sourceTree = "<group>"; };
 		DA19D5EB1DFC8D25005A3477 /* CHomeShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHomeShare.swift; sourceTree = "<group>"; };
-		DA19D5EE1DFC914E005A3477 /* VHomeShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeShare.swift; sourceTree = "<group>"; };
 		DA2BB9ED1DF873D700C450C8 /* VHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHome.swift; sourceTree = "<group>"; };
 		DA2BB9EF1DF873D700C450C8 /* VHomeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelper.swift; sourceTree = "<group>"; };
 		DA2BB9F01DF873D700C450C8 /* VHomeHelperCancel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperCancel.swift; sourceTree = "<group>"; };
@@ -223,6 +222,7 @@
 		DAEBD01C1E01AF50000C8A04 /* MStoreItemStatusPurchased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemStatusPurchased.swift; sourceTree = "<group>"; };
 		DAEBD01D1E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemStatusPurchasing.swift; sourceTree = "<group>"; };
 		DAEBD01F1E01AF50000C8A04 /* MStoreItemPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItemPlus.swift; sourceTree = "<group>"; };
+		DAEBD0291E01D122000C8A04 /* VHomeWordsShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeWordsShare.swift; sourceTree = "<group>"; };
 		DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHyperborea.xcdatamodel; sourceTree = "<group>"; };
 		DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperFlux.swift; sourceTree = "<group>"; };
 		DAFCEFEB1DFF581E006366E3 /* CLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLoading.swift; sourceTree = "<group>"; };
@@ -249,14 +249,6 @@
 				DA0A8E641DFB5ED2009FD4C4 /* VHomeLanguageOrb.swift */,
 			);
 			path = HomeLanguage;
-			sourceTree = "<group>";
-		};
-		DA19D5ED1DFC912E005A3477 /* HomeShare */ = {
-			isa = PBXGroup;
-			children = (
-				DA19D5EE1DFC914E005A3477 /* VHomeShare.swift */,
-			);
-			path = HomeShare;
 			sourceTree = "<group>";
 		};
 		DA2BB9EC1DF873D700C450C8 /* Base */ = {
@@ -314,6 +306,7 @@
 				DA2BB9FD1DF873D700C450C8 /* VHomeWordsCell.swift */,
 				DA2BB9FE1DF873D700C450C8 /* VHomeWordsFooter.swift */,
 				DA2BB9FF1DF873D700C450C8 /* VHomeWordsHeader.swift */,
+				DAEBD0291E01D122000C8A04 /* VHomeWordsShare.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -532,7 +525,6 @@
 				DA9FA48A1E00BCB0003E0719 /* Store */,
 				DA9FA4801E004EB0003E0719 /* HomeFroob */,
 				DAFCEFED1DFF584F006366E3 /* Loading */,
-				DA19D5ED1DFC912E005A3477 /* HomeShare */,
 				DA1783F71DFB567100895012 /* HomeLanguage */,
 				DAAD34811DF23B2500C5D3D1 /* Home */,
 				DAAD345E1DF2332500C5D3D1 /* Main */,
@@ -796,6 +788,7 @@
 				DA2BBA1A1DF8979800C450C8 /* RModelHomeEntries.swift in Sources */,
 				DAEBCFF41E01A58C000C8A04 /* VStoreFooter.swift in Sources */,
 				DA2BBA0A1DF873D700C450C8 /* VHomeSuggestionsCell.swift in Sources */,
+				DAEBD02A1E01D122000C8A04 /* VHomeWordsShare.swift in Sources */,
 				DAEBCFF81E01A5D8000C8A04 /* VStoreCellDeferred.swift in Sources */,
 				DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */,
 				DA2BBA011DF873D700C450C8 /* VHome.swift in Sources */,
@@ -838,7 +831,6 @@
 				DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */,
 				DAAD34671DF2332500C5D3D1 /* CParent.swift in Sources */,
 				DA63C3D21DF5EF7B0026169C /* RSettingsHomeSearch.swift in Sources */,
-				DA19D5EF1DFC914E005A3477 /* VHomeShare.swift in Sources */,
 				DA1783F91DFB567D00895012 /* VHomeLanguage.swift in Sources */,
 				DA0A8E651DFB5ED2009FD4C4 /* VHomeLanguageOrb.swift in Sources */,
 				DA19D5EA1DFC77D1005A3477 /* RModelHomeEntriesItemAdjective.swift in Sources */,
