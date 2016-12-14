@@ -9,7 +9,7 @@ class VStoreBar:UIView
     {
         self.init()
         clipsToBounds = true
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.white
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         

@@ -1,17 +1,79 @@
 import UIKit
 
-class VStore:VView
+class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 {
     private weak var controller:CStore!
+    private weak var viewSpinner:VSpinner?
+    private weak var collectionView:UICollectionView!
+    private let kHeaderHeight:CGFloat = 150
+    private let kFooterHeight:CGFloat = 70
+    private let kInterLine:CGFloat = 1
+    private let kCollectionBottom:CGFloat = 10
     private let kBarTop:CGFloat = 20
     private let kBarHeight:CGFloat = 64
     
     override init(controller:CController)
     {
         super.init(controller:controller)
+        backgroundColor = UIColor.genericBorder
         self.controller = controller as? CStore
         
         let viewBar:VStoreBar = VStoreBar(controller:self.controller)
+        let viewSpinner:VSpinner = VSpinner()
+        self.viewSpinner = viewSpinner
+        
+        let flow:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flow.headerReferenceSize = CGSize(width:0, height:kHeaderHeight)
+        flow.minimumLineSpacing = kInterLine
+        flow.minimumInteritemSpacing = 0
+        flow.scrollDirection = UICollectionViewScrollDirection.vertical
+        flow.sectionInset = UIEdgeInsets(
+            top:kInterLine,
+            left:0,
+            bottom:kCollectionBottom,
+            right:0)
+        
+        let collectionView:UICollectionView = UICollectionView(frame:CGRect.zero, collectionViewLayout:flow)
+        collectionView.isHidden = true
+        collectionView.clipsToBounds = true
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.alwaysBounceVertical = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(
+            VStoreCellNotAvailable.self,
+            forCellWithReuseIdentifier:
+            VStoreCellNotAvailable.reusableIdentifier)
+        collectionView.register(
+            VStoreCellDeferred.self,
+            forCellWithReuseIdentifier:
+            VStoreCellDeferred.reusableIdentifier)
+        collectionView.register(
+            VStoreCellNew.self,
+            forCellWithReuseIdentifier:
+            VStoreCellNew.reusableIdentifier)
+        collectionView.register(
+            VStoreCellPurchased.self,
+            forCellWithReuseIdentifier:
+            VStoreCellPurchased.reusableIdentifier)
+        collectionView.register(
+            VStoreCellPurchasing.self,
+            forCellWithReuseIdentifier:
+            VStoreCellPurchasing.reusableIdentifier)
+        collectionView.register(
+            VStoreHeader.self,
+            forSupplementaryViewOfKind:UICollectionElementKindSectionHeader,
+            withReuseIdentifier:
+            VStoreHeader.reusableIdentifier)
+        collectionView.register(
+            VStoreFooter.self,
+            forSupplementaryViewOfKind:UICollectionElementKindSectionFooter,
+            withReuseIdentifier:
+            VStoreFooter.reusableIdentifier)
+        self.collectionView = collectionView
         
         addSubview(viewBar)
         
