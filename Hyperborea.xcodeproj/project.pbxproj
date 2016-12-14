@@ -90,6 +90,11 @@
 		DAEBCFF21E01A55B000C8A04 /* VStoreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBCFF11E01A55B000C8A04 /* VStoreHeader.swift */; };
 		DAEBCFF41E01A58C000C8A04 /* VStoreFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBCFF31E01A58C000C8A04 /* VStoreFooter.swift */; };
 		DAEBCFF61E01A5B3000C8A04 /* VStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBCFF51E01A5B3000C8A04 /* VStoreCell.swift */; };
+		DAEBCFF81E01A5D8000C8A04 /* VStoreCellDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBCFF71E01A5D8000C8A04 /* VStoreCellDeferred.swift */; };
+		DAEBCFFA1E01A5E2000C8A04 /* VStoreCellNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBCFF91E01A5E2000C8A04 /* VStoreCellNew.swift */; };
+		DAEBCFFC1E01A5EC000C8A04 /* VStoreCellPurchasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBCFFB1E01A5EC000C8A04 /* VStoreCellPurchasing.swift */; };
+		DAEBCFFE1E01A5F7000C8A04 /* VStoreCellPurchased.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBCFFD1E01A5F7000C8A04 /* VStoreCellPurchased.swift */; };
+		DAEBD0001E01A608000C8A04 /* VStoreCellNotAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBCFFF1E01A608000C8A04 /* VStoreCellNotAvailable.swift */; };
 		DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */; };
 		DAFCEFDD1DFF3EB7006366E3 /* VHomeHelperFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */; };
 		DAFCEFE11DFF4824006366E3 /* MSessionFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFE01DFF4824006366E3 /* MSessionFlux.swift */; };
@@ -190,6 +195,11 @@
 		DAEBCFF11E01A55B000C8A04 /* VStoreHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreHeader.swift; sourceTree = "<group>"; };
 		DAEBCFF31E01A58C000C8A04 /* VStoreFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreFooter.swift; sourceTree = "<group>"; };
 		DAEBCFF51E01A5B3000C8A04 /* VStoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreCell.swift; sourceTree = "<group>"; };
+		DAEBCFF71E01A5D8000C8A04 /* VStoreCellDeferred.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreCellDeferred.swift; sourceTree = "<group>"; };
+		DAEBCFF91E01A5E2000C8A04 /* VStoreCellNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreCellNew.swift; sourceTree = "<group>"; };
+		DAEBCFFB1E01A5EC000C8A04 /* VStoreCellPurchasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreCellPurchasing.swift; sourceTree = "<group>"; };
+		DAEBCFFD1E01A5F7000C8A04 /* VStoreCellPurchased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreCellPurchased.swift; sourceTree = "<group>"; };
+		DAEBCFFF1E01A608000C8A04 /* VStoreCellNotAvailable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreCellNotAvailable.swift; sourceTree = "<group>"; };
 		DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHyperborea.xcdatamodel; sourceTree = "<group>"; };
 		DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperFlux.swift; sourceTree = "<group>"; };
 		DAFCEFE01DFF4824006366E3 /* MSessionFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionFlux.swift; sourceTree = "<group>"; };
@@ -404,6 +414,11 @@
 				DAEBCFF11E01A55B000C8A04 /* VStoreHeader.swift */,
 				DAEBCFF31E01A58C000C8A04 /* VStoreFooter.swift */,
 				DAEBCFF51E01A5B3000C8A04 /* VStoreCell.swift */,
+				DAEBCFF71E01A5D8000C8A04 /* VStoreCellDeferred.swift */,
+				DAEBCFF91E01A5E2000C8A04 /* VStoreCellNew.swift */,
+				DAEBCFFB1E01A5EC000C8A04 /* VStoreCellPurchasing.swift */,
+				DAEBCFFD1E01A5F7000C8A04 /* VStoreCellPurchased.swift */,
+				DAEBCFFF1E01A608000C8A04 /* VStoreCellNotAvailable.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -702,6 +717,7 @@
 				DA9FA4841E005CAC003E0719 /* VHomeFroobClock.swift in Sources */,
 				DAD7B4A61DFF32740043EEF0 /* ExtensionNSManagedObject.swift in Sources */,
 				DAAD34781DF2332500C5D3D1 /* VParent.swift in Sources */,
+				DAEBCFFE1E01A5F7000C8A04 /* VStoreCellPurchased.swift in Sources */,
 				DA2BBA081DF873D700C450C8 /* VHomeInputText.swift in Sources */,
 				DA63C3E91DF659F60026169C /* RCredentialsItem1.swift in Sources */,
 				DA9FA48C1E00BCB7003E0719 /* VStore.swift in Sources */,
@@ -713,6 +729,7 @@
 				DA2BBA1A1DF8979800C450C8 /* RModelHomeEntries.swift in Sources */,
 				DAEBCFF41E01A58C000C8A04 /* VStoreFooter.swift in Sources */,
 				DA2BBA0A1DF873D700C450C8 /* VHomeSuggestionsCell.swift in Sources */,
+				DAEBCFF81E01A5D8000C8A04 /* VStoreCellDeferred.swift in Sources */,
 				DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */,
 				DA2BBA011DF873D700C450C8 /* VHome.swift in Sources */,
 				DA2BBA0E1DF873D700C450C8 /* VHomeWordsHeader.swift in Sources */,
@@ -748,6 +765,7 @@
 				DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */,
 				DAAD34681DF2332500C5D3D1 /* ExtensionFileManager.swift in Sources */,
 				DA63C3DA1DF60C180026169C /* RConfiguration.swift in Sources */,
+				DAEBCFFA1E01A5E2000C8A04 /* VStoreCellNew.swift in Sources */,
 				DA2BBA031DF873D700C450C8 /* VHomeHelperCancel.swift in Sources */,
 				DAFCEFE51DFF4BFC006366E3 /* MSessionFluxTwoLeft.swift in Sources */,
 				DAAD34661DF2332500C5D3D1 /* CController.swift in Sources */,
@@ -759,6 +777,8 @@
 				DA1783F91DFB567D00895012 /* VHomeLanguage.swift in Sources */,
 				DA0A8E651DFB5ED2009FD4C4 /* VHomeLanguageOrb.swift in Sources */,
 				DA19D5EA1DFC77D1005A3477 /* RModelHomeEntriesItemAdjective.swift in Sources */,
+				DAEBCFFC1E01A5EC000C8A04 /* VStoreCellPurchasing.swift in Sources */,
+				DAEBD0001E01A608000C8A04 /* VStoreCellNotAvailable.swift in Sources */,
 				DA1783F61DFB55CC00895012 /* CHomeLanguage.swift in Sources */,
 				DA9FA4821E004EB8003E0719 /* VHomeFroob.swift in Sources */,
 				DA19D5EC1DFC8D25005A3477 /* CHomeShare.swift in Sources */,
