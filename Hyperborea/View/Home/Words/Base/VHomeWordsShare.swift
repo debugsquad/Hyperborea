@@ -13,6 +13,7 @@ class VHomeWordsShare:UIButton
     private let kImageLeft:CGFloat = 7
     private let kImageRight:CGFloat = 2
     private let kExportMaxWidth:CGFloat = 600
+    private let kExportMaxHeight:CGFloat = 12000
     private let kExportMargin:CGFloat = 30
     
     init()
@@ -186,7 +187,43 @@ class VHomeWordsShare:UIButton
     
     private func share(model:RModelHomeEntriesItem)
     {
-        let imageRect:CGRect = CGRect(x:0, y:0, width:500, height:500)
+        guard
+            
+            let title:String = controller?.viewHome.viewWords.model?.word
+        
+        else
+        {
+            activate()
+            return
+        }
+        
+        let attributes:[String:Any] = [
+            NSFontAttributeName:UIFont.bold(size:24),
+            NSForegroundColorAttributeName:UIColor.black]
+        
+        let titleComposite:String = "\(title)\n"
+        let titleString:NSAttributedString = NSAttributedString(
+            string:titleComposite,
+            attributes:attributes)
+        
+        let completeString:NSMutableAttributedString = NSMutableAttributedString()
+        completeString.append(titleString)
+        completeString.append(model.attributedString)
+        
+        let exportMargin2:CGFloat = kExportMargin + kExportMargin
+        let maxSize:CGSize = CGSize(
+            width:kExportMaxWidth - exportMargin2,
+            height:kExportMaxHeight)
+        let stringHeight:CGFloat = ceil(completeString.boundingRect(
+            with:maxSize,
+            options:model.options,
+            context:nil).size.height)
+        let completeHeight:CGFloat = stringHeight + exportMargin2
+        let imageRect:CGRect = CGRect(
+            x:0,
+            y:0,
+            width:kExportMaxWidth,
+            height:completeHeight)
         
         UIGraphicsBeginImageContext(imageRect.size)
         
@@ -194,23 +231,23 @@ class VHomeWordsShare:UIButton
             
             let context:CGContext = UIGraphicsGetCurrentContext()
             
-            else
+        else
         {
             return
         }
         
         context.setFillColor(UIColor.white.cgColor)
-        context.fill(imageRect)/*
-         model.attributedString.draw(
+        context.fill(imageRect)
+         completeString.draw(
          with:imageRect,
          options:model.options,
-         context:nil)*/
+         context:nil)
         
         guard
             
             let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
             
-            else
+        else
         {
             UIGraphicsEndImageContext()
             return
@@ -224,12 +261,17 @@ class VHomeWordsShare:UIButton
         
         if activity.popoverPresentationController != nil
         {
-            activity.popoverPresentationController!.sourceView = viewHome
+            activity.popoverPresentationController!.sourceView = self.image
             activity.popoverPresentationController!.sourceRect = CGRect.zero
             activity.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.up
         }
         
-        present(activity, animated:true)
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.controller?.present(activity, animated:true)
+            self?.activate()
+        }
     }
     
     private func deactivate()
@@ -241,9 +283,13 @@ class VHomeWordsShare:UIButton
     
     private func activate()
     {
-        isUserInteractionEnabled = true
-        spinner.stopAnimating()
-        image.isHidden = false
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.isUserInteractionEnabled = true
+            self?.spinner.stopAnimating()
+            self?.image.isHidden = false
+        }
     }
     
     //MARK: public
