@@ -13,6 +13,7 @@ class VHomeHelperFlux:UIButton
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
+        isUserInteractionEnabled = false
         
         let image:UIImageView = UIImageView()
         image.isUserInteractionEnabled = false
