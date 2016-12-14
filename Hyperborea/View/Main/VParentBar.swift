@@ -13,6 +13,7 @@ class VParentBar:UIView
     private let kTitleLeft:CGFloat = 4
     private let kTitleWidth:CGFloat = 105
     private let kButtonsWidth:CGFloat = 45
+    private let kButtonsInset:CGFloat = 10
     private let kButtonsRight:CGFloat = -5
     
     convenience init(controller:CParent)
@@ -34,28 +35,38 @@ class VParentBar:UIView
         let buttonStore:UIButton = UIButton()
         buttonStore.translatesAutoresizingMaskIntoConstraints = false
         buttonStore.setImage(
-            #imageLiteral(resourceName: "assetHomeSearch").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            #imageLiteral(resourceName: "assetGenericStore").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.normal)
         buttonStore.setImage(
-            #imageLiteral(resourceName: "assetHomeSearch").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            #imageLiteral(resourceName: "assetGenericStore").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
             for:UIControlState.highlighted)
         buttonStore.imageView!.clipsToBounds = true
-        buttonStore.imageView!.contentMode = UIViewContentMode.center
-        buttonStore.imageView!.tintColor = UIColor(white:0, alpha:0.2)
+        buttonStore.imageView!.contentMode = UIViewContentMode.scaleAspectFit
+        buttonStore.imageView!.tintColor = UIColor(white:0, alpha:0.1)
         buttonStore.addTarget(
             self,
             action:#selector(self.actionStore(sender:)),
             for:UIControlEvents.touchUpInside)
+        buttonStore.imageEdgeInsets = UIEdgeInsetsMake(
+            0,
+            kButtonsInset,
+            0,
+            kButtonsInset)
         self.buttonStore = buttonStore
         
         let buttonLanguage:UIButton = UIButton()
         buttonLanguage.translatesAutoresizingMaskIntoConstraints = false
         buttonLanguage.imageView!.clipsToBounds = true
-        buttonLanguage.imageView!.contentMode = UIViewContentMode.center
+        buttonLanguage.imageView!.contentMode = UIViewContentMode.scaleAspectFit
         buttonLanguage.addTarget(
             self,
             action:#selector(self.actionLanguage(sender:)),
             for:UIControlEvents.touchUpInside)
+        buttonLanguage.imageEdgeInsets = UIEdgeInsetsMake(
+            0,
+            kButtonsInset,
+            0,
+            kButtonsInset)
         self.buttonLanguage = buttonLanguage
         
         let labelTitle:UILabel = UILabel()

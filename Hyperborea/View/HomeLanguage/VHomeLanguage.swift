@@ -6,7 +6,7 @@ class VHomeLanguage:VView
     private weak var layoutOrbHorizontalLeft:NSLayoutConstraint!
     private weak var layoutOrbVerticalTop:NSLayoutConstraint!
     private let kAnimationDuration:TimeInterval = 0.3
-    private let kAlpha:CGFloat = 0.6
+    private let kAlpha:CGFloat = 0.8
     private let kStartingLeft:CGFloat = -62
     private let kStartingTop:CGFloat = 7
     private let kFinalLeft:CGFloat = -120
