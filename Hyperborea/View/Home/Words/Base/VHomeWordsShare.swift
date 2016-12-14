@@ -12,6 +12,7 @@ class VHomeWordsShare:UIButton
     private let kLabelTop:CGFloat = 4
     private let kImageLeft:CGFloat = 7
     private let kImageRight:CGFloat = 2
+    private let kSpinnerWidth:CGFloat = 30
     private let kExportMaxWidth:CGFloat = 600
     private let kExportMaxHeight:CGFloat = 12000
     private let kExportMargin:CGFloat = 30
@@ -117,6 +118,39 @@ class VHomeWordsShare:UIButton
             multiplier:1,
             constant:kLabelWidth)
         
+        let layoutSpinnerTop:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.top,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.top,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerBottom:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.bottom,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.bottom,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerLeft:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.left,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:self,
+            attribute:NSLayoutAttribute.left,
+            multiplier:1,
+            constant:0)
+        let layoutSpinnerWidth:NSLayoutConstraint = NSLayoutConstraint(
+            item:spinner,
+            attribute:NSLayoutAttribute.width,
+            relatedBy:NSLayoutRelation.equal,
+            toItem:nil,
+            attribute:NSLayoutAttribute.notAnAttribute,
+            multiplier:1,
+            constant:kSpinnerWidth)
+        
         addConstraints([
             layoutImageTop,
             layoutImageBottom,
@@ -125,7 +159,11 @@ class VHomeWordsShare:UIButton
             layoutLabelTop,
             layoutLabelBottom,
             layoutLabelLeft,
-            layoutLabelWidth])
+            layoutLabelWidth,
+            layoutSpinnerTop,
+            layoutSpinnerBottom,
+            layoutSpinnerLeft,
+            layoutSpinnerWidth])
         
         hover()
     }
