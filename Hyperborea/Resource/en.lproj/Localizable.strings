@@ -28,6 +28,7 @@
 "RModelHomeEntriesItemDeterminer_title"="Determiner";
 "RModelHomeEntriesItemIdiomatic_title"="Idiomatic";
 "RModelHomeEntriesItemInterjection_title"="Interjection";
+"RModelHomeEntriesItemNumeral_title"="Numeral";
 
 "MSessionLanguageEnglish_name"="English";
 "MSessionLanguageSpanish_name"="Spanish";
