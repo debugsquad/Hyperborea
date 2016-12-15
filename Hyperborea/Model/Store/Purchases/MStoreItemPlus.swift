@@ -30,6 +30,7 @@ class MStoreItemPlus:MStoreItem
     {
         MSession.sharedInstance.settings?.hyperboreaPlus = true
         DManager.sharedInstance.save()
+        let _:Bool = MSession.sharedInstance.froobValidate()
     }
     
     override func validatePurchase() -> Bool

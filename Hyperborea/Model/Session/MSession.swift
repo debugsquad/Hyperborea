@@ -168,7 +168,8 @@ class MSession
         
         guard
         
-            let lastSearch:TimeInterval = settings?.lastSearch
+            let lastSearch:TimeInterval = settings?.lastSearch,
+            let plus:Bool = settings?.hyperboreaPlus
         
         else
         {
@@ -180,7 +181,7 @@ class MSession
         let expirationTime:TimeInterval = lastSearch + kFroobCoolTime
         let deltaTime:TimeInterval = currentTime - expirationTime
         
-        if deltaTime > 0
+        if plus || deltaTime > 0
         {
             nextStatusFroob()
             
