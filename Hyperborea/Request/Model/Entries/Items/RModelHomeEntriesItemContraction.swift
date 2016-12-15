@@ -16,16 +16,13 @@ class RModelHomeEntriesItemContraction:RModelHomeEntriesItem
         
         let title:String = NSLocalizedString("RModelHomeEntriesItemContraction_title", comment:"")
         let senses:RModelHomeEntriesSenses = RModelHomeEntriesSenses(json:json)
-        let tense:RModelHomeEntriesTense = RModelHomeEntriesTense(json:json)
         let titleString:NSAttributedString = NSAttributedString(
             string:title,
             attributes:attributes)
         let sensesString:NSAttributedString = senses.attributedString()
-        let tenseString:NSAttributedString = tense.attributedString()
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(titleString)
-        mutableString.append(tenseString)
         mutableString.append(sensesString)
         
         let reusableIdentifier:String = VHomeWordsCellEntry.reusableIdentifier
