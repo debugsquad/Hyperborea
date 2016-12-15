@@ -122,7 +122,7 @@
 		DAEBD0421E0218E8000C8A04 /* RModelHomeEntriesItemParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0411E0218E8000C8A04 /* RModelHomeEntriesItemParticle.swift */; };
 		DAEBD0441E021A4E000C8A04 /* RModelHomeEntriesItemPredeterminer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0431E021A4E000C8A04 /* RModelHomeEntriesItemPredeterminer.swift */; };
 		DAEBD0461E021ACD000C8A04 /* RModelHomeEntriesItemPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0451E021ACD000C8A04 /* RModelHomeEntriesItemPrefix.swift */; };
-		DAEBD0481E021E8A000C8A04 /* RModelHomeEntriesItemProposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0471E021E8A000C8A04 /* RModelHomeEntriesItemProposition.swift */; };
+		DAEBD0481E021E8A000C8A04 /* RModelHomeEntriesItemPreposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0471E021E8A000C8A04 /* RModelHomeEntriesItemPreposition.swift */; };
 		DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */; };
 		DAFCEFDD1DFF3EB7006366E3 /* VHomeHelperFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */; };
 		DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEB1DFF581E006366E3 /* CLoading.swift */; };
@@ -250,7 +250,7 @@
 		DAEBD0411E0218E8000C8A04 /* RModelHomeEntriesItemParticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemParticle.swift; sourceTree = "<group>"; };
 		DAEBD0431E021A4E000C8A04 /* RModelHomeEntriesItemPredeterminer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemPredeterminer.swift; sourceTree = "<group>"; };
 		DAEBD0451E021ACD000C8A04 /* RModelHomeEntriesItemPrefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemPrefix.swift; sourceTree = "<group>"; };
-		DAEBD0471E021E8A000C8A04 /* RModelHomeEntriesItemProposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemProposition.swift; sourceTree = "<group>"; };
+		DAEBD0471E021E8A000C8A04 /* RModelHomeEntriesItemPreposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemPreposition.swift; sourceTree = "<group>"; };
 		DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHyperborea.xcdatamodel; sourceTree = "<group>"; };
 		DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperFlux.swift; sourceTree = "<group>"; };
 		DAFCEFEB1DFF581E006366E3 /* CLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLoading.swift; sourceTree = "<group>"; };
@@ -383,7 +383,7 @@
 				DAEBD0411E0218E8000C8A04 /* RModelHomeEntriesItemParticle.swift */,
 				DAEBD0431E021A4E000C8A04 /* RModelHomeEntriesItemPredeterminer.swift */,
 				DAEBD0451E021ACD000C8A04 /* RModelHomeEntriesItemPrefix.swift */,
-				DAEBD0471E021E8A000C8A04 /* RModelHomeEntriesItemProposition.swift */,
+				DAEBD0471E021E8A000C8A04 /* RModelHomeEntriesItemPreposition.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -844,7 +844,7 @@
 				DAAD348B1DF241A300C5D3D1 /* VParentBar.swift in Sources */,
 				DA2BBA011DF873D700C450C8 /* VHome.swift in Sources */,
 				DA2BBA0E1DF873D700C450C8 /* VHomeWordsHeader.swift in Sources */,
-				DAEBD0481E021E8A000C8A04 /* RModelHomeEntriesItemProposition.swift in Sources */,
+				DAEBD0481E021E8A000C8A04 /* RModelHomeEntriesItemPreposition.swift in Sources */,
 				DAAD347D1DF235BC00C5D3D1 /* CHome.swift in Sources */,
 				DA2BBA0D1DF873D700C450C8 /* VHomeWordsFooter.swift in Sources */,
 				DA9FA48E1E00C128003E0719 /* VStoreBar.swift in Sources */,

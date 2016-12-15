@@ -1,6 +1,6 @@
 import UIKit
 
-class RModelHomeEntriesItemProposition:RModelHomeEntriesItem
+class RModelHomeEntriesItemPreposition:RModelHomeEntriesItem
 {
     private let kSelectable:Bool = false
     
@@ -14,7 +14,7 @@ class RModelHomeEntriesItemProposition:RModelHomeEntriesItem
                 alpha:1)
         ]
         
-        let title:String = NSLocalizedString("RModelHomeEntriesItemProposition_title", comment:"")
+        let title:String = NSLocalizedString("RModelHomeEntriesItemPreposition_title", comment:"")
         let senses:RModelHomeEntriesSenses = RModelHomeEntriesSenses(json:json)
         let titleString:NSAttributedString = NSAttributedString(
             string:title,
