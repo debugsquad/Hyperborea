@@ -128,6 +128,7 @@
 		DAEBD04E1E02228E000C8A04 /* RModelHomeEntriesItemSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD04D1E02228E000C8A04 /* RModelHomeEntriesItemSuffix.swift */; };
 		DAEBD0501E022B7A000C8A04 /* RCredentialsItem3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD04F1E022B7A000C8A04 /* RCredentialsItem3.swift */; };
 		DAEBD0521E023182000C8A04 /* RCredentialsItem4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0511E023182000C8A04 /* RCredentialsItem4.swift */; };
+		DAEBD0541E023274000C8A04 /* RCredentialsItem5.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0531E023274000C8A04 /* RCredentialsItem5.swift */; };
 		DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */; };
 		DAFCEFDD1DFF3EB7006366E3 /* VHomeHelperFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */; };
 		DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEB1DFF581E006366E3 /* CLoading.swift */; };
@@ -261,6 +262,7 @@
 		DAEBD04D1E02228E000C8A04 /* RModelHomeEntriesItemSuffix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemSuffix.swift; sourceTree = "<group>"; };
 		DAEBD04F1E022B7A000C8A04 /* RCredentialsItem3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCredentialsItem3.swift; sourceTree = "<group>"; };
 		DAEBD0511E023182000C8A04 /* RCredentialsItem4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCredentialsItem4.swift; sourceTree = "<group>"; };
+		DAEBD0531E023274000C8A04 /* RCredentialsItem5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCredentialsItem5.swift; sourceTree = "<group>"; };
 		DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHyperborea.xcdatamodel; sourceTree = "<group>"; };
 		DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperFlux.swift; sourceTree = "<group>"; };
 		DAFCEFEB1DFF581E006366E3 /* CLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLoading.swift; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				DA63C3EA1DF65A000026169C /* RCredentialsItem2.swift */,
 				DAEBD04F1E022B7A000C8A04 /* RCredentialsItem3.swift */,
 				DAEBD0511E023182000C8A04 /* RCredentialsItem4.swift */,
+				DAEBD0531E023274000C8A04 /* RCredentialsItem5.swift */,
 			);
 			path = Credentials;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				DA61436C1DF9FD8F0029A596 /* RModelHomeEntriesItemOrigin.swift in Sources */,
 				DA2BBA1B1DF8979800C450C8 /* RModelHomeEntriesFactory.swift in Sources */,
 				DAEBD0261E01AF50000C8A04 /* MStoreItemStatusPurchased.swift in Sources */,
+				DAEBD0541E023274000C8A04 /* RCredentialsItem5.swift in Sources */,
 				DAD7B4A41DFF31ED0043EEF0 /* DManager.swift in Sources */,
 				DA63C3E51DF659D90026169C /* RCredentials.swift in Sources */,
 				DAEBD0251E01AF50000C8A04 /* MStoreItemStatusNotAvailable.swift in Sources */,
