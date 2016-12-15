@@ -9,10 +9,12 @@ class RCredentials
     {
         let item1:RCredentialsItem1 = RCredentialsItem1()
         let item2:RCredentialsItem2 = RCredentialsItem2()
+        let item3:RCredentialsItem3 = RCredentialsItem3()
         
         items = [
             item1,
-            item2
+            item2,
+            item3
         ]
         
         countItems = UInt32(items.count)
@@ -24,6 +26,7 @@ class RCredentials
     {
         let random:Int = Int(arc4random_uniform(countItems))
         let item:RCredentialsItem = items[random]
+        print(item)
         
         return item.credentials
     }
