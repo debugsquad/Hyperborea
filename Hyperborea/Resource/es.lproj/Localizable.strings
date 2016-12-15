@@ -1,0 +1,44 @@
+"CHome_errorUnknown"="No se encontro la palabra, intenta de nuevo";
+
+"VParentBar_titleDictionary"="Diccionario";
+"VHomeInputPlaceholder_label"="Busca palabras";
+"VHomeHelperSend_title"="Buscar";
+"VHomeWordsFooter_label"="No se encontro resultados para esa palabra";
+"VHomeFroob_title"="Busquedas terminadas";
+"VHomeFroob_descr"="Obten Plus para evitar restricciones";
+"VHomeFroobButtons_buttonStore"="Dame Plus";
+"VHomeFroobButtons_buttonCancel"="No Gracias";
+"VStoreFooter_buttonRestore"="Restaurar compras";
+"VStoreCellNew_buttonPurchase"="Comprar";
+"VStoreCellDeferred_label"="Compra detenida";
+"VStoreCellPurchasing_label"="Comprando";
+"VStoreCellPurchased_label"="Comprado";
+"VStoreCellNotAvailable_label"="No disponible";
+"VHomeWordsShare"="Compartir";
+
+"RModelHomeEntriesEtymologies_title"="Origen";
+"RModelHomeEntriesItemNoun_title"="Noun";
+"RModelHomeEntriesItemVerb_title"="Verb";
+"RModelHomeEntriesItemAdjective_title"="Adjective";
+"RModelHomeEntriesItemAdverb_title"="Adverb";
+"RModelHomeEntriesItemCombiningForm_title"="Combining form";
+"RModelHomeEntriesItemConjunction_title"="Conjunction";
+"RModelHomeEntriesItemContraction_title"="Contraction";
+"RModelHomeEntriesItemDeterminer_title"="Determiner";
+"RModelHomeEntriesItemIdiomatic_title"="Idiomatic";
+"RModelHomeEntriesItemInterjection_title"="Interjection";
+"RModelHomeEntriesItemNumeral_title"="Numeral";
+"RModelHomeEntriesItemOther_title"="Other";
+"RModelHomeEntriesItemParticle_title"="Particle";
+"RModelHomeEntriesItemPredeterminer_title"="Predeterminer";
+"RModelHomeEntriesItemPrefix_title"="Prefix";
+"RModelHomeEntriesItemPreposition_title"="Preposition";
+"RModelHomeEntriesItemPronoun_title"="Pronoun";
+"RModelHomeEntriesItemResidual_title"="Residual";
+"RModelHomeEntriesItemSuffix_title"="Suffix";
+
+"MSessionLanguageEnglish_name"="English";
+"MSessionLanguageSpanish_name"="Spanish";
+
+"MStoreItemPlus_title"="Hyperborea plus";
+"MStoreItemPlus_descr"="\nRemove restrictions and get unlimited searches";
