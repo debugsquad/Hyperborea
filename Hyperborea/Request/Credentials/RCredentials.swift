@@ -30,7 +30,6 @@ class RCredentials
     {
         let random:Int = Int(arc4random_uniform(countItems))
         let item:RCredentialsItem = items[random]
-        print(item)
         
         return item.credentials
     }
