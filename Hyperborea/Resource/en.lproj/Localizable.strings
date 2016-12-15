@@ -35,6 +35,8 @@
 "RModelHomeEntriesItemPrefix_title"="Prefix";
 "RModelHomeEntriesItemPreposition_title"="Preposition";
 "RModelHomeEntriesItemPronoun_title"="Pronoun";
+"RModelHomeEntriesItemResidual_title"="Residual";
+"RModelHomeEntriesItemSuffix_title"="Suffix";
 
 "MSessionLanguageEnglish_name"="English";
 "MSessionLanguageSpanish_name"="Spanish";

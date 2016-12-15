@@ -125,6 +125,7 @@
 		DAEBD0481E021E8A000C8A04 /* RModelHomeEntriesItemPreposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0471E021E8A000C8A04 /* RModelHomeEntriesItemPreposition.swift */; };
 		DAEBD04A1E0220EE000C8A04 /* RModelHomeEntriesItemPronoun.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD0491E0220EE000C8A04 /* RModelHomeEntriesItemPronoun.swift */; };
 		DAEBD04C1E02219A000C8A04 /* RModelHomeEntriesItemResidual.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD04B1E02219A000C8A04 /* RModelHomeEntriesItemResidual.swift */; };
+		DAEBD04E1E02228E000C8A04 /* RModelHomeEntriesItemSuffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBD04D1E02228E000C8A04 /* RModelHomeEntriesItemSuffix.swift */; };
 		DAFCEFDB1DFF336C006366E3 /* DHyperborea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFD91DFF336C006366E3 /* DHyperborea.xcdatamodeld */; };
 		DAFCEFDD1DFF3EB7006366E3 /* VHomeHelperFlux.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */; };
 		DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCEFEB1DFF581E006366E3 /* CLoading.swift */; };
@@ -255,6 +256,7 @@
 		DAEBD0471E021E8A000C8A04 /* RModelHomeEntriesItemPreposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemPreposition.swift; sourceTree = "<group>"; };
 		DAEBD0491E0220EE000C8A04 /* RModelHomeEntriesItemPronoun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemPronoun.swift; sourceTree = "<group>"; };
 		DAEBD04B1E02219A000C8A04 /* RModelHomeEntriesItemResidual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemResidual.swift; sourceTree = "<group>"; };
+		DAEBD04D1E02228E000C8A04 /* RModelHomeEntriesItemSuffix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesItemSuffix.swift; sourceTree = "<group>"; };
 		DAFCEFDA1DFF336C006366E3 /* DHyperborea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHyperborea.xcdatamodel; sourceTree = "<group>"; };
 		DAFCEFDC1DFF3EB7006366E3 /* VHomeHelperFlux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeHelperFlux.swift; sourceTree = "<group>"; };
 		DAFCEFEB1DFF581E006366E3 /* CLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLoading.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				DAEBD0471E021E8A000C8A04 /* RModelHomeEntriesItemPreposition.swift */,
 				DAEBD0491E0220EE000C8A04 /* RModelHomeEntriesItemPronoun.swift */,
 				DAEBD04B1E02219A000C8A04 /* RModelHomeEntriesItemResidual.swift */,
+				DAEBD04D1E02228E000C8A04 /* RModelHomeEntriesItemSuffix.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -907,6 +910,7 @@
 				DAEBD0271E01AF50000C8A04 /* MStoreItemStatusPurchasing.swift in Sources */,
 				DAEBD0281E01AF50000C8A04 /* MStoreItemPlus.swift in Sources */,
 				DA63C3D01DF5EBB50026169C /* RModel.swift in Sources */,
+				DAEBD04E1E02228E000C8A04 /* RModelHomeEntriesItemSuffix.swift in Sources */,
 				DAB0FA641DF78AAC00E3B51D /* RModelHomeSearchResult.swift in Sources */,
 				DAAD346B1DF2332500C5D3D1 /* ExtensionUIColor.swift in Sources */,
 				DAEBD0201E01AF50000C8A04 /* MStore.swift in Sources */,
