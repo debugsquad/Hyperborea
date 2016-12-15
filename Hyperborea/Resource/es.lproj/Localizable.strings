@@ -17,28 +17,28 @@
 "VHomeWordsShare"="Compartir";
 
 "RModelHomeEntriesEtymologies_title"="Origen";
-"RModelHomeEntriesItemNoun_title"="Noun";
-"RModelHomeEntriesItemVerb_title"="Verb";
-"RModelHomeEntriesItemAdjective_title"="Adjective";
-"RModelHomeEntriesItemAdverb_title"="Adverb";
-"RModelHomeEntriesItemCombiningForm_title"="Combining form";
-"RModelHomeEntriesItemConjunction_title"="Conjunction";
-"RModelHomeEntriesItemContraction_title"="Contraction";
-"RModelHomeEntriesItemDeterminer_title"="Determiner";
-"RModelHomeEntriesItemIdiomatic_title"="Idiomatic";
-"RModelHomeEntriesItemInterjection_title"="Interjection";
+"RModelHomeEntriesItemNoun_title"="Nombre";
+"RModelHomeEntriesItemVerb_title"="Verbo";
+"RModelHomeEntriesItemAdjective_title"="Adjetivo";
+"RModelHomeEntriesItemAdverb_title"="Adverbio";
+"RModelHomeEntriesItemCombiningForm_title"="Forma combinada";
+"RModelHomeEntriesItemConjunction_title"="Conjunción";
+"RModelHomeEntriesItemContraction_title"="Contracción";
+"RModelHomeEntriesItemDeterminer_title"="Determinante";
+"RModelHomeEntriesItemIdiomatic_title"="Idiomatico";
+"RModelHomeEntriesItemInterjection_title"="Intercepción";
 "RModelHomeEntriesItemNumeral_title"="Numeral";
-"RModelHomeEntriesItemOther_title"="Other";
-"RModelHomeEntriesItemParticle_title"="Particle";
-"RModelHomeEntriesItemPredeterminer_title"="Predeterminer";
-"RModelHomeEntriesItemPrefix_title"="Prefix";
+"RModelHomeEntriesItemOther_title"="Otro";
+"RModelHomeEntriesItemParticle_title"="Partícula";
+"RModelHomeEntriesItemPredeterminer_title"="Predeterminante";
+"RModelHomeEntriesItemPrefix_title"="Prefijo";
 "RModelHomeEntriesItemPreposition_title"="Preposition";
-"RModelHomeEntriesItemPronoun_title"="Pronoun";
+"RModelHomeEntriesItemPronoun_title"="Pronombre";
 "RModelHomeEntriesItemResidual_title"="Residual";
-"RModelHomeEntriesItemSuffix_title"="Suffix";
+"RModelHomeEntriesItemSuffix_title"="Sufijo";
 
-"MSessionLanguageEnglish_name"="English";
-"MSessionLanguageSpanish_name"="Spanish";
+"MSessionLanguageEnglish_name"="Inglés";
+"MSessionLanguageSpanish_name"="Español";
 
 "MStoreItemPlus_title"="Hyperborea plus";
-"MStoreItemPlus_descr"="\nRemove restrictions and get unlimited searches";
+"MStoreItemPlus_descr"="\nRemueve restricciones y te da busquedas ilimitadas";
