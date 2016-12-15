@@ -30,6 +30,7 @@
 "RModelHomeEntriesItemInterjection_title"="Interjection";
 "RModelHomeEntriesItemNumeral_title"="Numeral";
 "RModelHomeEntriesItemOther_title"="Other";
+"RModelHomeEntriesItemParticle_title"="Particle";
 
 "MSessionLanguageEnglish_name"="English";
 "MSessionLanguageSpanish_name"="Spanish";
