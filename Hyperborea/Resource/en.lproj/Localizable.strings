@@ -29,6 +29,7 @@
 "RModelHomeEntriesItemIdiomatic_title"="Idiomatic";
 "RModelHomeEntriesItemInterjection_title"="Interjection";
 "RModelHomeEntriesItemNumeral_title"="Numeral";
+"RModelHomeEntriesItemOther_title"="Other";
 
 "MSessionLanguageEnglish_name"="English";
 "MSessionLanguageSpanish_name"="Spanish";
