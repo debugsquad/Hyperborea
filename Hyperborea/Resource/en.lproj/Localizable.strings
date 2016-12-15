@@ -26,6 +26,7 @@
 "RModelHomeEntriesItemConjunction_title"="Conjunction";
 "RModelHomeEntriesItemContraction_title"="Contraction";
 "RModelHomeEntriesItemDeterminer_title"="Determiner";
+"RModelHomeEntriesItemIdiomatic_title"="Idiomatic";
 
 "MSessionLanguageEnglish_name"="English";
 "MSessionLanguageSpanish_name"="Spanish";
