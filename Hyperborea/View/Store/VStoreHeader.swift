@@ -25,7 +25,7 @@ class VStoreHeader:UICollectionReusableView
             NSForegroundColorAttributeName:UIColor.black
         ]
         
-        labelMargins = kLabelRight + kImageViewSize
+        labelMargins = kLabelRight + kImageViewSize + kLabelLeft
         
         super.init(frame:frame)
         clipsToBounds = true
