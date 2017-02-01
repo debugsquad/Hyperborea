@@ -26,6 +26,7 @@ class VHomeInputText:UITextView, UITextViewDelegate
         spellCheckingType = UITextSpellCheckingType.no
         autocapitalizationType = UITextAutocapitalizationType.words
         contentInset = UIEdgeInsets.zero
+        keyboardType = UIKeyboardType.alphabet
         textContainerInset = UIEdgeInsets(
             top:0,
             left:kInsetsHorizontal,
