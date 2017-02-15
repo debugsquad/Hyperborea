@@ -15,6 +15,7 @@ class CHomeFroob:CController
     
     func close()
     {
+        AMain.sharedInstance?.trackFroob(action:AMain.FroobAction.searchClose)
         parentController.dismissAnimateOver(completion:nil)
     }
     
@@ -22,6 +23,8 @@ class CHomeFroob:CController
     {
         let store:CStore = CStore()
         let parentController:CParent = self.parentController
+        
+        AMain.sharedInstance?.trackFroob(action:AMain.FroobAction.searchStore)
         
         parentController.dismissAnimateOver
         {
