@@ -6,6 +6,7 @@ class AMain
 {
     static let sharedInstance:AMain? = AMain()
     private let kEventSearch:String = "Search"
+    private let kEventLanguage:String = "Language"
     private let kEventValue:NSNumber = 1
     private let kDispatchInterval:TimeInterval = 30
     
@@ -63,7 +64,7 @@ class AMain
     
     func trackSearch(
         wordId:String,
-        region:String)
+        region:String?)
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
@@ -80,6 +81,28 @@ class AMain
                 withCategory:self.kEventSearch,
                 action:wordId,
                 label:region,
+                value:self.kEventValue).build() as [NSObject:AnyObject]
+            tracker.send(eventBuild)
+        }
+    }
+    
+    func trackLanguage(name:String)
+    {
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        {
+            guard
+                
+                let tracker:GAITracker = GAI.sharedInstance().defaultTracker
+                
+            else
+            {
+                return
+            }
+            
+            let eventBuild:[NSObject:AnyObject] = GAIDictionaryBuilder.createEvent(
+                withCategory:self.kEventLanguage,
+                action:name,
+                label:nil,
                 value:self.kEventValue).build() as [NSObject:AnyObject]
             tracker.send(eventBuild)
         }

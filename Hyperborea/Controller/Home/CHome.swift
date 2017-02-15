@@ -128,6 +128,9 @@ class CHome:CController, RMainDelegate
     {
         cancelRequests()
         UIApplication.shared.keyWindow!.endEditing(true)
+        AMain.sharedInstance?.trackSearch(
+            wordId:wordId,
+            region:region)
         
         guard
         
