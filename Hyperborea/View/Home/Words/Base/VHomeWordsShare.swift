@@ -7,7 +7,7 @@ class VHomeWordsShare:UIButton
     private weak var spinner:UIActivityIndicatorView!
     private weak var image:UIImageView!
     private weak var label:UILabel!
-    private let kImageWidth:CGFloat = 20
+    private let kImageWidth:CGFloat = 32
     private let kLabelWidth:CGFloat = 100
     private let kLabelTop:CGFloat = 4
     private let kImageLeft:CGFloat = 7
