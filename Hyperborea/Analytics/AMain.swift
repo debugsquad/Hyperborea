@@ -20,7 +20,7 @@ class AMain
     private let kEventSearch:String = "Search"
     private let kEventLanguage:String = "Language"
     private let kEventFroob:String = "Froob"
-    private let kEventStore:String = "Froob"
+    private let kEventStore:String = "Store"
     private let kEventValue:NSNumber = 1
     private let kDispatchInterval:TimeInterval = 30
     
