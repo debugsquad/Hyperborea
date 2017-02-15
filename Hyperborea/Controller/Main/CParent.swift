@@ -11,6 +11,8 @@ class CParent:UIViewController
         statusBarStyle = UIStatusBarStyle.default
         barHidden = false
         super.init(nibName:nil, bundle:nil)
+        
+        AMain.sharedInstance?.startAnalytics()
     }
     
     required init?(coder:NSCoder)

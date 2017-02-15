@@ -1,5 +1,6 @@
 import Foundation
 import Google
+import FirebaseAnalytics
 
 class AMain
 {
@@ -17,5 +18,11 @@ class AMain
             
             return nil
         }
+    }
+    
+    //MARK: public
+    
+    func startAnalytics()
+    {
     }
 }
