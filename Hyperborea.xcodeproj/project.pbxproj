@@ -189,6 +189,7 @@
 		DA7228021DF4B187001370C6 /* home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = home.xcassets; sourceTree = "<group>"; };
 		DA9F5EF21E54BBD800C2EBE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA9F5EF41E54BBF900C2EBE2 /* AMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMain.swift; sourceTree = "<group>"; };
+		DA9F5EF61E54BEDD00C2EBE2 /* CBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBridgingHeader.h; sourceTree = "<group>"; };
 		DA9FA47E1E004E22003E0719 /* CHomeFroob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHomeFroob.swift; sourceTree = "<group>"; };
 		DA9FA4811E004EB8003E0719 /* VHomeFroob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroob.swift; sourceTree = "<group>"; };
 		DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroobClock.swift; sourceTree = "<group>"; };
@@ -578,6 +579,7 @@
 		DAAD34461DF2332500C5D3D1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DA9F5EF61E54BEDD00C2EBE2 /* CBridgingHeader.h */,
 				DAAD34471DF2332500C5D3D1 /* CAppDelegate.swift */,
 				DAAD34481DF2332500C5D3D1 /* CController.swift */,
 				DAAD34491DF2332500C5D3D1 /* CParent.swift */,
@@ -1141,6 +1143,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.Hyperborea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /devel/iturbide/Hyperborea/Hyperborea/Controller/Main/CBridgingHeader.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1157,6 +1160,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.Hyperborea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /devel/iturbide/Hyperborea/Hyperborea/Controller/Main/CBridgingHeader.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
