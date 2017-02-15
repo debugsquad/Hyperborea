@@ -52,7 +52,7 @@ class AMain
         }
         
         gai.trackUncaughtExceptions = true
-        gai.logger.logLevel = GAILogLevel.verbose
+        gai.logger.logLevel = GAILogLevel.none
         gai.dispatchInterval = kDispatchInterval
     }
     
