@@ -21,7 +21,6 @@ class CHomeFroob:CController
     func openStore()
     {
         let store:CStore = CStore()
-        
         let parentController:CParent = self.parentController
         
         parentController.dismissAnimateOver

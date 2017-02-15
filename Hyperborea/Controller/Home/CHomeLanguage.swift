@@ -36,5 +36,7 @@ class CHomeLanguage:CController
     {
         MSession.sharedInstance.changeLanguage(language:model)
         dismiss()
+        
+        AMain.sharedInstance?.trackLanguage(name:model.name)
     }
 }
