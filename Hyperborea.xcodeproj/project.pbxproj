@@ -53,6 +53,7 @@
 		DA670DC71DF8C59000FD29DD /* RModelHomeEntriesEtymologies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA670DC61DF8C59000FD29DD /* RModelHomeEntriesEtymologies.swift */; };
 		DA7228031DF4B187001370C6 /* home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA7228021DF4B187001370C6 /* home.xcassets */; };
 		DA9F5EF31E54BBD800C2EBE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA9F5EF21E54BBD800C2EBE2 /* GoogleService-Info.plist */; };
+		DA9F5EF51E54BBF900C2EBE2 /* AMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F5EF41E54BBF900C2EBE2 /* AMain.swift */; };
 		DA9FA47F1E004E22003E0719 /* CHomeFroob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA47E1E004E22003E0719 /* CHomeFroob.swift */; };
 		DA9FA4821E004EB8003E0719 /* VHomeFroob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4811E004EB8003E0719 /* VHomeFroob.swift */; };
 		DA9FA4841E005CAC003E0719 /* VHomeFroobClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */; };
@@ -187,6 +188,7 @@
 		DA670DC61DF8C59000FD29DD /* RModelHomeEntriesEtymologies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesEtymologies.swift; sourceTree = "<group>"; };
 		DA7228021DF4B187001370C6 /* home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = home.xcassets; sourceTree = "<group>"; };
 		DA9F5EF21E54BBD800C2EBE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA9F5EF41E54BBF900C2EBE2 /* AMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMain.swift; sourceTree = "<group>"; };
 		DA9FA47E1E004E22003E0719 /* CHomeFroob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHomeFroob.swift; sourceTree = "<group>"; };
 		DA9FA4811E004EB8003E0719 /* VHomeFroob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroob.swift; sourceTree = "<group>"; };
 		DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroobClock.swift; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				DA9F5EF21E54BBD800C2EBE2 /* GoogleService-Info.plist */,
+				DA9F5EF41E54BBF900C2EBE2 /* AMain.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -912,6 +915,7 @@
 				DAEBD0441E021A4E000C8A04 /* RModelHomeEntriesItemPredeterminer.swift in Sources */,
 				DA63C3C91DF5CE010026169C /* RMainDelegate.swift in Sources */,
 				DAFCEFEC1DFF581E006366E3 /* CLoading.swift in Sources */,
+				DA9F5EF51E54BBF900C2EBE2 /* AMain.swift in Sources */,
 				DA2BBA071DF873D700C450C8 /* VHomeInputPlaceholder.swift in Sources */,
 				DAEBD0361E0212EA000C8A04 /* RModelHomeEntriesItemDeterminer.swift in Sources */,
 				DAEBD02E1E020DB2000C8A04 /* RModelHomeEntriesItemAdverb.swift in Sources */,
