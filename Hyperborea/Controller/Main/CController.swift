@@ -28,7 +28,7 @@ class CController:UIViewController
         extendedLayoutIncludesOpaqueBars = false
         automaticallyAdjustsScrollViewInsets = false
         
-        AMain.sharedInstance?.trackEvent(name:description)
+        AMain.sharedInstance?.trackScreen(screen:self)
     }
     
     override var preferredStatusBarStyle:UIStatusBarStyle

@@ -5,6 +5,8 @@ import FirebaseAnalytics
 class AMain
 {
     static let sharedInstance:AMain? = AMain()
+    private let kEventSearch:String = "Search"
+    private let kEventValue:NSNumber = 1
     private let kDispatchInterval:TimeInterval = 30
     
     private init?()
@@ -39,16 +41,47 @@ class AMain
         gai.dispatchInterval = kDispatchInterval
     }
     
-    func trackScreen(name:String)
+    func trackScreen(screen:UIViewController)
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
-            GAI.sharedInstance().defaultTracker.send([kGAIScreenName:name])
+            guard
+            
+                let tracker:GAITracker = GAI.sharedInstance().defaultTracker
+            
+            else
+            {
+                return
+            }
+            
+            let screenName:String = String(describing:type(of:screen))
+            tracker.set(kGAIScreenName, value:screenName)
+            let screenBuild:[NSObject:AnyObject] = GAIDictionaryBuilder.createScreenView().build() as [NSObject:AnyObject]
+            tracker.send(screenBuild)
         }
     }
     
-    func trackEvent(name:String)
+    func trackSearch(
+        wordId:String,
+        region:String)
     {
-        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        {
+            guard
+                
+                let tracker:GAITracker = GAI.sharedInstance().defaultTracker
+                
+            else
+            {
+                return
+            }
+            
+            let eventBuild:[NSObject:AnyObject] = GAIDictionaryBuilder.createEvent(
+                withCategory:self.kEventSearch,
+                action:wordId,
+                label:region,
+                value:self.kEventValue).build() as [NSObject:AnyObject]
+            tracker.send(eventBuild)
+        }
     }
 }
