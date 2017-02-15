@@ -52,7 +52,7 @@
 		DA63C3EB1DF65A000026169C /* RCredentialsItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63C3EA1DF65A000026169C /* RCredentialsItem2.swift */; };
 		DA670DC71DF8C59000FD29DD /* RModelHomeEntriesEtymologies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA670DC61DF8C59000FD29DD /* RModelHomeEntriesEtymologies.swift */; };
 		DA7228031DF4B187001370C6 /* home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA7228021DF4B187001370C6 /* home.xcassets */; };
-		DA9F5EF01E54BB7600C2EBE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA9F5EEF1E54BB7600C2EBE2 /* GoogleService-Info.plist */; };
+		DA9F5EF31E54BBD800C2EBE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA9F5EF21E54BBD800C2EBE2 /* GoogleService-Info.plist */; };
 		DA9FA47F1E004E22003E0719 /* CHomeFroob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA47E1E004E22003E0719 /* CHomeFroob.swift */; };
 		DA9FA4821E004EB8003E0719 /* VHomeFroob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4811E004EB8003E0719 /* VHomeFroob.swift */; };
 		DA9FA4841E005CAC003E0719 /* VHomeFroobClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */; };
@@ -186,7 +186,7 @@
 		DA63C3EA1DF65A000026169C /* RCredentialsItem2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCredentialsItem2.swift; sourceTree = "<group>"; };
 		DA670DC61DF8C59000FD29DD /* RModelHomeEntriesEtymologies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RModelHomeEntriesEtymologies.swift; sourceTree = "<group>"; };
 		DA7228021DF4B187001370C6 /* home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = home.xcassets; sourceTree = "<group>"; };
-		DA9F5EEF1E54BB7600C2EBE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA9F5EF21E54BBD800C2EBE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA9FA47E1E004E22003E0719 /* CHomeFroob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHomeFroob.swift; sourceTree = "<group>"; };
 		DA9FA4811E004EB8003E0719 /* VHomeFroob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroob.swift; sourceTree = "<group>"; };
 		DA9FA4831E005CAC003E0719 /* VHomeFroobClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeFroobClock.swift; sourceTree = "<group>"; };
@@ -483,6 +483,14 @@
 			path = Credentials;
 			sourceTree = "<group>";
 		};
+		DA9F5EF11E54BBC100C2EBE2 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				DA9F5EF21E54BBD800C2EBE2 /* GoogleService-Info.plist */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		DA9FA4801E004EB0003E0719 /* HomeFroob */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,7 +547,7 @@
 		DAAD34321DF22D7500C5D3D1 /* Hyperborea */ = {
 			isa = PBXGroup;
 			children = (
-				DA9F5EEF1E54BB7600C2EBE2 /* GoogleService-Info.plist */,
+				DA9F5EF11E54BBC100C2EBE2 /* Analytics */,
 				DAD7B4A21DFF31ED0043EEF0 /* Data */,
 				DA63C3C21DF5CDD50026169C /* Request */,
 				DAAD347E1DF23A6C00C5D3D1 /* Assets */,
@@ -822,7 +830,7 @@
 			files = (
 				DAAD34801DF23A6C00C5D3D1 /* LaunchScreen.storyboard in Resources */,
 				DAFCEFF31DFF7E25006366E3 /* brand.xcassets in Resources */,
-				DA9F5EF01E54BB7600C2EBE2 /* GoogleService-Info.plist in Resources */,
+				DA9F5EF31E54BBD800C2EBE2 /* GoogleService-Info.plist in Resources */,
 				DA7228031DF4B187001370C6 /* home.xcassets in Resources */,
 				DA63C3D61DF5F2250026169C /* ResourceUrl.plist in Resources */,
 				DAB0FA501DF7773F00E3B51D /* loader.xcassets in Resources */,
