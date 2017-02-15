@@ -75,6 +75,7 @@ class CStore:CController, SKProductsRequestDelegate, SKPaymentTransactionObserve
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
+            AMain.sharedInstance?.trackStore(action:AMain.StoreAction.restore, purchase:nil)
             SKPaymentQueue.default().restoreCompletedTransactions()
         }
     }
@@ -92,6 +93,7 @@ class CStore:CController, SKProductsRequestDelegate, SKPaymentTransactionObserve
                 return
             }
             
+            AMain.sharedInstance?.trackStore(action:AMain.StoreAction.purchase, purchase:skProduct.localizedTitle)
             let skPayment:SKPayment = SKPayment(product:skProduct)
             SKPaymentQueue.default().add(skPayment)
         }

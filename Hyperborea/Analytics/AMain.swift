@@ -144,7 +144,7 @@ class AMain
         }
     }
     
-    func trackStore(action:StoreAction, purchase:String)
+    func trackStore(action:StoreAction, purchase:String?)
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
