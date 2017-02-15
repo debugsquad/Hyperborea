@@ -10,10 +10,17 @@ class AMain
         case searchStore = "Search/Store"
     }
     
+    enum StoreAction:String
+    {
+        case purchase = "Purchase"
+        case restore = "Restore"
+    }
+    
     static let sharedInstance:AMain? = AMain()
     private let kEventSearch:String = "Search"
     private let kEventLanguage:String = "Language"
     private let kEventFroob:String = "Froob"
+    private let kEventStore:String = "Froob"
     private let kEventValue:NSNumber = 1
     private let kDispatchInterval:TimeInterval = 30
     
@@ -129,9 +136,31 @@ class AMain
             }
             
             let eventBuild:[NSObject:AnyObject] = GAIDictionaryBuilder.createEvent(
-                withCategory:self.kEventLanguage,
+                withCategory:self.kEventFroob,
                 action:action.rawValue,
                 label:nil,
+                value:self.kEventValue).build() as [NSObject:AnyObject]
+            tracker.send(eventBuild)
+        }
+    }
+    
+    func trackStore(action:StoreAction, purchase:String)
+    {
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        {
+            guard
+                
+                let tracker:GAITracker = GAI.sharedInstance().defaultTracker
+                
+            else
+            {
+                return
+            }
+            
+            let eventBuild:[NSObject:AnyObject] = GAIDictionaryBuilder.createEvent(
+                withCategory:self.kEventStore,
+                action:action.rawValue,
+                label:purchase,
                 value:self.kEventValue).build() as [NSObject:AnyObject]
             tracker.send(eventBuild)
         }
