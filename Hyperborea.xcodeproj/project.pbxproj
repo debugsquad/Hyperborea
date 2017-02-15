@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AB088C8C7ACC2703C007A9F /* Pods_Hyperborea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8D1C53BA48509607707819 /* Pods_Hyperborea.framework */; };
 		DA0A8E651DFB5ED2009FD4C4 /* VHomeLanguageOrb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A8E641DFB5ED2009FD4C4 /* VHomeLanguageOrb.swift */; };
 		DA1783F61DFB55CC00895012 /* CHomeLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1783F51DFB55CC00895012 /* CHomeLanguage.swift */; };
 		DA1783F91DFB567D00895012 /* VHomeLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1783F81DFB567D00895012 /* VHomeLanguage.swift */; };
@@ -138,6 +139,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58C4790B7446D22F1F4C7F1E /* Pods-Hyperborea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperborea.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hyperborea/Pods-Hyperborea.release.xcconfig"; sourceTree = "<group>"; };
+		74587CBDC386FE9FB50E81FE /* Pods-Hyperborea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperborea.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hyperborea/Pods-Hyperborea.debug.xcconfig"; sourceTree = "<group>"; };
 		DA0A8E641DFB5ED2009FD4C4 /* VHomeLanguageOrb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeLanguageOrb.swift; sourceTree = "<group>"; };
 		DA1783F51DFB55CC00895012 /* CHomeLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHomeLanguage.swift; sourceTree = "<group>"; };
 		DA1783F81DFB567D00895012 /* VHomeLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHomeLanguage.swift; sourceTree = "<group>"; };
@@ -269,6 +272,7 @@
 		DAFCEFEE1DFF5856006366E3 /* VLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLoading.swift; sourceTree = "<group>"; };
 		DAFCEFF01DFF5BBE006366E3 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
 		DAFCEFF21DFF7E25006366E3 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
+		FB8D1C53BA48509607707819 /* Pods_Hyperborea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperborea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,12 +280,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB088C8C7ACC2703C007A9F /* Pods_Hyperborea.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC8CDEF71B96143DA367CCB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74587CBDC386FE9FB50E81FE /* Pods-Hyperborea.debug.xcconfig */,
+				58C4790B7446D22F1F4C7F1E /* Pods-Hyperborea.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC3DD08E917022D3A4F0BE2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB8D1C53BA48509607707819 /* Pods_Hyperborea.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DA1783F71DFB567100895012 /* HomeLanguage */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +521,8 @@
 			children = (
 				DAAD34321DF22D7500C5D3D1 /* Hyperborea */,
 				DAAD34311DF22D7500C5D3D1 /* Products */,
+				AC8CDEF71B96143DA367CCB7 /* Pods */,
+				CC3DD08E917022D3A4F0BE2D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -737,9 +761,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAAD34421DF22D7500C5D3D1 /* Build configuration list for PBXNativeTarget "Hyperborea" */;
 			buildPhases = (
+				B3BB06600C8CE80BF392D417 /* [CP] Check Pods Manifest.lock */,
 				DAAD342C1DF22D7500C5D3D1 /* Sources */,
 				DAAD342D1DF22D7500C5D3D1 /* Frameworks */,
 				DAAD342E1DF22D7500C5D3D1 /* Resources */,
+				D8E67C33EFF7F624D3FB19C4 /* [CP] Embed Pods Frameworks */,
+				6E57C79C2C5C5F77E9F97B49 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -802,6 +829,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E57C79C2C5C5F77E9F97B49 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hyperborea/Pods-Hyperborea-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3BB06600C8CE80BF392D417 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D8E67C33EFF7F624D3FB19C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hyperborea/Pods-Hyperborea-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DAAD342C1DF22D7500C5D3D1 /* Sources */ = {
@@ -1041,6 +1116,7 @@
 		};
 		DAAD34431DF22D7500C5D3D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74587CBDC386FE9FB50E81FE /* Pods-Hyperborea.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
@@ -1057,6 +1133,7 @@
 		};
 		DAAD34441DF22D7500C5D3D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58C4790B7446D22F1F4C7F1E /* Pods-Hyperborea.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7AMWG3RLHN;
