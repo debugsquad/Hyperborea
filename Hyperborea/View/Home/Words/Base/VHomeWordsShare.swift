@@ -10,7 +10,7 @@ class VHomeWordsShare:UIButton
     private let kImageWidth:CGFloat = 32
     private let kLabelWidth:CGFloat = 100
     private let kLabelTop:CGFloat = 4
-    private let kImageLeft:CGFloat = 7
+    private let kImageLeft:CGFloat = 5
     private let kImageRight:CGFloat = 2
     private let kSpinnerWidth:CGFloat = 70
     private let kTitleFontSize:CGFloat = 40
@@ -49,7 +49,7 @@ class VHomeWordsShare:UIButton
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.bold(size:14)
+        label.font = UIFont.bold(size:13)
         label.text = NSLocalizedString("VHomeWordsShare", comment:"")
         self.label = label
         
