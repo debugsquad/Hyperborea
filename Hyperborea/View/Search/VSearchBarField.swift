@@ -1,6 +1,6 @@
 import UIKit
 
-class VSearchBarField:UITextField
+class VSearchBarField:UITextField, UITextFieldDelegate
 {
     private weak var controller:CSearch!
     
@@ -11,11 +11,31 @@ class VSearchBarField:UITextField
         font = UIFont.regular(size:30)
         textColor = UIColor.black
         tintColor = UIColor.black
+        delegate = self
         self.controller = controller
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: textField delegate
+    
+    func textFieldDidBeginEditing(_ textField:UITextField)
+    {
+        controller.viewSearch.viewBar.backgroundColor = UIColor.white
+    }
+    
+    func textFieldDidEndEditing(_ textField:UITextField)
+    {
+        controller.viewSearch.viewBar.backgroundColor = UIColor.clear
+    }
+    
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        
+        return true
     }
 }

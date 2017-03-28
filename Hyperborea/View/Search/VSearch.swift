@@ -2,8 +2,8 @@ import UIKit
 
 class VSearch:VView
 {
+    private(set) weak var viewBar:VSearchBar!
     private weak var controller:CSearch!
-    private weak var viewBar:VSearchBar!
     private weak var layoutBarHeight:NSLayoutConstraint!
     private let kBarMaxHeight:CGFloat = 82
     

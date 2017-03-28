@@ -2,7 +2,7 @@ import UIKit
 
 class CSearch:CController
 {
-    private weak var viewSearch:VSearch!
+    private(set) weak var viewSearch:VSearch!
     
     override func loadView()
     {
