@@ -40,6 +40,10 @@
 		DA1F6FE61E8AFDFC00484942 /* VSearchBarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE51E8AFDFC00484942 /* VSearchBarField.swift */; };
 		DA1F6FE81E8B069800484942 /* VSearchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE71E8B069800484942 /* VSearchOptions.swift */; };
 		DA1F6FEA1E8B075200484942 /* VSearchOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE91E8B075200484942 /* VSearchOptionsCell.swift */; };
+		DA1F6FEC1E8B13A400484942 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6FEB1E8B13A400484942 /* generic.xcassets */; };
+		DA1F6FEF1E8B13DD00484942 /* MSearchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FEE1E8B13DD00484942 /* MSearchOptions.swift */; };
+		DA1F6FF11E8B141900484942 /* MSearchOptionsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FF01E8B141900484942 /* MSearchOptionsItem.swift */; };
+		DA1F6FF31E8B168B00484942 /* MSearchOptionsItemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FF21E8B168B00484942 /* MSearchOptionsItemSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		DA1F6FE51E8AFDFC00484942 /* VSearchBarField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchBarField.swift; sourceTree = "<group>"; };
 		DA1F6FE71E8B069800484942 /* VSearchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchOptions.swift; sourceTree = "<group>"; };
 		DA1F6FE91E8B075200484942 /* VSearchOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchOptionsCell.swift; sourceTree = "<group>"; };
+		DA1F6FEB1E8B13A400484942 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
+		DA1F6FEE1E8B13DD00484942 /* MSearchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchOptions.swift; sourceTree = "<group>"; };
+		DA1F6FF01E8B141900484942 /* MSearchOptionsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchOptionsItem.swift; sourceTree = "<group>"; };
+		DA1F6FF21E8B168B00484942 /* MSearchOptionsItemSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchOptionsItemSettings.swift; sourceTree = "<group>"; };
 		DA8AD6BF1E8AE8D30072560C /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8AD6CE1E8AE8D30072560C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				DA1F6F971E8AEF1C00484942 /* LaunchScreen.storyboard */,
+				DA1F6FEB1E8B13A400484942 /* generic.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -144,6 +153,7 @@
 		DA1F6FA81E8AEF1C00484942 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA1F6FED1E8B13CB00484942 /* Search */,
 				DA1F6FA91E8AEF1C00484942 /* Session */,
 			);
 			path = Model;
@@ -225,6 +235,16 @@
 				DA1F6FE51E8AFDFC00484942 /* VSearchBarField.swift */,
 				DA1F6FE71E8B069800484942 /* VSearchOptions.swift */,
 				DA1F6FE91E8B075200484942 /* VSearchOptionsCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DA1F6FED1E8B13CB00484942 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6FEE1E8B13DD00484942 /* MSearchOptions.swift */,
+				DA1F6FF01E8B141900484942 /* MSearchOptionsItem.swift */,
+				DA1F6FF21E8B168B00484942 /* MSearchOptionsItemSettings.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -322,6 +342,7 @@
 				DA1F6FC01E8AEF1C00484942 /* LaunchScreen.storyboard in Resources */,
 				DA1F6FCE1E8AEF1C00484942 /* Localizable.strings in Resources */,
 				DA1F6FD01E8AEF1C00484942 /* ResourceUrl.plist in Resources */,
+				DA1F6FEC1E8B13A400484942 /* generic.xcassets in Resources */,
 				DA1F6FCF1E8AEF1C00484942 /* ResourceFont.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,12 +358,14 @@
 				DA1F6FCC1E8AEF1C00484942 /* ExtensionURL.swift in Sources */,
 				DA1F6FD11E8AEF1C00484942 /* VParent.swift in Sources */,
 				DA1F6FE81E8B069800484942 /* VSearchOptions.swift in Sources */,
+				DA1F6FEF1E8B13DD00484942 /* MSearchOptions.swift in Sources */,
 				DA1F6FD71E8AEF1C00484942 /* VBorder.swift in Sources */,
 				DA1F6FD81E8AEF1C00484942 /* VCollection.swift in Sources */,
 				DA1F6FC41E8AEF1C00484942 /* DManager.swift in Sources */,
 				DA1F6FD41E8AEF1C00484942 /* VParentPushBackground.swift in Sources */,
 				DA1F6FDB1E8AEF1C00484942 /* VToast.swift in Sources */,
 				DA1F6FD91E8AEF1C00484942 /* VCollectionFlow.swift in Sources */,
+				DA1F6FF11E8B141900484942 /* MSearchOptionsItem.swift in Sources */,
 				DA1F6FC61E8AEF1C00484942 /* ExtensionNotification.swift in Sources */,
 				DA1F6FD51E8AEF1C00484942 /* VAlert.swift in Sources */,
 				DA1F6FCA1E8AEF1C00484942 /* ExtensionUIColor.swift in Sources */,
@@ -351,6 +374,7 @@
 				DA1F6FDC1E8AEF1C00484942 /* VView.swift in Sources */,
 				DA1F6FC11E8AEF1C00484942 /* CAppDelegate.swift in Sources */,
 				DA1F6FC91E8AEF1C00484942 /* ExtensionUICollectionReusableView.swift in Sources */,
+				DA1F6FF31E8B168B00484942 /* MSearchOptionsItemSettings.swift in Sources */,
 				DA1F6FDF1E8AF50D00484942 /* CSearch.swift in Sources */,
 				DA1F6FD61E8AEF1C00484942 /* VBlur.swift in Sources */,
 				DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */,

@@ -2,13 +2,15 @@ import UIKit
 
 class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
+    private let model:MSearchOptions
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
-    private let kInterItem:CGFloat = 4
     private let kCellWidth:CGFloat = 60
     
     init(controller:CSearch)
     {
+        model = MSearchOptions()
+        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
@@ -25,13 +27,6 @@ class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
             flow.scrollDirection = UICollectionViewScrollDirection.horizontal
-            flow.minimumLineSpacing = kInterItem
-            flow.minimumInteritemSpacing = kInterItem
-            flow.sectionInset = UIEdgeInsets(
-                top:kInterItem,
-                left:kInterItem,
-                bottom:kInterItem,
-                right:kInterItem)
         }
         
         addSubview(collectionView)
@@ -46,15 +41,23 @@ class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         return nil
     }
     
+    //MARK: private
+    
+    private func modelAtIndex(index:IndexPath) -> MSearchOptionsItem
+    {
+        let item:MSearchOptionsItem = model.items[index.item]
+        
+        return item
+    }
+    
     //MARK: collectionView delegate
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
         let height:CGFloat = collectionView.bounds.maxY
-        let remainHeight:CGFloat = height - (kInterItem + kInterItem)
         let size:CGSize = CGSize(
             width:kCellWidth,
-            height:remainHeight)
+            height:height)
         
         return size
     }
@@ -66,7 +69,9 @@ class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        return 3
+        let count:Int = model.items.count
+        
+        return count
     }
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
