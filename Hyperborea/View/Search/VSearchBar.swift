@@ -9,11 +9,11 @@ class VSearchBar:UIView
     {
         super.init(frame:CGRect.zero)
         clipsToBounds = true
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let border:VBorder = VBorder(color:UIColor.black)
+        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.2))
         
         addSubview(border)
         

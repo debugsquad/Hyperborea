@@ -10,7 +10,7 @@ class VSearch:VView
     override init(controller:CController)
     {
         super.init(controller:controller)
-        backgroundColor = UIColor(red:0.85, green:0.87, blue:0.9, alpha:1)
+        backgroundColor = UIColor(red:0.95, green:0.97, blue:1, alpha:1)
         self.controller = controller as? CSearch
         
         let viewBar:VSearchBar = VSearchBar(
