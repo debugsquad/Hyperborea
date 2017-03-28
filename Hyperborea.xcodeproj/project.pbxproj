@@ -6,7 +6,68 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DA1F6FC01E8AEF1C00484942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6F971E8AEF1C00484942 /* LaunchScreen.storyboard */; };
+		DA1F6FC11E8AEF1C00484942 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6F9A1E8AEF1C00484942 /* CAppDelegate.swift */; };
+		DA1F6FC21E8AEF1C00484942 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6F9B1E8AEF1C00484942 /* CController.swift */; };
+		DA1F6FC31E8AEF1C00484942 /* CParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6F9C1E8AEF1C00484942 /* CParent.swift */; };
+		DA1F6FC41E8AEF1C00484942 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6F9E1E8AEF1C00484942 /* DManager.swift */; };
+		DA1F6FC51E8AEF1C00484942 /* ExtensionFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FA01E8AEF1C00484942 /* ExtensionFileManager.swift */; };
+		DA1F6FC61E8AEF1C00484942 /* ExtensionNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FA11E8AEF1C00484942 /* ExtensionNotification.swift */; };
+		DA1F6FC71E8AEF1C00484942 /* ExtensionNSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FA21E8AEF1C00484942 /* ExtensionNSLayoutConstraint.swift */; };
+		DA1F6FC81E8AEF1C00484942 /* ExtensionNSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FA31E8AEF1C00484942 /* ExtensionNSManagedObject.swift */; };
+		DA1F6FC91E8AEF1C00484942 /* ExtensionUICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FA41E8AEF1C00484942 /* ExtensionUICollectionReusableView.swift */; };
+		DA1F6FCA1E8AEF1C00484942 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FA51E8AEF1C00484942 /* ExtensionUIColor.swift */; };
+		DA1F6FCB1E8AEF1C00484942 /* ExtensionUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FA61E8AEF1C00484942 /* ExtensionUIFont.swift */; };
+		DA1F6FCC1E8AEF1C00484942 /* ExtensionURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FA71E8AEF1C00484942 /* ExtensionURL.swift */; };
+		DA1F6FCD1E8AEF1C00484942 /* MSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FAA1E8AEF1C00484942 /* MSession.swift */; };
+		DA1F6FCE1E8AEF1C00484942 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6FAC1E8AEF1C00484942 /* Localizable.strings */; };
+		DA1F6FCF1E8AEF1C00484942 /* ResourceFont.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6FAE1E8AEF1C00484942 /* ResourceFont.plist */; };
+		DA1F6FD01E8AEF1C00484942 /* ResourceUrl.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6FAF1E8AEF1C00484942 /* ResourceUrl.plist */; };
+		DA1F6FD11E8AEF1C00484942 /* VParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FB31E8AEF1C00484942 /* VParent.swift */; };
+		DA1F6FD21E8AEF1C00484942 /* VParentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FB41E8AEF1C00484942 /* VParentBar.swift */; };
+		DA1F6FD31E8AEF1C00484942 /* VParentBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FB51E8AEF1C00484942 /* VParentBarButton.swift */; };
+		DA1F6FD41E8AEF1C00484942 /* VParentPushBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FB61E8AEF1C00484942 /* VParentPushBackground.swift */; };
+		DA1F6FD51E8AEF1C00484942 /* VAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FB81E8AEF1C00484942 /* VAlert.swift */; };
+		DA1F6FD61E8AEF1C00484942 /* VBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FB91E8AEF1C00484942 /* VBlur.swift */; };
+		DA1F6FD71E8AEF1C00484942 /* VBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBA1E8AEF1C00484942 /* VBorder.swift */; };
+		DA1F6FD81E8AEF1C00484942 /* VCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBB1E8AEF1C00484942 /* VCollection.swift */; };
+		DA1F6FD91E8AEF1C00484942 /* VCollectionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBC1E8AEF1C00484942 /* VCollectionFlow.swift */; };
+		DA1F6FDA1E8AEF1C00484942 /* VSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBD1E8AEF1C00484942 /* VSpinner.swift */; };
+		DA1F6FDB1E8AEF1C00484942 /* VToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBE1E8AEF1C00484942 /* VToast.swift */; };
+		DA1F6FDC1E8AEF1C00484942 /* VView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBF1E8AEF1C00484942 /* VView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		DA1F6F971E8AEF1C00484942 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA1F6F9A1E8AEF1C00484942 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
+		DA1F6F9B1E8AEF1C00484942 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
+		DA1F6F9C1E8AEF1C00484942 /* CParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CParent.swift; sourceTree = "<group>"; };
+		DA1F6F9E1E8AEF1C00484942 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
+		DA1F6FA01E8AEF1C00484942 /* ExtensionFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionFileManager.swift; sourceTree = "<group>"; };
+		DA1F6FA11E8AEF1C00484942 /* ExtensionNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNotification.swift; sourceTree = "<group>"; };
+		DA1F6FA21E8AEF1C00484942 /* ExtensionNSLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNSLayoutConstraint.swift; sourceTree = "<group>"; };
+		DA1F6FA31E8AEF1C00484942 /* ExtensionNSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNSManagedObject.swift; sourceTree = "<group>"; };
+		DA1F6FA41E8AEF1C00484942 /* ExtensionUICollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUICollectionReusableView.swift; sourceTree = "<group>"; };
+		DA1F6FA51E8AEF1C00484942 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		DA1F6FA61E8AEF1C00484942 /* ExtensionUIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIFont.swift; sourceTree = "<group>"; };
+		DA1F6FA71E8AEF1C00484942 /* ExtensionURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionURL.swift; sourceTree = "<group>"; };
+		DA1F6FAA1E8AEF1C00484942 /* MSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSession.swift; sourceTree = "<group>"; };
+		DA1F6FAD1E8AEF1C00484942 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA1F6FAE1E8AEF1C00484942 /* ResourceFont.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceFont.plist; sourceTree = "<group>"; };
+		DA1F6FAF1E8AEF1C00484942 /* ResourceUrl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceUrl.plist; sourceTree = "<group>"; };
+		DA1F6FB31E8AEF1C00484942 /* VParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParent.swift; sourceTree = "<group>"; };
+		DA1F6FB41E8AEF1C00484942 /* VParentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParentBar.swift; sourceTree = "<group>"; };
+		DA1F6FB51E8AEF1C00484942 /* VParentBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParentBarButton.swift; sourceTree = "<group>"; };
+		DA1F6FB61E8AEF1C00484942 /* VParentPushBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParentPushBackground.swift; sourceTree = "<group>"; };
+		DA1F6FB81E8AEF1C00484942 /* VAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAlert.swift; sourceTree = "<group>"; };
+		DA1F6FB91E8AEF1C00484942 /* VBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBlur.swift; sourceTree = "<group>"; };
+		DA1F6FBA1E8AEF1C00484942 /* VBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBorder.swift; sourceTree = "<group>"; };
+		DA1F6FBB1E8AEF1C00484942 /* VCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCollection.swift; sourceTree = "<group>"; };
+		DA1F6FBC1E8AEF1C00484942 /* VCollectionFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCollectionFlow.swift; sourceTree = "<group>"; };
+		DA1F6FBD1E8AEF1C00484942 /* VSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSpinner.swift; sourceTree = "<group>"; };
+		DA1F6FBE1E8AEF1C00484942 /* VToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VToast.swift; sourceTree = "<group>"; };
+		DA1F6FBF1E8AEF1C00484942 /* VView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VView.swift; sourceTree = "<group>"; };
 		DA8AD6BF1E8AE8D30072560C /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8AD6CE1E8AE8D30072560C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -22,6 +83,124 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA1F6F961E8AEF1C00484942 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6F971E8AEF1C00484942 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		DA1F6F981E8AEF1C00484942 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6F991E8AEF1C00484942 /* Main */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DA1F6F991E8AEF1C00484942 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6F9A1E8AEF1C00484942 /* CAppDelegate.swift */,
+				DA1F6F9B1E8AEF1C00484942 /* CController.swift */,
+				DA1F6F9C1E8AEF1C00484942 /* CParent.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DA1F6F9D1E8AEF1C00484942 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6F9E1E8AEF1C00484942 /* DManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DA1F6F9F1E8AEF1C00484942 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6FA01E8AEF1C00484942 /* ExtensionFileManager.swift */,
+				DA1F6FA11E8AEF1C00484942 /* ExtensionNotification.swift */,
+				DA1F6FA21E8AEF1C00484942 /* ExtensionNSLayoutConstraint.swift */,
+				DA1F6FA31E8AEF1C00484942 /* ExtensionNSManagedObject.swift */,
+				DA1F6FA41E8AEF1C00484942 /* ExtensionUICollectionReusableView.swift */,
+				DA1F6FA51E8AEF1C00484942 /* ExtensionUIColor.swift */,
+				DA1F6FA61E8AEF1C00484942 /* ExtensionUIFont.swift */,
+				DA1F6FA71E8AEF1C00484942 /* ExtensionURL.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DA1F6FA81E8AEF1C00484942 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6FA91E8AEF1C00484942 /* Session */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA1F6FA91E8AEF1C00484942 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6FAA1E8AEF1C00484942 /* MSession.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		DA1F6FAB1E8AEF1C00484942 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6FAC1E8AEF1C00484942 /* Localizable.strings */,
+				DA1F6FAE1E8AEF1C00484942 /* ResourceFont.plist */,
+				DA1F6FAF1E8AEF1C00484942 /* ResourceUrl.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DA1F6FB01E8AEF1C00484942 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6FB11E8AEF1C00484942 /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA1F6FB11E8AEF1C00484942 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6FB21E8AEF1C00484942 /* Parent */,
+				DA1F6FB71E8AEF1C00484942 /* Subclasses */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DA1F6FB21E8AEF1C00484942 /* Parent */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6FB31E8AEF1C00484942 /* VParent.swift */,
+				DA1F6FB41E8AEF1C00484942 /* VParentBar.swift */,
+				DA1F6FB51E8AEF1C00484942 /* VParentBarButton.swift */,
+				DA1F6FB61E8AEF1C00484942 /* VParentPushBackground.swift */,
+			);
+			path = Parent;
+			sourceTree = "<group>";
+		};
+		DA1F6FB71E8AEF1C00484942 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6FB81E8AEF1C00484942 /* VAlert.swift */,
+				DA1F6FB91E8AEF1C00484942 /* VBlur.swift */,
+				DA1F6FBA1E8AEF1C00484942 /* VBorder.swift */,
+				DA1F6FBB1E8AEF1C00484942 /* VCollection.swift */,
+				DA1F6FBC1E8AEF1C00484942 /* VCollectionFlow.swift */,
+				DA1F6FBD1E8AEF1C00484942 /* VSpinner.swift */,
+				DA1F6FBE1E8AEF1C00484942 /* VToast.swift */,
+				DA1F6FBF1E8AEF1C00484942 /* VView.swift */,
+			);
+			path = Subclasses;
+			sourceTree = "<group>";
+		};
 		DA8AD6B61E8AE8D30072560C = {
 			isa = PBXGroup;
 			children = (
@@ -41,6 +220,13 @@
 		DA8AD6C11E8AE8D30072560C /* Hyperborea */ = {
 			isa = PBXGroup;
 			children = (
+				DA1F6F961E8AEF1C00484942 /* Assets */,
+				DA1F6F981E8AEF1C00484942 /* Controller */,
+				DA1F6F9D1E8AEF1C00484942 /* Data */,
+				DA1F6F9F1E8AEF1C00484942 /* Extensions */,
+				DA1F6FA81E8AEF1C00484942 /* Model */,
+				DA1F6FAB1E8AEF1C00484942 /* Resource */,
+				DA1F6FB01E8AEF1C00484942 /* View */,
 				DA8AD6CE1E8AE8D30072560C /* Info.plist */,
 			);
 			path = Hyperborea;
@@ -106,6 +292,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1F6FC01E8AEF1C00484942 /* LaunchScreen.storyboard in Resources */,
+				DA1F6FCE1E8AEF1C00484942 /* Localizable.strings in Resources */,
+				DA1F6FD01E8AEF1C00484942 /* ResourceUrl.plist in Resources */,
+				DA1F6FCF1E8AEF1C00484942 /* ResourceFont.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,10 +306,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1F6FC51E8AEF1C00484942 /* ExtensionFileManager.swift in Sources */,
+				DA1F6FCC1E8AEF1C00484942 /* ExtensionURL.swift in Sources */,
+				DA1F6FD31E8AEF1C00484942 /* VParentBarButton.swift in Sources */,
+				DA1F6FD11E8AEF1C00484942 /* VParent.swift in Sources */,
+				DA1F6FD71E8AEF1C00484942 /* VBorder.swift in Sources */,
+				DA1F6FD81E8AEF1C00484942 /* VCollection.swift in Sources */,
+				DA1F6FC41E8AEF1C00484942 /* DManager.swift in Sources */,
+				DA1F6FD41E8AEF1C00484942 /* VParentPushBackground.swift in Sources */,
+				DA1F6FDB1E8AEF1C00484942 /* VToast.swift in Sources */,
+				DA1F6FD91E8AEF1C00484942 /* VCollectionFlow.swift in Sources */,
+				DA1F6FC61E8AEF1C00484942 /* ExtensionNotification.swift in Sources */,
+				DA1F6FD51E8AEF1C00484942 /* VAlert.swift in Sources */,
+				DA1F6FCA1E8AEF1C00484942 /* ExtensionUIColor.swift in Sources */,
+				DA1F6FCB1E8AEF1C00484942 /* ExtensionUIFont.swift in Sources */,
+				DA1F6FD21E8AEF1C00484942 /* VParentBar.swift in Sources */,
+				DA1F6FC81E8AEF1C00484942 /* ExtensionNSManagedObject.swift in Sources */,
+				DA1F6FDC1E8AEF1C00484942 /* VView.swift in Sources */,
+				DA1F6FC11E8AEF1C00484942 /* CAppDelegate.swift in Sources */,
+				DA1F6FC91E8AEF1C00484942 /* ExtensionUICollectionReusableView.swift in Sources */,
+				DA1F6FD61E8AEF1C00484942 /* VBlur.swift in Sources */,
+				DA1F6FCD1E8AEF1C00484942 /* MSession.swift in Sources */,
+				DA1F6FDA1E8AEF1C00484942 /* VSpinner.swift in Sources */,
+				DA1F6FC21E8AEF1C00484942 /* CController.swift in Sources */,
+				DA1F6FC31E8AEF1C00484942 /* CParent.swift in Sources */,
+				DA1F6FC71E8AEF1C00484942 /* ExtensionNSLayoutConstraint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DA1F6FAC1E8AEF1C00484942 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA1F6FAD1E8AEF1C00484942 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DA8AD6CF1E8AE8D30072560C /* Debug */ = {
@@ -260,6 +486,7 @@
 				DA8AD6D31E8AE8D30072560C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
