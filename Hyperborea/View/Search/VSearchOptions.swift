@@ -76,10 +76,12 @@ class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
+        let item:MSearchOptionsItem = modelAtIndex(index:indexPath)
         let cell:VSearchOptionsCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
             VSearchOptionsCell.reusableIdentifier,
             for:indexPath) as! VSearchOptionsCell
+        cell.config(model:item)
         
         return cell
     }
