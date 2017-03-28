@@ -6,6 +6,7 @@ class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
     private let kCellWidth:CGFloat = 60
+    private let kDeselectTime:TimeInterval = 0.2
     
     init(controller:CSearch)
     {
@@ -84,5 +85,23 @@ class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         cell.config(model:item)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
+    {
+        collectionView.isUserInteractionEnabled = false
+        
+        let item:MSearchOptionsItem = modelAtIndex(index:indexPath)
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kDeselectTime)
+        { [weak collectionView] in
+            
+            collectionView?.selectItem(
+                at:nil,
+                animated:true,
+                scrollPosition:UICollectionViewScrollPosition())
+            collectionView?.isUserInteractionEnabled = true
+        }
     }
 }
