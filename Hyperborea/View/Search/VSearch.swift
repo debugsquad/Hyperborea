@@ -5,7 +5,7 @@ class VSearch:VView
     private weak var controller:CSearch!
     private weak var viewBar:VSearchBar!
     private weak var layoutBarHeight:NSLayoutConstraint!
-    private let kBarMaxHeight:CGFloat = 100
+    private let kBarMaxHeight:CGFloat = 82
     
     override init(controller:CController)
     {

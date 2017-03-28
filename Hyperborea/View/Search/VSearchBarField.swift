@@ -8,6 +8,9 @@ class VSearchBarField:UITextField
     {
         super.init(frame:CGRect.zero)
         translatesAutoresizingMaskIntoConstraints = false
+        font = UIFont.regular(size:30)
+        textColor = UIColor.black
+        tintColor = UIColor.black
         self.controller = controller
     }
     

@@ -3,7 +3,10 @@ import UIKit
 class VSearchBar:UIView
 {
     private weak var controller:CSearch!
+    private(set) weak var viewField:VSearchBarField!
     private let kBorderHeight:CGFloat = 1
+    private let kFieldMarginHorizontal:CGFloat = 10
+    private let kFieldTop:CGFloat = 20
     
     init(controller:CSearch)
     {
@@ -13,9 +16,14 @@ class VSearchBar:UIView
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.2))
+        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
+        
+        let viewField:VSearchBarField = VSearchBarField(
+            controller:controller)
+        self.viewField = viewField
         
         addSubview(border)
+        addSubview(viewField)
         
         NSLayoutConstraint.height(
             view:border,
@@ -26,6 +34,18 @@ class VSearchBar:UIView
         NSLayoutConstraint.equalsHorizontal(
             view:border,
             toView:self)
+        
+        NSLayoutConstraint.topToTop(
+            view:viewField,
+            toView:self,
+            constant:kFieldTop)
+        NSLayoutConstraint.bottomToBottom(
+            view:viewField,
+            toView:self)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewField,
+            toView:self,
+            margin:kFieldMarginHorizontal)
     }
     
     required init?(coder:NSCoder)
