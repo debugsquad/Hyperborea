@@ -16,7 +16,7 @@ class CParent:UIViewController
         case none = 0
     }
     
-    weak var viewParent:VParent!
+    private(set) weak var viewParent:VParent!
     private var barHidden:Bool = false
     private let kStatusBarStyle:UIStatusBarStyle = UIStatusBarStyle.default
     
@@ -34,8 +34,8 @@ class CParent:UIViewController
     {
         super.viewDidLoad()
         
-        let controllerDraw:CDrawList = CDrawList()
-        mainController(controller:controllerDraw)
+        let controllerSearch:CSearch = CSearch()
+        mainController(controller:controllerSearch)
         
         MSession.sharedInstance.loadSession()
     }

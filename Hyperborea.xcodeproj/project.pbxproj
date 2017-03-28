@@ -35,6 +35,7 @@
 		DA1F6FDB1E8AEF1C00484942 /* VToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBE1E8AEF1C00484942 /* VToast.swift */; };
 		DA1F6FDC1E8AEF1C00484942 /* VView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBF1E8AEF1C00484942 /* VView.swift */; };
 		DA1F6FDF1E8AF50D00484942 /* CSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FDE1E8AF50D00484942 /* CSearch.swift */; };
+		DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE11E8AF76800484942 /* VSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		DA1F6FBE1E8AEF1C00484942 /* VToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VToast.swift; sourceTree = "<group>"; };
 		DA1F6FBF1E8AEF1C00484942 /* VView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VView.swift; sourceTree = "<group>"; };
 		DA1F6FDE1E8AF50D00484942 /* CSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSearch.swift; sourceTree = "<group>"; };
+		DA1F6FE11E8AF76800484942 /* VSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearch.swift; sourceTree = "<group>"; };
 		DA8AD6BF1E8AE8D30072560C /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8AD6CE1E8AE8D30072560C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 		DA1F6FB01E8AEF1C00484942 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA1F6FE01E8AF76000484942 /* Search */,
 				DA1F6FB11E8AEF1C00484942 /* Main */,
 			);
 			path = View;
@@ -202,6 +205,14 @@
 			isa = PBXGroup;
 			children = (
 				DA1F6FDE1E8AF50D00484942 /* CSearch.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DA1F6FE01E8AF76000484942 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F6FE11E8AF76800484942 /* VSearch.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -329,6 +340,7 @@
 				DA1F6FC91E8AEF1C00484942 /* ExtensionUICollectionReusableView.swift in Sources */,
 				DA1F6FDF1E8AF50D00484942 /* CSearch.swift in Sources */,
 				DA1F6FD61E8AEF1C00484942 /* VBlur.swift in Sources */,
+				DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */,
 				DA1F6FCD1E8AEF1C00484942 /* MSession.swift in Sources */,
 				DA1F6FDA1E8AEF1C00484942 /* VSpinner.swift in Sources */,
 				DA1F6FC21E8AEF1C00484942 /* CController.swift in Sources */,
