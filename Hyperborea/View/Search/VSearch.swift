@@ -3,11 +3,12 @@ import UIKit
 class VSearch:VView
 {
     private weak var controller:CSearch!
+    private weak var viewBar:VSearchBar!
     
     override init(controller:CController)
     {
         super.init(controller:controller)
-        backgroundColor = UIColor(red:0.9, green:0.92, blue:0.94, alpha:1)
+        backgroundColor = UIColor(red:0.84, green:0.86, blue:0.9, alpha:1)
         self.controller = controller as? CSearch
     }
     
