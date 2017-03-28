@@ -2,7 +2,6 @@ import UIKit
 
 class VParent:UIView
 {
-    weak var viewBar:VParentBar!
     weak var panRecognizer:UIPanGestureRecognizer!
     private weak var controller:CParent!
     private weak var layoutBarTop:NSLayoutConstraint!
@@ -19,21 +18,6 @@ class VParent:UIView
         clipsToBounds = true
         backgroundColor = UIColor.white
         self.controller = controller
-        
-        let viewBar:VParentBar = VParentBar(controller:controller)
-        self.viewBar = viewBar
-        
-        addSubview(viewBar)
-        
-        NSLayoutConstraint.height(
-            view:viewBar,
-            constant:kBarHeight)
-        NSLayoutConstraint.topToTop(
-            view:viewBar,
-            toView:self)
-        NSLayoutConstraint.width(
-            view:viewBar,
-            toView:self)
         
         let panRecognizer:UIPanGestureRecognizer = UIPanGestureRecognizer(
             target:self,
@@ -165,7 +149,7 @@ class VParent:UIView
     
     func mainView(view:VView)
     {
-        insertSubview(view, belowSubview:viewBar)
+        addSubview(view)
         
         view.layoutTop = NSLayoutConstraint.topToTop(
             view:view,
@@ -187,7 +171,7 @@ class VParent:UIView
         left:CGFloat,
         completion:@escaping(() -> ()))
     {
-        insertSubview(newView, belowSubview:viewBar)
+        addSubview(newView)
         
         newView.layoutTop = NSLayoutConstraint.topToTop(
             view:newView,
