@@ -49,4 +49,15 @@ class VSearch:VView
     {
         return nil
     }
+    
+    //MARK: public
+    
+    func refresh()
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            
+        }
+    }
 }

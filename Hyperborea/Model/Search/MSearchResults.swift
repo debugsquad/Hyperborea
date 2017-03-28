@@ -2,17 +2,17 @@ import Foundation
 
 class MSearchResults
 {
-    let items:[MSearchResultItem]
+    let items:[MSearchResultsItem]
     
     init()
     {
         let loremIpsum:String = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
         let loremArray:[String] = loremIpsum.components(separatedBy:"\n")
-        var items:[MSearchResultItem] = []
+        var items:[MSearchResultsItem] = []
         
         for loremItem:String in loremArray
         {
-            let item:MSearchResultItem = MSearchResultItem(name:loremItem)
+            let item:MSearchResultsItem = MSearchResultsItem(name:loremItem)
             items.append(item)
         }
         

@@ -1,6 +1,6 @@
 import Foundation
 
-class MSearchResultItem
+class MSearchResultsItem
 {
     let name:String
     
