@@ -3,21 +3,26 @@ import UIKit
 class VSearch:VView
 {
     private(set) weak var viewBar:VSearchBar!
+    private(set) weak var viewOptions:VSearchOptions!
     private weak var controller:CSearch!
     private weak var layoutBarHeight:NSLayoutConstraint!
     private let kBarMaxHeight:CGFloat = 82
+    private let kOptionsHeight:CGFloat = 54
     
     override init(controller:CController)
     {
         super.init(controller:controller)
-        backgroundColor = UIColor(red:0.95, green:0.97, blue:1, alpha:1)
         self.controller = controller as? CSearch
         
         let viewBar:VSearchBar = VSearchBar(
             controller:self.controller)
         self.viewBar = viewBar
         
+        let viewOptions:VSearchOptions = VSearchOptions(
+            controller:self.controller)
+        
         addSubview(viewBar)
+        addSubview(viewOptions)
         
         NSLayoutConstraint.topToTop(
             view:viewBar,
@@ -27,6 +32,16 @@ class VSearch:VView
             constant:kBarMaxHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:viewBar,
+            toView:self)
+        
+        NSLayoutConstraint.topToBottom(
+            view:viewOptions,
+            toView:viewBar)
+        NSLayoutConstraint.height(
+            view:viewOptions,
+            constant:kOptionsHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewOptions,
             toView:self)
     }
     

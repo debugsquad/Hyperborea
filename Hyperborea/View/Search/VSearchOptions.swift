@@ -4,7 +4,7 @@ class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
 {
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
-    private let kInterItem:CGFloat = 3
+    private let kInterItem:CGFloat = 4
     private let kCellWidth:CGFloat = 60
     
     init(controller:CSearch)
