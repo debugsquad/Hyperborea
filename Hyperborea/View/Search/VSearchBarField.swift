@@ -24,12 +24,12 @@ class VSearchBarField:UITextField, UITextFieldDelegate
     
     func textFieldDidBeginEditing(_ textField:UITextField)
     {
-        controller.viewSearch.viewBar.backgroundColor = UIColor.white
+        controller.viewSearch.viewBar.beginEditing()
     }
     
     func textFieldDidEndEditing(_ textField:UITextField)
     {
-        controller.viewSearch.viewBar.backgroundColor = UIColor.clear
+        controller.viewSearch.viewBar.endEditing()
     }
     
     func textFieldShouldReturn(_ textField:UITextField) -> Bool

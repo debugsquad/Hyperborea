@@ -38,6 +38,8 @@
 		DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE11E8AF76800484942 /* VSearch.swift */; };
 		DA1F6FE41E8AF8F200484942 /* VSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE31E8AF8F200484942 /* VSearchBar.swift */; };
 		DA1F6FE61E8AFDFC00484942 /* VSearchBarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE51E8AFDFC00484942 /* VSearchBarField.swift */; };
+		DA1F6FE81E8B069800484942 /* VSearchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE71E8B069800484942 /* VSearchOptions.swift */; };
+		DA1F6FEA1E8B075200484942 /* VSearchOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE91E8B075200484942 /* VSearchOptionsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		DA1F6FE11E8AF76800484942 /* VSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearch.swift; sourceTree = "<group>"; };
 		DA1F6FE31E8AF8F200484942 /* VSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchBar.swift; sourceTree = "<group>"; };
 		DA1F6FE51E8AFDFC00484942 /* VSearchBarField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchBarField.swift; sourceTree = "<group>"; };
+		DA1F6FE71E8B069800484942 /* VSearchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchOptions.swift; sourceTree = "<group>"; };
+		DA1F6FE91E8B075200484942 /* VSearchOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchOptionsCell.swift; sourceTree = "<group>"; };
 		DA8AD6BF1E8AE8D30072560C /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8AD6CE1E8AE8D30072560C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +223,8 @@
 				DA1F6FE11E8AF76800484942 /* VSearch.swift */,
 				DA1F6FE31E8AF8F200484942 /* VSearchBar.swift */,
 				DA1F6FE51E8AFDFC00484942 /* VSearchBarField.swift */,
+				DA1F6FE71E8B069800484942 /* VSearchOptions.swift */,
+				DA1F6FE91E8B075200484942 /* VSearchOptionsCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 				DA1F6FC51E8AEF1C00484942 /* ExtensionFileManager.swift in Sources */,
 				DA1F6FCC1E8AEF1C00484942 /* ExtensionURL.swift in Sources */,
 				DA1F6FD11E8AEF1C00484942 /* VParent.swift in Sources */,
+				DA1F6FE81E8B069800484942 /* VSearchOptions.swift in Sources */,
 				DA1F6FD71E8AEF1C00484942 /* VBorder.swift in Sources */,
 				DA1F6FD81E8AEF1C00484942 /* VCollection.swift in Sources */,
 				DA1F6FC41E8AEF1C00484942 /* DManager.swift in Sources */,
@@ -350,6 +357,7 @@
 				DA1F6FCD1E8AEF1C00484942 /* MSession.swift in Sources */,
 				DA1F6FE61E8AFDFC00484942 /* VSearchBarField.swift in Sources */,
 				DA1F6FDA1E8AEF1C00484942 /* VSpinner.swift in Sources */,
+				DA1F6FEA1E8B075200484942 /* VSearchOptionsCell.swift in Sources */,
 				DA1F6FE41E8AF8F200484942 /* VSearchBar.swift in Sources */,
 				DA1F6FC21E8AEF1C00484942 /* CController.swift in Sources */,
 				DA1F6FC31E8AEF1C00484942 /* CParent.swift in Sources */,

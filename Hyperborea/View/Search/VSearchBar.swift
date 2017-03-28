@@ -2,8 +2,9 @@ import UIKit
 
 class VSearchBar:UIView
 {
-    private weak var controller:CSearch!
     private(set) weak var viewField:VSearchBarField!
+    private weak var controller:CSearch!
+    private weak var border:VBorder!
     private let kBorderHeight:CGFloat = 1
     private let kFieldMarginHorizontal:CGFloat = 10
     private let kFieldTop:CGFloat = 20
@@ -17,6 +18,7 @@ class VSearchBar:UIView
         self.controller = controller
         
         let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
+        self.border = border
         
         let viewField:VSearchBarField = VSearchBarField(
             controller:controller)
@@ -51,5 +53,19 @@ class VSearchBar:UIView
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: public
+    
+    func beginEditing()
+    {
+        backgroundColor = UIColor.white
+        border.backgroundColor = UIColor(white:0, alpha:0.3)
+    }
+    
+    func endEditing()
+    {
+        backgroundColor = UIColor.clear
+        border.backgroundColor = UIColor(white:0, alpha:0.1)
     }
 }
