@@ -7,7 +7,9 @@ class VSearch:VView
     private(set) weak var viewResults:VSearchResults!
     private weak var controller:CSearch!
     private weak var layoutBarHeight:NSLayoutConstraint!
-    private let kBarMaxHeight:CGFloat = 82
+    private weak var layoutOptionsTop:NSLayoutConstraint!
+    let kBarMaxHeight:CGFloat = 82
+    private let kBarMinHeight:CGFloat = 50
     private let kOptionsHeight:CGFloat = 54
     
     override init(controller:CController)
@@ -27,9 +29,9 @@ class VSearch:VView
             controller:self.controller)
         self.viewResults = viewResults
         
-        addSubview(viewBar)
-        addSubview(viewOptions)
         addSubview(viewResults)
+        addSubview(viewOptions)
+        addSubview(viewBar)
         
         NSLayoutConstraint.topToTop(
             view:viewBar,
@@ -41,7 +43,7 @@ class VSearch:VView
             view:viewBar,
             toView:self)
         
-        NSLayoutConstraint.topToBottom(
+        layoutOptionsTop = NSLayoutConstraint.topToBottom(
             view:viewOptions,
             toView:viewBar)
         NSLayoutConstraint.height(
@@ -51,9 +53,9 @@ class VSearch:VView
             view:viewOptions,
             toView:self)
         
-        NSLayoutConstraint.topToBottom(
+        NSLayoutConstraint.topToTop(
             view:viewResults,
-            toView:viewOptions)
+            toView:self)
         NSLayoutConstraint.bottomToBottom(
             view:viewResults,
             toView:self)
@@ -80,6 +82,24 @@ class VSearch:VView
     
     func scrollOffset(offsetY:CGFloat)
     {
+        var newBarHeight:CGFloat = kBarMaxHeight - offsetY
+        var newOptionsTop:CGFloat = offsetY
         
+        if newBarHeight < kBarMinHeight
+        {
+            newBarHeight = kBarMinHeight
+        }
+        
+        if newOptionsTop > kOptionsHeight
+        {
+            newOptionsTop = kOptionsHeight
+        }
+        else if newOptionsTop < 0
+        {
+            newOptionsTop = 0
+        }
+        
+        layoutBarHeight.constant = newBarHeight
+        layoutOptionsTop.constant = -newOptionsTop
     }
 }

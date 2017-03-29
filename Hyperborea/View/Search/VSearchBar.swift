@@ -5,15 +5,15 @@ class VSearchBar:UIView
     private(set) weak var viewField:VSearchBarField!
     private weak var controller:CSearch!
     private weak var border:VBorder!
+    let kFieldTop:CGFloat = 20
     private let kBorderHeight:CGFloat = 1
     private let kFieldMarginHorizontal:CGFloat = 10
-    private let kFieldTop:CGFloat = 20
     
     init(controller:CSearch)
     {
         super.init(frame:CGRect.zero)
         clipsToBounds = true
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.white
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         

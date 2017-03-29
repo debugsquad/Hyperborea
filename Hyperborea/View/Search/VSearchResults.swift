@@ -21,6 +21,10 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         self.collectionView = collectionView
         
         addSubview(collectionView)
+        
+        NSLayoutConstraint.equals(
+            view:collectionView,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
