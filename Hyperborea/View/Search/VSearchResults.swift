@@ -54,6 +54,27 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.reloadData()
     }
     
+    func scrollToTop()
+    {
+        guard
+            
+            let count:Int = controller.modelResults?.items.count
+            
+        else
+        {
+            return
+        }
+        
+        if count > 0
+        {
+            let indexPath:IndexPath = IndexPath(item:0, section:0)
+            collectionView.scrollToItem(
+                at:indexPath,
+                at:UICollectionViewScrollPosition.top,
+                animated:true)
+        }
+    }
+    
     //MARK: collectionView delegate
     
     func numberOfSections(in collectionView:UICollectionView) -> Int

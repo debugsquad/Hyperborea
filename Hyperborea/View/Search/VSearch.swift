@@ -80,6 +80,13 @@ class VSearch:VView
         }
     }
     
+    func restartScrollOffset()
+    {
+        scrollOffset(offsetY:0)
+        viewResults.scrollToTop()
+        viewBar.beginEditing()
+    }
+    
     func scrollOffset(offsetY:CGFloat)
     {
         var newBarHeight:CGFloat = kBarMaxHeight - offsetY
