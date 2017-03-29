@@ -3,8 +3,8 @@ import UIKit
 class MSearchResults
 {
     let items:[MSearchResultsItem]
-    private let kMarginHorizontal:CGFloat = 30
-    private let kFontSize:CGFloat = 14
+    private let kMarginHorizontal:CGFloat = 38
+    private let kFontSize:CGFloat = 15
     private let kCellMaxWidth:CGFloat = 250
     private let kCellMaxHeight:CGFloat = 30
     private let kCellCompareWidth:CGFloat = 1000

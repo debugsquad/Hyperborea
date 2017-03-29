@@ -9,7 +9,7 @@ class VSearchResultsFlow:UICollectionViewLayout
     private let kContentBottom:CGFloat = 20
     private let kCellHeight:CGFloat = 32
     private let kMarginHorizontal:CGFloat = 10
-    private let kMarginVertical:CGFloat = 5
+    private let kMarginVertical:CGFloat = 10
     private let kSection:Int = 0
     
     init(controller:CSearch)
