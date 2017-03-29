@@ -4,16 +4,16 @@ class CSettings:CController
 {
     private weak var viewSettings:VSettings!
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-    }
-    
     override func viewDidAppear(_ animated:Bool)
     {
         super.viewDidAppear(animated)
         parentController.statusBarAppareance(statusBarStyle:UIStatusBarStyle.lightContent)
+    }
+    
+    override func viewWillDisappear(_ animated:Bool)
+    {
+        super.viewWillDisappear(animated)
+        parentController.statusBarAppareance(statusBarStyle:UIStatusBarStyle.default)
     }
     
     override func loadView()
