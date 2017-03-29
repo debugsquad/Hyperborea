@@ -78,6 +78,7 @@ class VSearchResultsFlow:UICollectionViewLayout
         }
         
         contentHeight = positionY + kContentBottom
+        controller.viewSearch.resultsHeight(height:contentHeight)
     }
     
     override var collectionViewContentSize:CGSize

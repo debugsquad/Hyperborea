@@ -1,30 +1,27 @@
 import UIKit
 
-class VSearchContent:UIView
+class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private weak var controller:CSearch!
-    private let kBorderHeight:CGFloat = 1
+    private weak var collectionView:VCollection!
+    private let kHeaderHeight:CGFloat = 70
     
     init(controller:CSearch)
     {
         super.init(frame:CGRect.zero)
         clipsToBounds = true
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let border:VBorder = VBorder(color:UIColor(white:0, alpha:1))
+        let collectionView:VCollection = VCollection()
         
-        addSubview(border)
+        self.collectionView = collectionView
         
-        NSLayoutConstraint.topToTop(
-            view:border,
-            toView:self)
-        NSLayoutConstraint.height(
-            view:border,
-            constant:kBorderHeight)
-        NSLayoutConstraint.equalsHorizontal(
-            view:border,
+        addSubview(collectionView)
+        
+        NSLayoutConstraint.equals(
+            view:collectionView,
             toView:self)
     }
     
@@ -32,4 +29,6 @@ class VSearchContent:UIView
     {
         return nil
     }
+    
+    
 }
