@@ -14,6 +14,10 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         self.controller = controller
         
         let collectionView:VCollection = VCollection()
+        collectionView.alwaysBounceVertical = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.registerCell(cell:VSearchResultsCell.self)
         self.collectionView = collectionView
         
         addSubview(collectionView)
@@ -24,6 +28,12 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         return nil
     }
     
+    func scrollViewDidScroll(_ scrollView:UIScrollView)
+    {
+        let offsetY:CGFloat = scrollView.contentOffset.y
+        controller.viewSearch.scrollOffset(offsetY:offsetY)
+    }
+    
     //MARK: private
     
     private func modelAtIndex(index:IndexPath) -> MSearchResultsItem
@@ -31,6 +41,13 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         let item:MSearchResultsItem = controller.modelResults!.items[index.item]
         
         return item
+    }
+    
+    //MARK: public
+    
+    func refresh()
+    {
+        collectionView.reloadData()
     }
     
     //MARK: collectionView delegate

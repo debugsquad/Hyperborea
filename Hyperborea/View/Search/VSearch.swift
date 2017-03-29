@@ -4,6 +4,7 @@ class VSearch:VView
 {
     private(set) weak var viewBar:VSearchBar!
     private(set) weak var viewOptions:VSearchOptions!
+    private(set) weak var viewResults:VSearchResults!
     private weak var controller:CSearch!
     private weak var layoutBarHeight:NSLayoutConstraint!
     private let kBarMaxHeight:CGFloat = 82
@@ -20,9 +21,15 @@ class VSearch:VView
         
         let viewOptions:VSearchOptions = VSearchOptions(
             controller:self.controller)
+        self.viewOptions = viewOptions
+        
+        let viewResults:VSearchResults = VSearchResults(
+            controller:self.controller)
+        self.viewResults = viewResults
         
         addSubview(viewBar)
         addSubview(viewOptions)
+        addSubview(viewResults)
         
         NSLayoutConstraint.topToTop(
             view:viewBar,
@@ -43,6 +50,16 @@ class VSearch:VView
         NSLayoutConstraint.equalsHorizontal(
             view:viewOptions,
             toView:self)
+        
+        NSLayoutConstraint.topToBottom(
+            view:viewResults,
+            toView:viewOptions)
+        NSLayoutConstraint.bottomToBottom(
+            view:viewResults,
+            toView:self)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewResults,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
@@ -57,7 +74,12 @@ class VSearch:VView
         DispatchQueue.main.async
         { [weak self] in
             
-            
+            self?.viewResults.refresh()
         }
+    }
+    
+    func scrollOffset(offsetY:CGFloat)
+    {
+        
     }
 }
