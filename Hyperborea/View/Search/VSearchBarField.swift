@@ -67,7 +67,7 @@ class VSearchBarField:UITextField, UITextFieldDelegate
     
     func textFieldDidBeginEditing(_ textField:UITextField)
     {
-        controller.viewSearch.restartScrollOffset()
+        controller.viewSearch.beginSearch()
     }
     
     func textFieldDidEndEditing(_ textField:UITextField)

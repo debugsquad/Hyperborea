@@ -30,8 +30,7 @@ class CSearch:CController
         })
         { [weak self] (context:UIViewControllerTransitionCoordinatorContext) in
             
-            self?.viewSearch.viewResults.changeOrientation()
-            self?.viewSearch.viewContent.changeOrientation()
+            self?.viewSearch.changeOrientation()
         }
     }
     

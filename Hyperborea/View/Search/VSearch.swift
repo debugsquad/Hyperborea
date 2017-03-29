@@ -92,6 +92,13 @@ class VSearch:VView
     
     //MARK: private
     
+    private func resetScrolls()
+    {
+        layoutContentTop.constant = 0
+        layoutResultsTop.constant = 0
+        scrollAll(offsetY:0)
+    }
+    
     private func scrollAll(offsetY:CGFloat)
     {
         var newBarHeight:CGFloat = kBarMaxHeight - offsetY
@@ -113,15 +120,6 @@ class VSearch:VView
         
         layoutBarHeight.constant = newBarHeight
         layoutOptionsTop.constant = -newOptionsTop
-        
-        if offsetY > 0
-        {
-            layoutContentTop.constant = -offsetY
-        }
-        else
-        {
-            layoutContentTop.constant = 0
-        }
     }
     
     //MARK: public
@@ -135,28 +133,47 @@ class VSearch:VView
         }
     }
     
-    func restartScrollOffset()
+    func changeOrientation()
     {
-        scrollResults(offsetY:0)
-        viewResults.scrollToTop()
+        resetScrolls()
+        viewResults.changeOrientation()
+        viewContent.changeOrientation()
+    }
+    
+    func beginSearch()
+    {
+        resetScrolls()
         viewBar.beginEditing()
+        viewResults.scrollToTop()
+        viewContent.scrollToTop()
     }
     
     func resultsHeight(resultsHeight:CGFloat)
     {
         layoutResultsHeight.constant = resultsHeight
-        viewContent.insetsTop(top:resultsHeight)
+        viewContent.insetsTop(currentTop:resultsHeight)
     }
     
     func scrollResults(offsetY:CGFloat)
     {
         layoutResultsTop.constant = 0
+        
+        if offsetY > 0
+        {
+            layoutContentTop.constant = -offsetY
+        }
+        else
+        {
+            layoutContentTop.constant = 0
+        }
+        
         scrollAll(offsetY:offsetY)
     }
     
     func scrollContent(offsetY:CGFloat)
     {
         layoutResultsTop.constant = -offsetY
+        layoutContentTop.constant = 0
         scrollAll(offsetY:offsetY)
     }
 }
