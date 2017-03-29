@@ -61,6 +61,7 @@
 		DAA99CC41E8B2433003B9E2C /* MSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC31E8B2433003B9E2C /* MSearchResults.swift */; };
 		DAA99CC61E8B24DD003B9E2C /* MSearchResultsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC51E8B24DD003B9E2C /* MSearchResultsItem.swift */; };
 		DAA99CC81E8B2F22003B9E2C /* VSearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC71E8B2F22003B9E2C /* VSearchResultsCell.swift */; };
+		DAD1E9811E8C766700D1BC66 /* CSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1E9801E8C766700D1BC66 /* CSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		DAA99CC31E8B2433003B9E2C /* MSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchResults.swift; sourceTree = "<group>"; };
 		DAA99CC51E8B24DD003B9E2C /* MSearchResultsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchResultsItem.swift; sourceTree = "<group>"; };
 		DAA99CC71E8B2F22003B9E2C /* VSearchResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchResultsCell.swift; sourceTree = "<group>"; };
+		DAD1E9801E8C766700D1BC66 /* CSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 		DA1F6F981E8AEF1C00484942 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DAD1E97F1E8C765F00D1BC66 /* Settings */,
 				DA1F6FDD1E8AF50600484942 /* Search */,
 				DA1F6F991E8AEF1C00484942 /* Main */,
 			);
@@ -331,6 +334,14 @@
 			path = Hyperborea;
 			sourceTree = "<group>";
 		};
+		DAD1E97F1E8C765F00D1BC66 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DAD1E9801E8C766700D1BC66 /* CSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -437,6 +448,7 @@
 				DA1317521E8C5EB8000624CF /* MSearchContentModeItemOrigins.swift in Sources */,
 				DA1F6FC91E8AEF1C00484942 /* ExtensionUICollectionReusableView.swift in Sources */,
 				DA1317461E8C5079000624CF /* MSearchContentModeItemDefinition.swift in Sources */,
+				DAD1E9811E8C766700D1BC66 /* CSettings.swift in Sources */,
 				DAA99CC21E8B1B02003B9E2C /* VSearchResults.swift in Sources */,
 				DA1317501E8C5EAB000624CF /* MSearchContentModeItemExamples.swift in Sources */,
 				DA2E83BF1E8C1DEE00354343 /* VSearchContentCell.swift in Sources */,
