@@ -12,9 +12,20 @@ class MSearchContentMode
     init()
     {
         let itemDefinition:MSearchContentModeItemDefinition = MSearchContentModeItemDefinition()
+        let itemSynonyms:MSearchContentModeItemSynonyms = MSearchContentModeItemSynonyms()
+        let itemAntonyms:MSearchContentModeItemAntonyms = MSearchContentModeItemAntonyms()
+        let itemTranslate:MSearchContentModeItemTranslate = MSearchContentModeItemTranslate()
+        let itemExamples:MSearchContentModeItemExamples = MSearchContentModeItemExamples()
+        let itemOrigins:MSearchContentModeItemOrigins = MSearchContentModeItemOrigins()
         
         items = [
-            itemDefinition]
+            itemDefinition,
+            itemSynonyms,
+            itemAntonyms,
+            itemTranslate,
+            itemExamples,
+            itemOrigins]
+        
         selectedIndex = 0
         
         let attributes:[String:AnyObject] = [
