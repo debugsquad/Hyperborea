@@ -64,6 +64,7 @@
 		DAD1E9811E8C766700D1BC66 /* CSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1E9801E8C766700D1BC66 /* CSettings.swift */; };
 		DAD1E9841E8C769700D1BC66 /* VSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1E9831E8C769700D1BC66 /* VSettings.swift */; };
 		DAD1E9861E8C772000D1BC66 /* VSettingsBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1E9851E8C772000D1BC66 /* VSettingsBar.swift */; };
+		DAEC1AB11E8C7FF70001B27B /* VSettingsBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1AB01E8C7FF70001B27B /* VSettingsBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,7 @@
 		DAD1E9801E8C766700D1BC66 /* CSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSettings.swift; sourceTree = "<group>"; };
 		DAD1E9831E8C769700D1BC66 /* VSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettings.swift; sourceTree = "<group>"; };
 		DAD1E9851E8C772000D1BC66 /* VSettingsBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsBar.swift; sourceTree = "<group>"; };
+		DAEC1AB01E8C7FF70001B27B /* VSettingsBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD1E9831E8C769700D1BC66 /* VSettings.swift */,
+				DAEC1AB01E8C7FF70001B27B /* VSettingsBackground.swift */,
 				DAD1E9851E8C772000D1BC66 /* VSettingsBar.swift */,
 			);
 			path = Settings;
@@ -480,6 +483,7 @@
 				DA1F6FE41E8AF8F200484942 /* VSearchBar.swift in Sources */,
 				DA1F6FC21E8AEF1C00484942 /* CController.swift in Sources */,
 				DA2E83BD1E8C1DE100354343 /* VSearchContentHeader.swift in Sources */,
+				DAEC1AB11E8C7FF70001B27B /* VSettingsBackground.swift in Sources */,
 				DA1F6FC31E8AEF1C00484942 /* CParent.swift in Sources */,
 				DA1F6FC71E8AEF1C00484942 /* ExtensionNSLayoutConstraint.swift in Sources */,
 			);
