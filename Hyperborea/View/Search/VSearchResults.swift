@@ -9,7 +9,6 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         super.init(frame:CGRect.zero)
         clipsToBounds = true
-        backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
@@ -77,6 +76,11 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
                 at:UICollectionViewScrollPosition.top,
                 animated:true)
         }
+    }
+    
+    func changeOrientation()
+    {
+        
     }
     
     //MARK: collectionView delegate

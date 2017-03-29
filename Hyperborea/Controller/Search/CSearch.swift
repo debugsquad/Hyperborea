@@ -23,6 +23,18 @@ class CSearch:CController
         }
     }
     
+    override func viewWillTransition(to size:CGSize, with coordinator:UIViewControllerTransitionCoordinator)
+    {
+        coordinator.animate(alongsideTransition:
+        { (context:UIViewControllerTransitionCoordinatorContext) in
+        })
+        { [weak self] (context:UIViewControllerTransitionCoordinatorContext) in
+            
+            self?.viewSearch.viewResults.changeOrientation()
+            self?.viewSearch.viewContent.changeOrientation()
+        }
+    }
+    
     //MARK: private
     
     private func asyncSearch()

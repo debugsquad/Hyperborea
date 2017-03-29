@@ -45,7 +45,7 @@ class VSearchResultsFlow:UICollectionViewLayout
         
         contentWidth = collectionView.bounds.maxX
         let maxWidth:CGFloat = contentWidth - kMarginHorizontal
-        var positionY:CGFloat = controller.viewSearch.kBarMaxHeight + controller.viewSearch.kOptionsHeight + kMarginVertical
+        var positionY:CGFloat = controller.viewSearch.barOptionsTop + kMarginVertical
         var positionX:CGFloat = kMarginHorizontal
         var item:Int = 0
         
@@ -77,8 +77,8 @@ class VSearchResultsFlow:UICollectionViewLayout
             layoutAttributes.append(attributes)
         }
         
-        contentHeight = positionY + kContentBottom
-        controller.viewSearch.resultsHeight(height:contentHeight)
+        contentHeight = positionY + kCellHeight + kContentBottom
+        controller.viewSearch.resultsHeight(resultsHeight:contentHeight)
     }
     
     override var collectionViewContentSize:CGSize
@@ -130,6 +130,6 @@ class VSearchResultsFlow:UICollectionViewLayout
     
     override func shouldInvalidateLayout(forBoundsChange newBounds:CGRect) -> Bool
     {
-        return true
+        return false
     }
 }
