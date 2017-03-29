@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA1317401E8C3E8A000624CF /* VSearchContentHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13173F1E8C3E8A000624CF /* VSearchContentHeaderCell.swift */; };
 		DA1F6FC01E8AEF1C00484942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6F971E8AEF1C00484942 /* LaunchScreen.storyboard */; };
 		DA1F6FC11E8AEF1C00484942 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6F9A1E8AEF1C00484942 /* CAppDelegate.swift */; };
 		DA1F6FC21E8AEF1C00484942 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6F9B1E8AEF1C00484942 /* CController.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA13173F1E8C3E8A000624CF /* VSearchContentHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContentHeaderCell.swift; sourceTree = "<group>"; };
 		DA1F6F971E8AEF1C00484942 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA1F6F9A1E8AEF1C00484942 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DA1F6F9B1E8AEF1C00484942 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				DAA99CC71E8B2F22003B9E2C /* VSearchResultsCell.swift */,
 				DA2E83BA1E8C136700354343 /* VSearchContent.swift */,
 				DA2E83BC1E8C1DE100354343 /* VSearchContentHeader.swift */,
+				DA13173F1E8C3E8A000624CF /* VSearchContentHeaderCell.swift */,
 				DA2E83BE1E8C1DEE00354343 /* VSearchContentCell.swift */,
 			);
 			path = Search;
@@ -393,6 +396,7 @@
 				DA1F6FDB1E8AEF1C00484942 /* VToast.swift in Sources */,
 				DA1F6FD91E8AEF1C00484942 /* VCollectionFlow.swift in Sources */,
 				DA1F6FF11E8B141900484942 /* MSearchOptionsItem.swift in Sources */,
+				DA1317401E8C3E8A000624CF /* VSearchContentHeaderCell.swift in Sources */,
 				DA1F6FC61E8AEF1C00484942 /* ExtensionNotification.swift in Sources */,
 				DA1F6FD51E8AEF1C00484942 /* VAlert.swift in Sources */,
 				DA1F6FCA1E8AEF1C00484942 /* ExtensionUIColor.swift in Sources */,
