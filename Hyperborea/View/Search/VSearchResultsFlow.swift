@@ -7,7 +7,9 @@ class VSearchResultsFlow:UICollectionViewLayout
     private var contentWidth:CGFloat
     private var contentHeight:CGFloat
     private let kContentBottom:CGFloat = 20
-    private let kCellHeight:CGFloat = 50
+    private let kCellHeight:CGFloat = 32
+    private let kMarginHorizontal:CGFloat = 10
+    private let kMarginVertical:CGFloat = 5
     private let kSection:Int = 0
     
     init(controller:CSearch)
@@ -42,8 +44,9 @@ class VSearchResultsFlow:UICollectionViewLayout
         }
         
         contentWidth = collectionView.bounds.maxX
-        var positionY:CGFloat = controller.viewSearch.kBarMaxHeight + controller.viewSearch.kOptionsHeight
-        var positionX:CGFloat = 0
+        let maxWidth:CGFloat = contentWidth - kMarginHorizontal
+        var positionY:CGFloat = controller.viewSearch.kBarMaxHeight + controller.viewSearch.kOptionsHeight + kMarginVertical
+        var positionX:CGFloat = kMarginHorizontal
         var item:Int = 0
         
         for result:MSearchResultsItem in model.items
@@ -53,10 +56,10 @@ class VSearchResultsFlow:UICollectionViewLayout
                 section:kSection)
             let cellWidth:CGFloat = result.cellWidth
             
-            if positionX + cellWidth > contentWidth
+            if positionX + cellWidth > maxWidth
             {
-                positionX = 0
-                positionY += kCellHeight
+                positionX = kMarginHorizontal
+                positionY += kCellHeight + kMarginVertical
             }
             
             let frame:CGRect = CGRect(
@@ -66,7 +69,7 @@ class VSearchResultsFlow:UICollectionViewLayout
                 height:kCellHeight)
             
             item += 1
-            positionX += cellWidth
+            positionX += cellWidth + kMarginHorizontal
             
             let attributes:UICollectionViewLayoutAttributes = UICollectionViewLayoutAttributes(
                 forCellWith:indexPath)
