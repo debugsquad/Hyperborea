@@ -8,7 +8,7 @@ class MSearchContentModeItem
     
     init(rawName:String)
     {
-        self.name = name
+        self.rawName = rawName
         cellWidth = 0
     }
 }
