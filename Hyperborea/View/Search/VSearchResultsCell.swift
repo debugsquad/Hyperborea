@@ -66,7 +66,7 @@ class VSearchResultsCell:UICollectionViewCell
     {
         if isSelected || isHighlighted
         {
-            baseView.backgroundColor = UIColor.cartesianBlue
+            baseView.backgroundColor = UIColor.hyperBlue
             label.textColor = UIColor.white
         }
         else

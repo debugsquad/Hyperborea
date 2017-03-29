@@ -4,8 +4,6 @@ class VSearchContentHeaderCell:UICollectionViewCell
 {
     private weak var label:UILabel!
     private let kLabelTop:CGFloat = 22
-    private let kAlphaSelected:CGFloat = 1
-    private let kAlphaNotSelected:CGFloat = 0.3
     
     override init(frame:CGRect)
     {
@@ -17,7 +15,6 @@ class VSearchContentHeaderCell:UICollectionViewCell
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
         label.textAlignment = NSTextAlignment.center
-        label.textColor = UIColor(white:0.5, alpha:1)
         self.label = label
         
         addSubview(label)
@@ -61,11 +58,11 @@ class VSearchContentHeaderCell:UICollectionViewCell
     {
         if isSelected || isHighlighted
         {
-            alpha = kAlphaSelected
+            label.textColor = UIColor.hyperBlue
         }
         else
         {
-            alpha = kAlphaNotSelected
+            label.textColor = UIColor(white:0.8, alpha:1)
         }
     }
     

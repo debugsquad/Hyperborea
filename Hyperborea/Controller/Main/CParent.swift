@@ -18,7 +18,7 @@ class CParent:UIViewController
     
     private(set) weak var viewParent:VParent!
     private var barHidden:Bool = false
-    private let kStatusBarStyle:UIStatusBarStyle = UIStatusBarStyle.default
+    private var statusBarStyle:UIStatusBarStyle = UIStatusBarStyle.default
     
     init()
     {
@@ -49,7 +49,7 @@ class CParent:UIViewController
     
     override var preferredStatusBarStyle:UIStatusBarStyle
     {
-        return kStatusBarStyle
+        return statusBarStyle
     }
     
     override var prefersStatusBarHidden:Bool
@@ -92,6 +92,12 @@ class CParent:UIViewController
     func hideBar(barHidden:Bool)
     {
         self.barHidden = barHidden
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    func statusBarAppareance(statusBarStyle:UIStatusBarStyle)
+    {
+        self.statusBarStyle = statusBarStyle
         setNeedsStatusBarAppearanceUpdate()
     }
     

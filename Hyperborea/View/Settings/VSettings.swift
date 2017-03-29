@@ -10,6 +10,7 @@ class VSettings:VView
     override init(controller:CController)
     {
         super.init(controller:controller)
+        backgroundColor = UIColor.hyperBlue
         self.controller = controller as? CSettings
         
         let viewBar:VSettingsBar = VSettingsBar(
