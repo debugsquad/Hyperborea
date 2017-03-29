@@ -52,6 +52,10 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
         NSLayoutConstraint.equalsHorizontal(
             view:borderBottom,
             toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:collectionView,
+            toView:self)
     }
     
     required init?(coder:NSCoder)

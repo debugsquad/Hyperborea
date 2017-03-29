@@ -11,6 +11,11 @@
 		DA1317421E8C4296000624CF /* MSearchContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317411E8C4296000624CF /* MSearchContentMode.swift */; };
 		DA1317441E8C42A4000624CF /* MSearchContentModeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */; };
 		DA1317461E8C5079000624CF /* MSearchContentModeItemDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317451E8C5079000624CF /* MSearchContentModeItemDefinition.swift */; };
+		DA1317481E8C5E78000624CF /* MSearchContentModeItemSynonyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317471E8C5E78000624CF /* MSearchContentModeItemSynonyms.swift */; };
+		DA13174A1E8C5E85000624CF /* MSearchContentModeItemAntonyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317491E8C5E85000624CF /* MSearchContentModeItemAntonyms.swift */; };
+		DA13174E1E8C5E9A000624CF /* MSearchContentModeItemTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13174D1E8C5E9A000624CF /* MSearchContentModeItemTranslate.swift */; };
+		DA1317501E8C5EAB000624CF /* MSearchContentModeItemExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13174F1E8C5EAB000624CF /* MSearchContentModeItemExamples.swift */; };
+		DA1317521E8C5EB8000624CF /* MSearchContentModeItemOrigins.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317511E8C5EB8000624CF /* MSearchContentModeItemOrigins.swift */; };
 		DA1F6FC01E8AEF1C00484942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6F971E8AEF1C00484942 /* LaunchScreen.storyboard */; };
 		DA1F6FC11E8AEF1C00484942 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6F9A1E8AEF1C00484942 /* CAppDelegate.swift */; };
 		DA1F6FC21E8AEF1C00484942 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6F9B1E8AEF1C00484942 /* CController.swift */; };
@@ -63,6 +68,11 @@
 		DA1317411E8C4296000624CF /* MSearchContentMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentMode.swift; sourceTree = "<group>"; };
 		DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItem.swift; sourceTree = "<group>"; };
 		DA1317451E8C5079000624CF /* MSearchContentModeItemDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItemDefinition.swift; sourceTree = "<group>"; };
+		DA1317471E8C5E78000624CF /* MSearchContentModeItemSynonyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItemSynonyms.swift; sourceTree = "<group>"; };
+		DA1317491E8C5E85000624CF /* MSearchContentModeItemAntonyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItemAntonyms.swift; sourceTree = "<group>"; };
+		DA13174D1E8C5E9A000624CF /* MSearchContentModeItemTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItemTranslate.swift; sourceTree = "<group>"; };
+		DA13174F1E8C5EAB000624CF /* MSearchContentModeItemExamples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItemExamples.swift; sourceTree = "<group>"; };
+		DA1317511E8C5EB8000624CF /* MSearchContentModeItemOrigins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItemOrigins.swift; sourceTree = "<group>"; };
 		DA1F6F971E8AEF1C00484942 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA1F6F9A1E8AEF1C00484942 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DA1F6F9B1E8AEF1C00484942 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -281,6 +291,11 @@
 				DA1317411E8C4296000624CF /* MSearchContentMode.swift */,
 				DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */,
 				DA1317451E8C5079000624CF /* MSearchContentModeItemDefinition.swift */,
+				DA1317471E8C5E78000624CF /* MSearchContentModeItemSynonyms.swift */,
+				DA1317491E8C5E85000624CF /* MSearchContentModeItemAntonyms.swift */,
+				DA13174D1E8C5E9A000624CF /* MSearchContentModeItemTranslate.swift */,
+				DA13174F1E8C5EAB000624CF /* MSearchContentModeItemExamples.swift */,
+				DA1317511E8C5EB8000624CF /* MSearchContentModeItemOrigins.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -401,9 +416,11 @@
 				DA1F6FD71E8AEF1C00484942 /* VBorder.swift in Sources */,
 				DAA99CC41E8B2433003B9E2C /* MSearchResults.swift in Sources */,
 				DA1F6FD81E8AEF1C00484942 /* VCollection.swift in Sources */,
+				DA13174E1E8C5E9A000624CF /* MSearchContentModeItemTranslate.swift in Sources */,
 				DA1F6FC41E8AEF1C00484942 /* DManager.swift in Sources */,
 				DA1F6FD41E8AEF1C00484942 /* VParentPushBackground.swift in Sources */,
 				DA1F6FDB1E8AEF1C00484942 /* VToast.swift in Sources */,
+				DA1317481E8C5E78000624CF /* MSearchContentModeItemSynonyms.swift in Sources */,
 				DA1F6FD91E8AEF1C00484942 /* VCollectionFlow.swift in Sources */,
 				DA1F6FF11E8B141900484942 /* MSearchOptionsItem.swift in Sources */,
 				DA1317401E8C3E8A000624CF /* VSearchContentHeaderCell.swift in Sources */,
@@ -417,12 +434,15 @@
 				DA1F6FC11E8AEF1C00484942 /* CAppDelegate.swift in Sources */,
 				DAA99CC81E8B2F22003B9E2C /* VSearchResultsCell.swift in Sources */,
 				DA2E83B91E8C02B600354343 /* VSearchResultsFlow.swift in Sources */,
+				DA1317521E8C5EB8000624CF /* MSearchContentModeItemOrigins.swift in Sources */,
 				DA1F6FC91E8AEF1C00484942 /* ExtensionUICollectionReusableView.swift in Sources */,
 				DA1317461E8C5079000624CF /* MSearchContentModeItemDefinition.swift in Sources */,
 				DAA99CC21E8B1B02003B9E2C /* VSearchResults.swift in Sources */,
+				DA1317501E8C5EAB000624CF /* MSearchContentModeItemExamples.swift in Sources */,
 				DA2E83BF1E8C1DEE00354343 /* VSearchContentCell.swift in Sources */,
 				DA1F6FF31E8B168B00484942 /* MSearchOptionsItemSettings.swift in Sources */,
 				DA1F6FDF1E8AF50D00484942 /* CSearch.swift in Sources */,
+				DA13174A1E8C5E85000624CF /* MSearchContentModeItemAntonyms.swift in Sources */,
 				DA1F6FD61E8AEF1C00484942 /* VBlur.swift in Sources */,
 				DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */,
 				DA1F6FCD1E8AEF1C00484942 /* MSession.swift in Sources */,

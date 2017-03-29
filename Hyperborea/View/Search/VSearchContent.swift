@@ -5,7 +5,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
     private var currentTop:CGFloat
-    private let kHeaderHeight:CGFloat = 45
+    private let kHeaderHeight:CGFloat = 50
     private let kCellHeight:CGFloat = 380
     private var trackScroll:Bool
     
