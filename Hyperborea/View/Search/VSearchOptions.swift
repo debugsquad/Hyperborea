@@ -92,6 +92,7 @@ class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.isUserInteractionEnabled = false
         
         let item:MSearchOptionsItem = modelAtIndex(index:indexPath)
+        item.selected(controller:controller)
         
         DispatchQueue.main.asyncAfter(
             deadline:DispatchTime.now() + kDeselectTime)
