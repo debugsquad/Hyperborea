@@ -5,7 +5,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
     private let kHeaderHeight:CGFloat = 70
-    private let kCellHeight:CGFloat = 300
+    private let kCellHeight:CGFloat = 380
     
     init(controller:CSearch)
     {
@@ -40,6 +40,12 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         return nil
     }
     
+    func scrollViewDidScroll(_ scrollView:UIScrollView)
+    {
+        let offsetY:CGFloat = scrollView.contentOffset.y
+        controller.viewSearch.scrollContent(offsetY:offsetY)
+    }
+    
     //MARK: public
     
     func insetsTop(top:CGFloat)
@@ -53,7 +59,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func changeOrientation()
     {
-        
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
     //MARK: collectionView delegate

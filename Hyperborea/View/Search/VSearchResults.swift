@@ -38,7 +38,7 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func scrollViewDidScroll(_ scrollView:UIScrollView)
     {
         let offsetY:CGFloat = scrollView.contentOffset.y
-        controller.viewSearch.scrollOffset(offsetY:offsetY)
+        controller.viewSearch.scrollResults(offsetY:offsetY)
     }
     
     //MARK: private
@@ -80,7 +80,7 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func changeOrientation()
     {
-        
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
     //MARK: collectionView delegate

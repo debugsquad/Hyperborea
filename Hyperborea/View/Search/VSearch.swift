@@ -9,9 +9,9 @@ class VSearch:VView
     private weak var controller:CSearch!
     private weak var layoutBarHeight:NSLayoutConstraint!
     private weak var layoutResultsHeight:NSLayoutConstraint!
+    private weak var layoutResultsTop:NSLayoutConstraint!
     private weak var layoutOptionsTop:NSLayoutConstraint!
     private weak var layoutContentTop:NSLayoutConstraint!
-    private var resultsHeight:CGFloat
     let kBarMaxHeight:CGFloat = 82
     let kOptionsHeight:CGFloat = 54
     let barOptionsTop:CGFloat
@@ -19,7 +19,6 @@ class VSearch:VView
     
     override init(controller:CController)
     {
-        resultsHeight = 0
         barOptionsTop = kOptionsHeight + kBarMaxHeight
         
         super.init(controller:controller)
@@ -66,7 +65,7 @@ class VSearch:VView
             view:viewOptions,
             toView:self)
         
-        NSLayoutConstraint.topToTop(
+        layoutResultsTop = NSLayoutConstraint.topToTop(
             view:viewResults,
             toView:self)
         layoutResultsHeight = NSLayoutConstraint.height(
@@ -91,32 +90,9 @@ class VSearch:VView
         return nil
     }
     
-    //MARK: public
+    //MARK: private
     
-    func refresh()
-    {
-        DispatchQueue.main.async
-        { [weak self] in
-            
-            self?.viewResults.refresh()
-        }
-    }
-    
-    func restartScrollOffset()
-    {
-        scrollOffset(offsetY:0)
-        viewResults.scrollToTop()
-        viewBar.beginEditing()
-    }
-    
-    func resultsHeight(resultsHeight:CGFloat)
-    {
-        self.resultsHeight = resultsHeight
-        layoutResultsHeight.constant = resultsHeight
-        viewContent.insetsTop(top:resultsHeight)
-    }
-    
-    func scrollOffset(offsetY:CGFloat)
+    private func scrollAll(offsetY:CGFloat)
     {
         var newBarHeight:CGFloat = kBarMaxHeight - offsetY
         var newOptionsTop:CGFloat = offsetY
@@ -137,15 +113,50 @@ class VSearch:VView
         
         layoutBarHeight.constant = newBarHeight
         layoutOptionsTop.constant = -newOptionsTop
-        layoutContentTop.constant = -offsetY
         
         if offsetY > 0
         {
-            layoutResultsHeight.constant = resultsHeight
+            layoutContentTop.constant = -offsetY
         }
         else
         {
-            layoutResultsHeight.constant = resultsHeight - offsetY
+            layoutContentTop.constant = 0
         }
+    }
+    
+    //MARK: public
+    
+    func refresh()
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.viewResults.refresh()
+        }
+    }
+    
+    func restartScrollOffset()
+    {
+        scrollResults(offsetY:0)
+        viewResults.scrollToTop()
+        viewBar.beginEditing()
+    }
+    
+    func resultsHeight(resultsHeight:CGFloat)
+    {
+        layoutResultsHeight.constant = resultsHeight
+        viewContent.insetsTop(top:resultsHeight)
+    }
+    
+    func scrollResults(offsetY:CGFloat)
+    {
+        layoutResultsTop.constant = 0
+        scrollAll(offsetY:offsetY)
+    }
+    
+    func scrollContent(offsetY:CGFloat)
+    {
+        layoutResultsTop.constant = -offsetY
+        scrollAll(offsetY:offsetY)
     }
 }
