@@ -4,12 +4,14 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
 {
     let model:MSearchContentMode
     private weak var controller:CSearch?
-    private let kBorderHeight:CGFloat = 1
     private weak var collectionView:VCollection!
+    private var trackingScroll:Bool
+    private let kBorderHeight:CGFloat = 1
     
     override init(frame:CGRect)
     {
         model = MSearchContentMode()
+        trackingScroll = false
         
         super.init(frame:frame)
         clipsToBounds = true
@@ -66,6 +68,7 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
     
     override func layoutSubviews()
     {
+        trackingScroll = false
         let width:CGFloat = bounds.maxX
         
         if let firstCellWidth:CGFloat = model.items.first?.cellWidth
@@ -103,6 +106,42 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
         }
         
         super.layoutSubviews()
+    }
+    
+    func scrollViewDidScroll(_ scrollView:UIScrollView)
+    {
+        if trackingScroll
+        {
+            let midX:CGFloat = scrollView.bounds.midX
+            let midY:CGFloat = scrollView.bounds.midY
+            let point:CGPoint = CGPoint(
+                x:midX,
+                y:midY)
+            
+            guard
+            
+                let indexPath:IndexPath = collectionView.indexPathForItem(at:point)
+            
+            else
+            {
+                return
+            }
+            
+            collectionView.selectItem(
+                at:indexPath,
+                animated:true,
+                scrollPosition:UICollectionViewScrollPosition())
+        }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView:UIScrollView)
+    {
+        trackingScroll = true
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView:UIScrollView)
+    {
+        trackingScroll = false
     }
     
     //MARK: private
@@ -160,6 +199,7 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
     
     func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
+        trackingScroll = false
         model.selectedIndex = indexPath.item
         
         collectionView.scrollToItem(
