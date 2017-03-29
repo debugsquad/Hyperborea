@@ -106,6 +106,17 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
     
     //MARK: collectionView delegate
     
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let height:CGFloat = collectionView.bounds.maxY
+        let item:MSearchContentModeItem = modelAtIndex(index:indexPath)
+        let size:CGSize = CGSize(
+            width:item.cellWidth,
+            height:height)
+        
+        return size
+    }
+    
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {
         return 1
