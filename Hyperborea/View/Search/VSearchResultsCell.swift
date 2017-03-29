@@ -3,8 +3,8 @@ import UIKit
 class VSearchResultsCell:UICollectionViewCell
 {
     private let kCornerRadius:CGFloat = 10
-    private let kBaseMarginHorizontal:CGFloat = 5
-    private let kBaseMarginVertical:CGFloat = 2
+    private let kBaseMarginHorizontal:CGFloat = 6
+    private let kBaseMarginVertical:CGFloat = 3
     
     override init(frame:CGRect)
     {
@@ -23,10 +23,12 @@ class VSearchResultsCell:UICollectionViewCell
         
         NSLayoutConstraint.equalsVertical(
             view:baseView,
-            toView:self)
+            toView:self,
+            margin:kBaseMarginVertical)
         NSLayoutConstraint.equalsHorizontal(
             view:baseView,
-            toView:self)
+            toView:self,
+            margin:kBaseMarginHorizontal)
     }
     
     required init?(coder:NSCoder)

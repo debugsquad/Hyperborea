@@ -12,7 +12,7 @@ class MSearchResults
     init()
     {
         let loremIpsum:String = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-        let loremArray:[String] = loremIpsum.components(separatedBy:"\n")
+        let loremArray:[String] = loremIpsum.components(separatedBy:" ")
         var items:[MSearchResultsItem] = []
         let attributes:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kFontSize)]

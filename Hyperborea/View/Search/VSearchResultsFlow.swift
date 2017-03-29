@@ -126,6 +126,6 @@ class VSearchResultsFlow:UICollectionViewLayout
     
     override func shouldInvalidateLayout(forBoundsChange newBounds:CGRect) -> Bool
     {
-        return false
+        return true
     }
 }
