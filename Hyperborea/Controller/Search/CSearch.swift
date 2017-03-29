@@ -47,4 +47,14 @@ class CSearch:CController
         self.modelResults = modelResults
         viewSearch.refresh()
     }
+    
+    //MARK: public
+    
+    func openSettings()
+    {
+        let controllerSettings:CSettings = CSettings()
+        parentController.push(
+            controller:controllerSettings,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }

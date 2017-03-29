@@ -8,4 +8,10 @@ class MSearchOptionsItem
     {
         self.image = image
     }
+    
+    //MARK: public
+    
+    func selected(controller:CSearch)
+    {
+    }
 }
