@@ -12,6 +12,7 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         
         super.init(frame:CGRect.zero)
         clipsToBounds = true
+        backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         

@@ -10,18 +10,30 @@ class VSearchContentHeader:UICollectionReusableView
         clipsToBounds = true
         backgroundColor = UIColor.clear
         
-        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
+        let borderTop:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
+        let borderBottom:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
         
-        addSubview(border)
+        addSubview(borderTop)
+        addSubview(borderBottom)
         
         NSLayoutConstraint.topToTop(
-            view:border,
+            view:borderTop,
             toView:self)
         NSLayoutConstraint.height(
-            view:border,
+            view:borderTop,
             constant:kBorderHeight)
         NSLayoutConstraint.equalsHorizontal(
-            view:border,
+            view:borderTop,
+            toView:self)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:borderBottom,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:borderBottom,
+            constant:kBorderHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:borderBottom,
             toView:self)
     }
     
