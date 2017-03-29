@@ -16,6 +16,7 @@ class VSearch:VView
     let kOptionsHeight:CGFloat = 54
     let barOptionsTop:CGFloat
     private let kBarMinHeight:CGFloat = 50
+    private let kAfterOrientation:TimeInterval = 0.1
     
     override init(controller:CController)
     {
@@ -94,9 +95,9 @@ class VSearch:VView
     
     private func resetScrolls()
     {
+        scrollAll(offsetY:0)
         layoutContentTop.constant = 0
         layoutResultsTop.constant = 0
-        scrollAll(offsetY:0)
     }
     
     private func scrollAll(offsetY:CGFloat)
@@ -137,7 +138,13 @@ class VSearch:VView
     {
         resetScrolls()
         viewResults.changeOrientation()
-        viewContent.changeOrientation()
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kAfterOrientation)
+        { [weak self] in
+            
+            self?.viewContent.changeOrientation()
+        }
     }
     
     func beginSearch()
