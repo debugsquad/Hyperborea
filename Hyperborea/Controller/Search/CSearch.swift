@@ -27,7 +27,8 @@ class CSearch:CController
     
     private func asyncSearch()
     {
-        
+        let model:MSearchResults = MSearchResults()
+        searchFinished(modelResults:model)
     }
     
     private func searchFinished(modelResults:MSearchResults)
