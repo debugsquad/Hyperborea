@@ -29,7 +29,7 @@
                                             <constraint firstAttribute="height" constant="100" id="5Ao-yJ-HMs"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cartesian" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOU-59-1Af">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hyperborea" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOU-59-1Af">
                                         <rect key="frame" x="0.0" y="100" width="375" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="X72-Wy-I3O"/>
