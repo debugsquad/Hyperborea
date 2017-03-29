@@ -3,6 +3,7 @@ import UIKit
 class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     let model:MSearchContentMode
+    private weak var controller:CSearch?
     private let kBorderHeight:CGFloat = 1
     private weak var collectionView:VCollection!
     
@@ -76,23 +77,28 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
                 let remainLeft_2:CGFloat = remainLeft / 2.0
                 let remainRight_2:CGFloat = remainRight / 2.0
                 
-                if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
-                {
-                    flow.sectionInset = UIEdgeInsets(
-                        top:0,
-                        left:remainLeft_2,
-                        bottom:0,
-                        right:remainRight_2)
-                }
-                
                 let indexPath:IndexPath = IndexPath(
                     item:model.selectedIndex,
                     section:0)
                 
-                collectionView.selectItem(
-                    at:indexPath,
-                    animated:true,
-                    scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
+                DispatchQueue.main.async
+                { [weak self] in
+                    
+                    if let flow:VCollectionFlow = self?.collectionView.collectionViewLayout as? VCollectionFlow
+                    {
+                        flow.sectionInset = UIEdgeInsets(
+                            top:0,
+                            left:remainLeft_2,
+                            bottom:0,
+                            right:remainRight_2)
+                    }
+                    
+                    self?.collectionView.reloadData()
+                    self?.collectionView.selectItem(
+                        at:indexPath,
+                        animated:true,
+                        scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
+                }
             }
         }
         
@@ -106,6 +112,13 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
         let item:MSearchContentModeItem = model.items[index.item]
         
         return item
+    }
+    
+    //MARK: public
+    
+    func config(controller:CSearch)
+    {
+        self.controller = controller
     }
     
     //MARK: collectionView delegate
@@ -133,7 +146,7 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
         return count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
         let item:MSearchContentModeItem = modelAtIndex(index:indexPath)
         let cell:VSearchContentHeaderCell = collectionView.dequeueReusableCell(
@@ -143,5 +156,15 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
         cell.config(model:item)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
+    {
+        model.selectedIndex = indexPath.item
+        
+        collectionView.scrollToItem(
+            at:indexPath,
+            at:UICollectionViewScrollPosition.centeredHorizontally,
+            animated:true)
     }
 }

@@ -5,7 +5,7 @@ class MSearchContentMode
     let items:[MSearchContentModeItem]
     var selectedIndex:Int
     private let kMarginHorizontal:CGFloat = 15
-    private let kFontSize:CGFloat = 14
+    private let kFontSize:CGFloat = 16
     private let kMaxStringWidth:CGFloat = 320
     private let kMaxStringHeight:CGFloat = 25
     
@@ -29,7 +29,7 @@ class MSearchContentMode
         selectedIndex = 0
         
         let attributes:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.bold(size:kFontSize)]
+            NSFontAttributeName:UIFont.bolder(size:kFontSize)]
         let maxStringSize:CGSize = CGSize(
             width:kMaxStringWidth,
             height:kMaxStringHeight)

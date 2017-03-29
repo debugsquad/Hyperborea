@@ -16,7 +16,7 @@ class VSearchContentHeaderCell:UICollectionViewCell
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
         label.textAlignment = NSTextAlignment.center
-        label.textColor = UIColor.black
+        label.textColor = UIColor(white:0.5, alpha:1)
         self.label = label
         
         addSubview(label)

@@ -117,6 +117,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             withReuseIdentifier:
             VSearchContentHeader.reusableIdentifier,
             for:indexPath) as! VSearchContentHeader
+        header.config(controller:controller)
         
         return header
     }
