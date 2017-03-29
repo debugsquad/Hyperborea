@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DA1317401E8C3E8A000624CF /* VSearchContentHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13173F1E8C3E8A000624CF /* VSearchContentHeaderCell.swift */; };
+		DA1317421E8C4296000624CF /* MSearchContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317411E8C4296000624CF /* MSearchContentMode.swift */; };
+		DA1317441E8C42A4000624CF /* MSearchContentModeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */; };
 		DA1F6FC01E8AEF1C00484942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6F971E8AEF1C00484942 /* LaunchScreen.storyboard */; };
 		DA1F6FC11E8AEF1C00484942 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6F9A1E8AEF1C00484942 /* CAppDelegate.swift */; };
 		DA1F6FC21E8AEF1C00484942 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6F9B1E8AEF1C00484942 /* CController.swift */; };
@@ -57,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		DA13173F1E8C3E8A000624CF /* VSearchContentHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContentHeaderCell.swift; sourceTree = "<group>"; };
+		DA1317411E8C4296000624CF /* MSearchContentMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentMode.swift; sourceTree = "<group>"; };
+		DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItem.swift; sourceTree = "<group>"; };
 		DA1F6F971E8AEF1C00484942 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA1F6F9A1E8AEF1C00484942 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DA1F6F9B1E8AEF1C00484942 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 				DA1F6FF21E8B168B00484942 /* MSearchOptionsItemSettings.swift */,
 				DAA99CC31E8B2433003B9E2C /* MSearchResults.swift */,
 				DAA99CC51E8B24DD003B9E2C /* MSearchResultsItem.swift */,
+				DA1317411E8C4296000624CF /* MSearchContentMode.swift */,
+				DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				DA1F6FE81E8B069800484942 /* VSearchOptions.swift in Sources */,
 				DAA99CC61E8B24DD003B9E2C /* MSearchResultsItem.swift in Sources */,
 				DA1F6FEF1E8B13DD00484942 /* MSearchOptions.swift in Sources */,
+				DA1317441E8C42A4000624CF /* MSearchContentModeItem.swift in Sources */,
 				DA1F6FD71E8AEF1C00484942 /* VBorder.swift in Sources */,
 				DAA99CC41E8B2433003B9E2C /* MSearchResults.swift in Sources */,
 				DA1F6FD81E8AEF1C00484942 /* VCollection.swift in Sources */,
@@ -403,6 +410,7 @@
 				DA1F6FCB1E8AEF1C00484942 /* ExtensionUIFont.swift in Sources */,
 				DA1F6FC81E8AEF1C00484942 /* ExtensionNSManagedObject.swift in Sources */,
 				DA1F6FDC1E8AEF1C00484942 /* VView.swift in Sources */,
+				DA1317421E8C4296000624CF /* MSearchContentMode.swift in Sources */,
 				DA1F6FC11E8AEF1C00484942 /* CAppDelegate.swift in Sources */,
 				DAA99CC81E8B2F22003B9E2C /* VSearchResultsCell.swift in Sources */,
 				DA2E83B91E8C02B600354343 /* VSearchResultsFlow.swift in Sources */,

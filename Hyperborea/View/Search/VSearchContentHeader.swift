@@ -1,8 +1,9 @@
 import UIKit
 
-class VSearchContentHeader:UICollectionReusableView
+class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private let kBorderHeight:CGFloat = 1
+    private weak var collectionView:VCollection!
     
     override init(frame:CGRect)
     {
@@ -13,8 +14,20 @@ class VSearchContentHeader:UICollectionReusableView
         let borderTop:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
         let borderBottom:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
         
+        let collectionView:VCollection = VCollection()
+        collectionView.alwaysBounceHorizontal = true
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        self.collectionView = collectionView
+        
+        if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
+        {
+            flow.scrollDirection = UICollectionViewScrollDirection.horizontal
+        }
+        
         addSubview(borderTop)
         addSubview(borderBottom)
+        addSubview(collectionView)
         
         NSLayoutConstraint.topToTop(
             view:borderTop,
@@ -40,5 +53,19 @@ class VSearchContentHeader:UICollectionReusableView
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    override func layoutSubviews()
+    {
+        let width:CGFloat = bounds.maxX
+        
+        super.layoutSubviews()
+    }
+    
+    //MARK: collectionView delegate
+    
+    func numberOfSections(in collectionView:UICollectionView) -> Int
+    {
+        return 1
     }
 }
