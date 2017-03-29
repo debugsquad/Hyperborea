@@ -1,8 +1,9 @@
-import Foundation
+import UIKit
 
 class MSearchResults
 {
     let items:[MSearchResultsItem]
+    private let kMarginHorizontal:CGFloat = 30
     
     init()
     {

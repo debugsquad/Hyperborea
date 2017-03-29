@@ -2,18 +2,19 @@ import UIKit
 
 class VSearchResultsFlow:UICollectionViewLayout
 {
+    private weak var controller:CSearch!
     private var layoutAttributes:[UICollectionViewLayoutAttributes]
     private var contentWidth:CGFloat
     private var contentHeight:CGFloat
-    private let contentTop:CGFloat
     private let kCellHeight:CGFloat = 50
+    private let kSection:Int = 0
     
-    init(contentTop:CGFloat)
+    init(controller:CSearch)
     {
         contentWidth = 0
         contentHeight = 0
         layoutAttributes = []
-        self.contentTop = contentTop
+        self.controller = controller
         
         super.init()
     }
@@ -29,34 +30,44 @@ class VSearchResultsFlow:UICollectionViewLayout
         
         layoutAttributes = []
         
-        var section:Int = 0
-        var maxPositionX:CGFloat = 0
-        var positionY:CGFloat = barHeight
+        guard
+            
+            let model:MSearchResults = controller.modelResults,
+            let collectionView:UICollectionView = self.collectionView
         
-        for row:MLinearEquationsProjectRow in model.rows
+        else
         {
-            var item:Int = 0
-            var positionX:CGFloat = 0
+            return
+        }
+        
+        contentWidth = collectionView.bounds.maxX
+        var positionY:CGFloat = controller.viewSearch.kBarMaxHeight + controller.viewSearch.kOptionsHeight
+        var positionX:CGFloat = 0
+        var item:Int = 0
+        
+        for result:MSearchResultsItem in model.items
+        {
+            let indexPath:IndexPath = IndexPath(
+                item:item,
+                section:section)
+            let colWidth:CGFloat = col.cellWidth
+            let frame:CGRect = CGRect(
+                x:positionX,
+                y:positionY,
+                width:colWidth,
+                height:kCellHeight)
+            
+            item += 1
+            positionX += colWidth
+            
+            let attributes:UICollectionViewLayoutAttributes = UICollectionViewLayoutAttributes(
+                forCellWith:indexPath)
+            attributes.frame = frame
+            layoutAttributes.append(attributes)
             
             for col:MLinearEquationsProjectRowItem in row.items
             {
-                let indexPath:IndexPath = IndexPath(
-                    item:item,
-                    section:section)
-                let colWidth:CGFloat = col.cellWidth
-                let frame:CGRect = CGRect(
-                    x:positionX,
-                    y:positionY,
-                    width:colWidth,
-                    height:kCellHeight)
                 
-                item += 1
-                positionX += colWidth
-                
-                let attributes:UICollectionViewLayoutAttributes = UICollectionViewLayoutAttributes(
-                    forCellWith:indexPath)
-                attributes.frame = frame
-                layoutAttributes.append(attributes)
             }
             
             if positionX > maxPositionX
@@ -64,8 +75,8 @@ class VSearchResultsFlow:UICollectionViewLayout
                 maxPositionX = positionX
             }
             
-            section += 1
             positionY += kCellHeight
+            item += 1
         }
         
         contentWidth = maxPositionX
