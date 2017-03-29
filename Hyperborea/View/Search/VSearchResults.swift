@@ -13,7 +13,11 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let collectionView:VCollection = VCollection()
+        let flow:VSearchResultsFlow = VSearchResultsFlow(
+            controller:controller)
+        
+        let collectionView:VCollection = VCollection(
+            flow:flow)
         collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
         collectionView.dataSource = self

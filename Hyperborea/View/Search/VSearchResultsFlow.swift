@@ -6,6 +6,7 @@ class VSearchResultsFlow:UICollectionViewLayout
     private var layoutAttributes:[UICollectionViewLayoutAttributes]
     private var contentWidth:CGFloat
     private var contentHeight:CGFloat
+    private let kContentBottom:CGFloat = 20
     private let kCellHeight:CGFloat = 50
     private let kSection:Int = 0
     
@@ -49,38 +50,31 @@ class VSearchResultsFlow:UICollectionViewLayout
         {
             let indexPath:IndexPath = IndexPath(
                 item:item,
-                section:section)
-            let colWidth:CGFloat = col.cellWidth
+                section:kSection)
+            let cellWidth:CGFloat = result.cellWidth
+            
+            if positionX + cellWidth > contentWidth
+            {
+                positionX = 0
+                positionY += kCellHeight
+            }
+            
             let frame:CGRect = CGRect(
                 x:positionX,
                 y:positionY,
-                width:colWidth,
+                width:cellWidth,
                 height:kCellHeight)
             
             item += 1
-            positionX += colWidth
+            positionX += cellWidth
             
             let attributes:UICollectionViewLayoutAttributes = UICollectionViewLayoutAttributes(
                 forCellWith:indexPath)
             attributes.frame = frame
             layoutAttributes.append(attributes)
-            
-            for col:MLinearEquationsProjectRowItem in row.items
-            {
-                
-            }
-            
-            if positionX > maxPositionX
-            {
-                maxPositionX = positionX
-            }
-            
-            positionY += kCellHeight
-            item += 1
         }
         
-        contentWidth = maxPositionX
-        contentHeight = positionY
+        contentHeight = positionY + kContentBottom
     }
     
     override var collectionViewContentSize:CGSize
