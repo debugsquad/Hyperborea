@@ -5,15 +5,19 @@ class VSearch:VView
     private(set) weak var viewBar:VSearchBar!
     private(set) weak var viewOptions:VSearchOptions!
     private(set) weak var viewResults:VSearchResults!
+    private(set) weak var viewContent:VSearchContent!
     private weak var controller:CSearch!
     private weak var layoutBarHeight:NSLayoutConstraint!
     private weak var layoutOptionsTop:NSLayoutConstraint!
+    private weak var layoutContentTop:NSLayoutConstraint!
     let kBarMaxHeight:CGFloat = 82
     let kOptionsHeight:CGFloat = 54
     private let kBarMinHeight:CGFloat = 50
     
     override init(controller:CController)
     {
+        let initialContentTop:CGFloat = kOptionsHeight + kBarMaxHeight
+        
         super.init(controller:controller)
         self.controller = controller as? CSearch
         
@@ -29,7 +33,12 @@ class VSearch:VView
             controller:self.controller)
         self.viewResults = viewResults
         
+        let viewContent:VSearchContent = VSearchContent(
+            controller:self.controller)
+        self.viewContent = viewContent
+        
         addSubview(viewResults)
+        addSubview(viewContent)
         addSubview(viewOptions)
         addSubview(viewBar)
         
@@ -61,6 +70,17 @@ class VSearch:VView
             toView:self)
         NSLayoutConstraint.equalsHorizontal(
             view:viewResults,
+            toView:self)
+
+        layoutContentTop = NSLayoutConstraint.topToTop(
+            view:viewContent,
+            toView:self,
+            constant:initialContentTop)
+        NSLayoutConstraint.bottomToBottom(
+            view:viewContent,
+            toView:self)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewContent,
             toView:self)
     }
     
@@ -108,5 +128,10 @@ class VSearch:VView
         
         layoutBarHeight.constant = newBarHeight
         layoutOptionsTop.constant = -newOptionsTop
+    }
+    
+    func scrollContent(offsetY:CGFloat)
+    {
+        
     }
 }
