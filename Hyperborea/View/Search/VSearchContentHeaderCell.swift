@@ -3,6 +3,7 @@ import UIKit
 class VSearchContentHeaderCell:UICollectionViewCell
 {
     private weak var label:UILabel!
+    private let kLabelTop:CGFloat = 22
     private let kAlphaSelected:CGFloat = 1
     private let kAlphaNotSelected:CGFloat = 0.3
     
@@ -21,7 +22,14 @@ class VSearchContentHeaderCell:UICollectionViewCell
         
         addSubview(label)
         
-        NSLayoutConstraint.equals(
+        NSLayoutConstraint.topToTop(
+            view:label,
+            toView:self,
+            constant:kLabelTop)
+        NSLayoutConstraint.bottomToBottom(
+            view:label,
+            toView:self)
+        NSLayoutConstraint.equalsHorizontal(
             view:label,
             toView:self)
     }

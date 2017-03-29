@@ -4,7 +4,7 @@ class MSearchContentMode
 {
     let items:[MSearchContentModeItem]
     var selectedIndex:Int
-    private let kMarginHorizontal:CGFloat = 15
+    private let kMarginHorizontal:CGFloat = 20
     private let kFontSize:CGFloat = 16
     private let kMaxStringWidth:CGFloat = 320
     private let kMaxStringHeight:CGFloat = 25
