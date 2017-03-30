@@ -10,13 +10,14 @@ class MSettingsBackground
     private let maxLetterSize:CGSize
     private let deltaUpperCase:UInt32
     private let deltaLowerCase:UInt32
-    private let kSpeedMaxY:UInt32 = 15
-    private let kFontSize:CGFloat = 40
+    private let kSpeedMaxY:UInt32 = 30
+    private let kFontSize:CGFloat = 60
+    private let kSpeedDivider:CGFloat = -35
     private let kMaxLetterWidth:CGFloat = 300
-    private let kMaxLetterHeight:CGFloat = 55
-    private let kMaxItems:Int = 60
-    private let kDeltaPositionX:CGFloat = 15
-    private let kRatioAddItem:UInt32 = 10
+    private let kMaxLetterHeight:CGFloat = 80
+    private let kMaxItems:Int = 50
+    private let kDeltaPositionX:CGFloat = 30
+    private let kRatioAddItem:UInt32 = 30
     private let kUpperCaseMin:UInt32 = 65
     private let kUpperCaseMax:UInt32 = 90
     private let kLowerCaseMin:UInt32 = 97
@@ -32,7 +33,7 @@ class MSettingsBackground
         deltaLowerCase = kLowerCaseMax - kLowerCaseMin
         attributes = [
             NSFontAttributeName:UIFont.bolder(size:kFontSize),
-            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.3)]
+            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.1)]
         drawingOptions = NSStringDrawingOptions([
             NSStringDrawingOptions.usesFontLeading,
             NSStringDrawingOptions.usesLineFragmentOrigin])
@@ -84,7 +85,7 @@ class MSettingsBackground
     private func randomSpeed() -> CGFloat
     {
         let speed:UInt32 = arc4random_uniform(kSpeedMaxY) + 1
-        let speedFloat:CGFloat = CGFloat(speed) / -10.0
+        let speedFloat:CGFloat = CGFloat(speed) / kSpeedDivider
         
         return speedFloat
     }
@@ -93,16 +94,16 @@ class MSettingsBackground
     
     func tick()
     {
-        let shoudlAddItem:UInt32 = arc4random_uniform(kRatioAddItem)
-        
-        if shoudlAddItem == 0
+        if self.items.count < kMaxItems
         {
-            if self.items.count < kMaxItems
+            let shoudlAddItem:UInt32 = arc4random_uniform(kRatioAddItem)
+            
+            if shoudlAddItem == 0
             {
                 guard
                     
                     let letter:String = randomLetter()
-                
+                    
                 else
                 {
                     return
