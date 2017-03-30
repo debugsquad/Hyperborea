@@ -19,7 +19,7 @@ class VSettingsBackground:UIView
         timer = Timer.scheduledTimer(
             timeInterval:kTimerInterval,
             target:self,
-            selector:#selector(timerTick(sender:)),
+            selector:#selector(actionTick(sender:)),
             userInfo:nil,
             repeats:true)
     }
@@ -34,8 +34,25 @@ class VSettingsBackground:UIView
         timer?.invalidate()
     }
     
-    func timerTick(sender timer:Timer)
+    override func draw(_ rect:CGRect)
+    {
+        guard
+            
+            let context:CGContext = UIGraphicsGetCurrentContext()
+        
+        else
+        {
+            return
+        }
+        
+        model.draw(context:context)
+    }
+    
+    //MARK: actions
+    
+    func actionTick(sender timer:Timer)
     {
         model.tick()
+        setNeedsDisplay()
     }
 }

@@ -21,4 +21,17 @@ class MSettingsBackgroundItem
         self.width = width
         self.height = height
     }
+    
+    //MARK: public
+    
+    func draw(context:CGContext)
+    {
+        let rect:CGRect = CGRect(
+            x:positionX,
+            y:positionY,
+            width:width,
+            height:height)
+        
+        letter.draw(in:rect)
+    }
 }

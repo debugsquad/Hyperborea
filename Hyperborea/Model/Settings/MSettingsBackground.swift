@@ -142,6 +142,9 @@ class MSettingsBackground
     
     func draw(context:CGContext)
     {
-        
+        for item:MSettingsBackgroundItem in items
+        {
+            item.draw(context:context)
+        }
     }
 }
