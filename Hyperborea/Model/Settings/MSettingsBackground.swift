@@ -15,7 +15,7 @@ class MSettingsBackground
     private let kMaxLetterWidth:CGFloat = 300
     private let kMaxLetterHeight:CGFloat = 30
     private let kMaxItems:Int = 200
-    private let kDeltaPositionX:UInt32 = 30
+    private let kDeltaPositionX:CGFloat = 30
     private let kRatioAddItem:UInt32 = 20
     private let kUpperCaseMin:UInt32 = 65
     private let kUpperCaseMax:UInt32 = 90
@@ -75,8 +75,8 @@ class MSettingsBackground
     {
         let contentX:UInt32 = UInt32(maxWidth)
         let randomX:UInt32 = arc4random_uniform(contentX)
-        let positionXdelta:UInt32 = randomX - kDeltaPositionX
-        let floatPositionX:CGFloat = CGFloat(positionXdelta)
+        let randomFloat:CGFloat = CGFloat(randomX)
+        let floatPositionX:CGFloat = randomFloat - kDeltaPositionX
         
         return floatPositionX
     }
