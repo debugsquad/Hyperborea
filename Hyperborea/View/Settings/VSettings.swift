@@ -1,12 +1,14 @@
 import UIKit
 
-class VSettings:VView
+class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private weak var controller:CSettings!
+    private weak var collectionView:VCollection!
     private(set) weak var viewBar:VSettingsBar!
     private(set) weak var viewBackground:VSettingsBackground!
     private weak var layoutBarHeight:NSLayoutConstraint!
     private let kMaxBarHeight:CGFloat = 200
+    private let kCollectionBottom:CGFloat = 20
     
     override init(controller:CController)
     {
@@ -20,6 +22,22 @@ class VSettings:VView
         
         let viewBackground:VSettingsBackground = VSettingsBackground()
         self.viewBackground = viewBackground
+        
+        let collectionView:VCollection = VCollection()
+        collectionView.alwaysBounceVertical = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.registerCell(cell:VSettingsCell.self)
+        self.collectionView = collectionView
+        
+        if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
+        {
+            flow.sectionInset = UIEdgeInsets(
+                top:kMaxBarHeight,
+                left:0,
+                bottom:kCollectionBottom,
+                right:0)
+        }
         
         addSubview(viewBackground)
         addSubview(viewBar)
@@ -49,5 +67,27 @@ class VSettings:VView
     func clean()
     {
         viewBackground.timer?.invalidate()
+    }
+    
+    //MARK: collectionView delegate
+    
+    func numberOfSections(in collectionView:UICollectionView) -> Int
+    {
+        return 1
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell:VSettingsCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier:
+            VSettingsCell.reusableIdentifier,
+            for:indexPath) as! VSettingsCell
+        
+        return cell
     }
 }
