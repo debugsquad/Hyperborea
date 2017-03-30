@@ -9,12 +9,17 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     private weak var layoutBarHeight:NSLayoutConstraint!
     private let kMaxBarHeight:CGFloat = 200
     private let kCollectionBottom:CGFloat = 20
+    private let kButtonBackWidth:CGFloat = 50
+    private let kButtonBackHeight:CGFloat = 47
+    private let kButtonBackBottom:CGFloat = -133
     
     override init(controller:CController)
     {
         super.init(controller:controller)
-        backgroundColor = UIColor.hyperBlue
+        backgroundColor = UIColor.clear
         self.controller = controller as? CSettings
+        
+        let viewGradient:VSettingsGradient = VSettingsGradient()
         
         let viewBar:VSettingsBar = VSettingsBar(
             controller:self.controller)
@@ -39,9 +44,31 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
                 right:0)
         }
         
+        let buttonBack:UIButton = UIButton()
+        buttonBack.translatesAutoresizingMaskIntoConstraints = false
+        buttonBack.setImage(
+            #imageLiteral(resourceName: "assetGenericBackWhite").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            for:UIControlState.normal)
+        buttonBack.setImage(
+            #imageLiteral(resourceName: "assetGenericBackWhite").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            for:UIControlState.highlighted)
+        buttonBack.imageView!.clipsToBounds = true
+        buttonBack.imageView!.contentMode = UIViewContentMode.center
+        buttonBack.imageView!.tintColor = UIColor(white:1, alpha:0.2)
+        buttonBack.addTarget(
+            self,
+            action:#selector(actionBack(sender:)),
+            for:UIControlEvents.touchUpInside)
+        
+        addSubview(viewGradient)
         addSubview(viewBackground)
         addSubview(collectionView)
         addSubview(viewBar)
+        addSubview(buttonBack)
+        
+        NSLayoutConstraint.equals(
+            view:viewGradient,
+            toView:self)
         
         NSLayoutConstraint.topToTop(
             view:viewBar,
@@ -60,11 +87,32 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         NSLayoutConstraint.equals(
             view:collectionView,
             toView:self)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:buttonBack,
+            toView:self,
+            constant:kButtonBackBottom)
+        NSLayoutConstraint.height(
+            view:buttonBack,
+            constant:kButtonBackBottom)
+        NSLayoutConstraint.leftToLeft(
+            view:buttonBack,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:buttonBack,
+            constant:kButtonBackWidth)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: actions
+    
+    func actionBack(sender button:UIButton)
+    {
+        controller.back()
     }
     
     //MARK: public

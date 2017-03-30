@@ -3,7 +3,8 @@ import UIKit
 class VSettingsGradient:UIView
 {
     private let kLocationTop:NSNumber = 0
-    private let kLocationMiddle:NSNumber = 0.2
+    private let kLocationMiddleTop:NSNumber = 0.08
+    private let kLocationMiddleBottom:NSNumber = 0.5
     private let kLocationBottom:NSNumber = 1
     
     init()
@@ -23,19 +24,26 @@ class VSettingsGradient:UIView
             return
         }
         
-        let topColor:CGColor = UIColor.black.cgColor
-        let middleColor:CGColor = UIColor.hyperBlue.cgColor
+        let topColor:CGColor = UIColor(
+            red:0.149019607843137,
+            green:0.294117647058824,
+            blue:0.470588235294118,
+            alpha:1).cgColor
+        let middleColorTop:CGColor = UIColor.hyperBlue.cgColor
+        let middleColorBottom:CGColor = UIColor.hyperBlue.cgColor
         let bottomColor:CGColor = UIColor.hyperOrange.cgColor
         
         gradientLayer.locations = [
             kLocationTop,
-            kLocationMiddle,
+            kLocationMiddleTop,
+            kLocationMiddleBottom,
             kLocationBottom
         ]
         
         gradientLayer.colors = [
             topColor,
-            middleColor,
+            middleColorTop,
+            middleColorBottom,
             bottomColor
         ]
     }
