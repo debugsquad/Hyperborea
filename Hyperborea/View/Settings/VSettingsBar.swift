@@ -9,7 +9,7 @@ class VSettingsBar:UIView
     private let kLabelVersionHeight:CGFloat = 18
     private let kLabelVersionBottom:CGFloat = -8
     private let kImageBottom:CGFloat = -55
-    private let kImageHeightMultiplier:CGFloat = 0.2
+    private let kImageHeightMultiplier:CGFloat = 0.45
     
     init(controller:CSettings)
     {
