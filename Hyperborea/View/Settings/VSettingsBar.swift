@@ -8,7 +8,7 @@ class VSettingsBar:UIView
     private let kLabelTitleHeight:CGFloat = 22
     private let kLabelTitleBottom:CGFloat = -25
     private let kLabelVersionHeight:CGFloat = 18
-    private let kLabelVersionBottom:CGFloat = -10
+    private let kLabelVersionBottom:CGFloat = -8
     
     init(controller:CSettings)
     {
@@ -38,7 +38,7 @@ class VSettingsBar:UIView
         labelVersion.translatesAutoresizingMaskIntoConstraints = false
         labelVersion.backgroundColor = UIColor.clear
         labelVersion.isUserInteractionEnabled = false
-        labelVersion.font = UIFont.bolder(size:18)
+        labelVersion.font = UIFont.numeric(size:14)
         labelVersion.textAlignment = NSTextAlignment.center
         labelVersion.textColor = UIColor.white
         
