@@ -6,12 +6,14 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
     private weak var controller:CSearch?
     private weak var collectionView:VCollection!
     private var trackingScroll:Bool
+    private var currentWidth:CGFloat
     private let kBorderHeight:CGFloat = 1
     
     override init(frame:CGRect)
     {
         model = MSearchContentMode()
         trackingScroll = false
+        currentWidth = 0
         
         super.init(frame:frame)
         clipsToBounds = true
@@ -68,39 +70,43 @@ class VSearchContentHeader:UICollectionReusableView, UICollectionViewDelegate, U
     
     override func layoutSubviews()
     {
-        trackingScroll = false
-        let width:CGFloat = bounds.maxX
+        let currentWidth:CGFloat = bounds.maxX
         
-        if let firstCellWidth:CGFloat = model.items.first?.cellWidth
+        if currentWidth != self.currentWidth
         {
-            if let lastCellWidth:CGFloat = model.items.last?.cellWidth
+            self.currentWidth = currentWidth
+            
+            if let firstCellWidth:CGFloat = model.items.first?.cellWidth
             {
-                let remainLeft:CGFloat = width - firstCellWidth
-                let remainRight:CGFloat = width - lastCellWidth
-                let remainLeft_2:CGFloat = remainLeft / 2.0
-                let remainRight_2:CGFloat = remainRight / 2.0
-                
-                let indexPath:IndexPath = IndexPath(
-                    item:model.selectedIndex,
-                    section:0)
-                
-                DispatchQueue.main.async
-                { [weak self] in
+                if let lastCellWidth:CGFloat = model.items.last?.cellWidth
+                {
+                    let remainLeft:CGFloat = currentWidth - firstCellWidth
+                    let remainRight:CGFloat = currentWidth - lastCellWidth
+                    let remainLeft_2:CGFloat = remainLeft / 2.0
+                    let remainRight_2:CGFloat = remainRight / 2.0
                     
-                    if let flow:VCollectionFlow = self?.collectionView.collectionViewLayout as? VCollectionFlow
-                    {
-                        flow.sectionInset = UIEdgeInsets(
-                            top:0,
-                            left:remainLeft_2,
-                            bottom:0,
-                            right:remainRight_2)
+                    let indexPath:IndexPath = IndexPath(
+                        item:model.selectedIndex,
+                        section:0)
+                    
+                    DispatchQueue.main.async
+                    { [weak self] in
+                        
+                        if let flow:VCollectionFlow = self?.collectionView.collectionViewLayout as? VCollectionFlow
+                        {
+                            flow.sectionInset = UIEdgeInsets(
+                                top:0,
+                                left:remainLeft_2,
+                                bottom:0,
+                                right:remainRight_2)
+                        }
+                        
+                        self?.collectionView.reloadData()
+                        self?.collectionView.selectItem(
+                            at:indexPath,
+                            animated:true,
+                            scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
                     }
-                    
-                    self?.collectionView.reloadData()
-                    self?.collectionView.selectItem(
-                        at:indexPath,
-                        animated:true,
-                        scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
                 }
             }
         }
