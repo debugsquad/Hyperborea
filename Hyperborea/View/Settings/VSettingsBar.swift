@@ -4,11 +4,12 @@ class VSettingsBar:UIView
 {
     private weak var controller:CSettings!
     private let kVersionKey:String = "CFBundleShortVersionString"
-    private let kImageMarginVertical:CGFloat = 55
     private let kLabelTitleHeight:CGFloat = 22
     private let kLabelTitleBottom:CGFloat = -25
     private let kLabelVersionHeight:CGFloat = 18
     private let kLabelVersionBottom:CGFloat = -8
+    private let kImageBottom:CGFloat = -55
+    private let kImageHeightMultiplier:CGFloat = 0.2
     
     init(controller:CSettings)
     {
@@ -16,6 +17,7 @@ class VSettingsBar:UIView
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
+        isUserInteractionEnabled = false
         self.controller = controller
         
         let imageView:UIImageView = UIImageView()
@@ -46,10 +48,14 @@ class VSettingsBar:UIView
         addSubview(labelTitle)
         addSubview(labelVersion)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.bottomToBottom(
             view:imageView,
             toView:self,
-            margin:kImageMarginVertical)
+            constant:kImageBottom)
+        NSLayoutConstraint.height(
+            view:imageView,
+            toView:self,
+            multiplier:kImageHeightMultiplier)
         NSLayoutConstraint.equalsHorizontal(
             view:imageView,
             toView:self)

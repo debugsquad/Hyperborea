@@ -40,6 +40,7 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         }
         
         addSubview(viewBackground)
+        addSubview(collectionView)
         addSubview(viewBar)
         
         NSLayoutConstraint.topToTop(
@@ -54,6 +55,10 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         
         NSLayoutConstraint.equals(
             view:viewBackground,
+            toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:collectionView,
             toView:self)
     }
     
@@ -71,6 +76,19 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     //MARK: collectionView delegate
     
+    func scrollViewDidScroll(_ scrollView:UIScrollView)
+    {
+        let offsetY:CGFloat = scrollView.contentOffset.y
+        var newBarHeight:CGFloat = kMaxBarHeight - offsetY
+        
+        if newBarHeight < 0
+        {
+            newBarHeight = 0
+        }
+        
+        layoutBarHeight.constant = newBarHeight
+    }
+    
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {
         return 1
@@ -78,7 +96,7 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
