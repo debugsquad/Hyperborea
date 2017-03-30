@@ -64,6 +64,7 @@
 		DAD1E9811E8C766700D1BC66 /* CSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1E9801E8C766700D1BC66 /* CSettings.swift */; };
 		DAD1E9841E8C769700D1BC66 /* VSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1E9831E8C769700D1BC66 /* VSettings.swift */; };
 		DAD1E9861E8C772000D1BC66 /* VSettingsBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1E9851E8C772000D1BC66 /* VSettingsBar.swift */; };
+		DAEB09FB1E8D9959008FAD26 /* VSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */; };
 		DAEC1AB11E8C7FF70001B27B /* VSettingsBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1AB01E8C7FF70001B27B /* VSettingsBackground.swift */; };
 		DAEC1AB61E8C81390001B27B /* MSettingsBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1AB51E8C81390001B27B /* MSettingsBackground.swift */; };
 		DAEC1AB81E8C81430001B27B /* MSettingsBackgroundItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1AB71E8C81430001B27B /* MSettingsBackgroundItem.swift */; };
@@ -129,6 +130,7 @@
 		DAD1E9801E8C766700D1BC66 /* CSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSettings.swift; sourceTree = "<group>"; };
 		DAD1E9831E8C769700D1BC66 /* VSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettings.swift; sourceTree = "<group>"; };
 		DAD1E9851E8C772000D1BC66 /* VSettingsBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsBar.swift; sourceTree = "<group>"; };
+		DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCell.swift; sourceTree = "<group>"; };
 		DAEC1AB01E8C7FF70001B27B /* VSettingsBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsBackground.swift; sourceTree = "<group>"; };
 		DAEC1AB51E8C81390001B27B /* MSettingsBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsBackground.swift; sourceTree = "<group>"; };
 		DAEC1AB71E8C81430001B27B /* MSettingsBackgroundItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsBackgroundItem.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				DAD1E9831E8C769700D1BC66 /* VSettings.swift */,
 				DAEC1AB01E8C7FF70001B27B /* VSettingsBackground.swift */,
 				DAD1E9851E8C772000D1BC66 /* VSettingsBar.swift */,
+				DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				DA1F6FC81E8AEF1C00484942 /* ExtensionNSManagedObject.swift in Sources */,
 				DA1F6FDC1E8AEF1C00484942 /* VView.swift in Sources */,
 				DA1317421E8C4296000624CF /* MSearchContentMode.swift in Sources */,
+				DAEB09FB1E8D9959008FAD26 /* VSettingsCell.swift in Sources */,
 				DA1F6FC11E8AEF1C00484942 /* CAppDelegate.swift in Sources */,
 				DAA99CC81E8B2F22003B9E2C /* VSearchResultsCell.swift in Sources */,
 				DA2E83B91E8C02B600354343 /* VSearchResultsFlow.swift in Sources */,
