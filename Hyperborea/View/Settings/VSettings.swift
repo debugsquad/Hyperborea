@@ -9,7 +9,7 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     private weak var layoutBarHeight:NSLayoutConstraint!
     private let kMaxBarHeight:CGFloat = 200
     private let kCollectionBottom:CGFloat = 20
-    private let kButtonBackWidth:CGFloat = 50
+    private let kButtonBackWidth:CGFloat = 60
     private let kButtonBackHeight:CGFloat = 47
     private let kButtonBackBottom:CGFloat = -133
     
@@ -90,11 +90,11 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         
         NSLayoutConstraint.bottomToBottom(
             view:buttonBack,
-            toView:self,
+            toView:viewBar,
             constant:kButtonBackBottom)
         NSLayoutConstraint.height(
             view:buttonBack,
-            constant:kButtonBackBottom)
+            constant:kButtonBackHeight)
         NSLayoutConstraint.leftToLeft(
             view:buttonBack,
             toView:self)
