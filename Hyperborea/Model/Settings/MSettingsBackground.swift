@@ -11,12 +11,12 @@ class MSettingsBackground
     private let deltaUpperCase:UInt32
     private let deltaLowerCase:UInt32
     private let kSpeedY:CGFloat = -1
-    private let kFontSize:CGFloat = 20
+    private let kFontSize:CGFloat = 25
     private let kMaxLetterWidth:CGFloat = 300
-    private let kMaxLetterHeight:CGFloat = 30
-    private let kMaxItems:Int = 200
-    private let kDeltaPositionX:CGFloat = 30
-    private let kRatioAddItem:UInt32 = 20
+    private let kMaxLetterHeight:CGFloat = 35
+    private let kMaxItems:Int = 300
+    private let kDeltaPositionX:CGFloat = 15
+    private let kRatioAddItem:UInt32 = 10
     private let kUpperCaseMin:UInt32 = 65
     private let kUpperCaseMax:UInt32 = 90
     private let kLowerCaseMin:UInt32 = 97
@@ -31,8 +31,8 @@ class MSettingsBackground
         deltaUpperCase = kUpperCaseMax - kUpperCaseMin
         deltaLowerCase = kLowerCaseMax - kLowerCaseMin
         attributes = [
-            NSFontAttributeName:UIFont.bold(size:kFontSize),
-            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.2)]
+            NSFontAttributeName:UIFont.bolder(size:kFontSize),
+            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.3)]
         drawingOptions = NSStringDrawingOptions([
             NSStringDrawingOptions.usesFontLeading,
             NSStringDrawingOptions.usesLineFragmentOrigin])

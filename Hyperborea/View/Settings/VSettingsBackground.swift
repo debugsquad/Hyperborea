@@ -4,7 +4,7 @@ class VSettingsBackground:UIView
 {
     private let model:MSettingsBackground
     weak var timer:Timer?
-    private let kTimerInterval:TimeInterval = 0.01
+    private let kTimerInterval:TimeInterval = 0.05
     
     init()
     {
@@ -32,6 +32,16 @@ class VSettingsBackground:UIView
     deinit
     {
         timer?.invalidate()
+    }
+    
+    override func layoutSubviews()
+    {
+        let width:CGFloat = bounds.maxX
+        let height:CGFloat = bounds.maxY
+        model.maxWidth = width
+        model.maxHeight = height
+        
+        super.layoutSubviews()
     }
     
     override func draw(_ rect:CGRect)
