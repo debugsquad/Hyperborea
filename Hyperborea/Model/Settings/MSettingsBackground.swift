@@ -5,12 +5,17 @@ class MSettingsBackground
     var maxWidth:CGFloat
     var maxHeight:CGFloat
     private(set) var items:[MSettingsBackgroundItem]
+    private let attributes:[String:AnyObject]
+    private let drawingOptions:NSStringDrawingOptions
+    private let maxLetterSize:CGSize
     private let deltaUpperCase:UInt32
     private let deltaLowerCase:UInt32
-    private let kMaxItems:Int = 100
-    private let kRatioAddItem:UInt32 = 10
-    private let kItemWidth:CGFloat = 16
-    private let kItemHeight:CGFloat = 20
+    private let kFontSize:CGFloat = 20
+    private let kMaxLetterWidth:CGFloat = 300
+    private let kMaxLetterHeight:CGFloat = 30
+    private let kMaxItems:Int = 200
+    private let kDeltaPositionX:UInt32 = 30
+    private let kRatioAddItem:UInt32 = 20
     private let kUpperCaseMin:UInt32 = 65
     private let kUpperCaseMax:UInt32 = 90
     private let kLowerCaseMin:UInt32 = 97
@@ -24,6 +29,15 @@ class MSettingsBackground
         maxHeight = 0
         deltaUpperCase = kUpperCaseMax - kUpperCaseMin
         deltaLowerCase = kLowerCaseMax - kLowerCaseMin
+        attributes = [
+            NSFontAttributeName:UIFont.bold(size:kFontSize),
+            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.2)]
+        drawingOptions = NSStringDrawingOptions([
+            NSStringDrawingOptions.usesFontLeading,
+            NSStringDrawingOptions.usesLineFragmentOrigin])
+        maxLetterSize = CGSize(
+            width:kMaxLetterWidth,
+            height:kMaxLetterHeight)
     }
     
     //MARK: private
@@ -56,6 +70,16 @@ class MSettingsBackground
         return string
     }
     
+    private func randomPositionX() -> CGFloat
+    {
+        let contentX:UInt32 = UInt32(maxWidth)
+        let randomX:UInt32 = arc4random_uniform(contentX)
+        let positionXdelta:UInt32 = randomX - kDeltaPositionX
+        let floatPositionX:CGFloat = CGFloat(positionXdelta)
+        
+        return floatPositionX
+    }
+    
     //MARK: public
     
     func tick()
@@ -75,7 +99,25 @@ class MSettingsBackground
                     return
                 }
                 
-                print("random: \(letter)")
+                let attributedString:NSAttributedString = NSAttributedString(
+                    string:letter,
+                    attributes:attributes)
+                let stringRect:CGRect = attributedString.boundingRect(
+                    with:maxLetterSize,
+                    options:drawingOptions,
+                    context:nil)
+                let positionX:CGFloat = randomPositionX()
+                let positionY:CGFloat = maxHeight
+                let width:CGFloat = ceil(stringRect.size.width)
+                let height:CGFloat = ceil(stringRect.size.height)
+                
+                let item:MSettingsBackgroundItem = MSettingsBackgroundItem(
+                    letter:attributedString,
+                    positionX:positionX,
+                    positionY:positionY,
+                    width:width,
+                    height:height)
+                items.append(item)
             }
         }
     }
