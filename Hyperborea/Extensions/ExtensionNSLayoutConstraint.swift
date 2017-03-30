@@ -14,7 +14,7 @@ extension NSLayoutConstraint
             relatedBy:NSLayoutRelation.equal,
             toItem:toView,
             attribute:NSLayoutAttribute.top,
-            multiplier:1,
+            multiplier:multiplier,
             constant:constant)
         constraint.isActive = true
         
@@ -33,7 +33,7 @@ extension NSLayoutConstraint
             relatedBy:NSLayoutRelation.equal,
             toItem:toView,
             attribute:NSLayoutAttribute.bottom,
-            multiplier:1,
+            multiplier:multiplier,
             constant:constant)
         constraint.isActive = true
         
@@ -52,7 +52,7 @@ extension NSLayoutConstraint
             relatedBy:NSLayoutRelation.equal,
             toItem:toView,
             attribute:NSLayoutAttribute.bottom,
-            multiplier:1,
+            multiplier:multiplier,
             constant:constant)
         constraint.isActive = true
         
@@ -71,7 +71,7 @@ extension NSLayoutConstraint
             relatedBy:NSLayoutRelation.equal,
             toItem:toView,
             attribute:NSLayoutAttribute.top,
-            multiplier:1,
+            multiplier:multiplier,
             constant:constant)
         constraint.isActive = true
         
@@ -90,7 +90,7 @@ extension NSLayoutConstraint
             relatedBy:NSLayoutRelation.equal,
             toItem:toView,
             attribute:NSLayoutAttribute.left,
-            multiplier:1,
+            multiplier:multiplier,
             constant:constant)
         constraint.isActive = true
         
@@ -128,7 +128,7 @@ extension NSLayoutConstraint
             relatedBy:NSLayoutRelation.equal,
             toItem:toView,
             attribute:NSLayoutAttribute.right,
-            multiplier:1,
+            multiplier:multiplier,
             constant:constant)
         constraint.isActive = true
         
@@ -147,7 +147,7 @@ extension NSLayoutConstraint
             relatedBy:NSLayoutRelation.equal,
             toItem:toView,
             attribute:NSLayoutAttribute.left,
-            multiplier:1,
+            multiplier:multiplier,
             constant:constant)
         constraint.isActive = true
         
@@ -165,7 +165,7 @@ extension NSLayoutConstraint
             relatedBy:NSLayoutRelation.equal,
             toItem:nil,
             attribute:NSLayoutAttribute.notAnAttribute,
-            multiplier:1,
+            multiplier:multiplier,
             constant:constant)
         constraint.isActive = true
         
@@ -183,7 +183,7 @@ extension NSLayoutConstraint
             relatedBy:NSLayoutRelation.equal,
             toItem:nil,
             attribute:NSLayoutAttribute.notAnAttribute,
-            multiplier:1,
+            multiplier:multiplier,
             constant:constant)
         constraint.isActive = true
         
@@ -216,7 +216,7 @@ extension NSLayoutConstraint
             relatedBy:NSLayoutRelation.equal,
             toItem:toView,
             attribute:NSLayoutAttribute.width,
-            multiplier:1,
+            multiplier:multiplier,
             constant:0)
         constraint.isActive = true
         
@@ -234,7 +234,7 @@ extension NSLayoutConstraint
             relatedBy:NSLayoutRelation.equal,
             toItem:toView,
             attribute:NSLayoutAttribute.height,
-            multiplier:1,
+            multiplier:multiplier,
             constant:0)
         constraint.isActive = true
         
