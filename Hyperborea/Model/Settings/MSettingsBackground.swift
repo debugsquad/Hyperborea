@@ -9,12 +9,34 @@ class MSettingsBackground
     private let kRatioAddItem:UInt32 = 10
     private let kItemWidth:CGFloat = 16
     private let kItemHeight:CGFloat = 20
+    private let kLowerCaseMin:UInt32 = 65
+    private let kLowerCaseMax:UInt32 = 90
+    private let kUpperCaseMin:UInt32 = 97
+    private let kUpperCaseMax:UInt32 = 122
     
     init()
     {
         items = []
         maxWidth = 0
         maxHeight = 0
+    }
+    
+    //MARK: private
+    
+    private func randomLetter() -> String?
+    {
+        guard
+            
+            let unicodeScalar:UnicodeScalar = UnicodeScalar(0)
+        
+        else
+        {
+            return nil
+        }
+        
+        let string:String = String(unicodeScalar)
+        
+        return string
     }
     
     //MARK: public
@@ -27,9 +49,16 @@ class MSettingsBackground
         {
             if items.count < kMaxItems
             {
+                guard
+                    
+                    let letter:String = randomLetter()
                 
+                else
+                {
+                    return
+                }
                 
-                let item:MSettingsBackgroundItem = MSettingsBackgroundItem()
+                print("random: \(letter)")
             }
         }
     }

@@ -2,8 +2,8 @@ import UIKit
 
 class VSettingsBackground:UIView
 {
+    private let model:MSettingsBackground
     weak var timer:Timer?
-    let model:MSettingsBackground
     
     init()
     {
@@ -28,6 +28,6 @@ class VSettingsBackground:UIView
     
     func timerTick(sender timer:Timer)
     {
-        
+        model.tick()
     }
 }

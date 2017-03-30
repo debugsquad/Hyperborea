@@ -4,6 +4,7 @@ class VSettings:VView
 {
     private weak var controller:CSettings!
     private weak var viewBar:VSettingsBar!
+    private weak var viewBackground:VSettingsBackground!
     private weak var layoutBarHeight:NSLayoutConstraint!
     private let kMaxBarHeight:CGFloat = 200
     
@@ -17,6 +18,10 @@ class VSettings:VView
             controller:self.controller)
         self.viewBar = viewBar
         
+        let viewBackground:VSettingsBackground = VSettingsBackground()
+        self.viewBackground = viewBackground
+        
+        addSubview(viewBackground)
         addSubview(viewBar)
         
         NSLayoutConstraint.topToTop(
@@ -27,6 +32,10 @@ class VSettings:VView
             constant:kMaxBarHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:viewBar,
+            toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:viewBackground,
             toView:self)
     }
     
