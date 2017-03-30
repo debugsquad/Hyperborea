@@ -4,7 +4,7 @@ class VSettingsBackground:UIView
 {
     private let model:MSettingsBackground
     weak var timer:Timer?
-    private let kTimerInterval:TimeInterval = 0.05
+    private let kTimerInterval:TimeInterval = 0.015
     
     init()
     {

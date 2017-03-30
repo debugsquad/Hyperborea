@@ -10,11 +10,11 @@ class MSettingsBackground
     private let maxLetterSize:CGSize
     private let deltaUpperCase:UInt32
     private let deltaLowerCase:UInt32
-    private let kSpeedY:CGFloat = -1
-    private let kFontSize:CGFloat = 25
+    private let kSpeedMaxY:UInt32 = 15
+    private let kFontSize:CGFloat = 40
     private let kMaxLetterWidth:CGFloat = 300
-    private let kMaxLetterHeight:CGFloat = 35
-    private let kMaxItems:Int = 300
+    private let kMaxLetterHeight:CGFloat = 55
+    private let kMaxItems:Int = 60
     private let kDeltaPositionX:CGFloat = 15
     private let kRatioAddItem:UInt32 = 10
     private let kUpperCaseMin:UInt32 = 65
@@ -81,6 +81,14 @@ class MSettingsBackground
         return floatPositionX
     }
     
+    private func randomSpeed() -> CGFloat
+    {
+        let speed:UInt32 = arc4random_uniform(kSpeedMaxY) + 1
+        let speedFloat:CGFloat = CGFloat(speed) / -10.0
+        
+        return speedFloat
+    }
+    
     //MARK: public
     
     func tick()
@@ -111,13 +119,15 @@ class MSettingsBackground
                 let positionY:CGFloat = maxHeight
                 let width:CGFloat = ceil(stringRect.size.width)
                 let height:CGFloat = ceil(stringRect.size.height)
+                let speedY:CGFloat = randomSpeed()
                 
                 let item:MSettingsBackgroundItem = MSettingsBackgroundItem(
                     letter:attributedString,
                     positionX:positionX,
                     positionY:positionY,
                     width:width,
-                    height:height)
+                    height:height,
+                    speedY:speedY)
                 
                 self.items.append(item)
             }
@@ -127,7 +137,7 @@ class MSettingsBackground
         
         for item:MSettingsBackgroundItem in items
         {
-            item.positionY += kSpeedY
+            item.positionY += item.speedY
             
             let itemMaxY:CGFloat = item.positionY + item.height
             
