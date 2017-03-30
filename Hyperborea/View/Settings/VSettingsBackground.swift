@@ -3,9 +3,12 @@ import UIKit
 class VSettingsBackground:UIView
 {
     weak var timer:Timer?
+    let model:MSettingsBackground
     
     init()
     {
+        model = MSettingsBackground()
+        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
