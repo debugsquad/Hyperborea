@@ -10,6 +10,7 @@ class MSettingsBackground
     private let maxLetterSize:CGSize
     private let deltaUpperCase:UInt32
     private let deltaLowerCase:UInt32
+    private let kSpeedY:CGFloat = -1
     private let kFontSize:CGFloat = 20
     private let kMaxLetterWidth:CGFloat = 300
     private let kMaxLetterHeight:CGFloat = 30
@@ -88,7 +89,7 @@ class MSettingsBackground
         
         if shoudlAddItem == 0
         {
-            if items.count < kMaxItems
+            if self.items.count < kMaxItems
             {
                 guard
                     
@@ -117,9 +118,26 @@ class MSettingsBackground
                     positionY:positionY,
                     width:width,
                     height:height)
-                items.append(item)
+                
+                self.items.append(item)
             }
         }
+        
+        var newItems:[MSettingsBackgroundItem] = []
+        
+        for item:MSettingsBackgroundItem in items
+        {
+            item.positionY += kSpeedY
+            
+            let itemMaxY:CGFloat = item.positionY + item.height
+            
+            if itemMaxY > 0
+            {
+                newItems.append(item)
+            }
+        }
+        
+        self.items = newItems
     }
     
     func draw(context:CGContext)
