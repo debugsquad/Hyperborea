@@ -4,6 +4,7 @@ class VSettingsBackground:UIView
 {
     private let model:MSettingsBackground
     weak var timer:Timer?
+    private let kTimerInterval:TimeInterval = 0.01
     
     init()
     {
@@ -14,6 +15,13 @@ class VSettingsBackground:UIView
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         isUserInteractionEnabled = false
+        
+        timer = Timer.scheduledTimer(
+            timeInterval:kTimerInterval,
+            target:self,
+            selector:#selector(timerTick(sender:)),
+            userInfo:nil,
+            repeats:true)
     }
     
     required init?(coder:NSCoder)

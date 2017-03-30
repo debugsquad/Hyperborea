@@ -3,8 +3,8 @@ import UIKit
 class VSettings:VView
 {
     private weak var controller:CSettings!
-    private weak var viewBar:VSettingsBar!
-    private weak var viewBackground:VSettingsBackground!
+    private(set) weak var viewBar:VSettingsBar!
+    private(set) weak var viewBackground:VSettingsBackground!
     private weak var layoutBarHeight:NSLayoutConstraint!
     private let kMaxBarHeight:CGFloat = 200
     
@@ -42,5 +42,12 @@ class VSettings:VView
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: public
+    
+    func clean()
+    {
+        viewBackground.timer?.invalidate()
     }
 }

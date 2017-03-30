@@ -4,6 +4,11 @@ class CSettings:CController
 {
     private weak var viewSettings:VSettings!
     
+    deinit
+    {
+        viewSettings.viewBackground.timer?.invalidate()
+    }
+    
     override func viewDidAppear(_ animated:Bool)
     {
         super.viewDidAppear(animated)
@@ -22,6 +27,4 @@ class CSettings:CController
         self.viewSettings = viewSettings
         view = viewSettings
     }
-    
-    
 }
