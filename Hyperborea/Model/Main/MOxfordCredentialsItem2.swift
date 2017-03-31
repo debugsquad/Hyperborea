@@ -1,9 +1,12 @@
-//
-//  MOxfordCredentialsItem2.swift
-//  Hyperborea
-//
-//  Created by zero on 3/31/17.
-//  Copyright © 2017 iturbide. All rights reserved.
-//
-
 import Foundation
+
+class MOxfordCredentialsItem2:MOxfordCredentialsItem
+{
+    private let kAppId:String = "c4753937"
+    private let kAppKey:String = "17a46e20204f62884100cc574e3ee824"
+    
+    init()
+    {
+        super.init(appId:kAppId, appKey:kAppKey)
+    }
+}
