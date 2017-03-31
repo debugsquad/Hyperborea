@@ -64,6 +64,7 @@
 		DAD1E9811E8C766700D1BC66 /* CSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1E9801E8C766700D1BC66 /* CSettings.swift */; };
 		DAD1E9841E8C769700D1BC66 /* VSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1E9831E8C769700D1BC66 /* VSettings.swift */; };
 		DAD1E9861E8C772000D1BC66 /* VSettingsBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1E9851E8C772000D1BC66 /* VSettingsBar.swift */; };
+		DAD5B22F1E8EA6F200F5E481 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD5B22E1E8EA6F200F5E481 /* spinner.xcassets */; };
 		DAEB09FB1E8D9959008FAD26 /* VSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */; };
 		DAEB09FD1E8DBEBE008FAD26 /* VSettingsGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */; };
 		DAEB09FF1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FE1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift */; };
@@ -136,6 +137,7 @@
 		DAD1E9801E8C766700D1BC66 /* CSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSettings.swift; sourceTree = "<group>"; };
 		DAD1E9831E8C769700D1BC66 /* VSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettings.swift; sourceTree = "<group>"; };
 		DAD1E9851E8C772000D1BC66 /* VSettingsBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsBar.swift; sourceTree = "<group>"; };
+		DAD5B22E1E8EA6F200F5E481 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCell.swift; sourceTree = "<group>"; };
 		DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsGradient.swift; sourceTree = "<group>"; };
 		DAEB09FE1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellLanguage.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				DA1F6F971E8AEF1C00484942 /* LaunchScreen.storyboard */,
 				DA1F6FEB1E8B13A400484942 /* generic.xcassets */,
+				DAD5B22E1E8EA6F200F5E481 /* spinner.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1F6FC01E8AEF1C00484942 /* LaunchScreen.storyboard in Resources */,
+				DAD5B22F1E8EA6F200F5E481 /* spinner.xcassets in Resources */,
 				DA1F6FCE1E8AEF1C00484942 /* Localizable.strings in Resources */,
 				DA1F6FD01E8AEF1C00484942 /* ResourceUrl.plist in Resources */,
 				DA1F6FEC1E8B13A400484942 /* generic.xcassets in Resources */,
