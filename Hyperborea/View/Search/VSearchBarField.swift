@@ -81,4 +81,23 @@ class VSearchBarField:UITextField, UITextFieldDelegate
         
         return true
     }
+    
+    func textField(_ textField:UITextField, shouldChangeCharactersIn range:NSRange, replacementString string:String) -> Bool
+    {
+        guard
+        
+            let currentString:String = textField.text
+        
+        else
+        {
+            return true
+        }
+        
+        let currentText:NSString = currentString as NSString
+        let editedText:String = currentText.replacingCharacters(
+            in:range,
+            with:string)
+        
+        return true
+    }
 }

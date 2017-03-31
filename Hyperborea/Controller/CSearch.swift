@@ -2,8 +2,21 @@ import UIKit
 
 class CSearch:CController
 {
+    let modelUrls:MSearchUrls
     private(set) weak var viewSearch:VSearch!
     private(set) var modelResults:MSearchResults?
+    
+    override init()
+    {
+        modelUrls = MSearchUrls()
+        
+        super.init()
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
+    }
     
     override func loadView()
     {
@@ -48,6 +61,13 @@ class CSearch:CController
         viewSearch.refresh()
     }
     
+    private func cancelRequests()
+    {
+        NotificationCenter.default.post(
+            name:Notification.cancelRequests,
+            object:nil)
+    }
+    
     //MARK: public
     
     func openSettings()
@@ -64,5 +84,15 @@ class CSearch:CController
         parentController.push(
             controller:controllerFavorites,
             horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
+    func editedText(text:String)
+    {
+        cancelRequests()
+        
+        if !text.isEmpty
+        {
+            reques
+        }
     }
 }
