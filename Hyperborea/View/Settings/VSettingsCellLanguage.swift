@@ -20,12 +20,19 @@ class VSettingsCellLanguage:VSettingsCell
         let buttonEnglish:VSettingsCellLanguageButton = VSettingsCellLanguageButton(
             imageOn:#imageLiteral(resourceName: "assetGenericEnglishOn"),
             imageOff:#imageLiteral(resourceName: "assetGenericEnglishOff"))
+        buttonEnglish.addTarget(
+            self,
+            action:#selector(actionEnglish(sender:)),
+            for:UIControlEvents.touchUpInside)
         self.buttonEnglish = buttonEnglish
-        buttonEnglish.isSelected = true
         
         let buttonSpanish:VSettingsCellLanguageButton = VSettingsCellLanguageButton(
             imageOn:#imageLiteral(resourceName: "assetGenericSpanishOn"),
             imageOff:#imageLiteral(resourceName: "assetGenericSpanishOff"))
+        buttonSpanish.addTarget(
+            self,
+            action:#selector(actionSpanish(sender:)),
+            for:UIControlEvents.touchUpInside)
         self.buttonSpanish = buttonSpanish
         
         addSubview(buttonEnglish)
@@ -76,5 +83,62 @@ class VSettingsCellLanguage:VSettingsCell
         layoutButtonEnglishLeft.constant = marginLeft
         
         super.layoutSubviews()
+    }
+    
+    //MARK: actions
+    
+    func actionEnglish(sender button:UIButton)
+    {
+        newLangugage(language:DSettings.Language.english)
+    }
+    
+    func actionSpanish(sender button:UIButton)
+    {
+        newLangugage(language:DSettings.Language.spanish)
+    }
+    
+    //MARK: private
+    
+    private func updateLanguages()
+    {
+        guard
+        
+            let language:DSettings.Language = MSession.sharedInstance.settings?.currentLanguage()
+        
+        else
+        {
+            return
+        }
+        
+        switch language
+        {
+        case DSettings.Language.english:
+            
+            buttonEnglish.isSelected = true
+            buttonSpanish.isSelected = false
+            
+            break
+            
+        case DSettings.Language.spanish:
+            
+            buttonEnglish.isSelected = false
+            buttonSpanish.isSelected = true
+            
+            break
+        }
+    }
+    
+    private func newLangugage(language:DSettings.Language)
+    {
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        {
+            MSession.sharedInstance.settings?.changeLanguage(language:language)
+            
+            DispatchQueue.main.async
+            { [weak self] in
+                
+                self?.updateLanguages()
+            }
+        }
     }
 }
