@@ -30,16 +30,6 @@
 		DA1F6FCE1E8AEF1C00484942 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6FAC1E8AEF1C00484942 /* Localizable.strings */; };
 		DA1F6FCF1E8AEF1C00484942 /* ResourceFont.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6FAE1E8AEF1C00484942 /* ResourceFont.plist */; };
 		DA1F6FD01E8AEF1C00484942 /* ResourceUrl.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6FAF1E8AEF1C00484942 /* ResourceUrl.plist */; };
-		DA1F6FD11E8AEF1C00484942 /* VParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FB31E8AEF1C00484942 /* VParent.swift */; };
-		DA1F6FD41E8AEF1C00484942 /* VParentPushBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FB61E8AEF1C00484942 /* VParentPushBackground.swift */; };
-		DA1F6FD51E8AEF1C00484942 /* VAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FB81E8AEF1C00484942 /* VAlert.swift */; };
-		DA1F6FD61E8AEF1C00484942 /* VBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FB91E8AEF1C00484942 /* VBlur.swift */; };
-		DA1F6FD71E8AEF1C00484942 /* VBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBA1E8AEF1C00484942 /* VBorder.swift */; };
-		DA1F6FD81E8AEF1C00484942 /* VCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBB1E8AEF1C00484942 /* VCollection.swift */; };
-		DA1F6FD91E8AEF1C00484942 /* VCollectionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBC1E8AEF1C00484942 /* VCollectionFlow.swift */; };
-		DA1F6FDA1E8AEF1C00484942 /* VSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBD1E8AEF1C00484942 /* VSpinner.swift */; };
-		DA1F6FDB1E8AEF1C00484942 /* VToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBE1E8AEF1C00484942 /* VToast.swift */; };
-		DA1F6FDC1E8AEF1C00484942 /* VView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FBF1E8AEF1C00484942 /* VView.swift */; };
 		DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE11E8AF76800484942 /* VSearch.swift */; };
 		DA1F6FE41E8AF8F200484942 /* VSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE31E8AF8F200484942 /* VSearchBar.swift */; };
 		DA1F6FE61E8AFDFC00484942 /* VSearchBarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE51E8AFDFC00484942 /* VSearchBarField.swift */; };
@@ -66,6 +56,16 @@
 		DAD5B23C1E8EA83D00F5E481 /* CParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2361E8EA83D00F5E481 /* CParent.swift */; };
 		DAD5B23D1E8EA83D00F5E481 /* CFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2371E8EA83D00F5E481 /* CFavorites.swift */; };
 		DAD5B23E1E8EA83D00F5E481 /* CSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2381E8EA83D00F5E481 /* CSearch.swift */; };
+		DAD5B2491E8EA8E500F5E481 /* VAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B23F1E8EA8E500F5E481 /* VAlert.swift */; };
+		DAD5B24A1E8EA8E500F5E481 /* VBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2401E8EA8E500F5E481 /* VBlur.swift */; };
+		DAD5B24B1E8EA8E500F5E481 /* VBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2411E8EA8E500F5E481 /* VBorder.swift */; };
+		DAD5B24C1E8EA8E500F5E481 /* VCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2421E8EA8E500F5E481 /* VCollection.swift */; };
+		DAD5B24D1E8EA8E500F5E481 /* VCollectionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2431E8EA8E500F5E481 /* VCollectionFlow.swift */; };
+		DAD5B24E1E8EA8E500F5E481 /* VParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2441E8EA8E500F5E481 /* VParent.swift */; };
+		DAD5B24F1E8EA8E500F5E481 /* VParentPushBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2451E8EA8E500F5E481 /* VParentPushBackground.swift */; };
+		DAD5B2501E8EA8E500F5E481 /* VSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2461E8EA8E500F5E481 /* VSpinner.swift */; };
+		DAD5B2511E8EA8E500F5E481 /* VToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2471E8EA8E500F5E481 /* VToast.swift */; };
+		DAD5B2521E8EA8E500F5E481 /* VView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2481E8EA8E500F5E481 /* VView.swift */; };
 		DAEB09FB1E8D9959008FAD26 /* VSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */; };
 		DAEB09FD1E8DBEBE008FAD26 /* VSettingsGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */; };
 		DAEB09FF1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FE1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift */; };
@@ -102,16 +102,6 @@
 		DA1F6FAD1E8AEF1C00484942 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA1F6FAE1E8AEF1C00484942 /* ResourceFont.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceFont.plist; sourceTree = "<group>"; };
 		DA1F6FAF1E8AEF1C00484942 /* ResourceUrl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceUrl.plist; sourceTree = "<group>"; };
-		DA1F6FB31E8AEF1C00484942 /* VParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParent.swift; sourceTree = "<group>"; };
-		DA1F6FB61E8AEF1C00484942 /* VParentPushBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParentPushBackground.swift; sourceTree = "<group>"; };
-		DA1F6FB81E8AEF1C00484942 /* VAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAlert.swift; sourceTree = "<group>"; };
-		DA1F6FB91E8AEF1C00484942 /* VBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBlur.swift; sourceTree = "<group>"; };
-		DA1F6FBA1E8AEF1C00484942 /* VBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBorder.swift; sourceTree = "<group>"; };
-		DA1F6FBB1E8AEF1C00484942 /* VCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCollection.swift; sourceTree = "<group>"; };
-		DA1F6FBC1E8AEF1C00484942 /* VCollectionFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCollectionFlow.swift; sourceTree = "<group>"; };
-		DA1F6FBD1E8AEF1C00484942 /* VSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSpinner.swift; sourceTree = "<group>"; };
-		DA1F6FBE1E8AEF1C00484942 /* VToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VToast.swift; sourceTree = "<group>"; };
-		DA1F6FBF1E8AEF1C00484942 /* VView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VView.swift; sourceTree = "<group>"; };
 		DA1F6FE11E8AF76800484942 /* VSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearch.swift; sourceTree = "<group>"; };
 		DA1F6FE31E8AF8F200484942 /* VSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchBar.swift; sourceTree = "<group>"; };
 		DA1F6FE51E8AFDFC00484942 /* VSearchBarField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchBarField.swift; sourceTree = "<group>"; };
@@ -140,6 +130,16 @@
 		DAD5B2361E8EA83D00F5E481 /* CParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CParent.swift; sourceTree = "<group>"; };
 		DAD5B2371E8EA83D00F5E481 /* CFavorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFavorites.swift; sourceTree = "<group>"; };
 		DAD5B2381E8EA83D00F5E481 /* CSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSearch.swift; sourceTree = "<group>"; };
+		DAD5B23F1E8EA8E500F5E481 /* VAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAlert.swift; sourceTree = "<group>"; };
+		DAD5B2401E8EA8E500F5E481 /* VBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBlur.swift; sourceTree = "<group>"; };
+		DAD5B2411E8EA8E500F5E481 /* VBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBorder.swift; sourceTree = "<group>"; };
+		DAD5B2421E8EA8E500F5E481 /* VCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCollection.swift; sourceTree = "<group>"; };
+		DAD5B2431E8EA8E500F5E481 /* VCollectionFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCollectionFlow.swift; sourceTree = "<group>"; };
+		DAD5B2441E8EA8E500F5E481 /* VParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParent.swift; sourceTree = "<group>"; };
+		DAD5B2451E8EA8E500F5E481 /* VParentPushBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParentPushBackground.swift; sourceTree = "<group>"; };
+		DAD5B2461E8EA8E500F5E481 /* VSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSpinner.swift; sourceTree = "<group>"; };
+		DAD5B2471E8EA8E500F5E481 /* VToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VToast.swift; sourceTree = "<group>"; };
+		DAD5B2481E8EA8E500F5E481 /* VView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VView.swift; sourceTree = "<group>"; };
 		DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCell.swift; sourceTree = "<group>"; };
 		DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsGradient.swift; sourceTree = "<group>"; };
 		DAEB09FE1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellLanguage.swift; sourceTree = "<group>"; };
@@ -250,34 +250,18 @@
 		DA1F6FB11E8AEF1C00484942 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				DA1F6FB21E8AEF1C00484942 /* Parent */,
-				DA1F6FB71E8AEF1C00484942 /* Subclasses */,
+				DAD5B23F1E8EA8E500F5E481 /* VAlert.swift */,
+				DAD5B2401E8EA8E500F5E481 /* VBlur.swift */,
+				DAD5B2411E8EA8E500F5E481 /* VBorder.swift */,
+				DAD5B2421E8EA8E500F5E481 /* VCollection.swift */,
+				DAD5B2431E8EA8E500F5E481 /* VCollectionFlow.swift */,
+				DAD5B2441E8EA8E500F5E481 /* VParent.swift */,
+				DAD5B2451E8EA8E500F5E481 /* VParentPushBackground.swift */,
+				DAD5B2461E8EA8E500F5E481 /* VSpinner.swift */,
+				DAD5B2471E8EA8E500F5E481 /* VToast.swift */,
+				DAD5B2481E8EA8E500F5E481 /* VView.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		DA1F6FB21E8AEF1C00484942 /* Parent */ = {
-			isa = PBXGroup;
-			children = (
-				DA1F6FB31E8AEF1C00484942 /* VParent.swift */,
-				DA1F6FB61E8AEF1C00484942 /* VParentPushBackground.swift */,
-			);
-			path = Parent;
-			sourceTree = "<group>";
-		};
-		DA1F6FB71E8AEF1C00484942 /* Subclasses */ = {
-			isa = PBXGroup;
-			children = (
-				DA1F6FB81E8AEF1C00484942 /* VAlert.swift */,
-				DA1F6FB91E8AEF1C00484942 /* VBlur.swift */,
-				DA1F6FBA1E8AEF1C00484942 /* VBorder.swift */,
-				DA1F6FBB1E8AEF1C00484942 /* VCollection.swift */,
-				DA1F6FBC1E8AEF1C00484942 /* VCollectionFlow.swift */,
-				DA1F6FBD1E8AEF1C00484942 /* VSpinner.swift */,
-				DA1F6FBE1E8AEF1C00484942 /* VToast.swift */,
-				DA1F6FBF1E8AEF1C00484942 /* VView.swift */,
-			);
-			path = Subclasses;
 			sourceTree = "<group>";
 		};
 		DA1F6FE01E8AF76000484942 /* Search */ = {
@@ -454,36 +438,32 @@
 				DA2E83BB1E8C136700354343 /* VSearchContent.swift in Sources */,
 				DA1F6FC51E8AEF1C00484942 /* ExtensionFileManager.swift in Sources */,
 				DA1F6FCC1E8AEF1C00484942 /* ExtensionURL.swift in Sources */,
-				DA1F6FD11E8AEF1C00484942 /* VParent.swift in Sources */,
 				DA1F6FE81E8B069800484942 /* VSearchOptions.swift in Sources */,
 				DAD5B23D1E8EA83D00F5E481 /* CFavorites.swift in Sources */,
 				DAA99CC61E8B24DD003B9E2C /* MSearchResultsItem.swift in Sources */,
 				DAEC1AB81E8C81430001B27B /* MSettingsBackgroundItem.swift in Sources */,
+				DAD5B24E1E8EA8E500F5E481 /* VParent.swift in Sources */,
 				DA1F6FEF1E8B13DD00484942 /* MSearchOptions.swift in Sources */,
+				DAD5B24D1E8EA8E500F5E481 /* VCollectionFlow.swift in Sources */,
 				DA1317441E8C42A4000624CF /* MSearchContentModeItem.swift in Sources */,
-				DA1F6FD71E8AEF1C00484942 /* VBorder.swift in Sources */,
 				DAA99CC41E8B2433003B9E2C /* MSearchResults.swift in Sources */,
-				DA1F6FD81E8AEF1C00484942 /* VCollection.swift in Sources */,
 				DAEB0A011E8DC978008FAD26 /* MSettings.swift in Sources */,
 				DA13174E1E8C5E9A000624CF /* MSearchContentModeItemTranslate.swift in Sources */,
 				DAEC1AB61E8C81390001B27B /* MSettingsBackground.swift in Sources */,
 				DA1F6FC41E8AEF1C00484942 /* DManager.swift in Sources */,
-				DA1F6FD41E8AEF1C00484942 /* VParentPushBackground.swift in Sources */,
-				DA1F6FDB1E8AEF1C00484942 /* VToast.swift in Sources */,
 				DA1317481E8C5E78000624CF /* MSearchContentModeItemSynonyms.swift in Sources */,
-				DA1F6FD91E8AEF1C00484942 /* VCollectionFlow.swift in Sources */,
 				DA1F6FF11E8B141900484942 /* MSearchOptionsItem.swift in Sources */,
+				DAD5B2511E8EA8E500F5E481 /* VToast.swift in Sources */,
 				DA1317401E8C3E8A000624CF /* VSearchContentHeaderCell.swift in Sources */,
+				DAD5B2521E8EA8E500F5E481 /* VView.swift in Sources */,
 				DAD1E9841E8C769700D1BC66 /* VSettings.swift in Sources */,
 				DA1F6FC61E8AEF1C00484942 /* ExtensionNotification.swift in Sources */,
-				DA1F6FD51E8AEF1C00484942 /* VAlert.swift in Sources */,
 				DA1F6FCA1E8AEF1C00484942 /* ExtensionUIColor.swift in Sources */,
 				DA1F6FCB1E8AEF1C00484942 /* ExtensionUIFont.swift in Sources */,
 				DAEB0A031E8DC981008FAD26 /* MSettingsItem.swift in Sources */,
 				DAEB09FD1E8DBEBE008FAD26 /* VSettingsGradient.swift in Sources */,
 				DA1F6FC81E8AEF1C00484942 /* ExtensionNSManagedObject.swift in Sources */,
 				DAD5B2391E8EA83D00F5E481 /* CSettings.swift in Sources */,
-				DA1F6FDC1E8AEF1C00484942 /* VView.swift in Sources */,
 				DA1317421E8C4296000624CF /* MSearchContentMode.swift in Sources */,
 				DAEB09FB1E8D9959008FAD26 /* VSettingsCell.swift in Sources */,
 				DAEB09FF1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift in Sources */,
@@ -495,25 +475,29 @@
 				DAD5B23B1E8EA83D00F5E481 /* CAppDelegate.swift in Sources */,
 				DA1317461E8C5079000624CF /* MSearchContentModeItemDefinition.swift in Sources */,
 				DAA99CC21E8B1B02003B9E2C /* VSearchResults.swift in Sources */,
+				DAD5B24B1E8EA8E500F5E481 /* VBorder.swift in Sources */,
 				DA1317501E8C5EAB000624CF /* MSearchContentModeItemExamples.swift in Sources */,
 				DA2E83BF1E8C1DEE00354343 /* VSearchContentCell.swift in Sources */,
 				DA1F6FF31E8B168B00484942 /* MSearchOptionsItemSettings.swift in Sources */,
+				DAD5B24F1E8EA8E500F5E481 /* VParentPushBackground.swift in Sources */,
 				DAD5B23E1E8EA83D00F5E481 /* CSearch.swift in Sources */,
 				DAD5B23A1E8EA83D00F5E481 /* CController.swift in Sources */,
 				DAEB0A051E8DC994008FAD26 /* MSettingsItemLanguage.swift in Sources */,
 				DA13174A1E8C5E85000624CF /* MSearchContentModeItemAntonyms.swift in Sources */,
-				DA1F6FD61E8AEF1C00484942 /* VBlur.swift in Sources */,
+				DAD5B2491E8EA8E500F5E481 /* VAlert.swift in Sources */,
 				DAD1E9861E8C772000D1BC66 /* VSettingsBar.swift in Sources */,
 				DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */,
 				DA1F6FCD1E8AEF1C00484942 /* MSession.swift in Sources */,
 				DA1F6FE61E8AFDFC00484942 /* VSearchBarField.swift in Sources */,
 				DAD5B23C1E8EA83D00F5E481 /* CParent.swift in Sources */,
-				DA1F6FDA1E8AEF1C00484942 /* VSpinner.swift in Sources */,
 				DA1F6FEA1E8B075200484942 /* VSearchOptionsCell.swift in Sources */,
 				DA1F6FE41E8AF8F200484942 /* VSearchBar.swift in Sources */,
 				DA2E83BD1E8C1DE100354343 /* VSearchContentHeader.swift in Sources */,
+				DAD5B24C1E8EA8E500F5E481 /* VCollection.swift in Sources */,
 				DAEC1AB11E8C7FF70001B27B /* VSettingsBackground.swift in Sources */,
 				DA1F6FC71E8AEF1C00484942 /* ExtensionNSLayoutConstraint.swift in Sources */,
+				DAD5B2501E8EA8E500F5E481 /* VSpinner.swift in Sources */,
+				DAD5B24A1E8EA8E500F5E481 /* VBlur.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
