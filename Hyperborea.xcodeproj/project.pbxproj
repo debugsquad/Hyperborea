@@ -73,12 +73,6 @@
 		DAD5B2651E8EEEAA00F5E481 /* MSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2641E8EEEAA00F5E481 /* MSession.swift */; };
 		DAD5B2691E8EF8E300F5E481 /* MUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2681E8EF8E300F5E481 /* MUrls.swift */; };
 		DAD5B26B1E8EF8F500F5E481 /* MOxfordCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B26A1E8EF8F500F5E481 /* MOxfordCredentials.swift */; };
-		DAD5B26D1E8F016900F5E481 /* MOxfordCredentialsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B26C1E8F016900F5E481 /* MOxfordCredentialsItem.swift */; };
-		DAD5B26F1E8F034C00F5E481 /* MOxfordCredentialsItem1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B26E1E8F034C00F5E481 /* MOxfordCredentialsItem1.swift */; };
-		DAD5B2711E8F035F00F5E481 /* MOxfordCredentialsItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2701E8F035F00F5E481 /* MOxfordCredentialsItem2.swift */; };
-		DAD5B2731E8F036500F5E481 /* MOxfordCredentialsItem3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2721E8F036500F5E481 /* MOxfordCredentialsItem3.swift */; };
-		DAD5B2751E8F036C00F5E481 /* MOxfordCredentialsItem4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2741E8F036C00F5E481 /* MOxfordCredentialsItem4.swift */; };
-		DAD5B2771E8F037200F5E481 /* MOxfordCredentialsItem5.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2761E8F037200F5E481 /* MOxfordCredentialsItem5.swift */; };
 		DAD5B2791E8F061500F5E481 /* ResourceOxfordCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD5B2781E8F061500F5E481 /* ResourceOxfordCredentials.plist */; };
 		DAEB09FB1E8D9959008FAD26 /* VSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */; };
 		DAEB09FD1E8DBEBE008FAD26 /* VSettingsGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */; };
@@ -161,12 +155,6 @@
 		DAD5B2641E8EEEAA00F5E481 /* MSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSession.swift; sourceTree = "<group>"; };
 		DAD5B2681E8EF8E300F5E481 /* MUrls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUrls.swift; sourceTree = "<group>"; };
 		DAD5B26A1E8EF8F500F5E481 /* MOxfordCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOxfordCredentials.swift; sourceTree = "<group>"; };
-		DAD5B26C1E8F016900F5E481 /* MOxfordCredentialsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOxfordCredentialsItem.swift; sourceTree = "<group>"; };
-		DAD5B26E1E8F034C00F5E481 /* MOxfordCredentialsItem1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOxfordCredentialsItem1.swift; sourceTree = "<group>"; };
-		DAD5B2701E8F035F00F5E481 /* MOxfordCredentialsItem2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOxfordCredentialsItem2.swift; sourceTree = "<group>"; };
-		DAD5B2721E8F036500F5E481 /* MOxfordCredentialsItem3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOxfordCredentialsItem3.swift; sourceTree = "<group>"; };
-		DAD5B2741E8F036C00F5E481 /* MOxfordCredentialsItem4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOxfordCredentialsItem4.swift; sourceTree = "<group>"; };
-		DAD5B2761E8F037200F5E481 /* MOxfordCredentialsItem5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOxfordCredentialsItem5.swift; sourceTree = "<group>"; };
 		DAD5B2781E8F061500F5E481 /* ResourceOxfordCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceOxfordCredentials.plist; sourceTree = "<group>"; };
 		DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCell.swift; sourceTree = "<group>"; };
 		DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsGradient.swift; sourceTree = "<group>"; };
@@ -388,12 +376,6 @@
 				DAD5B2641E8EEEAA00F5E481 /* MSession.swift */,
 				DAD5B2681E8EF8E300F5E481 /* MUrls.swift */,
 				DAD5B26A1E8EF8F500F5E481 /* MOxfordCredentials.swift */,
-				DAD5B26C1E8F016900F5E481 /* MOxfordCredentialsItem.swift */,
-				DAD5B26E1E8F034C00F5E481 /* MOxfordCredentialsItem1.swift */,
-				DAD5B2701E8F035F00F5E481 /* MOxfordCredentialsItem2.swift */,
-				DAD5B2721E8F036500F5E481 /* MOxfordCredentialsItem3.swift */,
-				DAD5B2741E8F036C00F5E481 /* MOxfordCredentialsItem4.swift */,
-				DAD5B2761E8F037200F5E481 /* MOxfordCredentialsItem5.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -488,7 +470,6 @@
 				DA2E83BB1E8C136700354343 /* VSearchContent.swift in Sources */,
 				DA1F6FC51E8AEF1C00484942 /* ExtensionFileManager.swift in Sources */,
 				DA1F6FCC1E8AEF1C00484942 /* ExtensionURL.swift in Sources */,
-				DAD5B26D1E8F016900F5E481 /* MOxfordCredentialsItem.swift in Sources */,
 				DA1F6FE81E8B069800484942 /* VSearchOptions.swift in Sources */,
 				DAD5B23D1E8EA83D00F5E481 /* CFavorites.swift in Sources */,
 				DAA99CC61E8B24DD003B9E2C /* MSearchResultsItem.swift in Sources */,
@@ -516,7 +497,6 @@
 				DAD1E9841E8C769700D1BC66 /* VSettings.swift in Sources */,
 				DA1F6FC61E8AEF1C00484942 /* ExtensionNotification.swift in Sources */,
 				DA1F6FCA1E8AEF1C00484942 /* ExtensionUIColor.swift in Sources */,
-				DAD5B26F1E8F034C00F5E481 /* MOxfordCredentialsItem1.swift in Sources */,
 				DA1F6FCB1E8AEF1C00484942 /* ExtensionUIFont.swift in Sources */,
 				DAEB0A031E8DC981008FAD26 /* MSettingsItem.swift in Sources */,
 				DAEB09FD1E8DBEBE008FAD26 /* VSettingsGradient.swift in Sources */,
@@ -527,7 +507,6 @@
 				DAEB09FF1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift in Sources */,
 				DAA99CC81E8B2F22003B9E2C /* VSearchResultsCell.swift in Sources */,
 				DA2E83B91E8C02B600354343 /* VSearchResultsFlow.swift in Sources */,
-				DAD5B2731E8F036500F5E481 /* MOxfordCredentialsItem3.swift in Sources */,
 				DA1317521E8C5EB8000624CF /* MSearchContentModeItemOrigins.swift in Sources */,
 				DA1F6FC91E8AEF1C00484942 /* ExtensionUICollectionReusableView.swift in Sources */,
 				DAEB0A091E8DDFAE008FAD26 /* VSettingsCellLanguageButton.swift in Sources */,
@@ -545,7 +524,6 @@
 				DAEB0A051E8DC994008FAD26 /* MSettingsItemLanguage.swift in Sources */,
 				DA13174A1E8C5E85000624CF /* MSearchContentModeItemAntonyms.swift in Sources */,
 				DAD5B2491E8EA8E500F5E481 /* VAlert.swift in Sources */,
-				DAD5B2751E8F036C00F5E481 /* MOxfordCredentialsItem4.swift in Sources */,
 				DAD1E9861E8C772000D1BC66 /* VSettingsBar.swift in Sources */,
 				DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */,
 				DAD5B2551E8EA97E00F5E481 /* VFavorites.swift in Sources */,
@@ -553,10 +531,8 @@
 				DAD5B23C1E8EA83D00F5E481 /* CParent.swift in Sources */,
 				DA1F6FEA1E8B075200484942 /* VSearchOptionsCell.swift in Sources */,
 				DA1F6FE41E8AF8F200484942 /* VSearchBar.swift in Sources */,
-				DAD5B2711E8F035F00F5E481 /* MOxfordCredentialsItem2.swift in Sources */,
 				DA2E83BD1E8C1DE100354343 /* VSearchContentHeader.swift in Sources */,
 				DAD5B24C1E8EA8E500F5E481 /* VCollection.swift in Sources */,
-				DAD5B2771E8F037200F5E481 /* MOxfordCredentialsItem5.swift in Sources */,
 				DAEC1AB11E8C7FF70001B27B /* VSettingsBackground.swift in Sources */,
 				DAD5B26B1E8EF8F500F5E481 /* MOxfordCredentials.swift in Sources */,
 				DA1F6FC71E8AEF1C00484942 /* ExtensionNSLayoutConstraint.swift in Sources */,
