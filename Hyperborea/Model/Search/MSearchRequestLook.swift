@@ -3,7 +3,7 @@ import Foundation
 class MSearchRequestLook
 {
     private weak var controller:CSearch?
-    
+    private weak var task:URLSessionTask?
     private let kMethod:String = "GET"
     private let kNetworkServiceType:URLRequest.NetworkServiceType = URLRequest.NetworkServiceType.default
     private let kCachePolicy:URLRequest.CachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
@@ -29,6 +29,20 @@ class MSearchRequestLook
     {
         let queryLowerCase:String = query.lowercased()
         
+        guard
+            
+            let urlHost:String = controller?.modelUrls.urlHost(host:MSearchUrls.Host.hostOxford),
+            let urlEndPoint:String = controller?.modelUrls.urlEnpoint(endPoint:MSearchUrls.EndPoint.oxfordSearch),
+            let queryEscaped:String = queryLowerCase.addingPercentEncoding(
+                withAllowedCharacters:CharacterSet.urlHostAllowed)
+        
+        else
+        {
+            return
+        }
+        
+        let urlString:String = "\(urlHost)/\(urlEndPoint)/\(sourceLanguage)?q=\(queryEscaped)"
+        
         let configuration:URLSessionConfiguration = URLSessionConfiguration.ephemeral
         configuration.allowsCellularAccess = kCellularAccess
         configuration.timeoutIntervalForRequest = kTimeOutData
@@ -37,7 +51,7 @@ class MSearchRequestLook
         configuration.networkServiceType = kNetworkServiceType
         configuration.requestCachePolicy = kCachePolicy
         
-        let urlString:String = kUrlString
+        
         let urlMutableRequest:NSMutableURLRequest
         
         #if DEBUG
@@ -110,6 +124,7 @@ class MSearchRequestLook
             }
         }
         
+        self.task = task
         task.resume()
         urlSession.finishTasksAndInvalidate()
     }

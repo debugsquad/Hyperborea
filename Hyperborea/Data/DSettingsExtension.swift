@@ -17,6 +17,20 @@ extension DSettings
         DManager.sharedInstance?.save()
     }
     
+    func languageCode() -> String
+    {
+        switch language
+        {
+        case Language.spanish.rawValue:
+            
+            return "es"
+            
+        default:
+            
+            return "en"
+        }
+    }
+    
     func currentLanguage() -> Language
     {
         let current:Language = Language(rawValue:language)!
