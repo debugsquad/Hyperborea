@@ -7,8 +7,10 @@ class MSearchOptions
     init()
     {
         let itemSettings:MSearchOptionsItemSettings = MSearchOptionsItemSettings()
+        let itemFavorites:MSearchOptionsItemFavorites = MSearchOptionsItemFavorites()
         
         items = [
-            itemSettings]
+            itemSettings,
+            itemFavorites]
     }
 }
