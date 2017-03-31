@@ -10,12 +10,23 @@ class VSettingsCellLanguage:VSettingsCell
     private let kInterButtons:CGFloat = 10
     private let kButtonTop:CGFloat = 30
     private let kButtonBottom:CGFloat = -10
+    private let kLabelTitleTop:CGFloat = 10
+    private let kLabelTitleHeight:CGFloat = 17
     
     override init(frame:CGRect)
     {
         buttonsWidth = kButtonSize + kButtonSize + kInterButtons
         
         super.init(frame:frame)
+        
+        let labelTitle:UILabel = UILabel()
+        labelTitle.isUserInteractionEnabled = false
+        labelTitle.translatesAutoresizingMaskIntoConstraints = false
+        labelTitle.backgroundColor = UIColor.clear
+        labelTitle.textAlignment = NSTextAlignment.center
+        labelTitle.font = UIFont.bold(size:14)
+        labelTitle.textColor = UIColor.white
+        labelTitle.text = NSLocalizedString("VSettingsCellLanguage_labelTitle", comment:"")
         
         let buttonEnglish:VSettingsCellLanguageButton = VSettingsCellLanguageButton(
             imageOn:#imageLiteral(resourceName: "assetGenericEnglishOn"),
@@ -35,6 +46,7 @@ class VSettingsCellLanguage:VSettingsCell
             for:UIControlEvents.touchUpInside)
         self.buttonSpanish = buttonSpanish
         
+        addSubview(labelTitle)
         addSubview(buttonEnglish)
         addSubview(buttonSpanish)
         
@@ -68,6 +80,19 @@ class VSettingsCellLanguage:VSettingsCell
         NSLayoutConstraint.width(
             view:buttonSpanish,
             constant:kButtonSize)
+        
+        NSLayoutConstraint.topToTop(
+            view:labelTitle,
+            toView:self,
+            constant:kLabelTitleTop)
+        NSLayoutConstraint.height(
+            view:labelTitle,
+            constant:kLabelTitleHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:labelTitle,
+            toView:self)
+        
+        updateLanguages()
     }
     
     required init?(coder:NSCoder)
