@@ -7,8 +7,9 @@ class VSettingsCellLanguage:VSettingsCell
     private weak var layoutButtonEnglishLeft:NSLayoutConstraint!
     private let buttonsWidth:CGFloat
     private let kButtonSize:CGFloat = 60
-    private let kInterButtons:CGFloat = 30
-    private let kMarginVertical:CGFloat = 10
+    private let kInterButtons:CGFloat = 10
+    private let kButtonTop:CGFloat = 30
+    private let kButtonBottom:CGFloat = -10
     
     override init(frame:CGRect)
     {
@@ -20,6 +21,7 @@ class VSettingsCellLanguage:VSettingsCell
             imageOn:#imageLiteral(resourceName: "assetGenericEnglishOn"),
             imageOff:#imageLiteral(resourceName: "assetGenericEnglishOff"))
         self.buttonEnglish = buttonEnglish
+        buttonEnglish.isSelected = true
         
         let buttonSpanish:VSettingsCellLanguageButton = VSettingsCellLanguageButton(
             imageOn:#imageLiteral(resourceName: "assetGenericSpanishOn"),
@@ -29,10 +31,14 @@ class VSettingsCellLanguage:VSettingsCell
         addSubview(buttonEnglish)
         addSubview(buttonSpanish)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.topToTop(
             view:buttonEnglish,
             toView:self,
-            margin:kMarginVertical)
+            constant:kButtonTop)
+        NSLayoutConstraint.bottomToBottom(
+            view:buttonEnglish,
+            toView:self,
+            constant:kButtonBottom)
         layoutButtonEnglishLeft = NSLayoutConstraint.leftToLeft(
             view:buttonEnglish,
             toView:self)
@@ -40,10 +46,14 @@ class VSettingsCellLanguage:VSettingsCell
             view:buttonEnglish,
             constant:kButtonSize)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.topToTop(
             view:buttonSpanish,
             toView:self,
-            margin:kMarginVertical)
+            constant:kButtonTop)
+        NSLayoutConstraint.bottomToBottom(
+            view:buttonSpanish,
+            toView:self,
+            constant:kButtonBottom)
         NSLayoutConstraint.leftToRight(
             view:buttonSpanish,
             toView:buttonEnglish,
