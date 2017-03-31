@@ -197,8 +197,8 @@
 		DA1F6F9D1E8AEF1C00484942 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DA1F6F9E1E8AEF1C00484942 /* DManager.swift */,
 				DAD5B25A1E8EB9E100F5E481 /* DHyper.xcdatamodeld */,
+				DA1F6F9E1E8AEF1C00484942 /* DManager.swift */,
 				DAD5B25D1E8EBA7E00F5E481 /* DSettingsExtension.swift */,
 			);
 			path = Data;
