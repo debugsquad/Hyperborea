@@ -92,7 +92,6 @@ class CSearch:CController
         
         if !text.isEmpty
         {
-            reques
         }
     }
 }

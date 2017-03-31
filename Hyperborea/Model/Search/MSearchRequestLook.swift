@@ -33,6 +33,7 @@ class MSearchRequestLook
             
             let urlHost:String = controller?.modelUrls.urlHost(host:MSearchUrls.Host.hostOxford),
             let urlEndPoint:String = controller?.modelUrls.urlEnpoint(endPoint:MSearchUrls.EndPoint.oxfordSearch),
+            let languageCode:String = MSession.sharedInstance.settings?.languageCode(),
             let queryEscaped:String = queryLowerCase.addingPercentEncoding(
                 withAllowedCharacters:CharacterSet.urlHostAllowed)
         
@@ -41,18 +42,7 @@ class MSearchRequestLook
             return
         }
         
-        let urlString:String = "\(urlHost)/\(urlEndPoint)/\(sourceLanguage)?q=\(queryEscaped)"
-        
-        let configuration:URLSessionConfiguration = URLSessionConfiguration.ephemeral
-        configuration.allowsCellularAccess = kCellularAccess
-        configuration.timeoutIntervalForRequest = kTimeOutData
-        configuration.timeoutIntervalForResource = kTimeOutData
-        configuration.isDiscretionary = kDiscretionary
-        configuration.networkServiceType = kNetworkServiceType
-        configuration.requestCachePolicy = kCachePolicy
-        
-        
-        let urlMutableRequest:NSMutableURLRequest
+        let urlString:String = "\(urlHost)/\(urlEndPoint)/\(languageCode)?q=\(queryEscaped)"
         
         #if DEBUG
             
@@ -64,21 +54,29 @@ class MSearchRequestLook
             
             let url:URL = URL(string:urlString)
             
-            else
+        else
         {
             return
         }
         
-        urlMutableRequest = NSMutableURLRequest(
+        let configuration:URLSessionConfiguration = URLSessionConfiguration.ephemeral
+        configuration.allowsCellularAccess = kCellularAccess
+        configuration.timeoutIntervalForRequest = kTimeOutData
+        configuration.timeoutIntervalForResource = kTimeOutData
+        configuration.isDiscretionary = kDiscretionary
+        configuration.networkServiceType = kNetworkServiceType
+        configuration.requestCachePolicy = kCachePolicy
+        
+        let urlMutableRequest:NSMutableURLRequest = NSMutableURLRequest(
             url:url,
             cachePolicy:kCachePolicy,
             timeoutInterval:kTimeOutData)
         urlMutableRequest.httpMethod = kMethod
         urlMutableRequest.allowsCellularAccess = kCellularAccess
-        
         let urlRequest:URLRequest = urlMutableRequest as URLRequest
+        
         let urlSession:URLSession = URLSession(configuration:configuration)
-        let task:URLSessionTask = urlSession.dataTask(with:urlRequest)
+        task = urlSession.dataTask(with:urlRequest)
         { [weak self] (data:Data?, urlResponse:URLResponse?, error:Error?) in
             
             if let error:Error = error
@@ -124,8 +122,7 @@ class MSearchRequestLook
             }
         }
         
-        self.task = task
-        task.resume()
+        task?.resume()
         urlSession.finishTasksAndInvalidate()
     }
 }
