@@ -3,10 +3,14 @@ import Foundation
 class MSession
 {
     static let sharedInstance:MSession = MSession()
+    let modelOxfordCredentials:MOxfordCredentials
+    let modelUrls:MUrls
     private(set) var settings:DSettings?
     
     private init()
     {
+        modelOxfordCredentials = MOxfordCredentials()
+        modelUrls = MUrls()
     }
     
     //MARK: private

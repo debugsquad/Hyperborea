@@ -2,21 +2,8 @@ import UIKit
 
 class CSearch:CController
 {
-    let modelUrls:MSearchUrls
     private(set) weak var viewSearch:VSearch!
     private(set) var modelResults:MSearchResults?
-    
-    override init()
-    {
-        modelUrls = MSearchUrls()
-        
-        super.init()
-    }
-    
-    required init?(coder:NSCoder)
-    {
-        return nil
-    }
     
     override func loadView()
     {
