@@ -17,9 +17,8 @@ class MSearchRequestLook
         self.controller = controller
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        { [weak self] in
-            
-            self?.asyncLookQuery(query:query)
+        {
+            self.asyncLookQuery(query:query)
         }
     }
     
@@ -72,12 +71,32 @@ class MSearchRequestLook
         configuration.networkServiceType = kNetworkServiceType
         configuration.requestCachePolicy = kCachePolicy
         
+        let headers:[String:String] = MSession.sharedInstance.modelOxfordCredentials.credentialHeaders()
         let urlMutableRequest:NSMutableURLRequest = NSMutableURLRequest(
             url:url,
             cachePolicy:kCachePolicy,
             timeoutInterval:kTimeOutData)
         urlMutableRequest.httpMethod = kMethod
         urlMutableRequest.allowsCellularAccess = kCellularAccess
+        
+        let headersKeys:[String] = Array(headers.keys)
+        
+        for key:String in headersKeys
+        {
+            guard
+                
+                let header:String = headers[key]
+                
+            else
+            {
+                continue
+            }
+            
+            urlMutableRequest.setValue(
+                header,
+                forHTTPHeaderField:key)
+        }
+        
         let urlRequest:URLRequest = urlMutableRequest as URLRequest
         
         let urlSession:URLSession = URLSession(configuration:configuration)
