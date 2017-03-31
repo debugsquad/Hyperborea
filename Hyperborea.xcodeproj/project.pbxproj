@@ -26,7 +26,6 @@
 		DA1F6FCA1E8AEF1C00484942 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FA51E8AEF1C00484942 /* ExtensionUIColor.swift */; };
 		DA1F6FCB1E8AEF1C00484942 /* ExtensionUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FA61E8AEF1C00484942 /* ExtensionUIFont.swift */; };
 		DA1F6FCC1E8AEF1C00484942 /* ExtensionURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FA71E8AEF1C00484942 /* ExtensionURL.swift */; };
-		DA1F6FCD1E8AEF1C00484942 /* MSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FAA1E8AEF1C00484942 /* MSession.swift */; };
 		DA1F6FCE1E8AEF1C00484942 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6FAC1E8AEF1C00484942 /* Localizable.strings */; };
 		DA1F6FD01E8AEF1C00484942 /* ResourceUrl.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA1F6FAF1E8AEF1C00484942 /* ResourceUrl.plist */; };
 		DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F6FE11E8AF76800484942 /* VSearch.swift */; };
@@ -71,6 +70,8 @@
 		DAD5B25E1E8EBA7E00F5E481 /* DSettingsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B25D1E8EBA7E00F5E481 /* DSettingsExtension.swift */; };
 		DAD5B2601E8EDB6900F5E481 /* MSearchRequestLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B25F1E8EDB6900F5E481 /* MSearchRequestLook.swift */; };
 		DAD5B2621E8EE0EA00F5E481 /* MSearchUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2611E8EE0EA00F5E481 /* MSearchUrls.swift */; };
+		DAD5B2651E8EEEAA00F5E481 /* MSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2641E8EEEAA00F5E481 /* MSession.swift */; };
+		DAD5B2671E8EEEB400F5E481 /* MRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2661E8EEEB400F5E481 /* MRequest.swift */; };
 		DAEB09FB1E8D9959008FAD26 /* VSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */; };
 		DAEB09FD1E8DBEBE008FAD26 /* VSettingsGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */; };
 		DAEB09FF1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FE1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift */; };
@@ -103,7 +104,6 @@
 		DA1F6FA51E8AEF1C00484942 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		DA1F6FA61E8AEF1C00484942 /* ExtensionUIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIFont.swift; sourceTree = "<group>"; };
 		DA1F6FA71E8AEF1C00484942 /* ExtensionURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionURL.swift; sourceTree = "<group>"; };
-		DA1F6FAA1E8AEF1C00484942 /* MSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSession.swift; sourceTree = "<group>"; };
 		DA1F6FAD1E8AEF1C00484942 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA1F6FAF1E8AEF1C00484942 /* ResourceUrl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceUrl.plist; sourceTree = "<group>"; };
 		DA1F6FE11E8AF76800484942 /* VSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearch.swift; sourceTree = "<group>"; };
@@ -150,6 +150,8 @@
 		DAD5B25D1E8EBA7E00F5E481 /* DSettingsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSettingsExtension.swift; sourceTree = "<group>"; };
 		DAD5B25F1E8EDB6900F5E481 /* MSearchRequestLook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchRequestLook.swift; sourceTree = "<group>"; };
 		DAD5B2611E8EE0EA00F5E481 /* MSearchUrls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchUrls.swift; sourceTree = "<group>"; };
+		DAD5B2641E8EEEAA00F5E481 /* MSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSession.swift; sourceTree = "<group>"; };
+		DAD5B2661E8EEEB400F5E481 /* MRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRequest.swift; sourceTree = "<group>"; };
 		DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCell.swift; sourceTree = "<group>"; };
 		DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsGradient.swift; sourceTree = "<group>"; };
 		DAEB09FE1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellLanguage.swift; sourceTree = "<group>"; };
@@ -224,19 +226,11 @@
 		DA1F6FA81E8AEF1C00484942 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DAD5B2631E8EEEAA00F5E481 /* Main */,
 				DAEC1AB41E8C812F0001B27B /* Settings */,
 				DA1F6FED1E8B13CB00484942 /* Search */,
-				DA1F6FA91E8AEF1C00484942 /* Session */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		DA1F6FA91E8AEF1C00484942 /* Session */ = {
-			isa = PBXGroup;
-			children = (
-				DA1F6FAA1E8AEF1C00484942 /* MSession.swift */,
-			);
-			path = Session;
 			sourceTree = "<group>";
 		};
 		DA1F6FAB1E8AEF1C00484942 /* Resource */ = {
@@ -371,6 +365,15 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		DAD5B2631E8EEEAA00F5E481 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DAD5B2641E8EEEAA00F5E481 /* MSession.swift */,
+				DAD5B2661E8EEEB400F5E481 /* MRequest.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		DAEC1AB41E8C812F0001B27B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +476,7 @@
 				DAEB0A011E8DC978008FAD26 /* MSettings.swift in Sources */,
 				DA13174E1E8C5E9A000624CF /* MSearchContentModeItemTranslate.swift in Sources */,
 				DAEC1AB61E8C81390001B27B /* MSettingsBackground.swift in Sources */,
+				DAD5B2651E8EEEAA00F5E481 /* MSession.swift in Sources */,
 				DAD5B2591E8EAEF900F5E481 /* MSearchOptionsItemFavorites.swift in Sources */,
 				DA1F6FC41E8AEF1C00484942 /* DManager.swift in Sources */,
 				DA1317481E8C5E78000624CF /* MSearchContentModeItemSynonyms.swift in Sources */,
@@ -483,6 +487,7 @@
 				DA1317401E8C3E8A000624CF /* VSearchContentHeaderCell.swift in Sources */,
 				DAD5B25E1E8EBA7E00F5E481 /* DSettingsExtension.swift in Sources */,
 				DAD5B2521E8EA8E500F5E481 /* VView.swift in Sources */,
+				DAD5B2671E8EEEB400F5E481 /* MRequest.swift in Sources */,
 				DAD1E9841E8C769700D1BC66 /* VSettings.swift in Sources */,
 				DA1F6FC61E8AEF1C00484942 /* ExtensionNotification.swift in Sources */,
 				DA1F6FCA1E8AEF1C00484942 /* ExtensionUIColor.swift in Sources */,
@@ -515,7 +520,6 @@
 				DAD1E9861E8C772000D1BC66 /* VSettingsBar.swift in Sources */,
 				DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */,
 				DAD5B2551E8EA97E00F5E481 /* VFavorites.swift in Sources */,
-				DA1F6FCD1E8AEF1C00484942 /* MSession.swift in Sources */,
 				DA1F6FE61E8AFDFC00484942 /* VSearchBarField.swift in Sources */,
 				DAD5B23C1E8EA83D00F5E481 /* CParent.swift in Sources */,
 				DA1F6FEA1E8B075200484942 /* VSearchOptionsCell.swift in Sources */,
