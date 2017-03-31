@@ -79,6 +79,7 @@ class CSearch:CController
         
         if !text.isEmpty
         {
+            MSearchRequestLook(controller:self, query:text)
         }
     }
 }

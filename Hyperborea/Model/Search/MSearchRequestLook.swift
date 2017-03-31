@@ -12,7 +12,7 @@ class MSearchRequestLook
     private let kCellularAccess:Bool = true
     private let kDiscretionary:Bool = true
     
-    init(controller:CSearch, query:String)
+    @discardableResult init(controller:CSearch, query:String)
     {
         self.controller = controller
         
@@ -23,6 +23,11 @@ class MSearchRequestLook
         }
     }
     
+    deinit
+    {
+        print("died request")
+    }
+    
     //MARK: private
     
     private func asyncLookQuery(query:String)
@@ -31,8 +36,8 @@ class MSearchRequestLook
         
         guard
             
-            let urlHost:String = controller?.modelUrls.urlHost(host:MSearchUrls.Host.hostOxford),
-            let urlEndPoint:String = controller?.modelUrls.urlEnpoint(endPoint:MSearchUrls.EndPoint.oxfordSearch),
+            let urlHost:String = MSession.sharedInstance.modelUrls.urlHost(host:MUrls.Host.hostOxford),
+            let urlEndPoint:String = MSession.sharedInstance.modelUrls.urlEnpoint(endPoint:MUrls.EndPoint.oxfordSearch),
             let languageCode:String = MSession.sharedInstance.settings?.languageCode(),
             let queryEscaped:String = queryLowerCase.addingPercentEncoding(
                 withAllowedCharacters:CharacterSet.urlHostAllowed)
@@ -79,10 +84,8 @@ class MSearchRequestLook
         task = urlSession.dataTask(with:urlRequest)
         { [weak self] (data:Data?, urlResponse:URLResponse?, error:Error?) in
             
-            if let error:Error = error
+            if error != nil
             {
-                self?.markersError(error:error.localizedDescription)
-                
                 return
             }
             
@@ -90,11 +93,8 @@ class MSearchRequestLook
                 
                 let dataStrong:Data = data
                 
-                else
+            else
             {
-                let error:String = NSLocalizedString("CRestaurantMarker_errorNoData", comment:"")
-                self?.markersError(error:error)
-                
                 return
             }
             
@@ -108,18 +108,10 @@ class MSearchRequestLook
             }
             catch
             {
-                let error:String = NSLocalizedString("CRestaurantMarker_errorParsingJSON", comment:"")
-                self?.markersError(error:error)
-                
                 return
             }
             
-            DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-                { [weak self] in
-                    
-                    let model:MRestaurantMarker = MRestaurantMarker(json:json)
-                    self?.loadMarkersImages(model:model)
-            }
+            print(json)
         }
         
         task?.resume()

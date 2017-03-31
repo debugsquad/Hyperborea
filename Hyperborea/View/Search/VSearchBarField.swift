@@ -97,6 +97,7 @@ class VSearchBarField:UITextField, UITextFieldDelegate
         let editedText:String = currentText.replacingCharacters(
             in:range,
             with:string)
+        controller.editedText(text:editedText)
         
         return true
     }
