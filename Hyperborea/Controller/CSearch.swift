@@ -57,4 +57,12 @@ class CSearch:CController
             controller:controllerSettings,
             horizontal:CParent.TransitionHorizontal.fromRight)
     }
+    
+    func openFavorites()
+    {
+        let controllerFavorites:CFavorites = CFavorites()
+        parentController.push(
+            controller:controllerFavorites,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }
