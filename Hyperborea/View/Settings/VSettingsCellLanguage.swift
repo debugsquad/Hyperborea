@@ -8,9 +8,9 @@ class VSettingsCellLanguage:VSettingsCell
     private let buttonsWidth:CGFloat
     private let kButtonSize:CGFloat = 60
     private let kInterButtons:CGFloat = 10
-    private let kButtonTop:CGFloat = 30
+    private let kButtonTop:CGFloat = 40
     private let kButtonBottom:CGFloat = -10
-    private let kLabelTitleTop:CGFloat = 10
+    private let kLabelTitleTop:CGFloat = 20
     private let kLabelTitleHeight:CGFloat = 17
     
     override init(frame:CGRect)
@@ -114,12 +114,12 @@ class VSettingsCellLanguage:VSettingsCell
     
     func actionEnglish(sender button:UIButton)
     {
-        newLangugage(language:DSettings.Language.english)
+        newLanguage(language:DSettings.Language.english)
     }
     
     func actionSpanish(sender button:UIButton)
     {
-        newLangugage(language:DSettings.Language.spanish)
+        newLanguage(language:DSettings.Language.spanish)
     }
     
     //MARK: private
@@ -153,7 +153,7 @@ class VSettingsCellLanguage:VSettingsCell
         }
     }
     
-    private func newLangugage(language:DSettings.Language)
+    private func newLanguage(language:DSettings.Language)
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
