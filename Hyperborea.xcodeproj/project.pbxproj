@@ -68,6 +68,7 @@
 		DAD5B2521E8EA8E500F5E481 /* VView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2481E8EA8E500F5E481 /* VView.swift */; };
 		DAD5B2551E8EA97E00F5E481 /* VFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2541E8EA97E00F5E481 /* VFavorites.swift */; };
 		DAD5B2591E8EAEF900F5E481 /* MSearchOptionsItemFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2581E8EAEF900F5E481 /* MSearchOptionsItemFavorites.swift */; };
+		DAD5B25C1E8EB9E100F5E481 /* DHyper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B25A1E8EB9E100F5E481 /* DHyper.xcdatamodeld */; };
 		DAEB09FB1E8D9959008FAD26 /* VSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */; };
 		DAEB09FD1E8DBEBE008FAD26 /* VSettingsGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */; };
 		DAEB09FF1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FE1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift */; };
@@ -144,6 +145,7 @@
 		DAD5B2481E8EA8E500F5E481 /* VView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VView.swift; sourceTree = "<group>"; };
 		DAD5B2541E8EA97E00F5E481 /* VFavorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VFavorites.swift; sourceTree = "<group>"; };
 		DAD5B2581E8EAEF900F5E481 /* MSearchOptionsItemFavorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchOptionsItemFavorites.swift; sourceTree = "<group>"; };
+		DAD5B25B1E8EB9E100F5E481 /* DHyper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DHyper.xcdatamodel; sourceTree = "<group>"; };
 		DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCell.swift; sourceTree = "<group>"; };
 		DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsGradient.swift; sourceTree = "<group>"; };
 		DAEB09FE1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellLanguage.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				DA1F6F9E1E8AEF1C00484942 /* DManager.swift */,
+				DAD5B25A1E8EB9E100F5E481 /* DHyper.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				DA1F6FC41E8AEF1C00484942 /* DManager.swift in Sources */,
 				DA1317481E8C5E78000624CF /* MSearchContentModeItemSynonyms.swift in Sources */,
 				DA1F6FF11E8B141900484942 /* MSearchOptionsItem.swift in Sources */,
+				DAD5B25C1E8EB9E100F5E481 /* DHyper.xcdatamodeld in Sources */,
 				DAD5B2511E8EA8E500F5E481 /* VToast.swift in Sources */,
 				DA1317401E8C3E8A000624CF /* VSearchContentHeaderCell.swift in Sources */,
 				DAD5B2521E8EA8E500F5E481 /* VView.swift in Sources */,
@@ -670,6 +674,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DAD5B25A1E8EB9E100F5E481 /* DHyper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DAD5B25B1E8EB9E100F5E481 /* DHyper.xcdatamodel */,
+			);
+			currentVersion = DAD5B25B1E8EB9E100F5E481 /* DHyper.xcdatamodel */;
+			path = DHyper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DA8AD6B71E8AE8D30072560C /* Project object */;
 }

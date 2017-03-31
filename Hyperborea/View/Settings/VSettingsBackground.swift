@@ -15,13 +15,6 @@ class VSettingsBackground:UIView
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         isUserInteractionEnabled = false
-        
-        timer = Timer.scheduledTimer(
-            timeInterval:kTimerInterval,
-            target:self,
-            selector:#selector(actionTick(sender:)),
-            userInfo:nil,
-            repeats:true)
     }
     
     required init?(coder:NSCoder)
@@ -64,5 +57,33 @@ class VSettingsBackground:UIView
     {
         model.tick()
         setNeedsDisplay()
+    }
+    
+    //MARK: public
+    
+    func startTimer()
+    {
+        timer?.invalidate()
+        model.loadInitial()
+        
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            guard
+                
+                let strongSelf:VSettingsBackground = self
+            
+            else
+            {
+                return
+            }
+            
+            strongSelf.timer = Timer.scheduledTimer(
+                timeInterval:strongSelf.kTimerInterval,
+                target:strongSelf,
+                selector:#selector(strongSelf.actionTick(sender:)),
+                userInfo:nil,
+                repeats:true)
+        }
     }
 }

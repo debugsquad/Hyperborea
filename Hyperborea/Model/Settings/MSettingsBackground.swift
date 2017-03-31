@@ -10,14 +10,15 @@ class MSettingsBackground
     private let maxLetterSize:CGSize
     private let deltaUpperCase:UInt32
     private let deltaLowerCase:UInt32
-    private let kSpeedMaxY:UInt32 = 30
+    private let kSpeedMaxY:UInt32 = 50
     private let kFontSize:CGFloat = 60
-    private let kSpeedDivider:CGFloat = -35
+    private let kSpeedDivider:CGFloat = -40
     private let kMaxLetterWidth:CGFloat = 300
     private let kMaxLetterHeight:CGFloat = 80
-    private let kMaxItems:Int = 50
+    private let kInitialItems:Int = 30
+    private let kMaxItems:Int = 100
     private let kDeltaPositionX:CGFloat = 30
-    private let kRatioAddItem:UInt32 = 30
+    private let kRatioAddItem:UInt32 = 40
     private let kUpperCaseMin:UInt32 = 65
     private let kUpperCaseMax:UInt32 = 90
     private let kLowerCaseMin:UInt32 = 97
@@ -43,6 +44,40 @@ class MSettingsBackground
     }
     
     //MARK: private
+    
+    private func addItem(positionY:CGFloat)
+    {
+        guard
+            
+            let letter:String = randomLetter()
+            
+        else
+        {
+            return
+        }
+        
+        let attributedString:NSAttributedString = NSAttributedString(
+            string:letter,
+            attributes:attributes)
+        let stringRect:CGRect = attributedString.boundingRect(
+            with:maxLetterSize,
+            options:drawingOptions,
+            context:nil)
+        let positionX:CGFloat = randomPositionX()
+        let width:CGFloat = ceil(stringRect.size.width)
+        let height:CGFloat = ceil(stringRect.size.height)
+        let speedY:CGFloat = randomSpeed()
+        
+        let item:MSettingsBackgroundItem = MSettingsBackgroundItem(
+            letter:attributedString,
+            positionX:positionX,
+            positionY:positionY,
+            width:width,
+            height:height,
+            speedY:speedY)
+        
+        items.append(item)
+    }
     
     private func randomLetter() -> String?
     {
@@ -92,6 +127,18 @@ class MSettingsBackground
     
     //MARK: public
     
+    func loadInitial()
+    {
+        let maxPositionY:UInt32 = UInt32(maxHeight)
+        
+        for _:Int in 0 ..< kInitialItems
+        {
+            let positionY:UInt32 = arc4random_uniform(maxPositionY)
+            let positionYFloat:CGFloat = CGFloat(positionY)
+            addItem(positionY:positionYFloat)
+        }
+    }
+    
     func tick()
     {
         if self.items.count < kMaxItems
@@ -100,37 +147,7 @@ class MSettingsBackground
             
             if shoudlAddItem == 0
             {
-                guard
-                    
-                    let letter:String = randomLetter()
-                    
-                else
-                {
-                    return
-                }
-                
-                let attributedString:NSAttributedString = NSAttributedString(
-                    string:letter,
-                    attributes:attributes)
-                let stringRect:CGRect = attributedString.boundingRect(
-                    with:maxLetterSize,
-                    options:drawingOptions,
-                    context:nil)
-                let positionX:CGFloat = randomPositionX()
-                let positionY:CGFloat = maxHeight
-                let width:CGFloat = ceil(stringRect.size.width)
-                let height:CGFloat = ceil(stringRect.size.height)
-                let speedY:CGFloat = randomSpeed()
-                
-                let item:MSettingsBackgroundItem = MSettingsBackgroundItem(
-                    letter:attributedString,
-                    positionX:positionX,
-                    positionY:positionY,
-                    width:width,
-                    height:height,
-                    speedY:speedY)
-                
-                self.items.append(item)
+                addItem(positionY:maxHeight)
             }
         }
         
