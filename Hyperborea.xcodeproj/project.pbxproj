@@ -73,6 +73,8 @@
 		DAD5B2691E8EF8E300F5E481 /* MUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B2681E8EF8E300F5E481 /* MUrls.swift */; };
 		DAD5B26B1E8EF8F500F5E481 /* MOxfordCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B26A1E8EF8F500F5E481 /* MOxfordCredentials.swift */; };
 		DAD5B2791E8F061500F5E481 /* ResourceOxfordCredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD5B2781E8F061500F5E481 /* ResourceOxfordCredentials.plist */; };
+		DAD5B27B1E8F1BCC00F5E481 /* MSearchRequestLookResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B27A1E8F1BCC00F5E481 /* MSearchRequestLookResult.swift */; };
+		DAD5B27D1E8F1BD700F5E481 /* MSearchRequestLookResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B27C1E8F1BD700F5E481 /* MSearchRequestLookResultItem.swift */; };
 		DAEB09FB1E8D9959008FAD26 /* VSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */; };
 		DAEB09FD1E8DBEBE008FAD26 /* VSettingsGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */; };
 		DAEB09FF1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB09FE1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift */; };
@@ -154,6 +156,8 @@
 		DAD5B2681E8EF8E300F5E481 /* MUrls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUrls.swift; sourceTree = "<group>"; };
 		DAD5B26A1E8EF8F500F5E481 /* MOxfordCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOxfordCredentials.swift; sourceTree = "<group>"; };
 		DAD5B2781E8F061500F5E481 /* ResourceOxfordCredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceOxfordCredentials.plist; sourceTree = "<group>"; };
+		DAD5B27A1E8F1BCC00F5E481 /* MSearchRequestLookResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchRequestLookResult.swift; sourceTree = "<group>"; };
+		DAD5B27C1E8F1BD700F5E481 /* MSearchRequestLookResultItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchRequestLookResultItem.swift; sourceTree = "<group>"; };
 		DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCell.swift; sourceTree = "<group>"; };
 		DAEB09FC1E8DBEBE008FAD26 /* VSettingsGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsGradient.swift; sourceTree = "<group>"; };
 		DAEB09FE1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellLanguage.swift; sourceTree = "<group>"; };
@@ -310,6 +314,8 @@
 				DA13174F1E8C5EAB000624CF /* MSearchContentModeItemExamples.swift */,
 				DA1317511E8C5EB8000624CF /* MSearchContentModeItemOrigins.swift */,
 				DAD5B25F1E8EDB6900F5E481 /* MSearchRequestLook.swift */,
+				DAD5B27A1E8F1BCC00F5E481 /* MSearchRequestLookResult.swift */,
+				DAD5B27C1E8F1BD700F5E481 /* MSearchRequestLookResultItem.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -468,6 +474,7 @@
 				DA1F6FC51E8AEF1C00484942 /* ExtensionFileManager.swift in Sources */,
 				DA1F6FCC1E8AEF1C00484942 /* ExtensionURL.swift in Sources */,
 				DA1F6FE81E8B069800484942 /* VSearchOptions.swift in Sources */,
+				DAD5B27D1E8F1BD700F5E481 /* MSearchRequestLookResultItem.swift in Sources */,
 				DAD5B23D1E8EA83D00F5E481 /* CFavorites.swift in Sources */,
 				DAA99CC61E8B24DD003B9E2C /* MSearchResultsItem.swift in Sources */,
 				DAEC1AB81E8C81430001B27B /* MSettingsBackgroundItem.swift in Sources */,
@@ -484,6 +491,7 @@
 				DAD5B2591E8EAEF900F5E481 /* MSearchOptionsItemFavorites.swift in Sources */,
 				DA1F6FC41E8AEF1C00484942 /* DManager.swift in Sources */,
 				DA1317481E8C5E78000624CF /* MSearchContentModeItemSynonyms.swift in Sources */,
+				DAD5B27B1E8F1BCC00F5E481 /* MSearchRequestLookResult.swift in Sources */,
 				DA1F6FF11E8B141900484942 /* MSearchOptionsItem.swift in Sources */,
 				DAD5B25C1E8EB9E100F5E481 /* DHyper.xcdatamodeld in Sources */,
 				DAD5B2511E8EA8E500F5E481 /* VToast.swift in Sources */,
