@@ -1,9 +1,15 @@
-//
-//  MSettingsItemLanguage.swift
-//  Hyperborea
-//
-//  Created by zero on 3/30/17.
-//  Copyright © 2017 iturbide. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class MSettingsItemLanguage:MSettingsItem
+{
+    private let kCellHeight:CGFloat = 80
+    
+    init()
+    {
+        let reusableIdentifier:String = VSettingsCellLanguage.reusableIdentifier
+        
+        super.init(
+            reusableIdentifier:reusableIdentifier,
+            cellHeight:kCellHeight)
+    }
+}

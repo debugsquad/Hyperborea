@@ -6,6 +6,9 @@ class MSettings
     
     init()
     {
-        items = []
+        let itemLanguage:MSettingsItemLanguage = MSettingsItemLanguage()
+        
+        items = [
+            itemLanguage]
     }
 }

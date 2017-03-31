@@ -2,6 +2,7 @@ import UIKit
 
 class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
+    private let model:MSettings
     private weak var controller:CSettings!
     private weak var collectionView:VCollection!
     private(set) weak var viewBar:VSettingsBar!
@@ -15,6 +16,8 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     override init(controller:CController)
     {
+        model = MSettings()
+        
         super.init(controller:controller)
         backgroundColor = UIColor.clear
         self.controller = controller as? CSettings
@@ -32,7 +35,7 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerCell(cell:VSettingsCell.self)
+        collectionView.registerCell(cell:VSettingsCellLanguage.self)
         self.collectionView = collectionView
         
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
@@ -108,11 +111,27 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return nil
     }
     
+    override func layoutSubviews()
+    {
+        collectionView.collectionViewLayout.invalidateLayout()
+        
+        super.layoutSubviews()
+    }
+    
     //MARK: actions
     
     func actionBack(sender button:UIButton)
     {
         controller.back()
+    }
+    
+    //MARK: private
+    
+    private func modelAtIndex(index:IndexPath) -> MSettingsItem
+    {
+        let item:MSettingsItem = model.items[index.item]
+        
+        return item
     }
     
     //MARK: public
@@ -123,6 +142,15 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     //MARK: collectionView delegate
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let item:MSettingsItem = modelAtIndex(index:indexPath)
+        let width:CGFloat = collectionView.bounds.size.width
+        let size:CGSize = CGSize(width:width, height:item.cellHeight)
+        
+        return size
+    }
     
     func scrollViewDidScroll(_ scrollView:UIScrollView)
     {
@@ -144,15 +172,19 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        return 0
+        let count:Int = model.items.count
+        
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
+        let item:MSettingsItem = modelAtIndex(index:indexPath)
         let cell:VSettingsCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
-            VSettingsCell.reusableIdentifier,
+            item.reusableIdentifier,
             for:indexPath) as! VSettingsCell
+        cell.config(model:item, controller:controller)
         
         return cell
     }

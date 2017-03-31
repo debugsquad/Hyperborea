@@ -70,6 +70,7 @@
 		DAEB0A011E8DC978008FAD26 /* MSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB0A001E8DC978008FAD26 /* MSettings.swift */; };
 		DAEB0A031E8DC981008FAD26 /* MSettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB0A021E8DC981008FAD26 /* MSettingsItem.swift */; };
 		DAEB0A051E8DC994008FAD26 /* MSettingsItemLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB0A041E8DC994008FAD26 /* MSettingsItemLanguage.swift */; };
+		DAEB0A091E8DDFAE008FAD26 /* VSettingsCellLanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB0A081E8DDFAE008FAD26 /* VSettingsCellLanguageButton.swift */; };
 		DAEC1AB11E8C7FF70001B27B /* VSettingsBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1AB01E8C7FF70001B27B /* VSettingsBackground.swift */; };
 		DAEC1AB61E8C81390001B27B /* MSettingsBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1AB51E8C81390001B27B /* MSettingsBackground.swift */; };
 		DAEC1AB81E8C81430001B27B /* MSettingsBackgroundItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1AB71E8C81430001B27B /* MSettingsBackgroundItem.swift */; };
@@ -141,6 +142,7 @@
 		DAEB0A001E8DC978008FAD26 /* MSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettings.swift; sourceTree = "<group>"; };
 		DAEB0A021E8DC981008FAD26 /* MSettingsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsItem.swift; sourceTree = "<group>"; };
 		DAEB0A041E8DC994008FAD26 /* MSettingsItemLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsItemLanguage.swift; sourceTree = "<group>"; };
+		DAEB0A081E8DDFAE008FAD26 /* VSettingsCellLanguageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellLanguageButton.swift; sourceTree = "<group>"; };
 		DAEC1AB01E8C7FF70001B27B /* VSettingsBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsBackground.swift; sourceTree = "<group>"; };
 		DAEC1AB51E8C81390001B27B /* MSettingsBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsBackground.swift; sourceTree = "<group>"; };
 		DAEC1AB71E8C81430001B27B /* MSettingsBackgroundItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsBackgroundItem.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				DAD1E9851E8C772000D1BC66 /* VSettingsBar.swift */,
 				DAEB09FA1E8D9959008FAD26 /* VSettingsCell.swift */,
 				DAEB09FE1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift */,
+				DAEB0A081E8DDFAE008FAD26 /* VSettingsCellLanguageButton.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				DA2E83B91E8C02B600354343 /* VSearchResultsFlow.swift in Sources */,
 				DA1317521E8C5EB8000624CF /* MSearchContentModeItemOrigins.swift in Sources */,
 				DA1F6FC91E8AEF1C00484942 /* ExtensionUICollectionReusableView.swift in Sources */,
+				DAEB0A091E8DDFAE008FAD26 /* VSettingsCellLanguageButton.swift in Sources */,
 				DA1317461E8C5079000624CF /* MSearchContentModeItemDefinition.swift in Sources */,
 				DAD1E9811E8C766700D1BC66 /* CSettings.swift in Sources */,
 				DAA99CC21E8B1B02003B9E2C /* VSearchResults.swift in Sources */,

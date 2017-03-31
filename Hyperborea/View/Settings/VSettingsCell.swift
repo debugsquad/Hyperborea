@@ -13,4 +13,11 @@ class VSettingsCell:UICollectionViewCell
     {
         return nil
     }
+    
+    //MARK: public
+    
+    func config(model:MSettingsItem, controller:CSettings)
+    {
+        
+    }
 }
