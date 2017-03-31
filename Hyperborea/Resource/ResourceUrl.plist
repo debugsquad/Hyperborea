@@ -2,9 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>share</key>
+	<key>linkShare</key>
 	<string>https://itunes.apple.com/gb/app/gausssquad/id1218554626</string>
-	<key>review</key>
+	<key>linkReview</key>
 	<string>http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1218554626&amp;type=Purple+Software&amp;mt=8</string>
 </dict>
 </plist>
