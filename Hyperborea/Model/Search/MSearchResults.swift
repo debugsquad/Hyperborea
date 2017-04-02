@@ -64,24 +64,6 @@ class MSearchResults
             items.append(item)
         }
         
-        items.sort
-        { (itemA, itemB) -> Bool in
-            
-            let comparisonResult:ComparisonResult = itemA.word.compare(itemB.word)
-            
-            switch comparisonResult
-            {
-            case ComparisonResult.orderedAscending,
-                 ComparisonResult.orderedSame:
-                
-                return true
-                
-            case ComparisonResult.orderedDescending:
-                
-                return false
-            }
-        }
-        
         self.items = items
     }
 }
