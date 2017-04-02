@@ -59,7 +59,7 @@ class VSearchBar:UIView
     
     func beginEditing()
     {
-        border.backgroundColor = UIColor(white:0, alpha:0.4)
+        border.backgroundColor = UIColor.black
     }
     
     func endEditing()

@@ -16,12 +16,13 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private var resultsHeight:CGFloat
     private var contentHeight:CGFloat
     private let kBarMinHeight:CGFloat = 50
+    private let kInitialHeight:CGFloat = 1
     
     override init(controller:CController)
     {
         barOptionsTop = kOptionsHeight + kBarMaxHeight
-        resultsHeight = 0
-        contentHeight = 400
+        resultsHeight = kInitialHeight
+        contentHeight = kInitialHeight
         
         super.init(controller:controller)
         self.controller = controller as? CSearch
