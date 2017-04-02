@@ -4,6 +4,7 @@ class CSearch:CController
 {
     private(set) weak var viewSearch:VSearch!
     private(set) var modelResults:MSearchResults?
+    private(set) var resultItem:MSearchResultsItem?
     
     override func loadView()
     {
@@ -66,5 +67,11 @@ class CSearch:CController
     {
         self.modelResults = modelResults
         viewSearch.refresh()
+    }
+    
+    func selectResults(resultItem:MSearchResultsItem)
+    {
+        self.resultItem = resultItem
+        viewSearch.resultSelected()
     }
 }

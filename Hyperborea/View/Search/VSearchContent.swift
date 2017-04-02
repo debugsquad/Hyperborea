@@ -5,6 +5,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
     private let kHeaderHeight:CGFloat = 50
+    private let kFooterHeight:CGFloat = 150
     private let kCellHeight:CGFloat = 380
     
     init(controller:CSearch)
@@ -46,6 +47,11 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func changeOrientation()
     {
         collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    func refresh()
+    {
+        collectionView.reloadData()
     }
     
     //MARK: collectionView delegate

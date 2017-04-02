@@ -129,6 +129,18 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
     }
     
+    func resultSelected()
+    {
+        collectionView.collectionViewLayout.invalidateLayout()
+        viewContent?.refresh()
+        
+        let indexPath:IndexPath = IndexPath(item:1, section:0)
+        collectionView.scrollToItem(
+            at:indexPath,
+            at:UICollectionViewScrollPosition.top,
+            animated:true)
+    }
+    
     //MARK: collectionView delegate
     
     func scrollViewDidScroll(_ scrollView:UIScrollView)

@@ -5,6 +5,7 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private var items:[MSearchResultsItem]?
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
+    private let kAfterEnable:TimeInterval = 0.5
     
     init(controller:CSearch)
     {
@@ -91,5 +92,20 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         cell.config(model:item)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
+    {
+        collectionView.isUserInteractionEnabled = false
+        
+        let item:MSearchResultsItem = modelAtIndex(index:indexPath)
+        controller.selectResults(resultItem:item)
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kAfterEnable)
+        { [weak collectionView] in
+            
+            collectionView?.isUserInteractionEnabled = true
+        }
     }
 }
