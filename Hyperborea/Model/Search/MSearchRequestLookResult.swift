@@ -25,11 +25,8 @@ class MSearchRequestLookResult
         {
             guard
                 
-                let result:MSearchRequestLookResultItem = RModelHomeSearchResult(
-                    json:jsonResult,
-                    attributes:attributes,
-                    size:size,
-                    options:options)
+                let result:MSearchRequestLookResultItem = MSearchRequestLookResultItem(
+                    json:jsonResult)
                 
             else
             {
