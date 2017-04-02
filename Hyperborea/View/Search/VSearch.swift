@@ -13,12 +13,15 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     let kBarMaxHeight:CGFloat = 82
     let kOptionsHeight:CGFloat = 54
     let barOptionsTop:CGFloat
+    private var resultsHeight:CGFloat
+    private var contentHeight:CGFloat
     private let kBarMinHeight:CGFloat = 50
-    private let kAfterOrientation:TimeInterval = 0.1
     
     override init(controller:CController)
     {
         barOptionsTop = kOptionsHeight + kBarMaxHeight
+        resultsHeight = 0
+        contentHeight = 400
         
         super.init(controller:controller)
         self.controller = controller as? CSearch
@@ -83,32 +86,10 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     //MARK: private
     
-    private func resetScrolls()
+    private func scrollToTop()
     {
-        scrollAll(offsetY:0)
-    }
-    
-    private func scrollAll(offsetY:CGFloat)
-    {
-        var newBarHeight:CGFloat = kBarMaxHeight - offsetY
-        var newOptionsTop:CGFloat = offsetY
-        
-        if newBarHeight < kBarMinHeight
-        {
-            newBarHeight = kBarMinHeight
-        }
-        
-        if newOptionsTop > kOptionsHeight
-        {
-            newOptionsTop = kOptionsHeight
-        }
-        else if newOptionsTop < 0
-        {
-            newOptionsTop = 0
-        }
-        
-        layoutBarHeight.constant = newBarHeight
-        layoutOptionsTop.constant = -newOptionsTop
+        let rect:CGRect = CGRect(x:0, y:0, width:1, height:1)
+        collectionView.scrollRectToVisible(rect, animated:true)
     }
     
     //MARK: public
@@ -118,65 +99,57 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         DispatchQueue.main.async
         { [weak self] in
             
-            self?.viewResults.refresh()
+            self?.viewResults?.refresh()
+            self?.scrollToTop()
         }
     }
     
     func changeOrientation()
     {
-        resetScrolls()
-        viewResults.changeOrientation()
-        
-        DispatchQueue.main.asyncAfter(
-            deadline:DispatchTime.now() + kAfterOrientation)
-        { [weak self] in
-            
-            self?.viewContent.changeOrientation()
-        }
+        viewResults?.changeOrientation()
+        viewContent?.changeOrientation()
+        scrollToTop()
     }
     
     func beginSearch()
     {
-        resetScrolls()
         viewBar.beginEditing()
-        viewResults.scrollToTop()
-        viewContent.scrollToTop()
+        scrollToTop()
     }
     
     func resultsHeight(resultsHeight:CGFloat)
     {
+        self.resultsHeight = resultsHeight
+        
         DispatchQueue.main.async
         { [weak self] in
 
-            self?.layoutResultsHeight.constant = resultsHeight
-            self?.viewContent.insetsTop(currentTop:resultsHeight)
+            self?.collectionView.collectionViewLayout.invalidateLayout()
         }
-    }
-    
-    func scrollResults(offsetY:CGFloat)
-    {
-        layoutResultsTop.constant = 0
-        
-        if offsetY > 0
-        {
-            layoutContentTop.constant = -offsetY
-        }
-        else
-        {
-            layoutContentTop.constant = 0
-        }
-        
-        scrollAll(offsetY:offsetY)
-    }
-    
-    func scrollContent(offsetY:CGFloat)
-    {
-        layoutResultsTop.constant = -offsetY
-        layoutContentTop.constant = 0
-        scrollAll(offsetY:offsetY)
     }
     
     //MARK: collectionView
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let width:CGFloat = bounds.size.width
+        let size:CGSize
+        
+        if indexPath.item == 0
+        {
+            size = CGSize(
+                width:width,
+                height:resultsHeight)
+        }
+        else
+        {
+            size = CGSize(
+                width:width,
+                height:contentHeight)
+        }
+        
+        return size
+    }
     
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {

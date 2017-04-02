@@ -2,14 +2,12 @@ import UIKit
 
 class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
+    private var items:[MSearchResultsItem]?
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
-    private var trackScroll:Bool
     
     init(controller:CSearch)
     {
-        trackScroll = false
-        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.white
@@ -21,7 +19,8 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         
         let collectionView:VCollection = VCollection(
             flow:flow)
-        collectionView.alwaysBounceVertical = true
+        collectionView.bounces = false
+        collectionView.isScrollEnabled = false
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerCell(cell:VSearchResultsCell.self)
@@ -39,30 +38,11 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         return nil
     }
     
-    func scrollViewDidScroll(_ scrollView:UIScrollView)
-    {
-        if trackScroll
-        {
-            let offsetY:CGFloat = scrollView.contentOffset.y
-            controller.viewSearch.scrollResults(offsetY:offsetY)
-        }
-    }
-    
-    func scrollViewWillBeginDragging(_ scrollView:UIScrollView)
-    {
-        trackScroll = true
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView:UIScrollView)
-    {
-        trackScroll = false
-    }
-    
     //MARK: private
     
     private func modelAtIndex(index:IndexPath) -> MSearchResultsItem
     {
-        let item:MSearchResultsItem = controller.modelResults!.items[index.item]
+        let item:MSearchResultsItem = items![index.item]
         
         return item
     }
@@ -71,19 +51,13 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func refresh()
     {
+        items = controller.modelResults?.items
         collectionView.reloadData()
-    }
-    
-    func scrollToTop()
-    {
-        let rect:CGRect = CGRect(x:0, y:0, width:1, height:1)
-        collectionView.scrollRectToVisible(rect, animated:true)
     }
     
     func changeOrientation()
     {
         collectionView.collectionViewLayout.invalidateLayout()
-        scrollToTop()
     }
     
     //MARK: collectionView delegate
@@ -97,7 +71,7 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         guard
         
-            let count:Int = controller.modelResults?.items.count
+            let count:Int = items?.count
         
         else
         {

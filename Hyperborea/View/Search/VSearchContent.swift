@@ -4,16 +4,11 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
 {
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
-    private var currentTop:CGFloat
     private let kHeaderHeight:CGFloat = 50
     private let kCellHeight:CGFloat = 380
-    private var trackScroll:Bool
     
     init(controller:CSearch)
     {
-        currentTop = 0
-        trackScroll = false
-        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
@@ -21,7 +16,8 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         self.controller = controller
         
         let collectionView:VCollection = VCollection()
-        collectionView.alwaysBounceVertical = true
+        collectionView.bounces = false
+        collectionView.isScrollEnabled = false
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerHeader(header:VSearchContentHeader.self)
@@ -45,47 +41,11 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         return nil
     }
     
-    func scrollViewDidScroll(_ scrollView:UIScrollView)
-    {
-        if trackScroll
-        {
-            let offsetY:CGFloat = scrollView.contentOffset.y + currentTop
-            controller.viewSearch.scrollContent(offsetY:offsetY)
-        }
-    }
-    
-    func scrollViewWillBeginDragging(_ scrollView:UIScrollView)
-    {
-        trackScroll = true
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView:UIScrollView)
-    {
-        trackScroll = false
-    }
-    
     //MARK: public
-    
-    func insetsTop(currentTop:CGFloat)
-    {
-        self.currentTop = currentTop
-        collectionView.contentInset = UIEdgeInsets(
-            top:currentTop,
-            left:0,
-            bottom:0,
-            right:0)
-    }
-    
-    func scrollToTop()
-    {
-        let rect:CGRect = CGRect(x:0, y:0, width:1, height:1)
-        collectionView.scrollRectToVisible(rect, animated:true)
-    }
     
     func changeOrientation()
     {
         collectionView.collectionViewLayout.invalidateLayout()
-        scrollToTop()
     }
     
     //MARK: collectionView delegate
