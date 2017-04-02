@@ -1,11 +1,12 @@
 import UIKit
 
-class VSearch:VView
+class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private(set) weak var viewBar:VSearchBar!
     private(set) weak var viewOptions:VSearchOptions!
     private(set) weak var viewResults:VSearchResults?
     private(set) weak var viewContent:VSearchContent?
+    private weak var collectionView:VCollection!
     private weak var controller:CSearch!
     private weak var layoutBarHeight:NSLayoutConstraint!
     private weak var layoutOptionsTop:NSLayoutConstraint!
@@ -30,16 +31,17 @@ class VSearch:VView
             controller:self.controller)
         self.viewOptions = viewOptions
         
-        let viewResults:VSearchResults = VSearchResults(
-            controller:self.controller)
-        self.viewResults = viewResults
+        let collectionView:VCollection = VCollection()
+        collectionView.alwaysBounceVertical = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.registerCell(
+            cell:VSearchCellResults.self)
+        collectionView.registerCell(
+            cell:VSearchCellContent.self)
+        self.collectionView = collectionView
         
-        let viewContent:VSearchContent = VSearchContent(
-            controller:self.controller)
-        self.viewContent = viewContent
-        
-        addSubview(viewContent)
-        addSubview(viewResults)
+        addSubview(collectionView)
         addSubview(viewOptions)
         addSubview(viewBar)
         
@@ -63,29 +65,20 @@ class VSearch:VView
             view:viewOptions,
             toView:self)
         
-        layoutResultsTop = NSLayoutConstraint.topToTop(
-            view:viewResults,
-            toView:self)
-        layoutResultsHeight = NSLayoutConstraint.height(
-            view:viewResults)
-        NSLayoutConstraint.equalsHorizontal(
-            view:viewResults,
-            toView:self)
-
-        layoutContentTop = NSLayoutConstraint.topToTop(
-            view:viewContent,
-            toView:self)
-        NSLayoutConstraint.bottomToBottom(
-            view:viewContent,
-            toView:self)
-        NSLayoutConstraint.equalsHorizontal(
-            view:viewContent,
+        NSLayoutConstraint.equals(
+            view:collectionView,
             toView:self)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    override func layoutSubviews()
+    {
+        collectionView.collectionViewLayout.invalidateLayout()
+        super.layoutSubviews()
     }
     
     //MARK: private
