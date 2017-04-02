@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA0F77961E919643003462FF /* VSearchContentFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0F77951E919643003462FF /* VSearchContentFooter.swift */; };
+		DA0F77981E91A283003462FF /* MSearchRequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0F77971E91A283003462FF /* MSearchRequestEntity.swift */; };
 		DA1317401E8C3E8A000624CF /* VSearchContentHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13173F1E8C3E8A000624CF /* VSearchContentHeaderCell.swift */; };
 		DA1317421E8C4296000624CF /* MSearchContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317411E8C4296000624CF /* MSearchContentMode.swift */; };
 		DA1317441E8C42A4000624CF /* MSearchContentModeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */; };
@@ -91,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		DA0F77951E919643003462FF /* VSearchContentFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContentFooter.swift; sourceTree = "<group>"; };
+		DA0F77971E91A283003462FF /* MSearchRequestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchRequestEntity.swift; sourceTree = "<group>"; };
 		DA13173F1E8C3E8A000624CF /* VSearchContentHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContentHeaderCell.swift; sourceTree = "<group>"; };
 		DA1317411E8C4296000624CF /* MSearchContentMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentMode.swift; sourceTree = "<group>"; };
 		DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItem.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				DA13174F1E8C5EAB000624CF /* MSearchContentModeItemExamples.swift */,
 				DA1317511E8C5EB8000624CF /* MSearchContentModeItemOrigins.swift */,
 				DAD5B25F1E8EDB6900F5E481 /* MSearchRequestLook.swift */,
+				DA0F77971E91A283003462FF /* MSearchRequestEntity.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				DA1F6FE61E8AFDFC00484942 /* VSearchBarField.swift in Sources */,
 				DAD5B23C1E8EA83D00F5E481 /* CParent.swift in Sources */,
 				DA1F6FEA1E8B075200484942 /* VSearchOptionsCell.swift in Sources */,
+				DA0F77981E91A283003462FF /* MSearchRequestEntity.swift in Sources */,
 				DA1F6FE41E8AF8F200484942 /* VSearchBar.swift in Sources */,
 				DA2E83BD1E8C1DE100354343 /* VSearchContentHeader.swift in Sources */,
 				DAF622961E908F4E0030772B /* VSearchCellResults.swift in Sources */,

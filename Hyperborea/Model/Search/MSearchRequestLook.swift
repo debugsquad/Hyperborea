@@ -128,7 +128,7 @@ class MSearchRequestLook
             let results:MSearchResults = MSearchResults(
                 json:json)
             
-            self.controller?.resultsFound(modelResults:results)
+            controller?.resultsFound(modelResults:results)
         }
         
         task?.resume()
