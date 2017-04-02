@@ -84,6 +84,8 @@
 		DAEC1AB61E8C81390001B27B /* MSettingsBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1AB51E8C81390001B27B /* MSettingsBackground.swift */; };
 		DAEC1AB81E8C81430001B27B /* MSettingsBackgroundItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEC1AB71E8C81430001B27B /* MSettingsBackgroundItem.swift */; };
 		DAF622941E908E720030772B /* VSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF622931E908E720030772B /* VSearchCell.swift */; };
+		DAF622961E908F4E0030772B /* VSearchCellResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF622951E908F4E0030772B /* VSearchCellResults.swift */; };
+		DAF622981E908F5C0030772B /* VSearchCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF622971E908F5C0030772B /* VSearchCellContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,6 +168,8 @@
 		DAEC1AB51E8C81390001B27B /* MSettingsBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsBackground.swift; sourceTree = "<group>"; };
 		DAEC1AB71E8C81430001B27B /* MSettingsBackgroundItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsBackgroundItem.swift; sourceTree = "<group>"; };
 		DAF622931E908E720030772B /* VSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchCell.swift; sourceTree = "<group>"; };
+		DAF622951E908F4E0030772B /* VSearchCellResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchCellResults.swift; sourceTree = "<group>"; };
+		DAF622971E908F5C0030772B /* VSearchCellContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchCellContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +295,8 @@
 				DA13173F1E8C3E8A000624CF /* VSearchContentHeaderCell.swift */,
 				DA2E83BE1E8C1DEE00354343 /* VSearchContentCell.swift */,
 				DAF622931E908E720030772B /* VSearchCell.swift */,
+				DAF622951E908F4E0030772B /* VSearchCellResults.swift */,
+				DAF622971E908F5C0030772B /* VSearchCellContent.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 				DA13174E1E8C5E9A000624CF /* MSearchContentModeItemTranslate.swift in Sources */,
 				DAEC1AB61E8C81390001B27B /* MSettingsBackground.swift in Sources */,
 				DAD5B2651E8EEEAA00F5E481 /* MSession.swift in Sources */,
+				DAF622981E908F5C0030772B /* VSearchCellContent.swift in Sources */,
 				DAD5B2591E8EAEF900F5E481 /* MSearchOptionsItemFavorites.swift in Sources */,
 				DA1F6FC41E8AEF1C00484942 /* DManager.swift in Sources */,
 				DA1317481E8C5E78000624CF /* MSearchContentModeItemSynonyms.swift in Sources */,
@@ -532,6 +539,7 @@
 				DA1F6FEA1E8B075200484942 /* VSearchOptionsCell.swift in Sources */,
 				DA1F6FE41E8AF8F200484942 /* VSearchBar.swift in Sources */,
 				DA2E83BD1E8C1DE100354343 /* VSearchContentHeader.swift in Sources */,
+				DAF622961E908F4E0030772B /* VSearchCellResults.swift in Sources */,
 				DAD5B24C1E8EA8E500F5E481 /* VCollection.swift in Sources */,
 				DAEC1AB11E8C7FF70001B27B /* VSettingsBackground.swift in Sources */,
 				DAD5B26B1E8EF8F500F5E481 /* MOxfordCredentials.swift in Sources */,
