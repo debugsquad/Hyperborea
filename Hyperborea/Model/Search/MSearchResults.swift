@@ -3,11 +3,11 @@ import UIKit
 class MSearchResults
 {
     let items:[MSearchResultsItem]
-    private let kMarginHorizontal:CGFloat = 38
+    private let kMarginHorizontal:CGFloat = 30
+    private let kMarginVertical:CGFloat = 16
     private let kFontSize:CGFloat = 15
-    private let kCellMaxWidth:CGFloat = 250
-    private let kCellMaxHeight:CGFloat = 30
-    private let kCellCompareWidth:CGFloat = 1000
+    private let kCellMaxWidth:CGFloat = 220
+    private let kCellMaxHeight:CGFloat = 90
     private let kKeyResults:String = "results"
     
     init(json:Any)
@@ -28,7 +28,7 @@ class MSearchResults
         let attributes:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kFontSize)]
         let maxSize:CGSize = CGSize(
-            width:kCellCompareWidth,
+            width:kCellMaxWidth,
             height:kCellMaxHeight)
         let drawingOptions:NSStringDrawingOptions = NSStringDrawingOptions([
             NSStringDrawingOptions.usesFontLeading,
@@ -54,15 +54,13 @@ class MSearchResults
                 options:drawingOptions,
                 context:nil)
             let stringWidth:CGFloat = ceil(stringRect.size.width)
-            var cellWidth:CGFloat = stringWidth + kMarginHorizontal
-            
-            if cellWidth > kCellMaxWidth
-            {
-                cellWidth = kCellMaxWidth
-            }
+            let stringHeight:CGFloat = ceil(stringRect.size.height)
+            let cellWidth:CGFloat = stringWidth + kMarginHorizontal
+            let cellHeight:CGFloat = stringHeight + kMarginVertical
             
             item.attributedString = attributedString
             item.cellWidth = cellWidth
+            item.cellHeight = cellHeight
             items.append(item)
         }
         

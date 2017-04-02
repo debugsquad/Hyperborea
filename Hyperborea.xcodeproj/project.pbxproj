@@ -283,6 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				DA1F6FE11E8AF76800484942 /* VSearch.swift */,
+				DAF622931E908E720030772B /* VSearchCell.swift */,
+				DAF622951E908F4E0030772B /* VSearchCellResults.swift */,
+				DAF622971E908F5C0030772B /* VSearchCellContent.swift */,
 				DA1F6FE31E8AF8F200484942 /* VSearchBar.swift */,
 				DA1F6FE51E8AFDFC00484942 /* VSearchBarField.swift */,
 				DA1F6FE71E8B069800484942 /* VSearchOptions.swift */,
@@ -294,9 +297,6 @@
 				DA2E83BC1E8C1DE100354343 /* VSearchContentHeader.swift */,
 				DA13173F1E8C3E8A000624CF /* VSearchContentHeaderCell.swift */,
 				DA2E83BE1E8C1DEE00354343 /* VSearchContentCell.swift */,
-				DAF622931E908E720030772B /* VSearchCell.swift */,
-				DAF622951E908F4E0030772B /* VSearchCellResults.swift */,
-				DAF622971E908F5C0030772B /* VSearchCellContent.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
