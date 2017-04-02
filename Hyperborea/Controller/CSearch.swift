@@ -82,4 +82,10 @@ class CSearch:CController
             MSearchRequestLook(controller:self, query:text)
         }
     }
+    
+    func resultsFound(modelResults:MSearchRequestLookResult)
+    {
+        self.modelResults = modelResults
+        viewSearch.refresh()
+    }
 }
