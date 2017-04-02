@@ -17,6 +17,7 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private var contentHeight:CGFloat
     private let kBarMinHeight:CGFloat = 50
     private let kInitialHeight:CGFloat = 1
+    private let kContentLoadingHeight:CGFloat = 250
     
     override init(controller:CController)
     {
@@ -131,6 +132,7 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func resultSelected()
     {
+        contentHeight = kContentLoadingHeight
         collectionView.collectionViewLayout.invalidateLayout()
         viewContent?.refresh()
         

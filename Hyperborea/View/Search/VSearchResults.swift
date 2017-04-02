@@ -98,6 +98,7 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         collectionView.isUserInteractionEnabled = false
         
+        UIApplication.shared.keyWindow!.endEditing(true)
         let item:MSearchResultsItem = modelAtIndex(index:indexPath)
         controller.selectResults(resultItem:item)
         

@@ -5,7 +5,6 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
     private let kHeaderHeight:CGFloat = 50
-    private let kFooterHeight:CGFloat = 150
     private let kCellHeight:CGFloat = 380
     
     init(controller:CSearch)
@@ -22,13 +21,9 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerHeader(header:VSearchContentHeader.self)
+        collectionView.registerFooter(footer:VSearchContentFooter.self)
         collectionView.registerCell(cell:VSearchContentCell.self)
         self.collectionView = collectionView
-        
-        if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
-        {
-            flow.headerReferenceSize = CGSize(width:0, height:kHeaderHeight)
-        }
         
         addSubview(collectionView)
         
@@ -66,6 +61,29 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         return size
     }
     
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
+    {
+        return CGSize.zero
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForFooterInSection section:Int) -> CGSize
+    {
+        let height:CGFloat
+        
+        if controller.resultItem == nil
+        {
+            height = 0
+        }
+        else
+        {
+            height = collectionView.bounds.height
+        }
+        
+        let size:CGSize = CGSize(width:0, height:height)
+        
+        return size
+    }
+    
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {
         return 1
@@ -73,19 +91,33 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        return 1
+        return 0
     }
     
     func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
     {
-        let header:VSearchContentHeader = collectionView.dequeueReusableSupplementaryView(
-            ofKind:kind,
-            withReuseIdentifier:
-            VSearchContentHeader.reusableIdentifier,
-            for:indexPath) as! VSearchContentHeader
-        header.config(controller:controller)
+        let reusable:UICollectionReusableView
         
-        return header
+        if kind == UICollectionElementKindSectionHeader
+        {
+            let header:VSearchContentHeader = collectionView.dequeueReusableSupplementaryView(
+                ofKind:kind,
+                withReuseIdentifier:
+                VSearchContentHeader.reusableIdentifier,
+                for:indexPath) as! VSearchContentHeader
+            header.config(controller:controller)
+            reusable = header
+        }
+        else
+        {
+            reusable = collectionView.dequeueReusableSupplementaryView(
+                ofKind:kind,
+                withReuseIdentifier:
+                VSearchContentFooter.reusableIdentifier,
+                for:indexPath)
+        }
+        
+        return reusable
     }
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
