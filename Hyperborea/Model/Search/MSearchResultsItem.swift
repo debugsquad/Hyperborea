@@ -21,6 +21,7 @@ class MSearchResultsItem
     let region:String?
     var attributedString:NSAttributedString?
     var cellWidth:CGFloat
+    var cellHeight:CGFloat
     private let kKeyWord:String = "word"
     private let kKeyWordId:String = "id"
     private let kKeyRegion:String = "region"
@@ -72,6 +73,7 @@ class MSearchResultsItem
             wordId:rawWordId)
         
         cellWidth = 0
+        cellHeight = 0
         self.region = jsonMap?[kKeyRegion] as? String
         self.wordId = wordId
         self.word = word
