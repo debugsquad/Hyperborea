@@ -86,8 +86,6 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private func resetScrolls()
     {
         scrollAll(offsetY:0)
-        layoutContentTop.constant = 0
-        layoutResultsTop.constant = 0
     }
     
     private func scrollAll(offsetY:CGFloat)
@@ -176,5 +174,51 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         layoutResultsTop.constant = -offsetY
         layoutContentTop.constant = 0
         scrollAll(offsetY:offsetY)
+    }
+    
+    //MARK: collectionView
+    
+    func numberOfSections(in collectionView:UICollectionView) -> Int
+    {
+        return 1
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    {
+        return 2
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
+    {
+        let cell:VSearchCell
+        
+        if indexPath.item == 0
+        {
+            cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier:
+                VSearchCellResults.reusableIdentifier,
+                for:indexPath) as! VSearchCellResults
+        }
+        else
+        {
+            cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier:
+                VSearchCellContent.reusableIdentifier,
+                for:indexPath) as! VSearchCellContent
+            
+            
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool
+    {
+        return false
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
     }
 }
