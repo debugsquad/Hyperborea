@@ -46,6 +46,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func refresh()
     {
+        layoutIfNeeded()
         collectionView.reloadData()
     }
     
@@ -76,7 +77,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         }
         else
         {
-            height = collectionView.bounds.height
+            height = bounds.height
         }
         
         let size:CGSize = CGSize(width:0, height:height)
@@ -110,11 +111,13 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         }
         else
         {
-            reusable = collectionView.dequeueReusableSupplementaryView(
+            let footer:VSearchContentFooter = collectionView.dequeueReusableSupplementaryView(
                 ofKind:kind,
                 withReuseIdentifier:
                 VSearchContentFooter.reusableIdentifier,
-                for:indexPath)
+                for:indexPath) as! VSearchContentFooter
+            footer.config(controller:controller)
+            reusable = footer
         }
         
         return reusable
