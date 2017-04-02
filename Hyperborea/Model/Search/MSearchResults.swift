@@ -4,9 +4,9 @@ class MSearchResults
 {
     let items:[MSearchResultsItem]
     private let kMarginHorizontal:CGFloat = 30
-    private let kMarginVertical:CGFloat = 16
-    private let kFontSize:CGFloat = 15
-    private let kCellMaxWidth:CGFloat = 220
+    private let kMarginVertical:CGFloat = 10
+    private let kFontSize:CGFloat = 16
+    private let kCellMaxWidth:CGFloat = 140
     private let kCellMaxHeight:CGFloat = 90
     private let kKeyResults:String = "results"
     

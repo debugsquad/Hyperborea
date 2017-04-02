@@ -7,7 +7,6 @@ class VSearchResultsFlow:UICollectionViewLayout
     private var contentWidth:CGFloat
     private var contentHeight:CGFloat
     private let kContentBottom:CGFloat = 20
-    private let kCellHeight:CGFloat = 32
     private let kMarginHorizontal:CGFloat = 10
     private let kMarginVertical:CGFloat = 10
     private let kSection:Int = 0
@@ -47,6 +46,7 @@ class VSearchResultsFlow:UICollectionViewLayout
         let maxWidth:CGFloat = contentWidth - kMarginHorizontal
         var positionY:CGFloat = controller.viewSearch.barOptionsTop + kMarginVertical
         var positionX:CGFloat = kMarginHorizontal
+        var maxCurrentY:CGFloat = 0
         var item:Int = 0
         
         for result:MSearchResultsItem in model.items
@@ -55,18 +55,25 @@ class VSearchResultsFlow:UICollectionViewLayout
                 item:item,
                 section:kSection)
             let cellWidth:CGFloat = result.cellWidth
+            let cellHeight:CGFloat = result.cellHeight
             
             if positionX + cellWidth > maxWidth
             {
                 positionX = kMarginHorizontal
-                positionY += kCellHeight + kMarginVertical
+                positionY += maxCurrentY + kMarginVertical
+                maxCurrentY = 0
             }
             
             let frame:CGRect = CGRect(
                 x:positionX,
                 y:positionY,
                 width:cellWidth,
-                height:kCellHeight)
+                height:cellHeight)
+            
+            if cellHeight > maxCurrentY
+            {
+                maxCurrentY = cellHeight
+            }
             
             item += 1
             positionX += cellWidth + kMarginHorizontal
@@ -77,7 +84,7 @@ class VSearchResultsFlow:UICollectionViewLayout
             layoutAttributes.append(attributes)
         }
         
-        contentHeight = positionY + kCellHeight + kContentBottom
+        contentHeight = positionY + maxCurrentY + kContentBottom
         controller.viewSearch.resultsHeight(resultsHeight:contentHeight)
     }
     
