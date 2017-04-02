@@ -4,14 +4,11 @@ class VSearch:VView
 {
     private(set) weak var viewBar:VSearchBar!
     private(set) weak var viewOptions:VSearchOptions!
-    private(set) weak var viewResults:VSearchResults!
-    private(set) weak var viewContent:VSearchContent!
+    private(set) weak var viewResults:VSearchResults?
+    private(set) weak var viewContent:VSearchContent?
     private weak var controller:CSearch!
     private weak var layoutBarHeight:NSLayoutConstraint!
-    private weak var layoutResultsHeight:NSLayoutConstraint!
-    private weak var layoutResultsTop:NSLayoutConstraint!
     private weak var layoutOptionsTop:NSLayoutConstraint!
-    private weak var layoutContentTop:NSLayoutConstraint!
     let kBarMaxHeight:CGFloat = 82
     let kOptionsHeight:CGFloat = 54
     let barOptionsTop:CGFloat
