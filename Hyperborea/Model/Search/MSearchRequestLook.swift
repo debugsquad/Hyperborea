@@ -22,11 +22,6 @@ class MSearchRequestLook
         }
     }
     
-    deinit
-    {
-        print("died request")
-    }
-    
     //MARK: private
     
     private func asyncLookQuery(query:String)
@@ -101,7 +96,7 @@ class MSearchRequestLook
         
         let urlSession:URLSession = URLSession(configuration:configuration)
         task = urlSession.dataTask(with:urlRequest)
-        { [weak self] (data:Data?, urlResponse:URLResponse?, error:Error?) in
+        { [weak controller] (data:Data?, urlResponse:URLResponse?, error:Error?) in
             
             if error != nil
             {
@@ -133,7 +128,7 @@ class MSearchRequestLook
             let results:MSearchResults = MSearchResults(
                 json:json)
             
-            self?.controller?.resultsFound(modelResults:results)
+            self.controller?.resultsFound(modelResults:results)
         }
         
         task?.resume()

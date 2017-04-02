@@ -157,8 +157,12 @@ class VSearch:VView
     
     func resultsHeight(resultsHeight:CGFloat)
     {
-        layoutResultsHeight.constant = resultsHeight
-        viewContent.insetsTop(currentTop:resultsHeight)
+        DispatchQueue.main.async
+        { [weak self] in
+
+            self?.layoutResultsHeight.constant = resultsHeight
+            self?.viewContent.insetsTop(currentTop:resultsHeight)
+        }
     }
     
     func scrollResults(offsetY:CGFloat)
