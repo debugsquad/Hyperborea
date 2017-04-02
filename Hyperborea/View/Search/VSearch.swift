@@ -128,7 +128,31 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
     }
     
-    //MARK: collectionView
+    //MARK: collectionView delegate
+    
+    func scrollViewDidScroll(_ scrollView:UIScrollView)
+    {
+        let offsetY:CGFloat = scrollView.contentOffset.y
+        var newBarHeight:CGFloat = kBarMaxHeight - offsetY
+        var newOptionsTop:CGFloat = offsetY
+        
+        if newBarHeight < kBarMinHeight
+        {
+            newBarHeight = kBarMinHeight
+        }
+        
+        if newOptionsTop > kOptionsHeight
+        {
+            newOptionsTop = kOptionsHeight
+        }
+        else if newOptionsTop < 0
+        {
+            newOptionsTop = 0
+        }
+        
+        layoutBarHeight.constant = newBarHeight
+        layoutOptionsTop.constant = -newOptionsTop
+    }
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {

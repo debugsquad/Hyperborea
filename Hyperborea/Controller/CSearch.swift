@@ -14,6 +14,8 @@ class CSearch:CController
     
     override func viewWillTransition(to size:CGSize, with coordinator:UIViewControllerTransitionCoordinator)
     {
+        UIApplication.shared.keyWindow!.endEditing(true)
+        
         coordinator.animate(alongsideTransition:
         { (context:UIViewControllerTransitionCoordinatorContext) in
         })

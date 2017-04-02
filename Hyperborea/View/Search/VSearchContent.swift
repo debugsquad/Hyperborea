@@ -52,7 +52,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
-        let width:CGFloat = collectionView.bounds.maxX
+        let width:CGFloat = bounds.maxX
         let size:CGSize = CGSize(
             width:width,
             height:kCellHeight)
