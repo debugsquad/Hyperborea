@@ -194,19 +194,31 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
         if indexPath.item == 0
         {
-            cell = collectionView.dequeueReusableCell(
+            let cellResults:VSearchCellResults = collectionView.dequeueReusableCell(
                 withReuseIdentifier:
                 VSearchCellResults.reusableIdentifier,
                 for:indexPath) as! VSearchCellResults
+            cell = cellResults
+            
+            if viewResults == nil
+            {
+                cellResults.config(controller:controller)
+                viewResults = cellResults.viewResults
+            }
         }
         else
         {
-            cell = collectionView.dequeueReusableCell(
+            let cellContent:VSearchCellContent = collectionView.dequeueReusableCell(
                 withReuseIdentifier:
                 VSearchCellContent.reusableIdentifier,
                 for:indexPath) as! VSearchCellContent
+            cell = cellContent
             
-            
+            if viewContent == nil
+            {
+                cellContent.config(controller:controller)
+                viewContent = cellContent.viewContent
+            }
         }
         
         return cell
