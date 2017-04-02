@@ -130,7 +130,7 @@ class MSearchRequestLook
                 return
             }
             
-            let results:MSearchRequestLookResult = MSearchRequestLookResult(
+            let results:MSearchResults = MSearchResults(
                 json:json)
             
             self?.controller?.resultsFound(modelResults:results)

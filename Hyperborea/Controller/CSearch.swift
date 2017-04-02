@@ -12,17 +12,6 @@ class CSearch:CController
         view = viewSearch
     }
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        { [weak self] in
-            
-            self?.asyncSearch()
-        }
-    }
-    
     override func viewWillTransition(to size:CGSize, with coordinator:UIViewControllerTransitionCoordinator)
     {
         coordinator.animate(alongsideTransition:
@@ -35,18 +24,6 @@ class CSearch:CController
     }
     
     //MARK: private
-    
-    private func asyncSearch()
-    {
-        let model:MSearchResults = MSearchResults()
-        searchFinished(modelResults:model)
-    }
-    
-    private func searchFinished(modelResults:MSearchResults)
-    {
-        self.modelResults = modelResults
-        viewSearch.refresh()
-    }
     
     private func cancelRequests()
     {
@@ -83,7 +60,7 @@ class CSearch:CController
         }
     }
     
-    func resultsFound(modelResults:MSearchRequestLookResult)
+    func resultsFound(modelResults:MSearchResults)
     {
         self.modelResults = modelResults
         viewSearch.refresh()

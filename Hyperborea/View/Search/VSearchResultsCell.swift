@@ -80,7 +80,7 @@ class VSearchResultsCell:UICollectionViewCell
     
     func config(model:MSearchResultsItem)
     {
-        label.attributedText = model.name
+        label.attributedText = model.attributedString
         hover()
     }
 }

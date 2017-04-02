@@ -8,11 +8,22 @@ class MSearchResults
     private let kCellMaxWidth:CGFloat = 250
     private let kCellMaxHeight:CGFloat = 30
     private let kCellCompareWidth:CGFloat = 1000
+    private let kKeyResults:String = "results"
     
-    init()
+    init(json:Any)
     {
-        let loremIpsum:String = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-        let loremArray:[String] = loremIpsum.components(separatedBy:" ")
+        guard
+            
+            let jsonMap:[String:Any] = json as? [String:Any],
+            let jsonResults:[Any] = jsonMap[kKeyResults] as? [Any]
+            
+        else
+        {
+            self.items = []
+            
+            return
+        }
+        
         var items:[MSearchResultsItem] = []
         let attributes:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kFontSize)]
@@ -23,10 +34,20 @@ class MSearchResults
             NSStringDrawingOptions.usesFontLeading,
             NSStringDrawingOptions.usesLineFragmentOrigin])
         
-        for loremItem:String in loremArray
+        for jsonResult:Any in jsonResults
         {
+            guard
+                
+                let item:MSearchResultsItem = MSearchResultsItem(
+                    json:jsonResult)
+                
+            else
+            {
+                continue
+            }
+            
             let attributedString:NSAttributedString = NSAttributedString(
-                string:loremItem,
+                string:item.word,
                 attributes:attributes)
             let stringRect:CGRect = attributedString.boundingRect(
                 with:maxSize,
@@ -40,9 +61,8 @@ class MSearchResults
                 cellWidth = kCellMaxWidth
             }
             
-            let item:MSearchResultsItem = MSearchResultsItem(
-                name:attributedString,
-                cellWidth:cellWidth)
+            item.attributedString = attributedString
+            item.cellWidth = cellWidth
             items.append(item)
         }
         
