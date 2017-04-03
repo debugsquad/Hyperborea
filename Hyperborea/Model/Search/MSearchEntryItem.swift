@@ -10,6 +10,11 @@ class MSearchEntryItem
     private let kAddHeight:CGFloat = 68
     private let kMaxHeight:CGFloat = 90000
     
+    required init?(json:Any)
+    {
+        return nil
+    }
+    
     init(
         attributedString:NSAttributedString,
         reusableIdentifier:String,

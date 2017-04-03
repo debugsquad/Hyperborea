@@ -152,7 +152,17 @@ class MSearchRequestEntity
                 return
             }
             
-            print("\(json)")
+            
+            guard
+                
+                let entry:MSearchEntry = MSearchEntry(json:json)
+            
+            else
+            {
+                return
+            }
+            
+            controller?.entryFound(modelEntry:entry)
         }
         
         task?.resume()

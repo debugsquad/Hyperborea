@@ -2,8 +2,8 @@ import Foundation
 
 class MSearchEntry
 {
-    private(set) var word:String
-    private(set) var items:[MSearchEntryItem]
+    let items:[MSearchEntryItem]
+    let word:String
     private let kKeyResults:String = "results"
     private let kKeyWord:String = "word"
     private let kKeyLexicalEntries:String = "lexicalEntries"
@@ -11,8 +11,6 @@ class MSearchEntry
     
     init?(json:Any)
     {
-        items = []
-        
         guard
             
             let jsonMap:[String:Any] = json as? [String:Any],
@@ -20,20 +18,30 @@ class MSearchEntry
             
         else
         {
-            return nil
+            self.items = []
+            self.word = ""
+            
+            return
         }
+        
+        var items:[MSearchEntryItem] = []
+        var word:String?
         
         for jsonResult:Any in jsonResults
         {
             guard
                 
                 let jsonResultMap:[String:Any] = jsonResult as? [String:Any],
-                let jsonLexicalEntries:[Any] = jsonResultMap[kKeyLexicalEntries] as? [Any],
-                let word:String = jsonResultMap[kKeyWord] as? String
+                let jsonLexicalEntries:[Any] = jsonResultMap[kKeyLexicalEntries] as? [Any]
                 
             else
             {
                 continue
+            }
+            
+            if let rawWord:String = jsonResultMap[kKeyWord] as? String
+            {
+                word = rawWord
             }
             
             for jsonEntry:Any in jsonLexicalEntries
@@ -42,31 +50,29 @@ class MSearchEntry
                     
                     let jsonEntryMap:[String:Any] = jsonEntry as? [String:Any],
                     let entryCategory:String = jsonEntryMap[kKeyLexicalCategory] as? String,
-                    let entryType:RModelHomeEntriesItem.Type = RModelHomeEntriesFactory.sharedInstance.itemWidthLexical(
-                        category:entryCategory)
+                    let entryType:MSearchEntryItem.Type = MSearchEntryFactory.sharedInstance?.itemWithLexical(
+                        category:entryCategory),
+                    let entry:MSearchEntryItem = entryType.init(json:jsonEntry)
                     
-                    else
+                else
                 {
                     continue
                 }
                 
-                let entry:RModelHomeEntriesItem = entryType.init(json:jsonEntry)
                 items.append(entry)
             }
-            
-            let etymologies:RModelHomeEntriesEtymologies = RModelHomeEntriesEtymologies(
-                json:jsonLexicalEntries)
-            
-            if !etymologies.titles.isEmpty
-            {
-                let origin:RModelHomeEntriesItemOrigin = RModelHomeEntriesItemOrigin(
-                    etymologies:etymologies)
-                items.append(origin)
-            }
-            
-            self.word = word
         }
         
-        super.init()
+        guard
+            
+            let wordFound:String = word
+        
+        else
+        {
+            return
+        }
+        
+        self.items = items
+        self.word = wordFound
     }
 }

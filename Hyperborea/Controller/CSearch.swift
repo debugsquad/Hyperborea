@@ -81,4 +81,9 @@ class CSearch:CController
             wordId:resultItem.wordId,
             region:resultItem.region)
     }
+    
+    func entryFound(modelEntry:MSearchEntry)
+    {
+        
+    }
 }

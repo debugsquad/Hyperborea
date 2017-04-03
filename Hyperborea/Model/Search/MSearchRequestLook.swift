@@ -145,7 +145,6 @@ class MSearchRequestLook
             
             let results:MSearchResults = MSearchResults(
                 json:json)
-            
             controller?.resultsFound(modelResults:results)
         }
         

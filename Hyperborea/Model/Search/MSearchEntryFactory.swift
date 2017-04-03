@@ -1,8 +1,8 @@
 import Foundation
 
-class RModelHomeEntriesFactory
+class MSearchEntryFactory
 {
-    static let sharedInstance:RModelHomeEntriesFactory? = RModelHomeEntriesFactory()
+    static let sharedInstance:MSearchEntryFactory? = MSearchEntryFactory()
     private let lexicalMap:[String:String]?
     private let bundleName:String
     private let kBundleIdentifier:String = "CFBundleExecutable"
@@ -35,13 +35,13 @@ class RModelHomeEntriesFactory
     
     //MARK: public
     
-    func itemWithLexical(category:String) -> RModelHomeEntriesItem.Type?
+    func itemWithLexical(category:String) -> MSearchEntryItem.Type?
     {
         guard
             
             let className:String = lexicalMap?[category]
             
-            else
+        else
         {
             return nil
         }
@@ -55,12 +55,12 @@ class RModelHomeEntriesFactory
             
             let classType:AnyObject.Type = NSClassFromString(classFullName)
             
-            else
+        else
         {
             return nil
         }
         
-        let itemType:RModelHomeEntriesItem.Type? = classType as? RModelHomeEntriesItem.Type
+        let itemType:MSearchEntryItem.Type? = classType as? MSearchEntryItem.Type
         
         return itemType
     }
