@@ -19,43 +19,33 @@ class MSearchRequestEntity
         self.controller = controller
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-            {
-                self.asyncLookQuery(wordId:wordId, region:region)
+        {
+            self.asyncLookQuery(wordId:wordId, region:region)
         }
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(notifiedCancelRequests(sender:)),
+            name:Notification.cancelRequests,
+            object:nil)
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    //MARK: notified
+    
+    @objc func notifiedCancelRequests(sender notification:Notification)
+    {
+        task?.cancel()
     }
     
     //MARK: private
     
     private func asyncLookQuery(wordId:String, region:String?)
     {
-        /*
-         
-         let headers:[String:String] = RConfiguration.sharedInstance.credentials.current()
-         let baseUrl:String = RUrl.sharedInstance.urlFor(
-         urlKey:RUrl.UrlKey.oxfordApi)
-         let entriesUrl:String = RUrl.sharedInstance.urlFor(
-         urlKey:RUrl.UrlKey.entries)
-         var urlString:String = kEmpty
-         
-         if let sourceLanguage:String = MSession.sharedInstance.language?.code
-         {
-         urlString = "\(baseUrl)/\(entriesUrl)/\(sourceLanguage)/\(wordId)"
-         
-         if let regionReceived:String = region
-         {
-         urlString += "/\(kRegionQuery)\(regionReceived)"
-         }
-         }
-         
-         super.init(
-         model:RModelHomeEntries.self,
-         headers:headers,
-         settingsId:RSettings.SettingsId.homeEntries,
-         method:RSettings.Method.get,
-         urlString:urlString)
-         
-         */
-        
         guard
             
             let urlHost:String = MSession.sharedInstance.modelUrls.urlHost(host:MUrls.Host.hostOxford),

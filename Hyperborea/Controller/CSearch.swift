@@ -71,7 +71,14 @@ class CSearch:CController
     
     func selectResults(resultItem:MSearchResultsItem)
     {
+        cancelRequests()
+        
         self.resultItem = resultItem
         viewSearch.resultSelected()
+        
+        MSearchRequestEntity(
+            controller:self,
+            wordId:resultItem.wordId,
+            region:resultItem.region)
     }
 }

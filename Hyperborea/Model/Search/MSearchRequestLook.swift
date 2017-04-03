@@ -20,6 +20,24 @@ class MSearchRequestLook
         {
             self.asyncLookQuery(query:query)
         }
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(notifiedCancelRequests(sender:)),
+            name:Notification.cancelRequests,
+            object:nil)
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    //MARK: notified
+    
+    @objc func notifiedCancelRequests(sender notification:Notification)
+    {
+        task?.cancel()
     }
     
     //MARK: private
