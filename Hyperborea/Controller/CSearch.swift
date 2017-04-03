@@ -3,9 +3,9 @@ import UIKit
 class CSearch:CController
 {
     private(set) weak var viewSearch:VSearch!
-    private(set) var modelResults:MSearchResults?
-    private(set) var resultItem:MSearchResultsItem?
-    private(set) var selectedEntry:MSearchEntry?
+    private(set) weak var modelResults:MSearchResults?
+    private(set) weak var modelResultItem:MSearchResultsItem?
+    private(set) weak var modelEntry:MSearchEntry?
     
     override func loadView()
     {
@@ -61,8 +61,8 @@ class CSearch:CController
         if !text.isEmpty
         {
             modelResults = nil
-            resultItem = nil
-            selectedEntry = nil
+            modelResultItem = nil
+            modelEntry = nil
             MSearchRequestLook(controller:self, query:text)
         }
     }
@@ -73,22 +73,22 @@ class CSearch:CController
         viewSearch.refresh()
     }
     
-    func selectResults(resultItem:MSearchResultsItem)
+    func selectResults(modelResultItem:MSearchResultsItem)
     {
         cancelRequests()
         
-        self.resultItem = resultItem
+        self.modelResultItem = modelResultItem
         viewSearch.resultSelected()
         
         MSearchRequestEntity(
             controller:self,
-            wordId:resultItem.wordId,
-            region:resultItem.region)
+            wordId:modelResultItem.wordId,
+            region:modelResultItem.region)
     }
     
-    func entryFound(selectedEntry:MSearchEntry)
+    func entryFound(modelEntry:MSearchEntry)
     {
-        self.selectedEntry = selectedEntry
+        self.modelEntry = modelEntry
         viewSearch.showEntry()
     }
 }
