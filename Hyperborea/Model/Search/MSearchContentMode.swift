@@ -58,6 +58,8 @@ class MSearchContentMode
     
     func reusableIdentifier() -> String
     {
+        let item:MSearchContentModeItem = items[selectedIndex]
         
+        return item.reusableIdentifier
     }
 }

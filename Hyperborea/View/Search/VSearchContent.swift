@@ -159,11 +159,23 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
+        let reusableIdentifier:String = controller.viewSearch.viewContent!.modelMode.reusableIdentifier()
         let cell:VSearchContentCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
-            VSearchContentCell.reusableIdentifier,
+            reusableIdentifier,
             for:indexPath) as! VSearchContentCell
+        cell.config(controller:controller)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldHighlightItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
     }
 }
