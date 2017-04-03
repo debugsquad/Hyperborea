@@ -8,8 +8,9 @@ class MSearchEntry
     private let kKeyWord:String = "word"
     private let kKeyLexicalEntries:String = "lexicalEntries"
     private let kKeyLexicalCategory:String = "lexicalCategory"
+    private let kEmpty:String = ""
     
-    init?(json:Any)
+    init(json:Any)
     {
         guard
             
@@ -19,7 +20,7 @@ class MSearchEntry
         else
         {
             self.items = []
-            self.word = ""
+            self.word = kEmpty
             
             return
         }
@@ -69,10 +70,13 @@ class MSearchEntry
         
         else
         {
+            self.items = []
+            self.word = kEmpty
+            
             return
         }
         
-        self.items = items
+        self.items = []
         self.word = wordFound
     }
 }
