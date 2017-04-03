@@ -9,7 +9,7 @@ class MSearchEntryItemNoun:MSearchEntryItem
         let attributes:[String:Any] = [
             NSFontAttributeName:UIFont.medium(size:kFontSize)]
         
-        let title:String = NSLocalizedString("RModelHomeEntriesItemNoun_title", comment:"")
+        let title:String = NSLocalizedString("MSearchEntryItemNoun_title", comment:"")
         let titleString:NSAttributedString = NSAttributedString(
             string:title,
             attributes:attributes)
