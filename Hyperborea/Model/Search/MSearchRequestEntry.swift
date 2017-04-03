@@ -12,31 +12,55 @@ class MSearchRequestEntity
     private let kCellularAccess:Bool = true
     private let kDiscretionary:Bool = true
     
-    @discardableResult init(controller:CSearch, query:String)
+    @discardableResult init(controller:CSearch, wordId:String, region:String?)
     {
         self.controller = controller
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
             {
-                self.asyncLookQuery(query:query)
+                self.asyncLookQuery(wordId:wordId, region:region)
         }
     }
     
     //MARK: private
     
-    private func asyncLookQuery(query:String)
+    private func asyncLookQuery(wordId:String, region:String?)
     {
-        let queryLowerCase:String = query.lowercased()
+        /*
+         
+         let headers:[String:String] = RConfiguration.sharedInstance.credentials.current()
+         let baseUrl:String = RUrl.sharedInstance.urlFor(
+         urlKey:RUrl.UrlKey.oxfordApi)
+         let entriesUrl:String = RUrl.sharedInstance.urlFor(
+         urlKey:RUrl.UrlKey.entries)
+         var urlString:String = kEmpty
+         
+         if let sourceLanguage:String = MSession.sharedInstance.language?.code
+         {
+         urlString = "\(baseUrl)/\(entriesUrl)/\(sourceLanguage)/\(wordId)"
+         
+         if let regionReceived:String = region
+         {
+         urlString += "/\(kRegionQuery)\(regionReceived)"
+         }
+         }
+         
+         super.init(
+         model:RModelHomeEntries.self,
+         headers:headers,
+         settingsId:RSettings.SettingsId.homeEntries,
+         method:RSettings.Method.get,
+         urlString:urlString)
+         
+         */
         
         guard
             
             let urlHost:String = MSession.sharedInstance.modelUrls.urlHost(host:MUrls.Host.hostOxford),
-            let urlEndPoint:String = MSession.sharedInstance.modelUrls.urlEnpoint(endPoint:MUrls.EndPoint.oxfordSearch),
-            let languageCode:String = MSession.sharedInstance.settings?.languageCode(),
-            let queryEscaped:String = queryLowerCase.addingPercentEncoding(
-                withAllowedCharacters:CharacterSet.urlHostAllowed)
+            let urlEndPoint:String = MSession.sharedInstance.modelUrls.urlEnpoint(endPoint:MUrls.EndPoint.oxfordEntries),
+            let languageCode:String = MSession.sharedInstance.settings?.languageCode()
             
-            else
+        else
         {
             return
         }
