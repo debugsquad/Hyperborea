@@ -95,8 +95,6 @@ class CSearch:CController
             
             if let cachedResults:MSearchResults = mapResults[cleanedQuery]
             {
-                print("cached")
-                
                 modelResults = cachedResults
                 viewSearch.refresh()
             }
@@ -122,16 +120,30 @@ class CSearch:CController
         cancelRequests()
         
         self.modelResultItem = modelResultItem
-        viewSearch.resultSelected()
+        let wordId:String = modelResultItem.wordId
         
-        MSearchRequestEntity(
-            controller:self,
-            wordId:modelResultItem.wordId,
-            region:modelResultItem.region)
+        if let cachedEntry:MSearchEntry = mapEntry[wordId]
+        {
+            modelEntry = cachedEntry
+            viewSearch.showEntry()
+        }
+        else
+        {
+            modelEntry = nil
+            viewSearch.resultSelected()
+            
+            MSearchRequestEntity(
+                controller:self,
+                wordId:modelResultItem.wordId,
+                region:modelResultItem.region)
+        }
     }
     
-    func entryFound(modelEntry:MSearchEntry)
+    func entryFound(
+        wordId:String,
+        modelEntry:MSearchEntry)
     {
+        mapEntry[wordId] = modelEntry
         self.modelEntry = modelEntry
         viewSearch.showEntry()
     }

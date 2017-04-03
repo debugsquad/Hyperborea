@@ -152,10 +152,10 @@ class MSearchRequestEntity
                 return
             }
             
-            print(json)
-            
             let entry:MSearchEntry = MSearchEntry(json:json)
-            controller?.entryFound(modelEntry:entry)
+            controller?.entryFound(
+                wordId:wordId,
+                modelEntry:entry)
         }
         
         task?.resume()
