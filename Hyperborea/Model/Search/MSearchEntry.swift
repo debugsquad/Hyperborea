@@ -1,8 +1,8 @@
-import Foundation
+import UIKit
 
 class MSearchEntry
 {
-    let items:[MSearchEntryItem]
+    let attributedString:NSAttributedString
     let word:String
     private let kKeyResults:String = "results"
     private let kKeyWord:String = "word"
@@ -19,13 +19,13 @@ class MSearchEntry
             
         else
         {
-            self.items = []
+            attributedString = NSAttributedString()
             self.word = kEmpty
             
             return
         }
         
-        var items:[MSearchEntryItem] = []
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         var word:String?
         
         for jsonResult:Any in jsonResults
@@ -60,11 +60,12 @@ class MSearchEntry
                     continue
                 }
                 
-                items.append(entry)
+                let itemString:NSAttributedString = entry.attributedString
+                mutableString.append(itemString)
             }
         }
         
-        self.items = items
+        attributedString = mutableString
         
         guard
             
