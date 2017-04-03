@@ -6,6 +6,8 @@ class CSearch:CController
     private(set) weak var modelResults:MSearchResults?
     private(set) weak var modelResultItem:MSearchResultsItem?
     private(set) weak var modelEntry:MSearchEntry?
+    private var mapResults:[String:MSearchResults]
+    private var 
     
     override func loadView()
     {

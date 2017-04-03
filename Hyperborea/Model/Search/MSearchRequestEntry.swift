@@ -155,7 +155,7 @@ class MSearchRequestEntity
             print(json)
             
             let entry:MSearchEntry = MSearchEntry(json:json)
-            controller?.entryFound(selectedEntry:entry)
+            controller?.entryFound(modelEntry:entry)
         }
         
         task?.resume()

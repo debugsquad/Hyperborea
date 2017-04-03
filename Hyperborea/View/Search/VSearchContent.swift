@@ -67,7 +67,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func refresh()
     {
-        if controller.selectedEntry == nil
+        if controller.modelEntry == nil
         {
             layoutModeHeight.constant = 0
         }
@@ -95,9 +95,9 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         let height:CGFloat
         
-        if controller.selectedEntry == nil
+        if controller.modelEntry == nil
         {
-            if controller.resultItem == nil
+            if controller.modelResultItem == nil
             {
                 height = 0
             }
@@ -125,7 +125,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         let count:Int
         
-        if controller.selectedEntry == nil
+        if controller.modelEntry == nil
         {
             count = 0
         }

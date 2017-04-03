@@ -32,6 +32,6 @@ class VSearchContentCellDefinition:VSearchContentCell
     
     override func config(controller:CSearch)
     {
-        label.attributedText = controller.selectedEntry?.attributedString
+        label.attributedText = controller.modelEntry?.attributedString
     }
 }

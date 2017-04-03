@@ -100,7 +100,7 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         
         UIApplication.shared.keyWindow!.endEditing(true)
         let item:MSearchResultsItem = modelAtIndex(index:indexPath)
-        controller.selectResults(resultItem:item)
+        controller.selectResults(modelResultItem:item)
         
         DispatchQueue.main.asyncAfter(
             deadline:DispatchTime.now() + kAfterEnable)
