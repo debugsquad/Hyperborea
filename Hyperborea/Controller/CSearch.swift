@@ -86,5 +86,6 @@ class CSearch:CController
     func entryFound(selectedEntry:MSearchEntry)
     {
         self.selectedEntry = selectedEntry
+        viewSearch.showEntry()
     }
 }

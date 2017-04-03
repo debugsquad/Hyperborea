@@ -64,13 +64,26 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
     {
-        return CGSize.zero
+        let height:CGFloat
+        
+        if controller.selectedEntry == nil
+        {
+            height = 0
+        }
+        else
+        {
+            height = kHeaderHeight
+        }
+        
+        let size:CGSize = CGSize(width:0, height:height)
+        
+        return size
     }
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForFooterInSection section:Int) -> CGSize
     {
         let height:CGFloat
-     
+        
         if controller.selectedEntry == nil
         {
             if controller.resultItem == nil
@@ -84,7 +97,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         }
         else
         {
-            height = kHeaderHeight
+            height = 0
         }
         
         let size:CGSize = CGSize(width:0, height:height)
