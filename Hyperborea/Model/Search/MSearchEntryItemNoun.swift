@@ -2,7 +2,6 @@ import UIKit
 
 class MSearchEntryItemNoun:MSearchEntryItem
 {
-    private let kSelectable:Bool = false
     private let kFontSize:CGFloat = 16
     
     required init?(json:Any)
@@ -14,22 +13,20 @@ class MSearchEntryItemNoun:MSearchEntryItem
         let titleString:NSAttributedString = NSAttributedString(
             string:title,
             attributes:attributes)
-        let numberString:NSAttributedString = number.attributedString()
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(titleString)
-        mutableString.append(numberString)
+        
+        if let numberString:NSAttributedString = MSearchEntryNumber.parse(json:json)
+        {
+            mutableString.append(numberString)
+        }
         
         if let sensesString:NSAttributedString = MSearchEntrySenses.parse(json:json)
         {
             mutableString.append(sensesString)
         }
         
-        let reusableIdentifier:String = VHomeWordsCellEntry.reusableIdentifier
-        
-        super.init(
-            attributedString:mutableString,
-            reusableIdentifier:reusableIdentifier,
-            selectable:kSelectable)
+        super.init(attributedString:mutableString)
     }
 }

@@ -70,14 +70,21 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForFooterInSection section:Int) -> CGSize
     {
         let height:CGFloat
-        
-        if controller.resultItem == nil
+     
+        if controller.selectedEntry == nil
         {
-            height = 0
+            if controller.resultItem == nil
+            {
+                height = 0
+            }
+            else
+            {
+                height = bounds.height
+            }
         }
         else
         {
-            height = bounds.height
+            height = kHeaderHeight
         }
         
         let size:CGSize = CGSize(width:0, height:height)
@@ -92,7 +99,18 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        return 0
+        let count:Int
+        
+        if controller.selectedEntry == nil
+        {
+            count = 0
+        }
+        else
+        {
+            count = 1
+        }
+        
+        return count
     }
     
     func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView

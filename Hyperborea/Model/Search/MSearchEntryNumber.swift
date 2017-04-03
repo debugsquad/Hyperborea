@@ -2,37 +2,38 @@ import UIKit
 
 class MSearchEntryNumber
 {
-    private var numbers:[String]
-    private let kKeyEntries:String = "entries"
-    private let kKeyGrammaticalFeatures:String = "grammaticalFeatures"
-    private let kKeyType:String = "type"
-    private let kKeyText:String = "text"
-    private let kTypeNumber:String = "Number"
-    private let kGroupSeparator:String = "  "
-    private let kNumberSeparator:String = " | "
+    private static let kKeyEntries:String = "entries"
+    private static let kKeyGrammaticalFeatures:String = "grammaticalFeatures"
+    private static let kKeyType:String = "type"
+    private static let kKeyText:String = "text"
+    private static let kTypeNumber:String = "Number"
+    private static let kNumberSeparator:String = " | "
+    private static let kNumberFontSize:CGFloat = 15
+    private static let kSeparatorFontSize:CGFloat = 14
     
-    init(json:Any)
+    class func parse(json:Any) -> NSAttributedString?
     {
-        numbers = []
-        
         guard
             
             let jsonMap:[String:Any] = json as? [String:Any],
             let jsonEntries:[Any] = jsonMap[kKeyEntries] as? [Any]
             
-            else
+        else
         {
-            return
+            return nil
         }
+        
+        var numbers:[String] = []
         
         for jsonEntry:Any in jsonEntries
         {
             guard
                 
                 let jsonEntryMap:[String:Any] = jsonEntry as? [String:Any],
-                let jsonFeatures:[Any] = jsonEntryMap[kKeyGrammaticalFeatures] as? [Any]
+                let jsonFeatures:[Any] = jsonEntryMap[
+                    kKeyGrammaticalFeatures] as? [Any]
                 
-                else
+            else
             {
                 continue
             }
@@ -45,7 +46,7 @@ class MSearchEntryNumber
                     let featureMapType:String  = featureMap[kKeyType] as? String,
                     let featureMapText:String = featureMap[kKeyText] as? String
                     
-                    else
+                else
                 {
                     continue
                 }
@@ -71,57 +72,32 @@ class MSearchEntryNumber
                 }
             }
         }
-    }
-    
-    //MARK: public
-    
-    func attributedString() -> NSAttributedString
-    {
+        
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
-        if !numbers.isEmpty
+        let attributes:[String:Any] = [
+            NSFontAttributeName:UIFont.regular(size:kNumberFontSize)]
+        let attributesSeparator:[String:Any] = [
+            NSFontAttributeName:UIFont.regular(size:kSeparatorFontSize)]
+        
+        for number:String in numbers
         {
-            let attributes:[String:Any] = [
-                NSFontAttributeName:UIFont.regular(
-                    size:RModelHomeEntriesItem.kComplementFontSize),
-                NSForegroundColorAttributeName:UIColor(
-                    white:RModelHomeEntriesItem.kComplementWhite,
-                    alpha:1)
-            ]
+            let numberLowerCase:String = number.lowercased()
             
-            let attributesSeparator:[String:Any] = [
-                NSFontAttributeName:UIFont.regular(
-                    size:RModelHomeEntriesItem.kSeparatorFontSize),
-                NSForegroundColorAttributeName:UIColor(
-                    white:RModelHomeEntriesItem.kSeparatorWhite,
-                    alpha:1)
-            ]
-            
-            for number:String in numbers
+            if !mutableString.string.isEmpty
             {
-                let compositeString:String
-                let numberLowerCase:String = number.lowercased()
+                let separatorString:NSAttributedString = NSAttributedString(
+                    string:kNumberSeparator,
+                    attributes:attributesSeparator)
                 
-                if mutableString.string.isEmpty
-                {
-                    compositeString = "\(kGroupSeparator)\(numberLowerCase)"
-                }
-                else
-                {
-                    let separatorString:NSAttributedString = NSAttributedString(
-                        string:kNumberSeparator,
-                        attributes:attributesSeparator)
-                    mutableString.append(separatorString)
-                    
-                    compositeString = numberLowerCase
-                }
-                
-                let numberString:NSAttributedString = NSAttributedString(
-                    string:compositeString,
-                    attributes:attributes)
-                
-                mutableString.append(numberString)
+                mutableString.append(separatorString)
             }
+            
+            let numberString:NSAttributedString = NSAttributedString(
+                string:numberLowerCase,
+                attributes:attributes)
+            
+            mutableString.append(numberString)
         }
         
         return mutableString

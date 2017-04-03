@@ -5,6 +5,7 @@ class CSearch:CController
     private(set) weak var viewSearch:VSearch!
     private(set) var modelResults:MSearchResults?
     private(set) var resultItem:MSearchResultsItem?
+    private(set) var selectedEntry:MSearchEntry?
     
     override func loadView()
     {
@@ -82,8 +83,8 @@ class CSearch:CController
             region:resultItem.region)
     }
     
-    func entryFound(modelEntry:MSearchEntry)
+    func entryFound(selectedEntry:MSearchEntry)
     {
-        
+        self.selectedEntry = selectedEntry
     }
 }

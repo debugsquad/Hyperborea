@@ -150,6 +150,25 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
     }
     
+    func showEntry()
+    {
+        contentHeight = 1000
+        collectionView.collectionViewLayout.invalidateLayout()
+        
+        let indexPath:IndexPath = IndexPath(item:1, section:0)
+        collectionView.scrollToItem(
+            at:indexPath,
+            at:UICollectionViewScrollPosition.top,
+            animated:true)
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kAfterRefresh)
+        { [weak self] in
+            
+            self?.viewContent?.refresh()
+        }
+    }
+    
     //MARK: collectionView delegate
     
     func scrollViewDidScroll(_ scrollView:UIScrollView)
