@@ -3,7 +3,8 @@ import UIKit
 class VSearchContentModeCell:UICollectionViewCell
 {
     private weak var label:UILabel!
-    private let kLabelTop:CGFloat = 32
+    private let kLabelTop:CGFloat = 42
+    private let kLabelHeight:CGFloat = 28
     
     override init(frame:CGRect)
     {
@@ -23,9 +24,9 @@ class VSearchContentModeCell:UICollectionViewCell
             view:label,
             toView:self,
             constant:kLabelTop)
-        NSLayoutConstraint.bottomToBottom(
+        NSLayoutConstraint.height(
             view:label,
-            toView:self)
+            constant:kLabelHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:label,
             toView:self)

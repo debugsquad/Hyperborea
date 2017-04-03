@@ -9,6 +9,7 @@ class MSearchEntry
     private let kKeyLexicalEntries:String = "lexicalEntries"
     private let kKeyLexicalCategory:String = "lexicalCategory"
     private let kEmpty:String = ""
+    private let kWordFontSize:CGFloat = 32
     
     init(json:Any)
     {
@@ -25,6 +26,9 @@ class MSearchEntry
             return
         }
         
+        let attributesWord:[String:Any] = [
+            NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
+        var stringWord:NSAttributedString?
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         var word:String?
         
@@ -40,9 +44,16 @@ class MSearchEntry
                 continue
             }
             
-            if let rawWord:String = jsonResultMap[kKeyWord] as? String
+            if word == nil
             {
-                word = rawWord
+                if let rawWord:String = jsonResultMap[kKeyWord] as? String
+                {
+                    word = rawWord
+                    
+                    stringWord = NSAttributedString(
+                        string:rawWord,
+                        attributes:attributesWord)
+                }
             }
             
             for jsonEntry:Any in jsonLexicalEntries
@@ -63,6 +74,11 @@ class MSearchEntry
                 let itemString:NSAttributedString = entry.attributedString
                 mutableString.append(itemString)
             }
+        }
+        
+        if let stringWord:NSAttributedString = stringWord
+        {
+            mutableString.insert(stringWord, at:0)
         }
         
         attributedString = mutableString

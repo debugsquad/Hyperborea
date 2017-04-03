@@ -4,7 +4,9 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
 {
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
-    private let kModeHeight:CGFloat = 60
+    private weak var viewMode:VSearchContentMode!
+    private weak var layoutModeHeight:NSLayoutConstraint!
+    private let kModeHeight:CGFloat = 70
     private let kCellHeight:CGFloat = 380
     
     init(controller:CSearch)
@@ -15,6 +17,10 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
+        let viewMode:VSearchContentMode = VSearchContentMode(
+            controller:controller)
+        self.viewMode = viewMode
+        
         let collectionView:VCollection = VCollection()
         collectionView.bounces = false
         collectionView.isScrollEnabled = false
@@ -24,9 +30,25 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.registerCell(cell:VSearchContentCellDefinition.self)
         self.collectionView = collectionView
         
+        addSubview(viewMode)
         addSubview(collectionView)
         
-        NSLayoutConstraint.equals(
+        NSLayoutConstraint.topToTop(
+            view:viewMode,
+            toView:self)
+        layoutModeHeight = NSLayoutConstraint.height(
+            view:viewMode)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewMode,
+            toView:self)
+        
+        NSLayoutConstraint.topToBottom(
+            view:collectionView,
+            toView:viewMode)
+        NSLayoutConstraint.bottomToBottom(
+            view:collectionView,
+            toView:self)
+        NSLayoutConstraint.equalsHorizontal(
             view:collectionView,
             toView:self)
     }
@@ -45,7 +67,15 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func refresh()
     {
-        layoutIfNeeded()
+        if controller.selectedEntry == nil
+        {
+            layoutModeHeight.constant = 0
+        }
+        else
+        {
+            layoutModeHeight.constant = kModeHeight
+        }
+        
         collectionView.reloadData()
     }
     
@@ -57,24 +87,6 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         let size:CGSize = CGSize(
             width:width,
             height:kCellHeight)
-        
-        return size
-    }
-    
-    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
-    {
-        let height:CGFloat
-        
-        if controller.selectedEntry == nil
-        {
-            height = 0
-        }
-        else
-        {
-            height = kHeaderHeight
-        }
-        
-        let size:CGSize = CGSize(width:0, height:height)
         
         return size
     }
@@ -128,34 +140,20 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
     {
         let reusable:UICollectionReusableView
-        
-        if kind == UICollectionElementKindSectionHeader
-        {
-            let header:VSearchContentHeader = collectionView.dequeueReusableSupplementaryView(
-                ofKind:kind,
-                withReuseIdentifier:
-                VSearchContentHeader.reusableIdentifier,
-                for:indexPath) as! VSearchContentHeader
-            header.config(controller:controller)
-            reusable = header
-        }
-        else
-        {
-            let footer:VSearchContentFooter = collectionView.dequeueReusableSupplementaryView(
-                ofKind:kind,
-                withReuseIdentifier:
-                VSearchContentFooter.reusableIdentifier,
-                for:indexPath) as! VSearchContentFooter
-            footer.config(controller:controller)
-            reusable = footer
-        }
+        let footer:VSearchContentFooter = collectionView.dequeueReusableSupplementaryView(
+            ofKind:kind,
+            withReuseIdentifier:
+            VSearchContentFooter.reusableIdentifier,
+            for:indexPath) as! VSearchContentFooter
+        footer.config(controller:controller)
+        reusable = footer
         
         return reusable
     }
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        let reusableIdentifier:String = controller.viewSearch.viewContent!.modelMode.reusableIdentifier()
+        let reusableIdentifier:String = viewMode.model.reusableIdentifier()
         let cell:VSearchContentCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
             reusableIdentifier,

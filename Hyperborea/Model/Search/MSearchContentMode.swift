@@ -15,7 +15,6 @@ class MSearchContentMode
         let itemSynonyms:MSearchContentModeItemSynonyms = MSearchContentModeItemSynonyms()
         let itemAntonyms:MSearchContentModeItemAntonyms = MSearchContentModeItemAntonyms()
         let itemTranslate:MSearchContentModeItemTranslate = MSearchContentModeItemTranslate()
-        let itemExamples:MSearchContentModeItemExamples = MSearchContentModeItemExamples()
         let itemOrigins:MSearchContentModeItemOrigins = MSearchContentModeItemOrigins()
         
         items = [
@@ -23,7 +22,6 @@ class MSearchContentMode
             itemSynonyms,
             itemAntonyms,
             itemTranslate,
-            itemExamples,
             itemOrigins]
         
         selectedIndex = 0

@@ -16,9 +16,9 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
+        translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let borderTop:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
         let borderBottom:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
         
         let collectionView:VCollection = VCollection()
@@ -33,19 +33,8 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
             flow.scrollDirection = UICollectionViewScrollDirection.horizontal
         }
         
-        addSubview(borderTop)
         addSubview(borderBottom)
         addSubview(collectionView)
-        
-        NSLayoutConstraint.topToTop(
-            view:borderTop,
-            toView:self)
-        NSLayoutConstraint.height(
-            view:borderTop,
-            constant:kBorderHeight)
-        NSLayoutConstraint.equalsHorizontal(
-            view:borderTop,
-            toView:self)
         
         NSLayoutConstraint.bottomToBottom(
             view:borderBottom,
@@ -117,14 +106,6 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
         return item
     }
     
-    //MARK: public
-    
-    func config(controller:CSearch)
-    {
-        self.controller = controller
-        collectionView.reloadData()
-    }
-    
     //MARK: collectionView delegate
     
     func scrollViewDidScroll(_ scrollView:UIScrollView)
@@ -141,7 +122,7 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
                 
                 let indexPath:IndexPath = collectionView.indexPathForItem(at:point)
                 
-                else
+            else
             {
                 return
             }
@@ -151,8 +132,6 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
                 at:indexPath,
                 animated:true,
                 scrollPosition:UICollectionViewScrollPosition())
-            
-            collectionView.reloadData()
         }
     }
     
@@ -210,6 +189,5 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
             at:indexPath,
             at:UICollectionViewScrollPosition.centeredHorizontally,
             animated:true)
-        collectionView.reloadData()
     }
 }
