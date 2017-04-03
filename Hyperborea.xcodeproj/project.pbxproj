@@ -43,6 +43,10 @@
 		DA2E83BD1E8C1DE100354343 /* VSearchContentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E83BC1E8C1DE100354343 /* VSearchContentHeader.swift */; };
 		DA2E83BF1E8C1DEE00354343 /* VSearchContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E83BE1E8C1DEE00354343 /* VSearchContentCell.swift */; };
 		DA71ED151E92955100D444C9 /* MSearchRequestEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71ED141E92955100D444C9 /* MSearchRequestEntry.swift */; };
+		DA71ED171E92A41C00D444C9 /* MSearchEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71ED161E92A41C00D444C9 /* MSearchEntry.swift */; };
+		DA71ED191E92A65400D444C9 /* MSearchEntryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71ED181E92A65400D444C9 /* MSearchEntryItem.swift */; };
+		DA71ED1B1E92AB3000D444C9 /* MSearchEntryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71ED1A1E92AB3000D444C9 /* MSearchEntryFactory.swift */; };
+		DA71ED1D1E92ABA800D444C9 /* ResourceLexicalCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA71ED1C1E92ABA800D444C9 /* ResourceLexicalCategory.plist */; };
 		DAA99CC21E8B1B02003B9E2C /* VSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC11E8B1B02003B9E2C /* VSearchResults.swift */; };
 		DAA99CC41E8B2433003B9E2C /* MSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC31E8B2433003B9E2C /* MSearchResults.swift */; };
 		DAA99CC61E8B24DD003B9E2C /* MSearchResultsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC51E8B24DD003B9E2C /* MSearchResultsItem.swift */; };
@@ -127,6 +131,10 @@
 		DA2E83BC1E8C1DE100354343 /* VSearchContentHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContentHeader.swift; sourceTree = "<group>"; };
 		DA2E83BE1E8C1DEE00354343 /* VSearchContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContentCell.swift; sourceTree = "<group>"; };
 		DA71ED141E92955100D444C9 /* MSearchRequestEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchRequestEntry.swift; sourceTree = "<group>"; };
+		DA71ED161E92A41C00D444C9 /* MSearchEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntry.swift; sourceTree = "<group>"; };
+		DA71ED181E92A65400D444C9 /* MSearchEntryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryItem.swift; sourceTree = "<group>"; };
+		DA71ED1A1E92AB3000D444C9 /* MSearchEntryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryFactory.swift; sourceTree = "<group>"; };
+		DA71ED1C1E92ABA800D444C9 /* ResourceLexicalCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceLexicalCategory.plist; sourceTree = "<group>"; };
 		DA8AD6BF1E8AE8D30072560C /* Hyperborea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperborea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8AD6CE1E8AE8D30072560C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA99CC11E8B1B02003B9E2C /* VSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchResults.swift; sourceTree = "<group>"; };
@@ -251,6 +259,7 @@
 				DA1F6FAC1E8AEF1C00484942 /* Localizable.strings */,
 				DA1F6FAF1E8AEF1C00484942 /* ResourceUrl.plist */,
 				DAD5B2781E8F061500F5E481 /* ResourceOxfordCredentials.plist */,
+				DA71ED1C1E92ABA800D444C9 /* ResourceLexicalCategory.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -315,6 +324,9 @@
 				DAD5B2581E8EAEF900F5E481 /* MSearchOptionsItemFavorites.swift */,
 				DAA99CC31E8B2433003B9E2C /* MSearchResults.swift */,
 				DAA99CC51E8B24DD003B9E2C /* MSearchResultsItem.swift */,
+				DA71ED161E92A41C00D444C9 /* MSearchEntry.swift */,
+				DA71ED181E92A65400D444C9 /* MSearchEntryItem.swift */,
+				DA71ED1A1E92AB3000D444C9 /* MSearchEntryFactory.swift */,
 				DA1317411E8C4296000624CF /* MSearchContentMode.swift */,
 				DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */,
 				DA1317451E8C5079000624CF /* MSearchContentModeItemDefinition.swift */,
@@ -467,6 +479,7 @@
 				DAD5B22F1E8EA6F200F5E481 /* spinner.xcassets in Resources */,
 				DA1F6FCE1E8AEF1C00484942 /* Localizable.strings in Resources */,
 				DAD5B2791E8F061500F5E481 /* ResourceOxfordCredentials.plist in Resources */,
+				DA71ED1D1E92ABA800D444C9 /* ResourceLexicalCategory.plist in Resources */,
 				DA1F6FD01E8AEF1C00484942 /* ResourceUrl.plist in Resources */,
 				DA1F6FEC1E8B13A400484942 /* generic.xcassets in Resources */,
 			);
@@ -528,7 +541,9 @@
 				DAA99CC21E8B1B02003B9E2C /* VSearchResults.swift in Sources */,
 				DAD5B24B1E8EA8E500F5E481 /* VBorder.swift in Sources */,
 				DA1317501E8C5EAB000624CF /* MSearchContentModeItemExamples.swift in Sources */,
+				DA71ED1B1E92AB3000D444C9 /* MSearchEntryFactory.swift in Sources */,
 				DA2E83BF1E8C1DEE00354343 /* VSearchContentCell.swift in Sources */,
+				DA71ED191E92A65400D444C9 /* MSearchEntryItem.swift in Sources */,
 				DA1F6FF31E8B168B00484942 /* MSearchOptionsItemSettings.swift in Sources */,
 				DAD5B24F1E8EA8E500F5E481 /* VParentPushBackground.swift in Sources */,
 				DAD5B2691E8EF8E300F5E481 /* MUrls.swift in Sources */,
@@ -537,6 +552,7 @@
 				DAEB0A051E8DC994008FAD26 /* MSettingsItemLanguage.swift in Sources */,
 				DA13174A1E8C5E85000624CF /* MSearchContentModeItemAntonyms.swift in Sources */,
 				DAD5B2491E8EA8E500F5E481 /* VAlert.swift in Sources */,
+				DA71ED171E92A41C00D444C9 /* MSearchEntry.swift in Sources */,
 				DA0F77961E919643003462FF /* VSearchContentFooter.swift in Sources */,
 				DAD1E9861E8C772000D1BC66 /* VSettingsBar.swift in Sources */,
 				DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */,
