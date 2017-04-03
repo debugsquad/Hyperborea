@@ -11,18 +11,19 @@ class MSearchEntryItemNoun:MSearchEntryItem
             NSFontAttributeName:UIFont.medium(size:kFontSize)]
         
         let title:String = NSLocalizedString("RModelHomeEntriesItemNoun_title", comment:"")
-        let senses:RModelHomeEntriesSenses = RModelHomeEntriesSenses(json:json)
-        let number:RModelHomeEntriesNumber = RModelHomeEntriesNumber(json:json)
         let titleString:NSAttributedString = NSAttributedString(
             string:title,
             attributes:attributes)
-        let sensesString:NSAttributedString = senses.attributedString()
         let numberString:NSAttributedString = number.attributedString()
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(titleString)
         mutableString.append(numberString)
-        mutableString.append(sensesString)
+        
+        if let sensesString:NSAttributedString = MSearchEntrySenses.parse(json:json)
+        {
+            mutableString.append(sensesString)
+        }
         
         let reusableIdentifier:String = VHomeWordsCellEntry.reusableIdentifier
         

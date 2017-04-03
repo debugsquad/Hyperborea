@@ -1,6 +1,6 @@
 import UIKit
 
-class RModelHomeEntriesSenses
+class MSearchEntrySenses
 {
     private static let kKeyEntries:String = "entries"
     private static let kKeySenses:String = "senses"
