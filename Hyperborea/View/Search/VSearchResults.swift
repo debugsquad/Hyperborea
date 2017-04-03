@@ -2,7 +2,7 @@ import UIKit
 
 class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
-    private var items:[MSearchResultsItem]?
+    private var model:MSearchResults?
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
     private let kAfterEnable:TimeInterval = 0.5
@@ -43,7 +43,7 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     private func modelAtIndex(index:IndexPath) -> MSearchResultsItem
     {
-        let item:MSearchResultsItem = items![index.item]
+        let item:MSearchResultsItem = model!.items[index.item]
         
         return item
     }
@@ -52,7 +52,7 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func refresh()
     {
-        items = controller.modelResults?.items
+        model = controller.modelResults
         collectionView.reloadData()
     }
     
@@ -72,7 +72,7 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         guard
         
-            let count:Int = items?.count
+            let count:Int = model?.items.count
         
         else
         {

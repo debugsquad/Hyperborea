@@ -60,6 +60,9 @@ class CSearch:CController
         
         if !text.isEmpty
         {
+            modelResults = nil
+            resultItem = nil
+            selectedEntry = nil
             MSearchRequestLook(controller:self, query:text)
         }
     }

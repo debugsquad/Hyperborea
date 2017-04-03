@@ -152,6 +152,8 @@ class MSearchRequestEntity
                 return
             }
             
+            print(json)
+            
             let entry:MSearchEntry = MSearchEntry(json:json)
             controller?.entryFound(selectedEntry:entry)
         }

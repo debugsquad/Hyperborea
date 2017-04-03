@@ -9,7 +9,7 @@ class MSearchEntry
     private let kKeyLexicalEntries:String = "lexicalEntries"
     private let kKeyLexicalCategory:String = "lexicalCategory"
     private let kEmpty:String = ""
-    private let kWordFontSize:CGFloat = 32
+    private let kWordFontSize:CGFloat = 35
     
     init(json:Any)
     {
@@ -50,8 +50,10 @@ class MSearchEntry
                 {
                     word = rawWord
                     
+                    let wordAndBreak:String = "\(rawWord)\n"
+                    
                     stringWord = NSAttributedString(
-                        string:rawWord,
+                        string:wordAndBreak,
                         attributes:attributesWord)
                 }
             }
