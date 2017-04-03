@@ -3,7 +3,7 @@ import UIKit
 class VSearchContentModeCell:UICollectionViewCell
 {
     private weak var label:UILabel!
-    private let kLabelTop:CGFloat = 22
+    private let kLabelTop:CGFloat = 32
     
     override init(frame:CGRect)
     {

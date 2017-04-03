@@ -2,16 +2,13 @@ import UIKit
 
 class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
-    let modelMode:MSearchContentMode
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
-    private let kHeaderHeight:CGFloat = 50
+    private let kModeHeight:CGFloat = 60
     private let kCellHeight:CGFloat = 380
     
     init(controller:CSearch)
     {
-        modelMode = MSearchContentMode()
-        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
@@ -23,7 +20,6 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.isScrollEnabled = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerHeader(header:VSearchContentHeader.self)
         collectionView.registerFooter(footer:VSearchContentFooter.self)
         collectionView.registerCell(cell:VSearchContentCellDefinition.self)
         self.collectionView = collectionView
