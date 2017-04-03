@@ -5,6 +5,8 @@ class MSearchRequestEntity
     private weak var controller:CSearch?
     private weak var task:URLSessionTask?
     private let kMethod:String = "GET"
+    private let kRegionQuery:String = "regions="
+    private let kEmpty:String = ""
     private let kNetworkServiceType:URLRequest.NetworkServiceType = URLRequest.NetworkServiceType.default
     private let kCachePolicy:URLRequest.CachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
     private let kResponseDisposition:URLSession.ResponseDisposition = URLSession.ResponseDisposition.allow
@@ -65,7 +67,18 @@ class MSearchRequestEntity
             return
         }
         
-        let urlString:String = "\(urlHost)/\(urlEndPoint)/\(languageCode)?q=\(queryEscaped)"
+        let regionString:String
+        
+        if let region:String = region
+        {
+            regionString = "/\(kRegionQuery)\(region)"
+        }
+        else
+        {
+            regionString = kEmpty
+        }
+        
+        let urlString:String = "\(urlHost)/\(urlEndPoint)/\(languageCode)/\(wordId)\(regionString)"
         
         #if DEBUG
             
@@ -77,7 +90,7 @@ class MSearchRequestEntity
             
             let url:URL = URL(string:urlString)
             
-            else
+        else
         {
             return
         }
@@ -106,7 +119,7 @@ class MSearchRequestEntity
                 
                 let header:String = headers[key]
                 
-                else
+            else
             {
                 continue
             }
@@ -131,7 +144,7 @@ class MSearchRequestEntity
                 
                 let dataStrong:Data = data
                 
-                else
+            else
             {
                 return
             }
@@ -149,10 +162,7 @@ class MSearchRequestEntity
                 return
             }
             
-            let results:MSearchResults = MSearchResults(
-                json:json)
-            
-            controller?.resultsFound(modelResults:results)
+            print("\(json)")
         }
         
         task?.resume()
