@@ -53,4 +53,11 @@ class MSearchContentMode
             item.cellWidth = cellWidth
         }
     }
+    
+    //MARK: public
+    
+    func reusableIdentifier() -> String
+    {
+        
+    }
 }

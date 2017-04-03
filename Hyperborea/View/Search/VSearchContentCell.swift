@@ -15,4 +15,10 @@ class VSearchContentCell:UICollectionViewCell
     {
         return nil
     }
+    
+    //MARK: public
+    
+    func config(controller:CSearch)
+    {
+    }
 }
