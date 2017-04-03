@@ -50,6 +50,7 @@
 		DA90CB301E92B56300497AD0 /* MSearchEntryItemNoun.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90CB2F1E92B56300497AD0 /* MSearchEntryItemNoun.swift */; };
 		DA90CB321E92B73B00497AD0 /* MSearchEntrySenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90CB311E92B73B00497AD0 /* MSearchEntrySenses.swift */; };
 		DA90CB341E92C90D00497AD0 /* MSearchEntryNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90CB331E92C90D00497AD0 /* MSearchEntryNumber.swift */; };
+		DA90CB361E92DEA300497AD0 /* VSearchContentCellDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90CB351E92DEA300497AD0 /* VSearchContentCellDefinition.swift */; };
 		DAA99CC21E8B1B02003B9E2C /* VSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC11E8B1B02003B9E2C /* VSearchResults.swift */; };
 		DAA99CC41E8B2433003B9E2C /* MSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC31E8B2433003B9E2C /* MSearchResults.swift */; };
 		DAA99CC61E8B24DD003B9E2C /* MSearchResultsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC51E8B24DD003B9E2C /* MSearchResultsItem.swift */; };
@@ -143,6 +144,7 @@
 		DA90CB2F1E92B56300497AD0 /* MSearchEntryItemNoun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryItemNoun.swift; sourceTree = "<group>"; };
 		DA90CB311E92B73B00497AD0 /* MSearchEntrySenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntrySenses.swift; sourceTree = "<group>"; };
 		DA90CB331E92C90D00497AD0 /* MSearchEntryNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryNumber.swift; sourceTree = "<group>"; };
+		DA90CB351E92DEA300497AD0 /* VSearchContentCellDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContentCellDefinition.swift; sourceTree = "<group>"; };
 		DAA99CC11E8B1B02003B9E2C /* VSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchResults.swift; sourceTree = "<group>"; };
 		DAA99CC31E8B2433003B9E2C /* MSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchResults.swift; sourceTree = "<group>"; };
 		DAA99CC51E8B24DD003B9E2C /* MSearchResultsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchResultsItem.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				DA13173F1E8C3E8A000624CF /* VSearchContentHeaderCell.swift */,
 				DA0F77951E919643003462FF /* VSearchContentFooter.swift */,
 				DA2E83BE1E8C1DEE00354343 /* VSearchContentCell.swift */,
+				DA90CB351E92DEA300497AD0 /* VSearchContentCellDefinition.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				DA1317421E8C4296000624CF /* MSearchContentMode.swift in Sources */,
 				DAEB09FB1E8D9959008FAD26 /* VSettingsCell.swift in Sources */,
 				DAEB09FF1E8DC3CB008FAD26 /* VSettingsCellLanguage.swift in Sources */,
+				DA90CB361E92DEA300497AD0 /* VSearchContentCellDefinition.swift in Sources */,
 				DAA99CC81E8B2F22003B9E2C /* VSearchResultsCell.swift in Sources */,
 				DA90CB321E92B73B00497AD0 /* MSearchEntrySenses.swift in Sources */,
 				DA2E83B91E8C02B600354343 /* VSearchResultsFlow.swift in Sources */,

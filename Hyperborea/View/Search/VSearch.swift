@@ -152,7 +152,7 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func showEntry()
     {
-        contentHeight = 1000
+        contentHeight = 600
         collectionView.collectionViewLayout.invalidateLayout()
         
         let indexPath:IndexPath = IndexPath(item:1, section:0)
