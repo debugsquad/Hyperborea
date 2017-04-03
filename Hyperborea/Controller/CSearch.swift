@@ -7,8 +7,21 @@ class CSearch:CController
     private(set) weak var modelResultItem:MSearchResultsItem?
     private(set) weak var modelEntry:MSearchEntry?
     private var mapResults:[String:MSearchResults]
-    private var 
+    private var mapEntry:[String:MSearchEntry]
     
+    override init()
+    {
+        mapResults = [:]
+        mapEntry = [:]
+        
+        super.init()
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
+    }
+
     override func loadView()
     {
         let viewSearch:VSearch = VSearch(controller:self)
@@ -38,6 +51,15 @@ class CSearch:CController
             object:nil)
     }
     
+    private func cleanQuery(rawQuery:String) -> String?
+    {
+        let queryLowerCase:String = rawQuery.lowercased()
+        let queryEscaped:String? = queryLowerCase.addingPercentEncoding(
+            withAllowedCharacters:CharacterSet.urlHostAllowed)
+        
+        return queryEscaped
+    }
+    
     //MARK: public
     
     func openSettings()
@@ -62,15 +84,35 @@ class CSearch:CController
         
         if !text.isEmpty
         {
-            modelResults = nil
-            modelResultItem = nil
-            modelEntry = nil
-            MSearchRequestLook(controller:self, query:text)
+            guard
+                
+                let cleanedQuery:String = cleanQuery(rawQuery:text)
+            
+            else
+            {
+                return
+            }
+            
+            if let cachedResults:MSearchResults = mapResults[cleanedQuery]
+            {
+                print("cached")
+                
+                modelResults = cachedResults
+                viewSearch.refresh()
+            }
+            else
+            {
+                modelResults = nil
+                MSearchRequestLook(controller:self, query:text)
+            }
         }
     }
     
-    func resultsFound(modelResults:MSearchResults)
+    func resultsFound(
+        query:String,
+        modelResults:MSearchResults)
     {
+        mapResults[query] = modelResults
         self.modelResults = modelResults
         viewSearch.refresh()
     }

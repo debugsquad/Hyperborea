@@ -44,22 +44,18 @@ class MSearchRequestLook
     
     private func asyncLookQuery(query:String)
     {
-        let queryLowerCase:String = query.lowercased()
-        
         guard
             
             let urlHost:String = MSession.sharedInstance.modelUrls.urlHost(host:MUrls.Host.hostOxford),
             let urlEndPoint:String = MSession.sharedInstance.modelUrls.urlEnpoint(endPoint:MUrls.EndPoint.oxfordSearch),
-            let languageCode:String = MSession.sharedInstance.settings?.languageCode(),
-            let queryEscaped:String = queryLowerCase.addingPercentEncoding(
-                withAllowedCharacters:CharacterSet.urlHostAllowed)
+            let languageCode:String = MSession.sharedInstance.settings?.languageCode()
         
         else
         {
             return
         }
         
-        let urlString:String = "\(urlHost)/\(urlEndPoint)/\(languageCode)?q=\(queryEscaped)"
+        let urlString:String = "\(urlHost)/\(urlEndPoint)/\(languageCode)?q=\(query)"
         
         #if DEBUG
             
@@ -145,7 +141,9 @@ class MSearchRequestLook
             
             let results:MSearchResults = MSearchResults(
                 json:json)
-            controller?.resultsFound(modelResults:results)
+            controller?.resultsFound(
+                query:query,
+                modelResults:results)
         }
         
         task?.resume()
