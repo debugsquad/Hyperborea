@@ -64,19 +64,19 @@ class MSearchEntry
             }
         }
         
+        self.items = items
+        
         guard
             
             let wordFound:String = word
         
         else
         {
-            self.items = []
             self.word = kEmpty
             
             return
         }
         
-        self.items = []
         self.word = wordFound
     }
 }
