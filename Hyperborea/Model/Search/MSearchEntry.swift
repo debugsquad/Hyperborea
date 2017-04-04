@@ -3,6 +3,7 @@ import UIKit
 class MSearchEntry
 {
     let attributedString:NSAttributedString
+    let wordId:String
     let word:String
     private let kKeyResults:String = "results"
     private let kKeyWord:String = "word"
@@ -12,8 +13,12 @@ class MSearchEntry
     private let kBreak:String = "\n"
     private let kWordFontSize:CGFloat = 40
     
-    init(json:Any)
+    init(
+        wordId:String,
+        json:Any)
     {
+        self.wordId = wordId
+        
         guard
             
             let jsonMap:[String:Any] = json as? [String:Any],

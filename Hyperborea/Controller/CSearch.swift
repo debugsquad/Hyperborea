@@ -146,11 +146,9 @@ class CSearch:CController
         }
     }
     
-    func entryFound(
-        wordId:String,
-        modelEntry:MSearchEntry)
+    func entryFound(modelEntry:MSearchEntry)
     {
-        mapEntry[wordId] = modelEntry
+        mapEntry[modelEntry.wordId] = modelEntry
         self.modelEntry = modelEntry
         viewSearch.showEntry()
     }
