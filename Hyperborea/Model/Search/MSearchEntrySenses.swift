@@ -7,6 +7,7 @@ class MSearchEntrySenses
     private static let kKeyEntries:String = "entries"
     private static let kKeySenses:String = "senses"
     private static let kKeyDefinitions:String = "definitions"
+    private static let kKeyCrossReference:String = "crossReferenceMarkers"
     private static let kKeyExamples:String = "examples"
     private static let kKeyExampleText:String = "text"
     private static let kKeySubsenses:String = "subsenses"
@@ -97,15 +98,44 @@ class MSearchEntrySenses
     
     private class func parseItem(json:[String:Any]) -> NSAttributedString?
     {
-        var examples:[String] = []
+        let attributesTitle:[String:Any] = [
+            NSFontAttributeName:UIFont.regular(size:kTitleFontSize)]
+        let attributesExample:[String:Any] = [
+            NSFontAttributeName:UIFont.italic(size:kExampleFontSize),
+            NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
+        let stringBreak:NSAttributedString = NSAttributedString(
+            string:kBreak,
+            attributes:attributesTitle)
+        let stringBreakExample:NSAttributedString = NSAttributedString(
+            string:kBreakExample,
+            attributes:attributesExample)
         
-        guard
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
-            let titles:[String] = json[kKeyDefinitions] as? [String]
-        
-        else
+        if let sensesTitles:[String] = json[kKeyDefinitions] as? [String]
         {
-            return nil
+            for sensesTitle:String in sensesTitles
+            {
+                let titleString:NSAttributedString = NSAttributedString(
+                    string:sensesTitle,
+                    attributes:attributesTitle)
+                
+                mutableString.append(stringBreak)
+                mutableString.append(titleString)
+            }
+        }
+        
+        if let sensesCrossReference:[String] = json[kKeyCrossReference] as? [String]
+        {
+            for crossReference:String in sensesCrossReference
+            {
+                let referenceString:NSAttributedString = NSAttributedString(
+                    string:crossReference,
+                    attributes:attributesTitle)
+                
+                mutableString.append(stringBreak)
+                mutableString.append(referenceString)
+            }
         }
         
         if let sensesExamples:[Any] = json[kKeyExamples] as? [Any]
@@ -122,42 +152,13 @@ class MSearchEntrySenses
                     continue
                 }
                 
-                examples.append(exampleText)
+                let exampleString:NSAttributedString = NSAttributedString(
+                    string:exampleText,
+                    attributes:attributesExample)
+                
+                mutableString.append(stringBreakExample)
+                mutableString.append(exampleString)
             }
-        }
-        
-        let attributesTitle:[String:Any] = [
-            NSFontAttributeName:UIFont.regular(size:kTitleFontSize)]
-        let attributesExample:[String:Any] = [
-            NSFontAttributeName:UIFont.italic(size:kExampleFontSize),
-            NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
-        let stringBreak:NSAttributedString = NSAttributedString(
-            string:kBreak,
-            attributes:attributesTitle)
-        let stringBreakExample:NSAttributedString = NSAttributedString(
-            string:kBreakExample,
-            attributes:attributesExample)
-        
-        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
-        
-        for title:String in titles
-        {
-            let titleString:NSAttributedString = NSAttributedString(
-                string:title,
-                attributes:attributesTitle)
-            
-            mutableString.append(stringBreak)
-            mutableString.append(titleString)
-        }
-        
-        for example:String in examples
-        {
-            let exampleString:NSAttributedString = NSAttributedString(
-                string:example,
-                attributes:attributesExample)
-            
-            mutableString.append(stringBreakExample)
-            mutableString.append(exampleString)
         }
         
         return mutableString

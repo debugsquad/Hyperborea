@@ -88,9 +88,9 @@ class CSearch:CController
             if !text.isEmpty
             {
                 guard
-                    
-                    let cleanedQuery:String = self?.cleanQuery(rawQuery:text),
-                    let strongSelf:CSearch = self
+                
+                    let strongSelf:CSearch = self,
+                    let cleanedQuery:String = strongSelf.cleanQuery(rawQuery:text)
                     
                 else
                 {
@@ -107,7 +107,7 @@ class CSearch:CController
                     strongSelf.modelResults = nil
                     MSearchRequestLook(
                         controller:strongSelf,
-                        query:text)
+                        query:cleanedQuery)
                 }
             }
         }
