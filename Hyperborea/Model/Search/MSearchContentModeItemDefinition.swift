@@ -11,4 +11,9 @@ class MSearchContentModeItemDefinition:MSearchContentModeItem
             rawName:rawName,
             reusableIdentifier:reusableIdentifier)
     }
+    
+    override func contentString(modelEntry:MSearchEntry) -> NSAttributedString?
+    {
+        return modelEntry.attributedString
+    }
 }
