@@ -19,7 +19,10 @@ class VSearchContentCellDefinition:VSearchContentCell
         
         addSubview(label)
         
-        NSLayoutConstraint.equals(
+        NSLayoutConstraint.equalsVertical(
+            view:label,
+            toView:self)
+        NSLayoutConstraint.equalsHorizontal(
             view:label,
             toView:self,
             margin:kLabelMarginHorizontal)

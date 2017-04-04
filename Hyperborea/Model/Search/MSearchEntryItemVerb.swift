@@ -9,7 +9,7 @@ class MSearchEntryItemVerb:MSearchEntryItem
         let attributes:[String:Any] = [
             NSFontAttributeName:UIFont.medium(size:kFontSize)]
         
-        let title:String = NSLocalizedString("MSearchEntryItemNoun_title", comment:"")
+        let title:String = NSLocalizedString("MSearchEntryItemVerb_title", comment:"")
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
         let titleString:NSAttributedString = NSAttributedString(

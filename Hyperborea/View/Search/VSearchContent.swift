@@ -7,7 +7,6 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var viewMode:VSearchContentMode!
     private weak var layoutModeHeight:NSLayoutConstraint!
     private let kModeHeight:CGFloat = 70
-    private let kCellHeight:CGFloat = 380
     
     init(controller:CSearch)
     {
@@ -84,9 +83,11 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
         let width:CGFloat = bounds.maxX
+        let height:CGFloat = bounds.maxY
+        let usableHeight:CGFloat = height - kModeHeight
         let size:CGSize = CGSize(
             width:width,
-            height:kCellHeight)
+            height:usableHeight)
         
         return size
     }
