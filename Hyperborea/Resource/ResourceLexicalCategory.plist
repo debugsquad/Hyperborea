@@ -37,7 +37,7 @@
 	<key>Residual</key>
 	<string>MSearchEntryItemResidual</string>
 	<key>Suffix</key>
-	<string>RModelHomeEntriesItemSuffix</string>
+	<string>MSearchEntryItemSuffix</string>
 	<key>Verb</key>
 	<string>MSearchEntryItemVerb</string>
 </dict>
