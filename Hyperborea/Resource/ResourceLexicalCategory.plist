@@ -11,9 +11,9 @@
 	<key>Conjunction</key>
 	<string>MSearchEntryItemConjunction</string>
 	<key>Contraction</key>
-	<string>RModelHomeEntriesItemContraction</string>
+	<string>MSearchEntryItemContraction</string>
 	<key>Determiner</key>
-	<string>RModelHomeEntriesItemDeterminer</string>
+	<string>MSearchEntryItemDeterminer</string>
 	<key>Idiomatic</key>
 	<string>RModelHomeEntriesItemIdiomatic</string>
 	<key>Interjection</key>
