@@ -11,4 +11,9 @@ class MSearchContentModeItemSynonyms:MSearchContentModeItem
             rawName:rawName,
             reusableIdentifier:reusableIdentifier)
     }
+    
+    override func selected(controller:CSearch)
+    {
+        controller.fetchSynonyms()
+    }
 }

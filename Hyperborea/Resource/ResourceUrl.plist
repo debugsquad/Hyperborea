@@ -13,6 +13,6 @@
 	<key>oxfordEntries</key>
 	<string>entries</string>
 	<key>oxfordSynonyms</key>
-	<string>synonyms</string>
+	<string>entries</string>
 </dict>
 </plist>

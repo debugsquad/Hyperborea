@@ -15,4 +15,10 @@ class MSearchContentModeItem
         self.reusableIdentifier = reusableIdentifier
         cellWidth = 0
     }
+    
+    //MARK: public
+    
+    func selected(controller:CSearch)
+    {
+    }
 }

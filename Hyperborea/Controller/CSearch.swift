@@ -105,6 +105,7 @@ class CSearch:CController
                 else
                 {
                     strongSelf.modelResults = nil
+                    
                     MSearchRequestLook(
                         controller:strongSelf,
                         query:cleanedQuery)
@@ -151,5 +152,21 @@ class CSearch:CController
         mapEntry[modelEntry.wordId] = modelEntry
         self.modelEntry = modelEntry
         viewSearch.showEntry()
+    }
+    
+    func fetchSynonyms()
+    {
+        guard
+            
+            let modelEntry:MSearchEntry = self.modelEntry
+        
+        else
+        {
+            return
+        }
+        
+        MSearchRequestSynonyms(
+            controller:self,
+            model:modelEntry)
     }
 }
