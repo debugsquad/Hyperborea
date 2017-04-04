@@ -25,7 +25,7 @@
 	<key>Other</key>
 	<string>MSearchEntryItemOther</string>
 	<key>Particle</key>
-	<string>RModelHomeEntriesItemParticle</string>
+	<string>MSearchEntryItemParticle</string>
 	<key>Predeterminer</key>
 	<string>RModelHomeEntriesItemPredeterminer</string>
 	<key>Prefix</key>
