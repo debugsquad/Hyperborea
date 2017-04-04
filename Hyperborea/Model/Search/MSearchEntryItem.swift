@@ -3,14 +3,27 @@ import UIKit
 class MSearchEntryItem
 {
     let attributedString:NSAttributedString
+    private let kFontSize:CGFloat = 18
     
     required init?(json:Any)
     {
         return nil
     }
     
-    init(attributedString:NSAttributedString)
+    init(
+        title:String,
+        attributedString:NSAttributedString)
     {
-        self.attributedString = attributedString
+        let attributes:[String:Any] = [
+            NSFontAttributeName:UIFont.bold(size:kFontSize)]
+        let stringTitle:NSAttributedString = NSAttributedString(
+            string:title,
+            attributes:attributes)
+        
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        mutableString.append(stringTitle)
+        mutableString.append(attributedString)
+        
+        self.attributedString = mutableString
     }
 }

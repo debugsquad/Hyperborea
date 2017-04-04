@@ -68,7 +68,7 @@ class VSearchResults:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
         guard
         

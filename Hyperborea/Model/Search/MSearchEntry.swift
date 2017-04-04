@@ -10,7 +10,7 @@ class MSearchEntry
     private let kKeyLexicalCategory:String = "lexicalCategory"
     private let kEmpty:String = ""
     private let kBreak:String = "\n"
-    private let kWordFontSize:CGFloat = 35
+    private let kWordFontSize:CGFloat = 40
     
     init(json:Any)
     {

@@ -2,20 +2,10 @@ import UIKit
 
 class MSearchEntryItemVerb:MSearchEntryItem
 {
-    private let kFontSize:CGFloat = 23
-    
     required init?(json:Any)
     {
-        let attributes:[String:Any] = [
-            NSFontAttributeName:UIFont.medium(size:kFontSize)]
-        
         let title:String = NSLocalizedString("MSearchEntryItemVerb_title", comment:"")
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
-        
-        let titleString:NSAttributedString = NSAttributedString(
-            string:title,
-            attributes:attributes)
-        mutableString.append(titleString)
         
         if let tenseString:NSAttributedString = MSearchEntryTense.parse(json:json)
         {
@@ -27,6 +17,8 @@ class MSearchEntryItemVerb:MSearchEntryItem
             mutableString.append(sensesString)
         }
         
-        super.init(attributedString:mutableString)
+        super.init(
+            title:title,
+            attributedString:mutableString)
     }
 }

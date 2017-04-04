@@ -11,7 +11,7 @@ class MSearchEntrySenses
     private static let kKeyExampleText:String = "text"
     private static let kKeySubsenses:String = "subsenses"
     private static let kTitleFontSize:CGFloat = 18
-    private static let kExampleFontSize:CGFloat = 17
+    private static let kExampleFontSize:CGFloat = 15
     
     class func parse(json:Any) -> NSAttributedString?
     {
