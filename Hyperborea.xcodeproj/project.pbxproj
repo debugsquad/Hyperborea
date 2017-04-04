@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DA0260971E9317A100CD0D2A /* MSearchEntryItemVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0260961E9317A100CD0D2A /* MSearchEntryItemVerb.swift */; };
 		DA0260991E93248400CD0D2A /* MSearchEntryTense.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0260981E93248400CD0D2A /* MSearchEntryTense.swift */; };
-		DA0F77961E919643003462FF /* VSearchContentFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0F77951E919643003462FF /* VSearchContentFooter.swift */; };
 		DA1317421E8C4296000624CF /* MSearchContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317411E8C4296000624CF /* MSearchContentMode.swift */; };
 		DA1317441E8C42A4000624CF /* MSearchContentModeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */; };
 		DA1317461E8C5079000624CF /* MSearchContentModeItemDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317451E8C5079000624CF /* MSearchContentModeItemDefinition.swift */; };
@@ -121,7 +120,6 @@
 /* Begin PBXFileReference section */
 		DA0260961E9317A100CD0D2A /* MSearchEntryItemVerb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryItemVerb.swift; sourceTree = "<group>"; };
 		DA0260981E93248400CD0D2A /* MSearchEntryTense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryTense.swift; sourceTree = "<group>"; };
-		DA0F77951E919643003462FF /* VSearchContentFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContentFooter.swift; sourceTree = "<group>"; };
 		DA1317411E8C4296000624CF /* MSearchContentMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentMode.swift; sourceTree = "<group>"; };
 		DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItem.swift; sourceTree = "<group>"; };
 		DA1317451E8C5079000624CF /* MSearchContentModeItemDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItemDefinition.swift; sourceTree = "<group>"; };
@@ -357,7 +355,6 @@
 				DA2E83BA1E8C136700354343 /* VSearchContent.swift */,
 				DA90CB371E92F57500497AD0 /* VSearchContentMode.swift */,
 				DA90CB391E92F80A00497AD0 /* VSearchContentModeCell.swift */,
-				DA0F77951E919643003462FF /* VSearchContentFooter.swift */,
 				DA22F01C1E93FAA7009AD88E /* VSearchContentHeader.swift */,
 				DA2E83BE1E8C1DEE00354343 /* VSearchContentCell.swift */,
 				DA90CB351E92DEA300497AD0 /* VSearchContentCellDefinition.swift */,
@@ -644,7 +641,6 @@
 				DAD5B2491E8EA8E500F5E481 /* VAlert.swift in Sources */,
 				DA71ED171E92A41C00D444C9 /* MSearchEntry.swift in Sources */,
 				DA22F00F1E93F3E4009AD88E /* MSearchEntryItemParticle.swift in Sources */,
-				DA0F77961E919643003462FF /* VSearchContentFooter.swift in Sources */,
 				DA22F0031E93F08B009AD88E /* MSearchEntryItemDeterminer.swift in Sources */,
 				DA22F0051E93F0F2009AD88E /* MSearchEntryItemIdiomatic.swift in Sources */,
 				DAD1E9861E8C772000D1BC66 /* VSettingsBar.swift in Sources */,

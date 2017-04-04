@@ -141,7 +141,7 @@ class CSearch:CController
             
             MSearchRequestEntity(
                 controller:self,
-                wordId:modelResultItem.wordId,
+                wordId:wordId,
                 region:modelResultItem.region)
         }
     }

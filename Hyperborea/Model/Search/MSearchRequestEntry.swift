@@ -149,6 +149,10 @@ class MSearchRequestEntity
             }
             catch
             {
+                let string:String? = String(data:dataStrong, encoding:String.Encoding.utf8)
+                
+                print(string)
+                
                 return
             }
             

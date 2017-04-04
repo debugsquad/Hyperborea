@@ -139,6 +139,8 @@ class MSearchRequestLook
                 return
             }
             
+            print(json)
+            
             let results:MSearchResults = MSearchResults(
                 json:json)
             self.controller?.resultsFound(

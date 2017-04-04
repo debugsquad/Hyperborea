@@ -14,5 +14,7 @@ class VSearchCellContent:VSearchCell
         NSLayoutConstraint.equals(
             view:viewContent,
             toView:self)
+        
+        print("cell content")
     }
 }

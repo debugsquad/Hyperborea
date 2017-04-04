@@ -8,12 +8,14 @@ class MSearchResultsItem
     private static let kReplaceO:String = "ó"
     private static let kReplaceU:String = "ú"
     private static let kReplaceExcalamation:String = "¡"
+    private static let kReplaceDiagonal:String = "%2F"
     private static let kNormalA:String = "a"
     private static let kNormalE:String = "e"
     private static let kNormalI:String = "i"
     private static let kNormalO:String = "o"
     private static let kNormalU:String = "u"
     private static let kNormalExclamation:String = "%C2%A1"
+    private static let kNormalDiagonal:String = "a"
     
     let wordId:String
     let word:String
@@ -49,6 +51,9 @@ class MSearchResultsItem
         newWordId = newWordId.replacingOccurrences(
             of:kReplaceExcalamation,
             with:kNormalExclamation)
+        newWordId = newWordId.replacingOccurrences(
+            of:kReplaceDiagonal,
+            with:kNormalDiagonal)
         
         return newWordId
     }

@@ -5,6 +5,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
     private weak var viewMode:VSearchContentMode!
+    private weak var spinner:VSpinner!
     private weak var layoutModeHeight:NSLayoutConstraint!
     private let kModeHeight:CGFloat = 70
     private let kHeaderHeight:CGFloat = 60
@@ -28,12 +29,20 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerHeader(header:VSearchContentHeader.self)
-        collectionView.registerFooter(footer:VSearchContentFooter.self)
         collectionView.registerCell(cell:VSearchContentCellDefinition.self)
         self.collectionView = collectionView
         
+        let spinner:VSpinner = VSpinner()
+        spinner.stopAnimating()
+        self.spinner = spinner
+        
+        addSubview(spinner)
         addSubview(viewMode)
         addSubview(collectionView)
+        
+        NSLayoutConstraint.equals(
+            view:spinner,
+            toView:self)
         
         NSLayoutConstraint.topToTop(
             view:viewMode,
@@ -74,11 +83,13 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         if controller.modelEntry == nil
         {
             layoutModeHeight.constant = 0
-            totalHeight = 300
+            spinner.startAnimating()
+            totalHeight = kLoadingHeight
         }
         else
         {
             layoutModeHeight.constant = kModeHeight
+            spinner.stopAnimating()
             totalHeight = 650
         }
         
@@ -119,31 +130,6 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         return size
     }
     
-    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForFooterInSection section:Int) -> CGSize
-    {
-        let height:CGFloat
-        
-        if controller.modelEntry == nil
-        {
-            if controller.modelResultItem == nil
-            {
-                height = 0
-            }
-            else
-            {
-                height = bounds.height
-            }
-        }
-        else
-        {
-            height = 0
-        }
-        
-        let size:CGSize = CGSize(width:0, height:height)
-        
-        return size
-    }
-    
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {
         return 1
@@ -167,30 +153,14 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
     {
-        let reusable:UICollectionReusableView
+        let header:VSearchContentHeader = collectionView.dequeueReusableSupplementaryView(
+            ofKind:kind,
+            withReuseIdentifier:
+            VSearchContentHeader.reusableIdentifier,
+            for:indexPath) as! VSearchContentHeader
+        header.config(controller:controller)
         
-        if kind == UICollectionElementKindSectionHeader
-        {
-            let header:VSearchContentHeader = collectionView.dequeueReusableSupplementaryView(
-                ofKind:kind,
-                withReuseIdentifier:
-                VSearchContentHeader.reusableIdentifier,
-                for:indexPath) as! VSearchContentHeader
-            header.config(controller:controller)
-            reusable = header
-        }
-        else
-        {
-            let footer:VSearchContentFooter = collectionView.dequeueReusableSupplementaryView(
-                ofKind:kind,
-                withReuseIdentifier:
-                VSearchContentFooter.reusableIdentifier,
-                for:indexPath) as! VSearchContentFooter
-            footer.config(controller:controller)
-            reusable = footer
-        }
-        
-        return reusable
+        return header
     }
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
