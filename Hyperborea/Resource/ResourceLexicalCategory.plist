@@ -35,7 +35,7 @@
 	<key>Pronoun</key>
 	<string>MSearchEntryItemPronoun</string>
 	<key>Residual</key>
-	<string>RModelHomeEntriesItemResidual</string>
+	<string>MSearchEntryItemResidual</string>
 	<key>Suffix</key>
 	<string>RModelHomeEntriesItemSuffix</string>
 	<key>Verb</key>
