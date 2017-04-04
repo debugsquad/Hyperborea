@@ -27,7 +27,24 @@ class VSearchContentHeader:UICollectionReusableView
             action:#selector(actionShare(sender:)),
             for:UIControlEvents.touchUpInside)
         
+        let buttonFavorite:UIButton = UIButton()
+        buttonFavorite.translatesAutoresizingMaskIntoConstraints = false
+        buttonFavorite.setImage(
+            #imageLiteral(resourceName: "assetGenericFavorite").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            for:UIControlState.normal)
+        buttonFavorite.setImage(
+            #imageLiteral(resourceName: "assetGenericFavorite").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            for:UIControlState.highlighted)
+        buttonFavorite.imageView!.tintColor = UIColor(white:0, alpha:0.1)
+        buttonFavorite.imageView!.clipsToBounds = true
+        buttonFavorite.imageView!.contentMode = UIViewContentMode.center
+        buttonFavorite.addTarget(
+            self,
+            action:#selector(actionFavorite(sender:)),
+            for:UIControlEvents.touchUpInside)
+        
         addSubview(buttonShare)
+        addSubview(buttonFavorite)
         
         NSLayoutConstraint.equalsVertical(
             view:buttonShare,
@@ -37,6 +54,16 @@ class VSearchContentHeader:UICollectionReusableView
             toView:self)
         NSLayoutConstraint.width(
             view:buttonShare,
+            constant:kButtonWidth)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:buttonFavorite,
+            toView:self)
+        NSLayoutConstraint.rightToLeft(
+            view:buttonFavorite,
+            toView:buttonShare)
+        NSLayoutConstraint.width(
+            view:buttonFavorite,
             constant:kButtonWidth)
     }
     
@@ -48,6 +75,11 @@ class VSearchContentHeader:UICollectionReusableView
     //MARK: action
     
     func actionShare(sender button:UIButton)
+    {
+        
+    }
+    
+    func actionFavorite(sender button:UIButton)
     {
         
     }
