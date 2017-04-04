@@ -142,7 +142,10 @@ class MSearchRequestSynonyms
                 return
             }
             
-            print(json)
+            let modelSynonyms:MSearchSynonyms = MSearchSynonyms(json:json)
+            model.synonyms = modelSynonyms
+            
+            self.controller?.showContent(modelEntry:model)
         }
         
         task?.resume()

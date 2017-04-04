@@ -155,7 +155,7 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
     }
     
-    func showEntry()
+    func showContent()
     {
         DispatchQueue.main.async
         { [weak self] in

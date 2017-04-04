@@ -21,4 +21,9 @@ class MSearchContentModeItem
     func selected(controller:CSearch)
     {
     }
+    
+    func contentString(modelEntry:MSearchEntry) -> NSAttributedString?
+    {
+        return nil
+    }
 }

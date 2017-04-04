@@ -133,7 +133,7 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
                 animated:true,
                 scrollPosition:UICollectionViewScrollPosition())
             
-            let item:MSearchContentModeItem = modelAtIndex(index:indexPath)
+            let item:MSearchContentModeItem = model.currentItem()
             item.selected(controller:controller)
         }
     }
@@ -188,7 +188,7 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
         trackingScroll = false
         model.selectedIndex = indexPath.item
         
-        let item:MSearchContentModeItem = modelAtIndex(index:indexPath)
+        let item:MSearchContentModeItem = model.currentItem()
         item.selected(controller:controller)
         
         collectionView.scrollToItem(

@@ -185,7 +185,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        let reusableIdentifier:String = viewMode.model.reusableIdentifier()
+        let reusableIdentifier:String = viewMode.model.currentItem().reusableIdentifier
         let cell:VSearchContentCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
             reusableIdentifier,

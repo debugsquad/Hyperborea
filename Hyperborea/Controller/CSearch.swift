@@ -133,7 +133,7 @@ class CSearch:CController
         if let cachedEntry:MSearchEntry = mapEntry[wordId]
         {
             modelEntry = cachedEntry
-            viewSearch.showEntry()
+            viewSearch.showContent()
         }
         else
         {
@@ -147,11 +147,11 @@ class CSearch:CController
         }
     }
     
-    func entryFound(modelEntry:MSearchEntry)
+    func showContent(modelEntry:MSearchEntry)
     {
         mapEntry[modelEntry.wordId] = modelEntry
         self.modelEntry = modelEntry
-        viewSearch.showEntry()
+        viewSearch.showContent()
     }
     
     func fetchSynonyms()

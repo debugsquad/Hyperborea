@@ -375,6 +375,7 @@
 				DAD5B2581E8EAEF900F5E481 /* MSearchOptionsItemFavorites.swift */,
 				DAA99CC31E8B2433003B9E2C /* MSearchResults.swift */,
 				DAA99CC51E8B24DD003B9E2C /* MSearchResultsItem.swift */,
+				DA22F0221E9448CB009AD88E /* MSearchSynonyms.swift */,
 				DA71ED161E92A41C00D444C9 /* MSearchEntry.swift */,
 				DA90CB311E92B73B00497AD0 /* MSearchEntrySenses.swift */,
 				DA90CB331E92C90D00497AD0 /* MSearchEntryNumber.swift */,
@@ -411,7 +412,6 @@
 				DAD5B25F1E8EDB6900F5E481 /* MSearchRequestLook.swift */,
 				DA71ED141E92955100D444C9 /* MSearchRequestEntry.swift */,
 				DA22F0201E9444D8009AD88E /* MSearchRequestSynonyms.swift */,
-				DA22F0221E9448CB009AD88E /* MSearchSynonyms.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
