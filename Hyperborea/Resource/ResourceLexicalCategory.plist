@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Adjective</key>
-	<string>RModelHomeEntriesItemAdjective</string>
+	<string>MSearchEntryItemAdjective</string>
 	<key>Adverb</key>
 	<string>RModelHomeEntriesItemAdverb</string>
 	<key>Combining Form</key>
