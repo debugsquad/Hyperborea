@@ -16,4 +16,9 @@ class MSearchContentModeItemSynonyms:MSearchContentModeItem
     {
         controller.fetchSynonyms()
     }
+    
+    override func contentString(controller:CSearch) -> NSAttributedString?
+    {
+        return controller.modelEntry?.synonyms?.attributedString
+    }
 }
