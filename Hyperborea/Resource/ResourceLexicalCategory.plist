@@ -5,7 +5,7 @@
 	<key>Adjective</key>
 	<string>MSearchEntryItemAdjective</string>
 	<key>Adverb</key>
-	<string>RModelHomeEntriesItemAdverb</string>
+	<string>MSearchEntryItemAdverb</string>
 	<key>Combining Form</key>
 	<string>RModelHomeEntriesItemCombiningForm</string>
 	<key>Conjunction</key>
