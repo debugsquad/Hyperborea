@@ -33,7 +33,7 @@
 	<key>Preposition</key>
 	<string>MSearchEntryItemPreposition</string>
 	<key>Pronoun</key>
-	<string>RModelHomeEntriesItemPronoun</string>
+	<string>MSearchEntryItemPronoun</string>
 	<key>Residual</key>
 	<string>RModelHomeEntriesItemResidual</string>
 	<key>Suffix</key>
