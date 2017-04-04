@@ -21,7 +21,7 @@
 	<key>Noun</key>
 	<string>MSearchEntryItemNoun</string>
 	<key>Numeral</key>
-	<string>RModelHomeEntriesItemNumeral</string>
+	<string>MSearchEntryItemNumeral</string>
 	<key>Other</key>
 	<string>RModelHomeEntriesItemOther</string>
 	<key>Particle</key>
