@@ -17,9 +17,9 @@ class MSearchEntryItemVerb:MSearchEntryItem
             attributes:attributes)
         mutableString.append(titleString)
         
-        if let numberString:NSAttributedString = MSearchEntryNumber.parse(json:json)
+        if let tenseString:NSAttributedString = MSearchEntryTense.parse(json:json)
         {
-            mutableString.append(numberString)
+            mutableString.append(tenseString)
         }
         
         if let sensesString:NSAttributedString = MSearchEntrySenses.parse(json:json)
