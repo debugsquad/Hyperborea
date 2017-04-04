@@ -19,7 +19,7 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let borderBottom:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
+        let borderBottom:VBorder = VBorder(color:UIColor.hyperBlue)
         
         let collectionView:VCollection = VCollection()
         collectionView.alwaysBounceHorizontal = true
