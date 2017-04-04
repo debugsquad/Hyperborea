@@ -45,6 +45,7 @@
 		DA22F0011E93F037009AD88E /* MSearchEntryItemContraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F0001E93F037009AD88E /* MSearchEntryItemContraction.swift */; };
 		DA22F0031E93F08B009AD88E /* MSearchEntryItemDeterminer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F0021E93F08B009AD88E /* MSearchEntryItemDeterminer.swift */; };
 		DA22F0051E93F0F2009AD88E /* MSearchEntryItemIdiomatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F0041E93F0F2009AD88E /* MSearchEntryItemIdiomatic.swift */; };
+		DA22F0071E93F147009AD88E /* MSearchEntryItemInterjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F0061E93F147009AD88E /* MSearchEntryItemInterjection.swift */; };
 		DA2E83B91E8C02B600354343 /* VSearchResultsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E83B81E8C02B600354343 /* VSearchResultsFlow.swift */; };
 		DA2E83BB1E8C136700354343 /* VSearchContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E83BA1E8C136700354343 /* VSearchContent.swift */; };
 		DA2E83BF1E8C1DEE00354343 /* VSearchContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E83BE1E8C1DEE00354343 /* VSearchContentCell.swift */; };
@@ -145,6 +146,7 @@
 		DA22F0001E93F037009AD88E /* MSearchEntryItemContraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryItemContraction.swift; sourceTree = "<group>"; };
 		DA22F0021E93F08B009AD88E /* MSearchEntryItemDeterminer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryItemDeterminer.swift; sourceTree = "<group>"; };
 		DA22F0041E93F0F2009AD88E /* MSearchEntryItemIdiomatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryItemIdiomatic.swift; sourceTree = "<group>"; };
+		DA22F0061E93F147009AD88E /* MSearchEntryItemInterjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryItemInterjection.swift; sourceTree = "<group>"; };
 		DA2E83B81E8C02B600354343 /* VSearchResultsFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchResultsFlow.swift; sourceTree = "<group>"; };
 		DA2E83BA1E8C136700354343 /* VSearchContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContent.swift; sourceTree = "<group>"; };
 		DA2E83BE1E8C1DEE00354343 /* VSearchContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContentCell.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				DA22F0001E93F037009AD88E /* MSearchEntryItemContraction.swift */,
 				DA22F0021E93F08B009AD88E /* MSearchEntryItemDeterminer.swift */,
 				DA22F0041E93F0F2009AD88E /* MSearchEntryItemIdiomatic.swift */,
+				DA22F0061E93F147009AD88E /* MSearchEntryItemInterjection.swift */,
 				DA71ED1A1E92AB3000D444C9 /* MSearchEntryFactory.swift */,
 				DA1317411E8C4296000624CF /* MSearchContentMode.swift */,
 				DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */,
@@ -548,6 +551,7 @@
 				DAA99CC41E8B2433003B9E2C /* MSearchResults.swift in Sources */,
 				DAEB0A011E8DC978008FAD26 /* MSettings.swift in Sources */,
 				DA13174E1E8C5E9A000624CF /* MSearchContentModeItemTranslate.swift in Sources */,
+				DA22F0071E93F147009AD88E /* MSearchEntryItemInterjection.swift in Sources */,
 				DAEC1AB61E8C81390001B27B /* MSettingsBackground.swift in Sources */,
 				DAD5B2651E8EEEAA00F5E481 /* MSession.swift in Sources */,
 				DAF622981E908F5C0030772B /* VSearchCellContent.swift in Sources */,

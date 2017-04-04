@@ -17,7 +17,7 @@
 	<key>Idiomatic</key>
 	<string>MSearchEntryItemIdiomatic</string>
 	<key>Interjection</key>
-	<string>RModelHomeEntriesItemInterjection</string>
+	<string>MSearchEntryItemInterjection</string>
 	<key>Noun</key>
 	<string>MSearchEntryItemNoun</string>
 	<key>Numeral</key>
