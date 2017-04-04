@@ -10,8 +10,8 @@ class MSearchEntrySenses
     private static let kKeySubsenses:String = "subsenses"
     private static let kSensesSeparator:String = "\n"
     private static let kExampleSeparator:String = "\n• "
-    private static let kTitleFontSize:CGFloat = 15
-    private static let kExampleFontSize:CGFloat = 14
+    private static let kTitleFontSize:CGFloat = 18
+    private static let kExampleFontSize:CGFloat = 16
     
     class func parse(json:Any) -> NSAttributedString?
     {
