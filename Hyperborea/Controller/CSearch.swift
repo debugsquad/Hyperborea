@@ -130,16 +130,11 @@ class CSearch:CController
         self.modelResultItem = modelResultItem
         let wordId:String = modelResultItem.wordId
         
-        if let cachedEntry:MSearchEntry = mapEntry[wordId]
+        modelEntry = mapEntry[wordId]
+        viewSearch.showContent(restartMode:true)
+        
+        if modelEntry == nil
         {
-            modelEntry = cachedEntry
-            viewSearch.showContent()
-        }
-        else
-        {
-            modelEntry = nil
-            viewSearch.resultSelected()
-            
             MSearchRequestEntity(
                 controller:self,
                 wordId:wordId,
@@ -151,7 +146,7 @@ class CSearch:CController
     {
         mapEntry[modelEntry.wordId] = modelEntry
         self.modelEntry = modelEntry
-        viewSearch.showContent()
+        viewSearch.showContent(restartMode:false)
     }
     
     func fetchSynonyms()
@@ -165,6 +160,7 @@ class CSearch:CController
             return
         }
         
+        viewSearch.showContent(restartMode:false)
         MSearchRequestSynonyms(
             controller:self,
             model:modelEntry)

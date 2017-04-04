@@ -22,7 +22,7 @@ class MSearchContentModeItem
     {
     }
     
-    func contentString(modelEntry:MSearchEntry) -> NSAttributedString?
+    func contentString(controller:CSearch) -> NSAttributedString?
     {
         return nil
     }

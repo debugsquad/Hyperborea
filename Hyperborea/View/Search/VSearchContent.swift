@@ -90,13 +90,13 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         let totalHeight:CGFloat
         
-        if let modelEntry:MSearchEntry = controller.modelEntry
+        if let contentString:NSAttributedString = viewMode.model.currentItem().contentString(controller:controller)
         {
             let width:CGFloat = bounds.maxX
             let maxSize:CGSize = CGSize(
                 width:width - kContentRemoveWidth,
                 height:kCompareHeight)
-            let boundingRect:CGRect = modelEntry.attributedString.boundingRect(
+            let boundingRect:CGRect = contentString.boundingRect(
                 with:maxSize,
                 options:drawingOptions,
                 context:nil)

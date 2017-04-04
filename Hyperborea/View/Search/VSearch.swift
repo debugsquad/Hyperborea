@@ -129,38 +129,15 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
     }
     
-    func resultSelected()
+    func showContent(restartMode:Bool)
     {
         DispatchQueue.main.async
         { [weak self] in
             
-            self?.viewContent?.viewMode
-            
-            guard
-                
-                let strongSelf:VSearch = self,
-                let contentHeight:CGFloat = strongSelf.viewContent?.refresh()
-            
-            else
+            if restartMode
             {
-                return
+                self?.viewContent?.viewMode.restart()
             }
-            
-            strongSelf.contentHeight = contentHeight
-            strongSelf.collectionView.collectionViewLayout.invalidateLayout()
-            
-            let indexPath:IndexPath = IndexPath(item:1, section:0)
-            strongSelf.collectionView.scrollToItem(
-                at:indexPath,
-                at:UICollectionViewScrollPosition.top,
-                animated:true)
-        }
-    }
-    
-    func showContent()
-    {
-        DispatchQueue.main.async
-        { [weak self] in
             
             guard
                 
