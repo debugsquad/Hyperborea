@@ -26,6 +26,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.isScrollEnabled = false
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.registerHeader(header:VSearchContentHeader.self)
         collectionView.registerFooter(footer:VSearchContentFooter.self)
         collectionView.registerCell(cell:VSearchContentCellDefinition.self)
         self.collectionView = collectionView
@@ -85,10 +86,28 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         let width:CGFloat = bounds.maxX
         let height:CGFloat = bounds.maxY
-        let usableHeight:CGFloat = height - kModeHeight
+        let usableHeight:CGFloat = height - (kModeHeight + kHeaderHeight)
         let size:CGSize = CGSize(
             width:width,
             height:usableHeight)
+        
+        return size
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
+    {
+        let height:CGFloat
+        
+        if controller.modelEntry == nil
+        {
+            height = 0
+        }
+        else
+        {
+            height = kHeaderHeight
+        }
+        
+        let size:CGSize = CGSize(width:0, height:height)
         
         return size
     }
@@ -142,13 +161,27 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
     {
         let reusable:UICollectionReusableView
-        let footer:VSearchContentFooter = collectionView.dequeueReusableSupplementaryView(
-            ofKind:kind,
-            withReuseIdentifier:
-            VSearchContentFooter.reusableIdentifier,
-            for:indexPath) as! VSearchContentFooter
-        footer.config(controller:controller)
-        reusable = footer
+        
+        if kind == UICollectionElementKindSectionHeader
+        {
+            let header:VSearchContentHeader = collectionView.dequeueReusableSupplementaryView(
+                ofKind:kind,
+                withReuseIdentifier:
+                VSearchContentHeader.reusableIdentifier,
+                for:indexPath) as! VSearchContentHeader
+            header.config(controller:controller)
+            reusable = header
+        }
+        else
+        {
+            let footer:VSearchContentFooter = collectionView.dequeueReusableSupplementaryView(
+                ofKind:kind,
+                withReuseIdentifier:
+                VSearchContentFooter.reusableIdentifier,
+                for:indexPath) as! VSearchContentFooter
+            footer.config(controller:controller)
+            reusable = footer
+        }
         
         return reusable
     }
