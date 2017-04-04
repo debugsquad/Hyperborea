@@ -25,6 +25,12 @@ class MSearchEntryNumber
         
         var numbers:[String] = []
         
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        let attributes:[String:Any] = [
+            NSFontAttributeName:UIFont.regular(size:kNumberFontSize)]
+        let attributesSeparator:[String:Any] = [
+            NSFontAttributeName:UIFont.regular(size:kSeparatorFontSize)]
+        
         for jsonEntry:Any in jsonEntries
         {
             guard
@@ -53,11 +59,12 @@ class MSearchEntryNumber
                 
                 if featureMapType == kTypeNumber
                 {
+                    let numberLowerCase:String = featureMapText.lowercased()
                     var append:Bool = true
                     
                     for number:String in numbers
                     {
-                        if number == featureMapText
+                        if number == numberLowerCase
                         {
                             append = false
                             
@@ -67,37 +74,25 @@ class MSearchEntryNumber
                     
                     if append
                     {
-                        numbers.append(featureMapText)
+                        numbers.append(numberLowerCase)
+                        
+                        if !mutableString.string.isEmpty
+                        {
+                            let separatorString:NSAttributedString = NSAttributedString(
+                                string:kNumberSeparator,
+                                attributes:attributesSeparator)
+                            
+                            mutableString.append(separatorString)
+                        }
+                        
+                        let numberString:NSAttributedString = NSAttributedString(
+                            string:numberLowerCase,
+                            attributes:attributes)
+                        
+                        mutableString.append(numberString)
                     }
                 }
             }
-        }
-        
-        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
-        
-        let attributes:[String:Any] = [
-            NSFontAttributeName:UIFont.regular(size:kNumberFontSize)]
-        let attributesSeparator:[String:Any] = [
-            NSFontAttributeName:UIFont.regular(size:kSeparatorFontSize)]
-        
-        for number:String in numbers
-        {
-            let numberLowerCase:String = number.lowercased()
-            
-            if !mutableString.string.isEmpty
-            {
-                let separatorString:NSAttributedString = NSAttributedString(
-                    string:kNumberSeparator,
-                    attributes:attributesSeparator)
-                
-                mutableString.append(separatorString)
-            }
-            
-            let numberString:NSAttributedString = NSAttributedString(
-                string:numberLowerCase,
-                attributes:attributes)
-            
-            mutableString.append(numberString)
         }
         
         return mutableString
