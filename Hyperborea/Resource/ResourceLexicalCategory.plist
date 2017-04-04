@@ -39,6 +39,6 @@
 	<key>Suffix</key>
 	<string>RModelHomeEntriesItemSuffix</string>
 	<key>Verb</key>
-	<string>RModelHomeEntriesItemVerb</string>
+	<string>MSearchEntryItemVerb</string>
 </dict>
 </plist>
