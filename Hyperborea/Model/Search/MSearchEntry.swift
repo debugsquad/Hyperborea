@@ -5,6 +5,7 @@ class MSearchEntry
     let attributedString:NSAttributedString
     let wordId:String
     let word:String
+    var synonyms:MSearchSynonyms?
     private let kKeyResults:String = "results"
     private let kKeyWord:String = "word"
     private let kKeyLexicalEntries:String = "lexicalEntries"
