@@ -2,9 +2,9 @@ import UIKit
 
 class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
+    private(set) weak var viewMode:VSearchContentMode!
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
-    private weak var viewMode:VSearchContentMode!
     private weak var spinner:VSpinner!
     private weak var layoutModeHeight:NSLayoutConstraint!
     private var cellHeight:CGFloat
