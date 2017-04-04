@@ -15,7 +15,7 @@
 	<key>Determiner</key>
 	<string>MSearchEntryItemDeterminer</string>
 	<key>Idiomatic</key>
-	<string>RModelHomeEntriesItemIdiomatic</string>
+	<string>MSearchEntryItemIdiomatic</string>
 	<key>Interjection</key>
 	<string>RModelHomeEntriesItemInterjection</string>
 	<key>Noun</key>
