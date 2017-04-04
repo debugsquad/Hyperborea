@@ -2,7 +2,7 @@ import UIKit
 
 class MSearchEntryItemAdverb:MSearchEntryItem
 {
-    private let kFontSize:CGFloat = 20
+    private let kFontSize:CGFloat = 23
     
     required init?(json:Any)
     {

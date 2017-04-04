@@ -2,16 +2,16 @@ import UIKit
 
 class MSearchEntrySenses
 {
+    private static let kBreak:String = "\n"
+    private static let kBreakExample:String = "\n- "
     private static let kKeyEntries:String = "entries"
     private static let kKeySenses:String = "senses"
     private static let kKeyDefinitions:String = "definitions"
     private static let kKeyExamples:String = "examples"
     private static let kKeyExampleText:String = "text"
     private static let kKeySubsenses:String = "subsenses"
-    private static let kSensesSeparator:String = "\n"
-    private static let kExampleSeparator:String = "\n• "
     private static let kTitleFontSize:CGFloat = 18
-    private static let kExampleFontSize:CGFloat = 16
+    private static let kExampleFontSize:CGFloat = 17
     
     class func parse(json:Any) -> NSAttributedString?
     {
@@ -26,6 +26,11 @@ class MSearchEntrySenses
         }
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        let attributesBreak:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.regular(size:kTitleFontSize)]
+        let stringBreak:NSAttributedString = NSAttributedString(
+            string:kBreak,
+            attributes:attributesBreak)
         
         for jsonEntry:Any in jsonEntries
         {
@@ -38,14 +43,6 @@ class MSearchEntrySenses
             {
                 continue
             }
-            
-            let attributesSeparator:[String:AnyObject] = [
-                NSFontAttributeName:UIFont.regular(size:kTitleFontSize)]
-            let stringSeparator:NSAttributedString = NSAttributedString(
-                string:kSensesSeparator,
-                attributes:attributesSeparator)
-            
-            mutableString.append(stringSeparator)
             
             for jsonSense:Any in jsonSenses
             {
@@ -60,6 +57,11 @@ class MSearchEntrySenses
                 
                 if let senseString:NSAttributedString = parseItem(json:jsonSenseMap)
                 {
+                    if !mutableString.string.isEmpty
+                    {
+                        mutableString.append(stringBreak)
+                    }
+                    
                     mutableString.append(senseString)
                 }
                 
@@ -78,6 +80,11 @@ class MSearchEntrySenses
                         
                         if let subSenseString:NSAttributedString = parseItem(json:jsonSubsenseMap)
                         {
+                            if !mutableString.string.isEmpty
+                            {
+                                mutableString.append(stringBreak)
+                            }
+                            
                             mutableString.append(subSenseString)
                         }
                     }
@@ -122,33 +129,34 @@ class MSearchEntrySenses
         let attributesTitle:[String:Any] = [
             NSFontAttributeName:UIFont.regular(size:kTitleFontSize)]
         let attributesExample:[String:Any] = [
-            NSFontAttributeName:UIFont.regular(size:kExampleFontSize)]
+            NSFontAttributeName:UIFont.italic(size:kExampleFontSize),
+            NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
+        let stringBreak:NSAttributedString = NSAttributedString(
+            string:kBreak,
+            attributes:attributesTitle)
+        let stringBreakExample:NSAttributedString = NSAttributedString(
+            string:kBreakExample,
+            attributes:attributesExample)
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
         for title:String in titles
         {
-            let separator:NSAttributedString = NSAttributedString(
-                string:kSensesSeparator,
-                attributes:attributesTitle)
             let titleString:NSAttributedString = NSAttributedString(
                 string:title,
                 attributes:attributesTitle)
             
-            mutableString.append(separator)
+            mutableString.append(stringBreak)
             mutableString.append(titleString)
         }
         
         for example:String in examples
         {
-            let separator:NSAttributedString = NSAttributedString(
-                string:kExampleSeparator,
-                attributes:attributesExample)
             let exampleString:NSAttributedString = NSAttributedString(
                 string:example,
                 attributes:attributesExample)
             
-            mutableString.append(separator)
+            mutableString.append(stringBreakExample)
             mutableString.append(exampleString)
         }
         
