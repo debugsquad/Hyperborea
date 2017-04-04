@@ -7,12 +7,22 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var viewMode:VSearchContentMode!
     private weak var spinner:VSpinner!
     private weak var layoutModeHeight:NSLayoutConstraint!
+    private var cellHeight:CGFloat
+    private let drawingOptions:NSStringDrawingOptions
     private let kModeHeight:CGFloat = 70
     private let kHeaderHeight:CGFloat = 60
     private let kLoadingHeight:CGFloat = 300
+    private let kContentAddHeight:CGFloat = 40
+    private let kContentRemoveWidth:CGFloat = 20
+    private let kCompareHeight:CGFloat = 8000
     
     init(controller:CSearch)
     {
+        drawingOptions = NSStringDrawingOptions([
+            NSStringDrawingOptions.usesFontLeading,
+            NSStringDrawingOptions.usesLineFragmentOrigin])
+        cellHeight = 0
+        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
@@ -80,17 +90,29 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     {
         let totalHeight:CGFloat
         
-        if controller.modelEntry == nil
+        if let modelEntry:MSearchEntry = controller.modelEntry
         {
-            layoutModeHeight.constant = 0
-            spinner.startAnimating()
-            totalHeight = kLoadingHeight
+            let width:CGFloat = bounds.maxX
+            let maxSize:CGSize = CGSize(
+                width:width - kContentRemoveWidth,
+                height:kCompareHeight)
+            let boundingRect:CGRect = modelEntry.attributedString.boundingRect(
+                with:maxSize,
+                options:drawingOptions,
+                context:nil)
+            let textHeight:CGFloat = ceil(boundingRect.size.height)
+            cellHeight = textHeight + kContentAddHeight
+            totalHeight = cellHeight + kModeHeight + kHeaderHeight
+            
+            layoutModeHeight.constant = kModeHeight
+            spinner.stopAnimating()
         }
         else
         {
-            layoutModeHeight.constant = kModeHeight
-            spinner.stopAnimating()
-            totalHeight = 650
+            cellHeight = 0
+            layoutModeHeight.constant = 0
+            spinner.startAnimating()
+            totalHeight = kLoadingHeight
         }
         
         collectionView.reloadData()
@@ -103,11 +125,9 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
         let width:CGFloat = bounds.maxX
-        let height:CGFloat = bounds.maxY
-        let usableHeight:CGFloat = height - (kModeHeight + kHeaderHeight)
         let size:CGSize = CGSize(
             width:width,
-            height:usableHeight)
+            height:cellHeight)
         
         return size
     }

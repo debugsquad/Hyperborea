@@ -15,7 +15,7 @@ class MSearchResultsItem
     private static let kNormalO:String = "o"
     private static let kNormalU:String = "u"
     private static let kNormalExclamation:String = "%C2%A1"
-    private static let kNormalDiagonal:String = "a"
+    private static let kNormalDiagonal:String = "%2F"
     
     let wordId:String
     let word:String
