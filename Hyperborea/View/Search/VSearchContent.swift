@@ -7,6 +7,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var viewMode:VSearchContentMode!
     private weak var layoutModeHeight:NSLayoutConstraint!
     private let kModeHeight:CGFloat = 70
+    private let kHeaderHeight:CGFloat = 60
     
     init(controller:CSearch)
     {
