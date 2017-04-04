@@ -29,7 +29,7 @@
 	<key>Predeterminer</key>
 	<string>MSearchEntryItemPredeterminer</string>
 	<key>Prefix</key>
-	<string>RModelHomeEntriesItemPrefix</string>
+	<string>MSearchEntryItemPrefix</string>
 	<key>Preposition</key>
 	<string>RModelHomeEntriesItemPreposition</string>
 	<key>Pronoun</key>
