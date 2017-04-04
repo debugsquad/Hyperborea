@@ -2,7 +2,7 @@ import UIKit
 
 class MSearchEntryItemCombiningForm:MSearchEntryItem
 {
-    private let kFontSize:CGFloat = 16
+    private let kFontSize:CGFloat = 20
     
     required init?(json:Any)
     {
