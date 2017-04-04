@@ -9,6 +9,7 @@ class MSearchEntry
     private let kKeyLexicalEntries:String = "lexicalEntries"
     private let kKeyLexicalCategory:String = "lexicalCategory"
     private let kEmpty:String = ""
+    private let kBreak:String = "\n"
     private let kWordFontSize:CGFloat = 35
     
     init(json:Any)
@@ -30,6 +31,9 @@ class MSearchEntry
             NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
         var stringWord:NSAttributedString?
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        let stringBreak:NSAttributedString = NSAttributedString(
+            string:kBreak,
+            attributes:attributesWord)
         var word:String?
         
         for jsonResult:Any in jsonResults
@@ -50,10 +54,8 @@ class MSearchEntry
                 {
                     word = rawWord
                     
-                    let wordAndBreak:String = "\(rawWord)\n"
-                    
                     stringWord = NSAttributedString(
-                        string:wordAndBreak,
+                        string:rawWord,
                         attributes:attributesWord)
                 }
             }
@@ -73,6 +75,12 @@ class MSearchEntry
                     continue
                 }
                 
+                if !mutableString.string.isEmpty
+                {
+                    mutableString.append(stringBreak)
+                    mutableString.append(stringBreak)
+                }
+                
                 let itemString:NSAttributedString = entry.attributedString
                 mutableString.append(itemString)
             }
@@ -80,6 +88,7 @@ class MSearchEntry
         
         if let stringWord:NSAttributedString = stringWord
         {
+            mutableString.insert(stringBreak, at:0)
             mutableString.insert(stringWord, at:0)
         }
         
