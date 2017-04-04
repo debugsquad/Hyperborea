@@ -2,20 +2,66 @@ import UIKit
 
 class MSearchSynonyms
 {
+    let attributedString:NSAttributedString
+    private static let kKeySynonyms:String = "synonyms"
+    private static let kKeyText:String = "text"
+    private static let kBreakSynonyms:String = "\n- "
+    private let kBreak:String = "\n"
     private let kKeyResults:String = "results"
     private let kKeyLexicalEntries:String = "lexicalEntries"
     private let kKeyEntries:String = "entries"
     private let kKeySenses:String = "senses"
     private let kKeyExamples:String = "examples"
-    private let kKeySynonyms:String = "synonyms"
     private let kKeySubsenses:String = "subsenses"
-    private let kKeyText:String = "text"
     private let kExampleFontSize:CGFloat = 18
-    private let kSenseSynonymFontSize:CGFloat = 18
-    private let kSubsenseSynonymFontSize:CGFloat = 16
+    private let kSensesFontSize:CGFloat = 18
+    private let kSubsensesFontSize:CGFloat = 16
     
-    init?(json:Any)
+    private class func parseSynonyms(
+        json:[String:Any],
+        attributes:[String:AnyObject]) -> NSAttributedString?
     {
+        guard
+        
+            let jsonSynonyms:[Any] = json[kKeySynonyms] as? [Any]
+        
+        else
+        {
+            return nil
+        }
+        
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        let stringBreak:NSAttributedString = NSAttributedString(
+            string:kBreakSynonyms,
+            attributes:attributes)
+        
+        for jsonSynonym:Any in jsonSynonyms
+        {
+            guard
+            
+                let jsonSynonymMap:[String:Any] = jsonSynonym as? [String:Any],
+                let jsonSynonymText:String = jsonSynonymMap[kKeyText] as? String
+            
+            else
+            {
+                continue
+            }
+            
+            let stringText:NSAttributedString = NSAttributedString(
+                string:jsonSynonymText,
+                attributes:attributes)
+            
+            mutableString.append(stringBreak)
+            mutableString.append(stringText)
+        }
+        
+        return mutableString
+    }
+    
+    init(json:Any)
+    {
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        
         guard
         
             let jsonMap:[String:Any] = json as? [String:Any],
@@ -23,8 +69,22 @@ class MSearchSynonyms
         
         else
         {
-            return nil
+            attributedString = mutableString
+            
+            return
         }
+        
+        let attributesExample:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.medium(size:kExampleFontSize),
+            NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
+        let attributesSenses:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.regular(size:kSensesFontSize)]
+        let attributesSubsenses:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.regular(size:kSubsensesFontSize)]
+        
+        let stringBreak:NSAttributedString = NSAttributedString(
+            string:kBreak,
+            attributes:attributesExample)
         
         for jsonResult:Any in jsonResults
         {
@@ -80,29 +140,60 @@ class MSearchSynonyms
                                 guard
                                 
                                     let jsonExampleMap:[String:Any] = jsonExample as? [String:Any],
-                                    let jsonExampleText:String = jsonExampleMap[kKeyText] as? String
+                                    let jsonExampleText:String = jsonExampleMap[
+                                        MSearchSynonyms.kKeyText] as? String
                                 
                                 else
                                 {
                                     continue
                                 }
                                 
+                                if !mutableString.string.isEmpty
+                                {
+                                    mutableString.append(stringBreak)
+                                }
                                 
+                                let stringExample:NSAttributedString = NSAttributedString(
+                                    string:jsonExampleText,
+                                    attributes:attributesExample)
+                                
+                                mutableString.append(stringExample)
                             }
                         }
                         
-                        if let jsonSynonyms:[Any] = jsonSenseMap[kKeySynonyms] as? [Any]
+                        if let synonymsString:NSAttributedString = MSearchSynonyms.parseSynonyms(
+                            json:jsonSenseMap,
+                            attributes:attributesSenses)
                         {
-                            
+                            mutableString.append(synonymsString)
                         }
                         
-                        if let jsonSubsenses[Any] = jsonSenseMap[kKeySubsenses] as? [Any]
+                        if let jsonSubsenses:[Any] = jsonSenseMap[kKeySubsenses] as? [Any]
                         {
-                            
+                            for jsonSubsense:Any in jsonSubsenses
+                            {
+                                guard
+                                
+                                    let jsonSubsenseMap:[String:Any] = jsonSubsense as? [String:Any]
+                                
+                                else
+                                {
+                                    continue
+                                }
+                                
+                                if let synonymsString:NSAttributedString = MSearchSynonyms.parseSynonyms(
+                                    json:jsonSubsenseMap,
+                                    attributes:attributesSubsenses)
+                                {
+                                    mutableString.append(synonymsString)
+                                }
+                            }
                         }
                     }
                 }
             }
         }
+        
+        attributedString = mutableString
     }
 }
