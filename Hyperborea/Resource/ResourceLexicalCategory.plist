@@ -31,7 +31,7 @@
 	<key>Prefix</key>
 	<string>MSearchEntryItemPrefix</string>
 	<key>Preposition</key>
-	<string>RModelHomeEntriesItemPreposition</string>
+	<string>MSearchEntryItemPreposition</string>
 	<key>Pronoun</key>
 	<string>RModelHomeEntriesItemPronoun</string>
 	<key>Residual</key>
