@@ -134,6 +134,8 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         DispatchQueue.main.async
         { [weak self] in
             
+            self?.viewContent?.viewMode
+            
             guard
                 
                 let strongSelf:VSearch = self,

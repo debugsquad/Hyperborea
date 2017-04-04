@@ -106,6 +106,20 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
         return item
     }
     
+    //MARK: public
+    
+    func restart()
+    {
+        trackingScroll = false
+        
+        let indexPath:IndexPath = IndexPath(item:0, section:0)
+        model.selectedIndex = indexPath.item
+        collectionView.selectItem(
+            at:indexPath,
+            animated:true,
+            scrollPosition:UICollectionViewScrollPosition.centeredHorizontally)
+    }
+    
     //MARK: collectionView delegate
     
     func scrollViewDidScroll(_ scrollView:UIScrollView)
