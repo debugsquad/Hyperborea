@@ -8,6 +8,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var layoutModeHeight:NSLayoutConstraint!
     private let kModeHeight:CGFloat = 70
     private let kHeaderHeight:CGFloat = 60
+    private let kLoadingHeight:CGFloat = 300
     
     init(controller:CSearch)
     {
@@ -66,18 +67,24 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    func refresh()
+    func refresh() -> CGFloat
     {
+        let totalHeight:CGFloat
+        
         if controller.modelEntry == nil
         {
             layoutModeHeight.constant = 0
+            totalHeight = 300
         }
         else
         {
             layoutModeHeight.constant = kModeHeight
+            totalHeight = 650
         }
         
         collectionView.reloadData()
+        
+        return totalHeight
     }
     
     //MARK: collectionView delegate

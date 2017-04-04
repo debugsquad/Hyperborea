@@ -4,6 +4,7 @@ class VSearchContentHeader:UICollectionReusableView
 {
     private weak var controller:CSearch?
     private let kButtonWidth:CGFloat = 60
+    private let kButtonsRight:CGFloat = -10
     
     override init(frame:CGRect)
     {
@@ -51,7 +52,8 @@ class VSearchContentHeader:UICollectionReusableView
             toView:self)
         NSLayoutConstraint.rightToRight(
             view:buttonShare,
-            toView:self)
+            toView:self,
+            constant:kButtonsRight)
         NSLayoutConstraint.width(
             view:buttonShare,
             constant:kButtonWidth)

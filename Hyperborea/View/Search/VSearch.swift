@@ -17,8 +17,6 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private var contentHeight:CGFloat
     private let kBarMinHeight:CGFloat = 50
     private let kInitialHeight:CGFloat = 1
-    private let kContentLoadingHeight:CGFloat = 300
-    private let kAfterRefresh:TimeInterval = 0.2
     
     override init(controller:CController)
     {
@@ -138,14 +136,15 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
             
             guard
                 
-                let strongSelf:VSearch = self
+                let strongSelf:VSearch = self,
+                let contentHeight:CGFloat = strongSelf.viewContent?.refresh()
             
             else
             {
                 return
             }
             
-            strongSelf.contentHeight = strongSelf.kContentLoadingHeight
+            strongSelf.contentHeight = contentHeight
             strongSelf.collectionView.collectionViewLayout.invalidateLayout()
             
             let indexPath:IndexPath = IndexPath(item:1, section:0)
@@ -153,13 +152,6 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
                 at:indexPath,
                 at:UICollectionViewScrollPosition.top,
                 animated:true)
-            
-            DispatchQueue.main.asyncAfter(
-                deadline:DispatchTime.now() + strongSelf.kAfterRefresh)
-            { [weak self] in
-                
-                self?.viewContent?.refresh()
-            }
         }
     }
     
@@ -170,14 +162,15 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
             
             guard
                 
-                let strongSelf:VSearch = self
+                let strongSelf:VSearch = self,
+                let contentHeight:CGFloat = strongSelf.viewContent?.refresh()
             
             else
             {
                 return
             }
             
-            strongSelf.contentHeight = 600
+            strongSelf.contentHeight = contentHeight
             strongSelf.collectionView.collectionViewLayout.invalidateLayout()
             
             let indexPath:IndexPath = IndexPath(item:1, section:0)
@@ -185,13 +178,6 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
                 at:indexPath,
                 at:UICollectionViewScrollPosition.top,
                 animated:true)
-            
-            DispatchQueue.main.asyncAfter(
-                deadline:DispatchTime.now() + strongSelf.kAfterRefresh)
-            { [weak self] in
-                
-                self?.viewContent?.refresh()
-            }
         }
     }
     
