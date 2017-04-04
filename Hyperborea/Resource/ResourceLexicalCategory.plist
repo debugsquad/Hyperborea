@@ -23,7 +23,7 @@
 	<key>Numeral</key>
 	<string>MSearchEntryItemNumeral</string>
 	<key>Other</key>
-	<string>RModelHomeEntriesItemOther</string>
+	<string>MSearchEntryItemOther</string>
 	<key>Particle</key>
 	<string>RModelHomeEntriesItemParticle</string>
 	<key>Predeterminer</key>
