@@ -82,26 +82,33 @@ class CSearch:CController
     {
         cancelRequests()
         
-        if !text.isEmpty
-        {
-            guard
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            if !text.isEmpty
+            {
+                guard
+                    
+                    let cleanedQuery:String = self?.cleanQuery(rawQuery:text),
+                    let strongSelf:CSearch = self
+                    
+                else
+                {
+                    return
+                }
                 
-                let cleanedQuery:String = cleanQuery(rawQuery:text)
-            
-            else
-            {
-                return
-            }
-            
-            if let cachedResults:MSearchResults = mapResults[cleanedQuery]
-            {
-                modelResults = cachedResults
-                viewSearch.refresh()
-            }
-            else
-            {
-                modelResults = nil
-                MSearchRequestLook(controller:self, query:text)
+                if let cachedResults:MSearchResults = strongSelf.mapResults[cleanedQuery]
+                {
+                    strongSelf.modelResults = cachedResults
+                    strongSelf.viewSearch.refresh()
+                }
+                else
+                {
+                    strongSelf.modelResults = nil
+                    MSearchRequestLook(
+                        controller:strongSelf,
+                        query:text)
+                }
             }
         }
     }

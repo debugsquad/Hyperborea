@@ -133,39 +133,65 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func resultSelected()
     {
-        contentHeight = kContentLoadingHeight
-        collectionView.collectionViewLayout.invalidateLayout()
-        
-        let indexPath:IndexPath = IndexPath(item:1, section:0)
-        collectionView.scrollToItem(
-            at:indexPath,
-            at:UICollectionViewScrollPosition.top,
-            animated:true)
-        
-        DispatchQueue.main.asyncAfter(
-            deadline:DispatchTime.now() + kAfterRefresh)
+        DispatchQueue.main.async
         { [weak self] in
             
-            self?.viewContent?.refresh()
+            guard
+                
+                let strongSelf:VSearch = self
+            
+            else
+            {
+                return
+            }
+            
+            strongSelf.contentHeight = strongSelf.kContentLoadingHeight
+            strongSelf.collectionView.collectionViewLayout.invalidateLayout()
+            
+            let indexPath:IndexPath = IndexPath(item:1, section:0)
+            strongSelf.collectionView.scrollToItem(
+                at:indexPath,
+                at:UICollectionViewScrollPosition.top,
+                animated:true)
+            
+            DispatchQueue.main.asyncAfter(
+                deadline:DispatchTime.now() + strongSelf.kAfterRefresh)
+            { [weak self] in
+                
+                self?.viewContent?.refresh()
+            }
         }
     }
     
     func showEntry()
     {
-        contentHeight = 600
-        collectionView.collectionViewLayout.invalidateLayout()
-        
-        let indexPath:IndexPath = IndexPath(item:1, section:0)
-        collectionView.scrollToItem(
-            at:indexPath,
-            at:UICollectionViewScrollPosition.top,
-            animated:true)
-        
-        DispatchQueue.main.asyncAfter(
-            deadline:DispatchTime.now() + kAfterRefresh)
+        DispatchQueue.main.async
         { [weak self] in
             
-            self?.viewContent?.refresh()
+            guard
+                
+                let strongSelf:VSearch = self
+            
+            else
+            {
+                return
+            }
+            
+            strongSelf.contentHeight = 600
+            strongSelf.collectionView.collectionViewLayout.invalidateLayout()
+            
+            let indexPath:IndexPath = IndexPath(item:1, section:0)
+            strongSelf.collectionView.scrollToItem(
+                at:indexPath,
+                at:UICollectionViewScrollPosition.top,
+                animated:true)
+            
+            DispatchQueue.main.asyncAfter(
+                deadline:DispatchTime.now() + strongSelf.kAfterRefresh)
+            { [weak self] in
+                
+                self?.viewContent?.refresh()
+            }
         }
     }
     

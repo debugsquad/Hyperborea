@@ -20,14 +20,14 @@ class MSearchRequestEntity
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
+            NotificationCenter.default.addObserver(
+                self,
+                selector:#selector(self.notifiedCancelRequests(sender:)),
+                name:Notification.cancelRequests,
+                object:nil)
+            
             self.asyncLookQuery(wordId:wordId, region:region)
         }
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector:#selector(notifiedCancelRequests(sender:)),
-            name:Notification.cancelRequests,
-            object:nil)
     }
     
     deinit
@@ -123,7 +123,7 @@ class MSearchRequestEntity
         
         let urlSession:URLSession = URLSession(configuration:configuration)
         task = urlSession.dataTask(with:urlRequest)
-        { [weak controller] (data:Data?, urlResponse:URLResponse?, error:Error?) in
+        { (data:Data?, urlResponse:URLResponse?, error:Error?) in
             
             if error != nil
             {
@@ -153,7 +153,7 @@ class MSearchRequestEntity
             }
             
             let entry:MSearchEntry = MSearchEntry(json:json)
-            controller?.entryFound(
+            self.controller?.entryFound(
                 wordId:wordId,
                 modelEntry:entry)
         }
