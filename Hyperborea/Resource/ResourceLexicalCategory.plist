@@ -7,9 +7,9 @@
 	<key>Adverb</key>
 	<string>MSearchEntryItemAdverb</string>
 	<key>Combining Form</key>
-	<string>RModelHomeEntriesItemCombiningForm</string>
+	<string>MSearchEntryItemCombiningForm</string>
 	<key>Conjunction</key>
-	<string>RModelHomeEntriesItemConjunction</string>
+	<string>MSearchEntryItemConjunction</string>
 	<key>Contraction</key>
 	<string>RModelHomeEntriesItemContraction</string>
 	<key>Determiner</key>
