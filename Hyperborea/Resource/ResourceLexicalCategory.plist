@@ -27,7 +27,7 @@
 	<key>Particle</key>
 	<string>MSearchEntryItemParticle</string>
 	<key>Predeterminer</key>
-	<string>RModelHomeEntriesItemPredeterminer</string>
+	<string>MSearchEntryItemPredeterminer</string>
 	<key>Prefix</key>
 	<string>RModelHomeEntriesItemPrefix</string>
 	<key>Preposition</key>
