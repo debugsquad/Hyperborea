@@ -4,6 +4,7 @@ class VSearchContentCellDefinition:VSearchContentCell
 {
     private weak var label:UILabel!
     private let kLabelMarginHorizontal:CGFloat = 10
+    private let kLabelBottom:CGFloat = -40
     
     override init(frame:CGRect)
     {
@@ -19,9 +20,13 @@ class VSearchContentCellDefinition:VSearchContentCell
         
         addSubview(label)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.topToTop(
             view:label,
             toView:self)
+        NSLayoutConstraint.bottomToBottom(
+            view:label,
+            toView:self,
+            constant:kLabelBottom)
         NSLayoutConstraint.equalsHorizontal(
             view:label,
             toView:self,
