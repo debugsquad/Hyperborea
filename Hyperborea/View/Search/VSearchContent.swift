@@ -94,32 +94,24 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func refresh() -> CGFloat
     {
         let totalHeight:CGFloat
+        let cellHeight:CGFloat = viewMode.model.currentItem().contentHeight(controller:controller)
+        self.cellHeight = cellHeight
         
-        if let contentString:NSAttributedString = viewMode.model.currentItem().contentString(controller:controller)
+        if cellHeight == 0
         {
-            let width:CGFloat = bounds.maxX
-            let maxSize:CGSize = CGSize(
-                width:width - kContentRemoveWidth,
-                height:kCompareHeight)
-            let boundingRect:CGRect = contentString.boundingRect(
-                with:maxSize,
-                options:drawingOptions,
-                context:nil)
-            let textHeight:CGFloat = ceil(boundingRect.size.height)
-            cellHeight = textHeight + kContentAddHeight
-            headerHeight = kHeaderHeight
-            totalHeight = cellHeight + kModeHeight + kHeaderHeight
+            headerHeight = 0
+            layoutModeHeight.constant = 0
+            totalHeight = kLoadingHeight
             
-            layoutModeHeight.constant = kModeHeight
-            spinner.stopAnimating()
+            spinner.startAnimating()
         }
         else
         {
-            cellHeight = 0
-            headerHeight = 0
-            layoutModeHeight.constant = 0
-            spinner.startAnimating()
-            totalHeight = kLoadingHeight
+            headerHeight = kHeaderHeight
+            layoutModeHeight.constant = kModeHeight
+            totalHeight = cellHeight + kModeHeight + kHeaderHeight
+            
+            spinner.stopAnimating()
         }
         
         collectionView.reloadData()

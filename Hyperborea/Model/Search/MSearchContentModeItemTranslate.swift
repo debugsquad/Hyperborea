@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class MSearchContentModeItemTranslate:MSearchContentModeItem
 {
@@ -18,9 +18,9 @@ class MSearchContentModeItemTranslate:MSearchContentModeItem
     {
         controller.fetchTranslations()
     }
-    
-    override func contentString(controller:CSearch) -> NSAttributedString?
+    /*
+    override func contentString(controller:CSearch) -> CGFloat?
     {
         return controller.modelEntry?.translations?.attributedString
-    }
+    }*/
 }

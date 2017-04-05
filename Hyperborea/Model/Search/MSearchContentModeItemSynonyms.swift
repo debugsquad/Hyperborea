@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class MSearchContentModeItemSynonyms:MSearchContentModeItem
 {
@@ -19,8 +19,9 @@ class MSearchContentModeItemSynonyms:MSearchContentModeItem
         controller.fetchSynonyms()
     }
     
-    override func contentString(controller:CSearch) -> NSAttributedString?
+    /*
+    override func contentString(controller:CSearch) -> CGFloat?
     {
         return controller.modelEntry?.synonyms?.attributedString
-    }
+    }*/
 }

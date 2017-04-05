@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class MSearchContentModeItem
 {
@@ -22,8 +22,8 @@ class MSearchContentModeItem
     {
     }
     
-    func contentString(controller:CSearch) -> NSAttributedString?
+    func contentHeight(controller:CSearch) -> CGFloat
     {
-        return nil
+        return 0
     }
 }

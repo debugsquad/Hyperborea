@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class MSearchContentModeItemDefinition:MSearchContentModeItem
 {
@@ -22,8 +22,24 @@ class MSearchContentModeItemDefinition:MSearchContentModeItem
         }
     }
     
-    override func contentString(controller:CSearch) -> NSAttributedString?
+    override func contentHeight(controller: CSearch) -> CGFloat
+    {
+        let width:CGFloat = bounds.maxX
+        let maxSize:CGSize = CGSize(
+            width:width - kContentRemoveWidth,
+            height:kCompareHeight)
+        let boundingRect:CGRect = contentString.boundingRect(
+            with:maxSize,
+            options:drawingOptions,
+            context:nil)
+        let textHeight:CGFloat = ceil(boundingRect.size.height)
+        cellHeight = textHeight + kContentAddHeight
+    }
+    /*
+    override func contentString(controller:CSearch) -> CGFloat
     {
         return controller.modelEntry?.attributedString
-    }
+        
+        return 0
+    }*/
 }

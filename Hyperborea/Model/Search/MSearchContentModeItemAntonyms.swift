@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class MSearchContentModeItemAntonyms:MSearchContentModeItem
 {
@@ -18,9 +18,9 @@ class MSearchContentModeItemAntonyms:MSearchContentModeItem
     {
         controller.fetchAntonyms()
     }
-    
-    override func contentString(controller:CSearch) -> NSAttributedString?
+    /*
+    override func contentString(controller:CSearch) -> CGFloat?
     {
         return controller.modelEntry?.antonyms?.attributedString
-    }
+    }*/
 }
