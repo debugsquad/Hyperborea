@@ -13,6 +13,7 @@ class MSearchRequestSynonyms
     private let kTimeOutData:TimeInterval = 15
     private let kCellularAccess:Bool = true
     private let kDiscretionary:Bool = true
+    private let kStatusCodeSuccess:Int = 200
     
     @discardableResult init(controller:CSearch, model:MSearchEntry)
     {
@@ -121,34 +122,65 @@ class MSearchRequestSynonyms
             }
             
             guard
-                
-                let dataStrong:Data = data
-                
+            
+                let response:HTTPURLResponse = urlResponse as? HTTPURLResponse
+            
             else
             {
                 return
             }
             
-            let json:Any
+            let modelSynonyms:MSearchSynonyms?
             
-            do
+            switch response.statusCode
             {
-                try json = JSONSerialization.jsonObject(
-                    with:dataStrong,
-                    options:JSONSerialization.ReadingOptions.allowFragments)
-            }
-            catch
-            {
-                return
+            case self.kStatusCodeSuccess:
+                
+                modelSynonyms = self.parseData(data:data)
+                
+                break
+                
+            default:
+                
+                modelSynonyms = MSearchSynonyms()
+                
+                break
             }
             
-            let modelSynonyms:MSearchSynonyms = MSearchSynonyms(json:json)
             model.synonyms = modelSynonyms
-            
             self.controller?.showContent(modelEntry:model)
         }
         
         task?.resume()
         urlSession.finishTasksAndInvalidate()
+    }
+    
+    private func parseData(data:Data?) -> MSearchSynonyms?
+    {
+        guard
+            
+            let dataStrong:Data = data
+            
+        else
+        {
+            return nil
+        }
+        
+        let json:Any
+        
+        do
+        {
+            try json = JSONSerialization.jsonObject(
+                with:dataStrong,
+                options:JSONSerialization.ReadingOptions.allowFragments)
+        }
+        catch
+        {
+            return nil
+        }
+        
+        let modelSynonyms:MSearchSynonyms = MSearchSynonyms(json:json)
+        
+        return modelSynonyms
     }
 }

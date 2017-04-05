@@ -11,10 +11,10 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private let drawingOptions:NSStringDrawingOptions
     private let kModeHeight:CGFloat = 100
     private let kHeaderHeight:CGFloat = 60
-    private let kLoadingHeight:CGFloat = 300
+    private let kLoadingHeight:CGFloat = 320
     private let kContentAddHeight:CGFloat = 40
     private let kContentRemoveWidth:CGFloat = 20
-    private let kCompareHeight:CGFloat = 8000
+    private let kCompareHeight:CGFloat = 9000
     
     init(controller:CSearch)
     {

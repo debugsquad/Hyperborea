@@ -34,12 +34,11 @@ class VSearchContentHeader:UICollectionReusableView
             #imageLiteral(resourceName: "assetGenericFavoriteOff").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.normal)
         buttonFavorite.setImage(
-            #imageLiteral(resourceName: "assetGenericFavoriteOn").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            #imageLiteral(resourceName: "assetGenericFavoriteOn").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.highlighted)
         buttonFavorite.setImage(
-            #imageLiteral(resourceName: "assetGenericFavoriteOn").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            #imageLiteral(resourceName: "assetGenericFavoriteOn").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.selected)
-        buttonFavorite.imageView!.tintColor = UIColor(white:0, alpha:0.1)
         buttonFavorite.imageView!.clipsToBounds = true
         buttonFavorite.imageView!.contentMode = UIViewContentMode.center
         buttonFavorite.addTarget(

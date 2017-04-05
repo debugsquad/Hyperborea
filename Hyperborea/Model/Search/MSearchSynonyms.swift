@@ -81,7 +81,7 @@ class MSearchSynonyms
             NSForegroundColorAttributeName:UIColor.black]
         let attributesSubsenses:[String:AnyObject] = [
             NSFontAttributeName:UIFont.italic(size:kSubsensesFontSize),
-            NSForegroundColorAttributeName:UIColor(white:0.45, alpha:1)]
+            NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
         
         let stringBreak:NSAttributedString = NSAttributedString(
             string:MSearchSynonyms.kBreak,
@@ -197,5 +197,17 @@ class MSearchSynonyms
         }
         
         attributedString = mutableString
+    }
+    
+    init()
+    {
+        let string:String = NSLocalizedString("MSearchSynonyms_notFound", comment:"")
+        let attributes:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.regular(size:kExampleFontSize),
+            NSForegroundColorAttributeName:UIColor(white:0.4, alpha:1)]
+        
+        attributedString = NSAttributedString(
+            string:string,
+            attributes:attributes)
     }
 }
