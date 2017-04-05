@@ -13,6 +13,7 @@ class MSearchEntry
     private let kEmpty:String = ""
     private let kBreak:String = "\n"
     private let kWordFontSize:CGFloat = 40
+    private let kNotFoundFontSize:CGFloat = 20
     
     init(
         wordId:String,
@@ -112,5 +113,19 @@ class MSearchEntry
         }
         
         self.word = wordFound
+    }
+    
+    init(wordId:String)
+    {
+        self.wordId = wordId
+        word = kEmpty
+        
+        let string:String = NSLocalizedString("MSearchEntry_notFound", comment:"")
+        let attributes:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.regular(size:kNotFoundFontSize),
+            NSForegroundColorAttributeName:UIColor(white:0.3, alpha:1)]
+        attributedString = NSAttributedString(
+            string:string,
+            attributes:attributes)
     }
 }
