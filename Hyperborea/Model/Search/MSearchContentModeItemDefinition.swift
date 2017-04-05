@@ -12,6 +12,14 @@ class MSearchContentModeItemDefinition:MSearchContentModeItem
             reusableIdentifier:reusableIdentifier)
     }
     
+    override func selected(controller:CSearch)
+    {
+        if let modelEntry:MSearchEntry = controller.modelEntry
+        {
+            controller.showContent(modelEntry:modelEntry)
+        }
+    }
+    
     override func contentString(controller:CSearch) -> NSAttributedString?
     {
         return controller.modelEntry?.attributedString

@@ -5,16 +5,15 @@ class MSearchSynonyms
     let attributedString:NSAttributedString
     private static let kKeySynonyms:String = "synonyms"
     private static let kKeyText:String = "text"
-    private static let kBreakSynonyms:String = "\n- "
-    private let kBreak:String = "\n"
+    private static let kBreak:String = "\n"
     private let kKeyResults:String = "results"
     private let kKeyLexicalEntries:String = "lexicalEntries"
     private let kKeyEntries:String = "entries"
     private let kKeySenses:String = "senses"
     private let kKeyExamples:String = "examples"
     private let kKeySubsenses:String = "subsenses"
-    private let kExampleFontSize:CGFloat = 18
-    private let kSensesFontSize:CGFloat = 18
+    private let kExampleFontSize:CGFloat = 21
+    private let kSensesFontSize:CGFloat = 16
     private let kSubsensesFontSize:CGFloat = 16
     
     private class func parseSynonyms(
@@ -32,7 +31,7 @@ class MSearchSynonyms
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         let stringBreak:NSAttributedString = NSAttributedString(
-            string:kBreakSynonyms,
+            string:kBreak,
             attributes:attributes)
         
         for jsonSynonym:Any in jsonSynonyms
@@ -75,15 +74,17 @@ class MSearchSynonyms
         }
         
         let attributesExample:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.medium(size:kExampleFontSize),
-            NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
+            NSFontAttributeName:UIFont.italic(size:kExampleFontSize),
+            NSForegroundColorAttributeName:UIColor.black]
         let attributesSenses:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:kSensesFontSize)]
+            NSFontAttributeName:UIFont.regular(size:kSensesFontSize),
+            NSForegroundColorAttributeName:UIColor(white:0.1, alpha:1)]
         let attributesSubsenses:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:kSubsensesFontSize)]
+            NSFontAttributeName:UIFont.regular(size:kSubsensesFontSize),
+            NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
         
         let stringBreak:NSAttributedString = NSAttributedString(
-            string:kBreak,
+            string:MSearchSynonyms.kBreak,
             attributes:attributesExample)
         
         for jsonResult:Any in jsonResults
@@ -150,6 +151,7 @@ class MSearchSynonyms
                                 
                                 if !mutableString.string.isEmpty
                                 {
+                                    mutableString.append(stringBreak)
                                     mutableString.append(stringBreak)
                                 }
                                 
