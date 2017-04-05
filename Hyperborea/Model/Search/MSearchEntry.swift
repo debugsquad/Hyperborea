@@ -13,7 +13,7 @@ class MSearchEntry
     private let kKeyLexicalCategory:String = "lexicalCategory"
     private let kBreak:String = "\n"
     private let kWordFontSize:CGFloat = 40
-    private let kNotFoundFontSize:CGFloat = 20
+    private let kNotFoundFontSize:CGFloat = 18
     
     init(
         wordId:String,

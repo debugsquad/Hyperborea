@@ -8,7 +8,7 @@ class MSearchTranslations
     private static let kKeyText:String = "text"
     private static let kBreak:String = "\n"
     private static let kExamplesFontSize:CGFloat = 17
-    private static let kExamplesTranslationFontSize:CGFloat = 17
+    private static let kExamplesTranslationFontSize:CGFloat = 16
     private let kKeyResults:String = "results"
     private let kKeyWord:String = "word"
     private let kKeyLexicalEntries:String = "lexicalEntries"
@@ -17,6 +17,7 @@ class MSearchTranslations
     private let kKeySubsenses:String = "subsenses"
     private let kTranslationsFontSize:CGFloat = 20
     private let kWordFontSize:CGFloat = 40
+    private let kNotFoundFontSize:CGFloat = 18
     
     private class func parseExamples(json:[String:Any]) -> NSAttributedString?
     {
@@ -31,10 +32,10 @@ class MSearchTranslations
         
         let attributesExample:[String:Any] = [
             NSFontAttributeName:UIFont.italic(size:kExamplesFontSize),
-            NSForegroundColorAttributeName:UIColor(white:0.4, alpha:1)]
+            NSForegroundColorAttributeName:UIColor.black]
         let attributesTranslation:[String:Any] = [
             NSFontAttributeName:UIFont.regular(size:kExamplesTranslationFontSize),
-            NSForegroundColorAttributeName:UIColor(white:0.1, alpha:1)]
+            NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         let stringBreak:NSAttributedString = NSAttributedString(
@@ -60,6 +61,7 @@ class MSearchTranslations
             
             mutableString.append(stringBreak)
             mutableString.append(stringText)
+            mutableString.append(stringBreak)
             
             for jsonExampleTranslation:Any in jsonExampleTranslations
             {
@@ -77,8 +79,8 @@ class MSearchTranslations
                     string:jsonTranslationText,
                     attributes:attributesTranslation)
                 
-                mutableString.append(stringBreak)
                 mutableString.append(stringText)
+                mutableString.append(stringBreak)
             }
         }
         
@@ -207,7 +209,6 @@ class MSearchTranslations
                         if let exampleString:NSAttributedString = MSearchTranslations.parseExamples(
                             json:jsonSenseMap)
                         {
-                            mutableString.append(stringBreak)
                             mutableString.append(exampleString)
                         }
                         
@@ -226,7 +227,6 @@ class MSearchTranslations
                                     continue
                                 }
                                 
-                                mutableString.append(stringBreak)
                                 mutableString.append(exampleString)
                             }
                         }
@@ -262,7 +262,7 @@ class MSearchTranslations
     {
         let string:String = NSLocalizedString("MSearchTranslations_notFound", comment:"")
         let attributes:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:MSearchTranslations.kExamplesFontSize),
+            NSFontAttributeName:UIFont.regular(size:kNotFoundFontSize),
             NSForegroundColorAttributeName:UIColor(white:0.4, alpha:1)]
         
         attributedString = NSAttributedString(

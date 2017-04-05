@@ -89,7 +89,7 @@ class MSearchSynonyms
         var stringWord:NSAttributedString?
         let stringBreak:NSAttributedString = NSAttributedString(
             string:MSearchSynonyms.kBreak,
-            attributes:attributesWord)
+            attributes:attributesExample)
         
         for jsonResult:Any in jsonResults
         {
