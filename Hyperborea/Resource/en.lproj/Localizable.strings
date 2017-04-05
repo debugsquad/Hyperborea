@@ -9,6 +9,7 @@
 "MSearchContentModeItemOrigins_name"="Origins";
 "MSearchEntry_notFound"="Definition not found";
 "MSearchSynonyms_notFound"="No synonyms found";
+"MSearchAntonyms_notFound"="No antonyms found";
 
 "MSearchEntryItemNoun_title"="Noun";
 "MSearchEntryItemVerb_title"="Verb";

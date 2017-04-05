@@ -3,7 +3,7 @@ import UIKit
 class MSearchAntonyms
 {
     let attributedString:NSAttributedString
-    private static let kKeySynonyms:String = "synonyms"
+    private static let kKeyAntonyms:String = "antonyms"
     private static let kKeyText:String = "text"
     private static let kBreak:String = "\n"
     private let kKeyResults:String = "results"
@@ -16,15 +16,15 @@ class MSearchAntonyms
     private let kSensesFontSize:CGFloat = 14
     private let kSubsensesFontSize:CGFloat = 14
     
-    private class func parseSynonyms(
+    private class func parseAntonyms(
         json:[String:Any],
         attributes:[String:AnyObject]) -> NSAttributedString?
     {
         guard
             
-            let jsonSynonyms:[Any] = json[kKeySynonyms] as? [Any]
+            let jsonAntonyms:[Any] = json[kKeyAntonyms] as? [Any]
             
-            else
+        else
         {
             return nil
         }
@@ -34,20 +34,20 @@ class MSearchAntonyms
             string:kBreak,
             attributes:attributes)
         
-        for jsonSynonym:Any in jsonSynonyms
+        for jsonAntonym:Any in jsonAntonyms
         {
             guard
                 
-                let jsonSynonymMap:[String:Any] = jsonSynonym as? [String:Any],
-                let jsonSynonymText:String = jsonSynonymMap[kKeyText] as? String
+                let jsonAntonymMap:[String:Any] = jsonAntonym as? [String:Any],
+                let jsonAntonymText:String = jsonAntonymMap[kKeyText] as? String
                 
-                else
+            else
             {
                 continue
             }
             
             let stringText:NSAttributedString = NSAttributedString(
-                string:jsonSynonymText,
+                string:jsonAntonymText,
                 attributes:attributes)
             
             mutableString.append(stringBreak)
@@ -66,7 +66,7 @@ class MSearchAntonyms
             let jsonMap:[String:Any] = json as? [String:Any],
             let jsonResults:[Any] = jsonMap[kKeyResults] as? [Any]
             
-            else
+        else
         {
             attributedString = mutableString
             
@@ -94,7 +94,7 @@ class MSearchAntonyms
                 let jsonResultMap:[String:Any] = jsonResult as? [String:Any],
                 let jsonLexicalEntries:[Any] = jsonResultMap[kKeyLexicalEntries] as? [Any]
                 
-                else
+            else
             {
                 continue
             }
@@ -106,7 +106,7 @@ class MSearchAntonyms
                     let jsonLexicalEntryMap:[String:Any] = jsonLexicalEntry as? [String:Any],
                     let jsonEntries:[Any] = jsonLexicalEntryMap[kKeyEntries] as? [Any]
                     
-                    else
+                else
                 {
                     continue
                 }
@@ -118,7 +118,7 @@ class MSearchAntonyms
                         let jsonEntryMap:[String:Any] = jsonEntry as? [String:Any],
                         let jsonEntrySenses:[Any] = jsonEntryMap[kKeySenses] as? [Any]
                         
-                        else
+                    else
                     {
                         continue
                     }
@@ -129,7 +129,7 @@ class MSearchAntonyms
                             
                             let jsonSenseMap:[String:Any] = jsonEntrySense as? [String:Any]
                             
-                            else
+                        else
                         {
                             continue
                         }
@@ -163,11 +163,11 @@ class MSearchAntonyms
                             }
                         }
                         
-                        if let synonymsString:NSAttributedString = MSearchAntonyms.parseSynonyms(
+                        if let antonymsString:NSAttributedString = MSearchAntonyms.parseAntonyms(
                             json:jsonSenseMap,
                             attributes:attributesSenses)
                         {
-                            mutableString.append(synonymsString)
+                            mutableString.append(antonymsString)
                         }
                         
                         if let jsonSubsenses:[Any] = jsonSenseMap[kKeySubsenses] as? [Any]
@@ -178,16 +178,16 @@ class MSearchAntonyms
                                     
                                     let jsonSubsenseMap:[String:Any] = jsonSubsense as? [String:Any]
                                     
-                                    else
+                                else
                                 {
                                     continue
                                 }
                                 
-                                if let synonymsString:NSAttributedString = MSearchAntonyms.parseSynonyms(
+                                if let antonymsString:NSAttributedString = MSearchAntonyms.parseAntonyms(
                                     json:jsonSubsenseMap,
                                     attributes:attributesSubsenses)
                                 {
-                                    mutableString.append(synonymsString)
+                                    mutableString.append(antonymsString)
                                 }
                             }
                         }
@@ -201,7 +201,7 @@ class MSearchAntonyms
     
     init()
     {
-        let string:String = NSLocalizedString("MSearchSynonyms_notFound", comment:"")
+        let string:String = NSLocalizedString("MSearchAntonyms_notFound", comment:"")
         let attributes:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kExampleFontSize),
             NSForegroundColorAttributeName:UIColor(white:0.4, alpha:1)]

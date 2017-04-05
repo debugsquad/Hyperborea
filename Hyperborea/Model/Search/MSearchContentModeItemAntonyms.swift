@@ -19,6 +19,6 @@ class MSearchContentModeItemAntonyms:MSearchContentModeItem
     
     override func contentString(controller:CSearch) -> NSAttributedString?
     {
-        return controller.modelEntry?.synonyms?.attributedString
+        return controller.modelEntry?.antonyms?.attributedString
     }
 }

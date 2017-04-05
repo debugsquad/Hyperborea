@@ -117,7 +117,8 @@ class MSearchRequestEntity:MSearchRequest
         {
             try json = JSONSerialization.jsonObject(
                 with:dataStrong,
-                options:JSONSerialization.ReadingOptions.allowFragments)
+                options:
+                JSONSerialization.ReadingOptions.allowFragments)
         }
         catch
         {

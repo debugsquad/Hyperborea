@@ -52,24 +52,24 @@ class MSearchRequestAntonyms:MSearchRequest
             let statusCode:Int = self.statusCode(
                 error:error,
                 urlResponse:urlResponse)
-            let modelSynonyms:MSearchSynonyms?
+            let modelAntonyms:MSearchAntonyms?
             
             switch statusCode
             {
             case self.kStatusCodeSuccess:
                 
-                modelSynonyms = self.parseData(data:data)
+                modelAntonyms = self.parseData(data:data)
                 
                 break
                 
             default:
                 
-                modelSynonyms = MSearchSynonyms()
+                modelAntonyms = MSearchAntonyms()
                 
                 break
             }
             
-            model.synonyms = modelSynonyms
+            model.antonyms = modelAntonyms
             self.controller?.showContent(modelEntry:model)
         }
         
@@ -77,7 +77,7 @@ class MSearchRequestAntonyms:MSearchRequest
         session.finishTasksAndInvalidate()
     }
     
-    private func parseData(data:Data?) -> MSearchSynonyms?
+    private func parseData(data:Data?) -> MSearchAntonyms?
     {
         guard
             
@@ -94,15 +94,16 @@ class MSearchRequestAntonyms:MSearchRequest
         {
             try json = JSONSerialization.jsonObject(
                 with:dataStrong,
-                options:JSONSerialization.ReadingOptions.allowFragments)
+                options:
+                JSONSerialization.ReadingOptions.allowFragments)
         }
         catch
         {
             return nil
         }
         
-        let modelSynonyms:MSearchSynonyms = MSearchSynonyms(json:json)
+        let modelAntonyms:MSearchAntonyms = MSearchAntonyms(json:json)
         
-        return modelSynonyms
+        return modelAntonyms
     }
 }
