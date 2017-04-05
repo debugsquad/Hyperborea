@@ -3,12 +3,27 @@ import UIKit
 class MSearchTranslations
 {
     let attributedString:NSAttributedString
+    private let kKeyResults:String = "results"
     
     init(json:Any)
     {
-        print(json)
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
-        attributedString = NSAttributedString()
+        guard
+            
+            let jsonMap:[String:Any] = json as? [String:Any],
+            let jsonResults:[Any] = jsonMap[kKeyResults] as? [Any]
+            
+        else
+        {
+            attributedString = mutableString
+            
+            return
+        }
+        
+        
+        
+        attributedString = mutableString
     }
     
     init()

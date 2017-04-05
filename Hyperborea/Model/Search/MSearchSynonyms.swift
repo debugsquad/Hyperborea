@@ -15,6 +15,7 @@ class MSearchSynonyms
     private let kExampleFontSize:CGFloat = 18
     private let kSensesFontSize:CGFloat = 14
     private let kSubsensesFontSize:CGFloat = 14
+    private let kWordFontSize:CGFloat = 40
     
     private class func parseSynonyms(
         json:[String:Any],
@@ -73,6 +74,8 @@ class MSearchSynonyms
             return
         }
         
+        let attributesWord:[String:Any] = [
+            NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
         let attributesExample:[String:AnyObject] = [
             NSFontAttributeName:UIFont.italic(size:kExampleFontSize),
             NSForegroundColorAttributeName:UIColor.black]

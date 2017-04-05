@@ -4,7 +4,6 @@ class MSearchEntry
 {
     let attributedString:NSAttributedString
     let wordId:String
-    let word:String
     var synonyms:MSearchSynonyms?
     var antonyms:MSearchAntonyms?
     var translations:MSearchTranslations?
@@ -12,7 +11,6 @@ class MSearchEntry
     private let kKeyWord:String = "word"
     private let kKeyLexicalEntries:String = "lexicalEntries"
     private let kKeyLexicalCategory:String = "lexicalCategory"
-    private let kEmpty:String = ""
     private let kBreak:String = "\n"
     private let kWordFontSize:CGFloat = 40
     private let kNotFoundFontSize:CGFloat = 20
@@ -31,7 +29,6 @@ class MSearchEntry
         else
         {
             attributedString = NSAttributedString()
-            self.word = kEmpty
             
             return
         }
@@ -102,25 +99,11 @@ class MSearchEntry
         }
         
         attributedString = mutableString
-        
-        guard
-            
-            let wordFound:String = word
-        
-        else
-        {
-            self.word = kEmpty
-            
-            return
-        }
-        
-        self.word = wordFound
     }
     
     init(wordId:String)
     {
         self.wordId = wordId
-        word = kEmpty
         
         let string:String = NSLocalizedString("MSearchEntry_notFound", comment:"")
         let attributes:[String:AnyObject] = [
