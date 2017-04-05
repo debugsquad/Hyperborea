@@ -36,11 +36,10 @@ class MSearchEntry
         let attributesWord:[String:Any] = [
             NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
         var stringWord:NSAttributedString?
-        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         let stringBreak:NSAttributedString = NSAttributedString(
             string:kBreak,
             attributes:attributesWord)
-        var word:String?
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
         for jsonResult:Any in jsonResults
         {
@@ -54,12 +53,10 @@ class MSearchEntry
                 continue
             }
             
-            if word == nil
+            if stringWord == nil
             {
                 if let rawWord:String = jsonResultMap[kKeyWord] as? String
                 {
-                    word = rawWord
-                    
                     stringWord = NSAttributedString(
                         string:rawWord,
                         attributes:attributesWord)

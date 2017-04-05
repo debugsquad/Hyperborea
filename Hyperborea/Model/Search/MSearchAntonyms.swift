@@ -7,6 +7,7 @@ class MSearchAntonyms
     private static let kKeyText:String = "text"
     private static let kBreak:String = "\n"
     private let kKeyResults:String = "results"
+    private let kKeyWord:String = "word"
     private let kKeyLexicalEntries:String = "lexicalEntries"
     private let kKeyEntries:String = "entries"
     private let kKeySenses:String = "senses"
@@ -74,8 +75,6 @@ class MSearchAntonyms
             return
         }
         
-        let attributesWord:[String:Any] = [
-            NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
         let attributesExample:[String:AnyObject] = [
             NSFontAttributeName:UIFont.italic(size:kExampleFontSize),
             NSForegroundColorAttributeName:UIColor.black]
@@ -85,10 +84,12 @@ class MSearchAntonyms
         let attributesSubsenses:[String:AnyObject] = [
             NSFontAttributeName:UIFont.italic(size:kSubsensesFontSize),
             NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
-        
+        let attributesWord:[String:Any] = [
+            NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
+        var stringWord:NSAttributedString?
         let stringBreak:NSAttributedString = NSAttributedString(
             string:MSearchAntonyms.kBreak,
-            attributes:attributesExample)
+            attributes:attributesWord)
         
         for jsonResult:Any in jsonResults
         {
@@ -100,6 +101,16 @@ class MSearchAntonyms
             else
             {
                 continue
+            }
+            
+            if stringWord == nil
+            {
+                if let rawWord:String = jsonResultMap[kKeyWord] as? String
+                {
+                    stringWord = NSAttributedString(
+                        string:rawWord,
+                        attributes:attributesWord)
+                }
             }
             
             for jsonLexicalEntry:Any in jsonLexicalEntries
@@ -197,6 +208,12 @@ class MSearchAntonyms
                     }
                 }
             }
+        }
+        
+        if let stringWord:NSAttributedString = stringWord
+        {
+            mutableString.insert(stringBreak, at:0)
+            mutableString.insert(stringWord, at:0)
         }
         
         attributedString = mutableString
