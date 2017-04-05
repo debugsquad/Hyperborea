@@ -11,4 +11,14 @@ class MSearchContentModeItemTranslate:MSearchContentModeItem
             rawName:rawName,
             reusableIdentifier:reusableIdentifier)
     }
+    
+    override func selected(controller:CSearch)
+    {
+        controller.fetchTranslations()
+    }
+    
+    override func contentString(controller:CSearch) -> NSAttributedString?
+    {
+        return controller.modelEntry?.translations?.attributedString
+    }
 }

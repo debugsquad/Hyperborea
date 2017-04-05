@@ -204,6 +204,11 @@ class CSearch:CController
         
         viewSearch.showContent(restartMode:false)
         
-        
+        if modelEntry.translations == nil
+        {
+            MSearchRequestTranslations(
+                controller:self,
+                model:modelEntry)
+        }
     }
 }
