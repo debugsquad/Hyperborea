@@ -31,11 +31,14 @@ class VSearchContentHeader:UICollectionReusableView
         let buttonFavorite:UIButton = UIButton()
         buttonFavorite.translatesAutoresizingMaskIntoConstraints = false
         buttonFavorite.setImage(
-            #imageLiteral(resourceName: "assetGenericFavorite").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            #imageLiteral(resourceName: "assetGenericFavoriteOff").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.normal)
         buttonFavorite.setImage(
-            #imageLiteral(resourceName: "assetGenericFavorite").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            #imageLiteral(resourceName: "assetGenericFavoriteOn").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
             for:UIControlState.highlighted)
+        buttonFavorite.setImage(
+            #imageLiteral(resourceName: "assetGenericFavoriteOn").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            for:UIControlState.selected)
         buttonFavorite.imageView!.tintColor = UIColor(white:0, alpha:0.1)
         buttonFavorite.imageView!.clipsToBounds = true
         buttonFavorite.imageView!.contentMode = UIViewContentMode.center
