@@ -1,14 +1,16 @@
-import UIKit
+import Foundation
 
 class MSearchContentModeItemAntonyms:MSearchContentModeItem
 {
     init()
     {
-        let rawName:String = NSLocalizedString("MSearchContentModeItemAntonyms_name", comment:"")
+        let title:String = NSLocalizedString("MSearchContentModeItemAntonyms_name", comment:"")
+        let symbol:String = NSLocalizedString("MSearchContentModeItemAntonyms_symbol", comment:"")
         let reusableIdentifier:String = VSearchContentCellAntonyms.reusableIdentifier
         
         super.init(
-            rawName:rawName,
+            title:title,
+            symbol:symbol,
             reusableIdentifier:reusableIdentifier)
     }
     

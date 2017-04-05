@@ -1,19 +1,19 @@
-import UIKit
+import Foundation
 
 class MSearchContentModeItem
 {
-    let rawName:String
+    let title:String
+    let symbol:String
     let reusableIdentifier:String
-    var attributedString:NSAttributedString?
-    var cellWidth:CGFloat
     
     init(
-        rawName:String,
+        title:String,
+        symbol:String,
         reusableIdentifier:String)
     {
-        self.rawName = rawName
+        self.title = title
+        self.symbol = symbol
         self.reusableIdentifier = reusableIdentifier
-        cellWidth = 0
     }
     
     //MARK: public

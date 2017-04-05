@@ -1,14 +1,16 @@
-import UIKit
+import Foundation
 
 class MSearchContentModeItemDefinition:MSearchContentModeItem
 {
     init()
     {
-        let rawName:String = NSLocalizedString("MSearchContentModeItemDefinition_name", comment:"")
+        let title:String = NSLocalizedString("MSearchContentModeItemDefinition_name", comment:"")
+        let symbol:String = NSLocalizedString("MSearchContentModeItemDefinition_symbol", comment:"")
         let reusableIdentifier:String = VSearchContentCellDefinition.reusableIdentifier
         
         super.init(
-            rawName:rawName,
+            title:title,
+            symbol:symbol,
             reusableIdentifier:reusableIdentifier)
     }
     

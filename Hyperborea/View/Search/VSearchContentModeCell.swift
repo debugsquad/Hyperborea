@@ -2,9 +2,10 @@ import UIKit
 
 class VSearchContentModeCell:UICollectionViewCell
 {
-    private weak var label:UILabel!
+    private weak var labelTitle:UILabel!
     private let kLabelTop:CGFloat = 64
-    private let kLabelHeight:CGFloat = 28
+    private let kTitleHeight:CGFloat = 20
+    private let kTitleFontSize:CGFloat = 11
     
     override init(frame:CGRect)
     {
@@ -12,23 +13,23 @@ class VSearchContentModeCell:UICollectionViewCell
         clipsToBounds = true
         backgroundColor = UIColor.clear
         
-        let label:UILabel = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.isUserInteractionEnabled = false
-        label.textAlignment = NSTextAlignment.center
-        self.label = label
+        let labelTitle:UILabel = UILabel()
+        labelTitle.translatesAutoresizingMaskIntoConstraints = false
+        labelTitle.isUserInteractionEnabled = false
+        labelTitle.textAlignment = NSTextAlignment.center
+        labelTitle.font = UIFont.regular(size:kTitleFontSize)
+        self.labelTitle = labelTitle
         
-        addSubview(label)
+        addSubview(labelTitle)
         
-        NSLayoutConstraint.topToTop(
-            view:label,
-            toView:self,
-            constant:kLabelTop)
+        NSLayoutConstraint.bottomToBottom(
+            view:labelTitle,
+            toView:self)
         NSLayoutConstraint.height(
-            view:label,
-            constant:kLabelHeight)
+            view:labelTitle,
+            constant:kTitleHeight)
         NSLayoutConstraint.equalsHorizontal(
-            view:label,
+            view:labelTitle,
             toView:self)
     }
     
@@ -59,11 +60,11 @@ class VSearchContentModeCell:UICollectionViewCell
     {
         if isSelected || isHighlighted
         {
-            label.textColor = UIColor.hyperBlue
+            labelTitle.textColor = UIColor.hyperBlue
         }
         else
         {
-            label.textColor = UIColor(white:0.8, alpha:1)
+            labelTitle.textColor = UIColor(white:0.8, alpha:1)
         }
     }
     
@@ -71,7 +72,7 @@ class VSearchContentModeCell:UICollectionViewCell
     
     func config(model:MSearchContentModeItem)
     {
-        label.attributedText = model.attributedString
+        labelTitle.text = model.title
         hover()
     }
 }

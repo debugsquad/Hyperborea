@@ -1,14 +1,16 @@
-import UIKit
+import Foundation
 
 class MSearchContentModeItemTranslate:MSearchContentModeItem
 {
     init()
     {
-        let rawName:String = NSLocalizedString("MSearchContentModeItemTranslate_name", comment:"")
+        let title:String = NSLocalizedString("MSearchContentModeItemTranslate_name", comment:"")
+        let symbol:String = NSLocalizedString("MSearchContentModeItemTranslate_symbol", comment:"")
         let reusableIdentifier:String = VSearchContentCellTranslations.reusableIdentifier
         
         super.init(
-            rawName:rawName,
+            title:title,
+            symbol:symbol,
             reusableIdentifier:reusableIdentifier)
     }
     
