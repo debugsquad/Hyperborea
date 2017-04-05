@@ -10,6 +10,7 @@
 "MSearchEntry_notFound"="Definition not found";
 "MSearchSynonyms_notFound"="No synonyms found";
 "MSearchAntonyms_notFound"="No antonyms found";
+"MSearchTranslations_notFound"="Translations not found";
 
 "MSearchEntryItemNoun_title"="Noun";
 "MSearchEntryItemVerb_title"="Verb";
