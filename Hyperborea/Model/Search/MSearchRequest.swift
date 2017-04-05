@@ -5,7 +5,6 @@ class MSearchRequest
     weak var task:URLSessionTask?
     let session:URLSession
     let kMethod:String = "GET"
-    let kEmpty:String = ""
     let kNetworkServiceType:URLRequest.NetworkServiceType = URLRequest.NetworkServiceType.default
     let kCachePolicy:URLRequest.CachePolicy = URLRequest.CachePolicy.reloadIgnoringLocalCacheData
     let kResponseDisposition:URLSession.ResponseDisposition = URLSession.ResponseDisposition.allow
@@ -99,8 +98,13 @@ class MSearchRequest
         return urlRequest
     }
     
-    final func statusCode(urlResponse:URLResponse?) -> Int
+    final func statusCode(error:Error?, urlResponse:URLResponse?) -> Int
     {
+        if let _:Error = error
+        {
+            return kStatusCodeError
+        }
+        
         guard
             
             let response:HTTPURLResponse = urlResponse as? HTTPURLResponse

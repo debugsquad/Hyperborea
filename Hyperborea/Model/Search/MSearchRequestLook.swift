@@ -6,8 +6,8 @@ class MSearchRequestLook:MSearchRequest
     
     @discardableResult init(controller:CSearch, query:String)
     {
-        self.controller = controller
         super.init()
+        self.controller = controller
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
@@ -47,7 +47,9 @@ class MSearchRequestLook:MSearchRequest
         task = session.dataTask(with:request)
         { (data:Data?, urlResponse:URLResponse?, error:Error?) in
             
-            let statusCode:Int = self.statusCode(urlResponse:urlResponse)
+            let statusCode:Int = self.statusCode(
+                error:error,
+                urlResponse:urlResponse)
             let results:MSearchResults?
             
             switch statusCode
