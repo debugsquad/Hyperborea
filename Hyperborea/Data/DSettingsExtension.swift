@@ -31,6 +31,20 @@ extension DSettings
         }
     }
     
+    func languageTranslate() -> String
+    {
+        switch language
+        {
+        case Language.spanish.rawValue:
+            
+            return "en"
+            
+        default:
+            
+            return "es"
+        }
+    }
+    
     func currentLanguage() -> Language
     {
         let current:Language = Language(rawValue:language)!

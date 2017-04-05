@@ -17,7 +17,6 @@ class MUrls
     {
         case oxfordSearch = "oxfordSearch"
         case oxfordEntries = "oxfordEntries"
-        case oxfordSynonyms = "oxfordSynonyms"
     }
     
     private let urlMap:[String:String]

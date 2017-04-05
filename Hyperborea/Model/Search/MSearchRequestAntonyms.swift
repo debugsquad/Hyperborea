@@ -23,7 +23,7 @@ class MSearchRequestAntonyms:MSearchRequest
         guard
             
             let urlHost:String = MSession.sharedInstance.modelUrls.urlHost(host:MUrls.Host.hostOxford),
-            let urlEndPoint:String = MSession.sharedInstance.modelUrls.urlEnpoint(endPoint:MUrls.EndPoint.oxfordSynonyms),
+            let urlEndPoint:String = MSession.sharedInstance.modelUrls.urlEnpoint(endPoint:MUrls.EndPoint.oxfordEntries),
             let languageCode:String = MSession.sharedInstance.settings?.languageCode()
             
         else

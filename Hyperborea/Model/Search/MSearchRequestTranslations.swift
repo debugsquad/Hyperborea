@@ -1,9 +1,9 @@
 import Foundation
 
-class MSearchRequestSynonyms:MSearchRequest
+class MSearchRequestTranslations:MSearchRequest
 {
     private weak var controller:CSearch?
-    private let kSuffix:String = "synonyms"
+    private let kSuffix:String = "translations="
     
     @discardableResult init(controller:CSearch, model:MSearchEntry)
     {
@@ -24,7 +24,8 @@ class MSearchRequestSynonyms:MSearchRequest
             
             let urlHost:String = MSession.sharedInstance.modelUrls.urlHost(host:MUrls.Host.hostOxford),
             let urlEndPoint:String = MSession.sharedInstance.modelUrls.urlEnpoint(endPoint:MUrls.EndPoint.oxfordEntries),
-            let languageCode:String = MSession.sharedInstance.settings?.languageCode()
+            let languageCode:String = MSession.sharedInstance.settings?.languageCode(),
+            let translateTarget:String = MSession.sharedInstance.settings?.languageTranslate()
             
         else
         {
@@ -32,44 +33,44 @@ class MSearchRequestSynonyms:MSearchRequest
         }
         
         let wordId:String = model.wordId
-        let urlString:String = "\(urlHost)/\(urlEndPoint)/\(languageCode)/\(wordId)/\(kSuffix)"
+        let urlString:String = "\(urlHost)/\(urlEndPoint)/\(languageCode)/\(wordId)/\(kSuffix)\(translateTarget)"
         let headers:[String:String] = MSession.sharedInstance.modelOxfordCredentials.credentialHeaders()
         
         guard
-        
+            
             let request:URLRequest = request(
                 urlString:urlString,
                 headers:headers)
-        
+            
         else
         {
             return
         }
-
+        
         task = session.dataTask(with:request)
         { (data:Data?, urlResponse:URLResponse?, error:Error?) in
             
             let statusCode:Int = self.statusCode(
                 error:error,
                 urlResponse:urlResponse)
-            let modelSynonyms:MSearchSynonyms?
+            let modelTranslations:MSearchTranslations?
             
             switch statusCode
             {
             case self.kStatusCodeSuccess:
                 
-                modelSynonyms = self.parseData(data:data)
+                modelTranslations = self.parseData(data:data)
                 
                 break
                 
             default:
                 
-                modelSynonyms = MSearchSynonyms()
+                modelTranslations = MSearchTranslations()
                 
                 break
             }
             
-            model.synonyms = modelSynonyms
+            model.translations = modelTranslations
             self.controller?.showContent(modelEntry:model)
         }
         
@@ -77,7 +78,7 @@ class MSearchRequestSynonyms:MSearchRequest
         session.finishTasksAndInvalidate()
     }
     
-    private func parseData(data:Data?) -> MSearchSynonyms?
+    private func parseData(data:Data?) -> MSearchTranslations?
     {
         guard
             
@@ -102,8 +103,8 @@ class MSearchRequestSynonyms:MSearchRequest
             return nil
         }
         
-        let modelSynonyms:MSearchSynonyms = MSearchSynonyms(json:json)
+        let modelTranslations:MSearchTranslations = MSearchTranslations(json:json)
         
-        return modelSynonyms
+        return modelTranslations
     }
 }
