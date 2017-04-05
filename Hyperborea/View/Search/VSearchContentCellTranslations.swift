@@ -40,6 +40,6 @@ class VSearchContentCellTranslations:VSearchContentCell
     
     override func config(controller:CSearch)
     {
-        label.attributedText = controller.modelEntry?.antonyms?.attributedString
+        label.attributedText = controller.modelEntry?.translations?.attributedString
     }
 }

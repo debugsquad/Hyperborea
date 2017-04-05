@@ -58,8 +58,8 @@ class MSearchTranslations
                 string:jsonExampleText,
                 attributes:attributesExample)
             
-            mutableString.append(stringText)
             mutableString.append(stringBreak)
+            mutableString.append(stringText)
             
             for jsonExampleTranslation:Any in jsonExampleTranslations
             {
@@ -77,8 +77,8 @@ class MSearchTranslations
                     string:jsonTranslationText,
                     attributes:attributesTranslation)
                 
-                mutableString.append(stringText)
                 mutableString.append(stringBreak)
+                mutableString.append(stringText)
             }
         }
         
@@ -110,6 +110,7 @@ class MSearchTranslations
         let stringBreak:NSAttributedString = NSAttributedString(
             string:MSearchTranslations.kBreak,
             attributes:attributesWord)
+        var translations:[String] = []
         
         for jsonResult:Any in jsonResults
         {
@@ -171,8 +172,6 @@ class MSearchTranslations
                         if let jsonTranslations:[Any] = jsonSenseMap[
                             MSearchTranslations.kKeyTranslations] as? [Any]
                         {
-                            let translationsString:NSMutableAttributedString = NSMutableAttributedString()
-                            
                             for jsonTranslation:Any in jsonTranslations
                             {
                                 guard
@@ -186,20 +185,29 @@ class MSearchTranslations
                                     continue
                                 }
                                 
-                                let stringTranslation:NSAttributedString = NSAttributedString(
-                                    string:jsonTranslationText,
-                                    attributes:attributesTranslations)
+                                var append:Bool = true
                                 
-                                translationsString.append(stringTranslation)
-                                translationsString.append(stringBreak)
+                                for translation:String in translations
+                                {
+                                    if translation == jsonTranslationText
+                                    {
+                                        append = false
+                                        
+                                        break
+                                    }
+                                }
+                                
+                                if append
+                                {
+                                    translations.append(jsonTranslationText)
+                                }
                             }
-                            
-                            mutableString.insert(translationsString, at:0)
                         }
                         
                         if let exampleString:NSAttributedString = MSearchTranslations.parseExamples(
                             json:jsonSenseMap)
                         {
+                            mutableString.append(stringBreak)
                             mutableString.append(exampleString)
                         }
                         
@@ -218,6 +226,7 @@ class MSearchTranslations
                                     continue
                                 }
                                 
+                                mutableString.append(stringBreak)
                                 mutableString.append(exampleString)
                             }
                         }
@@ -225,6 +234,20 @@ class MSearchTranslations
                 }
             }
         }
+        
+        let translationsString:NSMutableAttributedString = NSMutableAttributedString()
+        
+        for translation:String in translations
+        {
+            let stringTranslation:NSAttributedString = NSAttributedString(
+                string:translation,
+                attributes:attributesTranslations)
+            
+            translationsString.append(stringTranslation)
+            translationsString.append(stringBreak)
+        }
+        
+        mutableString.insert(translationsString, at:0)
         
         if let stringWord:NSAttributedString = stringWord
         {
