@@ -1,9 +1,9 @@
 import Foundation
 
-class MSearchRequestSynonyms:MSearchRequest
+class MSearchRequestAntonyms:MSearchRequest
 {
     private weak var controller:CSearch?
-    private let kSuffix:String = "synonyms"
+    private let kSuffix:String = "antonyms"
     
     @discardableResult init(controller:CSearch, model:MSearchEntry)
     {
@@ -36,16 +36,16 @@ class MSearchRequestSynonyms:MSearchRequest
         let headers:[String:String] = MSession.sharedInstance.modelOxfordCredentials.credentialHeaders()
         
         guard
-        
+            
             let request:URLRequest = request(
                 urlString:urlString,
                 headers:headers)
-        
+            
         else
         {
             return
         }
-
+        
         task = session.dataTask(with:request)
         { (data:Data?, urlResponse:URLResponse?, error:Error?) in
             

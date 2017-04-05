@@ -11,13 +11,13 @@ class MSearchRequestLook:MSearchRequest
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
-            self.asyncLookQuery(query:query)
+            self.asyncRequest(query:query)
         }
     }
     
     //MARK: private
     
-    private func asyncLookQuery(query:String)
+    private func asyncRequest(query:String)
     {
         guard
             

@@ -65,6 +65,7 @@
 		DA4B23161E95212E00F5FE1A /* VSearchConentCellAntonyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B23151E95212E00F5FE1A /* VSearchConentCellAntonyms.swift */; };
 		DA4B23181E953BFE00F5FE1A /* MSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B23171E953BFE00F5FE1A /* MSearchRequest.swift */; };
 		DA4B231A1E95479D00F5FE1A /* MSearchAntonyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B23191E95479D00F5FE1A /* MSearchAntonyms.swift */; };
+		DA4B231C1E9548C200F5FE1A /* MSearchRequestAntonyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B231B1E9548C200F5FE1A /* MSearchRequestAntonyms.swift */; };
 		DA71ED151E92955100D444C9 /* MSearchRequestEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71ED141E92955100D444C9 /* MSearchRequestEntry.swift */; };
 		DA71ED171E92A41C00D444C9 /* MSearchEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71ED161E92A41C00D444C9 /* MSearchEntry.swift */; };
 		DA71ED191E92A65400D444C9 /* MSearchEntryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71ED181E92A65400D444C9 /* MSearchEntryItem.swift */; };
@@ -182,6 +183,7 @@
 		DA4B23151E95212E00F5FE1A /* VSearchConentCellAntonyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchConentCellAntonyms.swift; sourceTree = "<group>"; };
 		DA4B23171E953BFE00F5FE1A /* MSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchRequest.swift; sourceTree = "<group>"; };
 		DA4B23191E95479D00F5FE1A /* MSearchAntonyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchAntonyms.swift; sourceTree = "<group>"; };
+		DA4B231B1E9548C200F5FE1A /* MSearchRequestAntonyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchRequestAntonyms.swift; sourceTree = "<group>"; };
 		DA71ED141E92955100D444C9 /* MSearchRequestEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchRequestEntry.swift; sourceTree = "<group>"; };
 		DA71ED161E92A41C00D444C9 /* MSearchEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntry.swift; sourceTree = "<group>"; };
 		DA71ED181E92A65400D444C9 /* MSearchEntryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryItem.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				DAD5B25F1E8EDB6900F5E481 /* MSearchRequestLook.swift */,
 				DA71ED141E92955100D444C9 /* MSearchRequestEntry.swift */,
 				DA22F0201E9444D8009AD88E /* MSearchRequestSynonyms.swift */,
+				DA4B231B1E9548C200F5FE1A /* MSearchRequestAntonyms.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				DAD5B2601E8EDB6900F5E481 /* MSearchRequestLook.swift in Sources */,
 				DA22F0211E9444D8009AD88E /* MSearchRequestSynonyms.swift in Sources */,
 				DA1F6FEF1E8B13DD00484942 /* MSearchOptions.swift in Sources */,
+				DA4B231C1E9548C200F5FE1A /* MSearchRequestAntonyms.swift in Sources */,
 				DA71ED151E92955100D444C9 /* MSearchRequestEntry.swift in Sources */,
 				DAD5B24D1E8EA8E500F5E481 /* VCollectionFlow.swift in Sources */,
 				DA1317441E8C42A4000624CF /* MSearchContentModeItem.swift in Sources */,

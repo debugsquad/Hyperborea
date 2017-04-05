@@ -169,4 +169,23 @@ class CSearch:CController
                 model:modelEntry)
         }
     }
+    
+    func fetchAntonyms()
+    {
+        guard
+        
+            let modelEntry:MSearchEntry = self.modelEntry
+        
+        else
+        {
+            return
+        }
+        
+        viewSearch.showContent(restartMode:false)
+        
+        if modelEntry.antonyms == nil
+        {
+            
+        }
+    }
 }

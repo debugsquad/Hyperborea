@@ -142,7 +142,7 @@ class MSearchAntonyms
                                     
                                     let jsonExampleMap:[String:Any] = jsonExample as? [String:Any],
                                     let jsonExampleText:String = jsonExampleMap[
-                                        MSearchSynonyms.kKeyText] as? String
+                                        MSearchAntonyms.kKeyText] as? String
                                     
                                     else
                                 {
@@ -163,7 +163,7 @@ class MSearchAntonyms
                             }
                         }
                         
-                        if let synonymsString:NSAttributedString = MSearchSynonyms.parseSynonyms(
+                        if let synonymsString:NSAttributedString = MSearchAntonyms.parseSynonyms(
                             json:jsonSenseMap,
                             attributes:attributesSenses)
                         {
@@ -183,7 +183,7 @@ class MSearchAntonyms
                                     continue
                                 }
                                 
-                                if let synonymsString:NSAttributedString = MSearchSynonyms.parseSynonyms(
+                                if let synonymsString:NSAttributedString = MSearchAntonyms.parseSynonyms(
                                     json:jsonSubsenseMap,
                                     attributes:attributesSubsenses)
                                 {

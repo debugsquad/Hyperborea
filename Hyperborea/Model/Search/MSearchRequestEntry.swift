@@ -13,13 +13,13 @@ class MSearchRequestEntity:MSearchRequest
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
-            self.asyncLookQuery(wordId:wordId, region:region)
+            self.asyncRequest(wordId:wordId, region:region)
         }
     }
     
     //MARK: private
     
-    private func asyncLookQuery(wordId:String, region:String?)
+    private func asyncRequest(wordId:String, region:String?)
     {
         guard
             
