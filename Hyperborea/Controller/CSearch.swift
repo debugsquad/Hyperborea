@@ -185,7 +185,9 @@ class CSearch:CController
         
         if modelEntry.antonyms == nil
         {
-            
+            MSearchRequestAntonyms(
+                controller:self,
+                model:modelEntry)
         }
     }
 }

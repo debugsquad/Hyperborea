@@ -41,6 +41,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.registerHeader(header:VSearchContentHeader.self)
         collectionView.registerCell(cell:VSearchContentCellDefinition.self)
         collectionView.registerCell(cell:VSearchContentCellSynonyms.self)
+        collectionView.registerCell(cell:VSearchContentCellAntonyms.self)
         self.collectionView = collectionView
         
         let spinner:VSpinner = VSpinner()
