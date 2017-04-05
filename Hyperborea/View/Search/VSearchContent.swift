@@ -8,6 +8,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var spinner:VSpinner!
     private weak var layoutModeHeight:NSLayoutConstraint!
     private var cellHeight:CGFloat
+    private var headerHeight:CGFloat
     private let drawingOptions:NSStringDrawingOptions
     private let kModeHeight:CGFloat = 120
     private let kHeaderHeight:CGFloat = 60
@@ -22,6 +23,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             NSStringDrawingOptions.usesFontLeading,
             NSStringDrawingOptions.usesLineFragmentOrigin])
         cellHeight = 0
+        headerHeight = 0
         
         super.init(frame:CGRect.zero)
         clipsToBounds = true
@@ -105,6 +107,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
                 context:nil)
             let textHeight:CGFloat = ceil(boundingRect.size.height)
             cellHeight = textHeight + kContentAddHeight
+            headerHeight = kHeaderHeight
             totalHeight = cellHeight + kModeHeight + kHeaderHeight
             
             layoutModeHeight.constant = kModeHeight
@@ -113,6 +116,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         else
         {
             cellHeight = 0
+            headerHeight = 0
             layoutModeHeight.constant = 0
             spinner.startAnimating()
             totalHeight = kLoadingHeight
@@ -137,18 +141,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
     {
-        let height:CGFloat
-        
-        if controller.modelEntry == nil
-        {
-            height = 0
-        }
-        else
-        {
-            height = kHeaderHeight
-        }
-        
-        let size:CGSize = CGSize(width:0, height:height)
+        let size:CGSize = CGSize(width:0, height:headerHeight)
         
         return size
     }
