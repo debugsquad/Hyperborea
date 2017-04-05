@@ -12,9 +12,9 @@ class MSearchSynonyms
     private let kKeySenses:String = "senses"
     private let kKeyExamples:String = "examples"
     private let kKeySubsenses:String = "subsenses"
-    private let kExampleFontSize:CGFloat = 21
-    private let kSensesFontSize:CGFloat = 16
-    private let kSubsensesFontSize:CGFloat = 16
+    private let kExampleFontSize:CGFloat = 18
+    private let kSensesFontSize:CGFloat = 14
+    private let kSubsensesFontSize:CGFloat = 14
     
     private class func parseSynonyms(
         json:[String:Any],
@@ -78,10 +78,10 @@ class MSearchSynonyms
             NSForegroundColorAttributeName:UIColor.black]
         let attributesSenses:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kSensesFontSize),
-            NSForegroundColorAttributeName:UIColor(white:0.1, alpha:1)]
+            NSForegroundColorAttributeName:UIColor.black]
         let attributesSubsenses:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:kSubsensesFontSize),
-            NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
+            NSFontAttributeName:UIFont.italic(size:kSubsensesFontSize),
+            NSForegroundColorAttributeName:UIColor(white:0.45, alpha:1)]
         
         let stringBreak:NSAttributedString = NSAttributedString(
             string:MSearchSynonyms.kBreak,
