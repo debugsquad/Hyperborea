@@ -9,6 +9,7 @@ class MSearchResultsItem
     private static let kReplaceU:String = "ú"
     private static let kReplaceExcalamation:String = "¡"
     private static let kReplaceDiagonal:String = "%2F"
+    private static let kReplaceUnderscore:String = "_"
     private static let kNormalA:String = "a"
     private static let kNormalE:String = "e"
     private static let kNormalI:String = "i"
@@ -16,6 +17,7 @@ class MSearchResultsItem
     private static let kNormalU:String = "u"
     private static let kNormalExclamation:String = "%C2%A1"
     private static let kNormalDiagonal:String = "%2F"
+    private static let kNormalUnderscore:String = " "
     
     let wordId:String
     let word:String
@@ -58,6 +60,22 @@ class MSearchResultsItem
         return newWordId
     }
     
+    private class func normalizeWord(word:String) -> String
+    {
+        var newWord:String = word
+        
+        if let decodeWord:String = newWord.removingPercentEncoding
+        {
+            newWord = decodeWord
+        }
+        
+        newWord = newWord.replacingOccurrences(
+            of:kReplaceUnderscore,
+            with:kNormalUnderscore)
+        
+        return newWord
+    }
+    
     init?(json:Any)
     {
         let jsonMap:[String:Any]? = json as? [String:Any]
@@ -66,8 +84,7 @@ class MSearchResultsItem
             
             let rawWordId:String = jsonMap?[kKeyWordId] as? String,
             let matchType:String = jsonMap?[kKeyMathType] as? String,
-            let encodedWord:String = jsonMap?[kKeyWord] as? String,
-            let word:String = encodedWord.removingPercentEncoding
+            let rawWord:String = jsonMap?[kKeyWord] as? String
             
         else
         {
@@ -76,6 +93,8 @@ class MSearchResultsItem
         
         let wordId:String = MSearchResultsItem.normalizeWordId(
             wordId:rawWordId)
+        let word:String = MSearchResultsItem.normalizeWord(
+            word:rawWord)
         
         cellWidth = 0
         cellHeight = 0

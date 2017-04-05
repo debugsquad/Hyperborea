@@ -7,6 +7,7 @@ class MSearchEntry
     let word:String
     var synonyms:MSearchSynonyms?
     var antonyms:MSearchAntonyms?
+    var translations:MSearchTranslations?
     private let kKeyResults:String = "results"
     private let kKeyWord:String = "word"
     private let kKeyLexicalEntries:String = "lexicalEntries"
