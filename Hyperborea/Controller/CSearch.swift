@@ -161,8 +161,12 @@ class CSearch:CController
         }
         
         viewSearch.showContent(restartMode:false)
-        MSearchRequestSynonyms(
-            controller:self,
-            model:modelEntry)
+        
+        if modelEntry.synonyms == nil
+        {
+            MSearchRequestSynonyms(
+                controller:self,
+                model:modelEntry)
+        }
     }
 }
