@@ -190,4 +190,20 @@ class CSearch:CController
                 model:modelEntry)
         }
     }
+    
+    func fetchTranslations()
+    {
+        guard
+        
+            let modelEntry:MSearchEntry = self.modelEntry
+        
+        else
+        {
+            return
+        }
+        
+        viewSearch.showContent(restartMode:false)
+        
+        
+    }
 }
