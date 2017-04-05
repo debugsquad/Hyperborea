@@ -4,7 +4,7 @@ class MSearchContentModeItemSynonyms:MSearchContentModeItem
 {
     init()
     {
-        let title:String = NSLocalizedString("MSearchContentModeItemSynonyms_name", comment:"")
+        let title:String = NSLocalizedString("MSearchContentModeItemSynonyms_title", comment:"")
         let symbol:String = NSLocalizedString("MSearchContentModeItemSynonyms_symbol", comment:"")
         let reusableIdentifier:String = VSearchContentCellSynonyms.reusableIdentifier
         

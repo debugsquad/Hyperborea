@@ -5,7 +5,7 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
     let model:MSearchContentMode
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
-    private let kBorderHeight:CGFloat = 1
+    private let kCollectionHeight:CGFloat = 70
     private let kAfterSelect:TimeInterval = 0.3
     
     init(controller:CSearch)
@@ -17,8 +17,6 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
-        
-        let borderBottom:VBorder = VBorder(color:UIColor.hyperBlue)
         
         let collectionView:VCollection = VCollection()
         collectionView.bounces = false
@@ -33,22 +31,18 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
             flow.scrollDirection = UICollectionViewScrollDirection.horizontal
         }
         
-        addSubview(borderBottom)
         addSubview(collectionView)
         
         NSLayoutConstraint.bottomToBottom(
-            view:borderBottom,
-            toView:self)
-        NSLayoutConstraint.height(
-            view:borderBottom,
-            constant:kBorderHeight)
-        NSLayoutConstraint.equalsHorizontal(
-            view:borderBottom,
-            toView:self)
-        
-        NSLayoutConstraint.equals(
             view:collectionView,
             toView:self)
+        NSLayoutConstraint.height(
+            view:collectionView,
+            constant:kCollectionHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:collectionView,
+            toView:self)
+        
     }
     
     required init?(coder:NSCoder)

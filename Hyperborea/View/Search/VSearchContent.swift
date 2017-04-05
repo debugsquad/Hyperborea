@@ -9,7 +9,7 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var layoutModeHeight:NSLayoutConstraint!
     private var cellHeight:CGFloat
     private let drawingOptions:NSStringDrawingOptions
-    private let kModeHeight:CGFloat = 100
+    private let kModeHeight:CGFloat = 120
     private let kHeaderHeight:CGFloat = 60
     private let kLoadingHeight:CGFloat = 320
     private let kContentAddHeight:CGFloat = 40

@@ -4,7 +4,7 @@ class MSearchContentModeItemAntonyms:MSearchContentModeItem
 {
     init()
     {
-        let title:String = NSLocalizedString("MSearchContentModeItemAntonyms_name", comment:"")
+        let title:String = NSLocalizedString("MSearchContentModeItemAntonyms_title", comment:"")
         let symbol:String = NSLocalizedString("MSearchContentModeItemAntonyms_symbol", comment:"")
         let reusableIdentifier:String = VSearchContentCellAntonyms.reusableIdentifier
         

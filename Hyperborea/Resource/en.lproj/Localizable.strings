@@ -2,11 +2,16 @@
 "VSettingsBar_labelTitle"="Hyperborea";
 "VSettingsCellLanguage_labelTitle"="Language";
 
-"MSearchContentModeItemDefinition_name"="Definition";
-"MSearchContentModeItemSynonyms_name"="Synonyms";
-"MSearchContentModeItemAntonyms_name"="Antonyms";
-"MSearchContentModeItemTranslate_name"="Translate";
-"MSearchContentModeItemOrigins_name"="Origins";
+"MSearchContentModeItemDefinition_title"="Definition";
+"MSearchContentModeItemDefinition_symbol"="D";
+"MSearchContentModeItemSynonyms_title"="Synonyms";
+"MSearchContentModeItemSynonyms_symbol"="S";
+"MSearchContentModeItemAntonyms_title"="Antonyms";
+"MSearchContentModeItemAntonyms_symbol"="A";
+"MSearchContentModeItemTranslate_title"="Translate";
+"MSearchContentModeItemTranslate_symbol"="T";
+"MSearchContentModeItemOrigins_title"="Origins";
+"MSearchContentModeItemOrigins_symbol"="O";
 "MSearchEntry_notFound"="Definition not found";
 "MSearchSynonyms_notFound"="No synonyms found";
 "MSearchAntonyms_notFound"="No antonyms found";
