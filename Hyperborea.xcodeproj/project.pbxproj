@@ -66,6 +66,7 @@
 		DA4B231A1E95479D00F5FE1A /* MSearchAntonyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B23191E95479D00F5FE1A /* MSearchAntonyms.swift */; };
 		DA4B231C1E9548C200F5FE1A /* MSearchRequestAntonyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B231B1E9548C200F5FE1A /* MSearchRequestAntonyms.swift */; };
 		DA4B231E1E954E1900F5FE1A /* VSearchContentCellAntonyms.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B231D1E954E1900F5FE1A /* VSearchContentCellAntonyms.swift */; };
+		DA4B23201E954E5D00F5FE1A /* VSearchContentCellTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4B231F1E954E5D00F5FE1A /* VSearchContentCellTranslations.swift */; };
 		DA71ED151E92955100D444C9 /* MSearchRequestEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71ED141E92955100D444C9 /* MSearchRequestEntry.swift */; };
 		DA71ED171E92A41C00D444C9 /* MSearchEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71ED161E92A41C00D444C9 /* MSearchEntry.swift */; };
 		DA71ED191E92A65400D444C9 /* MSearchEntryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA71ED181E92A65400D444C9 /* MSearchEntryItem.swift */; };
@@ -184,6 +185,7 @@
 		DA4B23191E95479D00F5FE1A /* MSearchAntonyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchAntonyms.swift; sourceTree = "<group>"; };
 		DA4B231B1E9548C200F5FE1A /* MSearchRequestAntonyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchRequestAntonyms.swift; sourceTree = "<group>"; };
 		DA4B231D1E954E1900F5FE1A /* VSearchContentCellAntonyms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContentCellAntonyms.swift; sourceTree = "<group>"; };
+		DA4B231F1E954E5D00F5FE1A /* VSearchContentCellTranslations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchContentCellTranslations.swift; sourceTree = "<group>"; };
 		DA71ED141E92955100D444C9 /* MSearchRequestEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchRequestEntry.swift; sourceTree = "<group>"; };
 		DA71ED161E92A41C00D444C9 /* MSearchEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntry.swift; sourceTree = "<group>"; };
 		DA71ED181E92A65400D444C9 /* MSearchEntryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchEntryItem.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				DA90CB351E92DEA300497AD0 /* VSearchContentCellDefinition.swift */,
 				DA22F0241E94672B009AD88E /* VSearchContentCellSynonyms.swift */,
 				DA4B231D1E954E1900F5FE1A /* VSearchContentCellAntonyms.swift */,
+				DA4B231F1E954E5D00F5FE1A /* VSearchContentCellTranslations.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				DA22F0211E9444D8009AD88E /* MSearchRequestSynonyms.swift in Sources */,
 				DA1F6FEF1E8B13DD00484942 /* MSearchOptions.swift in Sources */,
 				DA4B231C1E9548C200F5FE1A /* MSearchRequestAntonyms.swift in Sources */,
+				DA4B23201E954E5D00F5FE1A /* VSearchContentCellTranslations.swift in Sources */,
 				DA71ED151E92955100D444C9 /* MSearchRequestEntry.swift in Sources */,
 				DAD5B24D1E8EA8E500F5E481 /* VCollectionFlow.swift in Sources */,
 				DA1317441E8C42A4000624CF /* MSearchContentModeItem.swift in Sources */,
