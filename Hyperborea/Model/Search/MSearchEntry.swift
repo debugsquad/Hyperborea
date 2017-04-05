@@ -6,6 +6,7 @@ class MSearchEntry
     let wordId:String
     let word:String
     var synonyms:MSearchSynonyms?
+    var antonyms:MSearchAntonyms?
     private let kKeyResults:String = "results"
     private let kKeyWord:String = "word"
     private let kKeyLexicalEntries:String = "lexicalEntries"
@@ -123,7 +124,7 @@ class MSearchEntry
         let string:String = NSLocalizedString("MSearchEntry_notFound", comment:"")
         let attributes:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kNotFoundFontSize),
-            NSForegroundColorAttributeName:UIColor(white:0.3, alpha:1)]
+            NSForegroundColorAttributeName:UIColor(white:0.4, alpha:1)]
         attributedString = NSAttributedString(
             string:string,
             attributes:attributes)

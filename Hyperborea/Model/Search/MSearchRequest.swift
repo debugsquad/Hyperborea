@@ -14,7 +14,7 @@ class MSearchRequest
     let kStatusCodeSuccess:Int = 200
     let kStatusCodeError:Int = 0
     
-    @discardableResult init()
+    init()
     {
         let configuration:URLSessionConfiguration = URLSessionConfiguration.ephemeral
         configuration.allowsCellularAccess = kCellularAccess
@@ -41,8 +41,6 @@ class MSearchRequest
     
     @objc func notifiedCancelRequests(sender notification:Notification)
     {
-        print("stopped")
-        
         task?.cancel()
     }
     
