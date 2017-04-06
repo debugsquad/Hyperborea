@@ -3,7 +3,7 @@ import UIKit
 class MLanguage
 {
     let rawValue:Int16
-    let string:String
+    let code:String
     let imageOn:UIImage
     let imageOff:UIImage
     
@@ -23,12 +23,12 @@ class MLanguage
     
     init(
         rawValue:Int16,
-        string:String,
+        code:String,
         imageOn:UIImage,
         imageOff:UIImage)
     {
         self.rawValue = rawValue
-        self.string = string
+        self.code = code
         self.imageOn = imageOn
         self.imageOff = imageOff
     }

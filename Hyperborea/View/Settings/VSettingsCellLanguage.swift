@@ -114,12 +114,16 @@ class VSettingsCellLanguage:VSettingsCell
     
     func actionEnglish(sender button:UIButton)
     {
-        newLanguage(language:DSettings.Language.english)
+        let languageEnglish:MLanguageEnglish = MLanguageEnglish()
+        
+        newLanguage(language:languageEnglish)
     }
     
     func actionSpanish(sender button:UIButton)
     {
-        newLanguage(language:DSettings.Language.spanish)
+        let languageSpanish:MLanguageSpanish = MLanguageSpanish()
+        
+        newLanguage(language:languageSpanish)
     }
     
     //MARK: private
@@ -128,32 +132,26 @@ class VSettingsCellLanguage:VSettingsCell
     {
         guard
         
-            let language:DSettings.Language = MSession.sharedInstance.settings?.currentLanguage()
+            let language:MLanguage = MSession.sharedInstance.settings?.currentLanguage()
         
         else
         {
             return
         }
         
-        switch language
+        if let _:MLanguageEnglish = language as? MLanguageEnglish
         {
-        case DSettings.Language.english:
-            
             buttonEnglish.isSelected = true
             buttonSpanish.isSelected = false
-            
-            break
-            
-        case DSettings.Language.spanish:
-            
+        }
+        else
+        {
             buttonEnglish.isSelected = false
             buttonSpanish.isSelected = true
-            
-            break
         }
     }
     
-    private func newLanguage(language:DSettings.Language)
+    private func newLanguage(language:MLanguage)
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {

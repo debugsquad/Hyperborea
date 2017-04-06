@@ -3,7 +3,7 @@ import UIKit
 class MLanguageSpanish:MLanguage
 {
     static let kRawValue:Int16 = 1
-    private let kString:String = "es"
+    private let kCode:String = "es"
     
     init()
     {
@@ -12,7 +12,7 @@ class MLanguageSpanish:MLanguage
         
         super.init(
             rawValue:MLanguageSpanish.kRawValue,
-            string:kString,
+            code:kCode,
             imageOn:imageOn,
             imageOff:imageOff)
     }

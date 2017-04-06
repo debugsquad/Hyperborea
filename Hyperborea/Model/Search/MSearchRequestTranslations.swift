@@ -24,9 +24,20 @@ class MSearchRequestTranslations:MSearchRequest
             
             let urlHost:String = MSession.sharedInstance.modelUrls.urlHost(host:MUrls.Host.hostOxford),
             let urlEndPoint:String = MSession.sharedInstance.modelUrls.urlEnpoint(endPoint:MUrls.EndPoint.oxfordEntries),
-            let languageCode:String = MSession.sharedInstance.settings?.languageCode(),
-            let translateTarget:DSettings.Language = MSession.sharedInstance.settings?.languageTranslate()
+            let currentLanguage:MLanguage = MSession.sharedInstance.settings?.currentLanguage()
             
+        else
+        {
+            return
+        }
+        
+        let languageCode:String = currentLanguage.code
+        let translateOptions:[MLanguage] = currentLanguage.translateOptions()
+        
+        guard
+            
+            let translateTarget:String = translateOptions.first?.code
+        
         else
         {
             return
