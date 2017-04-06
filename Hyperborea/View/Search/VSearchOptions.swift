@@ -89,6 +89,8 @@ class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
+        UIApplication.shared.keyWindow!.endEditing(true)
+        
         collectionView.isUserInteractionEnabled = false
         
         let item:MSearchOptionsItem = modelAtIndex(index:indexPath)

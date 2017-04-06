@@ -36,15 +36,16 @@ class MSearchRequestTranslations:MSearchRequest
         
         guard
             
-            let translateTarget:String = translateOptions.first?.code
+            let translateTarget:MLanguage = translateOptions.first
         
         else
         {
             return
         }
         
+        let targetCode:String = translateTarget.code
         let wordId:String = model.wordId
-        let urlString:String = "\(urlHost)/\(urlEndPoint)/\(languageCode)/\(wordId)/\(kSuffix)\(translateTarget)"
+        let urlString:String = "\(urlHost)/\(urlEndPoint)/\(languageCode)/\(wordId)/\(kSuffix)\(targetCode)"
         let headers:[String:String] = MSession.sharedInstance.modelOxfordCredentials.credentialHeaders()
         
         guard
@@ -70,7 +71,9 @@ class MSearchRequestTranslations:MSearchRequest
             {
             case self.kStatusCodeSuccess:
                 
-                modelTranslations = self.parseData(data:data)
+                modelTranslations = self.parseData(
+                    language:translateTarget,
+                    data:data)
                 
                 break
                 
@@ -89,7 +92,9 @@ class MSearchRequestTranslations:MSearchRequest
         session.finishTasksAndInvalidate()
     }
     
-    private func parseData(data:Data?) -> MSearchTranslations?
+    private func parseData(
+        language:MLanguage,
+        data:Data?) -> MSearchTranslations?
     {
         guard
             
@@ -114,7 +119,9 @@ class MSearchRequestTranslations:MSearchRequest
             return nil
         }
         
-        let modelTranslations:MSearchTranslations = MSearchTranslations(json:json)
+        let modelTranslations:MSearchTranslations = MSearchTranslations(
+            language:language,
+            json:json)
         
         return modelTranslations
     }

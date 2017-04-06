@@ -2,7 +2,7 @@ import UIKit
 
 class MSearchContentModeItemTranslate:MSearchContentModeItem
 {
-    private let kCellAddedHeight:CGFloat = 40
+    private let kCellAddedHeight:CGFloat = 70
     
     init()
     {

@@ -2,6 +2,7 @@ import UIKit
 
 class MSearchTranslations
 {
+    let language:MLanguage?
     let attributedString:NSAttributedString
     private static let kKeyExamples:String = "examples"
     private static let kKeyTranslations:String = "translations"
@@ -87,8 +88,11 @@ class MSearchTranslations
         return mutableString
     }
     
-    init(json:Any)
+    init(
+        language:MLanguage,
+        json:Any)
     {
+        self.language = language
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
         guard
@@ -268,5 +272,6 @@ class MSearchTranslations
         attributedString = NSAttributedString(
             string:string,
             attributes:attributes)
+        language = nil
     }
 }

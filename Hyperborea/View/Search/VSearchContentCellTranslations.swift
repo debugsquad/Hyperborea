@@ -6,7 +6,7 @@ class VSearchContentCellTranslations:VSearchContentCell
     private weak var imageView:UIImageView!
     private let kLabelMarginHorizontal:CGFloat = 10
     private let kLabelBottom:CGFloat = -40
-    private let kImageHeight:CGFloat = 30
+    private let kImageSize:CGFloat = 55
     
     override init(frame:CGRect)
     {
@@ -24,15 +24,15 @@ class VSearchContentCellTranslations:VSearchContentCell
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isUserInteractionEnabled = false
         imageView.clipsToBounds = true
-        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        imageView.contentMode = UIViewContentMode.center
         self.imageView = imageView
         
         addSubview(imageView)
         addSubview(label)
         
-        NSLayoutConstraint.topToTop(
+        NSLayoutConstraint.topToBottom(
             view:label,
-            toView:self)
+            toView:imageView)
         NSLayoutConstraint.bottomToBottom(
             view:label,
             toView:self,
@@ -45,12 +45,12 @@ class VSearchContentCellTranslations:VSearchContentCell
         NSLayoutConstraint.topToTop(
             view:imageView,
             toView:self)
-        NSLayoutConstraint.height(
-            view:imageView,
-            constant:kImageHeight)
-        NSLayoutConstraint.equalsHorizontal(
+        NSLayoutConstraint.leftToLeft(
             view:imageView,
             toView:self)
+        NSLayoutConstraint.size(
+            view:imageView,
+            constant:kImageSize)
     }
     
     required init?(coder:NSCoder)
@@ -60,6 +60,16 @@ class VSearchContentCellTranslations:VSearchContentCell
     
     override func config(controller:CSearch)
     {
-        label.attributedText = controller.modelEntry?.translations?.attributedString
+        guard
+            
+            let translations:MSearchTranslations = controller.modelEntry?.translations
+        
+        else
+        {
+            return
+        }
+        
+        label.attributedText = translations.attributedString
+        imageView.image = translations.language?.imageOn
     }
 }
