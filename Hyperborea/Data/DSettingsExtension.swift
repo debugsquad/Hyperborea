@@ -3,12 +3,6 @@ import CoreData
 
 extension DSettings
 {
-    enum Language:Int16
-    {
-        case english = 0
-        case spanish
-    }
-    
     //MARK: public
     
     func addTtl()
@@ -17,42 +11,15 @@ extension DSettings
         DManager.sharedInstance?.save()
     }
     
-    func languageCode() -> String
+    func currentLanguage() -> MLanguage
     {
-        switch language
-        {
-        case Language.spanish.rawValue:
-            
-            return "es"
-            
-        default:
-            
-            return "en"
-        }
-    }
-    
-    func languageTranslate() -> Language
-    {
-        switch language
-        {
-        case Language.spanish.rawValue:
-            
-            return Language.english
-            
-        default:
-            
-            return Language.spanish
-        }
-    }
-    
-    func currentLanguage() -> Language
-    {
-        let current:Language = Language(rawValue:language)!
+        let language:MLanguage = MLanguage.language(
+            rawValue:self.language)
         
-        return current
+        return language
     }
     
-    func changeLanguage(language:Language)
+    func changeLanguage(language:MLanguage)
     {
         self.language = language.rawValue
         DManager.sharedInstance?.save()
