@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DEntry" representedClassName="DEntry" syncable="YES" codeGenerationType="class">
+        <attribute name="language" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="word" attributeType="String" syncable="YES"/>
+        <attribute name="wordId" attributeType="String" syncable="YES"/>
+        <relationship name="entryFavorite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DSettings" inverseName="favorites" inverseEntity="DSettings" syncable="YES"/>
+        <relationship name="entryRecent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DSettings" inverseName="recent" inverseEntity="DSettings" syncable="YES"/>
+    </entity>
     <entity name="DSettings" representedClassName="DSettings" syncable="YES" codeGenerationType="class">
         <attribute name="language" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="ttl" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="favorites" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DEntry" inverseName="entryFavorite" inverseEntity="DEntry" syncable="YES"/>
+        <relationship name="recent" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DEntry" inverseName="entryRecent" inverseEntity="DEntry" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="DEntry" positionX="-63" positionY="0" width="128" height="135"/>
     </elements>
 </model>
