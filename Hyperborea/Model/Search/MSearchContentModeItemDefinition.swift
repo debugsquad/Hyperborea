@@ -22,9 +22,9 @@ class MSearchContentModeItemDefinition:MSearchContentModeItem
         }
     }
     
-    override func contentHeight(controller: CSearch) -> CGFloat
+    override func contentHeight(controller:CSearch) -> CGFloat
     {
-        let width:CGFloat = bounds.maxX
+        let width:CGFloat = controller.viewSearch.bounds.maxX
         let maxSize:CGSize = CGSize(
             width:width - kContentRemoveWidth,
             height:kCompareHeight)
@@ -34,6 +34,8 @@ class MSearchContentModeItemDefinition:MSearchContentModeItem
             context:nil)
         let textHeight:CGFloat = ceil(boundingRect.size.height)
         cellHeight = textHeight + kContentAddHeight
+        
+        return cellhe
     }
     /*
     override func contentString(controller:CSearch) -> CGFloat

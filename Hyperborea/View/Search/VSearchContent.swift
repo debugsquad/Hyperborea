@@ -9,19 +9,12 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var layoutModeHeight:NSLayoutConstraint!
     private var cellHeight:CGFloat
     private var headerHeight:CGFloat
-    private let drawingOptions:NSStringDrawingOptions
     private let kModeHeight:CGFloat = 120
     private let kHeaderHeight:CGFloat = 60
     private let kLoadingHeight:CGFloat = 320
-    private let kContentAddHeight:CGFloat = 40
-    private let kContentRemoveWidth:CGFloat = 20
-    private let kCompareHeight:CGFloat = 9000
     
     init(controller:CSearch)
     {
-        drawingOptions = NSStringDrawingOptions([
-            NSStringDrawingOptions.usesFontLeading,
-            NSStringDrawingOptions.usesLineFragmentOrigin])
         cellHeight = 0
         headerHeight = 0
         
