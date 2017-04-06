@@ -4,6 +4,9 @@ class VRecent:VView
 {
     private weak var controller:CRecent!
     private weak var blurContainer:UIView!
+    private weak var layoutBaseBottom:NSLayoutConstraint!
+    private let kBaseHeight:CGFloat = 320
+    private let kBarHeight:CGFloat = 50
     private let kAnimationDuration:TimeInterval = 0.3
     
     override init(controller:CController)
@@ -30,9 +33,15 @@ class VRecent:VView
         
         let blur:VBlur = VBlur.dark()
         
+        let baseView:UIView = UIView()
+        baseView.backgroundColor = UIColor.white
+        baseView.translatesAutoresizingMaskIntoConstraints = false
+        baseView.clipsToBounds = true
+        
         blurContainer.addSubview(blur)
         addSubview(blurContainer)
         addSubview(buttonClose)
+        addSubview(baseView)
         
         NSLayoutConstraint.equals(
             view:blurContainer,
@@ -44,6 +53,17 @@ class VRecent:VView
         
         NSLayoutConstraint.equals(
             view:buttonClose,
+            toView:self)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:baseView,
+            toView:self,
+            constant:kBaseHeight)
+        NSLayoutConstraint.height(
+            view:baseView,
+            constant:kBaseHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:baseView,
             toView:self)
     }
     
