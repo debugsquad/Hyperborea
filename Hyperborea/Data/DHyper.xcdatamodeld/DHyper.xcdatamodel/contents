@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DEntry" representedClassName="DEntry" syncable="YES" codeGenerationType="class">
         <attribute name="language" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timestamp" attributeType="Date" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="word" attributeType="String" syncable="YES"/>
         <attribute name="wordId" attributeType="String" syncable="YES"/>
@@ -16,6 +17,6 @@
     </entity>
     <elements>
         <element name="DSettings" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="DEntry" positionX="-63" positionY="0" width="128" height="135"/>
+        <element name="DEntry" positionX="-63" positionY="0" width="128" height="150"/>
     </elements>
 </model>
