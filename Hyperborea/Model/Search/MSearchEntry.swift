@@ -29,6 +29,7 @@ class MSearchEntry
             
         else
         {
+            origins = MSearchOrigins()
             attributedString = NSAttributedString()
             
             return
@@ -97,6 +98,7 @@ class MSearchEntry
         }
         
         attributedString = mutableString
+        origins = MSearchOrigins(json:json)
     }
     
     init(wordId:String)
@@ -110,5 +112,7 @@ class MSearchEntry
         attributedString = NSAttributedString(
             string:string,
             attributes:attributes)
+        
+        origins = MSearchOrigins()
     }
 }

@@ -7,7 +7,7 @@ class MSearchOrigins
     
     init(json:Any)
     {
-        
+        attributedString = NSAttributedString()
     }
     
     init()
