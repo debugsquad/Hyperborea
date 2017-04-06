@@ -2,6 +2,8 @@ import UIKit
 
 class MSearchContentModeItemDefinition:MSearchContentModeItem
 {
+    private let kCellAddedHeight:CGFloat = 40
+    
     init()
     {
         let title:String = NSLocalizedString("MSearchContentModeItemDefinition_title", comment:"")
@@ -24,24 +26,20 @@ class MSearchContentModeItemDefinition:MSearchContentModeItem
     
     override func contentHeight(controller:CSearch) -> CGFloat
     {
-        let width:CGFloat = controller.viewSearch.bounds.maxX
-        let maxSize:CGSize = CGSize(
-            width:width - kContentRemoveWidth,
-            height:kCompareHeight)
-        let boundingRect:CGRect = contentString.boundingRect(
-            with:maxSize,
-            options:drawingOptions,
-            context:nil)
-        let textHeight:CGFloat = ceil(boundingRect.size.height)
-        cellHeight = textHeight + kContentAddHeight
+        guard
         
-        return cellhe
+            let attributedString:NSAttributedString = controller.modelEntry?.attributedString
+        
+        else
+        {
+            return 0
+        }
+            
+        let textHeight:CGFloat = heightForString(
+            controller:controller,
+            string:attributedString)
+        let cellHeight:CGFloat = textHeight + kCellAddedHeight
+        
+        return cellHeight
     }
-    /*
-    override func contentString(controller:CSearch) -> CGFloat
-    {
-        return controller.modelEntry?.attributedString
-        
-        return 0
-    }*/
 }

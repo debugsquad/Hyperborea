@@ -2,6 +2,8 @@ import UIKit
 
 class MSearchContentModeItemSynonyms:MSearchContentModeItem
 {
+    private let kCellAddedHeight:CGFloat = 40
+    
     init()
     {
         let title:String = NSLocalizedString("MSearchContentModeItemSynonyms_title", comment:"")
@@ -19,9 +21,22 @@ class MSearchContentModeItemSynonyms:MSearchContentModeItem
         controller.fetchSynonyms()
     }
     
-    /*
-    override func contentString(controller:CSearch) -> CGFloat?
+    override func contentHeight(controller:CSearch) -> CGFloat
     {
-        return controller.modelEntry?.synonyms?.attributedString
-    }*/
+        guard
+            
+            let attributedString:NSAttributedString = controller.modelEntry?.attributedString
+            
+        else
+        {
+            return 0
+        }
+        
+        let textHeight:CGFloat = heightForString(
+            controller:controller,
+            string:attributedString)
+        let cellHeight:CGFloat = textHeight + kCellAddedHeight
+        
+        return cellHeight
+    }
 }

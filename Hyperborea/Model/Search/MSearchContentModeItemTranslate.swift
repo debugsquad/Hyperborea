@@ -2,6 +2,8 @@ import UIKit
 
 class MSearchContentModeItemTranslate:MSearchContentModeItem
 {
+    private let kCellAddedHeight:CGFloat = 40
+    
     init()
     {
         let title:String = NSLocalizedString("MSearchContentModeItemTranslate_title", comment:"")
@@ -18,9 +20,23 @@ class MSearchContentModeItemTranslate:MSearchContentModeItem
     {
         controller.fetchTranslations()
     }
-    /*
-    override func contentString(controller:CSearch) -> CGFloat?
+    
+    override func contentHeight(controller:CSearch) -> CGFloat
     {
-        return controller.modelEntry?.translations?.attributedString
-    }*/
+        guard
+            
+            let attributedString:NSAttributedString = controller.modelEntry?.attributedString
+            
+            else
+        {
+            return 0
+        }
+        
+        let textHeight:CGFloat = heightForString(
+            controller:controller,
+            string:attributedString)
+        let cellHeight:CGFloat = textHeight + kCellAddedHeight
+        
+        return cellHeight
+    }
 }
