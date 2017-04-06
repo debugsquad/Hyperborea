@@ -99,7 +99,8 @@ class CSearch:CController
     
     func openRecent()
     {
-        let controllerRecent
+        let controllerRecent:CRecent = CRecent()
+        parentController.animateOver(controller:controllerRecent)
     }
     
     func editedText(text:String)
