@@ -15,11 +15,22 @@ class CSearch:CController
         mapEntry = [:]
         
         super.init()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(notifiedClearCache(sender:)),
+            name:Notification.clearCache,
+            object:nil)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func loadView()
@@ -40,6 +51,14 @@ class CSearch:CController
             
             self?.viewSearch.changeOrientation()
         }
+    }
+    
+    //MARK: notified
+    
+    func notifiedClearCache(sender notification:Notification)
+    {
+        mapResults = [:]
+        mapEntry = [:]
     }
     
     //MARK: private
