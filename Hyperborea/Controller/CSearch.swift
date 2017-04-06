@@ -97,6 +97,11 @@ class CSearch:CController
             horizontal:CParent.TransitionHorizontal.fromRight)
     }
     
+    func openRecent()
+    {
+        let controllerRecent
+    }
+    
     func editedText(text:String)
     {
         cancelRequests()
