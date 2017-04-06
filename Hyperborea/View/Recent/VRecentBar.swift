@@ -6,8 +6,8 @@ class VRecentBar:UIView
     private let kBorderHeight:CGFloat = 1
     private let kImageWidth:CGFloat = 50
     private let kLabelWidth:CGFloat = 100
-    private let kCornerRadius:CGFloat = 4
-    private let kCancelMarginVertical:CGFloat = 15
+    private let kCornerRadius:CGFloat = 5
+    private let kCancelMarginVertical:CGFloat = 14
     private let kCancelRight:CGFloat = -10
     private let kCancelWidth:CGFloat = 100
     
@@ -54,6 +54,7 @@ class VRecentBar:UIView
             self,
             action:#selector(actionCancel(sender:)),
             for:UIControlEvents.touchUpInside)
+        buttonCancel.titleLabel!.font = UIFont.bold(size:14)
         
         addSubview(border)
         addSubview(imageView)
