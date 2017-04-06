@@ -10,4 +10,11 @@ class CRecent:CController
         self.viewRecent = viewRecent
         view = viewRecent
     }
+    
+    override func viewDidAppear(_ animated:Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        viewRecent.animateShow()
+    }
 }
