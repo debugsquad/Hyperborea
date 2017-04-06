@@ -8,6 +8,9 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private weak var layoutBaseBottom:NSLayoutConstraint!
     private let kBaseHeight:CGFloat = 470
     private let kBarHeight:CGFloat = 60
+    private let kCellHeight:CGFloat = 45
+    private let kHeaderHeight:CGFloat = 30
+    private let kCollectionBottom:CGFloat = 20
     private let kAnimationDuration:TimeInterval = 0.3
     
     override init(controller:CController)
@@ -42,7 +45,28 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         let viewBar:VRecentBar = VRecentBar(
             controller:self.controller)
         
+        let collectionView:VCollection = VCollection()
+        collectionView.alwaysBounceVertical = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.registerHeader(header:VRecentHeader.self)
+        collectionView.registerCell(cell:VRecentCell.self)
+        self.collectionView = collectionView
+        
+        if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
+        {
+            flow.headerReferenceSize = CGSize(
+                width:0,
+                height:kHeaderHeight)
+            flow.sectionInset = UIEdgeInsets(
+                top:0,
+                left:0,
+                bottom:kCollectionBottom,
+                right:0)
+        }
+        
         baseView.addSubview(viewBar)
+        baseView.addSubview(collectionView)
         blurContainer.addSubview(blur)
         addSubview(blurContainer)
         addSubview(buttonClose)
@@ -79,6 +103,16 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
             constant:kBarHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:viewBar,
+            toView:baseView)
+        
+        NSLayoutConstraint.topToBottom(
+            view:collectionView,
+            toView:viewBar)
+        NSLayoutConstraint.bottomToBottom(
+            view:collectionView,
+            toView:baseView)
+        NSLayoutConstraint.equalsHorizontal(
+            view:collectionView,
             toView:baseView)
     }
     
@@ -147,6 +181,14 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     //MARK: collectionView delegate
     
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let width:CGFloat = collectionView.bounds.maxX
+        let size:CGSize = CGSize(width:width, height:kCellHeight)
+        
+        return size
+    }
+    
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {
         guard
@@ -168,8 +210,27 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         return count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
     {
-        let cell:VRecentHeader
+        let section:MRecentDay = controller.model!.sections[indexPath.section]
+        let header:VRecentHeader = collectionView.dequeueReusableSupplementaryView(
+            ofKind:kind,
+            withReuseIdentifier:VRecentHeader.reusableIdentifier,
+            for:indexPath) as! VRecentHeader
+        header.config(model:section)
+        
+        return header
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let item:MRecentEntry = modelAtIndex(index:indexPath)
+        let cell:VRecentCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier:
+            VRecentCell.reusableIdentifier,
+            for:indexPath) as! VRecentCell
+        cell.config(model:item)
+        
+        return cell
     }
 }

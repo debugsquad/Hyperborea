@@ -3,6 +3,7 @@ import UIKit
 class VRecentHeader:UICollectionReusableView
 {
     private weak var label:UILabel!
+    private let kLabelMargin:CGFloat = 10
     
     override init(frame:CGRect)
     {
@@ -20,6 +21,14 @@ class VRecentHeader:UICollectionReusableView
         self.label = label
         
         addSubview(label)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:label,
+            toView:self)
+        NSLayoutConstraint.equalsHorizontal(
+            view:label,
+            toView:self,
+            margin:kLabelMargin)
     }
     
     required init?(coder:NSCoder)
@@ -29,8 +38,8 @@ class VRecentHeader:UICollectionReusableView
     
     //MARK: public
     
-    func config()
+    func config(model:MRecentDay)
     {
-        
+        label.text = model.title
     }
 }
