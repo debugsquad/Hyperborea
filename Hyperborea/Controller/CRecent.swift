@@ -15,6 +15,15 @@ class CRecent:CController
     {
         super.viewDidAppear(animated)
         
+        parentController.statusBarAppareance(statusBarStyle:UIStatusBarStyle.lightContent)
         viewRecent.animateShow()
+    }
+    
+    //MARK: public
+    
+    func back()
+    {
+        parentController.statusBarAppareance(statusBarStyle:UIStatusBarStyle.default)
+        parentController.dismissAnimateOver(completion:nil)
     }
 }

@@ -19,10 +19,20 @@ class VRecent:VView
         blurContainer.alpha = 0
         self.blurContainer = blurContainer
         
+        let buttonClose:UIButton = UIButton()
+        buttonClose.translatesAutoresizingMaskIntoConstraints = false
+        buttonClose.clipsToBounds = true
+        buttonClose.backgroundColor = UIColor.clear
+        buttonClose.addTarget(
+            self,
+            action:#selector(actionClose(sender:)),
+            for:UIControlEvents.touchUpInside)
+        
         let blur:VBlur = VBlur.dark()
         
         blurContainer.addSubview(blur)
         addSubview(blurContainer)
+        addSubview(buttonClose)
         
         NSLayoutConstraint.equals(
             view:blurContainer,
@@ -31,11 +41,40 @@ class VRecent:VView
         NSLayoutConstraint.equals(
             view:blur,
             toView:blurContainer)
+        
+        NSLayoutConstraint.equals(
+            view:buttonClose,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: actions
+    
+    func actionClose(sender button:UIButton)
+    {
+        button.isUserInteractionEnabled = false
+        animateHide()
+    }
+    
+    //MARK: private
+    
+    private func animateHide()
+    {
+        UIView.animate(
+            withDuration:kAnimationDuration,
+            animations:
+        { [weak self] in
+            
+            self?.alpha = 0
+        })
+        { [weak self] (done:Bool) in
+            
+            self?.controller.back()
+        }
     }
     
     //MARK: public
