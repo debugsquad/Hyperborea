@@ -6,7 +6,8 @@ class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
     private let kCellWidth:CGFloat = 60
-    private let kDeselectTime:TimeInterval = 0.2
+    private let kDeselectTime:TimeInterval = 0.3
+    private let kCollectionLeft:CGFloat = 10
     
     init(controller:CSearch)
     {
@@ -28,6 +29,11 @@ class VSearchOptions:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
             flow.scrollDirection = UICollectionViewScrollDirection.horizontal
+            flow.sectionInset = UIEdgeInsets(
+                top:0,
+                left:kCollectionLeft,
+                bottom:0,
+                right:0)
         }
         
         addSubview(collectionView)
