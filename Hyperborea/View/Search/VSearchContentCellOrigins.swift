@@ -26,6 +26,6 @@ class VSearchContentCellOrigins:VSearchContentCell
     
     override func config(controller:CSearch)
     {
-        label.attributedText = controller.modelEntry?.synonyms?.attributedString
+        label.attributedText = controller.modelEntry?.origins.attributedString
     }
 }
