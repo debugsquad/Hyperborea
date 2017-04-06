@@ -8,11 +8,12 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private weak var layoutBaseBottom:NSLayoutConstraint!
     private let kBaseHeight:CGFloat = 470
     private let kBarHeight:CGFloat = 60
-    private let kCellHeight:CGFloat = 46
-    private let kHeaderHeight:CGFloat = 30
+    private let kCellHeight:CGFloat = 52
+    private let kHeaderHeight:CGFloat = 40
     private let kCollectionBottom:CGFloat = 20
     private let kInterItem:CGFloat = 1
     private let kAnimationDuration:TimeInterval = 0.3
+    private let kAfterSelect:TimeInterval = 0.3
     
     override init(controller:CController)
     {
@@ -39,7 +40,7 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         let blur:VBlur = VBlur.dark()
         
         let baseView:UIView = UIView()
-        baseView.backgroundColor = UIColor(white:0.96, alpha:1)
+        baseView.backgroundColor = UIColor(white:0.95, alpha:1)
         baseView.translatesAutoresizingMaskIntoConstraints = false
         baseView.clipsToBounds = true
         
@@ -225,7 +226,7 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         return header
     }
     
-    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
         let item:MRecentEntry = modelAtIndex(index:indexPath)
         let cell:VRecentCell = collectionView.dequeueReusableCell(
@@ -235,5 +236,22 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         cell.config(model:item)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
+    {
+        collectionView.isUserInteractionEnabled = false
+        let item:MRecentEntry = modelAtIndex(index:indexPath)
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kAfterSelect)
+        { [weak collectionView] in
+
+            collectionView?.selectItem(
+                at:nil,
+                animated:true,
+                scrollPosition:UICollectionViewScrollPosition())
+            collectionView?.isUserInteractionEnabled = true
+        }
     }
 }

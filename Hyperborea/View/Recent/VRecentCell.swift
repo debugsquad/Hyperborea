@@ -13,7 +13,7 @@ class VRecentCell:UICollectionViewCell
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.bold(size:15)
+        label.font = UIFont.bold(size:17)
         label.textAlignment = NSTextAlignment.center
         self.label = label
         

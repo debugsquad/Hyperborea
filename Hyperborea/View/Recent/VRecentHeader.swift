@@ -4,6 +4,7 @@ class VRecentHeader:UICollectionReusableView
 {
     private weak var label:UILabel!
     private let kLabelMargin:CGFloat = 10
+    private let kLabelHeight:CGFloat = 30
     
     override init(frame:CGRect)
     {
@@ -16,15 +17,18 @@ class VRecentHeader:UICollectionReusableView
         label.isUserInteractionEnabled = false
         label.backgroundColor = UIColor.clear
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.regular(size:14)
-        label.textColor = UIColor(white:0.6, alpha:1)
+        label.font = UIFont.regular(size:15)
+        label.textColor = UIColor(white:0.3, alpha:1)
         self.label = label
         
         addSubview(label)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.bottomToBottom(
             view:label,
             toView:self)
+        NSLayoutConstraint.height(
+            view:label,
+            constant:kLabelHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:label,
             toView:self,
