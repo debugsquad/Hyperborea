@@ -10,7 +10,9 @@ class MSearchResults
     private let kCellMaxHeight:CGFloat = 90
     private let kKeyResults:String = "results"
     
-    init(json:Any)
+    init(
+        json:Any,
+        language:MLanguage)
     {
         guard
             
@@ -39,7 +41,8 @@ class MSearchResults
             guard
                 
                 let item:MSearchResultsItem = MSearchResultsItem(
-                    json:jsonResult)
+                    json:jsonResult,
+                    language:language)
                 
             else
             {

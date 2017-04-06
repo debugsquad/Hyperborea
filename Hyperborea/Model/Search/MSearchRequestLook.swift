@@ -23,13 +23,14 @@ class MSearchRequestLook:MSearchRequest
             
             let urlHost:String = MSession.sharedInstance.modelUrls.urlHost(host:MUrls.Host.hostOxford),
             let urlEndPoint:String = MSession.sharedInstance.modelUrls.urlEnpoint(endPoint:MUrls.EndPoint.oxfordSearch),
-            let languageCode:String = MSession.sharedInstance.settings?.currentLanguage().code
+            let language:MLanguage = MSession.sharedInstance.settings?.currentLanguage()
         
         else
         {
             return
         }
         
+        let languageCode:String = language.code
         let urlString:String = "\(urlHost)/\(urlEndPoint)/\(languageCode)?q=\(query)"
         let headers:[String:String] = MSession.sharedInstance.modelOxfordCredentials.credentialHeaders()
         
@@ -56,7 +57,9 @@ class MSearchRequestLook:MSearchRequest
             {
             case self.kStatusCodeSuccess:
                 
-                results = self.parseData(data:data)
+                results = self.parseData(
+                    data:data,
+                    language:language)
                 
                 break
                 
@@ -85,7 +88,9 @@ class MSearchRequestLook:MSearchRequest
         session.finishTasksAndInvalidate()
     }
     
-    private func parseData(data:Data?) -> MSearchResults?
+    private func parseData(
+        data:Data?,
+        language:MLanguage) -> MSearchResults?
     {
         guard
             
@@ -110,7 +115,8 @@ class MSearchRequestLook:MSearchRequest
         }
         
         let results:MSearchResults = MSearchResults(
-            json:json)
+            json:json,
+            language:language)
         
         return results
     }

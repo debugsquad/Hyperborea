@@ -146,18 +146,34 @@ class CSearch:CController
     {
         cancelRequests()
         
-        self.modelResultItem = modelResultItem
-        let wordId:String = modelResultItem.wordId
-        
-        modelEntry = mapEntry[wordId]
-        viewSearch.showContent(restartMode:true)
-        
-        if modelEntry == nil
-        {
-            MSearchRequestEntity(
-                controller:self,
-                wordId:wordId,
-                region:modelResultItem.region)
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            guard
+                
+                let strongSelf:CSearch = self
+            
+            else
+            {
+                return
+            }
+            
+            MSession.sharedInstance.settings?.recentEntry(
+                resultsItem:modelResultItem)
+            
+            strongSelf.modelResultItem = modelResultItem
+            let wordId:String = modelResultItem.wordId
+            
+            strongSelf.modelEntry = strongSelf.mapEntry[wordId]
+            strongSelf.viewSearch.showContent(restartMode:true)
+            
+            if strongSelf.modelEntry == nil
+            {
+                MSearchRequestEntity(
+                    controller:strongSelf,
+                    wordId:wordId,
+                    region:modelResultItem.region)
+            }
         }
     }
     

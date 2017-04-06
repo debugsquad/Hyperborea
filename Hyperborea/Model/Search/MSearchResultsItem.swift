@@ -23,6 +23,7 @@ class MSearchResultsItem
     let word:String
     let matchType:String
     let region:String?
+    let languageRaw:Int16
     var attributedString:NSAttributedString?
     var cellWidth:CGFloat
     var cellHeight:CGFloat
@@ -76,7 +77,9 @@ class MSearchResultsItem
         return newWord
     }
     
-    init?(json:Any)
+    init?(
+        json:Any,
+        language:MLanguage)
     {
         let jsonMap:[String:Any]? = json as? [String:Any]
         
@@ -98,6 +101,7 @@ class MSearchResultsItem
         
         cellWidth = 0
         cellHeight = 0
+        languageRaw = language.rawValue
         self.region = jsonMap?[kKeyRegion] as? String
         self.wordId = wordId
         self.word = word
