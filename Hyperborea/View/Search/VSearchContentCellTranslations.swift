@@ -2,23 +2,12 @@ import UIKit
 
 class VSearchContentCellTranslations:VSearchContentCell
 {
-    private weak var label:UILabel!
     private weak var imageView:UIImageView!
-    private let kLabelMarginHorizontal:CGFloat = 10
-    private let kLabelBottom:CGFloat = -40
     private let kImageSize:CGFloat = 55
     
     override init(frame:CGRect)
     {
         super.init(frame:frame)
-        
-        let label:UILabel = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = UIColor.clear
-        label.isUserInteractionEnabled = false
-        label.numberOfLines = 0
-        label.textColor = UIColor.black
-        self.label = label
         
         let imageView:UIImageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +17,6 @@ class VSearchContentCellTranslations:VSearchContentCell
         self.imageView = imageView
         
         addSubview(imageView)
-        addSubview(label)
         
         NSLayoutConstraint.topToBottom(
             view:label,

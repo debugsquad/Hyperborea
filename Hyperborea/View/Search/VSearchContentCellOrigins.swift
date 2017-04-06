@@ -1,6 +1,6 @@
 import UIKit
 
-class VSearchContentCellDefinition:VSearchContentCell
+class VSearchContentCellOrigins:VSearchContentCell
 {
     override init(frame:CGRect)
     {
@@ -26,6 +26,6 @@ class VSearchContentCellDefinition:VSearchContentCell
     
     override func config(controller:CSearch)
     {
-        label.attributedText = controller.modelEntry?.attributedString
+        label.attributedText = controller.modelEntry?.synonyms?.attributedString
     }
 }
