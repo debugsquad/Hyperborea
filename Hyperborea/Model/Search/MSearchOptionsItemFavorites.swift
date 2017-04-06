@@ -4,7 +4,7 @@ class MSearchOptionsItemFavorites:MSearchOptionsItem
 {
     init()
     {
-        super.init(image:#imageLiteral(resourceName: "assetGenericSettings"))
+        super.init(image:#imageLiteral(resourceName: "assetGenericFavorites"))
     }
     
     override func selected(controller:CSearch)
