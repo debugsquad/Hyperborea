@@ -7,6 +7,7 @@ class VRecentCell:UICollectionViewCell
     override init(frame:CGRect)
     {
         super.init(frame:frame)
+        clipsToBounds = true
         
         let label:UILabel = UILabel()
         label.isUserInteractionEnabled = false
@@ -14,7 +15,6 @@ class VRecentCell:UICollectionViewCell
         label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(size:15)
         label.textAlignment = NSTextAlignment.center
-        label.textColor = UIColor.black
         self.label = label
         
         addSubview(label)
@@ -29,10 +29,43 @@ class VRecentCell:UICollectionViewCell
         return nil
     }
     
+    override var isSelected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var isHighlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    //MARK: private
+    
+    private func hover()
+    {
+        if isSelected || isHighlighted
+        {
+            backgroundColor = UIColor.hyperBlue
+            label.textColor = UIColor.white
+        }
+        else
+        {
+            backgroundColor = UIColor.white
+            label.textColor = UIColor.black
+        }
+    }
+    
     //MARK: public
     
     func config(model:MRecentEntry)
     {
         label.text = model.word
+        hover()
     }
 }

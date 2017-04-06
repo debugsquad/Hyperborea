@@ -9,7 +9,7 @@ class VRecentHeader:UICollectionReusableView
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor(white:0.96, alpha:1)
+        backgroundColor = UIColor.clear
         isUserInteractionEnabled = false
         
         let label:UILabel = UILabel()
@@ -17,7 +17,7 @@ class VRecentHeader:UICollectionReusableView
         label.backgroundColor = UIColor.clear
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.regular(size:14)
-        label.textColor = UIColor(white:0.7, alpha:1)
+        label.textColor = UIColor(white:0.6, alpha:1)
         self.label = label
         
         addSubview(label)

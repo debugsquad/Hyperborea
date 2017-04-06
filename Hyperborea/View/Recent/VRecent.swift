@@ -8,9 +8,10 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private weak var layoutBaseBottom:NSLayoutConstraint!
     private let kBaseHeight:CGFloat = 470
     private let kBarHeight:CGFloat = 60
-    private let kCellHeight:CGFloat = 45
+    private let kCellHeight:CGFloat = 46
     private let kHeaderHeight:CGFloat = 30
     private let kCollectionBottom:CGFloat = 20
+    private let kInterItem:CGFloat = 1
     private let kAnimationDuration:TimeInterval = 0.3
     
     override init(controller:CController)
@@ -38,7 +39,7 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         let blur:VBlur = VBlur.dark()
         
         let baseView:UIView = UIView()
-        baseView.backgroundColor = UIColor.white
+        baseView.backgroundColor = UIColor(white:0.96, alpha:1)
         baseView.translatesAutoresizingMaskIntoConstraints = false
         baseView.clipsToBounds = true
         
@@ -58,6 +59,8 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
             flow.headerReferenceSize = CGSize(
                 width:0,
                 height:kHeaderHeight)
+            flow.minimumLineSpacing = kInterItem
+            flow.minimumInteritemSpacing = kInterItem
             flow.sectionInset = UIEdgeInsets(
                 top:0,
                 left:0,
