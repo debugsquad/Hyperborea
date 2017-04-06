@@ -91,6 +91,9 @@
 		DA9642D51E96D6A30069375C /* VRecentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9642D41E96D6A30069375C /* VRecentHeader.swift */; };
 		DA9642D71E96D6AD0069375C /* VRecentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9642D61E96D6AD0069375C /* VRecentBar.swift */; };
 		DA9642D91E96D6B40069375C /* VRecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9642D81E96D6B40069375C /* VRecentCell.swift */; };
+		DA9642DC1E96E6480069375C /* MRecent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9642DB1E96E6480069375C /* MRecent.swift */; };
+		DA9642DE1E96E6540069375C /* MRecentDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9642DD1E96E6540069375C /* MRecentDay.swift */; };
+		DA9642E01E96E65E0069375C /* MRecentEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9642DF1E96E65E0069375C /* MRecentEntry.swift */; };
 		DAA99CC21E8B1B02003B9E2C /* VSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC11E8B1B02003B9E2C /* VSearchResults.swift */; };
 		DAA99CC41E8B2433003B9E2C /* MSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC31E8B2433003B9E2C /* MSearchResults.swift */; };
 		DAA99CC61E8B24DD003B9E2C /* MSearchResultsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA99CC51E8B24DD003B9E2C /* MSearchResultsItem.swift */; };
@@ -225,6 +228,9 @@
 		DA9642D41E96D6A30069375C /* VRecentHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VRecentHeader.swift; sourceTree = "<group>"; };
 		DA9642D61E96D6AD0069375C /* VRecentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VRecentBar.swift; sourceTree = "<group>"; };
 		DA9642D81E96D6B40069375C /* VRecentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VRecentCell.swift; sourceTree = "<group>"; };
+		DA9642DB1E96E6480069375C /* MRecent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRecent.swift; sourceTree = "<group>"; };
+		DA9642DD1E96E6540069375C /* MRecentDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRecentDay.swift; sourceTree = "<group>"; };
+		DA9642DF1E96E65E0069375C /* MRecentEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRecentEntry.swift; sourceTree = "<group>"; };
 		DAA99CC11E8B1B02003B9E2C /* VSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchResults.swift; sourceTree = "<group>"; };
 		DAA99CC31E8B2433003B9E2C /* MSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchResults.swift; sourceTree = "<group>"; };
 		DAA99CC51E8B24DD003B9E2C /* MSearchResultsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchResultsItem.swift; sourceTree = "<group>"; };
@@ -337,6 +343,7 @@
 			children = (
 				DAD5B2631E8EEEAA00F5E481 /* Main */,
 				DAEC1AB41E8C812F0001B27B /* Settings */,
+				DA9642DA1E96E63B0069375C /* Recent */,
 				DA1F6FED1E8B13CB00484942 /* Search */,
 			);
 			path = Model;
@@ -509,6 +516,16 @@
 			path = Recent;
 			sourceTree = "<group>";
 		};
+		DA9642DA1E96E63B0069375C /* Recent */ = {
+			isa = PBXGroup;
+			children = (
+				DA9642DB1E96E6480069375C /* MRecent.swift */,
+				DA9642DD1E96E6540069375C /* MRecentDay.swift */,
+				DA9642DF1E96E65E0069375C /* MRecentEntry.swift */,
+			);
+			path = Recent;
+			sourceTree = "<group>";
+		};
 		DAD1E9821E8C768F00D1BC66 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -642,6 +659,7 @@
 				DAEC1AB81E8C81430001B27B /* MSettingsBackgroundItem.swift in Sources */,
 				DA90CB3A1E92F80A00497AD0 /* VSearchContentModeCell.swift in Sources */,
 				DA90CB301E92B56300497AD0 /* MSearchEntryItemNoun.swift in Sources */,
+				DA9642E01E96E65E0069375C /* MRecentEntry.swift in Sources */,
 				DA22EFF91E93E739009AD88E /* MSearchEntryItemAdjective.swift in Sources */,
 				DAD5B24E1E8EA8E500F5E481 /* VParent.swift in Sources */,
 				DA22F0251E94672B009AD88E /* VSearchContentCellSynonyms.swift in Sources */,
@@ -694,6 +712,8 @@
 				DA22F0191E93F705009AD88E /* MSearchEntryItemResidual.swift in Sources */,
 				DA90CB361E92DEA300497AD0 /* VSearchContentCellDefinition.swift in Sources */,
 				DA9642C21E9692A30069375C /* MLanguage.swift in Sources */,
+				DA9642DC1E96E6480069375C /* MRecent.swift in Sources */,
+				DA9642DE1E96E6540069375C /* MRecentDay.swift in Sources */,
 				DA90CB381E92F57500497AD0 /* VSearchContentMode.swift in Sources */,
 				DA9642C41E9692CA0069375C /* MLanguageEnglish.swift in Sources */,
 				DA9642D71E96D6AD0069375C /* VRecentBar.swift in Sources */,
