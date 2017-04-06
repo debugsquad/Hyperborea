@@ -5,8 +5,8 @@ class VRecent:VView
     private weak var controller:CRecent!
     private weak var blurContainer:UIView!
     private weak var layoutBaseBottom:NSLayoutConstraint!
-    private let kBaseHeight:CGFloat = 320
-    private let kBarHeight:CGFloat = 50
+    private let kBaseHeight:CGFloat = 470
+    private let kBarHeight:CGFloat = 60
     private let kAnimationDuration:TimeInterval = 0.3
     
     override init(controller:CController)
@@ -38,6 +38,10 @@ class VRecent:VView
         baseView.translatesAutoresizingMaskIntoConstraints = false
         baseView.clipsToBounds = true
         
+        let viewBar:VRecentBar = VRecentBar(
+            controller:self.controller)
+        
+        baseView.addSubview(viewBar)
         blurContainer.addSubview(blur)
         addSubview(blurContainer)
         addSubview(buttonClose)
@@ -55,7 +59,7 @@ class VRecent:VView
             view:buttonClose,
             toView:self)
         
-        NSLayoutConstraint.bottomToBottom(
+        layoutBaseBottom = NSLayoutConstraint.bottomToBottom(
             view:baseView,
             toView:self,
             constant:kBaseHeight)
@@ -65,6 +69,16 @@ class VRecent:VView
         NSLayoutConstraint.equalsHorizontal(
             view:baseView,
             toView:self)
+        
+        NSLayoutConstraint.topToTop(
+            view:viewBar,
+            toView:baseView)
+        NSLayoutConstraint.height(
+            view:viewBar,
+            constant:kBarHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewBar,
+            toView:baseView)
     }
     
     required init?(coder:NSCoder)
@@ -82,34 +96,35 @@ class VRecent:VView
     
     //MARK: private
     
-    private func animateHide()
-    {
-        UIView.animate(
-            withDuration:kAnimationDuration,
-            animations:
-        { [weak self] in
-            
-            self?.alpha = 0
-        })
-        { [weak self] (done:Bool) in
-            
-            self?.controller.back()
-        }
-    }
-    
     //MARK: public
     
     func animateShow()
     {
-        UIView.animate(
-            withDuration:kAnimationDuration,
-            animations:
+        layoutBaseBottom.constant = 0
+        
+        UIView.animate(withDuration:kAnimationDuration)
         { [weak self] in
             
             self?.blurContainer.alpha = 1
-        })
-        { (done:Bool) in
+            self?.layoutIfNeeded()
+        }
+    }
+    
+    func animateHide()
+    {
+        layoutBaseBottom.constant = kBaseHeight
+        
+        UIView.animate(
+        withDuration:kAnimationDuration,
+        animations:
+        { [weak self] in
             
+            self?.alpha = 0
+            self?.layoutIfNeeded()
+        })
+        { [weak self] (done:Bool) in
+            
+            self?.controller.back()
         }
     }
 }

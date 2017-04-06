@@ -1,6 +1,8 @@
 "VSearchBarField_placeholder"="Search";
 "VSettingsBar_labelTitle"="Hyperborea";
 "VSettingsCellLanguage_labelTitle"="Language";
+"VRecentBar_label"="Recent";
+"VRecentBar_buttonCancel"="Cancel";
 
 "MSearchContentModeItemDefinition_title"="Definition";
 "MSearchContentModeItemDefinition_symbol"="D";

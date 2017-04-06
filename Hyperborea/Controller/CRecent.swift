@@ -2,7 +2,7 @@ import UIKit
 
 class CRecent:CController
 {
-    private weak var viewRecent:VRecent!
+    private(set) weak var viewRecent:VRecent!
     
     override func loadView()
     {
