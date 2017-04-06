@@ -25,7 +25,7 @@ class MSearchContentModeItemAntonyms:MSearchContentModeItem
     {
         guard
             
-            let attributedString:NSAttributedString = controller.modelEntry?.attributedString
+            let attributedString:NSAttributedString = controller.modelEntry?.antonyms?.attributedString
             
         else
         {

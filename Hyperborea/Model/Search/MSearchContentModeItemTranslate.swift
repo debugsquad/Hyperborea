@@ -25,7 +25,7 @@ class MSearchContentModeItemTranslate:MSearchContentModeItem
     {
         guard
             
-            let attributedString:NSAttributedString = controller.modelEntry?.attributedString
+            let attributedString:NSAttributedString = controller.modelEntry?.translations?.attributedString
             
             else
         {

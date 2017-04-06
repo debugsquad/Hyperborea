@@ -6,8 +6,8 @@ class VSearchContentModeCell:UICollectionViewCell
     private weak var labelSymbol:UILabel!
     private weak var border:VBorder!
     private let kLabelTop:CGFloat = 64
-    private let kTitleHeight:CGFloat = 25
-    private let kTitleFontSize:CGFloat = 11
+    private let kTitleHeight:CGFloat = 22
+    private let kTitleFontSize:CGFloat = 10
     private let kSymbolFontSize:CGFloat = 25
     private let kBorderHeight:CGFloat = 1
     
@@ -98,9 +98,9 @@ class VSearchContentModeCell:UICollectionViewCell
         }
         else
         {
-            labelTitle.textColor = UIColor(white:0.8, alpha:1)
-            labelSymbol.textColor = UIColor(white:0.92, alpha:1)
-            border.backgroundColor = UIColor(white:0.8, alpha:1)
+            labelTitle.textColor = UIColor(white:0.5, alpha:1)
+            labelSymbol.textColor = UIColor(white:0.95, alpha:1)
+            border.backgroundColor = UIColor(white:0.85, alpha:1)
         }
     }
     

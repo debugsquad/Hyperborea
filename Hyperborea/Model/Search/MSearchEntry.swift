@@ -4,6 +4,7 @@ class MSearchEntry
 {
     let attributedString:NSAttributedString
     let wordId:String
+    let image:UIImage
     var synonyms:MSearchSynonyms?
     var antonyms:MSearchAntonyms?
     var translations:MSearchTranslations?

@@ -5,7 +5,7 @@ class VSearchContentMode:UIView, UICollectionViewDelegate, UICollectionViewDataS
     let model:MSearchContentMode
     private weak var controller:CSearch!
     private weak var collectionView:VCollection!
-    private let kCollectionHeight:CGFloat = 70
+    private let kCollectionHeight:CGFloat = 60
     private let kAfterSelect:TimeInterval = 0.3
     
     init(controller:CSearch)

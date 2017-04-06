@@ -31,17 +31,17 @@ extension DSettings
         }
     }
     
-    func languageTranslate() -> String
+    func languageTranslate() -> Language
     {
         switch language
         {
         case Language.spanish.rawValue:
             
-            return "en"
+            return Language.english
             
         default:
             
-            return "es"
+            return Language.spanish
         }
     }
     
