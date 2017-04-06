@@ -259,6 +259,8 @@ class MSearchTranslations
             mutableString.insert(stringWord, at:0)
         }
         
+        print("mut \(mutableString.string)")
+        
         attributedString = mutableString
     }
     

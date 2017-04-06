@@ -2,7 +2,7 @@ import UIKit
 
 class MSearchContentModeItemTranslate:MSearchContentModeItem
 {
-    private let kCellAddedHeight:CGFloat = 70
+    private let kCellAddedHeight:CGFloat = 95
     
     init()
     {
@@ -27,7 +27,7 @@ class MSearchContentModeItemTranslate:MSearchContentModeItem
             
             let attributedString:NSAttributedString = controller.modelEntry?.translations?.attributedString
             
-            else
+        else
         {
             return 0
         }
