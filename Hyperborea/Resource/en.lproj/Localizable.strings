@@ -16,6 +16,7 @@
 "MSearchSynonyms_notFound"="No synonyms found";
 "MSearchAntonyms_notFound"="No antonyms found";
 "MSearchTranslations_notFound"="Translations not found";
+"MSearchOrigins_notFound"="Origins not found";
 
 "MSearchEntryItemNoun_title"="Noun";
 "MSearchEntryItemVerb_title"="Verb";
