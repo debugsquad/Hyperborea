@@ -108,8 +108,9 @@ class MSearchSynonyms
             {
                 if let rawWord:String = jsonResultMap[kKeyWord] as? String
                 {
+                    let capitalizedWord:String = rawWord.capitalizedFirstLetter()
                     stringWord = NSAttributedString(
-                        string:rawWord,
+                        string:capitalizedWord,
                         attributes:attributesWord)
                 }
             }
