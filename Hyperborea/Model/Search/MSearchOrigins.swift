@@ -54,11 +54,12 @@ class MSearchOrigins
             {
                 if let word:String = jsonResultMap[kKeyWord] as? String
                 {
+                    let wordCapitalized:String = word.capitalizedFirstLetter()
                     let attributesWord:[String:AnyObject] = [
                         NSFontAttributeName:UIFont.medium(size:kWordFontSize),
                         NSForegroundColorAttributeName:UIColor.black]
                     wordString = NSAttributedString(
-                        string:word,
+                        string:wordCapitalized,
                         attributes:attributesWord)
                 }
             }
