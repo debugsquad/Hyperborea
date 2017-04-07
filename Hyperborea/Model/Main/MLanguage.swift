@@ -6,6 +6,7 @@ class MLanguage
     let code:String
     let imageOn:UIImage
     let imageOff:UIImage
+    let imageSquare:UIImage
     
     class func language(rawValue:Int16) -> MLanguage
     {
@@ -25,12 +26,14 @@ class MLanguage
         rawValue:Int16,
         code:String,
         imageOn:UIImage,
-        imageOff:UIImage)
+        imageOff:UIImage,
+        imageSquare:UIImage)
     {
         self.rawValue = rawValue
         self.code = code
         self.imageOn = imageOn
         self.imageOff = imageOff
+        self.imageSquare = imageSquare
     }
     
     //MARK: public

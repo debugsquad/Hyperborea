@@ -9,12 +9,14 @@ class MLanguageSpanish:MLanguage
     {
         let imageOn:UIImage = #imageLiteral(resourceName: "assetGenericSpanishOn")
         let imageOff:UIImage = #imageLiteral(resourceName: "assetGenericSpanishOff")
+        let imageSquare:UIImage = #imageLiteral(resourceName: "assetGenericSpanishSquare")
         
         super.init(
             rawValue:MLanguageSpanish.kRawValue,
             code:kCode,
             imageOn:imageOn,
-            imageOff:imageOff)
+            imageOff:imageOff,
+            imageSquare:imageSquare)
     }
     
     override func translateOptions() -> [MLanguage]

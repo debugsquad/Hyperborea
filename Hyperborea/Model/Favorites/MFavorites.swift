@@ -41,6 +41,6 @@ class MFavorites
             }
         }
         
-        self.sections = items
+        self.items = items
     }
 }

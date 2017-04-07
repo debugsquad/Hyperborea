@@ -2,14 +2,13 @@ import UIKit
 
 class VFavorites:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
-    private weak var controller:CRecent!
+    private weak var controller:CFavorites!
     private weak var collectionView:VCollection!
     private weak var blurContainer:UIView!
     private weak var layoutBaseBottom:NSLayoutConstraint!
     private let kBaseHeight:CGFloat = 470
     private let kBarHeight:CGFloat = 60
-    private let kCellHeight:CGFloat = 54
-    private let kHeaderHeight:CGFloat = 42
+    private let kCellHeight:CGFloat = 60
     private let kCollectionBottom:CGFloat = 20
     private let kInterItem:CGFloat = 1
     private let kAnimationDuration:TimeInterval = 0.3
@@ -19,7 +18,7 @@ class VFavorites:VView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     {
         super.init(controller:controller)
         backgroundColor = UIColor.clear
-        self.controller = controller as? CRecent
+        self.controller = controller as? CFavorites
         
         let blurContainer:UIView = UIView()
         blurContainer.isUserInteractionEnabled = false
@@ -44,22 +43,18 @@ class VFavorites:VView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         baseView.translatesAutoresizingMaskIntoConstraints = false
         baseView.clipsToBounds = true
         
-        let viewBar:VRecentBar = VRecentBar(
+        let viewBar:VFavoritesBar = VFavoritesBar(
             controller:self.controller)
         
         let collectionView:VCollection = VCollection()
         collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerHeader(header:VRecentHeader.self)
-        collectionView.registerCell(cell:VRecentCell.self)
+        collectionView.registerCell(cell:VFavoritesCell.self)
         self.collectionView = collectionView
         
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
-            flow.headerReferenceSize = CGSize(
-                width:0,
-                height:kHeaderHeight)
             flow.minimumLineSpacing = kInterItem
             flow.minimumInteritemSpacing = kInterItem
             flow.sectionInset = UIEdgeInsets(
@@ -141,9 +136,9 @@ class VFavorites:VView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     //MARK: private
     
-    private func modelAtIndex(index:IndexPath) -> MRecentEntry
+    private func modelAtIndex(index:IndexPath) -> MFavoritesItem
     {
-        let item:MRecentEntry = controller.model!.sections[index.section].items[index.item]
+        let item:MFavoritesItem = controller.model!.items[index.item]
         
         return item
     }
@@ -153,9 +148,9 @@ class VFavorites:VView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     func refresh()
     {
         DispatchQueue.main.async
-            { [weak self] in
-                
-                self?.collectionView.reloadData()
+        { [weak self] in
+            
+            self?.collectionView.reloadData()
         }
     }
     
@@ -176,13 +171,13 @@ class VFavorites:VView, UICollectionViewDelegate, UICollectionViewDataSource, UI
         layoutBaseBottom.constant = kBaseHeight
         
         UIView.animate(
-            withDuration:kAnimationDuration,
-            animations:
-            { [weak self] in
-                
-                self?.alpha = 0
-                self?.layoutIfNeeded()
-            })
+        withDuration:kAnimationDuration,
+        animations:
+        { [weak self] in
+            
+            self?.alpha = 0
+            self?.layoutIfNeeded()
+        })
         { [weak self] (done:Bool) in
             
             self?.controller.back()
@@ -203,42 +198,30 @@ class VFavorites:VView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     {
         guard
             
-            let count:Int = controller.model?.sections.count
+            let _:MFavorites = controller.model
             
-            else
+        else
         {
             return 0
         }
         
-        return count
+        return 1
     }
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        let count:Int = controller.model!.sections[section].items.count
+        let count:Int = controller.model!.items.count
         
         return count
     }
     
-    func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
-    {
-        let section:MRecentDay = controller.model!.sections[indexPath.section]
-        let header:VRecentHeader = collectionView.dequeueReusableSupplementaryView(
-            ofKind:kind,
-            withReuseIdentifier:VRecentHeader.reusableIdentifier,
-            for:indexPath) as! VRecentHeader
-        header.config(model:section)
-        
-        return header
-    }
-    
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        let item:MRecentEntry = modelAtIndex(index:indexPath)
-        let cell:VRecentCell = collectionView.dequeueReusableCell(
+        let item:MFavoritesItem = modelAtIndex(index:indexPath)
+        let cell:VFavoritesCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
-            VRecentCell.reusableIdentifier,
-            for:indexPath) as! VRecentCell
+            VFavoritesCell.reusableIdentifier,
+            for:indexPath) as! VFavoritesCell
         cell.config(model:item)
         
         return cell
@@ -247,7 +230,7 @@ class VFavorites:VView, UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
     {
         collectionView.isUserInteractionEnabled = false
-        let item:MRecentEntry = modelAtIndex(index:indexPath)
+        let item:MFavoritesItem = modelAtIndex(index:indexPath)
         controller.selectItem(item:item)
         
         DispatchQueue.main.asyncAfter(
