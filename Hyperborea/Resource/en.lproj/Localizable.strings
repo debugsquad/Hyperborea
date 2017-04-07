@@ -3,6 +3,8 @@
 "VSettingsCellLanguage_labelTitle"="Language";
 "VRecentBar_label"="Recent";
 "VRecentBar_buttonCancel"="Cancel";
+"VFavoritesBar_label"="Favorites";
+"VFavoritesBar_buttonCancel"="Cancel";
 
 "MSearchContentModeItemDefinition_title"="Definition";
 "MSearchContentModeItemDefinition_symbol"="D";
