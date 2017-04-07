@@ -56,7 +56,6 @@ class MSearchEntry
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(stringWord)
-        mutableString.append(stringBreak)
         
         for jsonResult:Any in jsonResults
         {
@@ -85,14 +84,10 @@ class MSearchEntry
                     continue
                 }
                 
-                if !mutableString.string.isEmpty
-                {
-                    mutableString.append(stringBreak)
-                    mutableString.append(stringBreak)
-                }
-                
                 let itemString:NSAttributedString = entry.attributedString
+                mutableString.append(stringBreak)
                 mutableString.append(itemString)
+                mutableString.append(stringBreak)
             }
         }
         
