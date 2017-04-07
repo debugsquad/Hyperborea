@@ -110,4 +110,29 @@ extension DSettings
             region:region)
         }
     }
+    
+    func isFavorited(wordId:String, languageRaw:Int16) -> Bool
+    {
+        guard
+        
+            let favorites:[DEntry] = self.favorites?.array as? [DEntry]
+        
+        else
+        {
+            return false
+        }
+        
+        for favorite:DEntry in favorites
+        {
+            if favorite.wordId == wordId
+            {
+                if favorite.language == languageRaw
+                {
+                    return true
+                }
+            }
+        }
+        
+        return false
+    }
 }

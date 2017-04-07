@@ -184,8 +184,9 @@ class CSearch:CController
             MSearchRequestEntity(
                 controller:self,
                 wordId:wordId,
-                region:region,
-                languageRaw:languageRaw)
+                word:word,
+                languageRaw:languageRaw,
+                region:region)
         }
     }
     

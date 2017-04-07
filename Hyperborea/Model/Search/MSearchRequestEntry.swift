@@ -9,8 +9,9 @@ class MSearchRequestEntity:MSearchRequest
     @discardableResult init(
         controller:CSearch,
         wordId:String,
-        region:String?,
-        languageRaw:Int16)
+        word:String,
+        languageRaw:Int16,
+        region:String?)
     {
         super.init()
         self.controller = controller
@@ -19,8 +20,9 @@ class MSearchRequestEntity:MSearchRequest
         {
             self.asyncRequest(
                 wordId:wordId,
-                region:region,
-                languageRaw:languageRaw)
+                word:word,
+                languageRaw:languageRaw,
+                region:region)
         }
     }
     
@@ -28,8 +30,9 @@ class MSearchRequestEntity:MSearchRequest
     
     private func asyncRequest(
         wordId:String,
-        region:String?,
-        languageRaw:Int16)
+        word:String,
+        languageRaw:Int16,
+        region:String?)
     {
         let language:MLanguage = MLanguage.language(rawValue:languageRaw)
         let languageCode:String = language.code
@@ -83,13 +86,20 @@ class MSearchRequestEntity:MSearchRequest
                 
                 entry = self.parseData(
                     wordId:wordId,
+                    word:word,
+                    languageRaw:languageRaw,
+                    region:region,
                     data:data)
                 
                 break
                 
             default:
                 
-                entry = MSearchEntry(wordId:wordId)
+                entry = MSearchEntry(
+                    wordId:wordId,
+                    word:word,
+                    languageRaw:languageRaw,
+                    region:region)
                 
                 break
             }
@@ -112,6 +122,9 @@ class MSearchRequestEntity:MSearchRequest
     
     private func parseData(
         wordId:String,
+        word:String,
+        languageRaw:Int16,
+        region:String?,
         data:Data?) -> MSearchEntry?
     {
         guard
@@ -139,6 +152,9 @@ class MSearchRequestEntity:MSearchRequest
         
         let entry:MSearchEntry = MSearchEntry(
             wordId:wordId,
+            word:word,
+            languageRaw:languageRaw,
+            region:region,
             json:json)
         
         return entry

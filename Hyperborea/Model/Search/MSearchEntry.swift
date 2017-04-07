@@ -4,6 +4,9 @@ class MSearchEntry
 {
     let attributedString:NSAttributedString
     let wordId:String
+    let word:String
+    let languageRaw:Int16
+    let region:String?
     let origins:MSearchOrigins
     var synonyms:MSearchSynonyms?
     var antonyms:MSearchAntonyms?
@@ -18,9 +21,15 @@ class MSearchEntry
     
     init(
         wordId:String,
+        word:String,
+        languageRaw:Int16,
+        region:String?,
         json:Any)
     {
         self.wordId = wordId
+        self.word = word
+        self.languageRaw = languageRaw
+        self.region = region
         
         guard
             
@@ -101,9 +110,16 @@ class MSearchEntry
         origins = MSearchOrigins(json:json)
     }
     
-    init(wordId:String)
+    init(
+        wordId:String,
+        word:String,
+        languageRaw:Int16,
+        region:String?)
     {
         self.wordId = wordId
+        self.word = word
+        self.languageRaw = languageRaw
+        self.region = region
         
         let string:String = NSLocalizedString("MSearchEntry_notFound", comment:"")
         let attributes:[String:AnyObject] = [

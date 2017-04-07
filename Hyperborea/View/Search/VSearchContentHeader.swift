@@ -88,10 +88,23 @@ class VSearchContentHeader:UICollectionReusableView
         
     }
     
+    //MARK: private
+    
+    private func validateFavorite()
+    {
+        
+    }
+    
     //MARK: public
     
     func config(controller:CSearch)
     {
         self.controller = controller
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.validateFavorite()
+        }
     }
 }
