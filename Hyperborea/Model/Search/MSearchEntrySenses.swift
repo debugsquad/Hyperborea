@@ -28,7 +28,8 @@ class MSearchEntrySenses
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         let attributesBreak:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:kTitleFontSize)]
+            NSFontAttributeName:UIFont.regular(size:kTitleFontSize),
+            NSForegroundColorAttributeName:UIColor.black]
         let stringBreak:NSAttributedString = NSAttributedString(
             string:kBreak,
             attributes:attributesBreak)
@@ -99,7 +100,8 @@ class MSearchEntrySenses
     private class func parseItem(json:[String:Any]) -> NSAttributedString?
     {
         let attributesTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:kTitleFontSize)]
+            NSFontAttributeName:UIFont.regular(size:kTitleFontSize),
+            NSForegroundColorAttributeName:UIColor.black]
         let attributesExample:[String:AnyObject] = [
             NSFontAttributeName:UIFont.italic(size:kExampleFontSize),
             NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]

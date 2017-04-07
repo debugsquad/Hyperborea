@@ -85,7 +85,8 @@ class MSearchSynonyms
             NSFontAttributeName:UIFont.italic(size:kSubsensesFontSize),
             NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
         let attributesWord:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
+            NSFontAttributeName:UIFont.medium(size:kWordFontSize),
+            NSForegroundColorAttributeName:UIColor.black]
         var stringWord:NSAttributedString?
         let stringBreak:NSAttributedString = NSAttributedString(
             string:MSearchSynonyms.kBreak,

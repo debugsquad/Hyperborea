@@ -45,7 +45,8 @@ class MSearchEntry
         }
         
         let attributesWord:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
+            NSFontAttributeName:UIFont.medium(size:kWordFontSize),
+            NSForegroundColorAttributeName:UIColor.black]
         let stringWord:NSAttributedString = NSAttributedString(
             string:word,
             attributes:attributesWord)

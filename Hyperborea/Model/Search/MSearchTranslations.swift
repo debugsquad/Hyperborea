@@ -111,7 +111,8 @@ class MSearchTranslations
             NSFontAttributeName:UIFont.bold(size:kTranslationsFontSize),
             NSForegroundColorAttributeName:UIColor.black]
         let attributesWord:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
+            NSFontAttributeName:UIFont.medium(size:kWordFontSize),
+            NSForegroundColorAttributeName:UIColor.black]
         var stringWord:NSAttributedString?
         let stringBreak:NSAttributedString = NSAttributedString(
             string:MSearchTranslations.kBreak,

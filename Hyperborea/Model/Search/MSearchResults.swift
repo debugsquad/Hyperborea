@@ -30,7 +30,8 @@ class MSearchResults
         let maxResults:Int = Int(maxResults16)
         var items:[MSearchResultsItem] = []
         let attributes:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:kFontSize)]
+            NSFontAttributeName:UIFont.regular(size:kFontSize),
+            NSForegroundColorAttributeName:UIColor.black]
         let maxSize:CGSize = CGSize(
             width:kCellMaxWidth,
             height:kCellMaxHeight)
