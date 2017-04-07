@@ -1,6 +1,6 @@
 import UIKit
 
-class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+class VFavorites:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private weak var controller:CRecent!
     private weak var collectionView:VCollection!
