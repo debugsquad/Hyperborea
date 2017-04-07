@@ -31,10 +31,10 @@ class MSearchTranslations
             return nil
         }
         
-        let attributesExample:[String:Any] = [
+        let attributesExample:[String:AnyObject] = [
             NSFontAttributeName:UIFont.italic(size:kExamplesFontSize),
             NSForegroundColorAttributeName:UIColor.black]
-        let attributesTranslation:[String:Any] = [
+        let attributesTranslation:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kExamplesTranslationFontSize),
             NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
         
@@ -110,7 +110,7 @@ class MSearchTranslations
         let attributesTranslations:[String:AnyObject] = [
             NSFontAttributeName:UIFont.bold(size:kTranslationsFontSize),
             NSForegroundColorAttributeName:UIColor.black]
-        let attributesWord:[String:Any] = [
+        let attributesWord:[String:AnyObject] = [
             NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
         var stringWord:NSAttributedString?
         let stringBreak:NSAttributedString = NSAttributedString(

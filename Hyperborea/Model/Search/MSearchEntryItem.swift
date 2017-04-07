@@ -14,7 +14,7 @@ class MSearchEntryItem
         title:String,
         attributedString:NSAttributedString)
     {
-        let attributes:[String:Any] = [
+        let attributes:[String:AnyObject] = [
             NSFontAttributeName:UIFont.bold(size:kFontSize)]
         let stringTitle:NSAttributedString = NSAttributedString(
             string:title,

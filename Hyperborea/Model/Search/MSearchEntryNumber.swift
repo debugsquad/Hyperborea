@@ -26,7 +26,7 @@ class MSearchEntryNumber
         var numbers:[String] = []
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
-        let attributes:[String:Any] = [
+        let attributes:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kNumberFontSize)]
         let stringBreak:NSAttributedString = NSAttributedString(
             string:kBreak,

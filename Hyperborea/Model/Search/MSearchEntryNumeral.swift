@@ -27,9 +27,9 @@ class MSearchEntryNumeral
         var numerals:[String] = []
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
-        let attributes:[String:Any] = [
+        let attributes:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kNumberFontSize)]
-        let attributesSeparator:[String:Any] = [
+        let attributesSeparator:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kSeparatorFontSize)]
         
         for jsonEntry:Any in jsonEntries

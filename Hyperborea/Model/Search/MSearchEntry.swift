@@ -44,13 +44,18 @@ class MSearchEntry
             return
         }
         
-        let attributesWord:[String:Any] = [
+        let attributesWord:[String:AnyObject] = [
             NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
-        var stringWord:NSAttributedString?
+        let stringWord:NSAttributedString = NSAttributedString(
+            string:word,
+            attributes:attributesWord)
         let stringBreak:NSAttributedString = NSAttributedString(
             string:kBreak,
             attributes:attributesWord)
+        
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        mutableString.append(stringWord)
+        mutableString.append(stringBreak)
         
         for jsonResult:Any in jsonResults
         {
@@ -62,16 +67,6 @@ class MSearchEntry
             else
             {
                 continue
-            }
-            
-            if stringWord == nil
-            {
-                if let rawWord:String = jsonResultMap[kKeyWord] as? String
-                {
-                    stringWord = NSAttributedString(
-                        string:rawWord,
-                        attributes:attributesWord)
-                }
             }
             
             for jsonEntry:Any in jsonLexicalEntries
@@ -98,12 +93,6 @@ class MSearchEntry
                 let itemString:NSAttributedString = entry.attributedString
                 mutableString.append(itemString)
             }
-        }
-        
-        if let stringWord:NSAttributedString = stringWord
-        {
-            mutableString.insert(stringBreak, at:0)
-            mutableString.insert(stringWord, at:0)
         }
         
         attributedString = mutableString

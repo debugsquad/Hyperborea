@@ -25,7 +25,7 @@ class MSearchEntryTense
         }
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
-        let attributes:[String:Any] = [
+        let attributes:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kFontSize)]
         let stringBreak:NSAttributedString = NSAttributedString(
             string:kBreak,

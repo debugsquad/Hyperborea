@@ -30,7 +30,8 @@ class MSearchOrigins
         }
         
         let attributes:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:kFontSize)]
+            NSFontAttributeName:UIFont.regular(size:kFontSize),
+            NSForegroundColorAttributeName:UIColor.black]
         let stringBreak:NSAttributedString = NSAttributedString(
             string:kBreak,
             attributes:attributes)
@@ -54,7 +55,8 @@ class MSearchOrigins
                 if let word:String = jsonResultMap[kKeyWord] as? String
                 {
                     let attributesWord:[String:AnyObject] = [
-                        NSFontAttributeName:UIFont.medium(size:kWordFontSize)]
+                        NSFontAttributeName:UIFont.medium(size:kWordFontSize),
+                        NSForegroundColorAttributeName:UIColor.black]
                     wordString = NSAttributedString(
                         string:word,
                         attributes:attributesWord)

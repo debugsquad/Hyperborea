@@ -98,9 +98,9 @@ class MSearchEntrySenses
     
     private class func parseItem(json:[String:Any]) -> NSAttributedString?
     {
-        let attributesTitle:[String:Any] = [
+        let attributesTitle:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kTitleFontSize)]
-        let attributesExample:[String:Any] = [
+        let attributesExample:[String:AnyObject] = [
             NSFontAttributeName:UIFont.italic(size:kExampleFontSize),
             NSForegroundColorAttributeName:UIColor(white:0.5, alpha:1)]
         let stringBreak:NSAttributedString = NSAttributedString(
