@@ -3,6 +3,7 @@ import UIKit
 class VRecentCell:UICollectionViewCell
 {
     private weak var label:UILabel!
+    private let kMarginHorizontal:CGFloat = 10
     
     override init(frame:CGRect)
     {
@@ -14,14 +15,19 @@ class VRecentCell:UICollectionViewCell
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(size:17)
+        label.numberOfLines = 2
         label.textAlignment = NSTextAlignment.center
         self.label = label
         
         addSubview(label)
         
-        NSLayoutConstraint.equals(
+        NSLayoutConstraint.equalsVertical(
             view:label,
             toView:self)
+        NSLayoutConstraint.equalsHorizontal(
+            view:label,
+            toView:self,
+            margin:kMarginHorizontal)
     }
     
     required init?(coder:NSCoder)
