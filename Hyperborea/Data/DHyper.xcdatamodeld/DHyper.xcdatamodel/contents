@@ -11,7 +11,7 @@
     </entity>
     <entity name="DSettings" representedClassName="DSettings" syncable="YES" codeGenerationType="class">
         <attribute name="language" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="maxResults" attributeType="Integer 16" defaultValueString="30" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxResults" attributeType="Integer 16" defaultValueString="20" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="purchasePlus" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="reviewed" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="ttl" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>

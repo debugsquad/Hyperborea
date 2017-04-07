@@ -9,7 +9,6 @@ class MSearchResults
     private let kCellMaxWidth:CGFloat = 140
     private let kCellMaxHeight:CGFloat = 90
     private let kKeyResults:String = "results"
-    private let kMaxResults:Int = 20
     
     init(
         json:Any,
@@ -18,7 +17,8 @@ class MSearchResults
         guard
             
             let jsonMap:[String:Any] = json as? [String:Any],
-            let jsonResults:[Any] = jsonMap[kKeyResults] as? [Any]
+            let jsonResults:[Any] = jsonMap[kKeyResults] as? [Any],
+            let maxResults16:Int16 = MSession.sharedInstance.settings?.maxResults
             
         else
         {
@@ -27,6 +27,7 @@ class MSearchResults
             return
         }
         
+        let maxResults:Int = Int(maxResults16)
         var items:[MSearchResultsItem] = []
         let attributes:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:kFontSize)]
@@ -68,7 +69,7 @@ class MSearchResults
             
             items.append(item)
             
-            if items.count > kMaxResults
+            if items.count > maxResults
             {
                 break
             }

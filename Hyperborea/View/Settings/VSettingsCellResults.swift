@@ -54,8 +54,6 @@ class VSettingsCellResults:VSettingsCell
         addSubview(labelCounter)
         addSubview(stepper)
         
-        printCounter()
-        
         NSLayoutConstraint.topToTop(
             view:stepper,
             toView:self,
@@ -91,6 +89,20 @@ class VSettingsCellResults:VSettingsCell
         NSLayoutConstraint.width(
             view:labelTitle,
             constant:kTitleWidth)
+        
+        guard
+        
+            let maxResults:Int16 = MSession.sharedInstance.settings?.maxResults
+        
+        else
+        {
+            return
+        }
+        
+        let maxDouble:Double = Double(maxResults)
+        stepper.value = maxDouble
+        
+        printCounter()
     }
     
     required init?(coder:NSCoder)
@@ -102,6 +114,10 @@ class VSettingsCellResults:VSettingsCell
     
     func actionStepper(sender stepper:UIStepper)
     {
+        let value:Int16 = Int16(stepper.value)
+        MSession.sharedInstance.settings?.maxResults = value
+        DManager.sharedInstance?.save()
+        
         printCounter()
     }
     
