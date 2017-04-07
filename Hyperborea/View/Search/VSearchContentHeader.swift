@@ -3,6 +3,7 @@ import UIKit
 class VSearchContentHeader:UICollectionReusableView
 {
     private weak var controller:CSearch?
+    private weak var buttonFavorite:UIButton!
     private let kButtonWidth:CGFloat = 60
     private let kButtonsRight:CGFloat = -10
     
@@ -45,6 +46,7 @@ class VSearchContentHeader:UICollectionReusableView
             self,
             action:#selector(actionFavorite(sender:)),
             for:UIControlEvents.touchUpInside)
+        self.buttonFavorite = buttonFavorite
         
         addSubview(buttonShare)
         addSubview(buttonFavorite)
@@ -92,7 +94,23 @@ class VSearchContentHeader:UICollectionReusableView
     
     private func validateFavorite()
     {
+        guard
         
+            let entry:MSearchEntry = controller?.modelEntry,
+            let favorited:Bool = MSession.sharedInstance.settings?.isFavorited(
+                wordId:entry.wordId,
+                languageRaw:entry.languageRaw)
+        
+        else
+        {
+            return
+        }
+        
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.buttonFavorite.isSelected = favorited
+        }
     }
     
     //MARK: public
