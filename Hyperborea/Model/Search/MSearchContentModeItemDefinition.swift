@@ -24,20 +24,16 @@ class MSearchContentModeItemDefinition:MSearchContentModeItem
         }
     }
     
+    override func usingString(controller:CSearch) -> NSAttributedString?
+    {
+        let attributedString:NSAttributedString? = controller.modelEntry?.attributedString
+        
+        return attributedString
+    }
+    
     override func contentHeight(controller:CSearch) -> CGFloat
     {
-        guard
-        
-            let attributedString:NSAttributedString = controller.modelEntry?.attributedString
-        
-        else
-        {
-            return 0
-        }
-            
-        let textHeight:CGFloat = heightForString(
-            controller:controller,
-            string:attributedString)
+        let textHeight:CGFloat = heightForString(controller:controller)
         let cellHeight:CGFloat = textHeight + kCellAddedHeight
         
         return cellHeight

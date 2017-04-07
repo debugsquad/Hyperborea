@@ -25,8 +25,17 @@ class MSearchContentModeItem
     
     //MARK: public
     
-    final func heightForString(controller:CSearch, string:NSAttributedString) -> CGFloat
+    final func heightForString(controller:CSearch) -> CGFloat
     {
+        guard
+            
+            let string:NSAttributedString = usingString(controller:controller)
+        
+        else
+        {
+            return 0
+        }
+        
         let width:CGFloat = controller.viewSearch.bounds.maxX
         let maxSize:CGSize = CGSize(
             width:width - kContentRemoveWidth,
@@ -47,5 +56,10 @@ class MSearchContentModeItem
     func contentHeight(controller:CSearch) -> CGFloat
     {
         return 0
+    }
+    
+    func usingString(controller:CSearch) -> NSAttributedString?
+    {
+        return nil
     }
 }
