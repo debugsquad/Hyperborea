@@ -79,6 +79,26 @@ class CSearch:CController
         return queryEscaped
     }
     
+    private func showDefinition()
+    {
+        MSession.sharedInstance.settings?.recentEntry(
+            resultsItem:modelResultItem)
+        
+        strongSelf.modelResultItem = modelResultItem
+        let wordId:String = modelResultItem.wordId
+        
+        strongSelf.modelEntry = strongSelf.mapEntry[wordId]
+        strongSelf.viewSearch.showContent(restartMode:true)
+        
+        if strongSelf.modelEntry == nil
+        {
+            MSearchRequestEntity(
+                controller:strongSelf,
+                wordId:wordId,
+                region:modelResultItem.region)
+        }
+    }
+    
     //MARK: public
     
     func openSettings()

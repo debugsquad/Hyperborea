@@ -5,7 +5,11 @@ extension DSettings
 {
     //MARK: private
     
-    private func asyncRecentEntry(resultsItem:MSearchResultsItem)
+    private func asyncRecentEntry(
+        wordId:String,
+        word:String,
+        languageRaw:Int16,
+        region:String?)
     {
         guard
         
@@ -21,9 +25,9 @@ extension DSettings
         
         for recentEntry:DEntry in recent
         {
-            if recentEntry.wordId == resultsItem.wordId
+            if recentEntry.wordId == wordId
             {
-                if recentEntry.language == resultsItem.languageRaw
+                if recentEntry.language == languageRaw
                 {
                     entry = recentEntry
                     removeFromRecent(recentEntry)
@@ -55,10 +59,10 @@ extension DSettings
                     return
                 }
                 
-                entry.wordId = resultsItem.wordId
-                entry.word = resultsItem.word
-                entry.language = resultsItem.languageRaw
-                entry.region = resultsItem.region
+                entry.wordId = wordId
+                entry.word = word
+                entry.language = languageRaw
+                entry.region = region
                 entry.timestamp = timestamp
                 
                 self?.insertIntoRecent(entry, at:0)
@@ -90,12 +94,20 @@ extension DSettings
         DManager.sharedInstance?.save()
     }
     
-    func recentEntry(resultsItem:MSearchResultsItem)
+    func recentEntry(
+        wordId:String,
+        word:String,
+        languageRaw:Int16,
+        region:String?)
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
-            self?.asyncRecentEntry(resultsItem:resultsItem)
+            self?.asyncRecentEntry(
+            wordId:wordId,
+            word:word,
+            languageRaw:languageRaw,
+            region:region)
         }
     }
 }
