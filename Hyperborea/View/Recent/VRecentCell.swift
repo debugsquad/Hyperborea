@@ -55,7 +55,7 @@ class VRecentCell:UICollectionViewCell
     
     private func hover()
     {
-        if isSelected || isHighlighted
+        if isSelected
         {
             backgroundColor = UIColor.hyperBlue
             label.textColor = UIColor.white

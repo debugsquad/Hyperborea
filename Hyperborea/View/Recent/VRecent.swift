@@ -8,7 +8,7 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private weak var layoutBaseBottom:NSLayoutConstraint!
     private let kBaseHeight:CGFloat = 470
     private let kBarHeight:CGFloat = 60
-    private let kCellHeight:CGFloat = 52
+    private let kCellHeight:CGFloat = 54
     private let kHeaderHeight:CGFloat = 42
     private let kCollectionBottom:CGFloat = 20
     private let kInterItem:CGFloat = 1

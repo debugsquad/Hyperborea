@@ -57,6 +57,9 @@ class MSearchResultsItem
         newWordId = newWordId.replacingOccurrences(
             of:kReplaceDiagonal,
             with:kNormalDiagonal)
+        newWordId = newWordId.replacingOccurrences(
+            of:kNormalUnderscore,
+            with:kReplaceUnderscore)
         
         return newWordId
     }
