@@ -72,6 +72,68 @@ extension DSettings
         }
     }
     
+    private func asyncMakeFavorite(
+        wordId:String,
+        word:String,
+        languageRaw:Int16,
+        region:String?)
+    {
+        let timestamp:TimeInterval = Date().timeIntervalSince1970
+        
+        DManager.sharedInstance?.createData(
+            entityName:DEntry.entityName)
+        { [weak self] (data) in
+            
+            guard
+            
+                let entry:DEntry = data as? DEntry
+            
+            else
+            {
+                return
+            }
+            
+            entry.wordId = wordId
+            entry.word = word
+            entry.language = languageRaw
+            entry.region = region
+            entry.timestamp = timestamp
+            
+            self?.addToFavorites(entry)
+            
+            DManager.sharedInstance?.save()
+        }
+    }
+    
+    func asyncUnFavorite(
+        wordId:String,
+        languageRaw:Int16)
+    {
+        guard
+            
+            let favorites:[DEntry] = self.favorites?.array as? [DEntry]
+            
+        else
+        {
+            return
+        }
+        
+        for favorite:DEntry in favorites
+        {
+            if favorite.wordId == wordId
+            {
+                if favorite.language == languageRaw
+                {
+                    self.removeFromFavorites(favorite)
+                    
+                    break
+                }
+            }
+        }
+        
+        DManager.sharedInstance?.save()
+    }
+    
     //MARK: public
     
     func addTtl()
@@ -134,5 +196,35 @@ extension DSettings
         }
         
         return false
+    }
+    
+    func makeFavorite(
+        wordId:String,
+        word:String,
+        languageRaw:Int16,
+        region:String?)
+    {
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.asyncMakeFavorite(
+                wordId:wordId,
+                word:word,
+                languageRaw:languageRaw,
+                region:region)
+        }
+    }
+    
+    func unFavorite(
+        wordId:String,
+        languageRaw:Int16)
+    {
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.asyncUnFavorite(
+                wordId:wordId,
+                languageRaw:languageRaw)
+        }
     }
 }

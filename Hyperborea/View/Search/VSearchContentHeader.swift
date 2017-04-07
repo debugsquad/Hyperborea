@@ -87,7 +87,33 @@ class VSearchContentHeader:UICollectionReusableView
     
     func actionFavorite(sender button:UIButton)
     {
+        guard
         
+            let entry:MSearchEntry = controller?.modelEntry
+        
+        else
+        {
+            return
+        }
+        
+        if button.isSelected
+        {
+            button.isSelected = false
+            
+            MSession.sharedInstance.settings?.unFavorite(
+                wordId:entry.wordId,
+                languageRaw:entry.languageRaw)
+        }
+        else
+        {
+            button.isSelected = true
+            
+            MSession.sharedInstance.settings?.makeFavorite(
+                wordId:entry.wordId,
+                word:entry.word,
+                languageRaw:entry.languageRaw,
+                region:entry.region)
+        }
     }
     
     //MARK: private
