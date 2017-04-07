@@ -9,6 +9,7 @@ class MSearchResults
     private let kCellMaxWidth:CGFloat = 140
     private let kCellMaxHeight:CGFloat = 90
     private let kKeyResults:String = "results"
+    private let kMaxResults:Int = 20
     
     init(
         json:Any,
@@ -64,7 +65,13 @@ class MSearchResults
             item.attributedString = attributedString
             item.cellWidth = cellWidth
             item.cellHeight = cellHeight
+            
             items.append(item)
+            
+            if items.count > kMaxResults
+            {
+                break
+            }
         }
         
         self.items = items
