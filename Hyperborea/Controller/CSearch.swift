@@ -8,11 +8,26 @@ class CSearch:CController
     private(set) weak var modelEntry:MSearchEntry?
     private var mapResults:[String:MSearchResults]
     private var mapEntry:[String:MSearchEntry]
+    private let drawingOptions:NSStringDrawingOptions
+    private let shareMaxSize:CGSize
+    private let stringOrigin:CGPoint
+    private let shareMargin2:CGFloat
+    private let kShareMaxWidth:CGFloat = 280
+    private let kShareCompareHeight:CGFloat = 9999
+    private let kShareMargin:CGFloat = 20
     
     override init()
     {
         mapResults = [:]
         mapEntry = [:]
+        drawingOptions = NSStringDrawingOptions([
+            NSStringDrawingOptions.usesFontLeading,
+            NSStringDrawingOptions.usesLineFragmentOrigin])
+        shareMaxSize = CGSize(
+            width:kShareMaxWidth,
+            height:kShareCompareHeight)
+        stringOrigin = CGPoint(x:kShareMargin, y:kShareMargin)
+        shareMargin2 = kShareMargin + kShareMargin
         
         super.init()
         
@@ -255,6 +270,70 @@ class CSearch:CController
             MSearchRequestTranslations(
                 controller:self,
                 model:modelEntry)
+        }
+    }
+    
+    func share(string:NSAttributedString)
+    {
+        let stringRealRect:CGRect = string.boundingRect(
+            with:shareMaxSize,
+            options:drawingOptions,
+            context:nil)
+        let stringHeight:CGFloat = ceil(stringRealRect.size.height)
+        let stringSize:CGSize = CGSize(
+            width:kShareMaxWidth,
+            height:stringHeight)
+        let totalRect:CGRect = CGRect(
+            x:0,
+            y:0,
+            width:kShareMaxWidth + shareMargin2,
+            height:stringHeight + shareMargin2)
+        let stringRect:CGRect = CGRect(
+            origin:stringOrigin,
+            size:stringSize)
+        
+        UIGraphicsBeginImageContextWithOptions(totalRect.size, true, 0)
+        
+        guard
+            
+            let context:CGContext = UIGraphicsGetCurrentContext()
+            
+        else
+        {
+            return
+        }
+        
+        context.setFillColor(UIColor.white.cgColor)
+        context.fill(totalRect)
+        string.draw(in:stringRect)
+        
+        guard
+            
+            let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+            
+        else
+        {
+            UIGraphicsEndImageContext()
+            return
+        }
+        
+        UIGraphicsEndImageContext()
+        
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            let activity:UIActivityViewController = UIActivityViewController(
+                activityItems:[image],
+                applicationActivities:nil)
+            
+            if activity.popoverPresentationController != nil
+            {
+                activity.popoverPresentationController!.sourceView = self?.viewSearch
+                activity.popoverPresentationController!.sourceRect = CGRect.zero
+                activity.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.up
+            }
+            
+            self?.present(activity, animated:true)
         }
     }
 }
