@@ -248,6 +248,7 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     {
         collectionView.isUserInteractionEnabled = false
         let item:MRecentEntry = modelAtIndex(index:indexPath)
+        controller.selectItem(item:item)
         
         DispatchQueue.main.asyncAfter(
             deadline:DispatchTime.now() + kAfterSelect)

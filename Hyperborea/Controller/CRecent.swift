@@ -2,8 +2,20 @@ import UIKit
 
 class CRecent:CController
 {
+    private weak var controllerSearch:CSearch!
     private(set) var model:MRecent?
     private(set) weak var viewRecent:VRecent!
+    
+    init(controllerSearch:CSearch)
+    {
+        self.controllerSearch = controllerSearch
+        super.init()
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
+    }
     
     override func loadView()
     {
@@ -54,5 +66,16 @@ class CRecent:CController
     {
         parentController.statusBarAppareance(statusBarStyle:UIStatusBarStyle.default)
         parentController.dismissAnimateOver(completion:nil)
+    }
+    
+    func selectItem(item:MRecentEntry)
+    {
+        back()
+        
+        controllerSearch.showDefinition(
+            wordId:item.wordId,
+            word:item.word,
+            languageRaw:item.languageRaw,
+            region:item.region)
     }
 }

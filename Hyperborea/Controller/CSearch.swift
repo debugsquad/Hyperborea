@@ -79,26 +79,6 @@ class CSearch:CController
         return queryEscaped
     }
     
-    private func showDefinition()
-    {
-        MSession.sharedInstance.settings?.recentEntry(
-            resultsItem:modelResultItem)
-        
-        strongSelf.modelResultItem = modelResultItem
-        let wordId:String = modelResultItem.wordId
-        
-        strongSelf.modelEntry = strongSelf.mapEntry[wordId]
-        strongSelf.viewSearch.showContent(restartMode:true)
-        
-        if strongSelf.modelEntry == nil
-        {
-            MSearchRequestEntity(
-                controller:strongSelf,
-                wordId:wordId,
-                region:modelResultItem.region)
-        }
-    }
-    
     //MARK: public
     
     func openSettings()
@@ -119,7 +99,7 @@ class CSearch:CController
     
     func openRecent()
     {
-        let controllerRecent:CRecent = CRecent()
+        let controllerRecent:CRecent = CRecent(controllerSearch:self)
         parentController.animateOver(controller:controllerRecent)
     }
     
@@ -175,31 +155,36 @@ class CSearch:CController
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
-            guard
-                
-                let strongSelf:CSearch = self
-            
-            else
-            {
-                return
-            }
-            
-            MSession.sharedInstance.settings?.recentEntry(
-                resultsItem:modelResultItem)
-            
-            strongSelf.modelResultItem = modelResultItem
-            let wordId:String = modelResultItem.wordId
-            
-            strongSelf.modelEntry = strongSelf.mapEntry[wordId]
-            strongSelf.viewSearch.showContent(restartMode:true)
-            
-            if strongSelf.modelEntry == nil
-            {
-                MSearchRequestEntity(
-                    controller:strongSelf,
-                    wordId:wordId,
-                    region:modelResultItem.region)
-            }
+            self?.modelResultItem = modelResultItem
+            self?.showDefinition(
+                wordId:modelResultItem.wordId,
+                word:modelResultItem.word,
+                languageRaw:modelResultItem.languageRaw,
+                region:modelResultItem.region)
+        }
+    }
+    
+    func showDefinition(
+        wordId:String,
+        word:String,
+        languageRaw:Int16,
+        region:String?)
+    {
+        MSession.sharedInstance.settings?.recentEntry(
+            wordId:wordId,
+            word:word,
+            languageRaw:languageRaw,
+            region:region)
+        
+        modelEntry = mapEntry[wordId]
+        viewSearch.showContent(restartMode:true)
+        
+        if modelEntry == nil
+        {
+            MSearchRequestEntity(
+                controller:self,
+                wordId:wordId,
+                region:region)
         }
     }
     
