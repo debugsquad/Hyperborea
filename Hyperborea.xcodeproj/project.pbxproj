@@ -16,6 +16,7 @@
 		DA03A8791E98374C007F0827 /* MSettingsItemResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A8781E98374C007F0827 /* MSettingsItemResults.swift */; };
 		DA03A87B1E98378D007F0827 /* VSettingsCellResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A87A1E98378D007F0827 /* VSettingsCellResults.swift */; };
 		DA03A87D1E98461B007F0827 /* MSearchOptionsItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A87C1E98461B007F0827 /* MSearchOptionsItemStore.swift */; };
+		DA03A87F1E985040007F0827 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03A87E1E985040007F0827 /* ExtensionString.swift */; };
 		DA1317421E8C4296000624CF /* MSearchContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317411E8C4296000624CF /* MSearchContentMode.swift */; };
 		DA1317441E8C42A4000624CF /* MSearchContentModeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */; };
 		DA1317461E8C5079000624CF /* MSearchContentModeItemDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1317451E8C5079000624CF /* MSearchContentModeItemDefinition.swift */; };
@@ -158,6 +159,7 @@
 		DA03A8781E98374C007F0827 /* MSettingsItemResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsItemResults.swift; sourceTree = "<group>"; };
 		DA03A87A1E98378D007F0827 /* VSettingsCellResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellResults.swift; sourceTree = "<group>"; };
 		DA03A87C1E98461B007F0827 /* MSearchOptionsItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchOptionsItemStore.swift; sourceTree = "<group>"; };
+		DA03A87E1E985040007F0827 /* ExtensionString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		DA1317411E8C4296000624CF /* MSearchContentMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentMode.swift; sourceTree = "<group>"; };
 		DA1317431E8C42A4000624CF /* MSearchContentModeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItem.swift; sourceTree = "<group>"; };
 		DA1317451E8C5079000624CF /* MSearchContentModeItemDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSearchContentModeItemDefinition.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				DA1F6FA51E8AEF1C00484942 /* ExtensionUIColor.swift */,
 				DA1F6FA61E8AEF1C00484942 /* ExtensionUIFont.swift */,
 				DA1F6FA71E8AEF1C00484942 /* ExtensionURL.swift */,
+				DA03A87E1E985040007F0827 /* ExtensionString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				DA1317441E8C42A4000624CF /* MSearchContentModeItem.swift in Sources */,
 				DAA99CC41E8B2433003B9E2C /* MSearchResults.swift in Sources */,
 				DA9642D01E96CA490069375C /* CRecent.swift in Sources */,
+				DA03A87F1E985040007F0827 /* ExtensionString.swift in Sources */,
 				DAEB0A011E8DC978008FAD26 /* MSettings.swift in Sources */,
 				DA4B231A1E95479D00F5FE1A /* MSearchAntonyms.swift in Sources */,
 				DA13174E1E8C5E9A000624CF /* MSearchContentModeItemTranslate.swift in Sources */,
