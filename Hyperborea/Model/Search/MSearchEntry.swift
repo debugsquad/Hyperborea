@@ -47,8 +47,9 @@ class MSearchEntry
         let attributesWord:[String:AnyObject] = [
             NSFontAttributeName:UIFont.medium(size:kWordFontSize),
             NSForegroundColorAttributeName:UIColor.black]
+        let wordCapitalized:String = word.capitalizedFirstLetter()
         let stringWord:NSAttributedString = NSAttributedString(
-            string:word,
+            string:wordCapitalized,
             attributes:attributesWord)
         let stringBreak:NSAttributedString = NSAttributedString(
             string:kBreak,
