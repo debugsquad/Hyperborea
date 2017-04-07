@@ -12,8 +12,8 @@ class CSearch:CController
     private let shareMaxSize:CGSize
     private let stringOrigin:CGPoint
     private let shareMargin2:CGFloat
-    private let kShareMaxWidth:CGFloat = 280
-    private let kShareCompareHeight:CGFloat = 9999
+    private let kShareMaxWidth:CGFloat = 600
+    private let kShareCompareHeight:CGFloat = 15999
     private let kShareMargin:CGFloat = 20
     
     override init()

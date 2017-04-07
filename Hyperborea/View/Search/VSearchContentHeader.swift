@@ -82,7 +82,21 @@ class VSearchContentHeader:UICollectionReusableView
     
     func actionShare(sender button:UIButton)
     {
+        guard
+            
+            let controller:CSearch = self.controller,
+            let attributedString:NSAttributedString = controller.viewSearch.viewContent?.viewMode.model.currentItem().usingString(
+                controller:controller)
         
+        else
+        {
+            return
+        }
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        {
+            controller.share(string:attributedString)
+        }
     }
     
     func actionFavorite(sender button:UIButton)

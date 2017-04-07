@@ -34,7 +34,12 @@ class MSearchContentModeItemDefinition:MSearchContentModeItem
     override func contentHeight(controller:CSearch) -> CGFloat
     {
         let textHeight:CGFloat = heightForString(controller:controller)
-        let cellHeight:CGFloat = textHeight + kCellAddedHeight
+        var cellHeight:CGFloat = textHeight
+        
+        if textHeight > 0
+        {
+            cellHeight += kCellAddedHeight
+        }
         
         return cellHeight
     }
