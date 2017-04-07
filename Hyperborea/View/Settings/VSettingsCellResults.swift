@@ -6,11 +6,11 @@ class VSettingsCellResults:VSettingsCell
     private weak var labelCount:UILabel!
     private let kStepperWidth:CGFloat = 110
     private let kStepperHeight:CGFloat = 60
-    private let kStepperTop:CGFloat = 20
+    private let kStepperTop:CGFloat = 30
     private let kCounterRight:CGFloat = -10
-    private let kCounterWidth:CGFloat = 60
+    private let kCounterWidth:CGFloat = 70
     private let kTitleLeft:CGFloat = 10
-    private let kTitleWidth:CGFloat = 180
+    private let kTitleWidth:CGFloat = 145
     private let kStepperStep:Double = 10
     private let kMinStepper:Double = 10
     private let kMaxStepper:Double = 100
@@ -23,8 +23,7 @@ class VSettingsCellResults:VSettingsCell
         labelTitle.isUserInteractionEnabled = false
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.textAlignment = NSTextAlignment.center
-        labelTitle.font = UIFont.bold(size:14)
+        labelTitle.font = UIFont.bold(size:15)
         labelTitle.textColor = UIColor.white
         labelTitle.numberOfLines = 2
         labelTitle.text = NSLocalizedString("VSettingsCellResults_labelTitle", comment:"")
@@ -34,17 +33,21 @@ class VSettingsCellResults:VSettingsCell
         labelCounter.translatesAutoresizingMaskIntoConstraints = false
         labelCounter.backgroundColor = UIColor.clear
         labelCounter.textAlignment = NSTextAlignment.right
-        labelCounter.font = UIFont.numeric(size:20)
+        labelCounter.font = UIFont.numeric(size:28)
         labelCounter.textColor = UIColor.white
         self.labelCount = labelCounter
         
         let stepper:UIStepper = UIStepper()
         stepper.translatesAutoresizingMaskIntoConstraints = false
         stepper.clipsToBounds = true
-        stepper.tintColor = UIColor.black
+        stepper.tintColor = UIColor.white
         stepper.minimumValue = kMinStepper
         stepper.maximumValue = kMaxStepper
         stepper.stepValue = kStepperStep
+        stepper.addTarget(
+            self,
+            action:#selector(actionStepper(sender:)),
+            for:UIControlEvents.valueChanged)
         self.stepper = stepper
         
         addSubview(labelTitle)
@@ -83,7 +86,8 @@ class VSettingsCellResults:VSettingsCell
             toView:self)
         NSLayoutConstraint.leftToLeft(
             view:labelTitle,
-            toView:self)
+            toView:self,
+            constant:kTitleLeft)
         NSLayoutConstraint.width(
             view:labelTitle,
             constant:kTitleWidth)
