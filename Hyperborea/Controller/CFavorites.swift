@@ -3,7 +3,7 @@ import UIKit
 class CFavorites:CController
 {
     private weak var controllerSearch:CSearch!
-    private(set) var model:MRecent?
+    private(set) var model:MFavorites?
     private(set) weak var viewFavorites:VFavorites!
     
     init(controllerSearch:CSearch)
@@ -49,14 +49,14 @@ class CFavorites:CController
     {
         guard
             
-            let recent:[DEntry] = MSession.sharedInstance.settings?.recent?.array as? [DEntry]
+            let favorites:[DEntry] = MSession.sharedInstance.settings?.favorites?.array as? [DEntry]
             
         else
         {
             return
         }
         
-        model = MRecent(entries:recent)
+        model = MFavorites(entries:favorites)
         viewFavorites.refresh()
     }
     
@@ -68,7 +68,7 @@ class CFavorites:CController
         parentController.dismissAnimateOver(completion:nil)
     }
     
-    func selectItem(item:MRecentEntry)
+    func selectItem(item:MFavoritesItem)
     {
         back()
         

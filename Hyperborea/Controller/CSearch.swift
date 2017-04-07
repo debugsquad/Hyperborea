@@ -91,10 +91,8 @@ class CSearch:CController
     
     func openFavorites()
     {
-        let controllerFavorites:CFavorites = CFavorites()
-        parentController.push(
-            controller:controllerFavorites,
-            horizontal:CParent.TransitionHorizontal.fromRight)
+        let controllerFavorites:CFavorites = CFavorites(controllerSearch:self)
+        parentController.animateOver(controller:controllerFavorites)
     }
     
     func openRecent()

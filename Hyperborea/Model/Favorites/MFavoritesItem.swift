@@ -14,7 +14,7 @@ class MFavoritesItem
             let wordId:String = entry.wordId,
             let word:String = entry.word
             
-            else
+        else
         {
             return nil
         }
