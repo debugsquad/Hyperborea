@@ -17,6 +17,7 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private var contentHeight:CGFloat
     private let kBarMinHeight:CGFloat = 50
     private let kInitialHeight:CGFloat = 1
+    private let kMinResultsHeightForContent:CGFloat = 100
     
     override init(controller:CController)
     {
@@ -93,6 +94,37 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         collectionView.scrollRectToVisible(rect, animated:true)
     }
     
+    private func asyncShowContent(restartMode:Bool)
+    {
+        if restartMode
+        {
+            viewContent?.viewMode.restart()
+        }
+        
+        guard
+            
+            let contentHeight:CGFloat = viewContent?.refresh()
+            
+        else
+        {
+            return
+        }
+        
+        if resultsHeight < kMinResultsHeightForContent
+        {
+            resultsHeight = kMinResultsHeightForContent
+        }
+        
+        self.contentHeight = contentHeight
+        collectionView.collectionViewLayout.invalidateLayout()
+        
+        let indexPath:IndexPath = IndexPath(item:1, section:0)
+        collectionView.scrollToItem(
+            at:indexPath,
+            at:UICollectionViewScrollPosition.top,
+            animated:true)
+    }
+    
     //MARK: public
     
     func refresh()
@@ -134,29 +166,7 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         DispatchQueue.main.async
         { [weak self] in
             
-            if restartMode
-            {
-                self?.viewContent?.viewMode.restart()
-            }
-            
-            guard
-                
-                let strongSelf:VSearch = self,
-                let contentHeight:CGFloat = strongSelf.viewContent?.refresh()
-            
-            else
-            {
-                return
-            }
-            
-            strongSelf.contentHeight = contentHeight
-            strongSelf.collectionView.collectionViewLayout.invalidateLayout()
-            
-            let indexPath:IndexPath = IndexPath(item:1, section:0)
-            strongSelf.collectionView.scrollToItem(
-                at:indexPath,
-                at:UICollectionViewScrollPosition.top,
-                animated:true)
+            self?.asyncShowContent(restartMode:restartMode)
         }
     }
     

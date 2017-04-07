@@ -6,26 +6,38 @@ class MSearchRequestEntity:MSearchRequest
     private let kRegionQuery:String = "regions="
     private let kEmpty:String = ""
     
-    @discardableResult init(controller:CSearch, wordId:String, region:String?)
+    @discardableResult init(
+        controller:CSearch,
+        wordId:String,
+        region:String?,
+        languageRaw:Int16)
     {
         super.init()
         self.controller = controller
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
-            self.asyncRequest(wordId:wordId, region:region)
+            self.asyncRequest(
+                wordId:wordId,
+                region:region,
+                languageRaw:languageRaw)
         }
     }
     
     //MARK: private
     
-    private func asyncRequest(wordId:String, region:String?)
+    private func asyncRequest(
+        wordId:String,
+        region:String?,
+        languageRaw:Int16)
     {
+        let language:MLanguage = MLanguage.language(rawValue:languageRaw)
+        let languageCode:String = language.code
+        
         guard
             
             let urlHost:String = MSession.sharedInstance.modelUrls.urlHost(host:MUrls.Host.hostOxford),
-            let urlEndPoint:String = MSession.sharedInstance.modelUrls.urlEnpoint(endPoint:MUrls.EndPoint.oxfordEntries),
-            let languageCode:String = MSession.sharedInstance.settings?.currentLanguage().code
+            let urlEndPoint:String = MSession.sharedInstance.modelUrls.urlEnpoint(endPoint:MUrls.EndPoint.oxfordEntries)
             
         else
         {
