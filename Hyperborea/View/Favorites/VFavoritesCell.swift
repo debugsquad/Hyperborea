@@ -48,7 +48,7 @@ class VFavoritesCell:UICollectionViewCell
             toView:imageView)
         NSLayoutConstraint.rightToRight(
             view:label,
-            toView:imageView,
+            toView:self,
             constant:kLabelRight)
     }
     
