@@ -307,8 +307,8 @@
 				DAD5B2351E8EA83D00F5E481 /* CAppDelegate.swift */,
 				DAD5B2361E8EA83D00F5E481 /* CParent.swift */,
 				DAD5B2371E8EA83D00F5E481 /* CFavorites.swift */,
-				DAD5B2381E8EA83D00F5E481 /* CSearch.swift */,
 				DA9642CF1E96CA490069375C /* CRecent.swift */,
+				DAD5B2381E8EA83D00F5E481 /* CSearch.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
