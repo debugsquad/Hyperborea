@@ -9,7 +9,7 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private let kBaseHeight:CGFloat = 470
     private let kBarHeight:CGFloat = 60
     private let kCellHeight:CGFloat = 52
-    private let kHeaderHeight:CGFloat = 40
+    private let kHeaderHeight:CGFloat = 42
     private let kCollectionBottom:CGFloat = 20
     private let kInterItem:CGFloat = 1
     private let kAnimationDuration:TimeInterval = 0.3
@@ -40,7 +40,7 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         let blur:VBlur = VBlur.dark()
         
         let baseView:UIView = UIView()
-        baseView.backgroundColor = UIColor(white:0.95, alpha:1)
+        baseView.backgroundColor = UIColor(white:0.96, alpha:1)
         baseView.translatesAutoresizingMaskIntoConstraints = false
         baseView.clipsToBounds = true
         
@@ -123,6 +123,12 @@ class VRecent:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    override func layoutSubviews()
+    {
+        collectionView.collectionViewLayout.invalidateLayout()
+        super.layoutSubviews()
     }
     
     //MARK: actions

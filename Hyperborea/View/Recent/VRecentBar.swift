@@ -19,7 +19,7 @@ class VRecentBar:UIView
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
+        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.3))
         
         let imageView:UIImageView = UIImageView()
         imageView.isUserInteractionEnabled = false

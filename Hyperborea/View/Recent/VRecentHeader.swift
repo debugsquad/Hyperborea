@@ -4,7 +4,7 @@ class VRecentHeader:UICollectionReusableView
 {
     private weak var label:UILabel!
     private let kLabelMargin:CGFloat = 10
-    private let kLabelHeight:CGFloat = 30
+    private let kLabelHeight:CGFloat = 34
     
     override init(frame:CGRect)
     {
