@@ -36,6 +36,7 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerCell(cell:VSettingsCellLanguage.self)
+        collectionView.registerCell(cell:VSettingsCellResults.self)
         self.collectionView = collectionView
         
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow

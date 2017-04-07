@@ -6,7 +6,7 @@ class MSettingsItemResults:MSettingsItem
     
     init()
     {
-        let reusableIdentifier:String = VSettingsCellLanguage.reusableIdentifier
+        let reusableIdentifier:String = VSettingsCellResults.reusableIdentifier
         
         super.init(
             reusableIdentifier:reusableIdentifier,

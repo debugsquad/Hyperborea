@@ -53,7 +53,40 @@ class VSettingsCellResults:VSettingsCell
         
         printCounter()
         
+        NSLayoutConstraint.topToTop(
+            view:stepper,
+            toView:self,
+            constant:kStepperTop)
+        NSLayoutConstraint.height(
+            view:stepper,
+            constant:kStepperHeight)
+        NSLayoutConstraint.rightToRight(
+            view:stepper,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:stepper,
+            constant:kStepperWidth)
         
+        NSLayoutConstraint.equalsVertical(
+            view:labelCounter,
+            toView:self)
+        NSLayoutConstraint.rightToLeft(
+            view:labelCounter,
+            toView:stepper,
+            constant:kCounterRight)
+        NSLayoutConstraint.width(
+            view:labelCounter,
+            constant:kCounterWidth)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:labelTitle,
+            toView:self)
+        NSLayoutConstraint.leftToLeft(
+            view:labelTitle,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:labelTitle,
+            constant:kTitleWidth)
     }
     
     required init?(coder:NSCoder)
