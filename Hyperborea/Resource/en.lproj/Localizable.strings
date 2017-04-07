@@ -5,6 +5,7 @@
 "VRecentBar_buttonCancel"="Cancel";
 "VFavoritesBar_label"="Favorites";
 "VFavoritesBar_buttonCancel"="Cancel";
+"VSettingsCellResults_labelTitle"="Max results when searching for words";
 
 "MSearchContentModeItemDefinition_title"="Definition";
 "MSearchContentModeItemDefinition_symbol"="D";

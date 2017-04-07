@@ -7,8 +7,10 @@ class MSettings
     init()
     {
         let itemLanguage:MSettingsItemLanguage = MSettingsItemLanguage()
+        let itemResults:MSettingsItemResults = MSettingsItemResults()
         
         items = [
-            itemLanguage]
+            itemLanguage,
+            itemResults]
     }
 }

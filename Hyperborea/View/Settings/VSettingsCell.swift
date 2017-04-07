@@ -18,6 +18,5 @@ class VSettingsCell:UICollectionViewCell
     
     func config(model:MSettingsItem, controller:CSettings)
     {
-        
     }
 }
