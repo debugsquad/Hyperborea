@@ -10,6 +10,7 @@
         <relationship name="entryRecent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DSettings" inverseName="recent" inverseEntity="DSettings" syncable="YES"/>
     </entity>
     <entity name="DSettings" representedClassName="DSettings" syncable="YES" codeGenerationType="class">
+        <attribute name="froobShots" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="language" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="maxResults" attributeType="Integer 16" defaultValueString="20" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="purchasePlus" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
@@ -20,6 +21,6 @@
     </entity>
     <elements>
         <element name="DEntry" positionX="-63" positionY="0" width="128" height="150"/>
-        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>
