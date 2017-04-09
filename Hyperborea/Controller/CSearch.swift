@@ -96,7 +96,28 @@ class CSearch:CController
     
     private func hasFroobShot() -> Bool
     {
+        guard
         
+            let settings:DSettings = MSession.sharedInstance.settings
+        
+        else
+        {
+            return false
+        }
+        
+        if !settings.purchasePlus
+        {
+            if settings.froobShots < 1
+            {
+                
+            }
+            else
+            {
+                settings.froobShots -= 1
+            }
+        }
+        
+        return true
     }
     
     //MARK: public

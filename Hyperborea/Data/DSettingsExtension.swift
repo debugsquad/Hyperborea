@@ -4,6 +4,7 @@ import CoreData
 extension DSettings
 {
     static let kMaxFroobShots:Int16 = 3
+    static let kWaitingTime:TimeInterval = 600
     
     //MARK: private
     
@@ -228,5 +229,22 @@ extension DSettings
                 wordId:wordId,
                 languageRaw:languageRaw)
         }
+    }
+    
+    func timeFromLastSearch() -> TimeInterval
+    {
+        guard
+        
+            let lastSearch:DEntry = recent?.lastObject as? DEntry
+        
+        else
+        {
+            return DSettings.kWaitingTime
+        }
+        
+        let now:TimeInterval = Date().timeIntervalSince1970
+        let deltaTime:TimeInterval = now - lastSearch.timestamp
+        
+        return deltaTime
     }
 }
