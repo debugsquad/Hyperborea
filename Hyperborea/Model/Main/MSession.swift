@@ -54,6 +54,7 @@ class MSession
             }
             
             self.settings = settings
+            settings.froobShots = DSettings.kMaxFroobShots
             DManager.sharedInstance?.save()
         }
     }

@@ -3,6 +3,8 @@ import CoreData
 
 extension DSettings
 {
+    static let kMaxFroobShots:Int16 = 3
+    
     //MARK: private
     
     private func asyncRecentEntry(
