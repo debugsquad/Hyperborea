@@ -148,6 +148,7 @@
 		DAF622961E908F4E0030772B /* VSearchCellResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF622951E908F4E0030772B /* VSearchCellResults.swift */; };
 		DAF622981E908F5C0030772B /* VSearchCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF622971E908F5C0030772B /* VSearchCellContent.swift */; };
 		DAF6E9721E99B4E400486B50 /* CFroobPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6E9711E99B4E400486B50 /* CFroobPlus.swift */; };
+		DAF6E9751E99B51B00486B50 /* VFroobPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6E9741E99B51B00486B50 /* VFroobPlus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -294,6 +295,7 @@
 		DAF622951E908F4E0030772B /* VSearchCellResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchCellResults.swift; sourceTree = "<group>"; };
 		DAF622971E908F5C0030772B /* VSearchCellContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchCellContent.swift; sourceTree = "<group>"; };
 		DAF6E9711E99B4E400486B50 /* CFroobPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFroobPlus.swift; sourceTree = "<group>"; };
+		DAF6E9741E99B51B00486B50 /* VFroobPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VFroobPlus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +395,7 @@
 		DA1F6FB01E8AEF1C00484942 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DAF6E9731E99B51300486B50 /* Froob */,
 				DA1F6FB11E8AEF1C00484942 /* Main */,
 				DA9642D11E96CAA60069375C /* Recent */,
 				DAD5B2531E8EA97100F5E481 /* Favorites */,
@@ -608,6 +611,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		DAF6E9731E99B51300486B50 /* Froob */ = {
+			isa = PBXGroup;
+			children = (
+				DAF6E9741E99B51B00486B50 /* VFroobPlus.swift */,
+			);
+			path = Froob;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -810,6 +821,7 @@
 				DAEC1AB11E8C7FF70001B27B /* VSettingsBackground.swift in Sources */,
 				DAD5B26B1E8EF8F500F5E481 /* MOxfordCredentials.swift in Sources */,
 				DA1F6FC71E8AEF1C00484942 /* ExtensionNSLayoutConstraint.swift in Sources */,
+				DAF6E9751E99B51B00486B50 /* VFroobPlus.swift in Sources */,
 				DA03A8721E97F671007F0827 /* VFavoritesCell.swift in Sources */,
 				DA9642CE1E96C87A0069375C /* MSearchOptionsItemRecent.swift in Sources */,
 				DAD5B2501E8EA8E500F5E481 /* VSpinner.swift in Sources */,
