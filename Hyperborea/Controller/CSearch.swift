@@ -94,6 +94,11 @@ class CSearch:CController
         return queryEscaped
     }
     
+    private func hasFroobShot() -> Bool
+    {
+        
+    }
+    
     //MARK: public
     
     func openSettings()
@@ -194,12 +199,19 @@ class CSearch:CController
         
         if modelEntry == nil
         {
-            MSearchRequestEntity(
-                controller:self,
-                wordId:wordId,
-                word:word,
-                languageRaw:languageRaw,
-                region:region)
+            if hasFroobShot()
+            {
+                MSearchRequestEntity(
+                    controller:self,
+                    wordId:wordId,
+                    word:word,
+                    languageRaw:languageRaw,
+                    region:region)
+            }
+            else
+            {
+                
+            }
         }
     }
     

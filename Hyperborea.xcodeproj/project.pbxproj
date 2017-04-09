@@ -147,6 +147,7 @@
 		DAF622941E908E720030772B /* VSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF622931E908E720030772B /* VSearchCell.swift */; };
 		DAF622961E908F4E0030772B /* VSearchCellResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF622951E908F4E0030772B /* VSearchCellResults.swift */; };
 		DAF622981E908F5C0030772B /* VSearchCellContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF622971E908F5C0030772B /* VSearchCellContent.swift */; };
+		DAF6E9721E99B4E400486B50 /* CFroobPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6E9711E99B4E400486B50 /* CFroobPlus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -292,6 +293,7 @@
 		DAF622931E908E720030772B /* VSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchCell.swift; sourceTree = "<group>"; };
 		DAF622951E908F4E0030772B /* VSearchCellResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchCellResults.swift; sourceTree = "<group>"; };
 		DAF622971E908F5C0030772B /* VSearchCellContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSearchCellContent.swift; sourceTree = "<group>"; };
+		DAF6E9711E99B4E400486B50 /* CFroobPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CFroobPlus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +336,7 @@
 				DAD5B2371E8EA83D00F5E481 /* CFavorites.swift */,
 				DA9642CF1E96CA490069375C /* CRecent.swift */,
 				DAD5B2381E8EA83D00F5E481 /* CSearch.swift */,
+				DAF6E9711E99B4E400486B50 /* CFroobPlus.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				DA1F6FE21E8AF76800484942 /* VSearch.swift in Sources */,
 				DA4B23221E954EFE00F5FE1A /* MSearchTranslations.swift in Sources */,
 				DAF622941E908E720030772B /* VSearchCell.swift in Sources */,
+				DAF6E9721E99B4E400486B50 /* CFroobPlus.swift in Sources */,
 				DA9642C61E9692D40069375C /* MLanguageSpanish.swift in Sources */,
 				DAD5B2551E8EA97E00F5E481 /* VFavorites.swift in Sources */,
 				DA03A8751E97F7E2007F0827 /* MFavorites.swift in Sources */,
