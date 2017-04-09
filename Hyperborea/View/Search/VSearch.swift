@@ -170,6 +170,15 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
     }
     
+    func showFroob()
+    {
+        contentHeight = kInitialHeight
+        collectionView.collectionViewLayout.invalidateLayout()
+        viewResults?.refresh()
+        viewContent?.froob()
+        scrollToTop()
+    }
+    
     //MARK: collectionView delegate
     
     func scrollViewDidScroll(_ scrollView:UIScrollView)

@@ -132,6 +132,46 @@ class CSearch:CController
         return true
     }
     
+    private func asyncShowDefinition(
+        wordId:String,
+        word:String,
+        languageRaw:Int16,
+        region:String?)
+    {
+        MSession.sharedInstance.settings?.recentEntry(
+            wordId:wordId,
+            word:word,
+            languageRaw:languageRaw,
+            region:region)
+        
+        modelEntry = mapEntry[wordId]
+        viewSearch.showContent(restartMode:true)
+        
+        if modelEntry == nil
+        {
+            if hasFroobShot()
+            {
+                MSearchRequestEntity(
+                    controller:self,
+                    wordId:wordId,
+                    word:word,
+                    languageRaw:languageRaw,
+                    region:region)
+            }
+            else
+            {
+                DispatchQueue.main.async
+                { [weak self] in
+                    
+                    self?.viewSearch.showFroob()
+                    
+                    let controllerFroob:CFroobPlus = CFroobPlus()
+                    self?.parentController.animateOver(controller:controllerFroob)
+                }
+            }
+        }
+    }
+    
     //MARK: public
     
     func openSettings()
@@ -201,18 +241,12 @@ class CSearch:CController
     
     func selectResults(modelResultItem:MSearchResultsItem)
     {
-        cancelRequests()
-        
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        { [weak self] in
-            
-            self?.modelResultItem = modelResultItem
-            self?.showDefinition(
-                wordId:modelResultItem.wordId,
-                word:modelResultItem.word,
-                languageRaw:modelResultItem.languageRaw,
-                region:modelResultItem.region)
-        }
+        self.modelResultItem = modelResultItem
+        showDefinition(
+            wordId:modelResultItem.wordId,
+            word:modelResultItem.word,
+            languageRaw:modelResultItem.languageRaw,
+            region:modelResultItem.region)
     }
     
     func showDefinition(
@@ -221,30 +255,16 @@ class CSearch:CController
         languageRaw:Int16,
         region:String?)
     {
-        MSession.sharedInstance.settings?.recentEntry(
-            wordId:wordId,
-            word:word,
-            languageRaw:languageRaw,
-            region:region)
+        cancelRequests()
         
-        modelEntry = mapEntry[wordId]
-        viewSearch.showContent(restartMode:true)
-        
-        if modelEntry == nil
-        {
-            if hasFroobShot()
-            {
-                MSearchRequestEntity(
-                    controller:self,
-                    wordId:wordId,
-                    word:word,
-                    languageRaw:languageRaw,
-                    region:region)
-            }
-            else
-            {
-                
-            }
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.asyncShowDefinition(
+                wordId:wordId,
+                word:word,
+                languageRaw:languageRaw,
+                region:region)
         }
     }
     

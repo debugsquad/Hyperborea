@@ -113,6 +113,15 @@ class VSearchContent:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         return totalHeight
     }
     
+    func froob()
+    {
+        headerHeight = 0
+        layoutModeHeight.constant = 0
+        cellHeight = 0
+        spinner.stopAnimating()
+        collectionView.reloadData()
+    }
+    
     //MARK: collectionView delegate
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
