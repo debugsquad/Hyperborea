@@ -109,11 +109,23 @@ class CSearch:CController
         {
             if settings.froobShots < 1
             {
+                let timeSinceLast:TimeInterval = settings.timeFromLastSearch()
                 
+                if timeSinceLast > DSettings.kWaitingTime
+                {
+                    settings.froobShots = DSettings.kMaxFroobShots - 1
+                    
+                    DManager.sharedInstance?.save()
+                }
+                else
+                {
+                    return false
+                }
             }
             else
             {
                 settings.froobShots -= 1
+                DManager.sharedInstance?.save()
             }
         }
         
