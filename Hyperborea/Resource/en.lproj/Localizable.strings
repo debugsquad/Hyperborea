@@ -10,6 +10,12 @@
 "VFroobPlusContent_labelSubtitle"="\nGet Plus to avoid restrictions";
 "VFroobPlusContentButtons_buttonStore"="Continue";
 "VFroobPlusContentButtons_buttonCancel"="Not now";
+"VStoreFooter_buttonRestore"="Restore purchase";
+"VStoreCellNew_buttonPurchase"="Purchase";
+"VStoreCellDeferred_label"="Purchase deferred";
+"VStoreCellPurchasing_label"="Purchasing";
+"VStoreCellPurchased_label"="Purchased";
+"VStoreCellNotAvailable_label"="Not available";
 
 "MSearchContentModeItemDefinition_title"="Definition";
 "MSearchContentModeItemDefinition_symbol"="D";

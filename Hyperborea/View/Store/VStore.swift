@@ -5,7 +5,7 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     private weak var controller:CStore!
     private weak var spinner:VSpinner?
     private weak var collectionView:VCollection!
-    private let kHeaderHeight:CGFloat = 120
+    private let kHeaderHeight:CGFloat = 140
     private let kFooterHeight:CGFloat = 80
     private let kInterLine:CGFloat = 1
     private let kCollectionTop:CGFloat = 70

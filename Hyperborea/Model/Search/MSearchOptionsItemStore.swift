@@ -9,6 +9,6 @@ class MSearchOptionsItemStore:MSearchOptionsItem
     
     override func selected(controller:CSearch)
     {
-        controller.openRecent()
+        controller.openStore()
     }
 }

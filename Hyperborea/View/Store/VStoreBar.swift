@@ -5,7 +5,7 @@ class VStoreBar:UIView
     private weak var controller:CStore!
     private let kBorderHeight:CGFloat = 1
     private let kContentTop:CGFloat = 20
-    private let kBackWidth:CGFloat = 40
+    private let kBackWidth:CGFloat = 60
     
     init(controller:CStore)
     {
