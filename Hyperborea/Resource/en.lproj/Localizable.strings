@@ -17,6 +17,8 @@
 "VStoreCellPurchased_label"="Purchased";
 "VStoreCellNotAvailable_label"="Not available";
 "VSettingsCellRetina_labelTitle"="Share images in HD\n(larger files)";
+"VSettingsCellShare_labelTitle"="Give Hyperborean to someone";
+"VSettingsCellReview_labelTitle"="Review on the App Store";
 
 "MSearchContentModeItemDefinition_title"="Definition";
 "MSearchContentModeItemDefinition_symbol"="D";

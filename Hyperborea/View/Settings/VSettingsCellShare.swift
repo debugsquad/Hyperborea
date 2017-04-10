@@ -1,13 +1,10 @@
 import UIKit
 
-class VSettingsCellRetina:VSettingsCell
+class VSettingsCellShare:VSettingsCell
 {
-    private weak var check:UISwitch!
-    private let kCheckWidth:CGFloat = 75
-    private let kCheckHeight:CGFloat = 60
-    private let kCheckTop:CGFloat = 27
     private let kTitleLeft:CGFloat = 10
-    private let kTitleWidth:CGFloat = 190
+    private let kTitleWidth:CGFloat = 200
+    private let kImageWidth:CGFloat = 180
     
     override init(frame:CGRect)
     {
@@ -17,38 +14,20 @@ class VSettingsCellRetina:VSettingsCell
         labelTitle.isUserInteractionEnabled = false
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.font = UIFont.bold(size:15)
+        labelTitle.font = UIFont.bold(size:18)
         labelTitle.textColor = UIColor.white
         labelTitle.numberOfLines = 2
-        labelTitle.text = NSLocalizedString("VSettingsCellRetina_labelTitle", comment:"")
+        labelTitle.text = NSLocalizedString("VSettingsCellShare_labelTitle", comment:"")
         
-        let check:UISwitch = UISwitch()
-        check.translatesAutoresizingMaskIntoConstraints = false
-        check.clipsToBounds = true
-        check.tintColor = UIColor.white
-        check.onTintColor = UIColor.hyperOrange
-        check.addTarget(
-            self,
-            action:#selector(actionCheck(sender:)),
-            for:UIControlEvents.valueChanged)
-        self.check = check
+        let imageView:UIImageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.contentMode = UIViewContentMode.center
+        imageView.isUserInteractionEnabled = false
+        imageView.image = #imageLiteral(resourceName: "assetGenericShareApp")
         
         addSubview(labelTitle)
-        addSubview(check)
-        
-        NSLayoutConstraint.topToTop(
-            view:check,
-            toView:self,
-            constant:kCheckTop)
-        NSLayoutConstraint.height(
-            view:check,
-            constant:kCheckHeight)
-        NSLayoutConstraint.rightToRight(
-            view:check,
-            toView:self)
-        NSLayoutConstraint.width(
-            view:check,
-            constant:kCheckWidth)
+        addSubview(imageView)
         
         NSLayoutConstraint.equalsVertical(
             view:labelTitle,
@@ -61,28 +40,19 @@ class VSettingsCellRetina:VSettingsCell
             view:labelTitle,
             constant:kTitleWidth)
         
-        guard
-            
-            let shareRetina:Bool = MSession.sharedInstance.settings?.shareRetina
-            
-            else
-        {
-            return
-        }
-        
-        check.isOn = shareRetina
+        NSLayoutConstraint.equalsVertical(
+            view:imageView,
+            toView:self)
+        NSLayoutConstraint.rightToRight(
+            view:imageView,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:imageView,
+            constant:kImageWidth)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
-    }
-    
-    //MARK: actions
-    
-    func actionCheck(sender check:UISwitch)
-    {
-        MSession.sharedInstance.settings?.shareRetina = check.isOn
-        DManager.sharedInstance?.save()
     }
 }
