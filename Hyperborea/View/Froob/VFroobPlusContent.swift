@@ -3,6 +3,7 @@ import UIKit
 class VFroobPlusContent:UIView
 {
     private weak var controller:CFroobPlus!
+    private weak var labelTimer:UILabel!
     private weak var layoutBaseLeft:NSLayoutConstraint!
     private weak var layoutCircleLeft:NSLayoutConstraint!
     private let kBaseWidth:CGFloat = 299
@@ -11,8 +12,8 @@ class VFroobPlusContent:UIView
     private let kCornerRadius:CGFloat = 20
     private let kCircleTop:CGFloat = 2
     private let kCircleSize:CGFloat = 90
-    private let kLabelTitleTop:CGFloat = 70
-    private let kLabelTitleHeight:CGFloat = 32
+    private let kLabelTimerTop:CGFloat = 100
+    private let kLabelTimerHeight:CGFloat = 32
     private let kSubtitleMargin:CGFloat = 10
     private let kSubtitleHeight:CGFloat = 120
     private let kButtonsHeight:CGFloat = 62
@@ -24,6 +25,22 @@ class VFroobPlusContent:UIView
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
+        
+        let attributesTitle:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.bolder(size:20),
+            NSForegroundColorAttributeName:UIColor.black]
+        let attributesSubtitle:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.regular(size:18),
+            NSForegroundColorAttributeName:UIColor.black]
+        let stringTitle:NSAttributedString = NSAttributedString(
+            string:NSLocalizedString("VFroobPlusContent_labelTitle", comment:""),
+            attributes:attributesTitle)
+        let stringSubtitle:NSAttributedString = NSAttributedString(
+            string:NSLocalizedString("VFroobPlusContent_labelSubtitle", comment:""),
+            attributes:attributesSubtitle)
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        mutableString.append(stringTitle)
+        mutableString.append(stringSubtitle)
         
         let baseView:UIView = UIView()
         baseView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,24 +62,22 @@ class VFroobPlusContent:UIView
         imageView.contentMode = UIViewContentMode.center
         imageView.image = #imageLiteral(resourceName: "assetGenericFroobPlus")
         
-        let labelTitle:UILabel = UILabel()
-        labelTitle.isUserInteractionEnabled = false
-        labelTitle.backgroundColor = UIColor.clear
-        labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.textAlignment = NSTextAlignment.center
-        labelTitle.font = UIFont.bolder(size:20)
-        labelTitle.textColor = UIColor.black
-        labelTitle.text = NSLocalizedString("VFroobPlusContent_labelTitle", comment:"")
+        let labelTimer:UILabel = UILabel()
+        labelTimer.isUserInteractionEnabled = false
+        labelTimer.translatesAutoresizingMaskIntoConstraints = false
+        labelTimer.textAlignment = NSTextAlignment.center
+        labelTimer.backgroundColor = UIColor.clear
+        labelTimer.font = UIFont.numeric(size:25)
+        labelTimer.textColor = UIColor.black
+        self.labelTimer = labelTimer
         
         let labelSubtitle:UILabel = UILabel()
         labelSubtitle.isUserInteractionEnabled = false
         labelSubtitle.backgroundColor = UIColor.clear
         labelSubtitle.translatesAutoresizingMaskIntoConstraints = false
         labelSubtitle.textAlignment = NSTextAlignment.center
-        labelSubtitle.font = UIFont.regular(size:18)
-        labelSubtitle.textColor = UIColor.black
         labelSubtitle.numberOfLines = 0
-        labelSubtitle.text = NSLocalizedString("VFroobPlusContent_labelSubtitle", comment:"")
+        labelSubtitle.attributedText = mutableString
         
         let viewButtons:VFroobPlusContentButtons = VFroobPlusContentButtons(
             controller:controller)
@@ -71,7 +86,7 @@ class VFroobPlusContent:UIView
         baseView.addSubview(viewButtons)
         addSubview(baseView)
         addSubview(circle)
-        addSubview(labelTitle)
+        addSubview(labelTimer)
         addSubview(labelSubtitle)
         
         NSLayoutConstraint.bottomToBottom(
@@ -103,19 +118,19 @@ class VFroobPlusContent:UIView
             toView:circle)
         
         NSLayoutConstraint.topToTop(
-            view:labelTitle,
+            view:labelTimer,
             toView:self,
-            constant:kLabelTitleTop)
+            constant:kLabelTimerTop)
         NSLayoutConstraint.height(
-            view:labelTitle,
-            constant:kLabelTitleHeight)
+            view:labelTimer,
+            constant:kLabelTimerHeight)
         NSLayoutConstraint.equalsHorizontal(
-            view:labelTitle,
+            view:labelTimer,
             toView:self)
         
         NSLayoutConstraint.topToBottom(
             view:labelSubtitle,
-            toView:labelTitle)
+            toView:labelTimer)
         NSLayoutConstraint.height(
             view:labelSubtitle,
             constant:kSubtitleHeight)
