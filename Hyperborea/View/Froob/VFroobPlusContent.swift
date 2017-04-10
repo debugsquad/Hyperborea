@@ -13,9 +13,9 @@ class VFroobPlusContent:UIView
     private let kCircleTop:CGFloat = 2
     private let kCircleSize:CGFloat = 90
     private let kLabelTimerTop:CGFloat = 100
-    private let kLabelTimerHeight:CGFloat = 32
+    private let kLabelTimerHeight:CGFloat = 36
     private let kSubtitleMargin:CGFloat = 10
-    private let kSubtitleHeight:CGFloat = 120
+    private let kSubtitleHeight:CGFloat = 100
     private let kButtonsHeight:CGFloat = 62
     
     init(controller:CFroobPlus)
@@ -27,10 +27,10 @@ class VFroobPlusContent:UIView
         self.controller = controller
         
         let attributesTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.bolder(size:20),
+            NSFontAttributeName:UIFont.bolder(size:18),
             NSForegroundColorAttributeName:UIColor.black]
         let attributesSubtitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:18),
+            NSFontAttributeName:UIFont.regular(size:17),
             NSForegroundColorAttributeName:UIColor.black]
         let stringTitle:NSAttributedString = NSAttributedString(
             string:NSLocalizedString("VFroobPlusContent_labelTitle", comment:""),
@@ -67,7 +67,7 @@ class VFroobPlusContent:UIView
         labelTimer.translatesAutoresizingMaskIntoConstraints = false
         labelTimer.textAlignment = NSTextAlignment.center
         labelTimer.backgroundColor = UIColor.clear
-        labelTimer.font = UIFont.numeric(size:25)
+        labelTimer.font = UIFont.numeric(size:28)
         labelTimer.textColor = UIColor.black
         self.labelTimer = labelTimer
         
@@ -167,5 +167,25 @@ class VFroobPlusContent:UIView
         layoutCircleLeft.constant = circleLeft
         
         super.layoutSubviews()
+    }
+    
+    //MARK: public
+    
+    func updateTimer()
+    {
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            guard
+            
+                let remainTime:TimeInterval = MSession.sharedInstance.settings?.timeFromLastSearch()
+            
+            else
+            {
+                return
+            }
+            
+            print("\(remainTime)")
+        }
     }
 }

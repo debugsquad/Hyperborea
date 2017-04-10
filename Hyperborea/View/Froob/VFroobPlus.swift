@@ -2,6 +2,7 @@ import UIKit
 
 class VFroobPlus:VView
 {
+    private(set) weak var viewContent:VFroobPlusContent!
     private weak var controller:CFroobPlus!
     private weak var blurContainer:UIView!
     private weak var layoutContentBottom:NSLayoutConstraint!
@@ -35,6 +36,7 @@ class VFroobPlus:VView
         
         let viewContent:VFroobPlusContent = VFroobPlusContent(
             controller:self.controller)
+        self.viewContent = viewContent
         
         blurContainer.addSubview(blur)
         addSubview(blurContainer)
