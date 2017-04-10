@@ -29,6 +29,8 @@
 "MRecent_today"="More recent";
 "MRecent_yesterday"="A day ago";
 "MRecent_daysAgo"="%@ days ago";
+"MStoreItemPlus_title"="Hyperborea plus";
+"MStoreItemPlus_descr"="\nRemove restrictions and get unlimited searches";
 
 "MSearchEntryItemNoun_title"="Noun";
 "MSearchEntryItemVerb_title"="Verb";
