@@ -13,10 +13,11 @@ class VFroobPlusContent:UIView
     private let kCircleTop:CGFloat = 2
     private let kCircleSize:CGFloat = 90
     private let kLabelTimerTop:CGFloat = 100
-    private let kLabelTimerHeight:CGFloat = 36
+    private let kLabelTimerHeight:CGFloat = 50
     private let kSubtitleMargin:CGFloat = 10
-    private let kSubtitleHeight:CGFloat = 100
+    private let kSubtitleHeight:CGFloat = 80
     private let kButtonsHeight:CGFloat = 62
+    private let kSecondsInMinutes:TimeInterval = 60
     
     init(controller:CFroobPlus)
     {
@@ -67,7 +68,7 @@ class VFroobPlusContent:UIView
         labelTimer.translatesAutoresizingMaskIntoConstraints = false
         labelTimer.textAlignment = NSTextAlignment.center
         labelTimer.backgroundColor = UIColor.clear
-        labelTimer.font = UIFont.numeric(size:28)
+        labelTimer.font = UIFont.numeric(size:35)
         labelTimer.textColor = UIColor.black
         self.labelTimer = labelTimer
         
@@ -171,21 +172,27 @@ class VFroobPlusContent:UIView
     
     //MARK: public
     
-    func updateTimer()
+    func updateTimer(time:TimeInterval)
     {
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        let minutes:Int = Int(time / kSecondsInMinutes)
+        let seconds:Int = Int(time.truncatingRemainder(dividingBy:kSecondsInMinutes))
+        let secondsString:String
+        
+        if seconds > 9
+        {
+            secondsString = "\(seconds)"
+        }
+        else
+        {
+            secondsString = "0\(seconds)"
+        }
+        
+        let timeString:String = "\(minutes):\(secondsString)"
+        
+        DispatchQueue.main.async
         { [weak self] in
             
-            guard
-            
-                let remainTime:TimeInterval = MSession.sharedInstance.settings?.timeFromLastSearch()
-            
-            else
-            {
-                return
-            }
-            
-            print("\(remainTime)")
+            self?.labelTimer.text = timeString
         }
     }
 }

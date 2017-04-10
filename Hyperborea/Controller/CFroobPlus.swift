@@ -40,7 +40,33 @@ class CFroobPlus:CController
     
     func actionTimer(sender timer:Timer)
     {
-        viewFroob.viewContent.updateTimer()
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            guard
+                
+                let remainTime:TimeInterval = MSession.sharedInstance.settings?.timeFromLastSearch()
+                
+            else
+            {
+                return
+            }
+            
+            let deltaTime:TimeInterval = DSettings.kWaitingTime - remainTime
+            
+            if deltaTime > 0
+            {
+                self?.viewFroob.viewContent.updateTimer(time:deltaTime)
+            }
+            else
+            {
+                DispatchQueue.main.async
+                { [weak self] in
+                    
+                    self?.back()
+                }
+            }
+        }
     }
     
     //MARK: public
