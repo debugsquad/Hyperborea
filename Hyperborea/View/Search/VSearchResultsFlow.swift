@@ -34,15 +34,14 @@ class VSearchResultsFlow:UICollectionViewLayout
         
         guard
             
-            let model:MSearchResults = controller.modelResults,
-            let collectionView:UICollectionView = self.collectionView
+            let model:MSearchResults = controller.modelResults
         
         else
         {
             return
         }
         
-        contentWidth = collectionView.bounds.maxX
+        contentWidth = UIScreen.main.bounds.maxX
         let maxWidth:CGFloat = contentWidth - kMarginHorizontal
         var positionY:CGFloat = controller.viewSearch.barOptionsTop + kMarginVertical
         var positionX:CGFloat = kMarginHorizontal

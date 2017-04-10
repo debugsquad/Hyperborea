@@ -140,8 +140,7 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func changeOrientation()
     {
         viewResults?.changeOrientation()
-        viewContent?.changeOrientation()
-        scrollToTop()
+        asyncShowContent(restartMode:false)
     }
     
     func beginSearch()
