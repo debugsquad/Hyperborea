@@ -4,6 +4,12 @@ class CFroobPlus:CController
 {
     private weak var viewFroob:VFroobPlus!
     
+    override func viewDidAppear(_ animated:Bool)
+    {
+        super.viewDidAppear(animated)
+        viewFroob.animateShow()
+    }
+    
     override func loadView()
     {
         let viewFroob:VFroobPlus = VFroobPlus(controller:self)

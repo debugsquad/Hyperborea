@@ -235,7 +235,7 @@ extension DSettings
     {
         guard
         
-            let lastSearch:DEntry = recent?.lastObject as? DEntry
+            let lastSearch:DEntry = recent?.firstObject as? DEntry
         
         else
         {

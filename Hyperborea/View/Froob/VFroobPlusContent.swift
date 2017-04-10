@@ -43,7 +43,7 @@ class VFroobPlusContent:UIView
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.contentMode = UIViewContentMode.center
-        imageView.image = purchase.icon
+        imageView.image = #imageLiteral(resourceName: "assetGenericFroobPlus")
         
         let labelTitle:UILabel = UILabel()
         labelTitle.isUserInteractionEnabled = false
@@ -64,7 +64,7 @@ class VFroobPlusContent:UIView
         labelSubtitle.numberOfLines = 0
         labelSubtitle.text = NSLocalizedString("VFroobPlusContent_labelSubtitle", comment:"")
         
-        let viewButtons:VDrawProjectStoreContentButtons = VDrawProjectStoreContentButtons(
+        let viewButtons:VFroobPlusContentButtons = VFroobPlusContentButtons(
             controller:controller)
         
         circle.addSubview(imageView)
