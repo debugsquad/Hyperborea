@@ -209,7 +209,9 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         collectionView.isUserInteractionEnabled = false
+        
         let item:MSettingsItem = modelAtIndex(index:indexPath)
+        item.selected(controller:controller)
         
         DispatchQueue.main.asyncAfter(
             deadline:DispatchTime.now() + kDeselectTime)
