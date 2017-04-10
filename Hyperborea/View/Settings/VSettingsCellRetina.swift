@@ -2,13 +2,10 @@ import UIKit
 
 class VSettingsCellRetina:VSettingsCell
 {
-    private weak var stepper:UIStepper!
-    private weak var labelCount:UILabel!
-    private let kStepperWidth:CGFloat = 110
-    private let kStepperHeight:CGFloat = 60
-    private let kStepperTop:CGFloat = 30
-    private let kCounterRight:CGFloat = -10
-    private let kCounterWidth:CGFloat = 70
+    private weak var check:UISwitch!
+    private let kCheckWidth:CGFloat = 110
+    private let kCheckHeight:CGFloat = 60
+    private let kCheckTop:CGFloat = 30
     private let kTitleLeft:CGFloat = 10
     private let kTitleWidth:CGFloat = 145
     private let kStepperStep:Double = 10
@@ -26,58 +23,35 @@ class VSettingsCellRetina:VSettingsCell
         labelTitle.font = UIFont.bold(size:15)
         labelTitle.textColor = UIColor.white
         labelTitle.numberOfLines = 2
-        labelTitle.text = NSLocalizedString("VSettingsCellResults_labelTitle", comment:"")
+        labelTitle.text = NSLocalizedString("VSettingsCellRetina_labelTitle", comment:"")
         
-        let labelCounter:UILabel = UILabel()
-        labelCounter.isUserInteractionEnabled = false
-        labelCounter.translatesAutoresizingMaskIntoConstraints = false
-        labelCounter.backgroundColor = UIColor.clear
-        labelCounter.textAlignment = NSTextAlignment.right
-        labelCounter.font = UIFont.numeric(size:28)
-        labelCounter.textColor = UIColor.white
-        self.labelCount = labelCounter
-        
-        let stepper:UIStepper = UIStepper()
-        stepper.translatesAutoresizingMaskIntoConstraints = false
-        stepper.clipsToBounds = true
-        stepper.tintColor = UIColor.white
-        stepper.minimumValue = kMinStepper
-        stepper.maximumValue = kMaxStepper
-        stepper.stepValue = kStepperStep
-        stepper.addTarget(
+        let check:UISwitch = UISwitch()
+        check.translatesAutoresizingMaskIntoConstraints = false
+        check.clipsToBounds = true
+        check.tintColor = UIColor.white
+        check.onTintColor = UIColor.hyperOrange
+        check.addTarget(
             self,
-            action:#selector(actionStepper(sender:)),
+            action:#selector(actionCheck(sender:)),
             for:UIControlEvents.valueChanged)
-        self.stepper = stepper
+        self.check = check
         
         addSubview(labelTitle)
-        addSubview(labelCounter)
-        addSubview(stepper)
+        addSubview(check)
         
         NSLayoutConstraint.topToTop(
-            view:stepper,
+            view:check,
             toView:self,
-            constant:kStepperTop)
+            constant:kCheckTop)
         NSLayoutConstraint.height(
-            view:stepper,
-            constant:kStepperHeight)
+            view:check,
+            constant:kCheckHeight)
         NSLayoutConstraint.rightToRight(
-            view:stepper,
+            view:check,
             toView:self)
         NSLayoutConstraint.width(
-            view:stepper,
-            constant:kStepperWidth)
-        
-        NSLayoutConstraint.equalsVertical(
-            view:labelCounter,
-            toView:self)
-        NSLayoutConstraint.rightToLeft(
-            view:labelCounter,
-            toView:stepper,
-            constant:kCounterRight)
-        NSLayoutConstraint.width(
-            view:labelCounter,
-            constant:kCounterWidth)
+            view:check,
+            constant:kCheckWidth)
         
         NSLayoutConstraint.equalsVertical(
             view:labelTitle,
@@ -92,17 +66,14 @@ class VSettingsCellRetina:VSettingsCell
         
         guard
             
-            let maxResults:Int16 = MSession.sharedInstance.settings?.maxResults
+            let shareRetina:Bool = MSession.sharedInstance.settings?.shareRetina
             
-            else
+        else
         {
             return
         }
         
-        let maxDouble:Double = Double(maxResults)
-        stepper.value = maxDouble
-        
-        printCounter()
+        check.isOn = shareRetina
     }
     
     required init?(coder:NSCoder)
@@ -112,21 +83,9 @@ class VSettingsCellRetina:VSettingsCell
     
     //MARK: actions
     
-    func actionStepper(sender stepper:UIStepper)
+    func actionCheck(sender check:UISwitch)
     {
-        let value:Int16 = Int16(stepper.value)
-        MSession.sharedInstance.settings?.maxResults = value
+        MSession.sharedInstance.settings?.shareRetina = check.isOn
         DManager.sharedInstance?.save()
-        
-        printCounter()
-    }
-    
-    //MARK: private
-    
-    func printCounter()
-    {
-        let value:Int = Int(stepper.value)
-        let string:String = "\(value)"
-        labelCount.text = string
     }
 }

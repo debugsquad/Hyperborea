@@ -3,7 +3,7 @@ import UIKit
 class VSettingsCellResults:VSettingsCell
 {
     private weak var stepper:UIStepper!
-    private weak var labelCount:UILabel!
+    private weak var labelCounter:UILabel!
     private let kStepperWidth:CGFloat = 110
     private let kStepperHeight:CGFloat = 60
     private let kStepperTop:CGFloat = 30
@@ -35,7 +35,7 @@ class VSettingsCellResults:VSettingsCell
         labelCounter.textAlignment = NSTextAlignment.right
         labelCounter.font = UIFont.numeric(size:28)
         labelCounter.textColor = UIColor.white
-        self.labelCount = labelCounter
+        self.labelCounter = labelCounter
         
         let stepper:UIStepper = UIStepper()
         stepper.translatesAutoresizingMaskIntoConstraints = false
@@ -127,6 +127,6 @@ class VSettingsCellResults:VSettingsCell
     {
         let value:Int = Int(stepper.value)
         let string:String = "\(value)"
-        labelCount.text = string
+        labelCounter.text = string
     }
 }
