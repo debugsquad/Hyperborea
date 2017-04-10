@@ -2,7 +2,7 @@ import UIKit
 
 class CFroobPlus:CController
 {
-    private weak var viewFroob:VFroobPlus!
+    private(set) weak var viewFroob:VFroobPlus!
     
     override func viewDidAppear(_ animated:Bool)
     {

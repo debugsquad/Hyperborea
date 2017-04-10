@@ -138,12 +138,7 @@ class CSearch:CController
         languageRaw:Int16,
         region:String?)
     {
-        MSession.sharedInstance.settings?.recentEntry(
-            wordId:wordId,
-            word:word,
-            languageRaw:languageRaw,
-            region:region)
-        
+        var addEntry:Bool = true
         modelEntry = mapEntry[wordId]
         viewSearch.showContent(restartMode:true)
         
@@ -160,6 +155,8 @@ class CSearch:CController
             }
             else
             {
+                addEntry = false
+                
                 DispatchQueue.main.async
                 { [weak self] in
                     
@@ -169,6 +166,15 @@ class CSearch:CController
                     self?.parentController.animateOver(controller:controllerFroob)
                 }
             }
+        }
+        
+        if addEntry
+        {
+            MSession.sharedInstance.settings?.recentEntry(
+                wordId:wordId,
+                word:word,
+                languageRaw:languageRaw,
+                region:region)
         }
     }
     

@@ -4,7 +4,7 @@ class VFroobPlus:VView
 {
     private weak var controller:CFroobPlus!
     private weak var blurContainer:UIView!
-    private weak var layoutContentTop:NSLayoutConstraint!
+    private weak var layoutContentBottom:NSLayoutConstraint!
     private let kAnimationDuration:TimeInterval = 0.3
     private let kContentHeight:CGFloat = 300
     private let kContentTop:CGFloat = 150
@@ -36,8 +36,6 @@ class VFroobPlus:VView
         let viewContent:VFroobPlusContent = VFroobPlusContent(
             controller:self.controller)
         
-        let contentTop:CGFloat = controller.view.bounds.maxY
-        
         blurContainer.addSubview(blur)
         addSubview(blurContainer)
         addSubview(baseButton)
@@ -53,10 +51,9 @@ class VFroobPlus:VView
             view:baseButton,
             toView:self)
         
-        layoutContentTop = NSLayoutConstraint.topToTop(
+        layoutContentBottom = NSLayoutConstraint.topToBottom(
             view:viewContent,
-            toView:self,
-            constant:contentTop)
+            toView:self)
         NSLayoutConstraint.height(
             view:viewContent,
             constant:kContentHeight)
@@ -81,7 +78,10 @@ class VFroobPlus:VView
     
     func animateShow()
     {
-        layoutContentTop.constant = kContentTop
+        let height:CGFloat = bounds.maxY
+        let contentTop:CGFloat = kContentTop - height
+        
+        layoutContentBottom.constant = contentTop
         
         UIView.animate(withDuration:kAnimationDuration)
         { [weak self] in
