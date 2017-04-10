@@ -3,14 +3,11 @@ import UIKit
 class VSettingsCellRetina:VSettingsCell
 {
     private weak var check:UISwitch!
-    private let kCheckWidth:CGFloat = 110
+    private let kCheckWidth:CGFloat = 75
     private let kCheckHeight:CGFloat = 60
-    private let kCheckTop:CGFloat = 30
+    private let kCheckTop:CGFloat = 27
     private let kTitleLeft:CGFloat = 10
-    private let kTitleWidth:CGFloat = 145
-    private let kStepperStep:Double = 10
-    private let kMinStepper:Double = 10
-    private let kMaxStepper:Double = 100
+    private let kTitleWidth:CGFloat = 190
     
     override init(frame:CGRect)
     {

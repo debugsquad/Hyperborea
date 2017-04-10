@@ -149,10 +149,6 @@ class VSettingsCellLanguage:VSettingsCell
             buttonEnglish.isSelected = false
             buttonSpanish.isSelected = true
         }
-        
-        NotificationCenter.default.post(
-            name:Notification.clearCache,
-            object:nil)
     }
     
     private func newLanguage(language:MLanguage)
@@ -166,6 +162,10 @@ class VSettingsCellLanguage:VSettingsCell
                 
                 self?.updateLanguages()
             }
+            
+            NotificationCenter.default.post(
+                name:Notification.clearCache,
+                object:nil)
         }
     }
 }
