@@ -2,12 +2,15 @@ import UIKit
 
 class VParent:UIView
 {
-    static let kBarHeight:CGFloat = 64
-    
+    weak var panRecognizer:UIPanGestureRecognizer!
     private weak var controller:CParent!
-    private weak var viewBar:VParentBar?
-    private weak var layoutBarTop:NSLayoutConstraint?
-    private let kAnimationDuration:TimeInterval = 0.3
+    private weak var layoutBarTop:NSLayoutConstraint!
+    private var panningX:CGFloat?
+    private let kAnimationDuration:TimeInterval = 0.4
+    private let kBarHeight:CGFloat = 70
+    private let kMaxXPanning:CGFloat = 60
+    private let kMaxXDelta:CGFloat = 210
+    private let kMinXDelta:CGFloat = 30
     
     convenience init(controller:CParent)
     {
@@ -16,141 +19,296 @@ class VParent:UIView
         backgroundColor = UIColor.white
         self.controller = controller
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector:#selector(self.notifiedSessionLoaded(sender:)),
-            name:Notification.sessionLoaded,
-            object:nil)
+        let panRecognizer:UIPanGestureRecognizer = UIPanGestureRecognizer(
+            target:self,
+            action:#selector(actionPanRecognized(sender:)))
+        panRecognizer.isEnabled = false
+        self.panRecognizer = panRecognizer
+        addGestureRecognizer(panRecognizer)
     }
     
-    //MARK: notifications
+    //MARK: actions
     
-    func notifiedSessionLoaded(sender notification:Notification)
+    func actionPanRecognized(sender panGesture:UIPanGestureRecognizer)
     {
-        NotificationCenter.default.removeObserver(self)
+        let location:CGPoint = panGesture.location(
+            in:self)
+        let xPos:CGFloat = location.x
         
-        DispatchQueue.main.async
+        switch panGesture.state
         {
-            self.loadBar()
+        case UIGestureRecognizerState.began,
+             UIGestureRecognizerState.possible:
+            
+            if xPos < kMaxXPanning
+            {
+                self.panningX = xPos
+            }
+            
+            break
+            
+        case UIGestureRecognizerState.changed:
+            
+            if let panningX:CGFloat = self.panningX
+            {
+                var deltaX:CGFloat = xPos - panningX
+                
+                if deltaX > kMaxXDelta
+                {
+                    panRecognizer.isEnabled = false
+                }
+                else
+                {
+                    if deltaX < 0
+                    {
+                        deltaX = 0
+                    }
+                    
+                    guard
+                        
+                        let topView:VView = subviews.last as? VView
+                        
+                    else
+                    {
+                        return
+                    }
+                    
+                    topView.layoutLeft.constant = deltaX
+                }
+            }
+            
+            break
+            
+        case UIGestureRecognizerState.cancelled,
+             UIGestureRecognizerState.ended,
+             UIGestureRecognizerState.failed:
+            
+            if let panningX:CGFloat = self.panningX
+            {
+                let deltaX:CGFloat = xPos - panningX
+                
+                if deltaX > kMinXDelta
+                {
+                    gesturePop()
+                }
+                else
+                {
+                    gestureRestore()
+                }
+            }
+            
+            panningX = nil
+            
+            break
         }
     }
     
     //MARK: private
     
-    private func loadBar()
+    private func gesturePop()
     {
-        let viewBar:VParentBar = VParentBar(
-            controller:controller)
-        self.viewBar = viewBar
-        addSubview(viewBar)
+        controller.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
+    private func gestureRestore()
+    {
+        guard
+            
+            let topView:VView = subviews.last as? VView
+            
+        else
+        {
+            return
+        }
         
-        layoutBarTop = NSLayoutConstraint(
-            item:viewBar,
-            attribute:NSLayoutAttribute.top,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.top,
-            multiplier:1,
-            constant:0)
-        let layoutBarHeight:NSLayoutConstraint = NSLayoutConstraint(
-            item:viewBar,
-            attribute:NSLayoutAttribute.height,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:nil,
-            attribute:NSLayoutAttribute.notAnAttribute,
-            multiplier:1,
-            constant:VParent.kBarHeight)
-        let layoutBarLeft:NSLayoutConstraint = NSLayoutConstraint(
-            item:viewBar,
-            attribute:NSLayoutAttribute.left,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.left,
-            multiplier:1,
-            constant:0)
-        let layoutBarRight:NSLayoutConstraint = NSLayoutConstraint(
-            item:viewBar,
-            attribute:NSLayoutAttribute.right,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.right,
-            multiplier:1,
-            constant:0)
+        topView.layoutLeft.constant = 0
         
-        addConstraints([
-            layoutBarTop!,
-            layoutBarHeight,
-            layoutBarLeft,
-            layoutBarRight])
+        UIView.animate(withDuration:kAnimationDuration)
+        {
+            self.layoutIfNeeded()
+        }
     }
     
     //MARK: public
     
-    func mainView(view:VView)
+    func scrollDidScroll(offsetY:CGFloat)
     {
-        if let viewBar:VParentBar = self.viewBar
+        let barTopConstant:CGFloat
+        
+        if offsetY > 0
         {
-            insertSubview(view, belowSubview:viewBar)
+            barTopConstant = offsetY
         }
         else
         {
-            addSubview(view)
+            barTopConstant = 0
         }
         
-        view.constraints(
-            initialLeft:0,
-            initialRight:0,
-            initialTop:0,
-            initialBottom:0)
+        layoutBarTop.constant = -barTopConstant
     }
     
-    func animateOver(view:VView, completion:@escaping(() -> ()))
+    func mainView(view:VView)
     {
-        view.alpha = 0
         addSubview(view)
-        view.constraints(
-            initialLeft:0,
-            initialRight:0,
-            initialTop:0,
-            initialBottom:0)
         
-        UIView.animate(
-            withDuration:kAnimationDuration,
-            animations:
-        { [weak view] in
-            
-            view?.alpha = 1
-        })
-        { (done:Bool) in
-        
-            completion()
-        }
+        view.layoutTop = NSLayoutConstraint.topToTop(
+            view:view,
+            toView:self)
+        view.layoutBottom = NSLayoutConstraint.bottomToBottom(
+            view:view,
+            toView:self)
+        view.layoutLeft = NSLayoutConstraint.leftToLeft(
+            view:view,
+            toView:self)
+        view.layoutRight = NSLayoutConstraint.rightToRight(
+            view:view,
+            toView:self)
     }
     
-    func push(currentView:VView, newView:VView, completion:@escaping(() -> ()))
+    func slide(
+        currentView:VView,
+        newView:VView,
+        left:CGFloat,
+        completion:@escaping(() -> ()))
     {
-        let fullLeft:CGFloat = currentView.bounds.maxX
-        let halfLeft:CGFloat = fullLeft / -2.0
-        
         addSubview(newView)
-        newView.constraints(
-            initialLeft:fullLeft,
-            initialRight:fullLeft,
-            initialTop:0,
-            initialBottom:0)
+        
+        newView.layoutTop = NSLayoutConstraint.topToTop(
+            view:newView,
+            toView:self)
+        newView.layoutBottom = NSLayoutConstraint.bottomToBottom(
+            view:newView,
+            toView:self)
+        newView.layoutLeft = NSLayoutConstraint.leftToLeft(
+            view:newView,
+            toView:self,
+            constant:-left)
+        newView.layoutRight = NSLayoutConstraint.rightToRight(
+            view:newView,
+            toView:self,
+            constant:-left)
         
         layoutIfNeeded()
         
-        currentView.layoutRight.constant = halfLeft
-        currentView.layoutLeft.constant = halfLeft
+        currentView.layoutRight.constant = left
+        currentView.layoutLeft.constant = left
         newView.layoutRight.constant = 0
         newView.layoutLeft.constant = 0
         
         UIView.animate(
+        withDuration:kAnimationDuration,
+        animations:
+        {
+            self.layoutIfNeeded()
+        })
+        { (done:Bool) in
+            
+            currentView.removeFromSuperview()
+            completion()
+        }
+    }
+    
+    func push(
+        newView:VView,
+        left:CGFloat,
+        top:CGFloat,
+        background:Bool,
+        completion:@escaping(() -> ()))
+    {
+        if background
+        {
+            let pushBackground:VParentPushBackground = VParentPushBackground()
+            newView.pushBackground = pushBackground
+            
+            addSubview(pushBackground)
+            
+            NSLayoutConstraint.equals(
+                view:pushBackground,
+                toView:self)
+        }
+        
+        addSubview(newView)
+        
+        newView.layoutTop = NSLayoutConstraint.topToTop(
+            view:newView,
+            toView:self,
+            constant:top)
+        newView.layoutBottom = NSLayoutConstraint.bottomToBottom(
+            view:newView,
+            toView:self,
+            constant:top)
+        newView.layoutLeft = NSLayoutConstraint.leftToLeft(
+            view:newView,
+            toView:self,
+            constant:left)
+        newView.layoutRight = NSLayoutConstraint.rightToRight(
+            view:newView,
+            toView:self,
+            constant:left)
+        
+        layoutIfNeeded()
+        
+        if top >= 0
+        {
+            newView.layoutTop.constant = 0
+            newView.layoutBottom.constant = 0
+        }
+        else
+        {
+            newView.layoutBottom.constant = 0
+            newView.layoutTop.constant = 0
+        }
+        
+        if left >= 0
+        {
+            newView.layoutLeft.constant = 0
+            newView.layoutRight.constant = 0
+        }
+        else
+        {
+            newView.layoutRight.constant = 0
+            newView.layoutLeft.constant = 0
+        }
+        
+        UIView.animate(
             withDuration:kAnimationDuration,
             animations:
-            {
-                self.layoutIfNeeded()
+        {
+            self.layoutIfNeeded()
+            newView.pushBackground?.alpha = 1
+        })
+        { (done:Bool) in
+            
+            completion()
+        }
+    }
+    
+    func animateOver(
+        newView:VView,
+        completion:@escaping(() -> ()))
+    {
+        newView.alpha = 0
+        addSubview(newView)
+        
+        newView.layoutTop = NSLayoutConstraint.topToTop(
+            view:newView,
+            toView:self)
+        newView.layoutBottom = NSLayoutConstraint.bottomToBottom(
+            view:newView,
+            toView:self)
+        newView.layoutLeft = NSLayoutConstraint.leftToLeft(
+            view:newView,
+            toView:self)
+        newView.layoutRight = NSLayoutConstraint.rightToRight(
+            view:newView,
+            toView:self)
+        
+        UIView.animate(
+            withDuration:kAnimationDuration,
+            animations:
+            { [weak newView] in
+                
+                newView?.alpha = 1
             })
         { (done:Bool) in
             
@@ -158,62 +316,47 @@ class VParent:UIView
         }
     }
     
-    func dismissAnimateOver(view:VView, completion:@escaping(() -> ()))
+    func pop(
+        currentView:VView,
+        left:CGFloat,
+        top:CGFloat,
+        completion:@escaping(() -> ()))
     {
-        UIView.animate(
-            withDuration:kAnimationDuration,
-            animations:
-            { [weak view] in
-                
-                view?.alpha = 0
-            })
-        { [weak view] (done:Bool) in
-            
-            view?.removeFromSuperview()
-            completion()
-        }
-    }
-    
-    func dismissPush(currentView:VView, previousView:VView, completion:@escaping(() -> ()))
-    {
-        let fullLeft:CGFloat = currentView.bounds.maxX
-        currentView.layoutLeft.constant = fullLeft
-        currentView.layoutRight.constant = fullLeft
-        previousView.layoutLeft.constant = 0
-        previousView.layoutRight.constant = 0
+        currentView.layoutTop.constant = top
+        currentView.layoutBottom.constant = top
+        currentView.layoutRight.constant = left
+        currentView.layoutLeft.constant = left
         
         UIView.animate(
             withDuration:kAnimationDuration,
             animations:
-            {
-                self.layoutIfNeeded()
+        {
+            self.layoutIfNeeded()
+            currentView.pushBackground?.alpha = 0
+        })
+        { (done:Bool) in
+            
+            currentView.pushBackground?.removeFromSuperview()
+            currentView.removeFromSuperview()
+            completion()
+        }
+    }
+    
+    func dismissAnimateOver(
+        currentView:VView,
+        completion:@escaping(() -> ()))
+    {
+        UIView.animate(
+            withDuration:kAnimationDuration,
+            animations:
+            { [weak currentView] in
+                
+                currentView?.alpha = 0
             })
         { [weak currentView] (done:Bool) in
             
             currentView?.removeFromSuperview()
             completion()
-        }
-    }
-    
-    func scrollDidScroll(offsetY:CGFloat)
-    {
-        if offsetY > 0
-        {
-            layoutBarTop?.constant = 0
-        }
-        else
-        {
-            layoutBarTop?.constant = offsetY
-        }
-    }
-    
-    func restartScroll()
-    {
-        layoutBarTop?.constant = 0
-        
-        UIView.animate(withDuration:kAnimationDuration)
-        {
-            self.layoutIfNeeded()
         }
     }
 }

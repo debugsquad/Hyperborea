@@ -24,21 +24,15 @@ class MStoreItem
         status = MStoreItemStatusNotAvailable()
     }
     
-    init()
-    {
-        fatalError()
-    }
-    
     //MARK: public
     
     func purchaseAction()
     {
-        fatalError()
     }
     
     func validatePurchase() -> Bool
     {
-        fatalError()
+        return false
     }
     
     func foundPurchase(price:String)

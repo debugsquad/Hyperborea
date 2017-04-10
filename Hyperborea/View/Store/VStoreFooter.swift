@@ -3,7 +3,7 @@ import UIKit
 class VStoreFooter:UICollectionReusableView
 {
     private weak var controller:CStore?
-    private let kButtonHeight:CGFloat = 35
+    private let kButtonHeight:CGFloat = 32
     
     override init(frame:CGRect)
     {
@@ -14,7 +14,7 @@ class VStoreFooter:UICollectionReusableView
         let button:UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(
-            UIColor(white:0.3, alpha:1),
+            UIColor(white:0.5, alpha:1),
             for:UIControlState.normal)
         button.setTitleColor(
             UIColor(white:0, alpha:0.2),
@@ -22,7 +22,7 @@ class VStoreFooter:UICollectionReusableView
         button.setTitle(
             NSLocalizedString("VStoreFooter_buttonRestore", comment:""),
             for:UIControlState.normal)
-        button.titleLabel!.font = UIFont.medium(size:15)
+        button.titleLabel!.font = UIFont.bold(size:15)
         button.addTarget(
             self,
             action:#selector(actionRestore(sender:)),
@@ -30,49 +30,20 @@ class VStoreFooter:UICollectionReusableView
         
         addSubview(button)
         
-        let layoutButtonTop:NSLayoutConstraint = NSLayoutConstraint(
-            item:button,
-            attribute:NSLayoutAttribute.top,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.top,
-            multiplier:1,
-            constant:0)
-        let layoutButtonHeight:NSLayoutConstraint = NSLayoutConstraint(
-            item:button,
-            attribute:NSLayoutAttribute.height,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:nil,
-            attribute:NSLayoutAttribute.notAnAttribute,
-            multiplier:1,
+        NSLayoutConstraint.equalsHorizontal(
+            view:button,
+            toView:self)
+        NSLayoutConstraint.topToTop(
+            view:button,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:button,
             constant:kButtonHeight)
-        let layoutButtonLeft:NSLayoutConstraint = NSLayoutConstraint(
-            item:button,
-            attribute:NSLayoutAttribute.left,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.left,
-            multiplier:1,
-            constant:0)
-        let layoutButtonRight:NSLayoutConstraint = NSLayoutConstraint(
-            item:button,
-            attribute:NSLayoutAttribute.right,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.right,
-            multiplier:1,
-            constant:0)
-        
-        addConstraints([
-            layoutButtonTop,
-            layoutButtonHeight,
-            layoutButtonLeft,
-            layoutButtonRight])
     }
     
     required init?(coder:NSCoder)
     {
-        fatalError()
+        return nil
     }
     
     //MARK: actions

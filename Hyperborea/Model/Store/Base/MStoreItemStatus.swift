@@ -12,9 +12,4 @@ class MStoreItemStatus
         self.cellHeight = cellHeight
         self.restorable = restorable
     }
-    
-    init()
-    {
-        fatalError()
-    }
 }

@@ -3,24 +3,31 @@ import CoreData
 
 class DManager
 {
-    static let sharedInstance:DManager = DManager()
+    static let sharedInstance:DManager? = DManager()
     private let managedObjectContext:NSManagedObjectContext
-    private let kModelName:String = "DHyperborea"
+    private let kModelName:String = "DHyper"
     private let kModelExtension:String = "momd"
-    private let kSQLiteExtension:String = "%@.sqlite"
+    private let kSQLiteExtension:String = ".sqlite"
     
-    private init()
+    private init?()
     {
-        let modelURL:URL = Bundle.main.url(
-            forResource:kModelName,
-            withExtension:kModelExtension)!
-        let sqliteFile:String = String(
-            format:kSQLiteExtension,
-            kModelName)
+        let sqliteFile:String = "\(kModelName)\(kSQLiteExtension)"
         let storeCoordinatorURL:URL = FileManager.appDirectory.appendingPathComponent(
             sqliteFile)
-        let managedObjectModel:NSManagedObjectModel = NSManagedObjectModel(
-            contentsOf:modelURL)!
+        
+        guard
+            
+            let modelURL:URL = Bundle.main.url(
+                forResource:kModelName,
+                withExtension:kModelExtension),
+            let managedObjectModel:NSManagedObjectModel = NSManagedObjectModel(
+                contentsOf:modelURL)
+            
+        else
+        {
+            return nil
+        }
+        
         let persistentStoreCoordinator:NSPersistentStoreCoordinator = NSPersistentStoreCoordinator(
             managedObjectModel:managedObjectModel)
         
@@ -32,8 +39,13 @@ class DManager
                 at:storeCoordinatorURL,
                 options:nil)
         }
-        catch
+        catch let error
         {
+            #if DEBUG
+                
+                print("coredata: \(error.localizedDescription)")
+                
+            #endif
         }
         
         managedObjectContext = NSManagedObjectContext(
@@ -44,7 +56,7 @@ class DManager
     
     //MARK: public
     
-    func save()
+    func save(completion:(() -> ())? = nil)
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
@@ -60,84 +72,113 @@ class DManager
                     {
                         #if DEBUG
                             
-                            print("coredata: \(error)")
+                            print("CoreData: \(error.localizedDescription)")
                             
                         #endif
                     }
+                    
+                    completion?()
                 }
+            }
+            else
+            {
+                completion?()
             }
         }
     }
     
-    func createManagedObject<ModelType:NSManagedObject>(
-        modelType:ModelType.Type,
-        completion:@escaping((ModelType) -> ()))
+    func createData(
+        entityName:String,
+        completion:@escaping((NSManagedObject?) -> ()))
     {
         managedObjectContext.perform
         {
-            let entityDescription:NSEntityDescription = NSEntityDescription.entity(
-                forEntityName:modelType.entityName,
-                in:self.managedObjectContext)!
-            let managedObject:NSManagedObject = NSManagedObject(
-                entity:entityDescription,
-                insertInto:self.managedObjectContext)
-            let managedGeneric:ModelType = managedObject as! ModelType
-            completion(managedGeneric)
+            if let entityDescription:NSEntityDescription = NSEntityDescription.entity(
+                forEntityName:entityName,
+                in:self.managedObjectContext)
+            {
+                let managedObject:NSManagedObject = NSManagedObject(
+                    entity:entityDescription,
+                    insertInto:self.managedObjectContext)
+                
+                completion(managedObject)
+            }
+            else
+            {
+                completion(nil)
+            }
         }
     }
     
-    func fetchManagedObjects<ModelType:NSManagedObject>(
-        modelType:ModelType.Type,
+    func createDataAndWait(entityName:String) -> NSManagedObject?
+    {
+        var managedObject:NSManagedObject?
+        
+        managedObjectContext.performAndWait
+        {
+            if let entityDescription:NSEntityDescription = NSEntityDescription.entity(
+                forEntityName:entityName,
+                in:self.managedObjectContext)
+            {
+                managedObject = NSManagedObject(
+                    entity:entityDescription,
+                    insertInto:self.managedObjectContext)
+            }
+        }
+        
+        return managedObject
+    }
+    
+    func fetchData(
+        entityName:String,
         limit:Int = 0,
         predicate:NSPredicate? = nil,
         sorters:[NSSortDescriptor]? = nil,
-        completion:@escaping(([ModelType]?) -> ()))
+        completion:@escaping(([NSManagedObject]?) -> ()))
     {
-        let fetchRequest:NSFetchRequest<ModelType> = NSFetchRequest(
-            entityName:modelType.entityName)
-        fetchRequest.predicate = predicate
-        fetchRequest.sortDescriptors = sorters
-        fetchRequest.fetchLimit = limit
-        fetchRequest.returnsObjectsAsFaults = false
-        fetchRequest.includesPropertyValues = true
-        fetchRequest.includesSubentities = true
-        
-        managedObjectContext.perform
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
-            let results:[ModelType]?
+            let fetchRequest:NSFetchRequest<NSManagedObject> = NSFetchRequest(
+                entityName:entityName)
+            fetchRequest.predicate = predicate
+            fetchRequest.sortDescriptors = sorters
+            fetchRequest.fetchLimit = limit
+            fetchRequest.returnsObjectsAsFaults = false
+            fetchRequest.includesPropertyValues = true
+            fetchRequest.includesSubentities = true
             
-            do
+            self.managedObjectContext.perform
             {
-                results = try self.managedObjectContext.fetch(fetchRequest)
+                let results:[NSManagedObject]?
+                
+                do
+                {
+                    results = try self.managedObjectContext.fetch(fetchRequest)
+                }
+                catch
+                {
+                    results = nil
+                }
+                
+                completion(results)
             }
-            catch
-            {
-                results = nil
-            }
-            
-            completion(results)
         }
     }
     
-    func delete(object:NSManagedObject, completion:(() -> ())? = nil)
+    func delete(data:NSManagedObject, completion:(() -> ())? = nil)
     {
         managedObjectContext.perform
         {
-            self.managedObjectContext.delete(object)
+            self.managedObjectContext.delete(data)
             completion?()
         }
     }
     
-    func untracked<ModelType:NSManagedObject>(modelType:ModelType.Type) -> ModelType
+    func deleteAndWait(data:NSManagedObject)
     {
-        let entity:NSEntityDescription = NSEntityDescription.entity(
-            forEntityName:modelType.entityName,
-            in:managedObjectContext)!
-        let managedObject:NSManagedObject = NSManagedObject(
-            entity:entity,
-            insertInto:nil)
-        let model:ModelType = managedObject as! ModelType
-        
-        return model
+        managedObjectContext.performAndWait
+        {
+            self.managedObjectContext.delete(data)
+        }
     }
 }

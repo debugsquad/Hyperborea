@@ -5,8 +5,8 @@ class MStore
 {
     typealias PurchaseId = String
     
-    let mapItems:[PurchaseId:MStoreItem]
-    let references:[PurchaseId]
+    private(set) var mapItems:[PurchaseId:MStoreItem]
+    private(set) var references:[PurchaseId]
     var error:String?
     private let priceFormatter:NumberFormatter
     
@@ -14,16 +14,38 @@ class MStore
     {
         priceFormatter = NumberFormatter()
         priceFormatter.numberStyle = NumberFormatter.Style.currencyISOCode
+        mapItems = [:]
+        references = []
         
-        let itemPlus:MStoreItemPlus = MStoreItemPlus()
+        addPurchase(item:MStoreItemPlus())
         
-        mapItems = [
-            itemPlus.purchaseId:itemPlus
-        ]
+        references.sort
+        { (purchaseA:PurchaseId, purchaseB:PurchaseId) -> Bool in
+            
+            let comparison:ComparisonResult = purchaseA.compare(purchaseB)
+            
+            switch comparison
+            {
+            case ComparisonResult.orderedAscending,
+                 ComparisonResult.orderedSame:
+                
+                return true
+                
+            case ComparisonResult.orderedDescending:
+                
+                return false
+            }
+        }
+    }
+    
+    //MARK: private
+    
+    private func addPurchase(item:MStoreItem)
+    {
+        let purchaseId:PurchaseId = item.purchaseId
         
-        references = [
-            itemPlus.purchaseId
-        ]
+        mapItems[purchaseId] = item
+        references.append(purchaseId)
     }
     
     //MARK: public
@@ -49,7 +71,7 @@ class MStore
         guard
             
             let priceString:String = priceFormatter.string(from:priceNumber)
-        
+            
         else
         {
             return
@@ -75,32 +97,32 @@ class MStore
             
             switch skPaymentTransaction.transactionState
             {
-                case SKPaymentTransactionState.deferred:
-                    
-                    mappedItem.statusDeferred()
-                    
-                    break
-                    
-                case SKPaymentTransactionState.failed:
-                    
-                    mappedItem.statusNew()
-                    SKPaymentQueue.default().finishTransaction(skPaymentTransaction)
-                    
-                    break
-                    
-                case SKPaymentTransactionState.purchased,
-                     SKPaymentTransactionState.restored:
-                    
-                    mappedItem.statusPurchased(callAction:true)
-                    SKPaymentQueue.default().finishTransaction(skPaymentTransaction)
-                    
-                    break
-                    
-                case SKPaymentTransactionState.purchasing:
-                    
-                    mappedItem.statusPurchasing()
-                    
-                    break
+            case SKPaymentTransactionState.deferred:
+                
+                mappedItem.statusDeferred()
+                
+                break
+                
+            case SKPaymentTransactionState.failed:
+                
+                mappedItem.statusNew()
+                SKPaymentQueue.default().finishTransaction(skPaymentTransaction)
+                
+                break
+                
+            case SKPaymentTransactionState.purchased,
+                 SKPaymentTransactionState.restored:
+                
+                mappedItem.statusPurchased(callAction:true)
+                SKPaymentQueue.default().finishTransaction(skPaymentTransaction)
+                
+                break
+                
+            case SKPaymentTransactionState.purchasing:
+                
+                mappedItem.statusPurchasing()
+                
+                break
             }
         }
     }

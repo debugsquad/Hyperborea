@@ -3,42 +3,42 @@
 <plist version="1.0">
 <dict>
 	<key>Adjective</key>
-	<string>RModelHomeEntriesItemAdjective</string>
+	<string>MSearchEntryItemAdjective</string>
 	<key>Adverb</key>
-	<string>RModelHomeEntriesItemAdverb</string>
+	<string>MSearchEntryItemAdverb</string>
 	<key>Combining Form</key>
-	<string>RModelHomeEntriesItemCombiningForm</string>
+	<string>MSearchEntryItemCombiningForm</string>
 	<key>Conjunction</key>
-	<string>RModelHomeEntriesItemConjunction</string>
+	<string>MSearchEntryItemConjunction</string>
 	<key>Contraction</key>
-	<string>RModelHomeEntriesItemContraction</string>
+	<string>MSearchEntryItemContraction</string>
 	<key>Determiner</key>
-	<string>RModelHomeEntriesItemDeterminer</string>
+	<string>MSearchEntryItemDeterminer</string>
 	<key>Idiomatic</key>
-	<string>RModelHomeEntriesItemIdiomatic</string>
+	<string>MSearchEntryItemIdiomatic</string>
 	<key>Interjection</key>
-	<string>RModelHomeEntriesItemInterjection</string>
+	<string>MSearchEntryItemInterjection</string>
 	<key>Noun</key>
-	<string>RModelHomeEntriesItemNoun</string>
+	<string>MSearchEntryItemNoun</string>
 	<key>Numeral</key>
-	<string>RModelHomeEntriesItemNumeral</string>
+	<string>MSearchEntryItemNumeral</string>
 	<key>Other</key>
-	<string>RModelHomeEntriesItemOther</string>
+	<string>MSearchEntryItemOther</string>
 	<key>Particle</key>
-	<string>RModelHomeEntriesItemParticle</string>
+	<string>MSearchEntryItemParticle</string>
 	<key>Predeterminer</key>
-	<string>RModelHomeEntriesItemPredeterminer</string>
+	<string>MSearchEntryItemPredeterminer</string>
 	<key>Prefix</key>
-	<string>RModelHomeEntriesItemPrefix</string>
+	<string>MSearchEntryItemPrefix</string>
 	<key>Preposition</key>
-	<string>RModelHomeEntriesItemPreposition</string>
+	<string>MSearchEntryItemPreposition</string>
 	<key>Pronoun</key>
-	<string>RModelHomeEntriesItemPronoun</string>
+	<string>MSearchEntryItemPronoun</string>
 	<key>Residual</key>
-	<string>RModelHomeEntriesItemResidual</string>
+	<string>MSearchEntryItemResidual</string>
 	<key>Suffix</key>
-	<string>RModelHomeEntriesItemSuffix</string>
+	<string>MSearchEntryItemSuffix</string>
 	<key>Verb</key>
-	<string>RModelHomeEntriesItemVerb</string>
+	<string>MSearchEntryItemVerb</string>
 </dict>
 </plist>

@@ -4,11 +4,11 @@ class MStoreItemPlus:MStoreItem
 {
     private let kStorePurchaseId:MStore.PurchaseId = "iturbide.Hyperborea.plus"
     
-    override init()
+    init()
     {
         let title:String = NSLocalizedString("MStoreItemPlus_title", comment:"")
         let descr:String = NSLocalizedString("MStoreItemPlus_descr", comment:"")
-        let image:UIImage = #imageLiteral(resourceName: "assetGenericPlus")
+        let image:UIImage = #imageLiteral(resourceName: "assetGenericStorePlus")
         
         super.init(
             purchaseId:kStorePurchaseId,
@@ -17,37 +17,23 @@ class MStoreItemPlus:MStoreItem
             image:image)
     }
     
-    override init(
-        purchaseId:MStore.PurchaseId,
-        title:String,
-        descr:String,
-        image:UIImage)
-    {
-        fatalError()
-    }
-    
     override func purchaseAction()
     {
-        MSession.sharedInstance.settings?.hyperboreaPlus = true
-        DManager.sharedInstance.save()
-        let _:Bool = MSession.sharedInstance.froobValidate()
+        MSession.sharedInstance.settings?.purchasePlus = true
+        DManager.sharedInstance?.save()
     }
     
     override func validatePurchase() -> Bool
     {
-        var isPurchased:Bool = false
-        
         guard
             
-            let plus:Bool = MSession.sharedInstance.settings?.hyperboreaPlus
+            let purchased:Bool = MSession.sharedInstance.settings?.purchasePlus
             
         else
         {
-            return isPurchased
+            return false
         }
         
-        isPurchased = plus
-        
-        return isPurchased
+        return purchased
     }
 }

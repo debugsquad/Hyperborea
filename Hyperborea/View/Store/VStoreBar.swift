@@ -3,169 +3,86 @@ import UIKit
 class VStoreBar:UIView
 {
     private weak var controller:CStore!
-    private let kButtonWidth:CGFloat = 65
+    private let kBorderHeight:CGFloat = 1
     private let kContentTop:CGFloat = 20
+    private let kBackWidth:CGFloat = 60
     
-    convenience init(controller:CStore)
+    init(controller:CStore)
     {
-        self.init()
+        super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.white
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let button:UIButton = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.clipsToBounds = true
-        button.backgroundColor = UIColor.clear
-        button.setImage(
+        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
+        
+        let icon:UIImageView = UIImageView()
+        icon.isUserInteractionEnabled = false
+        icon.translatesAutoresizingMaskIntoConstraints = false
+        icon.image = #imageLiteral(resourceName: "assetGenericStore")
+        icon.clipsToBounds = true
+        icon.contentMode = UIViewContentMode.center
+        
+        let buttonBack:UIButton = UIButton()
+        buttonBack.translatesAutoresizingMaskIntoConstraints = false
+        buttonBack.setImage(
             #imageLiteral(resourceName: "assetGenericBack").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.normal)
-        button.setImage(
+        buttonBack.setImage(
             #imageLiteral(resourceName: "assetGenericBack").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
             for:UIControlState.highlighted)
-        button.imageView!.tintColor = UIColor(white:0, alpha:0.2)
-        button.imageView!.contentMode = UIViewContentMode.center
-        button.imageView!.clipsToBounds = true
-        button.imageEdgeInsets = UIEdgeInsets(
-            top:0,
-            left:0,
-            bottom:0,
-            right:32)
-        button.addTarget(
+        buttonBack.imageView!.clipsToBounds = true
+        buttonBack.imageView!.contentMode = UIViewContentMode.center
+        buttonBack.imageView!.tintColor = UIColor(white:0, alpha:0.1)
+        buttonBack.addTarget(
             self,
-            action:#selector(self.actionBack(sender:)),
+            action:#selector(actionBack(sender:)),
             for:UIControlEvents.touchUpInside)
         
-        let imageView:UIImageView = UIImageView()
-        imageView.isUserInteractionEnabled = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.contentMode = UIViewContentMode.center
-        imageView.image = #imageLiteral(resourceName: "assetGenericStore")
-        
-        let border:UIView = UIView()
-        border.isUserInteractionEnabled = false
-        border.translatesAutoresizingMaskIntoConstraints = false
-        border.backgroundColor = UIColor.genericBorder
-        border.clipsToBounds = true
-        
-        addSubview(button)
-        addSubview(imageView)
         addSubview(border)
+        addSubview(icon)
+        addSubview(buttonBack)
         
-        let layoutButtonTop:NSLayoutConstraint = NSLayoutConstraint(
-            item:button,
-            attribute:NSLayoutAttribute.top,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.top,
-            multiplier:1,
+        NSLayoutConstraint.bottomToBottom(
+            view:border,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:border,
+            constant:kBorderHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:border,
+            toView:self)
+        
+        NSLayoutConstraint.topToTop(
+            view:icon,
+            toView:self,
             constant:kContentTop)
-        let layoutButtonBottom:NSLayoutConstraint = NSLayoutConstraint(
-            item:button,
-            attribute:NSLayoutAttribute.bottom,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.bottom,
-            multiplier:1,
-            constant:0)
-        let layoutButtonLeft:NSLayoutConstraint = NSLayoutConstraint(
-            item:button,
-            attribute:NSLayoutAttribute.left,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.left,
-            multiplier:1,
-            constant:0)
-        let layoutButtonWidth:NSLayoutConstraint = NSLayoutConstraint(
-            item:button,
-            attribute:NSLayoutAttribute.width,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:nil,
-            attribute:NSLayoutAttribute.notAnAttribute,
-            multiplier:1,
-            constant:kButtonWidth)
+        NSLayoutConstraint.bottomToBottom(
+            view:icon,
+            toView:self)
+        NSLayoutConstraint.equalsHorizontal(
+            view:icon,
+            toView:self)
         
-        let layoutImageTop:NSLayoutConstraint = NSLayoutConstraint(
-            item:imageView,
-            attribute:NSLayoutAttribute.top,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.top,
-            multiplier:1,
+        NSLayoutConstraint.topToTop(
+            view:buttonBack,
+            toView:self,
             constant:kContentTop)
-        let layoutImageBottom:NSLayoutConstraint = NSLayoutConstraint(
-            item:imageView,
-            attribute:NSLayoutAttribute.bottom,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.bottom,
-            multiplier:1,
-            constant:0)
-        let layoutImageLeft:NSLayoutConstraint = NSLayoutConstraint(
-            item:imageView,
-            attribute:NSLayoutAttribute.left,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.left,
-            multiplier:1,
-            constant:0)
-        let layoutImageRight:NSLayoutConstraint = NSLayoutConstraint(
-            item:imageView,
-            attribute:NSLayoutAttribute.right,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.right,
-            multiplier:1,
-            constant:0)
-        
-        let layoutBorderHeight:NSLayoutConstraint = NSLayoutConstraint(
-            item:border,
-            attribute:NSLayoutAttribute.height,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:nil,
-            attribute:NSLayoutAttribute.notAnAttribute,
-            multiplier:1,
-            constant:1)
-        let layoutBorderBottom:NSLayoutConstraint = NSLayoutConstraint(
-            item:border,
-            attribute:NSLayoutAttribute.bottom,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.bottom,
-            multiplier:1,
-            constant:0)
-        let layoutBorderLeft:NSLayoutConstraint = NSLayoutConstraint(
-            item:border,
-            attribute:NSLayoutAttribute.left,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.left,
-            multiplier:1,
-            constant:0)
-        let layoutBorderRight:NSLayoutConstraint = NSLayoutConstraint(
-            item:border,
-            attribute:NSLayoutAttribute.right,
-            relatedBy:NSLayoutRelation.equal,
-            toItem:self,
-            attribute:NSLayoutAttribute.right,
-            multiplier:1,
-            constant:0)
-        
-        addConstraints([
-            layoutButtonTop,
-            layoutButtonBottom,
-            layoutButtonLeft,
-            layoutButtonWidth,
-            layoutImageTop,
-            layoutImageBottom,
-            layoutImageLeft,
-            layoutImageRight,
-            layoutBorderHeight,
-            layoutBorderBottom,
-            layoutBorderLeft,
-            layoutBorderRight])
+        NSLayoutConstraint.bottomToBottom(
+            view:buttonBack,
+            toView:self)
+        NSLayoutConstraint.leftToLeft(
+            view:buttonBack,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:buttonBack,
+            constant:kBackWidth)
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
     }
     
     //MARK: actions

@@ -2,11 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>oxfordApi</key>
-	<string>https://od-api.oxforddictionaries.com:443/api/v1</string>
-	<key>search</key>
-	<string>search</string>
-	<key>entries</key>
-	<string>entries</string>
+	<key>share</key>
+	<string>https://itunes.apple.com/gb/app/hyperborea/id1182551703</string>
+	<key>review</key>
+	<string>https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1182551703&amp;type=Purple+Software&amp;mt=8</string>
+    <key>hostOxford</key>
+    <string>https://od-api.oxforddictionaries.com:443/api/v1</string>
+    <key>oxfordSearch</key>
+    <string>search</string>
+    <key>oxfordEntries</key>
+    <string>entries</string>
 </dict>
 </plist>
