@@ -15,12 +15,13 @@
         <attribute name="maxResults" attributeType="Integer 16" defaultValueString="20" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="purchasePlus" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="reviewed" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="shareRetina" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="ttl" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="favorites" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DEntry" inverseName="entryFavorite" inverseEntity="DEntry" syncable="YES"/>
         <relationship name="recent" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DEntry" inverseName="entryRecent" inverseEntity="DEntry" syncable="YES"/>
     </entity>
     <elements>
         <element name="DEntry" positionX="-63" positionY="0" width="128" height="150"/>
-        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="180"/>
     </elements>
 </model>
