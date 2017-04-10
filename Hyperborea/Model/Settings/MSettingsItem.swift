@@ -15,4 +15,10 @@ class MSettingsItem
         self.cellHeight = cellHeight
         self.selectable = selectable
     }
+    
+    //MARK: public
+    
+    func selected(controller:CSettings)
+    {
+    }
 }

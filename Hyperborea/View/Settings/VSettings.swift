@@ -13,6 +13,7 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     private let kButtonBackWidth:CGFloat = 60
     private let kButtonBackHeight:CGFloat = 47
     private let kButtonBackBottom:CGFloat = -133
+    private let kDeselectTime:TimeInterval = 0.3
     
     override init(controller:CController)
     {
@@ -203,5 +204,22 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         let item:MSettingsItem = modelAtIndex(index:indexPath)
         
         return item.selectable
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        collectionView.isUserInteractionEnabled = false
+        let item:MSettingsItem = modelAtIndex(index:indexPath)
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kDeselectTime)
+        { [weak collectionView] in
+            
+            collectionView?.isUserInteractionEnabled = true
+            collectionView?.selectItem(
+                at:nil,
+                animated:true,
+                scrollPosition:UICollectionViewScrollPosition())
+        }
     }
 }
