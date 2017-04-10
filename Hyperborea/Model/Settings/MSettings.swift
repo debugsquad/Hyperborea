@@ -8,9 +8,11 @@ class MSettings
     {
         let itemLanguage:MSettingsItemLanguage = MSettingsItemLanguage()
         let itemResults:MSettingsItemResults = MSettingsItemResults()
+        let itemRetina:MSettingsItemRetina = MSettingsItemRetina()
         
         items = [
             itemLanguage,
-            itemResults]
+            itemResults,
+            itemRetina]
     }
 }
