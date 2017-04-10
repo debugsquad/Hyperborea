@@ -172,7 +172,7 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func showFroob()
     {
-        contentHeight = kInitialHeight
+        contentHeight = 0
         collectionView.collectionViewLayout.invalidateLayout()
         viewResults?.refresh()
         viewContent?.froob()
