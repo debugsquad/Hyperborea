@@ -3,6 +3,7 @@ import UIKit
 class MSettingsItemLanguage:MSettingsItem
 {
     private let kCellHeight:CGFloat = 110
+    private let kSelectable:Bool = false
     
     init()
     {
@@ -10,6 +11,7 @@ class MSettingsItemLanguage:MSettingsItem
         
         super.init(
             reusableIdentifier:reusableIdentifier,
-            cellHeight:kCellHeight)
+            cellHeight:kCellHeight,
+            selectable:kSelectable)
     }
 }
