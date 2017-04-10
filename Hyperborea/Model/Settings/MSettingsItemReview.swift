@@ -14,4 +14,9 @@ class MSettingsItemReview:MSettingsItem
             cellHeight:kCellHeight,
             selectable:kSelectable)
     }
+    
+    override func selected(controller:CSettings)
+    {
+        controller.review()
+    }
 }

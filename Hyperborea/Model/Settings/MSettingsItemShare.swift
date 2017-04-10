@@ -14,4 +14,9 @@ class MSettingsItemShare:MSettingsItem
             cellHeight:kCellHeight,
             selectable:kSelectable)
     }
+    
+    override func selected(controller:CSettings)
+    {
+        controller.share()
+    }
 }

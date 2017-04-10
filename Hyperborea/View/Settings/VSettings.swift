@@ -2,7 +2,6 @@ import UIKit
 
 class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
-    private let model:MSettings
     private weak var controller:CSettings!
     private weak var collectionView:VCollection!
     private(set) weak var viewBar:VSettingsBar!
@@ -17,8 +16,6 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     override init(controller:CController)
     {
-        model = MSettings()
-        
         super.init(controller:controller)
         backgroundColor = UIColor.clear
         self.controller = controller as? CSettings
@@ -134,7 +131,7 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     private func modelAtIndex(index:IndexPath) -> MSettingsItem
     {
-        let item:MSettingsItem = model.items[index.item]
+        let item:MSettingsItem = controller.model.items[index.item]
         
         return item
     }
@@ -177,7 +174,7 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        let count:Int = model.items.count
+        let count:Int = controller.model.items.count
         
         return count
     }
