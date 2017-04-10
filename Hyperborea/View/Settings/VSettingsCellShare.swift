@@ -3,8 +3,8 @@ import UIKit
 class VSettingsCellShare:VSettingsCell
 {
     private let kTitleLeft:CGFloat = 10
-    private let kTitleWidth:CGFloat = 200
-    private let kImageWidth:CGFloat = 180
+    private let kTitleWidth:CGFloat = 250
+    private let kImageWidth:CGFloat = 100
     
     override init(frame:CGRect)
     {
@@ -14,7 +14,7 @@ class VSettingsCellShare:VSettingsCell
         labelTitle.isUserInteractionEnabled = false
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.font = UIFont.bold(size:18)
+        labelTitle.font = UIFont.bolder(size:15)
         labelTitle.textColor = UIColor.white
         labelTitle.numberOfLines = 2
         labelTitle.text = NSLocalizedString("VSettingsCellShare_labelTitle", comment:"")
