@@ -52,7 +52,7 @@ class VFroobPlusContent:UIView
         labelTitle.textAlignment = NSTextAlignment.center
         labelTitle.font = UIFont.bolder(size:20)
         labelTitle.textColor = UIColor.black
-        labelTitle.text = purchase.title
+        labelTitle.text = NSLocalizedString("VFroobPlusContent_labelTitle", comment:"")
         
         let labelSubtitle:UILabel = UILabel()
         labelSubtitle.isUserInteractionEnabled = false
@@ -62,7 +62,7 @@ class VFroobPlusContent:UIView
         labelSubtitle.font = UIFont.regular(size:18)
         labelSubtitle.textColor = UIColor.black
         labelSubtitle.numberOfLines = 0
-        labelSubtitle.text = NSLocalizedString("VDrawProjectStoreContent_labelSubtitle", comment:"")
+        labelSubtitle.text = NSLocalizedString("VFroobPlusContent_labelSubtitle", comment:"")
         
         let viewButtons:VDrawProjectStoreContentButtons = VDrawProjectStoreContentButtons(
             controller:controller)

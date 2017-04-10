@@ -33,11 +33,10 @@ class VFroobPlus:VView
             action:#selector(self.actionClose(sender:)),
             for:UIControlEvents.touchUpInside)
         
-        let viewContent:VDrawProjectStoreContent = VDrawProjectStoreContent(
-            controller:controller,
-            purchase:purchase)
+        let viewContent:VFroobPlusContent = VFroobPlusContent(
+            controller:self.controller)
         
-        let contentTop:CGFloat = controller.viewProject.bounds.maxY
+        let contentTop:CGFloat = controller.view.bounds.maxY
         
         blurContainer.addSubview(blur)
         addSubview(blurContainer)
@@ -75,28 +74,10 @@ class VFroobPlus:VView
     
     func actionClose(sender button:UIButton)
     {
-        animateClose()
+        controller.back()
     }
     
     //MARK: public
-    
-    func animateClose()
-    {
-        layoutContentTop.constant = bounds.maxY
-        
-        UIView.animate(
-            withDuration:kAnimationDuration,
-            animations:
-            { [weak self] in
-                
-                self?.alpha = 0
-                self?.layoutIfNeeded()
-            })
-        { [weak self] (done:Bool) in
-            
-            self?.removeFromSuperview()
-        }
-    }
     
     func animateShow()
     {

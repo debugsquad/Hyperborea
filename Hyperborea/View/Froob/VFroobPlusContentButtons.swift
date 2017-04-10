@@ -19,7 +19,7 @@ class VFroobPlusContentButtons:UIView
         buttonStore.clipsToBounds = true
         buttonStore.backgroundColor = UIColor.white
         buttonStore.setTitle(
-            NSLocalizedString("VDrawProjectStoreContentButtons_buttonStore", comment:""),
+            NSLocalizedString("VFroobPlusContentButtons_buttonStore", comment:""),
             for:UIControlState.normal)
         buttonStore.setTitleColor(
             UIColor.hyperBlue,
@@ -38,7 +38,7 @@ class VFroobPlusContentButtons:UIView
         buttonCancel.clipsToBounds = true
         buttonCancel.backgroundColor = UIColor.white
         buttonCancel.setTitle(
-            NSLocalizedString("VDrawProjectStoreContentButtons_buttonCancel", comment:""),
+            NSLocalizedString("VFroobPlusContentButtons_buttonCancel", comment:""),
             for:UIControlState.normal)
         buttonCancel.setTitleColor(
             UIColor(white:0.7, alpha:1),
@@ -95,6 +95,6 @@ class VFroobPlusContentButtons:UIView
     
     func actionCancel(sender button:UIButton)
     {
-        controller.viewProject.viewStore?.animateClose()
+        controller.back()
     }
 }

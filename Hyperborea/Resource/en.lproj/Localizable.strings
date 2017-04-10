@@ -6,6 +6,10 @@
 "VFavoritesBar_label"="Favorites";
 "VFavoritesBar_buttonCancel"="Cancel";
 "VSettingsCellResults_labelTitle"="Max results when searching for words";
+"VFroobPlusContent_labelTitle"="Out of searches";
+"VFroobPlusContent_labelSubtitle"="Get Plus to avoid restrictions";
+"VFroobPlusContentButtons_buttonStore"="Continue";
+"VFroobPlusContentButtons_buttonCancel"="Not now";
 
 "MSearchContentModeItemDefinition_title"="Definition";
 "MSearchContentModeItemDefinition_symbol"="D";

@@ -10,4 +10,16 @@ class CFroobPlus:CController
         self.viewFroob = viewFroob
         view = viewFroob
     }
+    
+    //MARK: public
+    
+    func back()
+    {
+        parentController.dismissAnimateOver(completion:nil)
+    }
+    
+    func openStore()
+    {
+        
+    }
 }
