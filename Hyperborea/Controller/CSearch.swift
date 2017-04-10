@@ -371,7 +371,25 @@ class CSearch:CController
             origin:stringOrigin,
             size:stringSize)
         
-        UIGraphicsBeginImageContextWithOptions(totalRect.size, true, 0)
+        let retina:CGFloat
+        
+        if let shareRatina:Bool = MSession.sharedInstance.settings?.shareRetina
+        {
+            if shareRatina
+            {
+                retina = 0
+            }
+            else
+            {
+                retina = 1
+            }
+        }
+        else
+        {
+            retina = 1
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(totalRect.size, true, retina)
         
         guard
             
