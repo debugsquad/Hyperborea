@@ -80,5 +80,14 @@ class CFroobPlus:CController
     func openStore()
     {
         timer?.invalidate()
+        
+        let controllerStore:CStore = CStore()
+        let parentController:CParent = self.parentController
+        parentController.dismissAnimateOver
+        {
+            parentController.push(
+                controller:controllerStore,
+                horizontal:CParent.TransitionHorizontal.fromRight)
+        }
     }
 }

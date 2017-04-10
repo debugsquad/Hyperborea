@@ -200,6 +200,14 @@ class CSearch:CController
         parentController.animateOver(controller:controllerRecent)
     }
     
+    func openStore()
+    {
+        let controllerStore:CStore = CStore()
+        parentController.push(
+            controller:controllerStore,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
     func editedText(text:String)
     {
         cancelRequests()

@@ -172,8 +172,6 @@ class VSearch:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func showFroob()
     {
-        contentHeight = 0
-        collectionView.collectionViewLayout.invalidateLayout()
         viewResults?.refresh()
         viewContent?.froob()
         scrollToTop()
