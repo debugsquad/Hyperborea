@@ -7,3 +7,30 @@
 [<img src="https://cloud.githubusercontent.com/assets/219689/5575342/963e0ee8-9013-11e4-8091-7ece67d64729.png" height="32" alt="AppStore"/>](https://itunes.apple.com/uk/app/hyperborea/id1182551703)
 
 Smart dictionary
+
+### Description
+A smart, swift and fast dictionary.
+Lookup words and definitions, share them and improve your writing.
+Thesaurus, translations, examples and more.
+
+■ Lexical categories
+Nouns, verbs, adjectives, etc
+
+■ Etymologies
+
+■ Synonyms
+
+■ Antonyms
+
+■ Grammatical features
+
+■ Examples
+
+■ Definitions and translations for English and Spanish
+
+### Engine
+Keep calm
+and
+Trust Hyperborea
+
+Powered by Oxford Dictionaries
