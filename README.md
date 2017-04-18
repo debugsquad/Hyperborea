@@ -11,6 +11,7 @@ Smart dictionary
 ### Description
 A smart, swift and fast dictionary.
 Lookup words and definitions, share them and improve your writing.
+
 Thesaurus, translations, examples and more.
 
 ■ Lexical categories
