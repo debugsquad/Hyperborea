@@ -1,4 +1,4 @@
-# Hyperborea
+# Hyperborea ![alt text][logo.png]
 Improve your writing.
 
 ![iOS](https://img.shields.io/badge/iOS-9.0%2B-blue.svg) 
