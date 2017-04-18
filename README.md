@@ -8,12 +8,10 @@
 
 Smart dictionary
 
-### Description
-A smart, swift and fast dictionary.
+## Description
 Lookup words and definitions, share them and improve your writing.
 
-Thesaurus, translations, examples and more.
-
+## Features
 ■ Lexical categories
 Nouns, verbs, adjectives, etc
 
@@ -29,7 +27,7 @@ Nouns, verbs, adjectives, etc
 
 ■ Definitions and translations for English and Spanish
 
-### Engine
+## Engine
 Keep calm
 
 and
